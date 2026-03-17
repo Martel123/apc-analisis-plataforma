@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Validación de JSON · Planes de Gobierno</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="public/styles/globals.css">
+</head>
+<body>
+<div class="app-shell">
+  <nav class="topbar">
+    <div class="topbar-inner container">
+      <div class="brand">
+        <div class="brand-mark">PG</div>
+        <div class="brand-text">
+          <span class="brand-title">Planes de Gobierno</span>
+          <span class="brand-subtitle">Evaluación Técnica · Perú 2026</span>
+        </div>
+      </div>
+      <div class="topnav">
+        <a href="index.html">Inicio</a>
+        <a href="analizar.html">Analizar</a>
+        <a href="comparar.html">Comparar</a>
+        <a href="heatmap.html">Heatmap</a>
+        <a href="validacion.html" class="active">Validación</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-container container" style="max-width:900px">
+    <div class="page-header">
+      <div class="page-header-left">
+        <h1>Validación de archivos JSON</h1>
+        <p>Detecta campos faltantes y errores estructurales en cada análisis</p>
+      </div>
+      <a href="index.html" class="back-link">← Volver</a>
+    </div>
+
+    <!-- SCHEMA REFERENCE -->
+    <div class="card" style="margin-bottom:20px">
+      <div class="card-title">Campos del schema</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;font-size:13px">
+        <div>
+          <div style="font-weight:700;margin-bottom:8px;color:var(--primary)">candidate (obligatorios)</div>
+          <ul class="sw-list" style="color:#166534">
+            <li>id</li><li>name</li><li>party</li><li>total_score</li>
+          </ul>
+          <div style="font-weight:700;margin:10px 0 8px;color:var(--muted)">candidate (recomendados)</div>
+          <ul class="sw-list" style="color:var(--muted)">
+            <li>color</li><li>plan_period</li><li>plan_pages</li><li>summary</li><li>strengths</li><li>weaknesses</li><li>methodological_notes</li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-weight:700;margin-bottom:8px;color:var(--primary)">blocks[] (obligatorios)</div>
+          <ul class="sw-list" style="color:#166534">
+            <li>id</li><li>name</li>
+          </ul>
+          <div style="font-weight:700;margin:10px 0 8px;color:var(--muted)">blocks[] (recomendados)</div>
+          <ul class="sw-list" style="color:var(--muted)">
+            <li>average_score</li><li>summary</li><li>strengths</li><li>weaknesses</li><li>variables[]</li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-weight:700;margin-bottom:8px;color:var(--primary)">variables[] (obligatorios)</div>
+          <ul class="sw-list" style="color:#166534">
+            <li>id</li><li>name</li>
+          </ul>
+          <div style="font-weight:700;margin:10px 0 8px;color:var(--muted)">variables[] (recomendados)</div>
+          <ul class="sw-list" style="color:var(--muted)">
+            <li>final_score</li><li>criteria.diagnostico</li><li>criteria.propuesta</li><li>criteria.medidas</li><li>criteria.implementacion</li><li>criteria.viabilidad</li><li>criteria.especificidad</li><li>corrected_methodology</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- VALIDATION RESULTS -->
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+      <h2 class="section-title-sm" style="margin:0">Resultados de validación</h2>
+      <button class="primary-btn" id="runValidation" style="min-height:40px;padding:0 18px;font-size:14px">Ejecutar validación</button>
+    </div>
+
+    <div id="validationResults">
+      <div class="empty-state">
+        <div class="empty-icon">✓</div>
+        <p>Haz clic en "Ejecutar validación" para analizar todos los archivos en /analisis</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+async function runValidation() {
+  document.getElementById('validationResults').innerHTML = '<div class="loading-state">Validando archivos...</div>';
+
+  try {
+    const res = await fetch('/api/validate');
+    const data = await res.json();
+
+    if (data.error) {
+      document.getElementById('validationResults').innerHTML =
+        `<div class="empty-state"><div class="empty-icon">⚠</div><p>${data.error}</p></div>`;
+      return;
+    }
+
+    if (data.reports.length === 0) {
+      document.getElementById('validationResults').innerHTML =
+        `<div class="empty-state"><div class="empty-icon">◌</div><p>No se encontraron archivos .json en /analisis</p></div>`;
+      return;
+    }
+
+    const summary = data.reports.reduce((acc, r) => {
+      acc.ok += r.ok ? 1 : 0;
+      acc.errors += r.issues.length;
+      acc.warnings += r.warnings.length;
+      return acc;
+    }, { ok: 0, errors: 0, warnings: 0 });
+
+    let html = `
+      <div class="kpi-grid" style="margin-bottom:20px">
+        <div class="kpi-card">
+          <div class="kpi-label">Archivos analizados</div>
+          <div class="kpi-value">${data.total}</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Sin errores</div>
+          <div class="kpi-value" style="color:#16a34a">${summary.ok}</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Errores críticos</div>
+          <div class="kpi-value" style="color:#b91c1c">${summary.errors}</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Advertencias</div>
+          <div class="kpi-value" style="color:#d97706">${summary.warnings}</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px">`;
+
+    data.reports.forEach(r => {
+      const cls = r.ok ? 'ok' : 'error';
+      html += `
+        <div class="validation-report ${cls}">
+          <div class="validation-report-header">
+            <div class="validation-status ${r.ok ? 'ok' : 'error'}">
+              ${r.ok ? '✓ OK' : '✕ Con errores'}
+              <span style="font-weight:400;font-size:13px;color:var(--muted);margin-left:6px">${r.file}</span>
+            </div>
+            <div style="font-size:12px;color:var(--muted)">
+              ${r.issues.length} errores · ${r.warnings.length} advertencias
+            </div>
+          </div>`;
+
+      if (r.issues.length > 0 || r.warnings.length > 0) {
+        html += `<ul class="validation-issues">`;
+        r.issues.forEach(i => {
+          html += `<li class="validation-issue error"><span>✕</span> ${i}</li>`;
+        });
+        r.warnings.forEach(w => {
+          html += `<li class="validation-issue warning"><span>⚠</span> ${w}</li>`;
+        });
+        html += `</ul>`;
+      } else {
+        html += `<div style="padding:14px 18px;font-size:13px;color:#16a34a">✓ Todos los campos requeridos y recomendados están presentes.</div>`;
+      }
+
+      html += `</div>`;
+    });
+
+    html += `</div>`;
+    document.getElementById('validationResults').innerHTML = html;
+
+  } catch (e) {
+    document.getElementById('validationResults').innerHTML =
+      `<div class="empty-state"><div class="empty-icon">⚠</div><p>Error al contactar el servidor: ${e.message}</p></div>`;
+  }
+}
+
+document.getElementById('runValidation').addEventListener('click', runValidation);
+
+// Auto-run on load
+runValidation();
+</script>
+</body>
+</html>

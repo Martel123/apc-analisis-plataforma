@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analizar candidato · Planes de Gobierno</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="public/styles/globals.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<div class="app-shell">
+  <nav class="topbar">
+    <div class="topbar-inner container">
+      <div class="brand">
+        <div class="brand-mark">PG</div>
+        <div class="brand-text">
+          <span class="brand-title">Planes de Gobierno</span>
+          <span class="brand-subtitle">Evaluación Técnica · Perú 2026</span>
+        </div>
+      </div>
+      <div class="topnav">
+        <a href="index.html">Inicio</a>
+        <a href="analizar.html" class="active">Analizar</a>
+        <a href="comparar.html">Comparar</a>
+        <a href="heatmap.html">Heatmap</a>
+        <a href="validacion.html">Validación</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-container container">
+    <div class="page-header">
+      <div class="page-header-left">
+        <h1>Análisis de candidato</h1>
+        <p>Explora bloques, variables y criterios técnicos</p>
+      </div>
+      <a href="index.html" class="back-link">← Volver</a>
+    </div>
+
+    <div class="dash-grid">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="card">
+          <div class="card-title">Seleccionar candidato</div>
+          <label class="select-label">Candidato</label>
+          <div class="select-wrap">
+            <select class="app-select" id="candidateSelect">
+              <option value="">Cargando...</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="card" id="sidebarInfo" style="display:none">
+          <div class="candidate-header">
+            <div class="candidate-color-bar" id="sidebarColorBar"></div>
+            <div class="candidate-header-info">
+              <p class="candidate-name" id="sidebarName" style="font-size:1.1rem"></p>
+              <p class="candidate-party" id="sidebarParty"></p>
+            </div>
+          </div>
+          <div class="candidate-score-big" style="text-align:center; margin:12px 0">
+            <div class="candidate-score-num" id="sidebarScore">—</div>
+            <div class="candidate-score-label">Puntaje total / 10</div>
+          </div>
+
+          <div class="separator"></div>
+          <div class="section-kicker" style="margin-bottom:10px">Fortalezas</div>
+          <div class="tag-list" id="sidebarStrengths"></div>
+          <div style="height:12px"></div>
+          <div class="section-kicker" style="margin-bottom:10px">Debilidades</div>
+          <div class="tag-list" id="sidebarWeaknesses"></div>
+        </div>
+
+        <div class="card radar-wrap" id="radarCard" style="display:none">
+          <div class="card-title">Radar por bloques</div>
+          <canvas id="radarChart" width="300" height="300"></canvas>
+        </div>
+      </aside>
+
+      <!-- MAIN PANEL -->
+      <main id="mainPanel">
+        <div class="empty-state" id="placeholderState">
+          <div class="empty-icon">◉</div>
+          <p>Selecciona un candidato para comenzar el análisis</p>
+        </div>
+
+        <!-- KPI GRID -->
+        <div class="kpi-grid" id="kpiGrid" style="display:none"></div>
+
+        <!-- TABS -->
+        <div class="card" id="mainTabs" style="display:none">
+          <div class="tabs">
+            <button class="tab-btn active" data-tab="resumen">Resumen</button>
+            <button class="tab-btn" data-tab="bloques">Bloques y variables</button>
+            <button class="tab-btn" data-tab="metodologia">Notas metodológicas</button>
+            <button class="tab-btn" data-tab="hallazgos">Hallazgos finales</button>
+          </div>
+
+          <!-- TAB: RESUMEN -->
+          <div class="tab-panel active" id="tab-resumen">
+            <p class="summary-text" id="candidateSummary"></p>
+            <div class="separator"></div>
+            <div class="sw-grid" id="swPanel"></div>
+          </div>
+
+          <!-- TAB: BLOQUES Y VARIABLES -->
+          <div class="tab-panel" id="tab-bloques">
+            <div class="filter-bar" id="blockFilter"></div>
+            <div class="blocks-grid" id="blocksGrid" style="margin-bottom:20px"></div>
+            <div id="variablesSection" style="display:none">
+              <h3 id="activeBlockTitle" style="margin:0 0 12px; font-family:'Sora',sans-serif; font-size:1rem; font-weight:700"></h3>
+              <p class="summary-text" id="activeBlockSummary"></p>
+              <div class="separator"></div>
+              <div class="variables-list" id="variablesList"></div>
+            </div>
+          </div>
+
+          <!-- TAB: METODOLOGÍA -->
+          <div class="tab-panel" id="tab-metodologia">
+            <div id="methodologyContent"></div>
+          </div>
+
+          <!-- TAB: HALLAZGOS -->
+          <div class="tab-panel" id="tab-hallazgos">
+            <div id="finalAnalysisContent"></div>
+          </div>
+        </div>
+
+        <!-- VARIABLE DETAIL MODAL -->
+        <div class="var-detail-panel" id="varDetailPanel" style="display:none">
+          <div class="var-detail-header">
+            <div>
+              <strong id="varDetailName"></strong>
+              <span id="varDetailBlock" style="font-size:12px;color:var(--muted);margin-left:8px"></span>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px">
+              <span id="varDetailScore"></span>
+              <button class="filter-btn" id="closeVarDetail">Cerrar ✕</button>
+            </div>
+          </div>
+          <div class="var-detail-body" id="varDetailBody"></div>
+        </div>
+      </main>
+    </div>
+  </div>
+</div>
+
+<script src="public/js/data.js"></script>
+<script src="public/js/engine.js"></script>
+<script src="public/js/ui.js"></script>
+<script src="public/js/charts.js"></script>
+<script>
+let allCandidates = [];
+let currentCandidate = null;
+let activeBlockId = null;
+
+const ANALYSIS_LABELS = {
+  definicion: 'Definición técnica',
+  importancia: 'Importancia estratégica',
+  diagnostico_externo: 'Diagnóstico externo',
+  propuesta_plan: 'Propuesta en el plan',
+  medidas_concretas: 'Medidas concretas',
+  implementacion_necesaria: 'Implementación necesaria',
+  impacto_potencial: 'Impacto potencial',
+  vacios: 'Vacíos identificados',
+  evaluacion_tecnica: 'Evaluación técnica',
+  calificacion_final: 'Calificación final',
+  conclusion: 'Conclusión'
+};
+
+async function init() {
+  allCandidates = await DataLayer.getCandidates();
+  const sel = document.getElementById('candidateSelect');
+  sel.innerHTML = '<option value="">— Selecciona un candidato —</option>';
+  allCandidates.forEach(c => {
+    const opt = document.createElement('option');
+    opt.value = c.id;
+    opt.textContent = `${c.name} · ${c.total_score !== null ? c.total_score.toFixed(1) : '—'}`;
+    sel.appendChild(opt);
+  });
+
+  sel.addEventListener('change', e => {
+    const c = allCandidates.find(c => c.id === e.target.value);
+    if (c) renderCandidate(c);
+  });
+
+  // Check URL param
+  const params = new URLSearchParams(location.search);
+  const id = params.get('id');
+  if (id) {
+    const c = allCandidates.find(c => c.id === id);
+    if (c) { sel.value = id; renderCandidate(c); }
+  } else if (allCandidates.length > 0) {
+    sel.value = allCandidates[0].id;
+    renderCandidate(allCandidates[0]);
+  }
+}
+
+function renderCandidate(c) {
+  currentCandidate = c;
+  activeBlockId = null;
+
+  // Sidebar
+  document.getElementById('sidebarInfo').style.display = '';
+  document.getElementById('sidebarColorBar').style.background = c.color;
+  document.getElementById('sidebarName').textContent = c.name;
+  document.getElementById('sidebarParty').textContent = c.party;
+  const scoreEl = document.getElementById('sidebarScore');
+  const { cls } = DataLayer.scoreLabel(c.total_score);
+  scoreEl.textContent = c.total_score !== null ? c.total_score.toFixed(1) : '—';
+  scoreEl.className = `candidate-score-num ${cls}`;
+  UI.setHTML('#sidebarStrengths', UI.tagList(c.strengths, 'strength'));
+  UI.setHTML('#sidebarWeaknesses', UI.tagList(c.weaknesses, 'weakness'));
+
+  // Radar
+  const radarData = Engine.getRadarData(c, allCandidates);
+  if (c.blocks.length > 0) {
+    document.getElementById('radarCard').style.display = '';
+    Charts.radar('radarChart', radarData);
+  }
+
+  // KPIs
+  const kpis = Engine.getKpis(c);
+  document.getElementById('kpiGrid').style.display = '';
+  UI.setHTML('#kpiGrid', [
+    UI.kpiCard('Mejor bloque', kpis.bestBlock?.name || '—', kpis.bestBlock ? kpis.bestBlock.average_score?.toFixed(1) : ''),
+    UI.kpiCard('Peor bloque', kpis.worstBlock?.name || '—', kpis.worstBlock ? kpis.worstBlock.average_score?.toFixed(1) : ''),
+    UI.kpiCard('Variable más fuerte', kpis.bestVar?.name || '—', kpis.bestVar ? kpis.bestVar.final_score?.toFixed(1) : ''),
+    UI.kpiCard('Variable más débil', kpis.worstVar?.name || '—', kpis.worstVar ? kpis.worstVar.final_score?.toFixed(1) : ''),
+    UI.kpiCard('Promedio global', kpis.avgScore !== null ? kpis.avgScore.toFixed(1) : '—', `${kpis.totalVars} variables`),
+    UI.kpiCard('Consistencia', kpis.consistency !== null ? kpis.consistency + '%' : '—', 'desviación vs promedio'),
+    UI.kpiCard('Correcciones', kpis.correctedVars, 'variables corregidas'),
+    UI.kpiCard('Plan', c.plan_pages ? c.plan_pages + ' págs.' : '—', c.plan_period || ''),
+  ].join(''));
+
+  // Tabs
+  document.getElementById('placeholderState').style.display = 'none';
+  document.getElementById('mainTabs').style.display = '';
+
+  // Tab: Resumen
+  UI.setHTML('#candidateSummary', c.summary || '<span class="empty-msg">Sin resumen disponible</span>');
+  UI.setHTML('#swPanel', `
+    <div class="sw-panel strengths">
+      <div class="sw-title">✲ Fortalezas estructurales</div>
+      <ul class="sw-list">${(c.strengths || []).map(s => `<li>${s}</li>`).join('') || '<li>Sin datos</li>'}</ul>
+    </div>
+    <div class="sw-panel weaknesses">
+      <div class="sw-title">▼ Debilidades estructurales</div>
+      <ul class="sw-list">${(c.weaknesses || []).map(w => `<li>${w}</li>`).join('') || '<li>Sin datos</li>'}</ul>
+    </div>
+  `);
+
+  // Tab: Bloques
+  renderBlocksTab(c);
+
+  // Tab: Metodología
+  const mn = c.methodological_notes || [];
+  UI.setHTML('#methodologyContent', mn.length > 0
+    ? UI.methodologyNote(mn) + `<div style="margin-top:20px">${renderCorrectedVars(c)}</div>`
+    : UI.emptyState('No hay notas metodológicas para este candidato.')
+  );
+
+  // Tab: Hallazgos finales
+  renderFinalAnalysis(c);
+
+  // Close detail
+  document.getElementById('varDetailPanel').style.display = 'none';
+}
+
+function renderBlocksTab(c) {
+  const filterBar = document.getElementById('blockFilter');
+  filterBar.innerHTML = c.blocks.map(b =>
+    `<button class="filter-btn" data-block="${b.id}">${b.name}</button>`
+  ).join('');
+
+  UI.setHTML('#blocksGrid', c.blocks.map(b => {
+    const { cls } = DataLayer.scoreLabel(b.average_score);
+    return `
+      <div class="block-card ${cls}" data-block-id="${b.id}" style="--candidate-color:${c.color}">
+        <div class="block-card-head">
+          <h4 class="block-card-name">${b.name}</h4>
+          ${UI.scoreBadge(b.average_score, 'sm')}
+        </div>
+        <div class="block-card-vars">${b.variables.length} variables</div>
+        ${b.summary ? `<p class="block-card-summary">${b.summary.substring(0, 90)}${b.summary.length > 90 ? '…' : ''}</p>` : ''}
+      </div>`;
+  }).join(''));
+
+  document.querySelectorAll('.block-card, .filter-btn').forEach(el => {
+    el.addEventListener('click', () => {
+      const blockId = el.dataset.blockId || el.dataset.block;
+      selectBlock(blockId);
+    });
+  });
+}
+
+function selectBlock(blockId) {
+  activeBlockId = blockId;
+  const c = currentCandidate;
+  const block = c.blocks.find(b => b.id === blockId);
+  if (!block) return;
+
+  document.querySelectorAll('.block-card').forEach(el =>
+    el.classList.toggle('active', el.dataset.blockId === blockId)
+  );
+  document.querySelectorAll('#blockFilter .filter-btn').forEach(el =>
+    el.classList.toggle('active', el.dataset.block === blockId)
+  );
+
+  document.getElementById('variablesSection').style.display = '';
+  document.getElementById('activeBlockTitle').textContent = block.name;
+  UI.setHTML('#activeBlockSummary', block.summary || '');
+
+  UI.setHTML('#variablesList', block.variables
+    .slice().sort((a, b) => (b.final_score || 0) - (a.final_score || 0))
+    .map(v => {
+      const { cls } = DataLayer.scoreLabel(v.final_score);
+      return `
+        <div class="var-row ${cls}" data-var-id="${v.id}" style="cursor:pointer">
+          <div class="var-row-head">
+            <span class="var-name">${v.name}</span>
+            <div class="var-row-badges">
+              ${v.corrected_methodology ? '<span class="correction-badge">✱ Corrección</span>' : ''}
+              ${UI.scoreBadge(v.final_score, 'sm')}
+            </div>
+          </div>
+          <div class="var-bar-wrap">
+            <div class="var-bar" style="width:${v.final_score !== null ? v.final_score * 10 : 0}%; background:${DataLayer.scoreColor(v.final_score)}"></div>
+          </div>
+        </div>`;
+    }).join(''));
+
+  document.querySelectorAll('#variablesList .var-row').forEach(el => {
+    el.addEventListener('click', () => openVariableDetail(el.dataset.varId, block));
+  });
+}
+
+function openVariableDetail(varId, block) {
+  const v = block.variables.find(v => v.id === varId);
+  if (!v) return;
+
+  document.getElementById('varDetailPanel').style.display = '';
+  document.getElementById('varDetailName').textContent = v.name;
+  document.getElementById('varDetailBlock').textContent = '· ' + block.name;
+  document.getElementById('varDetailScore').innerHTML = UI.scoreBadge(v.final_score, 'md');
+
+  const body = document.getElementById('varDetailBody');
+  const sections = v.analysis_sections || {};
+  const sectionKeys = Object.keys(ANALYSIS_LABELS);
+
+  body.innerHTML = `
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:20px">
+      <div>
+        <div class="var-section-title">Criterios de evaluación</div>
+        ${UI.criteriaBars(v.criteria)}
+        ${v.corrected_methodology ? UI.correctionNote(v.correction_note) : ''}
+      </div>
+      <div>
+        <div class="var-section-title">Fortalezas</div>
+        <ul class="sw-list" style="color:#166534">${(v.strengths||[]).map(s=>`<li>${s}</li>`).join('') || '<li class="empty-msg">Sin datos</li>'}</ul>
+        <div class="separator"></div>
+        <div class="var-section-title">Debilidades</div>
+        <ul class="sw-list" style="color:#9f1239">${(v.weaknesses||[]).map(w=>`<li>${w}</li>`).join('') || '<li class="empty-msg">Sin datos</li>'}</ul>
+        <div class="separator"></div>
+        <div class="var-section-title">Vacíos</div>
+        <ul class="sw-list" style="color:#92400e">${(v.gaps||[]).map(g=>`<li>${g}</li>`).join('') || '<li class="empty-msg">Sin datos</li>'}</ul>
+      </div>
+    </div>
+    ${v.summary ? `<p class="summary-text" style="margin-bottom:20px">${v.summary}</p>` : ''}
+    ${sectionKeys.some(k => sections[k]) ? `
+      <div class="var-section-title">Análisis completo</div>
+      <div class="analysis-accordion">
+        ${sectionKeys.filter(k => sections[k]).map(k => `
+          <div class="analysis-section-item">
+            <button class="analysis-section-toggle" data-section="${k}">${ANALYSIS_LABELS[k]} <span class="toggle-icon">▸</span></button>
+            <div class="analysis-section-content" id="asec-${k}">${sections[k]}</div>
+          </div>`).join('')}
+      </div>` : ''}
+    ${v.conclusion ? `<div class="methodology-note" style="margin-top:16px"><div class="methodology-note-header">📌 Conclusión</div><p style="color:#0369a1;font-size:13px;margin:0">${v.conclusion}</p></div>` : ''}
+  `;
+
+  body.querySelectorAll('.analysis-section-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const content = document.getElementById('asec-' + btn.dataset.section);
+      btn.classList.toggle('open');
+      content.classList.toggle('open');
+      btn.querySelector('.toggle-icon').textContent = btn.classList.contains('open') ? '▾' : '▸';
+    });
+  });
+
+  body.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function renderCorrectedVars(c) {
+  const corrected = c.blocks.flatMap(b => b.variables.filter(v => v.corrected_methodology)
+    .map(v => ({ ...v, blockName: b.name })));
+  if (corrected.length === 0) return '<p class="empty-msg">No hay correcciones metodológicas en este análisis.</p>';
+  return `<div class="card-title">Variables con corrección metodológica</div>
+    ${corrected.map(v => `
+      <div style="margin-bottom:12px">
+        <div style="font-weight:700;font-size:14px">${v.name} <span style="color:var(--muted);font-weight:400;font-size:12px">· ${v.blockName}</span></div>
+        ${UI.correctionNote(v.correction_note)}
+      </div>`).join('')}`;
+}
+
+function renderFinalAnalysis(c) {
+  const fa = c.final_analysis || {};
+  const findings = fa.global_findings || [];
+  UI.setHTML('#finalAnalysisContent', `
+    ${findings.length > 0 ? `
+      <div class="card-title">Hallazgos globales</div>
+      <ul class="sw-list" style="margin-bottom:20px">
+        ${findings.map(f => `<li style="color:var(--text)">${f}</li>`).join('')}
+      </ul>` : ''}
+    ${fa.final_conclusion ? `
+      <div class="card-title">Conclusión final</div>
+      <p class="summary-text" style="margin-bottom:20px">${fa.final_conclusion}</p>` : ''}
+    ${fa.ranking_note ? `
+      <div class="methodology-note" style="margin-bottom:14px">
+        <div class="methodology-note-header">📊 Nota de ranking</div>
+        <p style="color:#0369a1;font-size:13px;margin:0">${fa.ranking_note}</p>
+      </div>` : ''}
+    ${fa.comparability_note ? `
+      <div class="methodology-note">
+        <div class="methodology-note-header">⚖️ Nota de comparabilidad</div>
+        <p style="color:#0369a1;font-size:13px;margin:0">${fa.comparability_note}</p>
+      </div>` : ''}
+    ${!findings.length && !fa.final_conclusion ? UI.emptyState('No hay análisis final para este candidato.') : ''}
+  `);
+}
+
+// Tab switching
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    document.getElementById('varDetailPanel').style.display = 'none';
+  });
+});
+
+document.getElementById('closeVarDetail').addEventListener('click', () => {
+  document.getElementById('varDetailPanel').style.display = 'none';
+});
+
+init();
+</script>
+</body>
+</html>

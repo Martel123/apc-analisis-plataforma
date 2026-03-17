@@ -1,0 +1,518 @@
+Quiero que construyas una plataforma web completa, visual, interactiva y escalable para explorar y comparar análisis técnicos de planes de gobierno presidenciales del Perú.
+
+IMPORTANTE:
+Esto NO debe parecer una landing page, un blog ni una web de texto largo.
+Debe sentirse como una aplicación profesional, un dashboard premium, modular, técnico, limpio y serio.
+
+La plataforma debe quedar diseñada para que yo solo tenga que hacer esto:
+1. crear o editar archivos JSON dentro de una carpeta llamada /analisis
+2. guardar esos archivos
+3. y automáticamente toda la plataforma se actualice con:
+   - nuevos candidatos
+   - nuevos bloques
+   - nuevas variables
+   - nuevas comparaciones
+   - nuevos rankings
+   - nuevos heatmaps
+   - nuevos cuadros, tablas y gráficos
+
+NO quiero depender de editar el frontend cada vez.
+TODO debe depender de los JSON.
+
+==================================================
+1. OBJETIVO DEL SISTEMA
+==================================================
+
+Construir una plataforma interactiva para:
+- analizar un candidato
+- comparar candidatos
+- navegar por bloques temáticos
+- navegar por variables específicas
+- revisar criterios técnicos de cada variable
+- mostrar fortalezas, debilidades, vacíos y consistencia metodológica
+- abrir análisis completos en capas de profundidad
+
+La app debe servir para ciudadanos, periodistas, analistas, investigadores y equipos técnicos.
+
+==================================================
+2. REGLA CENTRAL DEL PROYECTO
+==================================================
+
+La app debe ser DATA-DRIVEN.
+Eso significa:
+
+- La UI debe construirse a partir de los JSON en /analisis
+- No quiero datos quemados dentro del HTML ni dentro de componentes
+- Si agrego un nuevo JSON de candidato, el sistema debe detectarlo y mostrarlo
+- Si modifico puntajes, bloques o variables, todo debe recalcularse automáticamente
+- La lógica debe estar separada entre:
+  1. datos
+  2. procesamiento
+  3. visualización
+  4. navegación
+
+==================================================
+3. CARPETA DE DATOS OBLIGATORIA
+==================================================
+
+La app debe usar esta carpeta como fuente única de verdad:
+
+/analisis
+
+Dentro de esa carpeta yo pondré archivos como:
+
+/analisis/acuna.json
+/analisis/lopez_chao.json
+/analisis/pbg_nieto.json
+/analisis/williams.json
+
+Cada archivo representa el análisis completo de un candidato.
+
+Quiero que la app:
+- lea todos los JSON de /analisis
+- construya automáticamente el listado de candidatos
+- construya automáticamente rankings y comparaciones
+- construya automáticamente bloques y variables
+- no requiera cambios manuales en el código para mostrar nuevos candidatos
+
+==================================================
+4. METODOLOGÍA DEL SISTEMA
+==================================================
+
+La plataforma se basa en una metodología estricta de evaluación técnica.
+
+Características:
+- 30 variables de análisis
+- 8 bloques temáticos
+- 6 criterios por variable:
+  1. Diagnóstico
+  2. Propuesta
+  3. Medidas
+  4. Implementación
+  5. Viabilidad
+  6. Especificidad
+- cada criterio se puntúa de 0 a 2
+- puntaje final por variable:
+  (suma de criterios / 12) * 10
+- redondeo a 1 decimal
+- solo se puntúa evidencia explícita
+- debe poder mostrarse cuando hubo correcciones metodológicas
+- debe existir espacio para notas metodológicas por variable y por candidato
+
+==================================================
+5. ESTRUCTURA JSON QUE DEBE SOPORTAR EL SISTEMA
+==================================================
+
+Diseña la app para aceptar JSON con esta lógica de alto nivel:
+
+{
+  "candidate": {
+    "id": "pbg_nieto",
+    "name": "Jorge Nieto Degregori",
+    "party": "Partido del Buen Gobierno",
+    "color": "#b5121b",
+    "plan_period": "2026-2031",
+    "plan_pages": 98,
+    "total_score": 7.1,
+    "ranking_position": 1,
+    "summary": "Resumen ejecutivo del candidato",
+    "strengths": [
+      "Innovación institucional densa",
+      "Diagnóstico robusto"
+    ],
+    "weaknesses": [
+      "Brecha fiscal sistemática",
+      "Regulación débil de IA"
+    ],
+    "methodological_notes": [
+      "Se aplicó metodología estricta",
+      "Hubo correcciones al alza en especificidad"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "economia",
+      "name": "Economía",
+      "average_score": 7.4,
+      "summary": "Resumen del bloque",
+      "strengths": ["..."],
+      "weaknesses": ["..."],
+      "variables": [
+        {
+          "id": "politica_tributaria",
+          "name": "Política tributaria",
+          "final_score": 8.3,
+          "rating_label": "sólido",
+          "summary": "Resumen ejecutivo de la variable",
+          "strengths": ["..."],
+          "weaknesses": ["..."],
+          "gaps": ["..."],
+          "conclusion": "Conclusión de la variable",
+          "corrected_methodology": true,
+          "correction_note": "E fue corregido de 1 a 2 por instituciones explícitas y metas cuantificadas",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2
+          },
+          "analysis_sections": {
+            "definicion": "...",
+            "importancia": "...",
+            "diagnostico_externo": "...",
+            "propuesta_plan": "...",
+            "medidas_concretas": "...",
+            "implementacion_necesaria": "...",
+            "impacto_potencial": "...",
+            "vacios": "...",
+            "evaluacion_tecnica": "...",
+            "calificacion_final": "...",
+            "conclusion": "..."
+          }
+        }
+      ]
+    }
+  ],
+  "final_analysis": {
+    "global_findings": [
+      "...",
+      "..."
+    ],
+    "final_conclusion": "...",
+    "ranking_note": "...",
+    "comparability_note": "..."
+  }
+}
+
+La app debe ser tolerante:
+- si faltan campos, no debe romperse
+- debe mostrar placeholders elegantes
+- debe validar los datos y advertir si falta estructura importante
+
+==================================================
+6. PROCESAMIENTO AUTOMÁTICO DE DATOS
+==================================================
+
+Quiero que el sistema haga automáticamente lo siguiente al leer /analisis:
+
+1. detectar todos los candidatos disponibles
+2. construir el selector de candidatos
+3. calcular ranking general por total_score
+4. construir comparación por bloques
+5. construir comparación por variables
+6. construir heatmap general
+7. construir KPIs automáticos:
+   - mejor bloque
+   - peor bloque
+   - variable más fuerte
+   - variable más débil
+   - promedio global
+   - consistencia
+8. construir tarjetas de fortalezas y debilidades
+9. detectar si una variable tiene corrected_methodology = true
+10. mostrar notas metodológicas globales y específicas
+
+También quiero una capa de procesamiento que:
+- derive bloques automáticamente si vienen en los JSON
+- normalice nombres
+- ordene variables por puntaje
+- genere comparaciones entre candidatos aunque el orden del JSON sea distinto
+
+==================================================
+7. VISTAS PRINCIPALES
+==================================================
+
+A. HOME
+Pantalla minimalista tipo menú del sistema.
+Solo debe tener:
+- título potente
+- descripción corta
+- botón: Analizar un candidato
+- botón: Comparar candidatos
+- botón opcional: Heatmap general
+
+No hagas una landing page.
+No agregues secciones de marketing.
+Debe sentirse como entrada a una app.
+
+B. ANALIZAR CANDIDATO
+Debe mostrar:
+- selector de candidato
+- nombre
+- partido
+- puntaje total
+- ranking
+- resumen ejecutivo
+- fortalezas
+- debilidades
+- notas metodológicas
+- radar por bloques
+- bloques evaluados
+- variables del bloque
+- mini barras por criterio
+- acceso al análisis completo por variable
+- opción de cambiar de bloque rápidamente
+
+C. COMPARAR CANDIDATOS
+Debe permitir:
+- seleccionar 2 o más candidatos
+- comparación general
+- comparación por bloque
+- comparación por variable
+- radar múltiple
+- barras comparativas
+- tabla ordenable
+- heatmap comparativo
+- ver brechas más grandes
+- ver quién lidera por bloque
+
+D. VISTA DE BLOQUE
+Debe mostrar:
+- nombre del bloque
+- promedio del bloque
+- variables del bloque
+- orden de mayor a menor puntaje
+- resumen interpretativo
+- fortalezas del bloque
+- debilidades del bloque
+- comparación de ese bloque entre candidatos
+
+E. VISTA DE VARIABLE
+Debe mostrar:
+- nombre
+- bloque
+- puntaje final
+- label visual del rendimiento
+- 6 criterios desagregados
+- fortalezas
+- debilidades
+- vacíos
+- observaciones metodológicas
+- comparación entre candidatos para esa variable
+- panel desplegable con análisis_sections completo
+
+F. HEATMAP GENERAL
+Debe mostrar:
+- filas = variables
+- columnas = candidatos
+- intensidad por puntaje
+- clic en celda para abrir candidato + variable
+- filtros por bloque
+- filtros por rango de puntaje
+- resaltado de debilidades estructurales
+- resaltado de fortalezas comparativas
+
+==================================================
+8. INTERACTIVIDAD OBLIGATORIA
+==================================================
+
+Quiero:
+- selector de candidato funcional
+- comparador multi-candidato funcional
+- filtros por bloque
+- filtros por variable
+- filtros por rango de puntaje
+- ordenamiento de tablas
+- abrir/cerrar detalle de variable
+- navegación por tabs o paneles
+- clic en bloque para abrir su detalle
+- clic en variable para abrir panel profundo
+- clic en celda del heatmap para abrir detalle
+- estados vacíos bien diseñados
+- mensajes elegantes cuando falten datos
+
+==================================================
+9. VISUALIZACIONES
+==================================================
+
+Quiero gráficos realmente útiles, no decorativos:
+
+- KPI cards
+- barras comparativas
+- radar chart por bloques
+- radar múltiple para comparar candidatos
+- heatmap general
+- mini barras por criterio
+- tabla comparativa avanzada
+- ranking dinámico
+- distribución de puntajes por bloque
+- variables más fuertes / más débiles
+- indicador de consistencia por candidato
+
+==================================================
+10. DISEÑO VISUAL
+==================================================
+
+Diseño:
+- fondo blanco dominante
+- rojo APC como acento principal
+- negro y gris oscuro para texto
+- gris claro para fondos secundarios
+- institucional, limpio, técnico, sobrio
+- moderno pero no juvenil
+- premium y tipo dashboard
+
+No quiero:
+- estética de blog
+- animaciones excesivas
+- elementos decorativos innecesarios
+- secciones largas de marketing
+
+Quiero:
+- excelente jerarquía visual
+- primero síntesis, luego profundidad
+- tarjetas limpias
+- bordes suaves
+- sombras sutiles
+- visualización clara y elegante
+
+Escala de color para puntajes:
+- 8.5 a 10 = excelente
+- 7.0 a 8.4 = sólido
+- 5.5 a 6.9 = intermedio
+- 4.0 a 5.4 = débil
+- 0.0 a 3.9 = muy débil
+
+==================================================
+11. TECNOLOGÍA
+==================================================
+
+Elige la mejor arquitectura para Replit.
+Si es mejor usar React + Vite, úsalo.
+Si eliges React:
+- componentes separados
+- estructura de carpetas limpia
+- data layer clara
+- utils para cálculos
+- estilos organizados
+- código fácil de escalar
+
+Quiero que el proyecto quede bien estructurado y mantenible.
+
+==================================================
+12. ESTRUCTURA DEL PROYECTO
+==================================================
+
+Crea una estructura clara, por ejemplo:
+
+/src
+  /components
+  /pages
+  /layouts
+  /charts
+  /data
+  /utils
+  /styles
+/analisis
+/public
+
+Pero puedes proponer una mejor si está bien pensada.
+
+Debe existir una capa que:
+- lea los JSON de /analisis
+- los transforme a un modelo uniforme
+- exponga funciones como:
+  - getCandidates()
+  - getCandidateById()
+  - getBlocks()
+  - getVariables()
+  - getRanking()
+  - getHeatmapMatrix()
+  - getComparisonData()
+
+==================================================
+13. MÓDULOS Y COMPONENTES REUTILIZABLES
+==================================================
+
+Crea componentes o equivalentes para:
+- AppShell
+- Sidebar
+- Topbar
+- HomeMenu
+- CandidateSelector
+- CandidateHeaderCard
+- ScoreBadge
+- KpiCard
+- BlockCard
+- VariableCard
+- CriteriaBars
+- RadarCard
+- HeatmapCard
+- ComparisonTable
+- InsightCard
+- StrengthWeaknessPanel
+- MethodologyNote
+- VariableDetailPanel
+- SummaryCard
+- RankingCard
+- FilterBar
+- BreadcrumbNav
+
+==================================================
+14. IMPORTANTE SOBRE LOS DATOS
+==================================================
+
+NO quiero que metas datos falsos fijos por todo el sistema.
+Usa como demo uno o dos JSON de ejemplo bien estructurados, pero deja claro que:
+- todo sale de /analisis
+- todo debe ser reemplazable por mis archivos reales
+
+Además:
+- implementa validación de schema
+- muestra warnings elegantes si faltan campos
+- no rompas la app si falta una sección
+- usa defaults inteligentes
+
+==================================================
+15. FORMA DE ENTREGA
+==================================================
+
+No me expliques teoría.
+No me des solo ideas.
+No me des solo un roadmap.
+No me des pseudocódigo.
+
+Quiero que generes directamente:
+- la arquitectura completa
+- los archivos del proyecto
+- la lógica de carga automática de /analisis
+- los componentes
+- las páginas
+- los estilos
+- la navegación
+- los gráficos
+- los JSON demo
+- los utilitarios de procesamiento
+
+Quiero el sistema lo más avanzado posible desde ahora.
+
+Si no puedes terminar absolutamente todo en una sola respuesta:
+- empieza por la arquitectura completa
+- crea la mayor cantidad de archivos posibles
+- deja todo conectado
+- deja el sistema funcional desde el primer intento
+
+==================================================
+16. RESTRICCIONES FINALES
+==================================================
+
+NO hagas una landing page.
+NO hagas una sola página larga.
+NO conviertas el sistema en texto plano.
+NO simplifiques la metodología.
+NO escondas la profundidad técnica.
+NO dejes el detalle profundo fuera del sistema.
+NO hagas una UI genérica.
+
+SÍ quiero:
+- dashboard
+- comparabilidad real
+- exploración por bloques y variables
+- profundidad metodológica
+- escalabilidad
+- interfaz premium
+- que yo solo tenga que poner JSON en /analisis y listo
+
+Comienza ya.

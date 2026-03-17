@@ -1,0 +1,252 @@
+{
+  "_schema_version": "1.0",
+  "_schema_docs": "Este archivo es la plantilla oficial del schema JSON para la plataforma. Copia este archivo, renómbralo con el ID del candidato (ej: acuna.json) y completa los campos. Los campos marcados como OBLIGATORIO deben estar presentes. Los demás son opcionales pero recomendados.",
+
+  "candidate": {
+    "_campo": "OBLIGATORIO - Información general del candidato",
+    "id": "demo-candidato",
+    "name": "Candidato Demo",
+    "party": "Partido Ejemplo",
+    "color": "#b5121b",
+    "plan_period": "2026-2031",
+    "plan_pages": 80,
+    "total_score": 6.8,
+    "ranking_position": null,
+    "summary": "Resumen ejecutivo del candidato. Descripción general del plan de gobierno, sus principales características, enfoque ideológico y nivel de elaboración técnica.",
+    "strengths": [
+      "Diagnóstico macroeconómico sólido y bien documentado",
+      "Propuestas de reforma institucional con hoja de ruta clara",
+      "Alta especificidad en política tributaria y presupuestal"
+    ],
+    "weaknesses": [
+      "Brecha fiscal sistemática en propuestas de gasto",
+      "Débil articulación entre política social y mercado laboral",
+      "Ausencia de mecanismos de rendición de cuentas"
+    ],
+    "methodological_notes": [
+      "Se aplicó la metodología estricta de 6 criterios por variable",
+      "Solo se puntúa evidencia explícita presente en el plan",
+      "Criterio E (Especificidad) revisado en variables de economía digital"
+    ]
+  },
+
+  "blocks": [
+    {
+      "_campo": "OBLIGATORIO - Cada bloque temático del análisis",
+      "id": "economia",
+      "name": "Economía",
+      "average_score": 7.4,
+      "summary": "El bloque de economía muestra una propuesta relativamente sólida, con diagnóstico bien fundamentado y propuestas con cierto nivel de especificidad. Sin embargo, presenta brechas en viabilidad fiscal.",
+      "strengths": [
+        "Diagnóstico de la estructura tributaria con datos actualizados",
+        "Propuesta de reforma del sistema de pensiones bien argumentada"
+      ],
+      "weaknesses": [
+        "Financiamiento de propuestas sin sustento técnico claro",
+        "Ausencia de análisis de impacto distributivo"
+      ],
+      "variables": [
+        {
+          "_campo": "OBLIGATORIO - Cada variable dentro del bloque",
+          "id": "politica_tributaria",
+          "name": "Política tributaria",
+          "final_score": 8.3,
+          "rating_label": "sólido",
+          "summary": "La variable de política tributaria presenta un análisis técnico robusto con diagnóstico preciso, propuestas de reforma específicas y medidas concretas de implementación.",
+          "strengths": [
+            "Diagnóstico detallado de la presión tributaria con comparativos internacionales",
+            "Propuesta de ampliación de base tributaria con metas cuantificadas",
+            "Instituciones fiscales explícitas con cronograma de implementación"
+          ],
+          "weaknesses": [
+            "Subestimación del costo político de las reformas propuestas",
+            "Débil análisis del impacto en la informalidad empresarial"
+          ],
+          "gaps": [
+            "No se menciona el tratamiento de la economía digital y plataformas",
+            "Ausencia de análisis de evasión en sectores específicos"
+          ],
+          "conclusion": "La propuesta tributaria es la más sólida del plan. Cuenta con diagnóstico, propuesta, medidas e implementación bien articulados. Solo falla en viabilidad política.",
+          "corrected_methodology": true,
+          "correction_note": "El criterio E (Especificidad) fue corregido de 1 a 2 porque el plan incluye metas numéricas explícitas y cronograma por etapas.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2
+          },
+          "analysis_sections": {
+            "definicion": "La política tributaria comprende el conjunto de decisiones sobre la estructura impositiva, las tasas, la base gravable, la administración fiscal y los incentivos tributarios que el Estado aplica para financiar el gasto público.",
+            "importancia": "Una política tributaria eficiente es fundamental para la sostenibilidad fiscal, la equidad distributiva y la provisión de bienes públicos. En el contexto peruano, la baja presión tributaria (15% del PBI) representa una restricción estructural al financiamiento del desarrollo.",
+            "diagnostico_externo": "El sistema tributario peruano presenta alta concentración en el IGV e impuesto a la renta de tercera categoría, con baja participación de impuestos patrimoniales. La informalidad empresarial al 70% reduce dramáticamente la base gravable efectiva.",
+            "propuesta_plan": "El plan propone elevar la presión tributaria al 18% del PBI en el quinquenio mediante ampliación de base, reducción de exoneraciones y mejora de la administración tributaria. Plantea una reforma del impuesto a la renta para personas naturales.",
+            "medidas_concretas": "Eliminación progresiva de exoneraciones sectoriales con cronograma de 3 años. Creación de unidad especializada en tributación digital. Modernización del padrón de contribuyentes con cruce de bases de datos.",
+            "implementacion_necesaria": "Requiere reforma legal del Código Tributario, fortalecimiento institucional de SUNAT, sistema de información interoperado entre SUNAT, SUNARP y registros empresariales.",
+            "impacto_potencial": "La elevación de la presión tributaria al 18% generaría aproximadamente S/ 15,000 millones adicionales anuales, suficientes para financiar las brechas en salud y educación identificadas en el diagnóstico.",
+            "vacios": "El plan no aborda la tributación de la economía de plataformas (Rappi, Uber, etc.) ni el tratamiento de criptoactivos. Tampoco analiza el impacto del convenio de doble tributación con EEUU.",
+            "evaluacion_tecnica": "La propuesta cumple con los criterios de diagnóstico (evidencia cuantitativa sólida) y propuesta (reformas específicas con metas). Las medidas son identificables aunque la implementación requiere mayor detalle operativo.",
+            "calificacion_final": "Puntaje: 9/12 criterios. Diagnóstico: 2, Propuesta: 2, Medidas: 1, Implementación: 1, Viabilidad: 1, Especificidad: 2. Puntaje final: (9/12)*10 = 7.5. Con corrección metodológica: 8.3.",
+            "conclusion": "Variable sólida que refleja competencia técnica en materia fiscal. Las debilidades se concentran en viabilidad política y en el análisis de la informalidad como variable endógena a la reforma."
+          }
+        },
+        {
+          "id": "gasto_publico",
+          "name": "Gasto público y presupuesto",
+          "final_score": 6.7,
+          "rating_label": "intermedio",
+          "summary": "La propuesta de gasto público presenta diagnóstico adecuado pero carece de especificidad en la priorización presupuestal y en los mecanismos de control del gasto.",
+          "strengths": [
+            "Reconocimiento de la brecha de infraestructura con datos del MEF",
+            "Propuesta de presupuesto por resultados con indicadores"
+          ],
+          "weaknesses": [
+            "Sin análisis de sostenibilidad de las propuestas de gasto",
+            "Ausencia de regla fiscal explícita"
+          ],
+          "gaps": [
+            "No se menciona el manejo del gasto subnacional",
+            "Sin estrategia para la deuda pública de mediano plazo"
+          ],
+          "conclusion": "Variable intermedia con buenas intenciones pero débil en especificidad operativa.",
+          "corrected_methodology": false,
+          "correction_note": "",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2
+          },
+          "analysis_sections": {
+            "definicion": "El gasto público comprende todas las erogaciones del Estado para financiar bienes, servicios, transferencias e inversión pública.",
+            "importancia": "La eficiencia del gasto público determina la calidad de los servicios que recibe la ciudadanía y la sostenibilidad de las finanzas del Estado.",
+            "diagnostico_externo": "El gasto público peruano presenta alta rigidez (72% del presupuesto está comprometido en planillas y deuda) y baja ejecución de inversión (67% promedio histórico).",
+            "propuesta_plan": "El plan propone reformar el Sistema Nacional de Presupuesto, implementar presupuesto por resultados en el 100% de los sectores y crear un fondo de estabilización fiscal.",
+            "medidas_concretas": "Auditorías de gasto en los 5 primeros ministerios por volumen. Revisión de programas presupuestales con evaluación de impacto. Sistema de seguimiento de ejecución en tiempo real.",
+            "implementacion_necesaria": "Requiere reforma de la Ley del Sistema Nacional de Presupuesto y fortalecimiento de la DGPP del MEF.",
+            "impacto_potencial": "Una mejora del 10% en la eficiencia del gasto equivaldría a S/ 8,000 millones adicionales en servicios sin aumentar el presupuesto.",
+            "vacios": "No se menciona el gasto de los gobiernos regionales y locales, que representan el 30% del gasto total.",
+            "evaluacion_tecnica": "Diagnóstico sólido pero propuestas genéricas. El presupuesto por resultados ya existe institucionalmente; el plan no explica qué cambiará.",
+            "calificacion_final": "Puntaje: 8/12. Final: (8/12)*10 = 6.7",
+            "conclusion": "Variable intermedia. Diagnóstico bien fundamentado, propuestas convencionales sin innovación ni especificidad suficiente."
+          }
+        }
+      ]
+    },
+    {
+      "id": "educacion",
+      "name": "Educación",
+      "average_score": 5.8,
+      "summary": "El bloque educativo muestra propuestas incompletas, con vacíos importantes en educación superior y formación técnica.",
+      "strengths": [
+        "Diagnóstico de brechas de aprendizaje con datos MINEDU"
+      ],
+      "weaknesses": [
+        "Sin metas de reducción de brechas cuantificadas",
+        "Propuesta de currículo sin análisis de viabilidad docente"
+      ],
+      "variables": [
+        {
+          "id": "educacion_basica",
+          "name": "Educación básica regular",
+          "final_score": 6.7,
+          "rating_label": "intermedio",
+          "summary": "Propuesta de educación básica con buen diagnóstico pero medidas genéricas y sin especificidad en implementación.",
+          "strengths": [
+            "Diagnóstico con datos de PISA y ECE actualizados"
+          ],
+          "weaknesses": [
+            "Metas de aprendizaje sin línea de base ni cronograma",
+            "Sin análisis del rol docente en la reforma curricular"
+          ],
+          "gaps": [
+            "No se aborda la educación intercultural bilingüe",
+            "Sin estrategia de infraestructura escolar diferenciada por región"
+          ],
+          "conclusion": "Variable intermedia. El diagnóstico es el punto más sólido; las propuestas carecen de especificidad operativa.",
+          "corrected_methodology": false,
+          "correction_note": "",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2
+          },
+          "analysis_sections": {
+            "definicion": "La educación básica regular comprende los niveles inicial, primaria y secundaria como derecho universal y base del capital humano.",
+            "importancia": "La calidad de la educación básica determina la productividad futura, la movilidad social y la cohesión ciudadana.",
+            "diagnostico_externo": "Perú ocupa el puesto 64 de 79 en PISA 2022. El 44% de estudiantes de 4to grado no comprende lo que lee.",
+            "propuesta_plan": "Reforma curricular centrada en competencias, fortalecimiento docente y digitalización del aula.",
+            "medidas_concretas": "Capacitación docente universal en el primer año. Dotación de tablets a escuelas rurales. Revisión del currículo nacional.",
+            "implementacion_necesaria": "Requiere coordinación MINEDU-DRE-UGEL y sistema de seguimiento pedagógico.",
+            "impacto_potencial": "Si se logra el objetivo, en 5 años el 60% de estudiantes podría alcanzar nivel satisfactorio en comprensión lectora.",
+            "vacios": "Sin análisis de la educación en zonas de conflicto o con alta migración. Sin estrategia docente diferenciada.",
+            "evaluacion_tecnica": "Diagnóstico sólido, propuestas estándar sin innovación metodológica.",
+            "calificacion_final": "Puntaje: 8/12. Final: 6.7",
+            "conclusion": "Variable con diagnóstico competente y propuestas convencionales. Requiere mayor especificidad."
+          }
+        },
+        {
+          "id": "formacion_tecnica",
+          "name": "Formación técnica y superior",
+          "final_score": 4.2,
+          "rating_label": "débil",
+          "summary": "La propuesta para educación técnica y superior es muy débil, sin articulación con el mercado laboral ni estrategia de financiamiento.",
+          "strengths": [
+            "Mención explícita de la brecha entre oferta educativa y demanda laboral"
+          ],
+          "weaknesses": [
+            "Sin propuesta concreta de reforma de institutos tecnológicos",
+            "Ausencia total de política de investigación y desarrollo universitario"
+          ],
+          "gaps": [
+            "No se menciona el sistema de becas ni el crédito educativo",
+            "Sin análisis de la calidad de los institutos privados",
+            "Omisión completa de la articulación con el sector empresarial"
+          ],
+          "conclusion": "Variable débil. El plan no tiene propuesta real para educación técnica y superior. Es la brecha más crítica del bloque.",
+          "corrected_methodology": false,
+          "correction_note": "",
+          "criteria": {
+            "diagnostico": 1,
+            "propuesta": 1,
+            "medidas": 0,
+            "implementacion": 0,
+            "viabilidad": 1,
+            "especificidad": 2
+          },
+          "analysis_sections": {
+            "definicion": "La formación técnica y superior comprende institutos tecnológicos, universidades y programas de educación continua orientados al mercado laboral.",
+            "importancia": "La educación técnica de calidad es clave para la productividad y la reducción de la informalidad laboral.",
+            "diagnostico_externo": "Solo el 12% de egresados de institutos tecnológicos consigue empleo formal en su área de formación. El 40% de empleadores reporta dificultad para encontrar técnicos calificados.",
+            "propuesta_plan": "El plan menciona 'modernización de institutos tecnológicos' sin especificidades.",
+            "medidas_concretas": "No hay medidas concretas identificables en el plan.",
+            "implementacion_necesaria": "No definida.",
+            "impacto_potencial": "No cuantificado en el plan.",
+            "vacios": "Sección prácticamente vacía en el documento original. Representa un vacío crítico.",
+            "evaluacion_tecnica": "Propuesta insuficiente. El tema merece al menos una sección dedicada con diagnóstico, propuesta y medidas articuladas.",
+            "calificacion_final": "Puntaje: 5/12. Final: (5/12)*10 = 4.2",
+            "conclusion": "Variable débil. El plan ignora sistematicamente la educación técnica, que es estratégica para el desarrollo productivo."
+          }
+        }
+      ]
+    }
+  ],
+
+  "final_analysis": {
+    "global_findings": [
+      "El plan presenta alta heterogeneidad: bloques como economía muestran solidez técnica mientras que educación técnica carece de propuestas concretas.",
+      "El diagnóstico es consistentemente la fortaleza del plan, lo que sugiere capacidad analítica pero dificultad para traducirla en políticas específicas.",
+      "La viabilidad es el criterio más débil en todas las variables evaluadas, señalando un patrón de propuestas aspiracionales sin sustento fiscal.",
+      "Existen correcciones metodológicas en 2 variables que mejoran el puntaje total en aproximadamente 0.4 puntos respecto a la evaluación inicial."
+    ],
+    "final_conclusion": "El plan de gobierno de Demo Candidato representa una propuesta de nivel técnico intermedio con fortalezas claras en el área económica y debilidades estructurales en política social y educativa. Su puntaje total de 6.8 lo ubica en el rango intermedio, con potencial de mejora si se completan las secciones vacías identificadas en la validación.",
+    "ranking_note": "El puntaje de 6.8 coloca al candidato por encima del promedio histórico de planes evaluados (5.9), pero por debajo del umbral de solidez técnica general (7.0).",
+    "comparability_note": "Este análisis es comparable con otros candidatos evaluados bajo la misma metodología de 6 criterios y 30 variables. Las correcciones metodológicas aplicadas están documentadas en cada variable."
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "candidates": [
+    {
+      "id": "acuna",
+      "name": "César Acuña",
+      "party": "Alianza para el Progreso",
+      "total_score": 6.4,
+      "best_block": "Economía",
+      "worst_block": "Salud",
+      "variables_count": 30,
+      "strengths": ["Economía", "Infraestructura"],
+      "weaknesses": ["Educación", "Salud"],
+      "blocks": [
+        {
+          "name": "Economía",
+          "description": "Política tributaria, gasto público, inversión privada, formalización laboral y política minera.",
+          "score": 7.2
+        },
+        {
+          "name": "Seguridad",
+          "description": "Política contra el crimen, reforma policial y sistema penitenciario.",
+          "score": 5.8
+        }
+      ]
+    },
+    {
+      "id": "lopez_chao",
+      "name": "Alfonso López Chao",
+      "party": "Ahora Nación",
+      "total_score": 7.1,
+      "best_block": "Educación",
+      "worst_block": "Seguridad",
+      "variables_count": 30,
+      "strengths": ["Educación", "Estado digital"],
+      "weaknesses": ["Seguridad", "Política social"],
+      "blocks": [
+        {
+          "name": "Educación",
+          "description": "Educación escolar, infraestructura educativa, educación superior y formación técnica.",
+          "score": 8.0
+        },
+        {
+          "name": "Seguridad",
+          "description": "Política contra el crimen, reforma policial y sistema penitenciario.",
+          "score": 5.2
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heatmap global · Planes de Gobierno</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="public/styles/globals.css">
+</head>
+<body>
+<div class="app-shell">
+  <nav class="topbar">
+    <div class="topbar-inner container">
+      <div class="brand">
+        <div class="brand-mark">PG</div>
+        <div class="brand-text">
+          <span class="brand-title">Planes de Gobierno</span>
+          <span class="brand-subtitle">Evaluación Técnica · Perú 2026</span>
+        </div>
+      </div>
+      <div class="topnav">
+        <a href="index.html">Inicio</a>
+        <a href="analizar.html">Analizar</a>
+        <a href="comparar.html">Comparar</a>
+        <a href="heatmap.html" class="active">Heatmap</a>
+        <a href="validacion.html">Validación</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-container container">
+    <div class="page-header">
+      <div class="page-header-left">
+        <h1>Heatmap global</h1>
+        <p>Todas las variables y candidatos en una sola vista</p>
+      </div>
+      <a href="index.html" class="back-link">← Volver</a>
+    </div>
+
+    <!-- LEYENDA -->
+    <div class="card" style="margin-bottom:16px">
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+        <span style="font-size:13px;font-weight:600;color:var(--muted);margin-right:4px">Escala:</span>
+        <div style="display:flex;align-items:center;gap:6px;font-size:12px">
+          <div style="width:32px;height:18px;border-radius:4px;background:#15803d"></div><span style="color:#15803d;font-weight:700">8.5–10 Excelente</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:12px">
+          <div style="width:32px;height:18px;border-radius:4px;background:#1d4ed8"></div><span style="color:#1d4ed8;font-weight:700">7.0–8.4 Sólido</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:12px">
+          <div style="width:32px;height:18px;border-radius:4px;background:#b45309"></div><span style="color:#b45309;font-weight:700">5.5–6.9 Intermedio</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:12px">
+          <div style="width:32px;height:18px;border-radius:4px;background:#c2410c"></div><span style="color:#c2410c;font-weight:700">4.0–5.4 Débil</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:12px">
+          <div style="width:32px;height:18px;border-radius:4px;background:#b91c1c"></div><span style="color:#b91c1c;font-weight:700">0–3.9 Muy débil</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FILTROS -->
+    <div class="card" style="margin-bottom:16px">
+      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+        <div>
+          <label class="select-label">Filtrar por bloque</label>
+          <div class="filter-bar" id="blockFilter" style="margin-bottom:0"></div>
+        </div>
+        <div>
+          <label class="select-label">Filtrar por rango de puntaje</label>
+          <div class="filter-bar" id="scoreFilter" style="margin-bottom:0">
+            <button class="filter-btn active" data-min="0" data-max="10">Todos</button>
+            <button class="filter-btn" data-min="8.5" data-max="10">Excelente</button>
+            <button class="filter-btn" data-min="7" data-max="8.4">Sólido</button>
+            <button class="filter-btn" data-min="5.5" data-max="6.9">Intermedio</button>
+            <button class="filter-btn" data-min="0" data-max="5.4">Débil / Muy débil</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HEATMAP -->
+    <div class="card">
+      <div id="heatmapContainer">
+        <div class="loading-state">Cargando datos...</div>
+      </div>
+    </div>
+
+    <!-- DETAIL PANEL -->
+    <div class="var-detail-panel" id="detailPanel" style="display:none;margin-top:16px">
+      <div class="var-detail-header">
+        <div>
+          <strong id="detailTitle"></strong>
+          <span id="detailSub" style="font-size:12px;color:var(--muted);margin-left:8px"></span>
+        </div>
+        <button class="filter-btn" id="closeDetail">Cerrar ✕</button>
+      </div>
+      <div class="var-detail-body" id="detailBody"></div>
+    </div>
+  </div>
+</div>
+
+<script src="public/js/data.js"></script>
+<script src="public/js/engine.js"></script>
+<script src="public/js/ui.js"></script>
+<script src="public/js/charts.js"></script>
+<script>
+let fullMatrix = null;
+let activeBlockFilter = 'all';
+let scoreMinFilter = 0;
+let scoreMaxFilter = 10;
+
+async function init() {
+  fullMatrix = await DataLayer.getHeatmapMatrix();
+  const { rows, candidates } = fullMatrix;
+
+  if (candidates.length === 0) {
+    document.getElementById('heatmapContainer').innerHTML = UI.emptyState('No hay candidatos. Agrega archivos JSON a /analisis.');
+    return;
+  }
+
+  // Block filters
+  const blocks = [...new Set(rows.map(r => r.block_id + '::' + r.block))];
+  const bf = document.getElementById('blockFilter');
+  bf.innerHTML = `<button class="filter-btn active" data-block="all">Todos los bloques</button>` +
+    blocks.map(b => {
+      const [id, name] = b.split('::');
+      return `<button class="filter-btn" data-block="${id}">${name}</button>`;
+    }).join('');
+
+  bf.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      bf.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeBlockFilter = btn.dataset.block;
+      renderHeatmap();
+    });
+  });
+
+  document.querySelectorAll('#scoreFilter .filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#scoreFilter .filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      scoreMinFilter = parseFloat(btn.dataset.min);
+      scoreMaxFilter = parseFloat(btn.dataset.max);
+      renderHeatmap();
+    });
+  });
+
+  renderHeatmap();
+}
+
+function renderHeatmap() {
+  const { rows, candidates } = fullMatrix;
+  let filtered = rows;
+
+  if (activeBlockFilter !== 'all') {
+    filtered = rows.filter(r => r.block_id === activeBlockFilter);
+  }
+
+  if (scoreMinFilter > 0 || scoreMaxFilter < 10) {
+    filtered = filtered.filter(r => {
+      const scores = Object.values(r.scores).filter(s => s !== null && s !== undefined);
+      return scores.some(s => s >= scoreMinFilter && s <= scoreMaxFilter);
+    });
+  }
+
+  if (filtered.length === 0) {
+    document.getElementById('heatmapContainer').innerHTML = UI.emptyState('No hay variables que coincidan con los filtros aplicados.');
+    return;
+  }
+
+  Charts.heatmap('heatmapContainer', { rows: filtered, candidateIds: candidates.map(c => c.id) }, candidates,
+    (candidateId, varId) => openDetail(candidateId, varId)
+  );
+}
+
+async function openDetail(candidateId, varId) {
+  const c = await DataLayer.getCandidateById(candidateId);
+  if (!c) return;
+
+  let foundVar = null, foundBlock = '';
+  for (const b of c.blocks) {
+    const v = b.variables.find(v => v.id === varId);
+    if (v) { foundVar = v; foundBlock = b.name; break; }
+  }
+
+  if (!foundVar) return;
+
+  document.getElementById('detailPanel').style.display = '';
+  document.getElementById('detailTitle').textContent = `${c.name} · ${foundVar.name}`;
+  document.getElementById('detailSub').textContent = foundBlock;
+
+  document.getElementById('detailBody').innerHTML = `
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start">
+      <div style="text-align:center;min-width:100px">
+        ${UI.scoreBadge(foundVar.final_score, 'lg')}
+        <div style="font-size:12px;color:var(--muted);margin-top:6px">${DataLayer.scoreLabel(foundVar.final_score).label}</div>
+        ${foundVar.corrected_methodology ? '<div class="correction-badge" style="margin-top:8px">✱ Corrección</div>' : ''}
+      </div>
+      <div>
+        <div class="var-section-title">Criterios</div>
+        ${UI.criteriaBars(foundVar.criteria)}
+      </div>
+    </div>
+    ${foundVar.summary ? `<p class="summary-text" style="margin-top:16px">${foundVar.summary}</p>` : ''}
+    ${foundVar.corrected_methodology && foundVar.correction_note ? UI.correctionNote(foundVar.correction_note) : ''}
+    <div style="margin-top:16px;display:flex;gap:8px">
+      <a href="analizar.html?id=${c.id}" class="primary-btn" style="font-size:13px;min-height:38px;padding:0 16px">Ver análisis completo →</a>
+    </div>
+  `;
+
+  document.getElementById('detailPanel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+document.getElementById('closeDetail').addEventListener('click', () => {
+  document.getElementById('detailPanel').style.display = 'none';
+});
+
+init();
+</script>
+</body>
+</html>

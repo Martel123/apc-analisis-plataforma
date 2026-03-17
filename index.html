@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planes de Gobierno · Evaluación Técnica 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="public/styles/globals.css">
+  <link rel="stylesheet" href="public/styles/home.css">
+</head>
+<body>
+  <div class="app-shell">
+    <nav class="topbar">
+      <div class="topbar-inner container">
+        <div class="brand">
+          <div class="brand-mark">PG</div>
+          <div class="brand-text">
+            <span class="brand-title">Planes de Gobierno</span>
+            <span class="brand-subtitle">Evaluación Técnica · Perú 2026</span>
+          </div>
+        </div>
+        <div class="topnav">
+          <a href="analizar.html">Analizar</a>
+          <a href="comparar.html">Comparar</a>
+          <a href="heatmap.html">Heatmap</a>
+          <a href="validacion.html">Validación</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="home-main container">
+      <div class="home-eyebrow">
+        <span class="eyebrow">▸ Metodología técnica · 30 variables · 8 bloques</span>
+      </div>
+
+      <h1 class="home-title">
+        Análisis técnico de<br><span class="text-primary">planes de gobierno</span>
+      </h1>
+
+      <p class="home-desc">
+        Plataforma independiente de evaluación técnica de propuestas presidenciales.<br>
+        Basada en evidencia explícita. Sin sesgos ideológicos.
+      </p>
+
+      <div class="home-actions">
+        <a href="analizar.html" class="primary-btn">Analizar un candidato</a>
+        <a href="comparar.html" class="secondary-btn">Comparar candidatos</a>
+        <a href="heatmap.html" class="secondary-btn">Heatmap global</a>
+      </div>
+
+      <div class="home-stats" id="homeStats">
+        <div class="home-stat">
+          <strong id="statCandidates">—</strong>
+          <span>candidatos evaluados</span>
+        </div>
+        <div class="home-stat">
+          <strong>30</strong>
+          <span>variables por candidato</span>
+        </div>
+        <div class="home-stat">
+          <strong>8</strong>
+          <span>bloques temáticos</span>
+        </div>
+        <div class="home-stat">
+          <strong>6</strong>
+          <span>criterios por variable</span>
+        </div>
+      </div>
+
+      <div class="home-ranking-section">
+        <h2 class="section-title-sm">Ranking general</h2>
+        <div class="ranking-list" id="rankingList">
+          <div class="loading-state">Cargando candidatos...</div>
+        </div>
+      </div>
+
+      <div class="home-modules">
+        <a href="analizar.html" class="module-card">
+          <div class="module-icon">◉</div>
+          <div class="module-info">
+            <strong>Análisis por candidato</strong>
+            <span>Bloques, variables, criterios y análisis profundo</span>
+          </div>
+          <div class="module-arrow">→</div>
+        </a>
+        <a href="comparar.html" class="module-card">
+          <div class="module-icon">⊕</div>
+          <div class="module-info">
+            <strong>Comparación entre candidatos</strong>
+            <span>Radar múltiple, barras y tabla comparativa</span>
+          </div>
+          <div class="module-arrow">→</div>
+        </a>
+        <a href="heatmap.html" class="module-card">
+          <div class="module-icon">▦</div>
+          <div class="module-info">
+            <strong>Heatmap global</strong>
+            <span>Todas las variables y candidatos en una vista</span>
+          </div>
+          <div class="module-arrow">→</div>
+        </a>
+        <a href="validacion.html" class="module-card">
+          <div class="module-icon">✓</div>
+          <div class="module-info">
+            <strong>Validación de JSON</strong>
+            <span>Detecta campos faltantes o errores estructurales</span>
+          </div>
+          <div class="module-arrow">→</div>
+        </a>
+      </div>
+    </main>
+  </div>
+
+  <script src="public/js/data.js"></script>
+  <script>
+    async function init() {
+      const candidates = await DataLayer.getCandidates();
+      document.getElementById('statCandidates').textContent = candidates.length;
+
+      const ranking = await DataLayer.getRanking();
+      const list = document.getElementById('rankingList');
+
+      if (ranking.length === 0) {
+        list.innerHTML = `<div class="empty-state">No hay candidatos en /analisis. Agrega archivos JSON para comenzar.</div>`;
+        return;
+      }
+
+      list.innerHTML = ranking.map((c, i) => {
+        const { label, cls } = DataLayer.scoreLabel(c.total_score);
+        const bar = c.total_score !== null ? (c.total_score / 10) * 100 : 0;
+        return `
+          <a href="analizar.html?id=${c.id}" class="ranking-item">
+            <div class="rank-pos">${i + 1}</div>
+            <div class="rank-color-bar" style="background:${c.color}"></div>
+            <div class="rank-info">
+              <strong class="rank-name">${c.name}</strong>
+              <span class="rank-party">${c.party}</span>
+            </div>
+            <div class="rank-score-wrap">
+              <div class="rank-bar-track">
+                <div class="rank-bar-fill" style="width:${bar}%; background:${DataLayer.scoreColor(c.total_score)}"></div>
+              </div>
+              <span class="rank-score ${cls}">${c.total_score !== null ? c.total_score.toFixed(1) : '—'}</span>
+            </div>
+            <div class="rank-label ${cls}">${label}</div>
+          </a>`;
+      }).join('');
+    }
+    init();
+  </script>
+</body>
+</html>

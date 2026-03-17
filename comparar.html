@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comparar candidatos · Planes de Gobierno</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="public/styles/globals.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<div class="app-shell">
+  <nav class="topbar">
+    <div class="topbar-inner container">
+      <div class="brand">
+        <div class="brand-mark">PG</div>
+        <div class="brand-text">
+          <span class="brand-title">Planes de Gobierno</span>
+          <span class="brand-subtitle">Evaluación Técnica · Perú 2026</span>
+        </div>
+      </div>
+      <div class="topnav">
+        <a href="index.html">Inicio</a>
+        <a href="analizar.html">Analizar</a>
+        <a href="comparar.html" class="active">Comparar</a>
+        <a href="heatmap.html">Heatmap</a>
+        <a href="validacion.html">Validación</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-container container">
+    <div class="page-header">
+      <div class="page-header-left">
+        <h1>Comparación entre candidatos</h1>
+        <p>Selecciona 2 o más candidatos para comparar</p>
+      </div>
+      <a href="index.html" class="back-link">← Volver</a>
+    </div>
+
+    <!-- SELECTOR -->
+    <div class="card" style="margin-bottom:20px">
+      <div class="card-title">Seleccionar candidatos</div>
+      <div id="candidateCheckboxes" style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px">
+        <div class="loading-state">Cargando candidatos...</div>
+      </div>
+      <button class="primary-btn" id="compareBtn" style="opacity:0.5" disabled>Comparar seleccionados</button>
+    </div>
+
+    <!-- RESULTS -->
+    <div id="comparisonResults" style="display:none">
+
+      <!-- GENERAL SCORES -->
+      <div class="card" style="margin-bottom:20px">
+        <div class="card-title">Puntaje general</div>
+        <div id="generalScores"></div>
+      </div>
+
+      <!-- TABS -->
+      <div class="card" style="margin-bottom:20px">
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="radar">Radar</button>
+          <button class="tab-btn" data-tab="bloques">Por bloques</button>
+          <button class="tab-btn" data-tab="tabla">Tabla comparativa</button>
+          <button class="tab-btn" data-tab="brechas">Brechas</button>
+        </div>
+
+        <div class="tab-panel active" id="tab-radar">
+          <div style="max-width:460px;margin:0 auto">
+            <canvas id="multiRadarChart" height="380"></canvas>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="tab-bloques">
+          <div id="blockFilter2" class="filter-bar"></div>
+          <div style="height:300px;position:relative">
+            <canvas id="blockBarChart"></canvas>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="tab-tabla">
+          <div class="comparison-table-wrap" id="compTable"></div>
+        </div>
+
+        <div class="tab-panel" id="tab-brechas">
+          <div id="brechasContent"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="public/js/data.js"></script>
+<script src="public/js/engine.js"></script>
+<script src="public/js/ui.js"></script>
+<script src="public/js/charts.js"></script>
+<script>
+let allCandidates = [];
+let selectedIds = [];
+let compData = null;
+let allBlocks = [];
+
+const COLORS = ['#b5121b','#1d4ed8','#16a34a','#d97706','#7c3aed','#0891b2'];
+
+async function init() {
+  allCandidates = await DataLayer.getCandidates();
+  const wrap = document.getElementById('candidateCheckboxes');
+
+  if (allCandidates.length === 0) {
+    wrap.innerHTML = UI.emptyState('No hay candidatos en /analisis. Agrega archivos JSON para comenzar.');
+    return;
+  }
+
+  wrap.innerHTML = allCandidates.map(c => `
+    <label class="filter-btn" style="cursor:pointer;display:flex;align-items:center;gap:8px">
+      <input type="checkbox" value="${c.id}" style="accent-color:${c.color}">
+      <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${c.color}"></span>
+      ${c.name}
+    </label>
+  `).join('');
+
+  wrap.querySelectorAll('input[type=checkbox]').forEach(cb => {
+    cb.addEventListener('change', updateSelection);
+  });
+
+  if (allCandidates.length >= 2) {
+    wrap.querySelectorAll('input[type=checkbox]')[0].checked = true;
+    wrap.querySelectorAll('input[type=checkbox]')[1].checked = true;
+    updateSelection();
+  }
+}
+
+function updateSelection() {
+  selectedIds = [...document.querySelectorAll('#candidateCheckboxes input:checked')].map(cb => cb.value);
+  const btn = document.getElementById('compareBtn');
+  if (selectedIds.length >= 2) {
+    btn.disabled = false;
+    btn.style.opacity = '1';
+    btn.textContent = `Comparar ${selectedIds.length} candidatos`;
+  } else {
+    btn.disabled = true;
+    btn.style.opacity = '0.5';
+    btn.textContent = 'Selecciona al menos 2 candidatos';
+  }
+}
+
+document.getElementById('compareBtn').addEventListener('click', async () => {
+  compData = await DataLayer.getComparisonData(selectedIds);
+  if (!compData) return;
+  renderComparison(compData);
+  document.getElementById('comparisonResults').style.display = '';
+  document.getElementById('comparisonResults').scrollIntoView({ behavior: 'smooth' });
+});
+
+function renderComparison(data) {
+  const { candidates, blocks } = data;
+
+  // General scores
+  const sorted = [...candidates].sort((a, b) => (b.total_score || 0) - (a.total_score || 0));
+  document.getElementById('generalScores').innerHTML = sorted.map((c, i) => {
+    const { label, cls } = DataLayer.scoreLabel(c.total_score);
+    return `
+      <div style="display:grid;grid-template-columns:24px 4px 1fr auto auto;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid var(--line)">
+        <span style="font-weight:800;color:var(--muted);text-align:center">${i+1}</span>
+        <div style="width:4px;height:32px;border-radius:99px;background:${c.color}"></div>
+        <div>
+          <div style="font-weight:700;font-size:15px">${c.name}</div>
+          <div style="font-size:12px;color:var(--muted)">${c.party}</div>
+        </div>
+        <div style="width:180px;height:8px;background:var(--line);border-radius:99px;overflow:hidden">
+          <div style="width:${(c.total_score||0)*10}%;height:100%;border-radius:99px;background:${c.color}"></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px">
+          ${UI.scoreBadge(c.total_score, 'md')}
+          <span class="rank-label ${cls}">${label}</span>
+        </div>
+      </div>`;
+  }).join('');
+
+  // Multi radar
+  const labels = [...new Set(candidates.flatMap(c => c.blocks.map(b => b.name)))];
+  const datasets = candidates.map((c, i) => ({
+    label: c.name,
+    data: labels.map(l => c.blocks.find(b => b.name === l)?.average_score ?? 0),
+    backgroundColor: Engine.hexToRgba(c.color, 0.12),
+    borderColor: c.color,
+    borderWidth: 2,
+    pointBackgroundColor: c.color,
+    pointRadius: 4
+  }));
+  Charts.radar('multiRadarChart', { labels, datasets });
+
+  // Block bar + filter
+  allBlocks = blocks;
+  const bf = document.getElementById('blockFilter2');
+  bf.innerHTML = `<button class="filter-btn active" data-block="all">Todos</button>` +
+    blocks.map(b => `<button class="filter-btn" data-block="${b.id}">${b.name}</button>`).join('');
+
+  bf.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      bf.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderBlockBar(btn.dataset.block === 'all' ? blocks : blocks.filter(b => b.id === btn.dataset.block), candidates);
+    });
+  });
+
+  renderBlockBar(blocks, candidates);
+
+  // Table
+  renderCompTable(candidates, blocks);
+
+  // Brechas
+  renderBrechas(candidates, blocks);
+}
+
+function renderBlockBar(blocks, candidates) {
+  const labels = blocks.map(b => b.name);
+  const datasets = candidates.map((c, i) => ({
+    label: c.name,
+    data: blocks.map(b => b.scores[c.id] ?? 0),
+    backgroundColor: Engine.hexToRgba(c.color, 0.8),
+    borderColor: c.color,
+    borderWidth: 1,
+    borderRadius: 4
+  }));
+  Charts.bar('blockBarChart', labels, datasets, {
+    chartOptions: {
+      scales: {
+        y: { min: 0, max: 10 },
+        x: { ticks: { font: { size: 11 } } }
+      }
+    }
+  });
+}
+
+function renderCompTable(candidates, blocks) {
+  const allVarIds = new Map();
+  candidates.forEach(c => {
+    c.blocks.forEach(b => b.variables.forEach(v => {
+      if (!allVarIds.has(v.id)) allVarIds.set(v.id, { name: v.name, block: b.name });
+    }));
+  });
+
+  let html = `<table class="comparison-table">
+    <thead>
+      <tr>
+        <th>Variable</th>
+        <th>Bloque</th>
+        ${candidates.map(c => `<th style="color:${c.color}">${c.name}</th>`).join('')}
+        <th>Diferencia</th>
+      </tr>
+    </thead>
+    <tbody>`;
+
+  allVarIds.forEach((info, varId) => {
+    const scores = candidates.map(c => {
+      for (const b of c.blocks) {
+        const v = b.variables.find(v => v.id === varId);
+        if (v) return v.final_score;
+      }
+      return null;
+    });
+    const valid = scores.filter(s => s !== null);
+    const diff = valid.length >= 2 ? Math.max(...valid) - Math.min(...valid) : null;
+    html += `<tr>
+      <td><strong>${info.name}</strong></td>
+      <td style="color:var(--muted);font-size:12px">${info.block}</td>
+      ${scores.map(s => `<td>${UI.scoreBadge(s, 'sm')}</td>`).join('')}
+      <td><span style="font-weight:700;color:${diff > 3 ? '#b91c1c' : diff > 1.5 ? '#d97706' : '#16a34a'}">${diff !== null ? diff.toFixed(1) : '—'}</span></td>
+    </tr>`;
+  });
+
+  html += `</tbody></table>`;
+  document.getElementById('compTable').innerHTML = html;
+}
+
+function renderBrechas(candidates, blocks) {
+  const gaps = [];
+  blocks.forEach(b => {
+    const scores = Object.entries(b.scores).map(([cid, s]) => ({
+      cid, name: candidates.find(c => c.id === cid)?.name || cid, score: s
+    })).filter(x => x.score !== null).sort((a, z) => z.score - a.score);
+    if (scores.length >= 2) {
+      gaps.push({ block: b.name, leader: scores[0], laggard: scores[scores.length-1], diff: scores[0].score - scores[scores.length-1].score });
+    }
+  });
+  gaps.sort((a, b) => b.diff - a.diff);
+
+  document.getElementById('brechasContent').innerHTML = gaps.length === 0
+    ? UI.emptyState('Sin datos de brechas')
+    : `<div style="display:flex;flex-direction:column;gap:12px">` +
+      gaps.map(g => `
+        <div class="card-sm" style="display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px">
+          <div>
+            <div style="font-weight:700;margin-bottom:4px">${g.block}</div>
+            <div style="font-size:13px;color:var(--muted)">
+              Líder: <strong>${g.leader.name}</strong> (${g.leader.score.toFixed(1)}) 
+              · Rezago: <strong>${g.laggard.name}</strong> (${g.laggard.score.toFixed(1)})
+            </div>
+          </div>
+          <div style="text-align:center">
+            <div style="font-size:1.4rem;font-weight:900;color:${g.diff > 3 ? '#b91c1c' : g.diff > 1.5 ? '#d97706' : '#2563eb'}">
+              Δ ${g.diff.toFixed(1)}
+            </div>
+            <div style="font-size:11px;color:var(--muted)">brecha</div>
+          </div>
+        </div>`).join('') + `</div>`;
+}
+
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+  });
+});
+
+init();
+</script>
+</body>
+</html>
