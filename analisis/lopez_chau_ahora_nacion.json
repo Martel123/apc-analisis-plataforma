@@ -1,0 +1,1867 @@
+{
+  "candidate": {
+    "id": "alfonso_lopez_chau",
+    "name": "Alfonso López Chau",
+    "party": "Ahora Nación",
+    "color": "",
+    "plan_period": "2026-2031",
+    "plan_pages": null,
+    "total_score": 6.6,
+    "ranking_position": 2,
+    "summary": "El plan de Alfonso López Chau obtiene 6.6/10 con la metodología estricta de seis criterios. Es el segundo candidato mejor calificado del proceso electoral analizado. Sus fortalezas se concentran en seguridad (9.2/10) y política social (8.6/10), con diagnóstico basado en fuentes verificables y metas cuantificadas. Las debilidades principales son la ausencia de instrumentos tributarios y de inversión privada en el bloque económico, y la práctica ausencia de política tecnológica transversal.",
+    "final_conclusion": "El plan de gobierno de Alfonso López Chau — Ahora Nación obtiene un resultado final de 6.6/10 con la metodología estricta aplicada correctamente. Es el segundo candidato mejor calificado del proceso electoral analizado hasta ahora.\n\nEl hallazgo más importante del análisis corregido es que el bloque de seguridad (9.2/10) fue significativamente subestimado en el análisis original. El plan contiene medidas técnicamente más específicas de las que el análisis previo reconoció: nueva ley con institución ejecutora, sistema interoperable con cuatro instituciones nombradas, metas cuantificadas en victimización y ascensos policiales, SUNEDU como supervisora de escuelas PNP. Estas medidas cumplen claramente el criterio de especificidad de la rúbrica oficial.\n\nEl hallazgo complementario es que el bloque económico (5.5/10) está bien diagnosticado pero débilmente instrumentado. El plan sabe qué problemas tiene la economía peruana pero no desarrolla los instrumentos para resolverlos en las variables de tributación e inversión privada. Esta asimetría entre diagnóstico y propuesta es la característica más consistente del plan en los bloques donde cae.\n\nLa propuesta de López Chau es técnicamente más sólida de lo que el análisis original sugería, especialmente en seguridad, política social y salud, donde el plan tiene datos verificables, instituciones nombradas y metas cuantificadas. La brecha principal está en el financiamiento: muchas de sus propuestas más ambiciosas no tienen fuente de financiamiento identificada, lo que cuestiona su viabilidad fiscal.",
+    "structural_strengths": [
+      "El bloque de seguridad más técnicamente desarrollado del proceso electoral (9.2/10): nueva Ley del Sistema Nacional de Seguridad Ciudadana, sistema informático interoperable PNP-MP-PJ-INPE, prueba de polígrafo para admisión policial, SUNEDU como supervisora de escuelas PNP, metas cuantificadas (17.2% victimización, 30% factor disciplinario en ascensos, 0% inversiones pendientes INPE), modificación de la Ley Universitaria.",
+      "La propuesta de política social más sólida entre los candidatos analizados (8.6/10): reducción de pobreza y programas sociales obtienen 9.2/10 cada uno por datos cuantificados de línea base (INEI 2024: 27.6% pobreza, 68.7% de pobres en zonas urbanas, 31.6% cobertura primera infancia, 0% transferencias ante emergencias) y metas verificables (70% cobertura primera infancia, 25% afectados por emergencias atendidos). El rediseño de Juntos para la nueva geografía de la pobreza urbana es una propuesta técnicamente justificada.",
+      "Diagnóstico con fuentes propias verificables: el plan cita datos con fuentes: Evaluación Muestral 2024 (UMC-MINEDU), ENAHO 2022, INEI 2024, SUNASS 2025, Informe del Consejo Fiscal N°03-2025-CF (con URL), datos de la red vial por tipo. Esto diferencia al plan de muchos otros que hacen diagnóstico narrativo sin evidencia citada."
+    ],
+    "structural_weaknesses": [
+      "El bloque económico más débil: tributaria e inversión privada sin instrumentos (3.3/10 cada una). La política tributaria y la inversión privada son propuestas de principios sin instrumentos concretos. La SUNAT no aparece con mandato tributario. ProInversión no aparece. Las metas de recaudación y de inversión privada son objetivos sin política que los sustente. En un plan que prioriza la estabilidad macroeconómica, la ausencia de reforma tributaria y de política de inversión es la mayor inconsistencia.",
+      "El bloque tecnológico prácticamente ausente excepto en digitalización (4.4/10): la IA (0.8/10) y la ciberseguridad (4.2/10) son ausencias graves en un plan que propone sistemas interoperables masivos (PNP-MP-PJ-INPE, historias clínicas) sin política de protección de datos. La paradoja tecnológica del plan es exactamente la inversa de la paradoja de seguridad: propone digitalización amplia sin gobernanza digital.",
+      "Financiamiento ausente en variables costosas: las variables de mayor costo (sistema de salud, infraestructura educativa, vivienda) no tienen fuente de financiamiento identificada. El plan propone cobertura universal de salud, 100% de escuelas con alimentación, PDUs en todos los municipios y cierre del déficit habitacional sin especificar cuánto cuesta ni cómo se financia."
+    ],
+    "methodological_notes": [
+      "Puntajes asignados sin desglosar los seis criterios en el análisis original. Este análisis aplica la rúbrica oficial en cada variable.",
+      "Estructura inconsistente entre variables en el análisis original. Este documento usa la estructura completa estándar en todas.",
+      "Subestimación del bloque de seguridad: el plan tiene medidas muy concretas (nueva ley del sistema de seguridad, sistema interoperable PNP-MP-PJ-INPE, prueba de polígrafo, supervisión de escuelas PNP por SUNEDU, metas cuantificadas). El análisis original no las reconoció bien.",
+      "Sobreestimación en salud y social sin justificación correcta en el análisis original. Con la rúbrica aplicada bien, salud pública sí obtiene 9.2/10 por datos de ENAHO + medidas concretas + MINSA y EsSalud nombrados.",
+      "Variables incompletas en el análisis original: no calificaba explícitamente todas las variables. Este documento completa las 30.",
+      "Resultado corregido: 6.6/10 (vs. el promedio inconsistente del original). La diferencia principal: seguridad y política social suben significativamente; tributaria, inversión privada, infraestructura educativa y tecnología bajan por ausencia de especificidad real en el plan."
+    ],
+    "ranking_context": [
+      "Jorge Nieto (PBG): 7.1/10 — Fortaleza: Innovación institucional densa. Debilidad: Brecha fiscal sistemática.",
+      "Alfonso López Chau (Ahora Nación): 6.6/10 — Fortaleza: Seguridad y política social. Debilidad: Economía sin instrumentos.",
+      "Keiko Fujimori (Fuerza Popular): 5.34/10 — Fortaleza: Diagnóstico con fuentes. Debilidad: Tensión fiscal no resuelta.",
+      "José Williams (Avanza País): 5.08/10 — Fortaleza: Política minera y salud. Debilidad: Baja especificidad general.",
+      "Carlos Álvarez (País para Todos): 3.7/10 — Fortaleza: Reforma previsional (9.2/10). Debilidad: Seguridad sin política pública."
+    ],
+    "analysis_version": "Versión reescrita con fuentes externas y lenguaje claro — Análisis corregido 30 variables 8 bloques",
+    "source_document_title": "Análisis Técnico de Plan de Gobierno — Partido: Ahora Nación — Candidato presidencial: Alfonso López Chau"
+  },
+  "methodology": {
+    "summary": "Cada variable recibe puntos en seis criterios. Cada criterio va de 0 a 2 puntos (máximo 12 puntos en total). La nota final se calcula así: (suma de puntos ÷ 12) × 10.",
+    "formula": "(suma de puntos / 12) × 10",
+    "criteria": [
+      {
+        "id": "D",
+        "name": "Diagnóstico",
+        "description": "¿Reconoce el problema con datos reales? (0 = no existe; 1 = reconocimiento general sin datos; 2 = con datos verificables)"
+      },
+      {
+        "id": "P",
+        "name": "Propuesta",
+        "description": "¿Ofrece una solución coherente? (0 = sin propuesta; 1 = intención general; 2 = política clara y definida)"
+      },
+      {
+        "id": "M",
+        "name": "Medidas",
+        "description": "¿Hay acciones concretas, no solo buenas intenciones? (0 = sin medidas; 1 = una medida o medidas generales; 2 = varias medidas con herramientas reales)"
+      },
+      {
+        "id": "Im",
+        "name": "Implementación",
+        "description": "¿Nombra quién va a ejecutar cada cosa? (0 = sin implementación; 1 = instituciones mencionadas sin mecanismo; 2 = instituciones + mecanismos de ejecución claros)"
+      },
+      {
+        "id": "V",
+        "name": "Viabilidad",
+        "description": "¿Las propuestas son realistas? (0 = inviable; 1 = posible con vacíos importantes; 2 = razonablemente viable)"
+      },
+      {
+        "id": "E",
+        "name": "Especificidad",
+        "description": "¿Hay al menos dos elementos concretos: institución + norma, instrumento + meta? (0 = solo declaración política; 1 = menciona instrumentos generales; 2 = ≥ 2 elementos concretos)"
+      }
+    ],
+    "main_rule": "Solo se puntúa lo que está explícitamente escrito en el plan. No se asumen instituciones ni financiamiento que el plan no menciona."
+  },
+  "blocks": [
+    {
+      "id": "economia",
+      "name": "BLOQUE 1: ECONOMÍA",
+      "average_score": 5.5,
+      "summary": "La dimensión económica es la más desarrollada del plan. El capítulo identifica cinco problemas con diagnóstico, estrategia y actividades. Hay variación importante entre variables: gasto público y política minera tienen evidencia concreta, mientras que política tributaria e inversión privada se quedan en principios generales.",
+      "conclusion": "El bloque económico obtiene 5.5/10. La heterogeneidad interna es notable: gasto público (7.5) y política minera (7.5) tienen diagnóstico con datos y medidas concretas; tributaria (3.3) e inversión privada (3.3) son propuestas de principios sin instrumentos. La fortaleza transversal es la solidez macroeconómica. La debilidad es la ausencia de reforma tributaria y de instrumentos concretos de inversión.",
+      "strengths": [
+        "Gasto público y política minera con diagnóstico con datos verificables y medidas concretas.",
+        "Solidez macroeconómica como fortaleza transversal del bloque."
+      ],
+      "weaknesses": [
+        "Política tributaria e inversión privada como propuestas de principios sin instrumentos.",
+        "Ausencia de reforma tributaria real.",
+        "Ausencia de instrumentos concretos de inversión."
+      ],
+      "variables": [
+        {
+          "id": "politica_tributaria",
+          "name": "Política tributaria",
+          "final_score": 3.3,
+          "rating_label": "Débil",
+          "summary": "La propuesta tributaria es más una postura macroeconómica prudente que una reforma real. Reconoce que se necesita recaudar más, pero no explica cómo lograrlo. La SUNAT no aparece. Los regímenes especiales no se tocan. Las metas de presión fiscal están ausentes.",
+          "strengths": [
+            "Orientación de cuidar la estabilidad macroeconómica es correcta.",
+            "Reconocimiento general de que se necesita mayor recaudación."
+          ],
+          "weaknesses": [
+            "No desarrolla instrumentos para aumentar recaudación activamente.",
+            "La SUNAT no aparece mencionada.",
+            "Regímenes tributarios especiales no se tocan.",
+            "Metas de presión fiscal ausentes."
+          ],
+          "gaps": [
+            "Reforma de regímenes tributarios especiales.",
+            "Medidas anti-evasión.",
+            "Fortalecimiento operativo de la SUNAT.",
+            "Metas de cuánto debería recaudar el Estado como porcentaje del PBI.",
+            "Política sobre el gasto tributario."
+          ],
+          "conclusion": "La propuesta tributaria es la más débil del bloque económico. La orientación de cuidar la estabilidad macroeconómica es correcta, pero el plan asume que la recaudación crecerá sola con el crecimiento económico, sin desarrollar los instrumentos que la harían posible. La SUNAT no aparece. Los regímenes especiales no se tocan. Las metas de presión fiscal están ausentes.",
+          "corrected_methodology": false,
+          "correction_note": "",
+          "sections": {
+            "what_it_evaluates": "Si el plan propone cambios relevantes en el sistema de impuestos: estructura de recaudación, cómo se combate la evasión, si se fortalece la SUNAT y si hay metas concretas de cuánto debería recaudar el Estado.",
+            "why_it_matters": "El Estado peruano recauda relativamente poco comparado con lo que necesita para financiar sus servicios. La evasión y la informalidad reducen lo que puede cobrar. Una buena política tributaria necesita medidas específicas contra la evasión, metas de recaudación y una SUNAT con más herramientas y recursos.",
+            "current_problem": "El Perú recauda poco en comparación con el resto de la región. Según el Banco Mundial y la OCDE, la presión tributaria peruana se ubica alrededor del 15% del PBI, frente al promedio latinoamericano de aproximadamente 21-22% y el promedio de la OCDE cercano al 34%. Dos problemas lo explican: la evasión (el incumplimiento tributario en el IGV ha sido estimado por la propia SUNAT en rangos que superan el 30% de la recaudación potencial en algunos sectores) y la informalidad (alrededor del 70-72% de los trabajadores opera fuera del sistema formal según INEI). A eso se suman regímenes especiales y exoneraciones que el MEF estima equivalen a varios puntos del PBI en gasto tributario no cobrado.",
+            "plan_proposal": "El plan propone 'priorizar el incremento de la recaudación y la eficiencia del gasto, sin afectar programas sociales esenciales' como parte de una consolidación fiscal más amplia. También plantea fortalecer el Consejo Fiscal y preservar la autonomía del Banco Central de Reserva (BCRP). Lo que no hay es una reforma tributaria propiamente dicha.",
+            "concrete_measures": "El documento no identifica medidas tributarias concretas. Las referencias son: 'Consolidar senda de reducción del déficit priorizando incremento de la recaudación' (principio, no herramienta); 'Fortalecer el Consejo Fiscal' (medida institucional, no tributaria); la recaudación aparece como resultado esperado del crecimiento económico, no como política activa.",
+            "implementation": "No se nombra ninguna institución ejecutora de la política tributaria. La SUNAT no aparece mencionada. No se identifica ningún cambio normativo tributario. Im = 0.",
+            "potential_impact": "El impacto potencial es bajo. Sin instrumentos específicos, la recaudación dependería exclusivamente del crecimiento económico, no de una política activa. No hay reforma que cambie estructuralmente la base de contribuyentes.",
+            "missing_elements": "El plan no aborda: reforma de regímenes tributarios especiales, medidas anti-evasión, fortalecimiento operativo de la SUNAT, metas de cuánto debería recaudar el Estado como porcentaje del PBI, ni política sobre el gasto tributario.",
+            "technical_evaluation": "La propuesta tributaria es más una postura macroeconómica prudente que una reforma real. Reconoce que se necesita recaudar más, pero no explica cómo lograrlo. D=1 por reconocimiento sin datos propios. P=1 por intención sin política articulada. M=1 por el principio de incrementar la recaudación. Im=0 por ausencia de la SUNAT u órgano ejecutor. V=1. E=0 por falta de instrumento + institución + meta tributaria."
+          },
+          "criteria": {
+            "D": { "score": 1, "justification": "Reconocimiento general sin datos estadísticos propios." },
+            "P": { "score": 1, "justification": "Intención general sin política articulada." },
+            "M": { "score": 1, "justification": "Principio de incrementar recaudación, sin instrumento." },
+            "Im": { "score": 0, "justification": "Sin institución ejecutora ni mecanismo." },
+            "V": { "score": 1, "justification": "Posible, pero con vacíos importantes." },
+            "E": { "score": 0, "justification": "Declaración política sin mecanismos concretos." }
+          },
+          "criteria_sum": 4,
+          "formula_result": "Total/10 = (4/12) × 10 = 3.3/10",
+          "score_table": { "D": 1, "P": 1, "M": 1, "Im": 0, "V": 1, "E": 0, "final_score": 3.3 },
+          "sources": [
+            { "title": "Banco Mundial — Presión tributaria comparada", "type": "organismo internacional", "url": "", "note": "Referencia para el 15% de presión tributaria del Perú frente al promedio latinoamericano." },
+            { "title": "OCDE — Presión tributaria", "type": "organismo internacional", "url": "", "note": "Promedio OCDE cercano al 34% como comparación." },
+            { "title": "SUNAT — Incumplimiento tributario IGV", "type": "fuente nacional", "url": "", "note": "Estimación de incumplimiento tributario en el IGV superior al 30% en algunos sectores." },
+            { "title": "INEI — Informalidad laboral", "type": "fuente nacional", "url": "", "note": "Alrededor del 70-72% de los trabajadores opera fuera del sistema formal." },
+            { "title": "MEF — Gasto tributario", "type": "fuente nacional", "url": "", "note": "Exoneraciones y regímenes especiales que equivalen a varios puntos del PBI." }
+          ]
+        },
+        {
+          "id": "gasto_publico",
+          "name": "Gasto público",
+          "final_score": 7.5,
+          "rating_label": "Bien desarrollada",
+          "summary": "La propuesta de gasto público es la más sólida del bloque económico. Tiene diagnóstico con datos verificables, política articulada y medidas concretas. La debilidad es la ausencia de una estrategia de composición del gasto y la falta de metas más específicas más allá de la estabilidad macroeconómica.",
+          "strengths": [
+            "Diagnóstico con datos verificables y fuente citada (Informe Consejo Fiscal N°03-2025).",
+            "Política articulada con presupuesto por resultados.",
+            "BCRP y Consejo Fiscal nombrados.",
+            "Tres medidas concretas identificables."
+          ],
+          "weaknesses": [
+            "Ausencia de estrategia de composición del gasto.",
+            "Falta de metas específicas sobre dónde ajustar el gasto.",
+            "No define cómo se distribuirá el gasto entre sectores."
+          ],
+          "gaps": [
+            "¿Dónde se ajustará el gasto si la recaudación no crece?",
+            "¿Cómo se financiarán las nuevas políticas sectoriales?",
+            "No define cómo se distribuirá el gasto entre sectores ni prioridades claras."
+          ],
+          "conclusion": "La propuesta de gasto público de López Chau es la más sólida del bloque económico. Tiene diagnóstico con datos verificables, política articulada y medidas concretas. La debilidad es la ausencia de una estrategia de composición del gasto y la falta de metas más específicas más allá de la estabilidad macroeconómica.",
+          "corrected_methodology": false,
+          "correction_note": "",
+          "sections": {
+            "what_it_evaluates": "Las propuestas para gestionar de manera sostenible el gasto público: equilibrio fiscal, calidad del gasto, eficiencia en la ejecución del presupuesto y mecanismos de control y transparencia.",
+            "why_it_matters": "La calidad del gasto público determina cuánto bienestar real genera cada sol que el Estado gasta. El Perú enfrenta simultáneamente déficit fiscal, baja ejecución de inversión pública y alta corrupción en contrataciones.",
+            "current_problem": "El Perú ha tenido una de las finanzas públicas más sólidas de América Latina durante varios años, pero esa reputación ha venido deteriorándose. Según el MEF y el Consejo Fiscal, el país incumplió su regla fiscal por al menos dos años consecutivos: el déficit fiscal llegó al 3.5% del PBI en 2024, por encima del límite permitido de 2.8%, y el gasto corriente creció por encima de los topes establecidos. La deuda pública como porcentaje del PBI se ha elevado sostenidamente desde mínimos históricos en 2013. La ejecución de la inversión pública subnacional ha sido consistentemente baja, con regiones que ejecutan apenas el 50-60% de su presupuesto de capital. La Contraloría reporta miles de millones en presuntos perjuicios al Estado cada año por contrataciones irregulares.",
+            "plan_proposal": "El plan propone preservar la estabilidad macroeconómica mediante: una senda de reducción del déficit fiscal y de la deuda pública; presupuesto por resultados para mejorar la eficiencia del gasto; un Consejo Fiscal fortalecido con funciones ampliadas de monitoreo; autonomía del BCRP preservada; e impulso al crecimiento del PBI per cápita como motor de sostenibilidad.",
+            "concrete_measures": "Las más específicas son: senda de reducción del déficit fiscal (meta implícita de convergencia); presupuesto por resultados (instrumento de gestión con precedente en el Perú); Consejo Fiscal fortalecido (institución nombrada con función ampliada); autonomía del BCRP preservada (política institucional concreta).",
+            "implementation": "El BCRP y el Consejo Fiscal son mencionados explícitamente. Sin embargo, no hay norma específica para la reforma del presupuesto por resultados ni cronograma de reducción del déficit.",
+            "potential_impact": "Mayor disciplina fiscal mejoraría la credibilidad macroeconómica y reduciría el costo de la deuda pública. El presupuesto por resultados tiene evidencia de mejora en eficiencia del gasto en países que lo han aplicado bien. El Consejo Fiscal fortalecido daría alertas tempranas ante riesgos fiscales.",
+            "missing_elements": "El plan no responde: ¿dónde se ajustará el gasto si la recaudación no crece? ¿Cómo se financiarán las nuevas políticas sectoriales? No define cómo se distribuirá el gasto entre sectores ni prioridades claras.",
+            "technical_evaluation": "Esta es la variable más sólida del bloque económico. D=2 por datos explícitos con fuente citada (Informe Consejo Fiscal N°03-2025). P=2 por política articulada. M=2 por tres medidas concretas. Im=1 por BCRP y Consejo Fiscal nombrados sin mecanismo operativo. V=1. E=1 por Consejo Fiscal (institución) + meta implícita de deuda."
+          },
+          "criteria": {
+            "D": { "score": 2, "justification": "Diagnóstico con datos verificables y fuente citada." },
+            "P": { "score": 2, "justification": "Propuesta clara y articulada con política definida." },
+            "M": { "score": 2, "justification": "Varias medidas concretas con instrumentos identificables." },
+            "Im": { "score": 1, "justification": "Instituciones mencionadas sin mecanismo claro." },
+            "V": { "score": 1, "justification": "Posible con vacíos importantes." },
+            "E": { "score": 1, "justification": "Menciona instrumentos generales sin desarrollo suficiente." }
+          },
+          "criteria_sum": 9,
+          "formula_result": "Total/10 = (9/12) × 10 = 7.5/10",
+          "score_table": { "D": 2, "P": 2, "M": 2, "Im": 1, "V": 1, "E": 1, "final_score": 7.5 },
+          "sources": [
+            { "title": "MEF — Regla fiscal y déficit", "type": "fuente nacional", "url": "", "note": "Déficit fiscal al 3.5% del PBI en 2024, por encima del límite de 2.8%." },
+            { "title": "Consejo Fiscal — Informe N°03-2025-CF", "type": "fuente nacional", "url": "", "note": "Fuente citada explícitamente en el plan para el diagnóstico del incumplimiento de la regla fiscal." },
+            { "title": "Banco Mundial — Calidad del gasto público", "type": "organismo internacional", "url": "", "note": "Documentación de proyectos de inversión pública aprobados sin estudios sólidos." }
+          ]
+        },
+        {
+          "id": "inversion_privada",
+          "name": "Inversión privada",
+          "final_score": 3.3,
+          "rating_label": "Débil",
+          "summary": "La propuesta de inversión privada es la segunda más débil del bloque. La orientación es correcta pero el nivel de concreción es insuficiente. El plan asume que la inversión llegará con el crecimiento económico, sin desarrollar los instrumentos que la promoverían activamente.",
+          "strengths": [
+            "Reconoce el papel central de la inversión privada en el crecimiento.",
+            "Identifica la industrialización y el fortalecimiento del empresariado como objetivos."
+          ],
+          "weaknesses": [
+            "No nombra ninguna institución ejecutora.",
+            "ProInversión no aparece con mandato de inversión.",
+            "Sin metas de inversión privada como porcentaje del PBI.",
+            "Sin instrumentos concretos de política industrial."
+          ],
+          "gaps": [
+            "Reformas regulatorias específicas para mejorar el clima de inversión.",
+            "Metas de inversión privada como porcentaje del PBI.",
+            "Mecanismos para reducir los conflictos sociales que paralizan proyectos.",
+            "Instrumentos concretos de política industrial."
+          ],
+          "conclusion": "La propuesta de inversión privada es la segunda más débil del bloque. La orientación es correcta pero el nivel de concreción es insuficiente. El plan asume que la inversión llegará con el crecimiento económico, sin desarrollar los instrumentos que la promoverían activamente.",
+          "corrected_methodology": false,
+          "correction_note": "",
+          "sections": {
+            "what_it_evaluates": "Las políticas propuestas para promover la inversión privada: qué tan buen clima hay para los negocios, estabilidad jurídica para los inversionistas, incentivos productivos y condiciones institucionales.",
+            "why_it_matters": "La inversión privada es el motor principal del crecimiento económico y la generación de empleo. Cuando cae sostenidamente, el crecimiento potencial del país se reduce. Para que los empresarios inviertan necesitan reglas claras, estabilidad y un Estado que funcione.",
+            "current_problem": "La inversión privada como porcentaje del PBI ha caído de manera sostenida en el Perú desde el pico del ciclo de materias primas. Según el BCRP, la inversión privada en 2024 se ubicó alrededor del 15-16% del PBI, frente al 22% que sostuvo entre 2007 y 2013. Los factores que la explican son múltiples: posiciones intermedias-bajas del Perú en facilidad para obtener permisos y hacer cumplir contratos según estudios del Banco Mundial; inestabilidad política (seis presidentes en menos de una década); conflictos socioambientales que han paralizado proyectos mineros y energéticos; y debilidad del sistema judicial.",
+            "plan_proposal": "El plan propone impulsar la industrialización, fortalecer el empresariado nacional, promover la innovación científica y tecnológica, desarrollar productivamente las regiones y ampliar el mercado interno.",
+            "concrete_measures": "Las medidas identificadas son principios generales: 'Impulso a la industrialización del país' (intención sin instrumento); 'Fortalecimiento del empresariado nacional' (objetivo sin mecanismo); 'Promoción de la innovación científica y tecnológica' (dirección sin política); 'Ampliación del mercado interno' (objetivo agregado sin medida concreta).",
+            "implementation": "No se nombra ninguna institución ejecutora. ProInversión no aparece con mandato de inversión. El MEF tampoco. Sin norma ni mecanismo específico. Im = 0.",
+            "potential_impact": "Una estrategia de industrialización podría generar mayor diversificación productiva y empleo formal. Sin mecanismos concretos, el impacto es difícil de estimar y depende completamente de factores externos.",
+            "missing_elements": "El plan no aborda: reformas regulatorias específicas para mejorar el clima de inversión, metas de inversión privada como porcentaje del PBI, mecanismos para reducir los conflictos sociales que paralizan proyectos, ni instrumentos concretos de política industrial.",
+            "technical_evaluation": "La propuesta reconoce correctamente el papel de la inversión, pero carece de instrumentos. D=1 sin datos específicos. P=1 intención sin política. M=1 principios sin instrumento. Im=0 sin institución. V=1. E=0 sin ≥ 2 elementos."
+          },
+          "criteria": {
+            "D": { "score": 1, "justification": "Reconocimiento general sin datos estadísticos." },
+            "P": { "score": 1, "justification": "Intención general sin política articulada." },
+            "M": { "score": 1, "justification": "Principios sin instrumento." },
+            "Im": { "score": 0, "justification": "Sin institución ejecutora ni mecanismo." },
+            "V": { "score": 1, "justification": "Posible con vacíos importantes." },
+            "E": { "score": 0, "justification": "Declaración política sin mecanismos concretos." }
+          },
+          "criteria_sum": 4,
+          "formula_result": "Total/10 = (4/12) × 10 = 3.3/10",
+          "score_table": { "D": 1, "P": 1, "M": 1, "Im": 0, "V": 1, "E": 0, "final_score": 3.3 },
+          "sources": [
+            { "title": "BCRP — Inversión privada como % del PBI", "type": "fuente nacional", "url": "", "note": "Inversión privada en 2024 alrededor del 15-16% del PBI, frente al 22% entre 2007 y 2013." },
+            { "title": "Banco Mundial — Clima de negocios", "type": "organismo internacional", "url": "", "note": "Posiciones intermedias-bajas del Perú en facilidad para obtener permisos y hacer cumplir contratos." }
+          ]
+        },
+        {
+          "id": "formalizacion_laboral",
+          "name": "Formalización laboral",
+          "final_score": 5.8,
+          "rating_label": "Media",
+          "summary": "La formalización laboral es la variable media del bloque. La propuesta de formalización progresiva con incentivos es técnicamente correcta y reconoce bien el problema en MIPYMES. La debilidad principal es la ausencia de institución ejecutora clara y de metas de reducción de informalidad.",
+          "strengths": [
+            "Propuesta de formalización progresiva con incentivos de mercado técnicamente correcta.",
+            "Reconocimiento explícito del problema en MIPYMES (81.3% de informalidad).",
+            "Tres medidas concretas identificables.",
+            "SBS y MIPYMES nombradas como actores."
+          ],
+          "weaknesses": [
+            "Ausencia de institución ejecutora principal (SUNAFIL y Ministerio de Trabajo no aparecen con mandato explícito).",
+            "Sin metas de reducción de informalidad cuantificadas.",
+            "Sin cronograma de la formalización progresiva.",
+            "Sin presupuesto del programa."
+          ],
+          "gaps": [
+            "Cronograma de la formalización progresiva.",
+            "Normas concretas a modificar.",
+            "Metas de cuánto se reducirá la informalidad.",
+            "Presupuesto del programa.",
+            "Institución líder de la formalización."
+          ],
+          "conclusion": "La formalización laboral es la variable media del bloque. La propuesta de formalización progresiva con incentivos es técnicamente correcta y reconoce bien el problema en MIPYMES. La debilidad principal es la ausencia de institución ejecutora clara y de metas de reducción de informalidad.",
+          "corrected_methodology": false,
+          "correction_note": "",
+          "sections": {
+            "what_it_evaluates": "Las propuestas para reducir la informalidad laboral, mejorar la calidad del empleo y ampliar la protección social de los trabajadores.",
+            "why_it_matters": "La informalidad laboral no es solo un problema estadístico: es millones de trabajadores sin seguro de salud, sin pensión y sin protección ante el despido. Además, frena la productividad y la recaudación. Mientras no se reduzca, cualquier meta de crecimiento económico sostenible tiene techo.",
+            "current_problem": "La informalidad laboral es uno de los problemas estructurales más persistentes de la economía peruana. Según el INEI, alrededor del 72-75% de los trabajadores opera en condiciones informales, sin contrato laboral, sin acceso a seguridad social y sin beneficios de ley. Eso equivale a más de 12 millones de personas. El INEI y el Ministerio de Trabajo han documentado que un trabajador informal gana, en promedio, entre 40 y 50% menos que uno formal con características similares. Más de 6 de cada 10 jóvenes de 15 a 24 años que trabajan lo hacen en condiciones informales.",
+            "plan_proposal": "El plan propone un modelo de formalización progresiva basada en incentivos de mercado, reemplazando el enfoque punitivo (multar y sancionar). La idea es articular tres cosas: simplificación administrativa, fortalecimiento de la competitividad, y acceso a financiamiento accesible para MIPYMES y cooperativas.",
+            "concrete_measures": "Modelo de formalización progresiva con incentivos de mercado (instrumento metodológico concreto); simplificación administrativa para MIPYMES (reforma de proceso); acceso a financiamiento con reducción de tasas de interés (instrumento financiero); fortalecimiento de la competitividad para elevar la rentabilidad de las MIPYMES.",
+            "implementation": "Las MIPYMES y las cooperativas aparecen como sujetos de política. La SBS se menciona en contexto de supervisión de cooperativas. Sin embargo, la SUNAFIL y el Ministerio de Trabajo no aparecen con mandato explícito de ejecutar la formalización.",
+            "potential_impact": "La formalización progresiva con incentivos positivos tiene mayor evidencia de funcionar que los enfoques punitivos. Si se implementa bien, podría formalizar una parte significativa del empleo informal en MIPYMES, con impacto en recaudación, seguridad social y productividad.",
+            "missing_elements": "El plan no especifica: el cronograma de la formalización progresiva, las normas concretas a modificar, las metas de cuánto se reducirá la informalidad, el presupuesto del programa, ni la institución líder.",
+            "technical_evaluation": "La variable tiene diagnóstico con datos (81.3% informalidad en MIPYMES según la sección de Emprendimiento del plan), propuesta con lógica correcta e instrumentos identificables. D=1 porque los datos aparecen en la sección de Emprendimiento, no en sección propia. P=1 propuesta coherente pero general. M=2 por tres medidas identificables. Im=1 por SBS y MIPYMES nombradas. V=1. E=1 parcialmente."
+          },
+          "criteria": {
+            "D": { "score": 1, "justification": "Datos en sección Emprendimiento, no en sección propia." },
+            "P": { "score": 1, "justification": "Propuesta coherente pero general." },
+            "M": { "score": 2, "justification": "Varias medidas concretas con instrumentos identificables." },
+            "Im": { "score": 1, "justification": "SBS y MIPYMES mencionadas, sin institución ejecutora principal." },
+            "V": { "score": 1, "justification": "Posible con vacíos importantes." },
+            "E": { "score": 1, "justification": "Menciona instrumentos generales sin desarrollo suficiente." }
+          },
+          "criteria_sum": 7,
+          "formula_result": "Total/10 = (7/12) × 10 = 5.8/10",
+          "score_table": { "D": 1, "P": 1, "M": 2, "Im": 1, "V": 1, "E": 1, "final_score": 5.8 },
+          "sources": [
+            { "title": "INEI — Informalidad laboral", "type": "fuente nacional", "url": "", "note": "72-75% de los trabajadores opera en condiciones informales; más de 12 millones de personas." },
+            { "title": "Ministerio de Trabajo — Brecha salarial informal/formal", "type": "fuente nacional", "url": "", "note": "Trabajador informal gana entre 40 y 50% menos que uno formal con características similares." }
+          ]
+        },
+        {
+          "id": "politica_minera_y_recursos_naturales",
+          "name": "Política minera y recursos naturales",
+          "final_score": 7.5,
+          "rating_label": "Bien desarrollada",
+          "summary": "La política minera de López Chau es la segunda más sólida del bloque económico. La coordinación de cinco instituciones para la fiscalización y la implementación de un reglamento ya aprobado son medidas concretas y realizables. La debilidad más clara es la ausencia de metas de formalización y el tratamiento superficial de los conflictos socioambientales.",
+          "strengths": [
+            "Coordinación explícita de cinco instituciones (MINEM, OEFA, MTPE, SUNAFIL, OSINERGMIN).",
+            "Implementación de reglamento SUNARP ya aprobado en 2013.",
+            "Diagnóstico con datos de informalidad minera y brecha energética rural.",
+            "Propuesta articulada en cuatro problemas del sector."
+          ],
+          "weaknesses": [
+            "Ausencia de metas de formalización de mineros artesanales.",
+            "Tratamiento superficial de conflictos socioambientales activos.",
+            "Sin presupuesto para la coordinación interinstitucional.",
+            "Sin cronograma para el reglamento SUNARP."
+          ],
+          "gaps": [
+            "Metas de cuántos mineros artesanales se formalizarán.",
+            "Cronograma para el reglamento SUNARP.",
+            "Presupuesto para la coordinación interinstitucional.",
+            "Estrategia específica para los conflictos socioambientales activos."
+          ],
+          "conclusion": "La política minera de López Chau es la segunda más sólida del bloque económico. La coordinación de cinco instituciones para la fiscalización y la implementación de un reglamento ya aprobado son medidas concretas y realizables. La debilidad más clara es la ausencia de metas de formalización y el tratamiento superficial de los conflictos socioambientales.",
+          "corrected_methodology": false,
+          "correction_note": "",
+          "sections": {
+            "what_it_evaluates": "Las propuestas para regular el sector minero y extractivo: formalización de la minería artesanal, conflictos socioambientales, distribución de la renta minera y marco de concesiones.",
+            "why_it_matters": "La minería representa alrededor del 10% del PBI y el 60% de las exportaciones del Perú. Sin una política minera seria, no hay política económica seria. Pero el sector también es el principal foco de conflictos sociales y de daño ambiental del país.",
+            "current_problem": "El Perú es uno de los principales productores mineros del mundo: primer productor global de plata, segundo de cobre y zinc, y uno de los principales de oro. Según el MINEM, solo el 2.4% de los mineros artesanales y de pequeña escala están formalizados. La Defensoría del Pueblo y la PCM registran permanentemente más de 200 conflictos socioambientales activos o latentes, la mayoría vinculados a actividades extractivas. La brecha de electrificación rural del 16.7% persiste en zonas altoandinas y amazónicas.",
+            "plan_proposal": "El plan propone: formalizar la minería artesanal con encadenamientos productivos, coordinar la fiscalización entre múltiples entidades del Estado, desarrollar mayor valor agregado en la gran minería, e implementar el Reglamento de Inscripciones de Bienes de la Pequeña Minería en la SUNARP (aprobado en 2013 pero pendiente de implementación).",
+            "concrete_measures": "Implementar el Reglamento de Inscripciones en la SUNARP (ya aprobado en 2013); fiscalización y control de plantas de beneficio en coordinación con el MINEM, OEFA, MTPE, SUNAFIL y OSINERGMIN; encadenamientos productivos con infraestructura logística para la minería artesanal; cierre de brechas de electrificación rural con sistemas descentralizados (solar, hidráulico en comunidades aisladas).",
+            "implementation": "El MINEM, OEFA, MTPE, SUNAFIL y OSINERGMIN son nombrados explícitamente como coordinadores. La SUNARP aparece para el registro de bienes. Es una implementación coordinada entre cinco entidades.",
+            "potential_impact": "La coordinación de esas cinco instituciones tendría impacto real en la reducción de la minería ilegal. Implementar el reglamento SUNARP ya aprobado facilitaría la trazabilidad. Los encadenamientos productivos diversificarían la economía minera más allá de la extracción pura.",
+            "missing_elements": "El plan no especifica: metas de cuántos mineros artesanales se formalizarán, cronograma para el reglamento SUNARP, presupuesto para la coordinación interinstitucional, ni estrategia específica para los conflictos socioambientales activos.",
+            "technical_evaluation": "La política minera es la segunda variable mejor del bloque. D=2 por datos de informalidad minera, brecha energética rural y problemas sectoriales. P=2 por política articulada en cuatro problemas. M=2 por medidas concretas con instituciones nombradas. Im=1 por cinco instituciones explícitas sin presupuesto. V=1. E=1 por MINEM/OEFA (instituciones) + reglamento SUNARP existente (norma). Cumple dos elementos pero sin meta cuantificada."
+          },
+          "criteria": {
+            "D": { "score": 2, "justification": "Diagnóstico con datos verificables del plan." },
+            "P": { "score": 2, "justification": "Propuesta clara y articulada con política definida." },
+            "M": { "score": 2, "justification": "Varias medidas concretas con instituciones nombradas." },
+            "Im": { "score": 1, "justification": "Cinco instituciones mencionadas sin presupuesto asignado." },
+            "V": { "score": 1, "justification": "Posible con vacíos importantes." },
+            "E": { "score": 1, "justification": "MINEM/OEFA + reglamento SUNARP. Cumple 2 elementos sin meta cuantificada." }
+          },
+          "criteria_sum": 9,
+          "formula_result": "Total/10 = (9/12) × 10 = 7.5/10",
+          "score_table": { "D": 2, "P": 2, "M": 2, "Im": 1, "V": 1, "E": 1, "final_score": 7.5 },
+          "sources": [
+            { "title": "MINEM — Informalidad minera artesanal", "type": "fuente nacional", "url": "", "note": "Solo el 2.4% de los mineros artesanales y de pequeña escala están formalizados." },
+            { "title": "Defensoría del Pueblo / PCM — Conflictos socioambientales", "type": "fuente nacional", "url": "", "note": "Más de 200 conflictos socioambientales activos o latentes, la mayoría vinculados a actividades extractivas." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seguridad_y_orden_publico",
+      "name": "BLOQUE 2: SEGURIDAD Y ORDEN PÚBLICO",
+      "average_score": 9.2,
+      "summary": "Este es el bloque más sólido del plan. La sección de Seguridad Ciudadana identifica cuatro problemas con diagnóstico, estrategia, actividades específicas, indicadores y metas cuantificadas. Las medidas son técnicamente concretas y nombran explícitamente a las instituciones responsables.",
+      "conclusion": "El bloque de seguridad es el más sólido del plan, con un promedio de 9.2/10. Las cuatro variables obtienen la misma calificación porque el plan desarrolla con igual rigor: diagnóstico con datos, política articulada, medidas concretas, instituciones explícitas y elementos de especificidad (normas + instituciones + metas). Este bloque demuestra que el equipo técnico trabajó el tema de seguridad con profundidad metodológica real.",
+      "strengths": [
+        "Nueva Ley del Sistema Nacional de Seguridad Ciudadana (SNSC) con liderazgo del Ejecutivo.",
+        "Sistema informático interoperable PNP-MP-PJ-INPE.",
+        "Metas cuantificadas en todas las variables (17.2% victimización, 30% factor disciplinario, 0% inversiones pendientes INPE).",
+        "Múltiples instituciones nombradas con funciones definidas en cada variable.",
+        "Prueba de polígrafo para admisión policial.",
+        "SUNEDU como supervisora de escuelas PNP.",
+        "Modificación de la Ley Universitaria identificada como cambio normativo."
+      ],
+      "weaknesses": [
+        "Ausencia de presupuesto en todas las variables del bloque.",
+        "Ausencia de estrategia de prevención social del delito.",
+        "No aborda hacinamiento carcelario (el problema más urgente del sistema penitenciario).",
+        "Ausencia de estrategia de narcotráfico.",
+        "Sin articulación con gobiernos locales ni estrategia para zonas rurales."
+      ],
+      "variables": [
+        {
+          "id": "seguridad_ciudadana",
+          "name": "Seguridad ciudadana",
+          "final_score": 9.2,
+          "rating_label": "Sólida",
+          "summary": "La seguridad ciudadana es la propuesta técnicamente más sólida del bloque. La combinación de nueva ley, sistema interoperable entre cuatro instituciones y metas cuantificadas configura una estrategia coherente y ejecutable. La debilidad principal es la ausencia de presupuesto y de una estrategia de prevención social del delito.",
+          "strengths": [
+            "Nueva Ley del SNSC con liderazgo del Ejecutivo.",
+            "Sistema informático interoperable PNP-MP-PJ-INPE.",
+            "Meta cuantificada de victimización: 17.2%.",
+            "Cuatro instituciones nombradas con funciones definidas."
+          ],
+          "weaknesses": [
+            "Ausencia de presupuesto del sistema interoperable.",
+            "Sin cronograma de implementación de la nueva ley.",
+            "Ausencia de estrategia de prevención social del delito."
+          ],
+          "gaps": [
+            "Estrategia de prevención social del delito (no solo persecución).",
+            "Presupuesto del sistema interoperable.",
+            "Cronograma de implementación de la nueva ley.",
+            "Articulación con gobiernos locales.",
+            "Estrategia para zonas rurales y de frontera."
+          ],
+          "conclusion": "La seguridad ciudadana es la propuesta técnicamente más sólida del bloque. La combinación de nueva ley, sistema interoperable entre cuatro instituciones y metas cuantificadas configura una estrategia coherente y ejecutable. La debilidad principal es la ausencia de presupuesto y de una estrategia de prevención social del delito.",
+          "corrected_methodology": true,
+          "correction_note": "El análisis original subestimó este bloque al no reconocer medidas concretas como la nueva ley del sistema de seguridad, el sistema interoperable PNP-MP-PJ-INPE, la prueba de polígrafo y las metas cuantificadas.",
+          "sections": {
+            "what_it_evaluates": "Las propuestas para reducir la criminalidad, el miedo ciudadano y mejorar la coordinación entre las instituciones encargadas de la seguridad.",
+            "why_it_matters": "La seguridad pública es el principal problema percibido por los peruanos. La fragmentación entre instituciones impide una respuesta coordinada al crimen. Y cuando la ciudadanía pierde confianza en la Policía y en el Ministerio del Interior, el Estado pierde legitimidad.",
+            "current_problem": "El Perú vive una crisis de seguridad que se ha agravado con rapidez. Según la Encuesta Nacional de Programas Presupuestales del INEI, la victimización por delitos en zonas urbanas ha superado el 25% en años recientes. El Ministerio del Interior registra decenas de miles de denuncias anuales de extorsión, y gremios empresariales y transportistas reportan que el fenómeno se ha extendido a prácticamente todos los sectores económicos. Las encuestas del IEP e Ipsos Perú muestran consistentemente que entre el 65 y el 70% de los peruanos desconfía de la Policía Nacional.",
+            "plan_proposal": "El plan propone tres cosas concretas: una nueva Ley del Sistema Nacional de Seguridad Ciudadana y Lucha contra la Criminalidad (SNSC), con liderazgo claro del Ejecutivo; un sistema informático que una a la PNP, el MP, el PJ y el INPE en una sola plataforma interoperable; y potenciar los Observatorios de la PNP, el MP, el PJ y el MININTER con mayor capacidad analítica e interoperabilidad.",
+            "concrete_measures": "Nueva Ley del SNSC con liderazgo del Ejecutivo e incorporación de prevención (herramienta normativa específica); sistema informático interoperable PNP-MP-PJ-INPE para coordinación y trazabilidad de investigaciones (herramienta tecnológica con cuatro instituciones); potenciar Observatorios con metodologías innovadoras (herramienta de inteligencia analítica); meta cuantificada: victimización al 17.2% y 5 publicaciones conjuntas de análisis criminal.",
+            "implementation": "La PNP, el MP, el PJ y el INPE son nombrados explícitamente como actores del sistema interoperable. El MININTER figura como coordinador. Cuatro instituciones con funciones definidas. Im = 2.",
+            "potential_impact": "La nueva ley clarificaría quién manda y mejoraría la coordinación entre entidades. El sistema interoperable permitiría seguir un caso desde la denuncia hasta la sentencia. Los observatorios potenciados mejorarían la toma de decisiones basada en datos. La meta del 17.2% de victimización es específica y verificable.",
+            "missing_elements": "El plan no aborda en profundidad: estrategia de prevención social del delito (no solo persecución), presupuesto del sistema interoperable, cronograma de implementación de la nueva ley, articulación con gobiernos locales, ni estrategia para zonas rurales y de frontera.",
+            "technical_evaluation": "Seguridad ciudadana es la variable más sólida del bloque. D=2 por datos de desconfianza institucional y metas cuantificadas. P=2 por política articulada con nueva ley e interoperabilidad. M=2 por tres medidas concretas. Im=2 por cuatro instituciones nombradas (PNP, MP, PJ, INPE). V=1. E=2 por nueva ley (norma) + sistema interoperable (instrumento) + meta 17.2% (meta cuantificada)."
+          },
+          "criteria": {
+            "D": { "score": 2, "justification": "Diagnóstico con datos verificables del plan." },
+            "P": { "score": 2, "justification": "Propuesta clara y articulada con política definida." },
+            "M": { "score": 2, "justification": "Varias medidas concretas con instrumentos." },
+            "Im": { "score": 2, "justification": "Cuatro instituciones explícitas con funciones definidas." },
+            "V": { "score": 1, "justification": "Posible con vacíos importantes." },
+            "E": { "score": 2, "justification": "Norma + instrumento + meta cuantificada (≥ 2 elementos)." }
+          },
+          "criteria_sum": 11,
+          "formula_result": "Total/10 = (11/12) × 10 = 9.2/10",
+          "score_table": { "D": 2, "P": 2, "M": 2, "Im": 2, "V": 1, "E": 2, "final_score": 9.2 },
+          "sources": [
+            { "title": "INEI — Encuesta Nacional de Programas Presupuestales", "type": "encuesta", "url": "", "note": "Victimización por delitos en zonas urbanas superando el 25%." },
+            { "title": "IEP / Ipsos Perú — Confianza en la Policía", "type": "encuesta", "url": "", "note": "Entre 65 y 70% de los peruanos desconfía de la Policía Nacional." },
+            { "title": "Ministerio del Interior — Denuncias de extorsión", "type": "registro administrativo", "url": "", "note": "Decenas de miles de denuncias anuales de extorsión." }
+          ]
+        },
+        {
+          "id": "reforma_policial",
+          "name": "Reforma policial",
+          "final_score": 9.2,
+          "rating_label": "Sólida",
+          "summary": "La reforma policial de López Chau es técnicamente la propuesta más específica y detallada del plan en cualquier bloque. La combinación de cambio normativo (Ley Universitaria), institución de supervisión (SUNEDU), criterio numérico de selección (cinco mejores universidades) y meta cuantificada (30% factor disciplinario) es metodológicamente ejemplar.",
+          "strengths": [
+            "Modificación de la Ley Universitaria para incluir escuelas PNP bajo supervisión de SUNEDU.",
+            "Criterio numérico específico: admisión dirigida por una de las cinco mejores universidades públicas.",
+            "Meta cuantificada: 30% del peso del factor disciplinario en los ascensos.",
+            "Prueba de polígrafo para admisión y asignación de cargos.",
+            "SERVIR nombrado para transparencia en ascensos."
+          ],
+          "weaknesses": [
+            "Sin inversión en equipamiento especificada.",
+            "Sin cronograma de la reforma de admisión.",
+            "Sin número de escuelas involucradas.",
+            "Sin mejoras salariales para atraer mejores candidatos."
+          ],
+          "gaps": [
+            "Inversión en equipamiento (monto).",
+            "Cronograma de la reforma de admisión.",
+            "Número de escuelas involucradas.",
+            "Sistema de evaluación del desempeño policial.",
+            "Mejoras salariales para atraer mejores candidatos."
+          ],
+          "conclusion": "La reforma policial de López Chau es técnicamente la propuesta más específica y detallada del plan en cualquier bloque. La combinación de cambio normativo (Ley Universitaria), institución de supervisión (SUNEDU), criterio numérico de selección (cinco mejores universidades) y meta cuantificada (30% factor disciplinario) es metodológicamente ejemplar.",
+          "corrected_methodology": true,
+          "correction_note": "El análisis original no reconoció adecuadamente las medidas concretas de esta variable, que incluyen norma específica, institución supervisora y meta cuantificada.",
+          "sections": {
+            "what_it_evaluates": "Las propuestas para mejorar la institución policial: cómo se selecciona a los policías, cómo se forman, cómo se asciende, el equipamiento y el control interno.",
+            "why_it_matters": "Sin una policía íntegra y profesional, ninguna política de seguridad funciona. La institución policial es el instrumento primario de cualquier estrategia contra el crimen. Si los filtros de ingreso son débiles, si los ascensos son discrecionales y si la formación es deficiente, el resultado es una policía que no puede cumplir su función.",
+            "current_problem": "La Policía Nacional del Perú (PNP) enfrenta problemas institucionales profundos. Según informes de la Defensoría del Pueblo y de organismos de derechos humanos, los procesos de selección y admisión policial han tenido históricamente bajos estándares de filtro en integridad y aptitudes. Los ascensos han operado con alta discrecionalidad y poca transparencia. Las escuelas policiales no están bajo ningún sistema de acreditación académica comparable al que rige para las universidades desde la reforma de la SUNEDU.",
+            "plan_proposal": "El plan propone consolidar una policía íntegra y profesional mediante: filtros estrictos de selección, reconocimiento al mérito y un shock de inversiones en equipamiento, tecnología e infraestructura, con cero tolerancia a la corrupción.",
+            "concrete_measures": "El proceso de admisión sería dirigido por una de las cinco mejores universidades públicas del país; modificar la Ley Universitaria para incluir las Escuelas de Oficiales de la PNP bajo supervisión de la SUNEDU y las Escuelas Técnicas de Suboficiales bajo el MINEDU; prueba de polígrafo para admisión y asignación de cargos; elevar al 30% el peso del factor disciplinario en los ascensos; SERVIR presente para asegurar transparencia en los procesos de ascenso.",
+            "implementation": "La SUNEDU, el MINEDU, SERVIR y las universidades públicas son nombradas explícitamente como instituciones ejecutoras. La modificación de la Ley Universitaria está identificada como el cambio normativo que lo hace posible. Im = 2.",
+            "potential_impact": "La supervisión de las escuelas PNP por la SUNEDU le daría el mismo poder de acreditación que hoy se ejerce sobre las universidades. El polígrafo en la admisión reduciría la infiltración de perfiles vinculados al crimen. El 30% de los ascensos dependiendo del factor disciplinario crearía un incentivo real para la integridad.",
+            "missing_elements": "El plan no especifica: inversión en equipamiento (monto), cronograma de la reforma de admisión, número de escuelas involucradas, sistema de evaluación del desempeño policial, ni mejoras salariales.",
+            "technical_evaluation": "La reforma policial es la variable mejor desarrollada de todo el plan. D=2 por diagnóstico específico de deficiencias. P=2 por política articulada con enfoque en integridad. M=2 por cinco medidas concretas con criterios numéricos. Im=2 por SUNEDU, MINEDU, SERVIR y universidades públicas nombrados. V=1. E=2 por Modificación Ley Universitaria (norma) + SUNEDU (institución) + 30% factor disciplinario (meta cuantificada)."
+          },
+          "criteria": {
+            "D": { "score": 2, "justification": "Diagnóstico con datos verificables del plan." },
+            "P": { "score": 2, "justification": "Propuesta clara y articulada con política definida." },
+            "M": { "score": 2, "justification": "Cinco medidas concretas con criterios numéricos." },
+            "Im": { "score": 2, "justification": "SUNEDU, MINEDU, SERVIR y universidades públicas nombrados." },
+            "V": { "score": 1, "justification": "Posible con vacíos importantes." },
+            "E": { "score": 2, "justification": "Norma + institución + meta cuantificada (≥ 2 elementos)." }
+          },
+          "criteria_sum": 11,
+          "formula_result": "Total/10 = (11/12) × 10 = 9.2/10",
+          "score_table": { "D": 2, "P": 2, "M": 2, "Im": 2, "V": 1, "E": 2, "final_score": 9.2 },
+          "sources": [
+            { "title": "Defensoría del Pueblo — Procesos de selección policial", "type": "fuente nacional", "url": "", "note": "Bajos estándares de filtro en integridad y aptitudes en la admisión policial." },
+            { "title": "SERVIR / Contraloría — Estándares meritocráticos", "type": "fuente nacional", "url": "", "note": "Falta de estándares meritocráticos en reparticiones del Estado, incluyendo la PNP." }
+          ]
+        },
+        {
+          "id": "sistema_penitenciario",
+          "name": "Sistema penitenciario",
+          "final_score": 9.2,
+          "rating_label": "Sólida",
+          "summary": "El sistema penitenciario del plan tiene el diagnóstico, la política y las medidas más específicas del bloque. La elección meritocrática del presidente del INPE, la modernización tecnológica y la meta cuantificada de inversiones pendientes configuran una propuesta técnicamente sólida. La debilidad más grave es la ausencia de estrategia para el hacinamiento carcelario.",
+          "strengths": [
+            "Elección del presidente del INPE mediante concurso público meritocrático.",
+            "Modernización tecnológica: bloqueadores de señal, escáneres de alta precisión.",
+            "Meta cuantificada: 0% de inversiones pendientes.",
+            "INPE y DIVISI-PNP nombrados con funciones definidas."
+          ],
+          "weaknesses": [
+            "Ausencia de estrategia para el hacinamiento carcelario (el problema más urgente).",
+            "Sin presupuesto de la modernización tecnológica.",
+            "Sin cronograma del retiro de penales de las ciudades.",
+            "Sin estrategia de rehabilitación y reinserción a escala."
+          ],
+          "gaps": [
+            "Hacinamiento carcelario: el problema más urgente.",
+            "Presupuesto de la modernización tecnológica.",
+            "Cronograma del retiro de penales de las ciudades.",
+            "Estrategia de rehabilitación y reinserción a escala."
+          ],
+          "conclusion": "El sistema penitenciario del plan tiene el diagnóstico, la política y las medidas más específicas del bloque. La elección meritocrática del presidente del INPE, la modernización tecnológica y la meta cuantificada de inversiones pendientes configuran una propuesta técnicamente sólida. La debilidad más grave es la ausencia de estrategia para el hacinamiento carcelario.",
+          "corrected_methodology": true,
+          "correction_note": "El análisis original no reconoció adecuadamente las medidas concretas de esta variable.",
+          "sections": {
+            "what_it_evaluates": "Las propuestas para el sistema carcelario: control del crimen organizado desde los penales, hacinamiento, reinserción social y gestión del INPE.",
+            "why_it_matters": "Las cárceles peruanas se han convertido en centros de operación del crimen organizado. Cuando un líder criminal sigue dirigiendo extorsiones y tráfico de drogas desde adentro de un penal, el sistema penitenciario no solo ha fallado en su función de reinserción: se ha convertido en parte del problema de seguridad pública.",
+            "current_problem": "El sistema penitenciario peruano está en una situación crítica. Según el INPE, los penales del país albergan más del doble de la población para la que fueron diseñados. El hacinamiento crea condiciones inhumanas. La Policía y el Ministerio Público han documentado que líderes de bandas organizadas dirigen extorsiones y tráfico de drogas desde dentro de los penales usando teléfonos celulares que ingresan ilegalmente.",
+            "plan_proposal": "El plan propone transformar el sistema penitenciario en un espacio efectivamente controlado, fortaleciendo la inteligencia penitenciaria mediante modernización tecnológica y articulación entre la PNP y el INPE, y eligiendo al presidente del INPE mediante concurso público meritocrático.",
+            "concrete_measures": "Elección del presidente del INPE mediante concurso público meritocrático; mejora del sistema de bloqueadores de señal celular con cobertura efectiva y mantenimiento continuo; adquisición de escáneres de alta precisión para el control de ingresos; retiro progresivo de los penales de las principales ciudades; proceso de profesionalización del personal con formación especializada y prueba de polígrafo.",
+            "implementation": "El INPE, la DIVISI-PNP y la Unidad de Inteligencia del INPE son nombrados explícitamente. El indicador tiene meta cuantificada: inversiones pendientes del 37.5% a 0%. Im = 2.",
+            "potential_impact": "La elección meritocrática del presidente del INPE rompería con los nombramientos políticos. Los bloqueadores mejorados reducirían la capacidad de dirigir crímenes desde los penales. Los escáneres de alta precisión reducirían el ingreso de sustancias prohibidas.",
+            "missing_elements": "El plan no aborda: el hacinamiento carcelario (que es el problema más urgente), el presupuesto de la modernización tecnológica, el cronograma del retiro de penales, ni una estrategia de rehabilitación y reinserción a escala.",
+            "technical_evaluation": "Sistema penitenciario es una de las variables más sólidas del bloque. D=2 por datos de inversiones pendientes. P=2 por política articulada. M=2 por cinco medidas concretas. Im=2 por INPE y DIVISI-PNP nombrados con funciones definidas. V=1. E=2 por concurso meritocrático (mecanismo) + INPE (institución) + meta 0% inversiones pendientes (meta cuantificada)."
+          },
+          "criteria": {
+            "D": { "score": 2, "justification": "Diagnóstico con datos verificables del plan." },
+            "P": { "score": 2, "justification": "Propuesta clara y articulada con política definida." },
+            "M": { "score": 2, "justification": "Cinco medidas concretas con instrumentos identificables." },
+            "Im": { "score": 2, "justification": "INPE y DIVISI-PNP nombrados con funciones definidas." },
+            "V": { "score": 1, "justification": "Posible con vacíos importantes." },
+            "E": { "score": 2, "justification": "Mecanismo + institución + meta cuantificada (≥ 2 elementos)." }
+          },
+          "criteria_sum": 11,
+          "formula_result": "Total/10 = (11/12) × 10 = 9.2/10",
+          "score_table": { "D": 2, "P": 2, "M": 2, "Im": 2, "V": 1, "E": 2, "final_score": 9.2 },
+          "sources": [
+            { "title": "INPE — Capacidad penitenciaria y hacinamiento", "type": "fuente nacional", "url": "", "note": "Los penales albergan más del doble de la población para la que fueron diseñados." }
+          ]
+        },
+        {
+          "id": "politica_contra_el_crimen_organizado",
+          "name": "Política contra el crimen organizado",
+          "final_score": 9.2,
+          "rating_label": "Sólida",
+          "summary": "La política contra el crimen organizado es técnicamente la más articulada del bloque. La combinación de nueva tipificación penal, articulación institucional PNP-UIF y ley de obligaciones a entidades financieras crea un ecosistema de respuesta coordinado. La ausencia de una estrategia de narcotráfico es la brecha más importante.",
+          "strengths": [
+            "Nuevo delito en el Código Penal: producción, posesión y difusión de mensajes extorsivos.",
+            "Articulación PNP-UIF para trazabilidad del flujo de dinero.",
+            "Ley que obliga a bancos, telefónicas y plataformas a cooperar con la justicia.",
+            "Múltiples instituciones nombradas con funciones definidas."
+          ],
+          "weaknesses": [
+            "Ausencia de estrategia específica de narcotráfico.",
+            "Sin desarticulación de cárteles internacionales.",
+            "Sin recuperación de territorios controlados por el crimen.",
+            "Sin política de lavado de activos a gran escala."
+          ],
+          "gaps": [
+            "Estrategia específica de narcotráfico.",
+            "Desarticulación de cárteles internacionales.",
+            "Recuperación de territorios controlados por el crimen.",
+            "Política de lavado de activos a gran escala."
+          ],
+          "conclusion": "La política contra el crimen organizado es técnicamente la más articulada del bloque. La combinación de nueva tipificación penal, articulación institucional PNP-UIF y ley de obligaciones a entidades financieras crea un ecosistema de respuesta coordinado. La ausencia de una estrategia de narcotráfico es la brecha más importante.",
+          "corrected_methodology": true,
+          "correction_note": "El análisis original no reconoció adecuadamente las medidas concretas de esta variable.",
+          "sections": {
+            "what_it_evaluates": "Las propuestas para desarticular el crimen organizado: extorsión, narcotráfico, minería ilegal, lavado de activos y corrupción de alta complejidad.",
+            "why_it_matters": "El crimen organizado no es solo un problema de seguridad: es una amenaza al funcionamiento del Estado, la economía y la vida cotidiana de millones de peruanos.",
+            "current_problem": "El crimen organizado en el Perú se ha diversificado y expandido de manera acelerada. Según el Ministerio del Interior y el Ministerio Público, operan bandas dedicadas a extorsión, minería ilegal, tala ilegal, pesca ilegal, tráfico de personas y lavado de activos. La Fiscalía de la Nación ha documentado la presencia de organizaciones con estructuras sofisticadas, algunas con vínculos transnacionales.",
+            "plan_proposal": "El plan propone desarticular las redes criminales mediante un Estado fortalecido, coordinado y con capacidad operativa, normativa e inteligencia. Las propuestas más concretas son: incorporar el delito de producción, posesión y difusión de mensajes extorsivos en el Código Penal, y fortalecer la articulación entre la PNP y la UIF para rastrear el dinero de las extorsiones.",
+            "concrete_measures": "Nuevo delito en el Código Penal: producción, posesión y difusión de mensajes extorsivos; articulación PNP-UIF para seguimiento y trazabilidad del flujo de dinero de las extorsiones; ley que obliga a bancos, telefónicas y plataformas digitales a contar con equipos de enlace para información rápida en casos de extorsión; directiva nacional para estandarizar el flujo de atención de denuncias por extorsión; coordinación MINEM, OEFA, MTPE, SUNAFIL, OSINERGMIN para fiscalizar la minería ilegal.",
+            "implementation": "La PNP, la UIF, los bancos, las empresas de telefonía y las plataformas digitales son nombrados como actores con obligaciones. El MINEM, OEFA, MTPE, SUNAFIL y OSINERGMIN para la minería ilegal. Im = 2 por múltiples instituciones con funciones definidas.",
+            "potential_impact": "La tipificación penal de mensajes extorsivos facilitaría las investigaciones y reduciría la impunidad. La articulación PNP-UIF mejoraría la trazabilidad de activos criminales. La ley que obliga a bancos y telefónicas a cooperar agilizaría la respuesta del sistema.",
+            "missing_elements": "El plan no aborda: estrategia específica de narcotráfico, desarticulación de cárteles internacionales, recuperación de territorios controlados por el crimen, ni política de lavado de activos a gran escala.",
+            "technical_evaluation": "Política contra el crimen organizado es la cuarta variable sólida del bloque. D=2 por diagnóstico de extorsión y minería ilegal. P=2 por estrategia articulada. M=2 por cinco medidas concretas con instrumentos normativos. Im=2 por múltiples instituciones nombradas. V=1. E=2 por modificación del Código Penal (norma) + PNP-UIF (instituciones) + nueva ley de información."
+          },
+          "criteria": {
+            "D": { "score": 2, "justification": "Diagnóstico con datos verificables del plan." },
+            "P": { "score": 2, "justification": "Propuesta clara y articulada con política definida." },
+            "M": { "score": 2, "justification": "Cinco medidas concretas con instrumentos normativos." },
+            "Im": { "score": 2, "justification": "Múltiples instituciones con funciones definidas." },
+            "V": { "score": 1, "justification": "Posible con vacíos importantes." },
+            "E": { "score": 2, "justification": "Norma + instituciones + nueva ley (≥ 2 elementos)." }
+          },
+          "criteria_sum": 11,
+          "formula_result": "Total/10 = (11/12) × 10 = 9.2/10",
+          "score_table": { "D": 2, "P": 2, "M": 2, "Im": 2, "V": 1, "E": 2, "final_score": 9.2 },
+          "sources": [
+            { "title": "Ministerio del Interior / Ministerio Público — Crimen organizado", "type": "fuente nacional", "url": "", "note": "Bandas dedicadas a extorsión, minería ilegal, tala ilegal, pesca ilegal, tráfico de personas y lavado de activos." },
+            { "title": "Fiscalía de la Nación — Organizaciones criminales", "type": "fuente nacional", "url": "", "note": "Presencia de organizaciones con estructuras sofisticadas, algunas con vínculos transnacionales." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "justicia_y_estado_de_derecho",
+      "name": "BLOQUE 3: JUSTICIA Y ESTADO DE DERECHO",
+      "average_score": 5.6,
+      "summary": "El bloque de justicia tiene variación significativa. La lucha contra la corrupción y la reforma judicial tienen contenido sustancial; autonomía institucional y reforma constitucional son muy débiles por falta de medidas específicas.",
+      "conclusion": "El bloque de justicia obtiene 5.6/10. La heterogeneidad es significativa: la lucha contra la corrupción (9.2) y la reforma judicial (7.5) tienen medidas concretas con instituciones nombradas; autonomía institucional (3.3) y reforma constitucional (2.5) son declarativas. Esta distribución refleja que el plan priorizó el acceso a la justicia y la corrupción como problemas urgentes, mientras la arquitectura constitucional e institucional más amplia no fue desarrollada.",
+      "strengths": [
+        "Lucha contra la corrupción con articulación PNP-UIF y nueva ley de información.",
+        "Reforma judicial con énfasis en meritocracia y fortalecimiento de la JNJ.",
+        "Criterios de integridad en ascensos con SERVIR."
+      ],
+      "weaknesses": [
+        "Autonomía institucional solo declarativa sin instrumentos de garantía.",
+        "Reforma constitucional completamente ausente.",
+        "Sin mecanismo operativo de la elección meritocrática de magistrados."
+      ],
+      "variables": [
+        {
+          "id": "reforma_del_sistema_judicial",
+          "name": "Reforma del sistema judicial",
+          "final_score": 7.5,
+          "rating_label": "Bien desarrollada",
+          "summary": "La reforma judicial tiene diagnóstico y propuesta sólidos pero le falta la concreción operativa que tiene el bloque de seguridad. El fortalecimiento de la JNJ y la meritocracia en nombramientos son la orientación correcta. La ausencia de mecanismo específico de implementación y cronograma la diferencia de las variables más altas.",
+          "strengths": [
+            "Diagnóstico específico del TC, JNJ y provisionalidad.",
+            "Propuesta articulada de meritocracia e independencia.",
+            "JNJ y TC nombrados como instituciones objeto de reforma.",
+            "Eliminación de magistrados provisionales como objetivo."
+          ],
+          "weaknesses": [
+            "Sin mecanismo operativo de la elección meritocrática (quién elige, bajo qué criterios).",
+            "Sin presupuesto de la reforma institucional.",
+            "Sin cronograma.",
+            "Sin metas de reducción de provisionalidad."
+          ],
+          "gaps": [
+            "Mecanismo operativo de la elección meritocrática.",
+            "Presupuesto de la reforma institucional.",
+            "Cronograma.",
+            "Metas de reducción de provisionalidad.",
+            "Indicadores de calidad judicial."
+          ],
+          "conclusion": "La reforma judicial tiene diagnóstico y propuesta sólidos pero le falta la concreción operativa que tiene el bloque de seguridad. El fortalecimiento de la JNJ y la meritocracia en nombramientos son la orientación correcta. La ausencia de mecanismo específico de implementación y cronograma la diferencia de las variables más altas.",
+          "corrected_methodology": false,
+          "correction_note": "",
+          "sections": {
+            "what_it_evaluates": "Las propuestas para mejorar la eficiencia, la independencia y el acceso al sistema judicial.",
+            "why_it_matters": "Un sistema judicial que no funciona bien es un sistema que no protege a la gente. Sin justicia oportuna y confiable, la ciudadanía queda desprotegida frente al crimen, los abusos y la corrupción. Y sin independencia judicial, las decisiones de los jueces pueden ser influidas por el poder político o económico.",
+            "current_problem": "El sistema de justicia peruano atraviesa una crisis de confianza e independencia agudizada en la última década. Según datos del Poder Judicial, alrededor del 40% de los jueces y fiscales son provisionales o supernumerarios. El Tribunal Constitucional ha operado con magistrados cuyo período estaba vencido. La Junta Nacional de Justicia fue suspendida por el Congreso en 2023. Las encuestas del IEP y Datum muestran que el Poder Judicial figura sistemáticamente entre las instituciones menos confiables del país, con tasas de desconfianza que superan el 80% en algunas mediciones.",
+            "plan_proposal": "El plan propone: recuperar la plena autonomía del sistema de justicia, consolidar un mecanismo de elección de magistrados que privilegie la meritocracia e idoneidad, fortalecer la JNJ como institución independiente, y reformar los procesos constitucionales de tutela de derechos.",
+            "concrete_measures": "Mecanismo de elección de magistrados meritocrático con procedimientos transparentes; fortalecer la JNJ como institución independiente; reforma normativa de procesos constitucionales de tutela de derechos; eliminación de magistrados provisionales como objetivo declarado.",
+            "implementation": "La JNJ, el PJ, el MP y el TC son mencionados como instituciones objeto de reforma. Sin presupuesto ni cronograma específico de implementación.",
+            "potential_impact": "El fortalecimiento de la JNJ mejoraría la calidad de los magistrados nombrados. La reforma de procesos constitucionales mejoraría el acceso a la justicia. La eliminación de la provisionalidad reduciría la vulnerabilidad del sistema a presiones políticas.",
+            "missing_elements": "El plan no especifica: el mecanismo operativo de la elección meritocrática, el presupuesto de la reforma institucional, el cronograma, metas de reducción de provisionalidad ni indicadores de calidad judicial.",
+            "technical_evaluation": "Reforma judicial tiene buen diagnóstico y propuesta articulada, pero las medidas son de reforma institucional sin especificidad operativa. D=2 por diagnóstico específico del TC, JNJ y provisionalidad. P=2 por política articulada de meritocracia e independencia. M=2 por tres medidas con nombres de instituciones. Im=1 por JNJ y TC nombrados sin mecanismo operativo. V=1. E=1 por JNJ (institución) + meritocracia (instrumento). Solo 2 elementos básicos."
+          },
+          "criteria": {
+            "D": { "score": 2, "justification": "Diagnóstico con datos verificables del plan." },
+            "P": { "score": 2, "justification": "Propuesta clara y articulada con política definida." },
+            "M": { "score": 2, "justification": "Varias medidas con nombres de instituciones." },
+            "Im": { "score": 1, "justification": "JNJ y TC nombrados sin mecanismo operativo." },
+            "V": { "score": 1, "justification": "Posible con vacíos importantes." },
+            "E": { "score": 1, "justification": "JNJ (institución) + meritocracia (instrumento). Solo 2 elementos básicos." }
+          },
+          "criteria_sum": 9,
+          "formula_result": "Total/10 = (9/12) × 10 = 7.5/10",
+          "score_table": { "D": 2, "P": 2, "M": 2, "Im": 1, "V": 1, "E": 1, "final_score": 7.5 },
+          "sources": [
+            { "title": "Poder Judicial — Provisionalidad de jueces y fiscales", "type": "fuente nacional", "url": "", "note": "Alrededor del 40% de los jueces y fiscales son provisionales o supernumerarios." },
+            { "title": "IEP / Datum — Confianza en el Poder Judicial", "type": "encuesta", "url": "", "note": "Tasas de desconfianza en el Poder Judicial que superan el 80% en algunas mediciones." }
+          ]
+        },
+        {
+          "id": "lucha_contra_la_corrupcion",
+          "name": "Lucha contra la corrupción",
+          "final_score": 9.2,
+          "rating_label": "Sólida",
+          "summary": "La lucha contra la corrupción es la variable más alta del bloque. La combinación de articulación PNP-UIF, nueva ley de información a entidades financieras y criterios de integridad con SERVIR configura una estrategia coherente. La omisión más importante es la recuperación de activos del Estado.",
+          "strengths": [
+            "Articulación PNP-UIF para trazabilidad de flujo de activos ilícitos.",
+            "Ley que obliga a bancos, telefónicas y plataformas a entregar información.",
+            "Criterios de integridad en ascensos con SERVIR.",
+            "PNP, UIF y SERVIR nombrados explícitamente."
+          ],
+          "weaknesses": [
+            "Sin recuperación de activos del Estado.",
+            "Sin estrategia de protección a testigos y denunciantes.",
+            "Sin reforma del sistema disciplinario.",
+            "Sin fiscalías anticorrupción con mayor capacidad."
+          ],
+          "gaps": [
+            "Recuperación de activos del Estado.",
+            "Estrategia de protección a testigos y denunciantes.",
+            "Reforma del sistema disciplinario.",
+            "Fiscalías anticorrupción con mayor capacidad."
+          ],
+          "conclusion": "La lucha contra la corrupción es la variable más alta del bloque. La combinación de articulación PNP-UIF, nueva ley de información a entidades financieras y criterios de integridad con SERVIR configura una estrategia coherente. La omisión más importante es la recuperación de activos del Estado.",
+          "corrected_methodology": false,
+          "correction_note": "",
+          "sections": {
+            "what_it_evaluates": "Las propuestas para prevenir, detectar y sancionar la corrupción en el sector público.",
+            "why_it_matters": "La corrupción no es solo un problema ético: tiene efectos económicos directos. Encarece las obras públicas, reduce la calidad de los servicios, desincentiva la inversión privada y erosiona la confianza ciudadana en el Estado. Es también el mecanismo principal por el que el crimen organizado captura instituciones.",
+            "current_problem": "La corrupción es uno de los problemas estructurales más costosos para el Perú. Según Transparencia Internacional, el país obtiene consistentemente alrededor de 33 puntos sobre 100 en el Índice de Percepción de la Corrupción. La Contraloría General reporta anualmente miles de millones de soles en presuntos perjuicios al Estado por irregularidades en contrataciones públicas. Cinco expresidentes han sido investigados o procesados por corrupción.",
+            "plan_proposal": "El plan propone desarticular las redes corruptas mediante articulación institucional, trazabilidad de activos, nueva legislación de acceso a información y criterios de integridad en la función pública.",
+            "concrete_measures": "Articulación PNP-UIF para seguimiento y trazabilidad de flujo de activos ilícitos; ley que obliga a bancos, telefónicas y plataformas a entregar información en casos de corrupción; criterios estrictos para integrantes de Juntas Evaluadora, Selectora y Revisora en ascensos (con SERVIR); directiva nacional para estandarizar procesos de denuncia.",
+            "implementation": "La PNP, la UIF y SERVIR son nombrados explícitamente. La ley de acceso a información de bancos y telefónicas está identificada como nueva norma. Im = 2.",
+            "potential_impact": "La articulación PNP-UIF mejoraría la trazabilidad de activos de la corrupción. La ley de información rápida obligaría a entidades financieras a cooperar. Los criterios de integridad en ascensos con SERVIR reducirían la captura de procesos de selección.",
+            "missing_elements": "El plan no aborda: recuperación de activos del Estado, estrategia de protección a testigos y denunciantes, reforma del sistema disciplinario, ni fiscalías anticorrupción con mayor capacidad.",
+            "technical_evaluation": "Lucha contra la corrupción es la variable más sólida del bloque. D=2 por diagnóstico de corrupción de alta complejidad y captura institucional. P=2 por política articulada. M=2 por cuatro medidas con instrumentos normativos. Im=2 por PNP, UIF y SERVIR nombrados. V=1. E=2 por nueva ley de información (norma) + PNP-UIF (instituciones) + trazabilidad de activos (instrumento)."
+          },
+          "criteria": {
+            "D": { "score": 2, "justification": "Diagnóstico con datos verificables del plan." },
+            "P": { "score": 2, "justification": "Propuesta clara y articulada con política definida." },
+            "M": { "score": 2, "justification": "Cuatro medidas con instrumentos normativos." },
+            "Im": { "score": 2, "justification": "PNP, UIF y SERVIR nombrados explícitamente." },
+            "V": { "score": 1, "justification": "Posible con vacíos importantes." },
+            "E": { "score": 2, "justification": "Norma + instituciones + instrumento (≥ 2 elementos)." }
+          },
+          "criteria_sum": 11,
+          "formula_result": "Total/10 = (11/12) × 10 = 9.2/10",
+          "score_table": { "D": 2, "P": 2, "M": 2, "Im": 2, "V": 1, "E": 2, "final_score": 9.2 },
+          "sources": [
+            { "title": "Transparencia Internacional — Índice de Percepción de la Corrupción", "type": "organismo internacional", "url": "", "note": "Perú obtiene consistentemente alrededor de 33 puntos sobre 100." },
+            { "title": "Contraloría General — Presuntos perjuicios al Estado", "type": "fuente nacional", "url": "", "note": "Miles de millones de soles anuales en presuntos perjuicios por irregularidades en contrataciones públicas." }
+          ]
+        },
+        {
+          "id": "autonomia_de_instituciones",
+          "name": "Autonomía de instituciones",
+          "final_score": 3.3,
+          "rating_label": "Débil",
+          "summary": "La autonomía institucional es la variable más débil del bloque de justicia. El plan la reconoce como principio pero no desarrolla mecanismos para garantizarla. La diferencia con las variables sólidas del bloque es exactamente esta: reconocer el problema sin instrumentos para resolverlo.",
+          "strengths": [
+            "Reconocimiento de la autonomía del BCRP como principio rector.",
+            "Mención de la JNJ como institución a fortalecer."
+          ],
+          "weaknesses": [
+            "Sin mecanismos concretos de garantía de autonomía.",
+            "Sin reforma del TC.",
+            "Sin protección de organismos reguladores.",
+            "Autonomía institucional declarativa sin instrumento de protección."
+          ],
+          "gaps": [
+            "Mecanismos concretos de garantía de autonomía.",
+            "Reforma del TC.",
+            "Protección de organismos reguladores (OSIPTEL, OSINERGMIN).",
+            "Sistema electoral (ONPE, JNE)."
+          ],
+          "conclusion": "La autonomía institucional es la variable más débil del bloque de justicia. El plan la reconoce como principio pero no desarrolla mecanismos para garantizarla. La diferencia con las variables sólidas del bloque es exactamente esta: reconocer el problema sin instrumentos para resolverlo.",
+          "corrected_methodology": false,
+          "correction_note": "",
+          "sections": {
+            "what_it_evaluates": "Las propuestas para preservar y fortalecer la independencia de las instituciones del Estado frente a la interferencia política.",
+            "why_it_matters": "La autonomía institucional es lo que garantiza que el Estado funcione con reglas predecibles, independientemente de quién esté en el gobierno. Cuando el poder político logra controlar a las instituciones que deberían ser independientes, el Estado deja de ser confiable.",
+            "current_problem": "En los últimos años, el Perú ha visto una erosión sistemática de la autonomía de sus instituciones clave. La JNJ fue suspendida por el Congreso en 2023. El Tribunal Constitucional operó durante períodos prolongados con magistrados con mandato vencido. La SUNEDU enfrentó presiones activas para revertir la reforma universitaria. El BCRP ha preservado su autonomía formal, pero la cultura política peruana de interferir en instituciones independientes representa un riesgo permanente.",
+            "plan_proposal": "El plan propone preservar la autonomía del BCRP como principio y fortalecer la JNJ. La autonomía institucional aparece como principio rector del plan más que como una política articulada.",
+            "concrete_measures": "'Preservar la autonomía y capacidad técnica del BCRP' (principio declarativo); 'Fortalecer la JNJ como institución independiente' (medida de fortalecimiento sin mecanismo de garantía); 'Pesos y contrapesos' mencionados implícitamente en contexto de reforma judicial.",
+            "implementation": "El BCRP mencionado explícitamente. Sin mecanismo normativo de garantía de autonomía más allá de la declaración de voluntad política.",
+            "potential_impact": "La preservación de la autonomía del BCRP tiene impacto directo en la credibilidad de la política monetaria. El fortalecimiento de la JNJ mejoraría la calidad de los magistrados. Sin embargo, el impacto depende de la voluntad política más que de mecanismos institucionales.",
+            "missing_elements": "El plan no aborda: mecanismos concretos de garantía de autonomía, reforma del TC, protección de organismos reguladores (OSIPTEL, OSINERGMIN), sistema electoral (ONPE, JNE).",
+            "technical_evaluation": "D=1 por reconocimiento sin datos estadísticos. P=1 por propuesta de principios sin política articulada. M=1 por BCRP nombrado pero sin mecanismo. Im=0 sin mecanismo normativo de garantía. V=1. E=0 sin instrumento + institución con función protectora."
+          },
+          "criteria": {
+            "D": { "score": 1, "justification": "Reconocimiento general sin datos estadísticos." },
+            "P": { "score": 1, "justification": "Propuesta de principios sin política articulada." },
+            "M": { "score": 1, "justification": "BCRP mencionado pero sin mecanismo concreto." },
+            "Im": { "score": 0, "justification": "Sin mecanismo normativo de garantía." },
+            "V": { "score": 1, "justification": "Posible con vacíos importantes." },
+            "E": { "score": 0, "justification": "Sin instrumento + institución con función protectora." }
+          },
+          "criteria_sum": 4,
+          "formula_result": "Total/10 = (4/12) × 10 = 3.3/10",
+          "score_table": { "D": 1, "P": 1, "M": 1, "Im": 0, "V": 1, "E": 0, "final_score": 3.3 },
+          "sources": []
+        },
+        {
+          "id": "reforma_constitucional",
+          "name": "Reforma constitucional",
+          "final_score": 2.5,
+          "rating_label": "Muy débil",
+          "summary": "La reforma constitucional es la variable más baja del bloque. El plan no toma ninguna posición técnicamente desarrollada sobre el marco constitucional. Su ausencia en el documento es en sí misma una señal política de continuidad institucional.",
+          "strengths": [
+            "Posición implícita de continuidad del marco constitucional vigente."
+          ],
+          "weaknesses": [
+            "Sin posición explícita sobre reforma constitucional.",
+            "Sin medidas concretas.",
+            "Sin institución ni proceso identificado."
+          ],
+          "gaps": [
+            "Posición del candidato sobre el marco constitucional.",
+            "Medidas o instrumentos de reforma constitucional."
+          ],
+          "conclusion": "La reforma constitucional es la variable más baja del bloque. El plan no toma ninguna posición técnicamente desarrollada sobre el marco constitucional. Su ausencia en el documento es en sí misma una señal política de continuidad institucional.",
+          "corrected_methodology": false,
+          "correction_note": "",
+          "sections": {
+            "what_it_evaluates": "La posición del candidato respecto a cambios en el marco constitucional: nueva constitución o reformas parciales, mecanismo y alcance.",
+            "why_it_matters": "La posición de un candidato sobre la Constitución es un indicador relevante de su enfoque institucional. Perú tiene un debate permanente sobre si la Constitución de 1993 requiere reformas profundas.",
+            "current_problem": "La Constitución peruana de 1993 tiene décadas de debate político sobre su vigencia y legitimidad. Fue aprobada bajo el gobierno de Alberto Fujimori en circunstancias que muchos consideran cuestionables, y ha sido objeto de más de treinta reformas parciales desde entonces. El debate sobre si el país necesita una nueva constitución o reformas parciales profundas sigue abierto.",
+            "plan_proposal": "El plan no toma una posición explícita sobre reforma constitucional. La mención más cercana es la propuesta de reforma del sistema de justicia con independencia de magistrados, que implícitamente apoya el marco constitucional vigente.",
+            "concrete_measures": "No se identifican medidas de reforma constitucional en el plan. La posición sobre el marco constitucional no está desarrollada.",
+            "implementation": "Sin propuesta evaluable. El plan no aborda el tema constitucional de manera directa. La posición del candidato no puede inferirse del documento.",
+            "potential_impact": "Sin propuesta evaluable.",
+            "missing_elements": "El plan no toma ninguna posición técnicamente desarrollada sobre el marco constitucional.",
+            "technical_evaluation": "D=1 por reconocimiento implícito del marco constitucional a través de la reforma judicial. P=1 por implicación de apoyo al marco vigente. M=0 sin medidas. Im=0. V=1. E=0. El tema constitucional no es una prioridad del plan."
+          },
+          "criteria": {
+            "D": { "score": 1, "justification": "Reconocimiento implícito del marco constitucional." },
+            "P": { "score": 1, "justification": "Implicación de apoyo al marco vigente, sin política articulada." },
+            "M": { "score": 0, "justification": "Sin medidas concretas." },
+            "Im": { "score": 0, "justification": "Sin institución ni proceso." },
+            "V": { "score": 1, "justification": "Posible con vacíos importantes." },
+            "E": { "score": 0, "justification": "Sin elementos concretos." }
+          },
+          "criteria_sum": 3,
+          "formula_result": "Total/10 = (3/12) × 10 = 2.5/10",
+          "score_table": { "D": 1, "P": 1, "M": 0, "Im": 0, "V": 1, "E": 0, "final_score": 2.5 },
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "educacion",
+      "name": "BLOQUE 4: EDUCACIÓN",
+      "average_score": 6.0,
+      "summary": "El bloque de educación tiene diagnóstico fuerte y estrategia articulada con datos propios del plan (Evaluación Muestral 2024 del MINEDU). Las variables de educación escolar y formación técnica son sólidas; infraestructura educativa y educación superior tienen medidas parciales.",
+      "conclusion": "El bloque educativo obtiene 6.0/10. Educación escolar (7.5) y formación técnica (7.5) son variables bien desarrolladas por su diagnóstico con datos propios y medidas con metas cuantificadas. Infraestructura educativa (3.3) es la brecha más grande: la visión de 'escuelas dignas' sin presupuesto ni cronograma. Educación superior (5.8) está en nivel medio.",
+      "strengths": [
+        "Educación escolar y formación técnica con diagnóstico con datos propios y metas cuantificadas.",
+        "Programa nacional de alimentación escolar al 100% de escuelas públicas.",
+        "Meta de cobertura de primera infancia del 31.6% al 70%."
+      ],
+      "weaknesses": [
+        "Infraestructura educativa sin presupuesto ni cronograma.",
+        "Educación superior sin política concreta.",
+        "Sin metas de aprendizaje cuantificadas al 2031."
+      ],
+      "variables": [
+        {
+          "id": "educacion_escolar",
+          "name": "Educación escolar",
+          "final_score": 7.5,
+          "rating_label": "Bien desarrollada",
+          "summary": "Educación escolar es la variable más sólida del bloque por su diagnóstico con datos propios y sus metas cuantificadas. El programa de alimentación escolar al 100% y la meta de cobertura de primera infancia al 70% son propuestas concretas y verificables. La debilidad es la falta de metas de aprendizaje al 2031.",
+          "strengths": [
+            "Diagnóstico con datos de UMC-MINEDU 2024.",
+            "Meta cuantificada: 100% de escuelas públicas con alimentación.",
+            "Meta de cobertura de primera infancia del 31.6% al 70%.",
+            "Compras directas a agricultores locales como instrumento."
+          ],
+          "weaknesses": [
+            "Sin metas de aprendizaje cuantificadas al 2031.",
+            "MINEDU solo implícito.",
+            "Sin presupuesto específico.",
+            "Sin cronograma de la reforma docente."
+          ],
+          "gaps": [
+            "Metas de aprendizaje cuantificadas (porcentaje de satisfactorio esperado al 2031).",
+            "Presupuesto del programa de alimentación.",
+            "Cronograma de la reforma docente.",
+            "Mecanismo de la gestión territorial."
+          ],
+          "conclusion": "Educación escolar es la variable más sólida del bloque por su diagnóstico con datos propios y sus metas cuantificadas. El programa de alimentación escolar al 100% y la meta de cobertura de primera infancia al 70% son propuestas concretas y verificables. La debilidad es la falta de metas de aprendizaje al 2031.",
+          "corrected_methodology": false,
+          "correction_note": "",
+          "sections": {
+            "what_it_evaluates": "Las propuestas para mejorar la calidad de la educación básica: aprendizajes, currículo, formación docente y deserción.",
+            "why_it_matters": "La educación básica es la base de todo lo demás. Si un niño llega a secundaria sin saber leer bien ni hacer operaciones matemáticas básicas, prácticamente no puede recuperar esa brecha.",
+            "current_problem": "El sistema educativo peruano tiene uno de los desempeños más bajos de la región en resultados de aprendizaje. En las pruebas PISA de 2022, el Perú obtuvo 391 puntos en lectura y matemáticas, frente a promedios OCDE de 476 y 472 respectivamente. Según la Evaluación Censal de Estudiantes (ECE) del MINEDU, solo alrededor del 23-26% de los estudiantes de primaria logra nivel satisfactorio en comprensión lectora.",
+            "plan_proposal": "El plan propone garantizar educación de calidad a lo largo de la vida con enfoque territorial, desarrollar el máximo potencial de los estudiantes y asegurar trayectorias educativas continuas desde la primera infancia hasta la superior.",
+            "concrete_measures": "Programa nacional de alimentación escolar: al menos una comida diaria en el 100% de escuelas públicas de inicial, primaria y secundaria, con compras directas a agricultores locales y estándares de calidad nutricional; paquete integrado de protección social para primera infancia con meta de cobertura del 31.6% al 70%; gestión territorial descentralizada para garantizar aprendizajes; fortalecer la carrera docente como protagonista del cambio educativo.",
+            "implementation": "El MINEDU aparece implícitamente como rector del sistema educativo. Los agricultores locales como proveedores del programa de alimentación. Sin presupuesto específico.",
+            "potential_impact": "El programa de alimentación escolar al 100% atacaría un determinante directo del aprendizaje (nutrición). La meta de cobertura de primera infancia del 31.6% al 70% duplicaría la protección de la etapa más crítica del desarrollo.",
+            "missing_elements": "El plan no especifica: metas de aprendizaje cuantificadas (porcentaje de satisfactorio esperado al 2031), presupuesto del programa de alimentación, cronograma de la reforma docente, mecanismo de la gestión territorial.",
+            "technical_evaluation": "D=2 por datos explícitos de la Evaluación Muestral 2024 (UMC-MINEDU) con fuente citada. P=2 por política articulada con enfoque territorial. M=2 por dos medidas con metas cuantificadas (100% escuelas, 70% primera infancia). Im=1 por MINEDU implícito y agricultores locales nombrados. V=1. E=1 por programa alimentación (instrumento) + meta 100% escuelas (meta cuantificada). Parcialmente cumple umbral."
+          },
+          "criteria": {
+            "D": { "score": 2, "justification": "Datos explícitos de UMC-MINEDU 2024 con fuente citada." },
+            "P": { "score": 2, "justification": "Propuesta clara y articulada con política definida." },
+            "M": { "score": 2, "justification": "Dos medidas con metas cuantificadas (100% escuelas, 70% primera infancia)." },
+            "Im": { "score": 1, "justification": "MINEDU implícito y agricultores locales nombrados." },
+            "V": { "score": 1, "justification": "Posible con vacíos importantes." },
+            "E": { "score": 1, "justification": "Programa alimentación + meta 100% escuelas. Cumple parcialmente." }
+          },
+          "criteria_sum": 9,
+          "formula_result": "Total/10 = (9/12) × 10 = 7.5/10",
+          "score_table": { "D": 2, "P": 2, "M": 2, "Im": 1, "V": 1, "E": 1, "final_score": 7.5 },
+          "sources": [
+            { "title": "UMC-MINEDU — Evaluación Muestral 2024", "type": "fuente nacional", "url": "", "note": "Fuente citada explícitamente en el plan para datos de aprendizaje." },
+            { "title": "MINEDU — Evaluación Censal de Estudiantes (ECE)", "type": "fuente nacional", "url": "", "note": "Solo el 23-26% de estudiantes de primaria logra nivel satisfactorio en comprensión lectora." },
+            { "title": "OCDE — PISA 2022", "type": "organismo internacional", "url": "", "note": "Perú obtuvo 391 puntos en lectura y matemáticas, frente a promedios OCDE de 476 y 472." }
+          ]
+        },
+        {
+          "id": "infraestructura_educativa",
+          "name": "Infraestructura educativa",
+          "final_score": 3.3,
+          "rating_label": "Débil",
+          "summary": "La infraestructura educativa es la variable más débil del bloque. El plan menciona la necesidad de escuelas dignas como parte de la visión pero no la desarrolla como política pública con medidas, presupuesto o cronograma. Es la brecha más importante del capítulo educativo.",
+          "strengths": [
+            "Reconocimiento de la problemática de infraestructura escolar."
+          ],
+          "weaknesses": [
+            "Sin institución ejecutora (PRONIED no mencionado).",
+            "Sin presupuesto ni cronograma.",
+            "Sin conectividad digital como política específica.",
+            "Solo objetivo declarativo sin medidas concretas."
+          ],
+          "gaps": [
+            "Cuántas escuelas se construirán o renovarán.",
+            "Presupuesto de infraestructura.",
+            "Cronograma.",
+            "Conectividad digital como política específica."
+          ],
+          "conclusion": "La infraestructura educativa es la variable más débil del bloque. El plan menciona la necesidad de escuelas dignas como parte de la visión pero no la desarrolla como política pública con medidas, presupuesto o cronograma. Es la brecha más importante del capítulo educativo.",
+          "corrected_methodology": false,
+          "correction_note": "",
+          "sections": {
+            "what_it_evaluates": "Las propuestas para mejorar la infraestructura física y digital de los colegios.",
+            "why_it_matters": "Un niño no puede aprender bien en un colegio sin techo, sin agua potable, sin electricidad ni sin conexión a internet. La infraestructura escolar no es un lujo: es la condición mínima para que la educación funcione.",
+            "current_problem": "Según el Censo Educativo del MINEDU, alrededor del 54% de los locales escolares públicos presenta algún nivel de deterioro en su infraestructura, y una proporción significativa no cuenta con agua potable ni desagüe. La conectividad es otro problema serio: menos de la mitad de las escuelas tiene acceso a internet. El PRONIED ha tenido históricamente baja ejecución presupuestal.",
+            "plan_proposal": "El plan menciona la necesidad de escuelas 'conectadas y con condiciones dignas' como parte de la visión, pero no desarrolla una estrategia específica de infraestructura educativa.",
+            "concrete_measures": "'Escuelas serán espacios seguros, conectados y con condiciones dignas' (objetivo declarativo sin medida); equipamiento y modernización mencionados como necesidad.",
+            "implementation": "Sin institución ejecutora de infraestructura educativa (el PRONIED no es mencionado). Sin presupuesto ni cronograma.",
+            "potential_impact": "Sin medidas concretas el impacto no puede estimarse.",
+            "missing_elements": "El plan no desarrolla: cuántas escuelas se construirán o renovarán, el presupuesto de infraestructura, el cronograma, ni la conectividad digital como política específica.",
+            "technical_evaluation": "D=1 por reconocimiento de la problemática sin datos. P=1 por visión sin política. M=1 por mención de escuelas dignas como objetivo. Im=0 sin institución ni presupuesto. V=1. E=0 sin instrumento + institución + meta."
+          },
+          "criteria": {
+            "D": { "score": 1, "justification": "Reconocimiento de la problemática sin datos." },
+            "P": { "score": 1, "justification": "Visión sin política articulada." },
+            "M": { "score": 1, "justification": "Mención de escuelas dignas como objetivo." },
+            "Im": { "score": 0, "justification": "Sin institución ejecutora ni presupuesto." },
+            "V": { "score": 1, "justification": "Posible con vacíos importantes." },
+            "E": { "score": 0, "justification": "Sin instrumento + institución + meta." }
+          },
+          "criteria_sum": 4,
+          "formula_result": "Total/10 = (4/12) × 10 = 3.3/10",
+          "score_table": { "D": 1, "P": 1, "M": 1, "Im": 0, "V": 1, "E": 0, "final_score": 3.3 },
+          "sources": [
+            { "title": "MINEDU — Censo Educativo", "type": "fuente nacional", "url": "", "note": "Alrededor del 54% de los locales escolares públicos presenta algún nivel de deterioro en su infraestructura." }
+          ]
+        },
+        {
+          "id": "educacion_superior",
+          "name": "Educación superior",
+          "final_score": 5.8,
+          "rating_label": "Media",
+          "summary": "Educación superior es una variable media. Tiene buen diagnóstico con dato cuantificado pero la propuesta es una visión sin política concreta. La brecha es que el plan reconoce el problema de acceso pero no desarrolla los instrumentos para ampliarlo.",
+          "strengths": [
+            "Dato explícito de acceso: 3 de cada 10 adolescentes acceden a educación superior.",
+            "SUNEDU presente en el plan (aunque en contexto de reforma policial)."
+          ],
+          "weaknesses": [
+            "Propuesta es una visión sin política articulada.",
+            "Sin reforma de la Ley Universitaria en contexto educativo.",
+            "Sin metas de acceso.",
+            "Sin financiamiento de la educación superior."
+          ],
+          "gaps": [
+            "Reforma de la Ley Universitaria en contexto educativo.",
+            "Metas de acceso a educación superior.",
+            "Calidad académica con indicadores.",
+            "Financiamiento de la educación superior."
+          ],
+          "conclusion": "Educación superior es una variable media. Tiene buen diagnóstico con dato cuantificado pero la propuesta es una visión sin política concreta. La brecha es que el plan reconoce el problema de acceso pero no desarrolla los instrumentos para ampliarlo.",
+          "corrected_methodology": false,
+          "correction_note": "",
+          "sections": {
+            "what_it_evaluates": "Las propuestas para mejorar la calidad, cobertura y equidad de la educación universitaria.",
+            "why_it_matters": "La educación superior determina en gran medida las oportunidades de empleo de calidad y la movilidad social. Un país donde solo 3 de cada 10 jóvenes accede a la universidad es un país que desperdicia talento y perpetúa la desigualdad.",
+            "current_problem": "Según el INEI, alrededor del 30-35% de los jóvenes entre 18 y 24 años accede a alguna forma de educación superior, con una brecha muy marcada entre Lima y las regiones. En algunos departamentos amazónicos y andinos, el acceso puede ser menos del 15%. La reforma universitaria impulsada a través de la SUNEDU desde 2014 fue un punto de inflexión pero ha enfrentado presiones políticas persistentes para ser revertida.",
+            "plan_proposal": "El plan propone que los jóvenes puedan acceder a una educación superior diversificada, pertinente, con empleabilidad y arraigo territorial. Propone fortalecer la calidad académica universitaria.",
+            "concrete_measures": "Educación superior diversificada, pertinente y con empleabilidad (objetivo declarativo); arraigo territorial en educación superior (orientación de política); la SUNEDU aparece mencionada en el contexto de reforma policial.",
+            "implementation": "La SUNEDU está nombrada en el plan (en el contexto de reforma policial). Su rol en educación superior no es desarrollado específicamente aquí.",
+            "potential_impact": "La diversificación y la empleabilidad en educación superior tendrían impacto en la transición de jóvenes al mercado laboral. El arraigo territorial podría reducir la migración.",
+            "missing_elements": "El plan no desarrolla: reforma de la Ley Universitaria en contexto educativo, metas de acceso, calidad académica con indicadores, ni financiamiento de la educación superior.",
+            "technical_evaluation": "D=2 por dato explícito de acceso (3 de 10 adolescentes acceden a educación superior). P=1 por visión sin política articulada. M=1 por mención de diversificación y empleabilidad. Im=1 por SUNEDU presente en el plan. V=1. E=1 por SUNEDU (institución) + diversificación (instrumento parcial)."
+          },
+          "criteria": {
+            "D": { "score": 2, "justification": "Dato explícito de acceso: 3 de 10 adolescentes." },
+            "P": { "score": 1, "justification": "Visión sin política articulada." },
+            "M": { "score": 1, "justification": "Mención de diversificación y empleabilidad." },
+            "Im": { "score": 1, "justification": "SUNEDU presente en el plan." },
+            "V": { "score": 1, "justification": "Posible con vacíos importantes." },
+            "E": { "score": 1, "justification": "SUNEDU + diversificación. Cumple parcialmente." }
+          },
+          "criteria_sum": 7,
+          "formula_result": "Total/10 = (7/12) × 10 = 5.8/10",
+          "score_table": { "D": 2, "P": 1, "M": 1, "Im": 1, "V": 1, "E": 1, "final_score": 5.8 },
+          "sources": [
+            { "title": "INEI — Acceso a educación superior", "type": "fuente nacional", "url": "", "note": "Alrededor del 30-35% de los jóvenes entre 18 y 24 años accede a alguna forma de educación superior." }
+          ]
+        },
+        {
+          "id": "formacion_tecnica",
+          "name": "Formación técnica",
+          "final_score": 7.5,
+          "rating_label": "Bien desarrollada",
+          "summary": "Formación técnica es la segunda variable mejor del bloque. El diagnóstico de la desconexión academia-industria-Estado con datos de informalidad laboral, combinado con la propuesta de convenios universitarios y articulación territorial, constituye una propuesta medianamente sólida. La ausencia de presupuesto y metas de empleabilidad son las brechas más importantes.",
+          "strengths": [
+            "Diagnóstico con datos de informalidad en MIPYMES (81.3%).",
+            "Propuesta articulada de articulación tripartita academia-industria-Estado.",
+            "Convenios con universidades públicas y privadas como instrumento.",
+            "Formación territorial vinculada a sectores priorizados."
+          ],
+          "weaknesses": [
+            "Sin presupuesto para formación técnica.",
+            "Sin número de beneficiarios.",
+            "Sin metas de reducción de la brecha de empleabilidad.",
+            "Sin articulación con el MINEDU para reforma de los institutos técnicos."
+          ],
+          "gaps": [
+            "Presupuesto para formación técnica.",
+            "Número de beneficiarios.",
+            "Metas de reducción de la brecha de empleabilidad.",
+            "Rol de los IESTs en el sistema.",
+            "Articulación con el MINEDU para reforma de los institutos técnicos."
+          ],
+          "conclusion": "Formación técnica es la segunda variable mejor del bloque. El diagnóstico de la desconexión academia-industria-Estado con datos de informalidad laboral, combinado con la propuesta de convenios universitarios y articulación territorial, constituye una propuesta medianamente sólida. La ausencia de presupuesto y metas de empleabilidad son las brechas más importantes.",
+          "corrected_methodology": false,
+          "correction_note": "",
+          "sections": {
+            "what_it_evaluates": "Las propuestas para fortalecer la educación técnico-productiva y la formación para el trabajo.",
+            "why_it_matters": "La formación técnica bien conectada con el mercado laboral es uno de los caminos más directos hacia la formalización del empleo. Un técnico bien formado en lo que las empresas necesitan tiene más posibilidades de acceder a un empleo digno.",
+            "current_problem": "La educación técnica es uno de los eslabones más débiles del sistema formativo peruano. Según el INEI y el Ministerio de Trabajo, la mayoría de los técnicos egresados de IESTs tiene dificultades para insertarse en el mercado laboral formal. El sistema tiene más de 1,200 IEST de calidad muy heterogénea, sin un sistema de acreditación robusto.",
+            "plan_proposal": "El plan propone articular academia-industria-Estado para innovación y formación técnica territorial vinculada a sectores productivos. Propone convenios con universidades públicas y privadas para becas de maestría al personal policial (modelo replicable) y formación técnica vinculada a portafolios productivos regionales.",
+            "concrete_measures": "Convenios con universidades públicas y privadas para becas de maestría y programas de educación continua para personal policial; articulación academia-industria-Estado para la desconexión identificada; formación técnica territorial vinculada a sectores priorizados (agroindustria, turismo, minería).",
+            "implementation": "Las universidades públicas y privadas son nombradas como actores de los convenios. Articulación con el sector industrial propuesta. Sin presupuesto específico para formación técnica.",
+            "potential_impact": "La articulación academia-industria-Estado reduciría el desajuste entre oferta formativa y demanda laboral. Los convenios universitarios para formación continua crean precedente para escalar a otros sectores.",
+            "missing_elements": "El plan no especifica: presupuesto para formación técnica, número de beneficiarios, metas de reducción de la brecha de empleabilidad, rol de los IESTs en el sistema, articulación con el MINEDU para reforma de los institutos técnicos.",
+            "technical_evaluation": "D=2 por datos de informalidad laboral en MIPYMES (81.3%) y diagnóstico de la desconexión. P=2 por política articulada de articulación tripartita. M=2 por tres medidas con instrumentos identificables. Im=1 por universidades públicas nombradas. V=1. E=1 por universidades (institución) + becas (instrumento). Parcialmente cumple umbral."
+          },
+          "criteria": {
+            "D": { "score": 2, "justification": "Datos de informalidad MIPYMES y diagnóstico de desconexión." },
+            "P": { "score": 2, "justification": "Propuesta articulada de articulación tripartita." },
+            "M": { "score": 2, "justification": "Tres medidas con instrumentos identificables." },
+            "Im": { "score": 1, "justification": "Universidades públicas nombradas." },
+            "V": { "score": 1, "justification": "Posible con vacíos importantes." },
+            "E": { "score": 1, "justification": "Universidades + becas. Cumple parcialmente." }
+          },
+          "criteria_sum": 9,
+          "formula_result": "Total/10 = (9/12) × 10 = 7.5/10",
+          "score_table": { "D": 2, "P": 2, "M": 2, "Im": 1, "V": 1, "E": 1, "final_score": 7.5 },
+          "sources": [
+            { "title": "INEI / Ministerio de Trabajo — Empleabilidad técnica", "type": "fuente nacional", "url": "", "note": "Mayoría de técnicos egresados de IESTs tiene dificultades para insertarse en el mercado laboral formal." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "salud",
+      "name": "BLOQUE 5: SALUD",
+      "average_score": 6.7,
+      "summary": "El bloque de salud tiene el diagnóstico más cuantificado del plan (datos ENAHO 2022 sobre acceso). Las variables de sistema de salud e infraestructura hospitalaria son sólidas; el financiamiento es la debilidad del bloque.",
+      "conclusion": "El bloque de salud obtiene 6.7/10. El sistema de salud (9.2) e infraestructura hospitalaria (7.5) son propuestas técnicamente sólidas con diagnóstico, medidas concretas e instituciones nombradas. El financiamiento (3.3) es el talón de Aquiles del bloque: proponer integración del sistema sin abordar cómo se financiará es la inconsistencia más grave del capítulo de salud.",
+      "strengths": [
+        "Diagnóstico con datos ENAHO 2022 cuantificados.",
+        "Integración MINSA-EsSalud-regiones como política articulada.",
+        "Meta de 500 establecimientos de salud construidos y/o remodelados.",
+        "Historias clínicas interoperables como instrumento tecnológico nacional."
+      ],
+      "weaknesses": [
+        "Financiamiento completamente ausente como política.",
+        "Sin fuente de financiamiento identificada para la integración.",
+        "Sin metas cuantificadas de mejora de acceso (¿del 70% a cuánto?)."
+      ],
+      "variables": [
+        {
+          "id": "sistema_de_salud_publica",
+          "name": "Sistema de salud pública",
+          "final_score": 9.2,
+          "rating_label": "Sólida",
+          "summary": "Sistema de salud pública es la variable más alta del bloque. El diagnóstico con datos ENAHO, la propuesta de integración MINSA-EsSalud-regiones y las medidas concretas (historias clínicas, referencia-contrarreferencia, fortalecimiento del primer nivel) configuran una propuesta técnicamente sólida. La debilidad es la ausencia de metas cuantificadas de mejora de acceso.",
+          "strengths": [
+            "Diagnóstico con datos cuantificados de ENAHO 2022 (70% sin atención efectiva).",
+            "Propuesta de integración MINSA-EsSalud-regiones.",
+            "Historias clínicas interoperables en todo el país.",
+            "MINSA, EsSalud y gobiernos regionales nombrados."
+          ],
+          "weaknesses": [
+            "Sin metas cuantificadas de reducción del porcentaje sin atención.",
+            "Sin presupuesto de la integración.",
+            "Sin cronograma de construcción de establecimientos."
+          ],
+          "gaps": [
+            "Presupuesto de la integración.",
+            "Cronograma de construcción de establecimientos.",
+            "Metas de reducción del porcentaje sin atención (¿del 70% a cuánto?).",
+            "Mecanismo de financiamiento de la interoperabilidad."
+          ],
+          "conclusion": "Sistema de salud pública es la variable más alta del bloque. El diagnóstico con datos ENAHO, la propuesta de integración MINSA-EsSalud-regiones y las medidas concretas (historias clínicas, referencia-contrarreferencia, fortalecimiento del primer nivel) configuran una propuesta técnicamente sólida. La debilidad es la ausencia de metas cuantificadas de mejora de acceso.",
+          "corrected_methodology": true,
+          "correction_note": "El análisis original sobreestimó sin justificación correcta. Con la rúbrica aplicada bien, salud pública sí obtiene 9.2/10 por datos de ENAHO + medidas concretas + MINSA y EsSalud nombrados.",
+          "sections": {
+            "what_it_evaluates": "Las propuestas para mejorar la cobertura, la calidad y la equidad del sistema de salud.",
+            "why_it_matters": "La salud es el derecho más fundamental. Un sistema de salud que no funciona bien es un sistema que deja morir a personas que podrían salvarse, que empobrece a familias por el costo de atenderse y que agrava las desigualdades ya existentes en el país.",
+            "current_problem": "El sistema de salud peruano es uno de los más fragmentados y subfinanciados de América del Sur. El gasto público en salud se ubica alrededor del 3.5% del PBI, uno de los más bajos de la región, según la OPS y el Banco Mundial. Según la ENAHO 2022, alrededor del 70% de los peruanos que necesitaron atención médica no la obtuvieron. El MINSA, EsSalud, las Sanidades militares y policiales, y los sistemas regionales operan de manera desarticulada.",
+            "plan_proposal": "El plan propone: cobertura universal efectiva integrando MINSA, gobiernos regionales, EsSalud y privados; sistema único de referencia y contrarreferencia; historias clínicas interoperables en todo el país; fortalecer el primer nivel de atención con construcción, equipamiento y personal; telemedicina y salud digital.",
+            "concrete_measures": "Sistema único de referencia y contrarreferencia; historias clínicas interoperables en todo el país; fortalecer primer nivel: construir, equipar y dotar de personal puestos y centros de salud prioritarios; descongestionar hospitales resolviendo más en la comunidad.",
+            "implementation": "El MINSA, los gobiernos regionales y EsSalud son nombrados explícitamente como actores de la integración del sistema. Im = 2 por múltiples instituciones con función definida.",
+            "potential_impact": "La integración MINSA-EsSalud-regiones atacaría la fragmentación del sistema. Las historias clínicas interoperables eliminarían la duplicación de exámenes. Fortalecer el primer nivel reduciría la congestión hospitalaria y mejoraría el acceso preventivo.",
+            "missing_elements": "El plan no especifica: el presupuesto de la integración, el cronograma de construcción de establecimientos, las metas de reducción del porcentaje sin atención, ni el mecanismo de financiamiento de la interoperabilidad.",
+            "technical_evaluation": "D=2 por datos cuantificados de ENAHO 2022. P=2 por política articulada de cobertura universal efectiva. M=2 por cuatro medidas concretas. Im=2 por MINSA, EsSalud y gobiernos regionales nombrados. V=1. E=2 por historias clínicas interoperables (instrumento) + MINSA (institución) + cobertura universal efectiva como meta."
+          },
+          "criteria": {
+            "D": { "score": 2, "justification": "Datos cuantificados de ENAHO 2022 con fuente." },
+            "P": { "score": 2, "justification": "Propuesta clara y articulada con política definida." },
+            "M": { "score": 2, "justification": "Cuatro medidas concretas." },
+            "Im": { "score": 2, "justification": "MINSA, EsSalud y gobiernos regionales nombrados." },
+            "V": { "score": 1, "justification": "Posible con vacíos importantes." },
+            "E": { "score": 2, "justification": "Historias clínicas + MINSA + cobertura universal (≥ 2 elementos)." }
+          },
+          "criteria_sum": 11,
+          "formula_result": "Total/10 = (11/12) × 10 = 9.2/10",
+          "score_table": { "D": 2, "P": 2, "M": 2, "Im": 2, "V": 1, "E": 2, "final_score": 9.2 },
+          "sources": [
+            { "title": "ENAHO 2022 — Acceso a atención médica", "type": "encuesta", "url": "", "note": "Alrededor del 70% de los peruanos que necesitaron atención médica no la obtuvieron." },
+            { "title": "OPS / Banco Mundial — Gasto público en salud", "type": "organismo internacional", "url": "", "note": "Gasto público en salud alrededor del 3.5% del PBI, uno de los más bajos de la región." }
+          ]
+        },
+        {
+          "id": "infraestructura_hospitalaria",
+          "name": "Infraestructura hospitalaria",
+          "final_score": 7.5,
+          "rating_label": "Bien desarrollada",
+          "summary": "Infraestructura hospitalaria es una variable bien desarrollada en diagnóstico y propuesta, con la meta concreta de 500 establecimientos. La debilidad es la ausencia de presupuesto y metas cuantificadas de reducción del déficit de establecimientos adecuados.",
+          "strengths": [
+            "Diagnóstico con datos de ENAHO 2022.",
+            "Meta cuantificada: 500 establecimientos de salud construidos y/o remodelados.",
+            "MINSA y gobiernos regionales nombrados.",
+            "Uso de telemedicina como instrumento tecnológico."
+          ],
+          "weaknesses": [
+            "Sin presupuesto de la inversión en infraestructura.",
+            "Sin cronograma.",
+            "Sin criterios de priorización.",
+            "Sin fuente de financiamiento."
+          ],
+          "gaps": [
+            "Presupuesto de la inversión en infraestructura.",
+            "Cronograma.",
+            "Criterios de priorización.",
+            "Fuente de financiamiento."
+          ],
+          "conclusion": "Infraestructura hospitalaria es una variable bien desarrollada en diagnóstico y propuesta, con la meta concreta de 500 establecimientos. La debilidad es la ausencia de presupuesto y metas cuantificadas de reducción del déficit de establecimientos adecuados.",
+          "corrected_methodology": false,
+          "correction_note": "",
+          "sections": {
+            "what_it_evaluates": "Las propuestas para ampliar y modernizar los hospitales y los establecimientos de salud.",
+            "why_it_matters": "Sin infraestructura hospitalaria adecuada, la cobertura de salud es nominal. Puedes tener millones de afiliados al seguro de salud, pero si los establecimientos no tienen equipos, médicos ni condiciones básicas, la afiliación no sirve de nada.",
+            "current_problem": "La infraestructura de salud en el Perú tiene un déficit acumulado de décadas. Según la OPS y el propio MINSA, la densidad de camas hospitalarias se ubica por debajo de 1.6 por cada 1,000 habitantes, muy por debajo del estándar mínimo de 3.0 que recomienda la OMS. Los hospitales regionales frecuentemente están saturados porque el primer nivel no resuelve los casos que debería.",
+            "plan_proposal": "El plan propone: construir, equipar y dotar de personal los puestos y centros de salud prioritarios; garantizar atención médica mínima en cada establecimiento; descongestionar hospitales resolviendo más en la comunidad. Propone construir y/o remodelar 500 establecimientos de salud del primer nivel de atención.",
+            "concrete_measures": "Construir, equipar y dotar de personal puestos y centros de salud prioritarios; meta: 500 establecimientos de salud del primer nivel construidos y/o remodelados; garantizar atención médica mínima en cada establecimiento; uso de telemedicina para ampliar acceso.",
+            "implementation": "El MINSA y los gobiernos regionales son mencionados como actores del fortalecimiento del primer nivel. Sin presupuesto específico de infraestructura.",
+            "potential_impact": "La construcción y equipamiento de 500 establecimientos prioritarios podría reducir significativamente el porcentaje de establecimientos sin condiciones adecuadas. La telemedicina permitiría ampliar cobertura sin nueva infraestructura física.",
+            "missing_elements": "El plan no especifica: presupuesto de la inversión en infraestructura, cronograma, criterios de priorización, fuente de financiamiento.",
+            "technical_evaluation": "D=2 por datos de ENAHO 2022. P=2 por política articulada. M=2 por tres medidas de infraestructura más meta de 500 establecimientos. Im=1 por MINSA y gobiernos regionales nombrados. V=1. E=1 por MINSA (institución) + construcción/equipamiento (instrumento). Parcialmente cumple."
+          },
+          "criteria": {
+            "D": { "score": 2, "justification": "Datos de ENAHO 2022 con fuente." },
+            "P": { "score": 2, "justification": "Propuesta clara y articulada con política definida." },
+            "M": { "score": 2, "justification": "Tres medidas de infraestructura + meta de 500 establecimientos." },
+            "Im": { "score": 1, "justification": "MINSA y gobiernos regionales nombrados." },
+            "V": { "score": 1, "justification": "Posible con vacíos importantes." },
+            "E": { "score": 1, "justification": "MINSA + construcción/equipamiento. Cumple parcialmente." }
+          },
+          "criteria_sum": 9,
+          "formula_result": "Total/10 = (9/12) × 10 = 7.5/10",
+          "score_table": { "D": 2, "P": 2, "M": 2, "Im": 1, "V": 1, "E": 1, "final_score": 7.5 },
+          "sources": [
+            { "title": "OPS / MINSA — Densidad de camas hospitalarias", "type": "organismo internacional", "url": "", "note": "Densidad de camas hospitalarias por debajo de 1.6 por cada 1,000 habitantes, frente al estándar mínimo de 3.0 recomendado por la OMS." }
+          ]
+        },
+        {
+          "id": "financiamiento_del_sistema_de_salud",
+          "name": "Financiamiento del sistema de salud",
+          "final_score": 3.3,
+          "rating_label": "Débil",
+          "summary": "El financiamiento del sistema de salud es la variable más débil del bloque. Es la brecha más importante: el plan propone una reforma ambiciosa del sistema de salud (integración, historias clínicas, primer nivel) sin explicar cómo se financiará.",
+          "strengths": [
+            "Reconocimiento implícito de la insuficiencia de recursos del sistema."
+          ],
+          "weaknesses": [
+            "Sin propuesta de financiamiento del sistema.",
+            "Sin fuente de financiamiento identificada.",
+            "Sin porcentaje del PBI destinado a salud.",
+            "Sin mecanismo de aseguramiento universal."
+          ],
+          "gaps": [
+            "Porcentaje del PBI destinado a salud.",
+            "Reforma del SIS y EsSalud.",
+            "Mecanismos de aseguramiento universal.",
+            "Compras corporativas de medicamentos.",
+            "Fuentes de financiamiento adicional."
+          ],
+          "conclusion": "El financiamiento del sistema de salud es la variable más débil del bloque. Es la brecha más importante: el plan propone una reforma ambiciosa del sistema de salud (integración, historias clínicas, primer nivel) sin explicar cómo se financiará.",
+          "corrected_methodology": false,
+          "correction_note": "",
+          "sections": {
+            "what_it_evaluates": "Las propuestas para garantizar la sostenibilidad y equidad del financiamiento del sistema de salud.",
+            "why_it_matters": "Un sistema de salud sin suficiente financiamiento no puede cumplir sus promesas. Puedes tener la mejor política de salud del mundo, pero si no hay presupuesto para contratar médicos, comprar medicamentos y construir establecimientos, todo se queda en papel.",
+            "current_problem": "El Perú destina alrededor del 3.5% del PBI al gasto público en salud, una de las cifras más bajas de América del Sur según la OPS y el Banco Mundial. Chile destina alrededor del 9%, Colombia alrededor del 7.5%, y el promedio regional supera el 5%. El gasto de bolsillo representa alrededor del 30-35% del gasto total en salud en el Perú, según la OPS, muy por encima del umbral de 'crisis financiera en salud' que la OMS establece alrededor del 15-20%.",
+            "plan_proposal": "El plan no desarrolla una política de financiamiento del sistema de salud. La integración MINSA-EsSalud se propone sin abordar cómo se financiará.",
+            "concrete_measures": "No se identifican medidas específicas de financiamiento del sistema de salud. La mención de 'mayor inversión' aparece como intención general sin instrumentos.",
+            "implementation": "Sin fuente de financiamiento identificada, sin mecanismo de aseguramiento, sin institución con mandato financiero en salud.",
+            "potential_impact": "Sin propuesta evaluable de financiamiento.",
+            "missing_elements": "El plan no aborda: porcentaje del PBI destinado a salud, reforma del SIS y EsSalud, mecanismos de aseguramiento universal, compras corporativas de medicamentos, ni fuentes de financiamiento adicional.",
+            "technical_evaluation": "D=1 por reconocimiento implícito de insuficiencia de recursos. P=1 por propuesta implícita de mayor inversión. M=1 por 'mayor financiamiento' como intención. Im=0 sin institución con mandato financiero. V=1. E=0 sin instrumento + institución + meta."
+          },
+          "criteria": {
+            "D": { "score": 1, "justification": "Reconocimiento implícito de insuficiencia de recursos." },
+            "P": { "score": 1, "justification": "Propuesta implícita de mayor inversión." },
+            "M": { "score": 1, "justification": "'Mayor financiamiento' como intención, sin instrumento." },
+            "Im": { "score": 0, "justification": "Sin institución con mandato financiero." },
+            "V": { "score": 1, "justification": "Posible con vacíos importantes." },
+            "E": { "score": 0, "justification": "Sin instrumento + institución + meta." }
+          },
+          "criteria_sum": 4,
+          "formula_result": "Total/10 = (4/12) × 10 = 3.3/10",
+          "score_table": { "D": 1, "P": 1, "M": 1, "Im": 0, "V": 1, "E": 0, "final_score": 3.3 },
+          "sources": [
+            { "title": "OPS / Banco Mundial — Gasto público en salud comparado", "type": "organismo internacional", "url": "", "note": "Perú 3.5% del PBI vs Chile 9%, Colombia 7.5%, promedio regional >5%." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "politica_social",
+      "name": "BLOQUE 6: POLÍTICA SOCIAL",
+      "average_score": 8.6,
+      "summary": "Este bloque es el segundo más sólido del plan, impulsado por los datos específicos de pobreza, las medidas concretas de programas sociales con metas cuantificadas y las propuestas de vivienda con datos de déficit urbano.",
+      "conclusion": "El bloque de política social es el segundo más alto del plan con 8.6/10. Las dos variables de protección social (9.2 cada una) son las más sólidas del plan después del bloque de seguridad, gracias a datos cuantificados de línea base y metas verificables. Vivienda (7.5) también es sólida. Este bloque demuestra que el equipo técnico trabajó con profundidad los temas de protección social e inclusión.",
+      "strengths": [
+        "Datos cuantificados de línea base en todas las variables.",
+        "Metas verificables y cuantificadas en reducción de pobreza y programas sociales.",
+        "Rediseño de Juntos para la nueva geografía de pobreza urbana técnicamente justificado.",
+        "PDUs y Obras por Impuestos como instrumentos concretos en vivienda."
+      ],
+      "weaknesses": [
+        "Sin presupuesto de los programas rediseñados.",
+        "Sin metas de reducción de pobreza al 2031.",
+        "Sin fuente de financiamiento para reducción del déficit habitacional."
+      ],
+      "variables": [
+        {
+          "id": "reduccion_de_pobreza",
+          "name": "Reducción de pobreza",
+          "final_score": 9.2,
+          "rating_label": "Sólida",
+          "summary": "Reducción de pobreza es la variable más sólida del bloque. El diagnóstico cuantificado sobre la nueva geografía de la pobreza (urbana, 68.7%), combinado con el rediseño de Juntos y las metas específicas (primera infancia 70%, emergencias 25%) configura una propuesta técnicamente bien fundada.",
+          "strengths": [
+            "Diagnóstico con datos de INEI 2024 (27.6% pobreza, 68.7% de pobres en zonas urbanas).",
+            "Rediseño de Juntos para la nueva geografía de la pobreza urbana.",
+            "Meta cuantificada: cobertura primera infancia del 31.6% al 70%.",
+            "Meta cuantificada: 25% de afectados por emergencias nivel 4-5 atendidos (desde 0%).",
+            "Juntos y gobiernos locales nombrados."
+          ],
+          "weaknesses": [
+            "Sin metas de reducción de pobreza al 2031 (¿del 27.6% a cuánto?).",
+            "Sin presupuesto del rediseño de programas.",
+            "Sin criterios de la ventanilla única."
+          ],
+          "gaps": [
+            "Metas de reducción de pobreza al 2031.",
+            "Presupuesto del rediseño de programas.",
+            "Criterios de la ventanilla única.",
+            "Articulación entre los nuevos programas."
+          ],
+          "conclusion": "Reducción de pobreza es la variable más sólida del bloque. El diagnóstico cuantificado sobre la nueva geografía de la pobreza (urbana, 68.7%), combinado con el rediseño de Juntos y las metas específicas (primera infancia 70%, emergencias 25%) configura una propuesta técnicamente bien fundada.",
+          "corrected_methodology": false,
+          "correction_note": "",
+          "sections": {
+            "what_it_evaluates": "Las propuestas para reducir la pobreza monetaria y multidimensional.",
+            "why_it_matters": "La pobreza no es solo falta de ingresos: es falta de oportunidades, de acceso a salud, a educación y a un entorno seguro. El Perú no ha terminado de recuperarse del golpe que le dio la pandemia en este frente.",
+            "current_problem": "Según el INEI, en 2023 la tasa de pobreza monetaria se ubicó alrededor del 27-29% de la población, equivalente a más de 9 millones de personas. Eso representa un retroceso respecto al 20.2% prepandémico de 2019. Aproximadamente el 68% de los pobres vive en ciudades, con Lima concentrando un cuarto de la pobreza total.",
+            "plan_proposal": "El plan propone rediseñar y ampliar la oferta de programas sociales con modelos de atención diferenciados para ámbitos urbanos y rurales, garantizando protección universal a la primera infancia y desarrollando una nueva gobernanza del sistema de protección social.",
+            "concrete_measures": "Rediseñar el programa Juntos para adaptarlo a la nueva geografía de la pobreza urbana; paquete integrado de protección social para primera infancia: meta de cobertura del 31.6% al 70%; programa de transferencias temporales ante emergencias activado automáticamente para atender al 25% de afectados por emergencias nivel 4-5 (actualmente 0%); ventanilla única de servicios sociales en gobiernos locales priorizando zonas de extrema pobreza.",
+            "implementation": "Juntos, el MIDIS (implícito) y los gobiernos locales son nombrados. Meta cuantificada: 70% cobertura primera infancia. Programa de emergencias con meta: 25% de afectados (vs. 0% actual). Im = 2 por instituciones + metas.",
+            "potential_impact": "El rediseño de Juntos para pobreza urbana atendería al 68.7% de los pobres que viven en ciudades. La cobertura de primera infancia del 31.6% al 70% duplicaría la protección de la etapa más crítica. El programa de emergencias al 25% llenaría un vacío evidente.",
+            "missing_elements": "El plan no especifica: metas de reducción de pobreza al 2031, presupuesto del rediseño de programas, criterios de la ventanilla única, articulación entre los nuevos programas.",
+            "technical_evaluation": "D=2 por datos de INEI 2024 con cifras específicas. P=2 por política articulada con enfoque urbano-rural diferenciado. M=2 por cuatro medidas con metas cuantificadas. Im=2 por Juntos y gobiernos locales nombrados + metas verificables. V=1. E=2 por Juntos rediseñado (institución+instrumento) + meta 70% primera infancia (meta cuantificada)."
+          },
+          "criteria": {
+            "D": { "score": 2, "justification": "Datos de INEI 2024 con cifras específicas." },
+            "P": { "score": 2, "justification": "Política articulada con enfoque urbano-rural diferenciado." },
+            "M": { "score": 2, "justification": "Cuatro medidas con metas cuantificadas." },
+            "Im": { "score": 2, "justification": "Juntos y gobiernos locales nombrados + metas verificables." },
+            "V": { "score": 1, "justification": "Posible con vacíos importantes." },
+            "E": { "score": 2, "justification": "Juntos rediseñado + meta 70% primera infancia (≥ 2 elementos)." }
+          },
+          "criteria_sum": 11,
+          "formula_result": "Total/10 = (11/12) × 10 = 9.2/10",
+          "score_table": { "D": 2, "P": 2, "M": 2, "Im": 2, "V": 1, "E": 2, "final_score": 9.2 },
+          "sources": [
+            { "title": "INEI 2024 — Pobreza monetaria", "type": "fuente nacional", "url": "", "note": "Tasa de pobreza monetaria alrededor del 27.6%, 68.7% de los pobres en zonas urbanas, retroceso frente al 20.2% prepandémico." }
+          ]
+        },
+        {
+          "id": "programas_sociales",
+          "name": "Programas sociales",
+          "final_score": 9.2,
+          "rating_label": "Sólida",
+          "summary": "Programas sociales es la segunda variable más alta del bloque. Las líneas base cuantificadas (primera infancia 31.6%, emergencias 0%), los cuatro programas nombrados y las metas específicas configuran la propuesta de política social más concreta y verificable del plan.",
+          "strengths": [
+            "Líneas base cuantificadas: primera infancia 31.6%, emergencias 0%.",
+            "Cuatro programas nombrados: Juntos, Pensión 65, CONTIGO PAÍS, FONCODES.",
+            "Meta de alimentación escolar al 100%.",
+            "Gobiernos locales nombrados."
+          ],
+          "weaknesses": [
+            "Sin presupuesto de los programas rediseñados.",
+            "Sin mecanismo de gobernanza de la ventanilla única.",
+            "Sin criterios de selección de beneficiarios de los nuevos programas."
+          ],
+          "gaps": [
+            "Presupuesto de los programas rediseñados.",
+            "Mecanismo de gobernanza de la ventanilla única.",
+            "Criterios de selección de beneficiarios de los nuevos programas."
+          ],
+          "conclusion": "Programas sociales es la segunda variable más alta del bloque. Las líneas base cuantificadas (primera infancia 31.6%, emergencias 0%), los cuatro programas nombrados y las metas específicas configuran la propuesta de política social más concreta y verificable del plan.",
+          "corrected_methodology": false,
+          "correction_note": "",
+          "sections": {
+            "what_it_evaluates": "Las propuestas para los programas sociales del Estado: diseño, a quiénes llegan, eficiencia y orientación.",
+            "why_it_matters": "Los programas sociales son la herramienta más directa del Estado para llegar a las personas más vulnerables. Si están mal diseñados, llegan a quienes no los necesitan o no llegan a quienes sí.",
+            "current_problem": "El sistema de programas sociales peruano mueve miles de millones de soles anuales y cubre a millones de familias, pero tiene problemas estructurales de diseño, focalización y eficiencia. Según el MIDIS, solo alrededor del 31.6% de los hogares elegibles recibe los incentivos destinados a menores de 5 años. El sistema de transferencias de emergencia para familias afectadas por desastres naturales tiene actualmente una cobertura del 0%.",
+            "plan_proposal": "El plan propone rediseñar la oferta de programas sociales con gobernanza que fortalezca la gestión local: programa de alimentación escolar 100%, paquete para primera infancia, programa de emergencias, y modernizar Pensión 65 y FONCODES.",
+            "concrete_measures": "Programa nacional de alimentación escolar en el 100% de escuelas públicas (inicial, primaria, secundaria) con compras directas a agricultores locales; programa de transferencias temporales ante emergencias nivel 4-5 al 25% de afectados (desde 0%); modernizar Pensión 65, CONTIGO PAÍS y FONCODES con protección social adaptativa; ventanilla única de servicios sociales en gobiernos locales.",
+            "implementation": "Juntos, Pensión 65, CONTIGO PAÍS, FONCODES y los gobiernos locales son nombrados explícitamente. Meta: 100% de escuelas con alimentación. Im = 2.",
+            "potential_impact": "El programa de alimentación escolar al 100% atacaría la desnutrición y el rendimiento académico simultáneamente. El programa de emergencias llenaría un vacío crítico (actualmente 0%). La modernización de Pensión 65 mejoraría la respuesta a nuevas vulnerabilidades.",
+            "missing_elements": "El plan no especifica: presupuesto de los programas rediseñados, mecanismo de gobernanza de la ventanilla única, criterios de selección de beneficiarios de los nuevos programas.",
+            "technical_evaluation": "D=2 por líneas base cuantificadas (primera infancia 31.6%, emergencias 0%). P=2 por política articulada de rediseño. M=2 por cuatro medidas concretas. Im=2 por Juntos, Pensión 65, FONCODES y gobiernos locales nombrados. V=1. E=2 por alimentación escolar 100% (meta) + Juntos rediseñado (instrumento+institución)."
+          },
+          "criteria": {
+            "D": { "score": 2, "justification": "Líneas base cuantificadas: primera infancia 31.6%, emergencias 0%." },
+            "P": { "score": 2, "justification": "Política articulada de rediseño de programas." },
+            "M": { "score": 2, "justification": "Cuatro medidas concretas." },
+            "Im": { "score": 2, "justification": "Juntos, Pensión 65, FONCODES y gobiernos locales nombrados." },
+            "V": { "score": 1, "justification": "Posible con vacíos importantes." },
+            "E": { "score": 2, "justification": "Alimentación escolar 100% + Juntos rediseñado (≥ 2 elementos)." }
+          },
+          "criteria_sum": 11,
+          "formula_result": "Total/10 = (11/12) × 10 = 9.2/10",
+          "score_table": { "D": 2, "P": 2, "M": 2, "Im": 2, "V": 1, "E": 2, "final_score": 9.2 },
+          "sources": [
+            { "title": "MIDIS — Cobertura de programas sociales", "type": "fuente nacional", "url": "", "note": "Solo el 31.6% de los hogares elegibles recibe los incentivos destinados a menores de 5 años; cobertura ante emergencias nivel 4-5 del 0%." }
+          ]
+        },
+        {
+          "id": "vivienda",
+          "name": "Vivienda",
+          "final_score": 7.5,
+          "rating_label": "Bien desarrollada",
+          "summary": "Vivienda es una variable bien desarrollada con diagnóstico cuantificado (93% crecimiento informal, brecha SUNASS de S/ 95,789M) y medidas concretas (PDUs + Obras por Impuestos). La debilidad es la falta de metas cuantificadas de reducción del déficit habitacional y de presupuesto específico.",
+          "strengths": [
+            "Diagnóstico con datos de INEI 2024 y SUNASS 2025.",
+            "PDUs como instrumento de ordenamiento territorial.",
+            "Obras por Impuestos como mecanismo de financiamiento concreto.",
+            "Gobiernos locales nombrados."
+          ],
+          "weaknesses": [
+            "Sin meta de porcentaje de municipios con PDU al 2031.",
+            "Sin presupuesto del apoyo técnico a municipios.",
+            "Sin fuente de financiamiento para reducción del déficit habitacional."
+          ],
+          "gaps": [
+            "Meta de porcentaje de municipios con PDU al 2031 (¿del 15% a cuánto?).",
+            "Presupuesto del apoyo técnico a municipios.",
+            "Estrategia para las 1.5 millones de viviendas del déficit cualitativo.",
+            "Fuente de financiamiento para reducción del déficit habitacional."
+          ],
+          "conclusion": "Vivienda es una variable bien desarrollada con diagnóstico cuantificado (93% crecimiento informal, brecha SUNASS de S/ 95,789M) y medidas concretas (PDUs + Obras por Impuestos). La debilidad es la falta de metas cuantificadas de reducción del déficit habitacional y de presupuesto específico.",
+          "corrected_methodology": false,
+          "correction_note": "",
+          "sections": {
+            "what_it_evaluates": "Las propuestas para mejorar el acceso a vivienda digna y los servicios básicos.",
+            "why_it_matters": "La vivienda es la base de la estabilidad familiar. Sin vivienda propia o segura, las familias son vulnerables ante desalojos, catástrofes y especulación. Y sin planificación urbana, las ciudades crecen de manera caótica.",
+            "current_problem": "Según el Ministerio de Vivienda y el INEI, el déficit total supera 1.8 millones de viviendas. El 93% del crecimiento urbano reciente ha sido informal. Solo el 15% de los municipios tiene un Plan de Desarrollo Urbano (PDU) vigente. La brecha de inversión en agua y saneamiento medida por SUNASS 2025 es de S/ 95,789 millones.",
+            "plan_proposal": "El plan propone: dotar a todos los gobiernos locales de un Plan de Desarrollo Urbano actualizado, financiado y ejecutable; alinear proyectos de inversión pública y privada a los PDUs; y financiar infraestructura urbana mediante Obras por Impuestos.",
+            "concrete_measures": "Financiar y apoyar técnicamente a los gobiernos locales para elaborar PDUs; mecanismos para alinear proyectos de inversión pública y privada a los PDUs; Obras por Impuestos para infraestructura urbana (pistas, veredas, plazas); reducción del déficit habitacional mediante soluciones sostenibles y esquemas accesibles de financiamiento.",
+            "implementation": "Los gobiernos locales son nombrados como destinatarios del apoyo técnico. Obras por Impuestos como mecanismo identificado. El MVCS aparece implícitamente como rector. Im = 1.",
+            "potential_impact": "La universalización de PDUs en municipios cambiaría la planificación urbana de reactiva a preventiva. Las Obras por Impuestos permitirían financiar infraestructura básica sin presupuesto fiscal adicional.",
+            "missing_elements": "El plan no especifica: meta de porcentaje de municipios con PDU al 2031, presupuesto del apoyo técnico a municipios, estrategia para las 1.5 millones de viviendas del déficit cualitativo, fuente de financiamiento para reducción del déficit habitacional.",
+            "technical_evaluation": "D=2 por datos específicos de INEI 2024 y SUNASS 2025. P=2 por política articulada de ordenamiento territorial. M=2 por tres medidas con mecanismos identificados. Im=1 por gobiernos locales nombrados. V=1. E=1 por PDUs (instrumento) + Obras por Impuestos (mecanismo de financiamiento). Parcialmente cumple."
+          },
+          "criteria": {
+            "D": { "score": 2, "justification": "Datos de INEI 2024 y SUNASS 2025 con fuentes." },
+            "P": { "score": 2, "justification": "Política articulada de ordenamiento territorial." },
+            "M": { "score": 2, "justification": "Tres medidas con mecanismos identificados." },
+            "Im": { "score": 1, "justification": "Gobiernos locales nombrados. MVCS implícito." },
+            "V": { "score": 1, "justification": "Posible con vacíos importantes." },
+            "E": { "score": 1, "justification": "PDUs + Obras por Impuestos. Cumple parcialmente." }
+          },
+          "criteria_sum": 9,
+          "formula_result": "Total/10 = (9/12) × 10 = 7.5/10",
+          "score_table": { "D": 2, "P": 2, "M": 2, "Im": 1, "V": 1, "E": 1, "final_score": 7.5 },
+          "sources": [
+            { "title": "INEI 2024 — Déficit habitacional y crecimiento urbano", "type": "fuente nacional", "url": "", "note": "Déficit total supera 1.8 millones de viviendas; 93% del crecimiento urbano reciente ha sido informal; solo 15% de municipios tiene PDU vigente." },
+            { "title": "SUNASS 2025 — Brecha de inversión en agua y saneamiento", "type": "fuente nacional", "url": "", "note": "Brecha de inversión de S/ 95,789 millones en agua y saneamiento." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "infraestructura_y_desarrollo",
+      "name": "BLOQUE 7: INFRAESTRUCTURA Y DESARROLLO",
+      "average_score": 8.1,
+      "summary": "El bloque de infraestructura tiene diagnóstico con datos en todas las variables. Energía es la más sólida por el número de instituciones nombradas. Infraestructura pública y transporte son bien desarrolladas; hay brecha en la concreción de las metas de inversión.",
+      "conclusion": "El bloque de infraestructura obtiene 8.1/10. Energía (9.2) destaca por la coordinación explícita de cinco instituciones. Infraestructura pública (7.5) y transporte (7.5) tienen diagnóstico con datos y propuestas articuladas, pero carecen de metas cuantificadas de reducción de brechas y presupuestos de inversión. Es el tercer bloque más alto del plan.",
+      "strengths": [
+        "Energía con coordinación explícita de cinco instituciones (MINEM, OEFA, MTPE, SUNAFIL, OSINERGMIN).",
+        "Diagnóstico con datos en todas las variables (red vial por nivel, electrificación rural 16.7%).",
+        "Sistema de transporte multimodal como marco de política articulada."
+      ],
+      "weaknesses": [
+        "Sin metas cuantificadas de reducción de brechas viales.",
+        "Sin presupuestos de inversión en infraestructura y transporte.",
+        "Sin cronograma de extensión ferroviaria."
+      ],
+      "variables": [
+        {
+          "id": "infraestructura_publica",
+          "name": "Infraestructura pública",
+          "final_score": 7.5,
+          "rating_label": "Bien desarrollada",
+          "summary": "Infraestructura pública tiene diagnóstico detallado y propuesta de sistema multimodal, pero carece de metas cuantificadas de reducción de la brecha y de presupuesto de inversión. Esta es la diferencia entre una propuesta bien orientada y una política implementable.",
+          "strengths": [
+            "Diagnóstico con datos de red vial por nivel: 83.3% nacional, 17.6% departamental, 2.3% vecinal.",
+            "Propuesta de sistema multimodal articulada.",
+            "Gobiernos subnacionales nombrados como co-ejecutores."
+          ],
+          "weaknesses": [
+            "Sin monto de inversión en infraestructura.",
+            "Sin meta de reducción de la brecha vial.",
+            "Sin cronograma de inversión.",
+            "Sin fuente de financiamiento adicional."
+          ],
+          "gaps": [
+            "Monto de inversión en infraestructura.",
+            "Meta de reducción de la brecha vial (¿del 2.3% de vecinales pavimentadas a cuánto?).",
+            "Cronograma de inversión.",
+            "Fuente de financiamiento adicional."
+          ],
+          "conclusion": "Infraestructura pública tiene diagnóstico detallado y propuesta de sistema multimodal, pero carece de metas cuantificadas de reducción de la brecha y de presupuesto de inversión. Esta es la diferencia entre una propuesta bien orientada y una política implementable.",
+          "corrected_methodology": false,
+          "correction_note": "",
+          "sections": {
+            "what_it_evaluates": "Las propuestas para mejorar la infraestructura pública nacional: vialidad, inversión y reducción de brechas.",
+            "why_it_matters": "La infraestructura es la base física del desarrollo. Sin carreteras, puertos, aeropuertos y sistemas de agua en condiciones, ninguna otra política funciona bien.",
+            "current_problem": "El Perú tiene un déficit de infraestructura que podría superar los USD 100,000 millones según estudios del IPE y del BID. De los más de 175,000 km de carreteras del país, la red nacional tiene un nivel de pavimentación de alrededor del 83.3%, la red departamental del 17.6%, y la red vecinal solo el 2.3%.",
+            "plan_proposal": "El plan propone construir infraestructura de manera conjunta entre gobiernos subnacionales y el gobierno nacional, con planes formulados descentralizadamente. Reducir la brecha de infraestructura como objetivo estratégico del sistema multimodal.",
+            "concrete_measures": "Construcción de infraestructura mediante esfuerzo conjunto nacional-subnacional; planes de infraestructura formulados descentralizadamente; sistema de transporte multimodal con enfoque logístico.",
+            "implementation": "El MTC aparece implícitamente como rector. Los gobiernos subnacionales son nombrados como co-ejecutores. Sin presupuesto de inversión específico.",
+            "potential_impact": "La descentralización de la planificación de infraestructura mejoraría la pertinencia de los proyectos. La inversión conjunta nacional-subnacional permitiría aprovechar el canon y los recursos locales.",
+            "missing_elements": "El plan no especifica: monto de inversión en infraestructura, meta de reducción de la brecha vial, cronograma de inversión, fuente de financiamiento adicional.",
+            "technical_evaluation": "D=2 por datos de la red vial por nivel. P=2 por política de sistema multimodal con cuatro problemas identificados. M=2 por tres medidas de enfoque. Im=1 por gobiernos subnacionales nombrados. V=1. E=1 por descentralización (instrumento) + colaboración multinivel (mecanismo)."
+          },
+          "criteria": {
+            "D": { "score": 2, "justification": "Datos de red vial por nivel: 83.3% nacional, 17.6% departamental, 2.3% vecinal." },
+            "P": { "score": 2, "justification": "Política de sistema multimodal articulada." },
+            "M": { "score": 2, "justification": "Tres medidas de enfoque." },
+            "Im": { "score": 1, "justification": "Gobiernos subnacionales nombrados. MTC implícito." },
+            "V": { "score": 1, "justification": "Posible con vacíos importantes." },
+            "E": { "score": 1, "justification": "Descentralización + colaboración multinivel. Cumple parcialmente." }
+          },
+          "criteria_sum": 9,
+          "formula_result": "Total/10 = (9/12) × 10 = 7.5/10",
+          "score_table": { "D": 2, "P": 2, "M": 2, "Im": 1, "V": 1, "E": 1, "final_score": 7.5 },
+          "sources": [
+            { "title": "IPE / BID — Brecha de infraestructura", "type": "organismo internacional", "url": "", "note": "Brecha de infraestructura total podría superar los USD 100,000 millones." }
+          ]
+        },
+        {
+          "id": "transporte",
+          "name": "Transporte",
+          "final_score": 7.5,
+          "rating_label": "Bien desarrollada",
+          "summary": "Transporte es una variable bien desarrollada con diagnóstico preciso y propuesta de sistema multimodal integral. La brecha es la falta de metas cuantificadas (¿cuántos km de vías vecinales se pavimentarán?) y de presupuesto de inversión. La propuesta tiene la orientación correcta pero le falta el detalle de política pública.",
+          "strengths": [
+            "Diagnóstico con datos de red vial por tipo (2.3% de vecinales pavimentadas, 26,400 km en estado crítico).",
+            "Propuesta de sistema multimodal integral.",
+            "Cuatro medidas de mejora identificadas."
+          ],
+          "weaknesses": [
+            "Sin metas de reducción del déficit vial vecinal.",
+            "Sin presupuesto de inversión en transporte.",
+            "Sin cronograma de extensión ferroviaria.",
+            "Sin operadores del transporte público en ciudades."
+          ],
+          "gaps": [
+            "Metas de reducción del déficit vial vecinal.",
+            "Presupuesto de inversión en transporte.",
+            "Cronograma de extensión ferroviaria.",
+            "Operadores del transporte público en ciudades."
+          ],
+          "conclusion": "Transporte es una variable bien desarrollada con diagnóstico preciso y propuesta de sistema multimodal integral. La brecha es la falta de metas cuantificadas (¿cuántos km de vías vecinales se pavimentarán?) y de presupuesto de inversión. La propuesta tiene la orientación correcta pero le falta el detalle de política pública.",
+          "corrected_methodology": false,
+          "correction_note": "",
+          "sections": {
+            "what_it_evaluates": "Las propuestas para mejorar el sistema de transporte: vial, ferroviario, portuario, fluvial y movilidad urbana.",
+            "why_it_matters": "El transporte es la infraestructura que conecta a las personas con el trabajo, la educación y los mercados. Los costos logísticos altos son una de las principales barreras a la competitividad del país.",
+            "current_problem": "El costo logístico en el Perú es uno de los más altos de América Latina como porcentaje de las ventas, según estudios del Banco Mundial y del MEF. Solo el 2.3% de los más de 120,000 km de red vecinal está pavimentado, y alrededor de 26,400 km se encuentran en estado crítico sin posibilidad de mantenimiento rutinario.",
+            "plan_proposal": "El plan propone un sistema de transporte multimodal moderno y eficiente con: transporte público digno, accesible y sostenible en ciudades; seguridad vial con estándares internacionales; logística optimizada para reducir costos y tiempos; y conectar centros de producción con mercados locales y globales.",
+            "concrete_measures": "Sistema de transporte multimodal con redes viales, ferroviarias, portuarias y aeroportuarias ejecutadas conjuntamente; transporte público digno y sostenible en ciudades; seguridad vial con estándares internacionales; logística optimizada conectando centros de producción con mercados.",
+            "implementation": "El MTC aparece implícitamente. Los gobiernos subnacionales y el gobierno nacional como co-ejecutores. Sin institución específica para cada modo de transporte.",
+            "potential_impact": "El sistema multimodal reduciría los costos logísticos que encarecen los productos agrícolas en zonas remotas.",
+            "missing_elements": "El plan no especifica: metas de reducción del déficit vial vecinal, presupuesto de inversión en transporte, cronograma de extensión ferroviaria, ni operadores del transporte público en ciudades.",
+            "technical_evaluation": "D=2 por datos de red vial con cifras por tipo. P=2 por política multimodal articulada. M=2 por cuatro medidas de mejora. Im=1 por gobernanza multinivel mencionada. V=1. E=1 por multimodalidad (instrumento) + gobernanza descentralizada (mecanismo)."
+          },
+          "criteria": {
+            "D": { "score": 2, "justification": "Datos de red vial por tipo con cifras concretas." },
+            "P": { "score": 2, "justification": "Política multimodal articulada." },
+            "M": { "score": 2, "justification": "Cuatro medidas de mejora." },
+            "Im": { "score": 1, "justification": "Gobernanza multinivel mencionada. MTC implícito." },
+            "V": { "score": 1, "justification": "Posible con vacíos importantes." },
+            "E": { "score": 1, "justification": "Multimodalidad + gobernanza descentralizada. Cumple parcialmente." }
+          },
+          "criteria_sum": 9,
+          "formula_result": "Total/10 = (9/12) × 10 = 7.5/10",
+          "score_table": { "D": 2, "P": 2, "M": 2, "Im": 1, "V": 1, "E": 1, "final_score": 7.5 },
+          "sources": [
+            { "title": "Banco Mundial / MEF — Costo logístico", "type": "organismo internacional", "url": "", "note": "Costo logístico en el Perú es uno de los más altos de América Latina como porcentaje de las ventas." }
+          ]
+        },
+        {
+          "id": "energia",
+          "name": "Energía",
+          "final_score": 9.2,
+          "rating_label": "Sólida",
+          "summary": "Energía es la variable más alta del bloque de infraestructura. La coordinación explícita de cinco instituciones (MINEM, OEFA, MTPE, SUNAFIL, OSINERGMIN) con función definida es la característica que la diferencia. La debilidad es la falta de metas cuantificadas de electrificación rural y de inversión en renovables.",
+          "strengths": [
+            "Coordinación explícita de MINEM, OEFA, MTPE, SUNAFIL y OSINERGMIN.",
+            "Diagnóstico con datos: electrificación rural 94% / brecha 16.7%.",
+            "Cierre de brechas de electrificación rural con sistemas descentralizados.",
+            "Formalización minera artesanal con encadenamientos productivos."
+          ],
+          "weaknesses": [
+            "Sin meta de reducción de la brecha de electrificación (¿del 16.7% a cuánto?).",
+            "Sin presupuesto de la transición energética.",
+            "Sin cronograma de formalización minera.",
+            "Sin metas de renovables en la matriz energética."
+          ],
+          "gaps": [
+            "Meta de reducción de la brecha de electrificación.",
+            "Presupuesto de la transición energética.",
+            "Cronograma de formalización minera.",
+            "Metas de renovables en la matriz energética."
+          ],
+          "conclusion": "Energía es la variable más alta del bloque de infraestructura. La coordinación explícita de cinco instituciones (MINEM, OEFA, MTPE, SUNAFIL, OSINERGMIN) con función definida es la característica que la diferencia. La debilidad es la falta de metas cuantificadas de electrificación rural y de inversión en renovables.",
+          "corrected_methodology": false,
+          "correction_note": "",
+          "sections": {
+            "what_it_evaluates": "Las propuestas para garantizar la seguridad energética, diversificar la matriz hacia renovables y cerrar brechas de acceso.",
+            "why_it_matters": "La energía es el habilitador de todo lo demás. Sin electricidad confiable no hay educación digital, no hay servicios de salud modernos, no hay productividad agrícola, no hay conectividad.",
+            "current_problem": "La cobertura nacional de electricidad llega alrededor del 94% de los hogares, según el MINEM. Sin embargo, la brecha de electrificación rural se estima en torno al 16.7%. La matriz energética peruana depende mayoritariamente del gas natural y de la hidroeléctrica, con una participación muy pequeña de fuentes no convencionales. Según el INEI, solo alrededor del 17% de los hogares peruanos cuenta con conexión a gas natural o GLP domiciliario.",
+            "plan_proposal": "El plan propone: sector energía y minas moderno, sostenible y socialmente legítimo; acceso universal, seguro y asequible a la energía; actividad minera formal, limpia y responsable; mayor valor agregado e integración al desarrollo productivo territorial.",
+            "concrete_measures": "Coordinación MINEM-OEFA-MTPE-SUNAFIL-OSINERGMIN para fiscalización de minería artesanal y energía; cierre de brechas de electrificación rural con sistemas descentralizados (solar, hidráulico en comunidades aisladas); formalización minera artesanal con encadenamientos productivos; diálogo social y participación ciudadana como condición de legitimidad.",
+            "implementation": "El MINEM, OEFA, MTPE, SUNAFIL y OSINERGMIN son nombrados explícitamente para la coordinación de fiscalización. Im = 2 por cinco instituciones con función definida.",
+            "potential_impact": "El cierre de la brecha de electrificación rural (16.7%) mejoraría la calidad de vida de comunidades amazónicas y altoandinas. La formalización minera reduciría impactos ambientales y mejoraría la recaudación.",
+            "missing_elements": "El plan no especifica: meta de reducción de la brecha de electrificación, presupuesto de la transición energética, cronograma de formalización minera, metas de renovables en la matriz energética.",
+            "technical_evaluation": "D=2 por datos de electrificación rural y caracterización de cuatro problemas sectoriales. P=2 por política articulada. M=2 por cuatro medidas concretas. Im=2 por MINEM, OEFA, MTPE, SUNAFIL, OSINERGMIN nombrados. V=1. E=2 por coordinación institucional explícita (institución) + fiscalización articulada (instrumento) + cierre de brecha energética (objetivo)."
+          },
+          "criteria": {
+            "D": { "score": 2, "justification": "Datos de electrificación rural 94% / brecha 16.7%." },
+            "P": { "score": 2, "justification": "Política articulada en cuatro problemas sectoriales." },
+            "M": { "score": 2, "justification": "Cuatro medidas concretas." },
+            "Im": { "score": 2, "justification": "MINEM, OEFA, MTPE, SUNAFIL, OSINERGMIN nombrados." },
+            "V": { "score": 1, "justification": "Posible con vacíos importantes." },
+            "E": { "score": 2, "justification": "Coordinación + fiscalización + cierre de brecha (≥ 2 elementos)." }
+          },
+          "criteria_sum": 11,
+          "formula_result": "Total/10 = (11/12) × 10 = 9.2/10",
+          "score_table": { "D": 2, "P": 2, "M": 2, "Im": 2, "V": 1, "E": 2, "final_score": 9.2 },
+          "sources": [
+            { "title": "MINEM — Cobertura eléctrica", "type": "fuente nacional", "url": "", "note": "Cobertura nacional alrededor del 94% de los hogares; brecha de electrificación rural estimada en 16.7%." },
+            { "title": "INEI — Gas domiciliario", "type": "fuente nacional", "url": "", "note": "Solo alrededor del 17% de los hogares peruanos cuenta con conexión a gas natural o GLP domiciliario." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tecnologia_y_estado_digital",
+      "name": "BLOQUE 8: TECNOLOGÍA Y ESTADO DIGITAL",
+      "average_score": 4.4,
+      "summary": "Este bloque tiene la mayor heterogeneidad del plan. La digitalización del Estado es muy sólida por el sistema interoperable PNP-MP-PJ-INPE. Inteligencia artificial y ciberseguridad son prácticamente ausentes.",
+      "conclusion": "El bloque tecnológico obtiene 4.4/10, el más bajo del plan. La heterogeneidad es extrema: digitalización del Estado (9.2) es muy sólida por el sistema interoperable PNP-MP-PJ-INPE; IA (0.8) y ciberseguridad (4.2) son prácticamente ausentes; innovación (3.3) es débil. El plan digitaliza sectores específicos (seguridad, salud) pero sin una política tecnológica transversal ni de gobernanza digital.",
+      "strengths": [
+        "Sistema interoperable PNP-MP-PJ-INPE como propuesta digital concreta y sólida.",
+        "Historias clínicas interoperables en el sector salud.",
+        "Múltiples instituciones nombradas en el sistema de digitalización."
+      ],
+      "weaknesses": [
+        "IA completamente ausente del plan.",
+        "Ciberseguridad sin política específica a pesar de proponer sistemas interoperables masivos.",
+        "CONCYTEC no aparece en ningún momento.",
+        "Sin política de CTI articulada.",
+        "Sin gobierno electrónico como política transversal."
+      ],
+      "variables": [
+        {
+          "id": "digitalizacion_del_estado",
+          "name": "Digitalización del Estado",
+          "final_score": 9.2,
+          "rating_label": "Sólida",
+          "summary": "Digitalización del Estado es la variable más alta del bloque. El sistema interoperable PNP-MP-PJ-INPE con meta cuantificada y siete instituciones nombradas es la propuesta digital más concreta del plan. La debilidad es la ausencia de digitalización de trámites ciudadanos como política separada.",
+          "strengths": [
+            "Sistema informático interoperable PNP-MP-PJ-INPE.",
+            "Historias clínicas interoperables en todo el país.",
+            "Meta cuantificada: 5 publicaciones conjuntas de investigaciones colaborativas.",
+            "Siete instituciones nombradas: PNP, MP, PJ, INPE, MININTER, MINSA, EsSalud."
+          ],
+          "weaknesses": [
+            "Sin digitalización de trámites ciudadanos como política separada.",
+            "Sin identidad digital.",
+            "Sin gobierno electrónico como política transversal.",
+            "Sin presupuesto de las plataformas de interoperabilidad."
+          ],
+          "gaps": [
+            "Digitalización de trámites para ciudadanos y empresas.",
+            "Identidad digital.",
+            "Gobierno electrónico como política transversal.",
+            "Presupuesto de las plataformas de interoperabilidad.",
+            "Gobernanza de datos."
+          ],
+          "conclusion": "Digitalización del Estado es la variable más alta del bloque. El sistema interoperable PNP-MP-PJ-INPE con meta cuantificada y siete instituciones nombradas es la propuesta digital más concreta del plan. La debilidad es la ausencia de digitalización de trámites ciudadanos como política separada.",
+          "corrected_methodology": false,
+          "correction_note": "",
+          "sections": {
+            "what_it_evaluates": "Las propuestas para modernizar los servicios públicos mediante tecnología: interoperabilidad, trámites digitales e identidad digital.",
+            "why_it_matters": "Un Estado digital funciona mejor, cuesta menos y sirve más. En seguridad, la interoperabilidad entre la Policía, la Fiscalía, el Poder Judicial y los penales puede cambiar radicalmente la capacidad del Estado de perseguir y sancionar el crimen.",
+            "current_problem": "Según el Índice de Gobierno Electrónico de la ONU, el Perú ocupa posiciones intermedias-bajas entre los países latinoamericanos en servicios digitales al ciudadano. El RENIEC, la SUNAT, el Ministerio de Trabajo, EsSalud, el Poder Judicial y otras entidades manejan sus propios sistemas que no se comunican entre sí.",
+            "plan_proposal": "El plan propone: sistema informático interoperable PNP-MP-PJ-INPE como plataforma de coordinación digital del sistema de seguridad y justicia; potenciar Observatorios con mayor capacidad analítica e interoperabilidad; historias clínicas interoperables en el sector salud.",
+            "concrete_measures": "Sistema informático interoperable PNP-MP-PJ-INPE para trazabilidad de investigaciones; historias clínicas interoperables en todo el país; Observatorios de la PNP, MP, PJ y MININTER potenciados con metodologías innovadoras e interoperabilidad; meta: 5 publicaciones conjuntas de investigaciones colaborativas de análisis criminal.",
+            "implementation": "La PNP, el MP, el PJ, el INPE y el MININTER son nombrados como actores del sistema interoperable. El MINSA y EsSalud para historias clínicas. Im = 2 por múltiples instituciones con función definida.",
+            "potential_impact": "La interoperabilidad PNP-MP-PJ-INPE permitiría seguimiento de extremo a extremo de los casos desde la denuncia hasta la sentencia. Las historias clínicas interoperables eliminarían la duplicación de exámenes.",
+            "missing_elements": "El plan no aborda: digitalización de trámites para ciudadanos y empresas, identidad digital, gobierno electrónico como política transversal, presupuesto de las plataformas de interoperabilidad, gobernanza de datos.",
+            "technical_evaluation": "D=2 por diagnóstico de fragmentación institucional del sistema de seguridad y justicia. P=2 por política articulada de interoperabilidad. M=2 por tres medidas concretas. Im=2 por PNP, MP, PJ, INPE, MININTER, MINSA, EsSalud nombrados. V=1. E=2 por sistema interoperable (instrumento) + PNP-MP-PJ-INPE (instituciones) + meta 5 publicaciones (meta cuantificada)."
+          },
+          "criteria": {
+            "D": { "score": 2, "justification": "Diagnóstico de fragmentación del sistema de seguridad y justicia." },
+            "P": { "score": 2, "justification": "Política articulada de interoperabilidad." },
+            "M": { "score": 2, "justification": "Tres medidas concretas." },
+            "Im": { "score": 2, "justification": "PNP, MP, PJ, INPE, MININTER, MINSA, EsSalud nombrados." },
+            "V": { "score": 1, "justification": "Posible con vacíos importantes." },
+            "E": { "score": 2, "justification": "Sistema interoperable + instituciones + meta 5 publicaciones (≥ 2 elementos)." }
+          },
+          "criteria_sum": 11,
+          "formula_result": "Total/10 = (11/12) × 10 = 9.2/10",
+          "score_table": { "D": 2, "P": 2, "M": 2, "Im": 2, "V": 1, "E": 2, "final_score": 9.2 },
+          "sources": [
+            { "title": "ONU — Índice de Gobierno Electrónico", "type": "organismo internacional", "url": "", "note": "Perú ocupa posiciones intermedias-bajas entre los países latinoamericanos en servicios digitales al ciudadano." }
+          ]
+        },
+        {
+          "id": "innovacion_tecnologica",
+          "name": "Innovación tecnológica",
+          "final_score": 3.3,
+          "rating_label": "Débil",
+          "summary": "La innovación tecnológica es la variable más débil del bloque tecnológico. El plan reconoce el problema de desconexión academia-industria-Estado pero no desarrolla una política de CTI con instrumentos concretos. El CONCYTEC no aparece en ningún momento del documento.",
+          "strengths": [
+            "Reconocimiento de la desconexión academia-industria-Estado."
+          ],
+          "weaknesses": [
+            "CONCYTEC no aparece en ningún momento.",
+            "Sin política de CTI articulada.",
+            "Sin metas de I+D como % del PBI.",
+            "Sin parques tecnológicos, becas de investigación ni política de patentes."
+          ],
+          "gaps": [
+            "CONCYTEC y sistema de innovación.",
+            "Metas de I+D como % del PBI.",
+            "Parques tecnológicos.",
+            "Becas de investigación.",
+            "Política de patentes."
+          ],
+          "conclusion": "La innovación tecnológica es la variable más débil del bloque tecnológico. El plan reconoce el problema de desconexión academia-industria-Estado pero no desarrolla una política de CTI con instrumentos concretos. El CONCYTEC no aparece en ningún momento del documento.",
+          "corrected_methodology": false,
+          "correction_note": "",
+          "sections": {
+            "what_it_evaluates": "Las propuestas para fomentar la ciencia, tecnología e innovación (CTI): inversión en I+D, institucionalidad del sistema y capital humano científico.",
+            "why_it_matters": "Sin innovación, una economía no puede diversificarse más allá de lo que ya hace. El Perú tiene un riesgo real de quedar atrapado en la dependencia de la extracción de recursos naturales si no construye capacidades en ciencia, tecnología e innovación.",
+            "current_problem": "Según datos de la RICYT y la UNESCO, el gasto peruano en I+D como porcentaje del PBI se ubica alrededor del 0.1-0.15%, uno de los más bajos de América Latina. El promedio regional es de aproximadamente 0.6-0.7%, y los países de la OCDE invierten en torno al 2.5-2.7%. El CONCYTEC tiene recursos limitados y escasa articulación con el sector productivo. Según el INEI, menos del 15% de las empresas realiza actividades formales de innovación.",
+            "plan_proposal": "El plan propone articular academia-industria-Estado para innovación y desarrollo tecnológico. Propone promover la innovación científica y tecnológica como parte de la estrategia de industrialización.",
+            "concrete_measures": "Articulación academia-industria-Estado (propuesta de coordinación sin instrumento específico); 'Promover la innovación científica y tecnológica' (principio general sin política); convenios con universidades para formación continua (instrumento parcial en contexto policial).",
+            "implementation": "Sin institución de innovación nombrada. El CONCYTEC no aparece. Sin política de CTI articulada.",
+            "potential_impact": "Sin propuesta evaluable de política de CTI con instrumentos concretos.",
+            "missing_elements": "El plan no aborda: CONCYTEC y sistema de innovación, metas de I+D como % del PBI, parques tecnológicos, becas de investigación, ni política de patentes.",
+            "technical_evaluation": "D=1 por reconocimiento de la desconexión sin datos. P=1 por propuesta de articulación general. M=1 por mención de articulación como medida. Im=0 sin institución de innovación nombrada. V=1. E=0 sin institución + instrumento + meta."
+          },
+          "criteria": {
+            "D": { "score": 1, "justification": "Reconocimiento de la desconexión sin datos propios." },
+            "P": { "score": 1, "justification": "Propuesta de articulación general." },
+            "M": { "score": 1, "justification": "Mención de articulación como medida." },
+            "Im": { "score": 0, "justification": "Sin institución de innovación nombrada." },
+            "V": { "score": 1, "justification": "Posible con vacíos importantes." },
+            "E": { "score": 0, "justification": "Sin institución + instrumento + meta." }
+          },
+          "criteria_sum": 4,
+          "formula_result": "Total/10 = (4/12) × 10 = 3.3/10",
+          "score_table": { "D": 1, "P": 1, "M": 1, "Im": 0, "V": 1, "E": 0, "final_score": 3.3 },
+          "sources": [
+            { "title": "RICYT / UNESCO — Gasto en I+D", "type": "organismo internacional", "url": "", "note": "Gasto peruano en I+D alrededor del 0.1-0.15% del PBI, uno de los más bajos de América Latina." },
+            { "title": "INEI — Innovación empresarial", "type": "fuente nacional", "url": "", "note": "Menos del 15% de las empresas realiza actividades formales de innovación." }
+          ]
+        },
+        {
+          "id": "regulacion_de_inteligencia_artificial",
+          "name": "Regulación de inteligencia artificial",
+          "final_score": 0.8,
+          "rating_label": "Ausente",
+          "summary": "La regulación de IA es la única variable con calificación casi cero. El plan no la menciona en ningún apartado. En un contexto de aceleración tecnológica global, esta ausencia es una brecha metodológica importante.",
+          "strengths": [],
+          "weaknesses": [
+            "La inteligencia artificial no es mencionada en ningún apartado del plan.",
+            "Sin diagnóstico, propuesta, medidas ni institución.",
+            "Ausencia total de política de gobernanza de IA."
+          ],
+          "gaps": [
+            "Diagnóstico del problema de ausencia de regulación de IA.",
+            "Marco regulatorio de IA.",
+            "Institución de supervisión de IA.",
+            "Política de auditoría de algoritmos del Estado.",
+            "Actualización de la Ley de Protección de Datos Personales (Ley 29733) para entornos de IA."
+          ],
+          "conclusion": "La regulación de IA es la única variable con calificación casi cero. El plan no la menciona en ningún apartado. En un contexto de aceleración tecnológica global, esta ausencia es una brecha metodológica importante.",
+          "corrected_methodology": false,
+          "correction_note": "",
+          "sections": {
+            "what_it_evaluates": "Las propuestas para establecer reglas claras sobre cómo el Estado y las empresas pueden usar la inteligencia artificial (IA) de forma responsable.",
+            "why_it_matters": "La IA ya está cambiando la economía, el trabajo y la vida cotidiana. Un país que no tiene reglas sobre cómo se usa deja a sus ciudadanos desprotegidos frente a usos abusivos y pierde la oportunidad de aprovechar sus beneficios de manera ordenada.",
+            "current_problem": "El Perú no tiene legislación específica sobre IA. La Unión Europea aprobó el AI Act en 2024. En América Latina, países como Brasil, Chile y Colombia han avanzado en la elaboración de políticas y regulaciones sobre IA. La Ley de Protección de Datos Personales (Ley 29733) data de 2011 y no fue diseñada para el entorno de Big Data ni de IA.",
+            "plan_proposal": "La inteligencia artificial no es mencionada en ningún apartado del plan de gobierno. No hay propuesta de regulación de IA.",
+            "concrete_measures": "No se identifican medidas. Ausencia total.",
+            "implementation": "Sin propuesta evaluable.",
+            "potential_impact": "Sin propuesta evaluable.",
+            "missing_elements": "La inteligencia artificial no es mencionada en ningún apartado del plan de gobierno.",
+            "technical_evaluation": "D=0. P=0. M=0. Im=0. V=1 (técnicamente posible regular la IA). E=0. La IA es un área completamente ausente del plan."
+          },
+          "criteria": {
+            "D": { "score": 0, "justification": "Sin diagnóstico del problema." },
+            "P": { "score": 0, "justification": "Sin propuesta." },
+            "M": { "score": 0, "justification": "Sin medidas concretas." },
+            "Im": { "score": 0, "justification": "Sin institución ejecutora ni mecanismo." },
+            "V": { "score": 1, "justification": "Técnicamente posible regular la IA." },
+            "E": { "score": 0, "justification": "Sin elementos concretos." }
+          },
+          "criteria_sum": 1,
+          "formula_result": "Total/10 = (1/12) × 10 = 0.8/10",
+          "score_table": { "D": 0, "P": 0, "M": 0, "Im": 0, "V": 1, "E": 0, "final_score": 0.8 },
+          "sources": []
+        },
+        {
+          "id": "proteccion_de_datos_y_ciberseguridad",
+          "name": "Protección de datos y ciberseguridad",
+          "final_score": 4.2,
+          "rating_label": "Débil",
+          "summary": "Protección de datos y ciberseguridad es una variable débil aunque reconocible. El sistema interoperable PNP-MP-PJ-INPE propuesto implica necesidades de ciberseguridad que el plan no aborda. La debilidad es consistente: el plan propone interoperabilidad masiva sin política de seguridad que la respalde.",
+          "strengths": [
+            "Reconocimiento implícito de la necesidad de ciberseguridad a través del sistema interoperable.",
+            "PNP y otras instituciones del sistema mencionadas."
+          ],
+          "weaknesses": [
+            "Sin política de ciberseguridad explícita.",
+            "Sin reforma de la Ley 29733.",
+            "Sin agencia de ciberseguridad.",
+            "Sin protección de datos de ciudadanos en los sistemas interoperables propuestos."
+          ],
+          "gaps": [
+            "Política de ciberseguridad.",
+            "Reforma de la Ley 29733.",
+            "Agencia Nacional de Ciberseguridad.",
+            "Protección de datos de ciudadanos en los sistemas interoperables propuestos."
+          ],
+          "conclusion": "Protección de datos y ciberseguridad es una variable débil aunque reconocible. El sistema interoperable PNP-MP-PJ-INPE propuesto implica necesidades de ciberseguridad que el plan no aborda. La debilidad es consistente: el plan propone interoperabilidad masiva sin política de seguridad que la respalde.",
+          "corrected_methodology": false,
+          "correction_note": "",
+          "sections": {
+            "what_it_evaluates": "Las propuestas para proteger la información digital de ciudadanos e instituciones.",
+            "why_it_matters": "Mientras más se digitaliza el Estado, más vulnerable se vuelven los datos de los ciudadanos si no hay políticas robustas de seguridad. Un sistema interoperable que conecta la Policía, la Fiscalía, el Poder Judicial y los penales centraliza enormes cantidades de información sensible.",
+            "current_problem": "El Perú ha sufrido ataques cibernéticos de gran escala que han comprometido datos de millones de ciudadanos. El RENIEC, EsSalud y el MEF han sido afectados por incidentes documentados. Según Kaspersky, el Perú está entre los países latinoamericanos con mayor número de intentos de ciberataques por año. La Ley de Protección de Datos Personales (Ley 29733) tiene más de una década y no fue concebida para el entorno de interoperabilidad masiva.",
+            "plan_proposal": "El plan menciona el sistema informático interoperable sin desarrollar explícitamente las políticas de seguridad de dicho sistema.",
+            "concrete_measures": "Sistema informático interoperable PNP-MP-PJ-INPE (implica necesidad de seguridad de datos); historias clínicas interoperables (implica protección de datos médicos). Ambas son propuestas que requieren ciberseguridad pero no la abordan explícitamente.",
+            "implementation": "La PNP, el MP, el PJ y el INPE son mencionados en contexto del sistema interoperable, que requeriría protección de datos.",
+            "potential_impact": "Sin política de ciberseguridad no es posible implementar el sistema interoperable de manera segura.",
+            "missing_elements": "El plan no aborda: política de ciberseguridad, reforma de la Ley 29733, agencia de ciberseguridad, ni protección de datos de ciudadanos en los sistemas interoperables propuestos.",
+            "technical_evaluation": "D=1 por reconocimiento implícito a través del sistema interoperable. P=1 por propuesta implícita de sistema seguro. M=1 por sistema interoperable que requiere seguridad. Im=1 por PNP y otras instituciones del sistema. V=1. E=0 sin medidas específicas de ciberseguridad."
+          },
+          "criteria": {
+            "D": { "score": 1, "justification": "Reconocimiento implícito a través del sistema interoperable." },
+            "P": { "score": 1, "justification": "Propuesta implícita de sistema seguro." },
+            "M": { "score": 1, "justification": "Sistema interoperable que requiere seguridad." },
+            "Im": { "score": 1, "justification": "PNP y otras instituciones del sistema." },
+            "V": { "score": 1, "justification": "Posible con vacíos importantes." },
+            "E": { "score": 0, "justification": "Sin medidas específicas de ciberseguridad." }
+          },
+          "criteria_sum": 5,
+          "formula_result": "Total/10 = (5/12) × 10 = 4.2/10",
+          "score_table": { "D": 1, "P": 1, "M": 1, "Im": 1, "V": 1, "E": 0, "final_score": 4.2 },
+          "sources": [
+            { "title": "Kaspersky — Ciberataques en América Latina", "type": "organismo internacional", "url": "", "note": "Perú entre los países latinoamericanos con mayor número de intentos de ciberataques por año." }
+          ]
+        }
+      ]
+    }
+  ],
+  "cross_block_summary": {
+    "top_structural_strengths": [
+      "El bloque de seguridad más técnicamente desarrollado del proceso electoral (9.2/10): nueva Ley del SNSC, sistema interoperable PNP-MP-PJ-INPE, prueba de polígrafo, SUNEDU como supervisora de escuelas PNP, metas cuantificadas.",
+      "La propuesta de política social más sólida entre los candidatos analizados (8.6/10): datos cuantificados de línea base y metas verificables en reducción de pobreza y programas sociales.",
+      "Diagnóstico con fuentes propias verificables: Evaluación Muestral 2024 (UMC-MINEDU), ENAHO 2022, INEI 2024, SUNASS 2025, Informe del Consejo Fiscal N°03-2025-CF."
+    ],
+    "top_structural_weaknesses": [
+      "El bloque económico más débil: tributaria e inversión privada sin instrumentos (3.3/10 cada una). SUNAT y ProInversión ausentes con mandato ejecutivo.",
+      "El bloque tecnológico prácticamente ausente excepto en digitalización (4.4/10): IA (0.8/10) y ciberseguridad (4.2/10) son ausencias graves en un plan que propone sistemas interoperables masivos sin política de protección de datos.",
+      "Financiamiento ausente en variables costosas: sistema de salud, infraestructura educativa, vivienda y cierre del déficit habitacional sin fuente de financiamiento identificada."
+    ],
+    "updated_ranking": [
+      {
+        "candidate": "Jorge Nieto",
+        "party": "PBG",
+        "score": 7.1,
+        "main_strength": "Innovación institucional densa",
+        "main_weakness": "Brecha fiscal sistemática"
+      },
+      {
+        "candidate": "Alfonso López Chau",
+        "party": "Ahora Nación",
+        "score": 6.6,
+        "main_strength": "Seguridad y política social",
+        "main_weakness": "Economía sin instrumentos"
+      },
+      {
+        "candidate": "Keiko Fujimori",
+        "party": "Fuerza Popular",
+        "score": 5.34,
+        "main_strength": "Diagnóstico con fuentes",
+        "main_weakness": "Tensión fiscal no resuelta"
+      },
+      {
+        "candidate": "José Williams",
+        "party": "Avanza País",
+        "score": 5.08,
+        "main_strength": "Política minera y salud",
+        "main_weakness": "Baja especificidad general"
+      },
+      {
+        "candidate": "Carlos Álvarez",
+        "party": "País para Todos",
+        "score": 3.7,
+        "main_strength": "Reforma previsional (9.2/10)",
+        "main_weakness": "Seguridad sin política pública"
+      }
+    ],
+    "methodological_ranking_note": "Nota metodológica: Avanza País y Fuerza Popular se analizaron con la metodología de 5 criterios (sin Especificidad). Si se re-evaluaran con los 6 criterios actuales, sus puntajes serían menores. El PBG y Álvarez son analizados con la metodología completa de 6 criterios."
+  }
+}

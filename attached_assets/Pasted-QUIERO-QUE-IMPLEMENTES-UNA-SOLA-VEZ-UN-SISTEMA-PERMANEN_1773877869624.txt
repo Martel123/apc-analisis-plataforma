@@ -1,0 +1,148 @@
+QUIERO QUE IMPLEMENTES, UNA SOLA VEZ, UN SISTEMA PERMANENTE DENTRO DE ESTE REPLIT PARA CONVERTIR ARCHIVOS DOCX DE ANÁLISIS TÉCNICOS A JSON, SIN QUE YO TENGA QUE VOLVER A CONFIGURAR NADA DESPUÉS.
+
+OBJETIVO REAL:
+Después de esta única implementación, yo solo quiero subir documentos .docx y que el sistema automáticamente:
+1. detecte el archivo subido
+2. lea todo su contenido
+3. convierta el documento completo a JSON
+4. valide que el JSON esté completo y correcto
+5. lo guarde dentro de /analisis
+6. deje el archivo listo para que mi plataforma lo use
+7. me muestre si se generó bien o si hubo un error claro
+
+REGLA ABSOLUTA:
+ESTA IMPLEMENTACIÓN DEBE HACERSE UNA SOLA VEZ.
+YO NO QUIERO VOLVER A PEDIRTE QUE RECONFIGURES NADA.
+YO NO QUIERO CREAR CARPETAS, ARCHIVOS, SCRIPTS NI TOCAR CÓDIGO.
+TÚ DEBES DEJAR TODO INSTALADO Y FUNCIONANDO DENTRO DEL REPLIT ACTUAL.
+
+IMPORTANTE:
+NO QUIERO UN PROCESO DE “UNA CONVERSIÓN”.
+QUIERO UN SISTEMA REUTILIZABLE Y PERMANENTE.
+ES DECIR:
+- hoy te doy este prompt una sola vez
+- tú dejas todo armado
+- desde entonces, yo solo subo DOCX
+- y el sistema procesa cada nuevo archivo sin volver a construirse
+
+CONTEXTO DEL PROYECTO:
+Este Replit ya tiene una plataforma que usa archivos JSON dentro de /analisis.
+Cada JSON representa un candidato.
+Ya existe lógica funcionando y NO debes romper nada de la plataforma actual.
+Debes respetar la estructura existente del proyecto.
+
+LO QUE DEBES CONSTRUIR:
+Necesito que crees dentro del proyecto un flujo automático DOCX → JSON reutilizable.
+
+COMPORTAMIENTO ESPERADO DESPUÉS DE LA IMPLEMENTACIÓN:
+Cada vez que yo suba un archivo .docx al lugar que tú definas dentro del proyecto:
+- el sistema debe detectarlo
+- convertirlo automáticamente
+- validar el resultado
+- guardar el JSON final en /analisis
+- usar un nombre de archivo limpio y consistente
+- evitar duplicados si el archivo ya fue procesado
+- mostrarme el resultado final de forma clara
+
+DEBES DEJAR RESUELTO TODO ESTO AHORA:
+1. ruta o carpeta de entrada para DOCX
+2. lógica de lectura completa del DOCX
+3. lógica robusta de conversión
+4. validación automática del JSON
+5. guardado automático en /analisis
+6. manejo de errores
+7. prevención de archivos truncados o incompletos
+8. funcionamiento repetible para múltiples documentos futuros
+
+REQUISITOS DE ROBUSTEZ:
+Los DOCX son largos, de 60 a 70 páginas aprox.
+No hagas una conversión ingenua que pueda truncar contenido.
+Debes implementar una estrategia robusta para documentos extensos:
+- extracción completa del texto
+- procesamiento seguro
+- reconstrucción final del JSON
+- validación estricta antes de guardar
+
+REQUISITOS DEL JSON:
+Debes producir un JSON final compatible con la plataforma existente.
+Como mínimo debe tener:
+- candidate
+- methodology
+- blocks
+
+Y debe contener:
+- 8 bloques completos
+- 30 variables completas
+- criterios D, P, M, Im, V, E
+- criteria_sum
+- formula_result
+- final_score
+- score_table
+- sections
+- conclusion
+- sources
+
+VALIDACIONES AUTOMÁTICAS OBLIGATORIAS:
+Antes de guardar el JSON final debes validar:
+1. que sea JSON válido
+2. que exista candidate
+3. que exista methodology
+4. que exista blocks
+5. que haya exactamente 8 bloques
+6. que haya exactamente 30 variables en total
+7. que cada variable tenga criterios D, P, M, Im, V, E
+8. que cada variable tenga criteria_sum
+9. que cada variable tenga formula_result
+10. que cada variable tenga final_score
+11. que final_score coincida con (criteria_sum / 12) * 10, redondeado correctamente
+12. que el promedio de cada bloque sea coherente
+13. que el total_score general sea coherente
+14. que no existan variables vacías o truncadas
+15. que no existan bloques vacíos
+
+SI HAY ERRORES:
+No guardes JSON defectuoso en /analisis.
+Debes mostrar errores claros, por ejemplo:
+- faltan variables
+- faltan bloques
+- JSON truncado
+- estructura inválida
+- fórmula inconsistente
+- faltan criterios
+- falta conclusión
+- falta methodology
+
+COSTO:
+Quiero que esta solución sea lo más barata posible.
+Optimiza el uso de tokens y llamadas.
+Haz localmente todo lo que se pueda hacer localmente.
+Usa IA solo en la parte indispensable.
+Evita reprocesar documentos ya convertidos si no han cambiado.
+
+NO QUIERO:
+- teoría
+- planes
+- opciones
+- instrucciones para que yo programe
+- pasos manuales técnicos
+- que me digas “crea esta carpeta” o “pega este código”
+
+QUIERO QUE TÚ LO IMPLEMENTES TODO DENTRO DE ESTE REPLIT.
+
+ENTREGABLE FINAL:
+Al terminar esta única implementación, debes dejar:
+1. el sistema permanente funcionando
+2. una entrada clara para que yo suba DOCX
+3. procesamiento automático reutilizable
+4. guardado automático en /analisis
+5. validación automática
+6. mensajes claros de éxito o error
+7. sin necesidad de volver a configurar nada en el futuro
+
+IMPORTANTE FINAL:
+No me hagas una demo temporal.
+No me hagas una conversión única.
+No me hagas algo que luego requiera rehacerse.
+Quiero un sistema permanente dentro de este proyecto para usarlo repetidamente desde ahora.
+
+EJECUTA YA LA IMPLEMENTACIÓN COMPLETA.
