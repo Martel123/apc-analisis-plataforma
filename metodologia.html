@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metodología · Planes de Gobierno</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="public/styles/globals.css">
+</head>
+<body>
+<nav class="topbar">
+  <div class="topbar-inner container">
+    <a href="index.html" class="brand">
+      <div class="brand-mark">PG</div>
+      <div class="brand-text">
+        <span class="brand-title">Planes de Gobierno</span>
+        <span class="brand-subtitle">Evaluación Técnica · Perú 2026</span>
+      </div>
+    </a>
+    <div class="topnav">
+      <a href="analizar.html">Analizar</a>
+      <a href="comparar.html">Comparar</a>
+      <a href="heatmap.html">Heatmap</a>
+      <a href="metodologia.html" class="active">Metodología</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-wrap container" style="max-width:760px">
+  <div class="breadcrumb">
+    <a href="index.html">Inicio</a><span>›</span>
+    <span class="current">Metodología</span>
+  </div>
+
+  <div class="page-intro">
+    <h1>Metodología de evaluación</h1>
+    <p>Cómo se construye el análisis técnico de los planes de gobierno.</p>
+  </div>
+
+  <!-- 1. QUÉ HACE -->
+  <div class="method-section">
+    <h2 class="method-section-title">¿Qué hace esta plataforma?</h2>
+    <p style="font-size:14.5px;line-height:1.8;color:var(--text-2);margin:0">
+      Esta plataforma realiza una evaluación técnica estructurada de los planes de gobierno de los candidatos presidenciales del Perú 2026. No es una evaluación política ni editorial: evalúa exclusivamente la calidad técnica del contenido escrito en cada plan, según criterios explícitos y replicables.
+    </p>
+    <div style="margin-top:16px;padding:14px 18px;background:#fff1f2;border:1px solid #fecdd3;border-radius:var(--radius-sm);font-size:14px;color:#9f1239;font-weight:600">
+      Regla fundamental: solo se puntúa lo que está explícitamente escrito en el plan de gobierno. Lo que no está escrito no existe en el análisis.
+    </div>
+  </div>
+
+  <!-- 2. ESTRUCTURA -->
+  <div class="method-section">
+    <h2 class="method-section-title">Estructura del análisis</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;text-align:center">
+        <div style="font-family:'Sora',sans-serif;font-size:2.2rem;font-weight:900;color:var(--primary);line-height:1">30</div>
+        <div style="font-size:13px;font-weight:600;margin-top:6px">Variables</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:4px">Unidad básica de evaluación</div>
+      </div>
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;text-align:center">
+        <div style="font-family:'Sora',sans-serif;font-size:2.2rem;font-weight:900;color:var(--primary);line-height:1">8</div>
+        <div style="font-size:13px;font-weight:600;margin-top:6px">Bloques temáticos</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:4px">Agrupan las variables por área</div>
+      </div>
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;text-align:center">
+        <div style="font-family:'Sora',sans-serif;font-size:2.2rem;font-weight:900;color:var(--primary);line-height:1">6</div>
+        <div style="font-size:13px;font-weight:600;margin-top:6px">Criterios técnicos</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:4px">Por cada variable</div>
+      </div>
+    </div>
+    <div style="margin-top:14px;font-size:13.5px;color:var(--text-2);line-height:1.7">
+      Cada análisis de candidato recorre las 30 variables organizadas en 8 bloques. Por cada variable se aplican los 6 criterios. El resultado es un puntaje de 0 a 10 por variable, un promedio por bloque y un puntaje total del candidato.
+    </div>
+  </div>
+
+  <!-- 3. LOS 6 CRITERIOS -->
+  <div class="method-section">
+    <h2 class="method-section-title">Los 6 criterios técnicos</h2>
+    <p style="font-size:13.5px;color:var(--muted);margin:0 0 16px">Cada criterio se evalúa de 0 a 2 puntos. 0 = ausente, 1 = parcial, 2 = completo.</p>
+    <div class="criteria-explain-grid">
+      <div class="criteria-explain-card">
+        <div class="criteria-explain-code">D</div>
+        <div class="criteria-explain-name">Diagnóstico</div>
+        <div class="criteria-explain-desc">El plan reconoce y cuantifica el problema existente con datos o evidencia</div>
+      </div>
+      <div class="criteria-explain-card">
+        <div class="criteria-explain-code">P</div>
+        <div class="criteria-explain-name">Propuesta</div>
+        <div class="criteria-explain-desc">El plan define una solución concreta y diferenciada para el problema diagnosticado</div>
+      </div>
+      <div class="criteria-explain-card">
+        <div class="criteria-explain-code">M</div>
+        <div class="criteria-explain-name">Medidas</div>
+        <div class="criteria-explain-desc">El plan especifica acciones ejecutables, no solo declaraciones de intención</div>
+      </div>
+      <div class="criteria-explain-card">
+        <div class="criteria-explain-code">Im</div>
+        <div class="criteria-explain-name">Implementación</div>
+        <div class="criteria-explain-desc">El plan identifica quién ejecuta, cuándo y con qué recursos</div>
+      </div>
+      <div class="criteria-explain-card">
+        <div class="criteria-explain-code">V</div>
+        <div class="criteria-explain-name">Viabilidad</div>
+        <div class="criteria-explain-desc">La propuesta es técnica, política y fiscalmente factible en el contexto peruano</div>
+      </div>
+      <div class="criteria-explain-card">
+        <div class="criteria-explain-code">E</div>
+        <div class="criteria-explain-name">Especificidad</div>
+        <div class="criteria-explain-desc">El plan incluye metas cuantificables, indicadores verificables o cronograma por etapas</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. FÓRMULA -->
+  <div class="method-section">
+    <h2 class="method-section-title">Fórmula de cálculo del puntaje</h2>
+    <div style="font-size:14px;color:var(--text-2);line-height:1.8;margin-bottom:16px">
+      Cada criterio vale de 0 a 2 puntos. La suma máxima posible es 12 (6 criterios × 2 puntos). El puntaje final se normaliza a escala de 0 a 10:
+    </div>
+    <div class="formula-box" style="font-size:1.1rem">
+      Puntaje variable = (D + P + M + Im + V + E) / 12 × 10
+    </div>
+    <div style="margin-top:14px;font-size:13.5px;color:var(--muted)">
+      El puntaje de cada bloque es el promedio simple de sus variables. El puntaje total del candidato es el promedio ponderado de todos los bloques.
+    </div>
+  </div>
+
+  <!-- 5. ESCALA INTERPRETATIVA -->
+  <div class="method-section">
+    <h2 class="method-section-title">Escala interpretativa de puntajes</h2>
+    <div class="scale-grid">
+      <div class="scale-row score-excellent" style="background:#dcfce7;border:1px solid #bbf7d0">
+        <span class="score-badge score-excellent sm" style="flex-shrink:0">9 – 10</span>
+        <div>
+          <div style="font-weight:700;font-size:13.5px;color:#15803d">Muy sólido</div>
+          <div style="font-size:12.5px;color:#166534">Diagnóstico, propuesta, medidas, implementación, viabilidad y especificidad con evidencia robusta y metas claras</div>
+        </div>
+      </div>
+      <div class="scale-row" style="background:#dbeafe;border:1px solid #bfdbfe">
+        <span class="score-badge score-solid sm" style="flex-shrink:0">7 – 8.9</span>
+        <div>
+          <div style="font-weight:700;font-size:13.5px;color:#1d4ed8">Sólido</div>
+          <div style="font-size:12.5px;color:#1e40af">La mayoría de criterios bien desarrollados con algunas limitaciones menores</div>
+        </div>
+      </div>
+      <div class="scale-row" style="background:#fef3c7;border:1px solid #fde68a">
+        <span class="score-badge score-medium sm" style="flex-shrink:0">5 – 6.9</span>
+        <div>
+          <div style="font-weight:700;font-size:13.5px;color:#92400e">Intermedio</div>
+          <div style="font-size:12.5px;color:#78350f">Algunos criterios presentes, otros parciales. Diagnóstico generalmente bueno pero implementación débil</div>
+        </div>
+      </div>
+      <div class="scale-row" style="background:#ffedd5;border:1px solid #fed7aa">
+        <span class="score-badge score-weak sm" style="flex-shrink:0">3 – 4.9</span>
+        <div>
+          <div style="font-weight:700;font-size:13.5px;color:#c2410c">Débil</div>
+          <div style="font-size:12.5px;color:#9a3412">Criterios fundamentales ausentes o muy parciales. Propuestas genéricas sin especificidad</div>
+        </div>
+      </div>
+      <div class="scale-row" style="background:#fee2e2;border:1px solid #fecaca">
+        <span class="score-badge score-very-weak sm" style="flex-shrink:0">0 – 2.9</span>
+        <div>
+          <div style="font-weight:700;font-size:13.5px;color:#b91c1c">Muy débil</div>
+          <div style="font-size:12.5px;color:#991b1b">El tema prácticamente no está desarrollado en el plan</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. CORRECCIONES -->
+  <div class="method-section">
+    <h2 class="method-section-title">¿Qué es una corrección metodológica?</h2>
+    <p style="font-size:14.5px;line-height:1.8;color:var(--text-2);margin:0 0 12px">
+      En el proceso de análisis, algunos puntajes son revisados en una segunda ronda cuando se detecta que:
+    </p>
+    <ul style="margin:0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:8px">
+      <li style="display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--text-2)">
+        <span style="color:var(--primary);font-weight:700;flex-shrink:0">▸</span>
+        Un criterio fue puntuado sin haber sido suficientemente desglosado en el primer análisis
+      </li>
+      <li style="display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--text-2)">
+        <span style="color:var(--primary);font-weight:700;flex-shrink:0">▸</span>
+        Una sección del plan que no fue inicialmente incluida en el análisis contiene información relevante
+      </li>
+      <li style="display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--text-2)">
+        <span style="color:var(--primary);font-weight:700;flex-shrink:0">▸</span>
+        Se detectó una inconsistencia entre el criterio aplicado y el estándar del sistema
+      </li>
+    </ul>
+    <div style="margin-top:14px;padding:12px 16px;background:#fffbeb;border:1px solid #fde68a;border-radius:var(--radius-sm);font-size:13.5px;color:#78350f">
+      Todas las correcciones aplicadas se documentan variable por variable en el perfil de cada candidato. El sistema indica el puntaje original y el puntaje corregido con su justificación.
+    </div>
+  </div>
+
+  <!-- 7. OMISIONES -->
+  <div class="method-section">
+    <h2 class="method-section-title">¿Qué significa que el plan no mencione un tema?</h2>
+    <p style="font-size:14.5px;line-height:1.8;color:var(--text-2);margin:0 0 12px">
+      La ausencia de contenido sobre una variable es en sí misma información técnica relevante. Cuando un plan no aborda un tema, el análisis lo registra como:
+    </p>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div class="card-sm">
+        <div style="font-weight:700;font-size:13.5px;margin-bottom:4px">Vacío técnico</div>
+        <div style="font-size:13px;color:var(--muted)">El tema existe, tiene relevancia para el país, y el plan no lo desarrolla. Puntaje: 0 en criterios afectados.</div>
+      </div>
+      <div class="card-sm">
+        <div style="font-weight:700;font-size:13.5px;margin-bottom:4px">Omisión estratégica</div>
+        <div style="font-size:13px;color:var(--muted)">El tema es políticamente sensible y su ausencia puede indicar una decisión deliberada no documentada.</div>
+      </div>
+      <div class="card-sm">
+        <div style="font-weight:700;font-size:13.5px;margin-bottom:4px">Mención superficial</div>
+        <div style="font-size:13px;color:var(--muted)">El tema se menciona pero sin propuesta concreta. Se puntúa solo diagnóstico (si existe) y los demás criterios son 0.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-24 mb-32">
+    <a href="analizar.html" class="btn-primary">Explorar candidatos →</a>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloque · Planes de Gobierno</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="public/styles/globals.css">
+</head>
+<body>
+<nav class="topbar">
+  <div class="topbar-inner container">
+    <a href="index.html" class="brand">
+      <div class="brand-mark">PG</div>
+      <div class="brand-text">
+        <span class="brand-title">Planes de Gobierno</span>
+        <span class="brand-subtitle">Evaluación Técnica · Perú 2026</span>
+      </div>
+    </a>
+    <div class="topnav">
+      <a href="analizar.html" class="active">Analizar</a>
+      <a href="comparar.html">Comparar</a>
+      <a href="heatmap.html">Heatmap</a>
+      <a href="metodologia.html">Metodología</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-wrap container" style="max-width:800px">
+  <div id="content"><div class="loading-msg">Cargando bloque…</div></div>
+</div>
+
+<script src="public/js/data.js"></script>
+<script>
+const params = new URLSearchParams(location.search);
+const candidateId = params.get('id');
+const blockId = params.get('bloque');
+
+async function init() {
+  if (!candidateId || !blockId) { location.href = 'analizar.html'; return; }
+
+  const c = await DataLayer.getCandidateById(candidateId);
+  if (!c) { location.href = 'analizar.html'; return; }
+
+  const block = c.blocks.find(b => b.id === blockId);
+  if (!block) { location.href = `candidato.html?id=${candidateId}`; return; }
+
+  document.title = `${block.name} · ${c.name} · Planes de Gobierno`;
+  render(c, block);
+}
+
+function render(c, block) {
+  const { label, cls } = DataLayer.scoreLabel(block.average_score);
+
+  const breadcrumb = `<div class="breadcrumb">
+    <a href="index.html">Inicio</a><span>›</span>
+    <a href="analizar.html">Analizar</a><span>›</span>
+    <a href="candidato.html?id=${c.id}">${c.name}</a><span>›</span>
+    <span class="current">${block.name}</span>
+  </div>`;
+
+  const header = `<div class="block-header mt-20">
+    <div class="block-color-strip" style="background:${block.color || c.color || 'var(--primary)'}"></div>
+    <div>
+      <h1 class="block-name">${block.name}</h1>
+      ${block.summary ? `<p class="block-summary">${block.summary}</p>` : ''}
+      ${block.interpretation ? `<p style="font-size:13px;color:var(--muted);margin-top:8px;font-style:italic">${block.interpretation}</p>` : ''}
+      ${(block.strengths?.length > 0 || block.weaknesses?.length > 0) ? `
+        <div style="display:flex;gap:20px;margin-top:14px;flex-wrap:wrap">
+          ${block.strengths?.length > 0 ? `<div style="flex:1;min-width:200px">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#15803d;margin-bottom:6px">▲ Fortalezas</div>
+            <ul style="margin:0;padding-left:16px;color:#166534;font-size:13px;line-height:1.7">${block.strengths.map(s=>`<li>${s}</li>`).join('')}</ul>
+          </div>` : ''}
+          ${block.weaknesses?.length > 0 ? `<div style="flex:1;min-width:200px">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#be123c;margin-bottom:6px">▼ Debilidades</div>
+            <ul style="margin:0;padding-left:16px;color:#9f1239;font-size:13px;line-height:1.7">${block.weaknesses.map(w=>`<li>${w}</li>`).join('')}</ul>
+          </div>` : ''}
+        </div>` : ''}
+    </div>
+    <div style="text-align:right;flex-shrink:0">
+      <div class="score-badge ${cls} lg">${block.average_score !== null ? block.average_score.toFixed(1) : '—'}</div>
+      <div style="font-size:12px;color:var(--muted);margin-top:6px">promedio del bloque</div>
+      <div style="margin-top:8px"><span class="level-tag ${cls}">${label}</span></div>
+    </div>
+  </div>`;
+
+  // Variables list sorted by score
+  const sorted = [...block.variables].sort((a, b) => (b.final_score || 0) - (a.final_score || 0));
+
+  const varDistrib = `<div class="card mt-20">
+    <div class="section-title">Distribución de puntajes</div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      ${sorted.map(v => {
+        const { cls: vcls } = DataLayer.scoreLabel(v.final_score);
+        return `<div style="display:grid;grid-template-columns:1fr 80px 46px;gap:10px;align-items:center">
+          <div style="font-size:13.5px;font-weight:600">${v.name}</div>
+          <div class="score-bar-track">
+            <div class="score-bar-fill" style="width:${v.final_score !== null ? v.final_score * 10 : 0}%;background:${DataLayer.scoreColor(v.final_score)}"></div>
+          </div>
+          <div class="score-badge ${vcls} sm" style="justify-self:end">${v.final_score !== null ? v.final_score.toFixed(1) : '—'}</div>
+        </div>`;
+      }).join('')}
+    </div>
+  </div>`;
+
+  const varList = `<div class="mt-24">
+    <div class="section-label">Variables del bloque</div>
+    <div class="var-list">
+      ${sorted.map(v => {
+        const { label: vlabel, cls: vcls } = DataLayer.scoreLabel(v.final_score);
+        return `
+          <a href="variable.html?id=${c.id}&bloque=${block.id}&var=${v.id}" class="var-list-item">
+            <div class="var-list-row">
+              <div>
+                <div class="var-list-name">${v.name}</div>
+                ${v.summary ? `<div style="font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.5">${v.summary.substring(0, 100)}${v.summary.length > 100 ? '…' : ''}</div>` : ''}
+              </div>
+              <div class="var-list-badges">
+                ${v.corrected_methodology ? '<span class="correction-badge">✱ Corrección</span>' : ''}
+                <span class="score-badge ${vcls} sm">${v.final_score !== null ? v.final_score.toFixed(1) : '—'}</span>
+                <span class="level-tag ${vcls}" style="font-size:11px">${vlabel}</span>
+              </div>
+            </div>
+            <div class="score-bar-track">
+              <div class="score-bar-fill" style="width:${v.final_score !== null ? v.final_score * 10 : 0}%;background:${DataLayer.scoreColor(v.final_score)}"></div>
+            </div>
+          </a>`;
+      }).join('')}
+    </div>
+  </div>`;
+
+  const backLink = `<div class="mt-24 mb-32">
+    <a href="candidato.html?id=${c.id}" class="btn-secondary">← Volver a ${c.name}</a>
+  </div>`;
+
+  document.getElementById('content').innerHTML = breadcrumb + header + varDistrib + varList + backLink;
+}
+
+init();
+</script>
+</body>
+</html>

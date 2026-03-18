@@ -1,0 +1,605 @@
+Tienes una plataforma web YA EXISTENTE en Replit que lee archivos JSON desde la carpeta /analisis y muestra análisis técnicos de planes de gobierno.
+
+NO vas a crear una plataforma nueva desde cero.
+NO vas a romper el sistema actual.
+NO vas a reemplazar la lógica base data-driven.
+NO vas a responder con teoría.
+NO vas a dar opciones.
+NO vas a hacer preguntas.
+NO vas a describir lo que harás.
+
+QUIERO IMPLEMENTACIÓN DIRECTA.
+
+Tu tarea es REFACTORIZAR la plataforma existente para que refleje de manera fiel la estructura REAL del análisis técnico ya producido en los documentos.
+
+==================================================
+PRINCIPIO CENTRAL
+==================================================
+
+La fuente única de verdad debe seguir siendo:
+
+/analisis
+
+Toda la interfaz debe construirse automáticamente desde esos JSON.
+
+Eso incluye:
+- candidatos
+- score total
+- bloques
+- variables
+- criterios
+- fortalezas
+- debilidades
+- vacíos
+- notas metodológicas
+- correcciones metodológicas
+- fuentes
+- resultados finales
+
+NO hardcodear candidatos.
+NO hardcodear bloques.
+NO hardcodear variables.
+NO hardcodear rankings.
+NO hardcodear textos dentro de componentes.
+
+==================================================
+PROBLEMA REAL A CORREGIR
+==================================================
+
+La plataforma actual ya funciona, pero visualmente no acompaña la lógica real del análisis.
+
+Problemas actuales:
+- el usuario entra y ve demasiada información de golpe
+- aparecen dashboards demasiado pronto
+- la jerarquía visual es mala
+- las cuadrículas están mal resueltas
+- el contenido está grande, pesado y poco elegante
+- no hay lectura escalonada
+- no se siente como una app seria de lectura técnica guiada
+- el sistema no refleja bien la riqueza real del documento
+
+La plataforma debe dejar de sentirse como un panel técnico desordenado y pasar a sentirse como una aplicación editorial-técnica, guiada, clara y profesional.
+
+==================================================
+LO QUE EL DOCUMENTO REAL CONTIENE Y LA UI DEBE RESPETAR
+==================================================
+
+El sistema debe reflejar exactamente esta estructura conceptual del análisis:
+
+1. Portada metodológica del análisis
+2. Nota de correcciones aplicadas
+3. Metodología de evaluación
+4. 8 bloques temáticos
+5. 30 variables
+6. En cada variable:
+   - qué evalúa
+   - por qué importa
+   - problema actual del país
+   - qué propone el plan
+   - medidas concretas
+   - quién ejecutaría esto
+   - qué impacto podría tener
+   - qué le falta al plan
+   - evaluación técnica
+   - conclusión
+7. Tabla de criterios por variable:
+   D, P, M, Im, V, E
+8. Tabla/resumen de puntajes por variable
+9. Promedio del bloque
+10. Conclusión del bloque
+11. Resultado final del candidato
+12. Fortalezas, debilidades y conclusión final
+
+La interfaz debe nacer de esta arquitectura real del documento, no de supuestos genéricos.
+
+==================================================
+FLUJO NUEVO OBLIGATORIO
+==================================================
+
+La plataforma actual debe reorganizarse así:
+
+1. HOME SIMPLE
+2. MODAL BREVE DE ORIENTACIÓN
+3. SELECTOR DE CANDIDATOS
+4. RESUMEN DEL CANDIDATO
+5. NAVEGACIÓN POR BLOQUES
+6. DETALLE DEL BLOQUE
+7. DETALLE COMPLETO DE VARIABLE
+8. PÁGINA DE METODOLOGÍA
+9. BASE PREPARADA PARA COMPARACIÓN ENTRE CANDIDATOS
+
+==================================================
+1. HOME
+==================================================
+
+OBJETIVO:
+Que el usuario entienda en segundos qué hace la plataforma y qué puede hacer.
+
+DEBE MOSTRAR EXACTAMENTE:
+
+A. Header limpio
+- logo
+- marca del proyecto
+
+B. Título principal
+“Análisis técnico de candidatos presidenciales”
+
+C. Subtítulo
+“Evaluación estructurada de planes de gobierno basada en 30 variables, 8 bloques y 6 criterios técnicos.”
+
+D. Texto breve de orientación
+“Explora un análisis individual o compara candidatos para identificar fortalezas, debilidades, vacíos y consistencia metodológica.”
+
+E. Dos botones grandes
+- Analizar un candidato
+- Comparar candidatos
+
+F. Enlace pequeño secundario
+- ¿Cómo se hizo este análisis?
+
+ESTA PANTALLA NO DEBE MOSTRAR:
+- dashboards
+- rankings
+- tablas
+- heatmaps
+- cards técnicas
+- datos de bloques
+- variables
+
+==================================================
+2. MODAL DE ORIENTACIÓN
+==================================================
+
+NO hacer una página larga para esto.
+Debe ser un pop-up elegante, corto y cerrable.
+
+OBJETIVO:
+Explicar cómo leer el sistema antes de entrar al análisis.
+
+DEBE APARECER:
+- la primera vez que el usuario entra
+o
+- al entrar por primera vez a “Analizar un candidato”
+
+DEBE PODER:
+- cerrarse
+- guardarse en localStorage
+- reabrirse desde un botón “¿Cómo funciona esto?”
+
+DEBE MOSTRAR EXACTAMENTE:
+
+Título:
+“¿Cómo leer este análisis?”
+
+Contenido breve:
+- El análisis está organizado en 30 variables agrupadas en 8 bloques
+- Cada variable se evalúa con 6 criterios técnicos: Diagnóstico, Propuesta, Medidas, Implementación, Viabilidad y Especificidad
+- No es una opinión libre: solo se puntúa lo que está explícitamente escrito en el plan
+- Primero verás un resumen claro
+- Luego podrás bajar a bloques, variables, criterios y fuentes
+
+Botones:
+- Entendido, continuar
+- Ver metodología completa
+
+==================================================
+3. SELECTOR DE CANDIDATOS
+==================================================
+
+Cuando el usuario pulse “Analizar un candidato”, NO debe entrar directo a dashboards.
+
+Debe entrar a una pantalla de selección clara.
+
+OBJETIVO:
+Permitir elegir un candidato sin ruido visual.
+
+DEBE MOSTRAR EXACTAMENTE:
+
+A. Título
+“Selecciona un candidato”
+
+B. Subtítulo breve
+“Cada análisis incluye resumen, bloques, variables, criterios técnicos, correcciones metodológicas y fuentes.”
+
+C. Grid de tarjetas dinámicas desde /analisis
+
+CADA TARJETA DEBE MOSTRAR:
+- nombre del candidato
+- partido
+- período del plan
+- score total
+- nivel interpretativo
+- una línea de resumen ejecutivo
+- color del candidato si está en JSON
+
+D. Botón o interacción principal
+- Ver análisis
+
+==================================================
+4. RESUMEN DEL CANDIDATO
+==================================================
+
+Esta es la pantalla más importante.
+
+OBJETIVO:
+Dar comprensión rápida del desempeño global del candidato antes de entrar a detalle.
+
+NO hacer un dashboard caótico.
+NO llenar de widgets.
+NO meter 10 visuales.
+
+--------------------------------------------------
+4A. CABECERA PRINCIPAL
+--------------------------------------------------
+
+DEBE MOSTRAR EXACTAMENTE:
+
+- nombre del candidato
+- partido
+- período del plan
+- número de páginas del plan
+- score total grande
+- nivel interpretativo
+- resumen ejecutivo del candidato
+- posición en ranking si el sistema la calcula
+
+Esta zona debe responder:
+“¿Quién es este candidato en el sistema y cómo salió en términos generales?”
+
+--------------------------------------------------
+4B. BLOQUE DE CORRECCIONES METODOLÓGICAS
+--------------------------------------------------
+
+El documento real abre con una nota de correcciones aplicadas.
+Eso debe tener espacio visible en la interfaz.
+
+DEBE MOSTRAR:
+- que el análisis fue corregido metodológicamente
+- que se corrigieron puntajes no desglosados
+- que se estandarizó la estructura
+- que se completaron variables faltantes
+- que hubo bloques subestimados o sobreestimados corregidos
+
+Esto no debe verse como texto enorme.
+Debe verse como un módulo limpio tipo:
+“Notas metodológicas del análisis”
+
+--------------------------------------------------
+4C. INTERPRETACIÓN RÁPIDA
+--------------------------------------------------
+
+DEBE MOSTRAR EXACTAMENTE:
+
+- tres fortalezas principales
+- tres debilidades principales
+- una síntesis del resultado final
+
+Como el documento final dice que las fortalezas se concentran en seguridad y política social y las debilidades en economía y tecnología, la UI debe dar visibilidad inmediata a esa lectura estructural. El resultado final del candidato se resume como 6.6/10, nivel medio. :contentReference[oaicite:2]{index=2}
+
+--------------------------------------------------
+4D. VISIÓN GENERAL POR BLOQUES
+--------------------------------------------------
+
+DEBE MOSTRAR SOLO UN VISUAL PRINCIPAL.
+
+Ese visual debe usar los 8 bloques reales del análisis:
+
+- Economía — 5.5
+- Seguridad y orden público — 9.2
+- Justicia y Estado de derecho — 5.6
+- Educación — 6.0
+- Salud — 6.7
+- Política social — 8.6
+- Infraestructura y desarrollo — 8.1
+- Tecnología y Estado digital — 4.4 :contentReference[oaicite:3]{index=3}
+
+Este visual debe responder:
+“¿Dónde está fuerte y dónde está débil este candidato?”
+
+--------------------------------------------------
+4E. TARJETAS DE BLOQUES
+--------------------------------------------------
+
+Debajo del visual, mostrar todos los bloques como cards navegables.
+
+CADA CARD DE BLOQUE DEBE MOSTRAR:
+- nombre del bloque
+- score promedio
+- mini resumen del bloque
+- principal fortaleza del bloque
+- principal debilidad del bloque
+- botón “Ver bloque”
+
+El resumen debe reflejar lo que realmente hace el documento:
+por ejemplo, economía se presenta como heterogénea; seguridad como el bloque más sólido; justicia como bloque con alta variación; educación con diagnóstico fuerte pero desempeño desigual; tecnología como el bloque más heterogéneo y más débil en IA/ciberseguridad. 
+
+==================================================
+5. PÁGINA DE BLOQUE
+==================================================
+
+OBJETIVO:
+Mostrar el comportamiento interno de un área temática completa.
+
+Ejemplo:
+ /candidato/lopez-chau/economia
+
+DEBE MOSTRAR EXACTAMENTE:
+
+A. Encabezado del bloque
+- nombre
+- score promedio
+- resumen narrativo del bloque
+- lectura interpretativa del bloque
+
+B. Visual breve
+- mini barras con las variables del bloque
+
+C. Lista de variables del bloque
+
+CADA VARIABLE DEBE MOSTRAR:
+- nombre
+- puntaje final
+- nivel
+- resumen ejecutivo de la variable
+- ícono o marca si hubo corrección metodológica
+- botón “Ver detalle”
+
+La lista debe respetar las variables reales del documento.
+
+Ejemplo:
+Economía:
+- Política tributaria — 3.3
+- Gasto público — 7.5
+- Inversión privada — 3.3
+- Formalización laboral — 5.8
+- Política minera y recursos naturales — 7.5 :contentReference[oaicite:5]{index=5}
+
+Seguridad:
+- Seguridad ciudadana — 9.2
+- Reforma policial — 9.2
+- Sistema penitenciario — 9.2
+- Política contra el crimen organizado — 9.2 :contentReference[oaicite:6]{index=6}
+
+Y así con todos los bloques hasta completar las 30 variables. :contentReference[oaicite:7]{index=7}
+
+==================================================
+6. PÁGINA DE VARIABLE
+==================================================
+
+OBJETIVO:
+Mostrar la profundidad completa de una variable con orden, claridad y peso técnico.
+
+Ejemplo:
+ /candidato/lopez-chau/economia/politica-tributaria
+
+--------------------------------------------------
+6A. CABECERA DE VARIABLE
+--------------------------------------------------
+
+DEBE MOSTRAR:
+- nombre de la variable
+- score final
+- nivel interpretativo
+- resumen ejecutivo
+- barra visual del score
+- nota de corrección metodológica cuando corresponda
+
+--------------------------------------------------
+6B. ESTRUCTURA DEL CONTENIDO
+--------------------------------------------------
+
+La página debe mapear exactamente la estructura real repetida en el documento.
+
+Secciones visibles, en este orden:
+
+1. ¿Qué evalúa esta variable?
+2. ¿Por qué importa este tema?
+3. ¿Cuál es el problema actual del país?
+4. ¿Qué propone el plan?
+5. ¿Hay medidas concretas?
+6. ¿Quién ejecutaría esto?
+7. ¿Qué impacto podría tener?
+8. ¿Qué le falta al plan?
+9. Evaluación técnica
+10. Conclusión
+
+Cada sección debe tener:
+- título claro
+- contenido cómodo de leer
+- separación visual fuerte
+- diseño limpio
+- opción de colapsar para no saturar
+
+--------------------------------------------------
+6C. TABLA DE CRITERIOS
+--------------------------------------------------
+
+Debajo o junto a la evaluación técnica, mostrar claramente:
+
+- D
+- P
+- M
+- Im
+- V
+- E
+
+Con:
+- puntaje
+- nombre completo del criterio
+- justificación breve
+- suma total
+- fórmula final
+
+Esto es imprescindible porque el documento sí trae el cuadro de criterios y luego un cuadro-resumen de puntajes por variable. :contentReference[oaicite:8]{index=8}
+
+--------------------------------------------------
+6D. MÓDULO DE LECTURA RÁPIDA
+--------------------------------------------------
+
+Antes o después del texto largo, mostrar tres mini bloques:
+
+- Fortaleza principal de la variable
+- Debilidad principal de la variable
+- Vacío principal de la variable
+
+Esto debe salir del contenido real de la conclusión y de “qué le falta al plan”.
+
+--------------------------------------------------
+6E. FUENTES
+--------------------------------------------------
+
+Cada variable debe cerrar con una sección visible:
+“Fuentes”
+
+Las fuentes deben leerse desde JSON.
+
+Cada fuente debe mostrar:
+- title
+- type
+- note
+- url si existe
+
+La sección debe poder expandirse/colapsarse y debe integrarse de forma limpia al final de cada variable.
+
+==================================================
+7. PÁGINA DE METODOLOGÍA
+==================================================
+
+Ruta:
+ /metodologia
+
+OBJETIVO:
+Explicar el sistema exactamente como lo hace el documento real, pero en UI clara.
+
+DEBE MOSTRAR EXACTAMENTE:
+
+A. Qué hace la plataforma
+B. Cómo se organiza:
+   - 30 variables
+   - 8 bloques
+   - análisis por candidato
+C. Los 6 criterios:
+   - Diagnóstico
+   - Propuesta
+   - Medidas
+   - Implementación
+   - Viabilidad
+   - Especificidad
+D. Fórmula de puntaje
+E. Regla fundamental:
+   “solo se puntúa lo que está explícitamente escrito en el plan”
+F. Escala interpretativa de puntajes
+G. Qué significa una corrección metodológica
+H. Qué significa una omisión del plan en términos técnicos
+
+La metodología debe ser visible, breve, seria y comprensible.
+
+==================================================
+8. COMPARACIÓN ENTRE CANDIDATOS
+==================================================
+
+Aunque el foco del refactor sea el análisis individual, deja preparada la base para comparación.
+
+La estructura debe quedar lista para renderizar después:
+
+- ranking general
+- comparación por bloques
+- comparación por variables
+- heatmap global
+- fortalezas cruzadas
+- debilidades cruzadas
+
+TODO eso debe depender de /analisis.
+
+==================================================
+9. VALIDACIÓN JSON
+==================================================
+
+Implementar una validación robusta para los JSON de /analisis.
+
+Debe detectar:
+- campos faltantes
+- estructuras incompletas
+- variables sin criterios
+- bloques sin variables
+- fuentes mal formadas
+- notas metodológicas ausentes
+- secciones vacías
+
+La app NO debe romperse por faltantes.
+Debe:
+- renderizar lo disponible
+- avisar en consola
+- documentar qué campos son obligatorios y cuáles de soporte
+
+También crear:
+ /analisis/demo-candidato.json
+
+Ese archivo debe seguir la estructura real del análisis que ya existe:
+- candidate
+- methodological notes
+- 8 blocks
+- 30 variables
+- criteria
+- score
+- conclusion
+- sources
+
+==================================================
+10. DISEÑO VISUAL
+==================================================
+
+El sistema debe sentirse como:
+- aplicación seria
+- plataforma técnica
+- lectura guiada
+- diseño limpio
+- minimalismo profesional
+
+Reglas:
+- fondo claro
+- cards elegantes
+- tipografía legible
+- tamaño base aprox. 14px
+- títulos bien jerarquizados
+- mucho aire
+- bordes suaves
+- nada recargado
+- nada tipo blog
+- nada tipo dashboard caótico
+
+==================================================
+11. IMPLEMENTACIÓN
+==================================================
+
+NO destruyas la base actual.
+NO rehagas todo desde cero.
+REUTILIZA rutas, loaders, estructura y lógica existentes donde sea posible.
+REEMPLAZA la experiencia visual y la jerarquía de lectura.
+MANTÉN compatibilidad total con /analisis.
+
+==================================================
+12. ENTREGA
+==================================================
+
+Entrega implementación directa para la plataforma existente:
+
+- home corregido
+- modal de orientación
+- selector de candidatos
+- resumen del candidato
+- tarjetas de bloques
+- página de bloque
+- página de variable con las 10 secciones reales del documento
+- tabla de criterios
+- integración de fuentes
+- página de metodología
+- validación JSON
+- demo-candidato.json
+
+NO expliques.
+NO propongas.
+NO preguntes.
+NO sugieras.
+
+SOLO IMPLEMENTA LA CORRECCIÓN DEL SISTEMA EXISTENTE CON ESTA ARQUITECTURA Y CON ESTE CONTENIDO REAL.

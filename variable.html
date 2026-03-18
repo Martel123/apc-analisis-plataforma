@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Variable · Planes de Gobierno</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="public/styles/globals.css">
+</head>
+<body>
+<nav class="topbar">
+  <div class="topbar-inner container">
+    <a href="index.html" class="brand">
+      <div class="brand-mark">PG</div>
+      <div class="brand-text">
+        <span class="brand-title">Planes de Gobierno</span>
+        <span class="brand-subtitle">Evaluación Técnica · Perú 2026</span>
+      </div>
+    </a>
+    <div class="topnav">
+      <a href="analizar.html" class="active">Analizar</a>
+      <a href="comparar.html">Comparar</a>
+      <a href="heatmap.html">Heatmap</a>
+      <a href="metodologia.html">Metodología</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-wrap container" style="max-width:780px">
+  <div id="content"><div class="loading-msg">Cargando variable…</div></div>
+</div>
+
+<script src="public/js/data.js"></script>
+<script>
+const params = new URLSearchParams(location.search);
+const candidateId = params.get('id');
+const blockId = params.get('bloque');
+const varId = params.get('var');
+
+const SECTION_LABELS = {
+  definicion:              '¿Qué evalúa esta variable?',
+  importancia:             '¿Por qué importa este tema?',
+  diagnostico_externo:     '¿Cuál es el problema actual del país?',
+  propuesta_plan:          '¿Qué propone el plan?',
+  medidas_concretas:       '¿Hay medidas concretas?',
+  implementacion_necesaria:'¿Quién ejecutaría esto?',
+  impacto_potencial:       '¿Qué impacto podría tener?',
+  vacios:                  '¿Qué le falta al plan?',
+  evaluacion_tecnica:      'Evaluación técnica',
+  calificacion_final:      'Calificación y fórmula',
+  conclusion:              'Conclusión'
+};
+
+const CRITERIA_META = [
+  { key: 'diagnostico',    code: 'D',  name: 'Diagnóstico',    desc: 'Reconoce y cuantifica el problema' },
+  { key: 'propuesta',      code: 'P',  name: 'Propuesta',      desc: 'Define una solución concreta' },
+  { key: 'medidas',        code: 'M',  name: 'Medidas',        desc: 'Especifica acciones ejecutables' },
+  { key: 'implementacion', code: 'Im', name: 'Implementación', desc: 'Identifica responsables y plazos' },
+  { key: 'viabilidad',     code: 'V',  name: 'Viabilidad',     desc: 'La propuesta es técnicamente factible' },
+  { key: 'especificidad',  code: 'E',  name: 'Especificidad',  desc: 'Incluye metas cuantificables o cronograma' }
+];
+
+async function init() {
+  if (!candidateId || !blockId || !varId) { location.href = 'analizar.html'; return; }
+  const c = await DataLayer.getCandidateById(candidateId);
+  if (!c) { location.href = 'analizar.html'; return; }
+  const block = c.blocks.find(b => b.id === blockId);
+  if (!block) { location.href = `candidato.html?id=${candidateId}`; return; }
+  const variable = block.variables.find(v => v.id === varId);
+  if (!variable) { location.href = `bloque.html?id=${candidateId}&bloque=${blockId}`; return; }
+
+  document.title = `${variable.name} · ${c.name} · Planes de Gobierno`;
+  render(c, block, variable);
+}
+
+function render(c, block, v) {
+  const { label, cls } = DataLayer.scoreLabel(v.final_score);
+  const sections = v.analysis_sections || {};
+  const criteria = v.criteria || {};
+  const critNotes = v.criteria_notes || {};
+  const sources = v.sources || [];
+
+  // Breadcrumb
+  const breadcrumb = `<div class="breadcrumb">
+    <a href="index.html">Inicio</a><span>›</span>
+    <a href="analizar.html">Analizar</a><span>›</span>
+    <a href="candidato.html?id=${c.id}">${c.name}</a><span>›</span>
+    <a href="bloque.html?id=${c.id}&bloque=${block.id}">${block.name}</a><span>›</span>
+    <span class="current">${v.name}</span>
+  </div>`;
+
+  // Variable header
+  const corrNote = v.corrected_methodology && v.correction_note
+    ? `<div class="correction-note-box mt-12">
+        <span class="correction-note-icon">✱</span>
+        <span><strong>Corrección metodológica aplicada:</strong> ${v.correction_note}</span>
+       </div>`
+    : '';
+
+  const header = `<div class="var-header mt-20">
+    <div class="var-header-top">
+      <div>
+        <div style="font-size:12.5px;color:var(--muted);margin-bottom:4px">
+          <span style="color:${block.color || 'var(--primary)'};font-weight:600">${block.name}</span>
+        </div>
+        <h1 class="var-title">${v.name}</h1>
+        ${v.summary ? `<p style="font-size:14px;line-height:1.7;color:var(--text-2);margin:0">${v.summary}</p>` : ''}
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="score-badge ${cls} lg">${v.final_score !== null ? v.final_score.toFixed(1) : '—'}</div>
+        <div style="margin-top:8px"><span class="level-tag ${cls}">${label}</span></div>
+        ${v.corrected_methodology ? '<div style="margin-top:6px"><span class="correction-badge">✱ Corregida</span></div>' : ''}
+      </div>
+    </div>
+    <div class="score-bar-track" style="height:10px">
+      <div class="score-bar-fill" style="width:${v.final_score !== null ? v.final_score * 10 : 0}%;background:${DataLayer.scoreColor(v.final_score)}"></div>
+    </div>
+    ${corrNote}
+  </div>`;
+
+  // Quick reads
+  const strengths = v.strengths || [];
+  const weaknesses = v.weaknesses || [];
+  const gaps = v.gaps || [];
+  const hasQuick = strengths.length > 0 || weaknesses.length > 0 || gaps.length > 0;
+
+  const quickReads = hasQuick ? `
+    <div class="quick-reads-grid mt-16">
+      <div class="quick-read-card strength">
+        <div class="quick-read-label">▲ Fortaleza de la variable</div>
+        <ul class="quick-read-list">
+          ${strengths.slice(0,2).map(s=>`<li>${s}</li>`).join('') || '<li>Sin datos disponibles</li>'}
+        </ul>
+      </div>
+      <div class="quick-read-card weakness">
+        <div class="quick-read-label">▼ Debilidad de la variable</div>
+        <ul class="quick-read-list">
+          ${weaknesses.slice(0,2).map(w=>`<li>${w}</li>`).join('') || '<li>Sin datos disponibles</li>'}
+        </ul>
+      </div>
+      <div class="quick-read-card gap">
+        <div class="quick-read-label">○ Vacío principal</div>
+        <ul class="quick-read-list">
+          ${gaps.slice(0,2).map(g=>`<li>${g}</li>`).join('') || '<li>Sin datos disponibles</li>'}
+        </ul>
+      </div>
+    </div>` : '';
+
+  // 10 sections accordion
+  const sectionKeys = Object.keys(SECTION_LABELS);
+  const sectionItems = sectionKeys
+    .filter(key => sections[key])
+    .map((key, i) => `
+      <div class="section-item">
+        <button class="section-toggle" onclick="toggleSection(this)" data-idx="${i}">
+          <span class="section-toggle-label">
+            <span class="section-num">${i + 1}</span>
+            ${SECTION_LABELS[key]}
+          </span>
+          <span class="section-chevron">▼</span>
+        </button>
+        <div class="section-body" id="section-${i}" ${i === 0 ? 'class="section-body open"' : ''}>
+          <p style="margin:0">${sections[key].replace(/\n/g, '<br>')}</p>
+        </div>
+      </div>`).join('');
+
+  const sectionsHTML = sectionItems ? `
+    <div class="mt-24">
+      <div class="section-label">Contenido detallado de la variable</div>
+      <div class="section-accordion">${sectionItems}</div>
+    </div>` : '';
+
+  // Criteria table
+  const totalSum = CRITERIA_META.reduce((sum, cr) => sum + (criteria[cr.key] ?? 0), 0);
+  const formulaScore = totalSum / 12 * 10;
+
+  const criteriaHTML = `
+    <div class="card mt-24">
+      <div class="section-title">Tabla de criterios técnicos</div>
+      <div class="criteria-table-wrap">
+        <table class="criteria-table">
+          <thead>
+            <tr>
+              <th>Cód.</th>
+              <th>Criterio</th>
+              <th style="text-align:center">Puntaje (0–2)</th>
+              <th>Justificación</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${CRITERIA_META.map(cr => {
+              const score = criteria[cr.key] ?? '—';
+              const note = critNotes[cr.key] || '';
+              const { cls: crcls } = DataLayer.scoreLabel(score !== '—' ? score * 5 : null);
+              return `<tr>
+                <td><strong style="font-family:Sora,sans-serif;font-size:13px">${cr.code}</strong></td>
+                <td>
+                  <div style="font-weight:600;font-size:13px">${cr.name}</div>
+                  <div class="criteria-note">${cr.desc}</div>
+                </td>
+                <td class="criteria-score-cell">
+                  <span class="score-badge ${crcls} sm" style="font-size:1rem">${score}</span>
+                </td>
+                <td class="criteria-note">${note || '<span style="color:var(--muted-light)">—</span>'}</td>
+              </tr>`;
+            }).join('')}
+          </tbody>
+        </table>
+      </div>
+      <div class="formula-box">
+        (${CRITERIA_META.map(cr => criteria[cr.key] ?? 0).join(' + ')}) / 12 × 10 = <strong>${formulaScore.toFixed(1)}</strong>
+        ${v.corrected_methodology ? ` → Puntaje corregido: <strong>${v.final_score?.toFixed(1)}</strong>` : ''}
+      </div>
+    </div>`;
+
+  // Criteria visual bars
+  const criteriaVizHTML = `
+    <div class="card mt-12" style="padding:18px 20px">
+      <div class="criteria-bars">
+        ${CRITERIA_META.map(cr => {
+          const score = criteria[cr.key] ?? 0;
+          const pct = (score / 2) * 100;
+          const fillClass = score === 2 ? 'c-full' : score === 1 ? 'c-half' : 'c-zero';
+          return `<div class="criteria-row">
+            <div class="criteria-label">${cr.code} · ${cr.name}</div>
+            <div class="criteria-track"><div class="criteria-fill ${fillClass}" style="width:${Math.max(pct, score===0?4:pct)}%"></div></div>
+            <div class="criteria-val">${score}/2</div>
+          </div>`;
+        }).join('')}
+      </div>
+    </div>`;
+
+  // Sources section
+  const sourcesHTML = sources.length > 0 ? `
+    <div class="card mt-24" id="sourcesCard">
+      <div style="display:flex;justify-content:space-between;align-items:center;cursor:pointer" onclick="toggleSources()">
+        <div class="section-title" style="margin:0">Fuentes consultadas</div>
+        <span id="sourcesChev" style="color:var(--muted-light);font-size:12px">▼</span>
+      </div>
+      <div id="sourcesList" style="margin-top:14px">
+        <div class="sources-list">
+          ${sources.map(s => `
+            <div class="source-item">
+              <span class="source-type-badge source-type-${s.type || 'other'}">${(s.type || 'otro').toUpperCase()}</span>
+              <div style="flex:1">
+                <div class="source-title">${s.title}</div>
+                ${s.note ? `<div class="source-note">${s.note}</div>` : ''}
+                ${s.url ? `<a href="${s.url}" target="_blank" class="source-url">↗ ${s.url}</a>` : ''}
+              </div>
+            </div>`).join('')}
+        </div>
+      </div>
+    </div>` : '';
+
+  const backLink = `<div class="mt-24 mb-32" style="display:flex;gap:10px">
+    <a href="bloque.html?id=${c.id}&bloque=${block.id}" class="btn-secondary">← Volver a ${block.name}</a>
+    <a href="candidato.html?id=${c.id}" class="btn-ghost">Ver candidato</a>
+  </div>`;
+
+  document.getElementById('content').innerHTML =
+    breadcrumb + header + quickReads + sectionsHTML + criteriaHTML + criteriaVizHTML + sourcesHTML + backLink;
+
+  // Auto-open first section
+  const firstToggle = document.querySelector('.section-toggle');
+  if (firstToggle) firstToggle.classList.add('open');
+  const firstBody = document.querySelector('.section-body');
+  if (firstBody) firstBody.classList.add('open');
+}
+
+function toggleSection(btn) {
+  const idx = btn.dataset.idx;
+  const body = document.getElementById('section-' + idx);
+  const isOpen = btn.classList.contains('open');
+  btn.classList.toggle('open', !isOpen);
+  body.classList.toggle('open', !isOpen);
+}
+
+function toggleSources() {
+  const list = document.getElementById('sourcesList');
+  const chev = document.getElementById('sourcesChev');
+  const isHidden = list.style.display === 'none';
+  list.style.display = isHidden ? 'block' : 'none';
+  chev.textContent = isHidden ? '▲' : '▼';
+}
+
+init();
+</script>
+</body>
+</html>

@@ -3,152 +3,241 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Planes de Gobierno · Evaluación Técnica 2026</title>
+  <title>Análisis técnico de planes de gobierno · Perú 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="public/styles/globals.css">
-  <link rel="stylesheet" href="public/styles/home.css">
+  <style>
+    .home-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .home-hero {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: 80px 0 100px;
+    }
+    .home-content {
+      max-width: 640px;
+    }
+    .home-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      border-radius: 99px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+    .home-title {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1.04;
+      margin: 0 0 18px;
+      color: var(--text);
+    }
+    .home-subtitle {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--text-2);
+      margin: 0 0 12px;
+    }
+    .home-desc {
+      font-size: 14.5px;
+      line-height: 1.7;
+      color: var(--muted);
+      margin: 0 0 40px;
+    }
+    .home-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .home-method-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 13px;
+      color: var(--muted);
+      transition: color 0.15s;
+      padding: 4px 0;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: transparent;
+    }
+    .home-method-link:hover {
+      color: var(--primary);
+      text-decoration-color: var(--primary);
+    }
+    .home-how-btn {
+      background: none;
+      border: none;
+      font: inherit;
+      font-size: 13px;
+      color: var(--muted);
+      cursor: pointer;
+      padding: 4px 0;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: rgba(0,0,0,0.2);
+      transition: color 0.15s;
+    }
+    .home-how-btn:hover { color: var(--primary); }
+    .home-stats {
+      display: flex;
+      gap: 24px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+    }
+    .home-stat strong {
+      display: block;
+      font-family: 'Sora', sans-serif;
+      font-size: 1.7rem;
+      font-weight: 900;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .home-stat span {
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+  </style>
 </head>
 <body>
-  <div class="app-shell">
-    <nav class="topbar">
-      <div class="topbar-inner container">
-        <div class="brand">
-          <div class="brand-mark">PG</div>
-          <div class="brand-text">
-            <span class="brand-title">Planes de Gobierno</span>
-            <span class="brand-subtitle">Evaluación Técnica · Perú 2026</span>
+<div class="home-page">
+  <nav class="topbar">
+    <div class="topbar-inner container">
+      <a href="index.html" class="brand">
+        <div class="brand-mark">PG</div>
+        <div class="brand-text">
+          <span class="brand-title">Planes de Gobierno</span>
+          <span class="brand-subtitle">Evaluación Técnica · Perú 2026</span>
+        </div>
+      </a>
+      <div class="topnav">
+        <a href="analizar.html">Analizar</a>
+        <a href="comparar.html">Comparar</a>
+        <a href="heatmap.html">Heatmap</a>
+        <a href="metodologia.html">Metodología</a>
+        <a href="validacion.html">Validación</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="home-hero">
+    <div class="container">
+      <div class="home-content">
+        <div class="home-eyebrow">▸ Perú 2026</div>
+        <h1 class="home-title">Análisis técnico de candidatos presidenciales</h1>
+        <p class="home-subtitle">
+          Evaluación estructurada de planes de gobierno basada en 30 variables, 8 bloques temáticos y 6 criterios técnicos.
+        </p>
+        <p class="home-desc">
+          Explora un análisis individual o compara candidatos para identificar fortalezas, debilidades, vacíos y consistencia metodológica.
+        </p>
+        <div class="home-actions">
+          <a href="analizar.html" class="btn-primary">Analizar un candidato</a>
+          <a href="comparar.html" class="btn-secondary">Comparar candidatos</a>
+        </div>
+        <button class="home-how-btn" id="openModal">¿Cómo se hizo este análisis?</button>
+
+        <div class="home-stats">
+          <div class="home-stat">
+            <strong>30</strong>
+            <span>variables por candidato</span>
+          </div>
+          <div class="home-stat">
+            <strong>8</strong>
+            <span>bloques temáticos</span>
+          </div>
+          <div class="home-stat">
+            <strong>6</strong>
+            <span>criterios por variable</span>
+          </div>
+          <div class="home-stat">
+            <strong id="statCandidates">—</strong>
+            <span>candidatos evaluados</span>
           </div>
         </div>
-        <div class="topnav">
-          <a href="analizar.html">Analizar</a>
-          <a href="comparar.html">Comparar</a>
-          <a href="heatmap.html">Heatmap</a>
-          <a href="validacion.html">Validación</a>
-        </div>
       </div>
-    </nav>
-
-    <main class="home-main container">
-      <div class="home-eyebrow">
-        <span class="eyebrow">▸ Metodología técnica · 30 variables · 8 bloques</span>
-      </div>
-
-      <h1 class="home-title">
-        Análisis técnico de<br><span class="text-primary">planes de gobierno</span>
-      </h1>
-
-      <p class="home-desc">
-        Plataforma independiente de evaluación técnica de propuestas presidenciales.<br>
-        Basada en evidencia explícita. Sin sesgos ideológicos.
-      </p>
-
-      <div class="home-actions">
-        <a href="analizar.html" class="primary-btn">Analizar un candidato</a>
-        <a href="comparar.html" class="secondary-btn">Comparar candidatos</a>
-        <a href="heatmap.html" class="secondary-btn">Heatmap global</a>
-      </div>
-
-      <div class="home-stats" id="homeStats">
-        <div class="home-stat">
-          <strong id="statCandidates">—</strong>
-          <span>candidatos evaluados</span>
-        </div>
-        <div class="home-stat">
-          <strong>30</strong>
-          <span>variables por candidato</span>
-        </div>
-        <div class="home-stat">
-          <strong>8</strong>
-          <span>bloques temáticos</span>
-        </div>
-        <div class="home-stat">
-          <strong>6</strong>
-          <span>criterios por variable</span>
-        </div>
-      </div>
-
-      <div class="home-ranking-section">
-        <h2 class="section-title-sm">Ranking general</h2>
-        <div class="ranking-list" id="rankingList">
-          <div class="loading-state">Cargando candidatos...</div>
-        </div>
-      </div>
-
-      <div class="home-modules">
-        <a href="analizar.html" class="module-card">
-          <div class="module-icon">◉</div>
-          <div class="module-info">
-            <strong>Análisis por candidato</strong>
-            <span>Bloques, variables, criterios y análisis profundo</span>
-          </div>
-          <div class="module-arrow">→</div>
-        </a>
-        <a href="comparar.html" class="module-card">
-          <div class="module-icon">⊕</div>
-          <div class="module-info">
-            <strong>Comparación entre candidatos</strong>
-            <span>Radar múltiple, barras y tabla comparativa</span>
-          </div>
-          <div class="module-arrow">→</div>
-        </a>
-        <a href="heatmap.html" class="module-card">
-          <div class="module-icon">▦</div>
-          <div class="module-info">
-            <strong>Heatmap global</strong>
-            <span>Todas las variables y candidatos en una vista</span>
-          </div>
-          <div class="module-arrow">→</div>
-        </a>
-        <a href="validacion.html" class="module-card">
-          <div class="module-icon">✓</div>
-          <div class="module-info">
-            <strong>Validación de JSON</strong>
-            <span>Detecta campos faltantes o errores estructurales</span>
-          </div>
-          <div class="module-arrow">→</div>
-        </a>
-      </div>
-    </main>
+    </div>
   </div>
+</div>
 
-  <script src="public/js/data.js"></script>
-  <script>
-    async function init() {
-      const candidates = await DataLayer.getCandidates();
-      document.getElementById('statCandidates').textContent = candidates.length;
+<!-- MODAL -->
+<div class="modal-overlay" id="modal" style="display:none">
+  <div class="modal-box">
+    <button class="modal-close" id="closeModal">✕</button>
+    <h2 class="modal-title">¿Cómo leer este análisis?</h2>
+    <div class="modal-list">
+      <div class="modal-list-item">
+        <div class="modal-list-dot"></div>
+        <span>El análisis está organizado en <strong>30 variables</strong> agrupadas en <strong>8 bloques</strong> temáticos</span>
+      </div>
+      <div class="modal-list-item">
+        <div class="modal-list-dot"></div>
+        <span>Cada variable se evalúa con <strong>6 criterios técnicos</strong>: Diagnóstico, Propuesta, Medidas, Implementación, Viabilidad y Especificidad</span>
+      </div>
+      <div class="modal-list-item">
+        <div class="modal-list-dot"></div>
+        <span><strong>No es una opinión libre:</strong> solo se puntúa lo que está explícitamente escrito en el plan de gobierno</span>
+      </div>
+      <div class="modal-list-item">
+        <div class="modal-list-dot"></div>
+        <span>Primero verás un <strong>resumen ejecutivo</strong> del candidato y sus bloques principales</span>
+      </div>
+      <div class="modal-list-item">
+        <div class="modal-list-dot"></div>
+        <span>Luego puedes bajar a <strong>bloques, variables, criterios y fuentes</strong> con toda la profundidad del análisis</span>
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-primary" id="modalConfirm">Entendido, continuar</button>
+      <a href="metodologia.html" class="btn-ghost">Ver metodología completa</a>
+    </div>
+  </div>
+</div>
 
-      const ranking = await DataLayer.getRanking();
-      const list = document.getElementById('rankingList');
+<script src="public/js/data.js"></script>
+<script>
+  async function init() {
+    const candidates = await DataLayer.getCandidates();
+    document.getElementById('statCandidates').textContent = candidates.length;
+  }
+  init();
 
-      if (ranking.length === 0) {
-        list.innerHTML = `<div class="empty-state">No hay candidatos en /analisis. Agrega archivos JSON para comenzar.</div>`;
-        return;
-      }
+  // Modal logic
+  const modal = document.getElementById('modal');
+  const closeModal = document.getElementById('closeModal');
+  const modalConfirm = document.getElementById('modalConfirm');
+  const openModal = document.getElementById('openModal');
 
-      list.innerHTML = ranking.map((c, i) => {
-        const { label, cls } = DataLayer.scoreLabel(c.total_score);
-        const bar = c.total_score !== null ? (c.total_score / 10) * 100 : 0;
-        return `
-          <a href="analizar.html?id=${c.id}" class="ranking-item">
-            <div class="rank-pos">${i + 1}</div>
-            <div class="rank-color-bar" style="background:${c.color}"></div>
-            <div class="rank-info">
-              <strong class="rank-name">${c.name}</strong>
-              <span class="rank-party">${c.party}</span>
-            </div>
-            <div class="rank-score-wrap">
-              <div class="rank-bar-track">
-                <div class="rank-bar-fill" style="width:${bar}%; background:${DataLayer.scoreColor(c.total_score)}"></div>
-              </div>
-              <span class="rank-score ${cls}">${c.total_score !== null ? c.total_score.toFixed(1) : '—'}</span>
-            </div>
-            <div class="rank-label ${cls}">${label}</div>
-          </a>`;
-      }).join('');
-    }
-    init();
-  </script>
+  function showModal() { modal.style.display = 'flex'; }
+  function hideModal() {
+    modal.style.display = 'none';
+    localStorage.setItem('orientation_seen', '1');
+  }
+
+  openModal.addEventListener('click', showModal);
+  closeModal.addEventListener('click', hideModal);
+  modalConfirm.addEventListener('click', hideModal);
+  modal.addEventListener('click', e => { if (e.target === modal) hideModal(); });
+
+  if (!localStorage.getItem('orientation_seen')) showModal();
+</script>
 </body>
 </html>

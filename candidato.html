@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candidato · Planes de Gobierno</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="public/styles/globals.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<nav class="topbar">
+  <div class="topbar-inner container">
+    <a href="index.html" class="brand">
+      <div class="brand-mark">PG</div>
+      <div class="brand-text">
+        <span class="brand-title">Planes de Gobierno</span>
+        <span class="brand-subtitle">Evaluación Técnica · Perú 2026</span>
+      </div>
+    </a>
+    <div class="topnav">
+      <a href="analizar.html" class="active">Analizar</a>
+      <a href="comparar.html">Comparar</a>
+      <a href="heatmap.html">Heatmap</a>
+      <a href="metodologia.html">Metodología</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-wrap container" id="pageWrap" style="max-width:860px">
+  <div id="content"><div class="loading-msg">Cargando análisis…</div></div>
+</div>
+
+<script src="public/js/data.js"></script>
+<script src="public/js/engine.js"></script>
+<script>
+const params = new URLSearchParams(location.search);
+const candidateId = params.get('id');
+
+async function init() {
+  if (!candidateId) {
+    location.href = 'analizar.html';
+    return;
+  }
+
+  const c = await DataLayer.getCandidateById(candidateId);
+  if (!c) {
+    document.getElementById('content').innerHTML = `<div class="empty-state"><div class="empty-state-icon">◌</div><p>Candidato no encontrado.</p><a href="analizar.html" class="btn-secondary" style="margin-top:16px">← Volver al selector</a></div>`;
+    return;
+  }
+
+  document.title = `${c.name} · Planes de Gobierno`;
+  render(c);
+}
+
+function render(c) {
+  const { label, cls } = DataLayer.scoreLabel(c.total_score);
+  const kpis = Engine.getKpis(c);
+  const corrections = c.methodological_corrections || c.candidate?.methodological_corrections || [];
+  const methodNotes = c.methodological_notes || [];
+
+  // Breadcrumb
+  const breadcrumb = `<div class="breadcrumb">
+    <a href="index.html">Inicio</a>
+    <span>›</span>
+    <a href="analizar.html">Analizar</a>
+    <span>›</span>
+    <span class="current">${c.name}</span>
+  </div>`;
+
+  // Header
+  const header = `<div class="cand-header mt-20">
+    <div class="cand-color-strip" style="background:${c.color || 'var(--primary)'}"></div>
+    <div>
+      <h1 class="cand-name">${c.name}</h1>
+      <p class="cand-party">${c.party}</p>
+      <div class="cand-meta">
+        ${c.plan_period ? `<span class="cand-meta-chip">📅 ${c.plan_period}</span>` : ''}
+        ${c.plan_pages ? `<span class="cand-meta-chip">📄 ${c.plan_pages} páginas</span>` : ''}
+        ${kpis.totalVars ? `<span class="cand-meta-chip">◉ ${kpis.totalVars} variables evaluadas</span>` : ''}
+        ${kpis.correctedVars > 0 ? `<span class="cand-meta-chip" style="background:#fffbeb;border-color:#fde68a;color:#92400e">✱ ${kpis.correctedVars} correcciones metodológicas</span>` : ''}
+      </div>
+      ${c.summary ? `<p class="cand-summary">${c.summary}</p>` : ''}
+    </div>
+    <div class="cand-score-side">
+      <div class="cand-score-num ${cls}">${c.total_score !== null ? c.total_score.toFixed(1) : '—'}</div>
+      <div class="cand-score-label">/ 10</div>
+      <div style="margin-top:8px"><span class="level-tag ${cls}">${label}</span></div>
+    </div>
+  </div>`;
+
+  // KPI row
+  const kpiRow = `<div class="kpi-row mt-16">
+    <div class="kpi-item">
+      <div class="kpi-label">Mejor bloque</div>
+      <div class="kpi-value" style="font-size:1rem">${kpis.bestBlock?.name || '—'}</div>
+      ${kpis.bestBlock ? `<div class="kpi-sub">${kpis.bestBlock.average_score?.toFixed(1) || ''}</div>` : ''}
+    </div>
+    <div class="kpi-item">
+      <div class="kpi-label">Peor bloque</div>
+      <div class="kpi-value" style="font-size:1rem">${kpis.worstBlock?.name || '—'}</div>
+      ${kpis.worstBlock ? `<div class="kpi-sub">${kpis.worstBlock.average_score?.toFixed(1) || ''}</div>` : ''}
+    </div>
+    <div class="kpi-item">
+      <div class="kpi-label">Promedio global</div>
+      <div class="kpi-value">${kpis.avgScore !== null ? kpis.avgScore.toFixed(1) : '—'}</div>
+    </div>
+    <div class="kpi-item">
+      <div class="kpi-label">Consistencia</div>
+      <div class="kpi-value">${kpis.consistency !== null ? kpis.consistency + '%' : '—'}</div>
+    </div>
+  </div>`;
+
+  // Corrections module
+  const rawCorrections = c.raw_data?.candidate?.methodological_corrections || corrections;
+  const allNotes = [...methodNotes, ...rawCorrections.map(cr => cr.description || '')].filter(Boolean);
+  const correctionsHTML = allNotes.length > 0 ? `
+    <div class="corrections-module mt-20">
+      <div class="corrections-header">
+        <span>✱</span>
+        <span>Notas metodológicas del análisis</span>
+      </div>
+      <div class="corrections-list">
+        ${allNotes.map(note => `
+          <div class="correction-item">
+            <div class="correction-dot"></div>
+            <span>${note}</span>
+          </div>`).join('')}
+      </div>
+    </div>` : '';
+
+  // Quick reads (strengths + weaknesses)
+  const strengths = (c.strengths || []).slice(0, 3);
+  const weaknesses = (c.weaknesses || []).slice(0, 3);
+
+  const quickReads = (strengths.length > 0 || weaknesses.length > 0) ? `
+    <div class="mt-24">
+      <div class="section-label">Interpretación rápida</div>
+      <div class="quick-reads-grid" style="grid-template-columns:1fr 1fr">
+        <div class="quick-read-card strength">
+          <div class="quick-read-label">▲ Fortalezas principales</div>
+          <ul class="quick-read-list">
+            ${strengths.map(s => `<li>${s}</li>`).join('') || '<li>Sin datos</li>'}
+          </ul>
+        </div>
+        <div class="quick-read-card weakness">
+          <div class="quick-read-label">▼ Debilidades principales</div>
+          <ul class="quick-read-list">
+            ${weaknesses.map(w => `<li>${w}</li>`).join('') || '<li>Sin datos</li>'}
+          </ul>
+        </div>
+      </div>
+    </div>` : '';
+
+  // Block chart
+  const blockChartHTML = c.blocks.length > 0 ? `
+    <div class="card mt-24">
+      <div class="section-title">Desempeño por bloques</div>
+      <div style="height:${Math.max(220, c.blocks.length * 38)}px;position:relative">
+        <canvas id="blocksChart"></canvas>
+      </div>
+    </div>` : '';
+
+  // Block nav cards
+  const blockCards = c.blocks.length > 0 ? `
+    <div class="mt-24">
+      <div class="section-label">Bloques temáticos — navega en detalle</div>
+      <div class="blocks-nav-grid">
+        ${c.blocks.map(block => {
+          const { label: blabel, cls: bcls } = DataLayer.scoreLabel(block.average_score);
+          return `
+            <a href="bloque.html?id=${c.id}&bloque=${block.id}" class="block-nav-card">
+              <div class="block-nav-card-head">
+                <h3 class="block-nav-card-name">${block.name}</h3>
+                <span class="score-badge ${bcls} sm">${block.average_score !== null ? block.average_score.toFixed(1) : '—'}</span>
+              </div>
+              ${block.summary ? `<p class="block-nav-card-summary">${block.summary.substring(0, 100)}${block.summary.length > 100 ? '…' : ''}</p>` : ''}
+              <div class="block-nav-mini-bars">
+                ${block.variables.slice(0, 3).map(v => `
+                  <div class="block-nav-mini-bar-row">
+                    <div class="block-nav-mini-bar-track">
+                      <div class="block-nav-mini-bar-fill" style="width:${v.final_score !== null ? v.final_score * 10 : 0}%;background:${DataLayer.scoreColor(v.final_score)}"></div>
+                    </div>
+                    <span style="font-size:11px;color:var(--muted);text-align:right">${v.final_score !== null ? v.final_score.toFixed(1) : '—'}</span>
+                  </div>`).join('')}
+                ${block.variables.length > 3 ? `<div style="font-size:11px;color:var(--muted);margin-top:2px">+${block.variables.length - 3} variables más</div>` : ''}
+              </div>
+              <div style="margin-top:12px;display:flex;align-items:center;justify-content:space-between">
+                <span class="level-tag ${bcls}">${blabel}</span>
+                <span style="font-size:12px;color:var(--primary);font-weight:600">${block.variables.length} variables →</span>
+              </div>
+            </a>`;
+        }).join('')}
+      </div>
+    </div>` : '';
+
+  // Final findings
+  const fa = c.final_analysis || {};
+  const finalHTML = (fa.final_conclusion || (fa.global_findings && fa.global_findings.length > 0)) ? `
+    <div class="card mt-24">
+      <div class="section-title">Resultado final del candidato</div>
+      ${fa.global_findings && fa.global_findings.length > 0 ? `
+        <ul style="margin:0 0 16px;padding-left:18px;color:var(--text-2);line-height:1.8;font-size:14px">
+          ${fa.global_findings.map(f => `<li>${f}</li>`).join('')}
+        </ul>` : ''}
+      ${fa.final_conclusion ? `<p style="font-size:14px;line-height:1.75;color:var(--text-2);margin:0;padding-top:12px;border-top:1px solid var(--border-soft)">${fa.final_conclusion}</p>` : ''}
+    </div>` : '';
+
+  document.getElementById('content').innerHTML =
+    breadcrumb + header + kpiRow + correctionsHTML + quickReads +
+    blockChartHTML + blockCards + finalHTML + `<div style="height:48px"></div>`;
+
+  // Render chart
+  if (c.blocks.length > 0) {
+    const sorted = [...c.blocks].sort((a, b) => (a.average_score || 0) - (b.average_score || 0));
+    const ctx = document.getElementById('blocksChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: sorted.map(b => b.name),
+        datasets: [{
+          data: sorted.map(b => b.average_score || 0),
+          backgroundColor: sorted.map(b => DataLayer.scoreColor(b.average_score) + 'cc'),
+          borderColor: sorted.map(b => DataLayer.scoreColor(b.average_score)),
+          borderWidth: 1,
+          borderRadius: 5
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: ctx => ` Puntaje: ${ctx.parsed.x.toFixed(1)}`
+            }
+          }
+        },
+        scales: {
+          x: { min: 0, max: 10, ticks: { font: { size: 11 } }, grid: { color: 'rgba(0,0,0,0.04)' } },
+          y: { ticks: { font: { size: 12 }, color: '#444' }, grid: { display: false } }
+        }
+      }
+    });
+  }
+}
+
+init();
+</script>
+</body>
+</html>
