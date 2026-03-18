@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convertir DOCX → Plataforma · Planes de Gobierno Perú 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/public/styles/globals.css">
+  <style>
+    /* ── Layout ─────────────────────────── */
+    body { background: #f9f9f8; }
+
+    .page-header {
+      background: #fff;
+      border-bottom: 1px solid #e8e6e0;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      height: 56px;
+    }
+    .brand-link {
+      font-family: 'Sora', sans-serif;
+      font-size: .85rem;
+      font-weight: 700;
+      color: #b5121b;
+      text-decoration: none;
+      letter-spacing: -.01em;
+      flex-shrink: 0;
+    }
+    .nav-links { display: flex; gap: 1.25rem; margin-left: auto; }
+    .nav-links a {
+      font-size: .8rem;
+      font-weight: 500;
+      color: #555;
+      text-decoration: none;
+    }
+    .nav-links a:hover { color: #111; }
+    .nav-links a.active { color: #b5121b; }
+
+    /* ── Page container ─────────────────── */
+    .page-wrap {
+      max-width: 760px;
+      margin: 3rem auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #111;
+      margin: 0 0 .4rem;
+    }
+    .subtitle {
+      font-size: .9rem;
+      color: #666;
+      margin: 0 0 2.5rem;
+    }
+
+    /* ── Upload zone ─────────────────────── */
+    .upload-zone {
+      border: 2px dashed #d4d0c8;
+      border-radius: 12px;
+      background: #fff;
+      padding: 3rem 2rem;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color .2s, background .2s;
+    }
+    .upload-zone:hover,
+    .upload-zone.drag-over {
+      border-color: #b5121b;
+      background: #fef8f8;
+    }
+    .upload-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .upload-label {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #333;
+      margin: 0 0 .4rem;
+    }
+    .upload-hint { font-size: .82rem; color: #888; margin: 0; }
+    .upload-btn {
+      display: inline-block;
+      margin-top: 1.2rem;
+      padding: .55rem 1.4rem;
+      background: #b5121b;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: .85rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+    }
+    .upload-btn:hover { background: #8f0e15; }
+    #file-input { display: none; }
+    .file-selected {
+      margin-top: 1rem;
+      font-size: .82rem;
+      color: #b5121b;
+      font-weight: 500;
+    }
+
+    /* ── Progress box ─────────────────────── */
+    #progress-box {
+      display: none;
+      margin-top: 2rem;
+      background: #fff;
+      border: 1px solid #e8e6e0;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .progress-header {
+      background: #f5f3ef;
+      padding: .75rem 1.25rem;
+      font-size: .82rem;
+      font-weight: 600;
+      color: #444;
+      border-bottom: 1px solid #e8e6e0;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+    .spinner {
+      width: 14px; height: 14px;
+      border: 2px solid #ccc;
+      border-top-color: #b5121b;
+      border-radius: 50%;
+      animation: spin .8s linear infinite;
+      flex-shrink: 0;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    #log-list {
+      padding: .75rem 1.25rem;
+      margin: 0;
+      list-style: none;
+      max-height: 260px;
+      overflow-y: auto;
+      font-size: .78rem;
+      font-family: 'Inter', monospace;
+      color: #555;
+      line-height: 1.7;
+    }
+    #log-list li::before { content: '› '; color: #b5121b; font-weight: 600; }
+
+    /* ── Result card ─────────────────────── */
+    #result-box {
+      display: none;
+      margin-top: 2rem;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid;
+    }
+    #result-box.success { border-color: #bbf7d0; }
+    #result-box.error   { border-color: #fecaca; }
+    .result-header {
+      padding: .9rem 1.25rem;
+      font-size: .85rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+    }
+    #result-box.success .result-header { background: #f0fdf4; color: #166534; }
+    #result-box.error   .result-header { background: #fef2f2; color: #991b1b; }
+    .result-body {
+      background: #fff;
+      padding: 1.25rem;
+    }
+    .result-stats {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+    .stat {
+      text-align: center;
+    }
+    .stat-val {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #111;
+    }
+    .stat-lbl {
+      font-size: .72rem;
+      color: #888;
+      margin-top: .1rem;
+    }
+    .result-actions {
+      display: flex;
+      gap: .75rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .btn-primary {
+      padding: .5rem 1.2rem;
+      background: #b5121b;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: .82rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+    }
+    .btn-primary:hover { background: #8f0e15; }
+    .btn-secondary {
+      padding: .5rem 1.2rem;
+      background: #fff;
+      color: #333;
+      border: 1px solid #d4d0c8;
+      border-radius: 6px;
+      font-size: .82rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+    }
+    .btn-secondary:hover { border-color: #aaa; }
+    #error-detail {
+      font-size: .8rem;
+      color: #7f1d1d;
+      background: #fef2f2;
+      padding: .75rem 1rem;
+      border-radius: 6px;
+      white-space: pre-wrap;
+      font-family: monospace;
+      line-height: 1.6;
+    }
+    #warnings-list {
+      margin: .75rem 0 0;
+      padding: 0;
+      list-style: none;
+      font-size: .78rem;
+      color: #92400e;
+    }
+    #warnings-list li::before { content: '⚠ '; }
+
+    /* ── Candidates already converted ────── */
+    #converted-section {
+      margin-top: 3.5rem;
+    }
+    #converted-section h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #333;
+      margin: 0 0 1rem;
+    }
+    #converted-list {
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+    }
+    .converted-item {
+      background: #fff;
+      border: 1px solid #e8e6e0;
+      border-radius: 8px;
+      padding: .7rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .converted-item .ci-badge {
+      font-size: .72rem;
+      font-weight: 600;
+      padding: .15rem .4rem;
+      border-radius: 4px;
+      background: #dbeafe;
+      color: #1d4ed8;
+      flex-shrink: 0;
+    }
+    .converted-item .ci-badge.docx { background: #dcfce7; color: #166534; }
+    .converted-item .ci-name {
+      font-size: .85rem;
+      font-weight: 500;
+      color: #222;
+      flex: 1;
+    }
+    .converted-item .ci-score {
+      font-family: 'Sora', sans-serif;
+      font-size: .9rem;
+      font-weight: 700;
+      color: #111;
+      flex-shrink: 0;
+    }
+    .converted-item .ci-file {
+      font-size: .72rem;
+      color: #999;
+      flex-shrink: 0;
+    }
+    .empty-msg { font-size: .85rem; color: #999; font-style: italic; }
+
+    /* ── Instructions ─────────────────────── */
+    .instructions {
+      margin-top: 3.5rem;
+      background: #fff;
+      border: 1px solid #e8e6e0;
+      border-radius: 10px;
+      padding: 1.5rem;
+    }
+    .instructions h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: .95rem;
+      font-weight: 700;
+      color: #333;
+      margin: 0 0 1rem;
+    }
+    .steps { counter-reset: steps; padding: 0; margin: 0; list-style: none; }
+    .steps li {
+      counter-increment: steps;
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+      padding: .5rem 0;
+      font-size: .83rem;
+      color: #555;
+      border-bottom: 1px solid #f0ede8;
+    }
+    .steps li:last-child { border-bottom: none; }
+    .steps li::before {
+      content: counter(steps);
+      background: #b5121b;
+      color: #fff;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .7rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: .05rem;
+    }
+  </style>
+</head>
+<body>
+
+<header class="page-header">
+  <a href="/" class="brand-link">Planes de Gobierno · Perú 2026</a>
+  <nav class="nav-links">
+    <a href="/analizar.html">Candidatos</a>
+    <a href="/comparar.html">Comparar</a>
+    <a href="/heatmap.html">Heatmap</a>
+    <a href="/validacion.html">Validar</a>
+    <a href="/metodologia.html">Metodología</a>
+    <a href="/convertir.html" class="active">Convertir DOCX</a>
+  </nav>
+</header>
+
+<main class="page-wrap">
+  <h1>Convertir DOCX → Plataforma</h1>
+  <p class="subtitle">Sube un documento .docx de análisis técnico y el sistema lo convierte automáticamente al JSON de la plataforma.</p>
+
+  <!-- Upload zone -->
+  <div class="upload-zone" id="drop-zone">
+    <div class="upload-icon">📄</div>
+    <p class="upload-label">Arrastra tu archivo .docx aquí</p>
+    <p class="upload-hint">o haz clic para seleccionarlo · Máx. 50 MB</p>
+    <button class="upload-btn" onclick="document.getElementById('file-input').click()">
+      Seleccionar archivo
+    </button>
+    <input type="file" id="file-input" accept=".docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+    <p class="file-selected" id="file-name"></p>
+  </div>
+
+  <!-- Progress -->
+  <div id="progress-box">
+    <div class="progress-header">
+      <div class="spinner" id="spinner"></div>
+      <span id="progress-title">Procesando documento…</span>
+    </div>
+    <ul id="log-list"></ul>
+  </div>
+
+  <!-- Result -->
+  <div id="result-box">
+    <div class="result-header" id="result-header"></div>
+    <div class="result-body" id="result-body"></div>
+  </div>
+
+  <!-- Candidates already in the platform -->
+  <section id="converted-section">
+    <h2>Candidatos en la plataforma</h2>
+    <div id="converted-list"><p class="empty-msg">Cargando…</p></div>
+  </section>
+
+  <!-- Instructions -->
+  <div class="instructions">
+    <h2>¿Cómo funciona?</h2>
+    <ol class="steps">
+      <li>Sube el documento .docx con el análisis técnico del candidato.</li>
+      <li>El sistema extrae el texto completo (hasta 60-70 páginas sin truncar).</li>
+      <li>La IA estructura el texto en el JSON de la plataforma: 8 bloques, 30 variables, 6 criterios por variable.</li>
+      <li>El sistema valida automáticamente la fórmula, los promedios y la estructura completa.</li>
+      <li>Si todo es correcto, el JSON se guarda en <code>/analisis/</code> y el candidato aparece en la plataforma.</li>
+      <li>Si hay errores, se muestran claramente sin guardar nada defectuoso.</li>
+      <li>Documentos ya procesados (mismo archivo) no se reprocesarán para ahorrar costo.</li>
+    </ol>
+  </div>
+</main>
+
+<script>
+const dropZone = document.getElementById('drop-zone');
+const fileInput = document.getElementById('file-input');
+const fileNameEl = document.getElementById('file-name');
+
+// Drag & drop
+dropZone.addEventListener('dragover', e => {
+  e.preventDefault();
+  dropZone.classList.add('drag-over');
+});
+dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag-over'));
+dropZone.addEventListener('drop', e => {
+  e.preventDefault();
+  dropZone.classList.remove('drag-over');
+  const file = e.dataTransfer.files[0];
+  if (file) handleFile(file);
+});
+fileInput.addEventListener('change', () => {
+  if (fileInput.files[0]) handleFile(fileInput.files[0]);
+});
+
+function handleFile(file) {
+  if (!file.name.toLowerCase().endsWith('.docx')) {
+    alert('Por favor selecciona un archivo .docx');
+    return;
+  }
+  fileNameEl.textContent = `📎 ${file.name} (${(file.size / 1024).toFixed(0)} KB)`;
+  upload(file);
+}
+
+function upload(file) {
+  // Reset UI
+  const progressBox = document.getElementById('progress-box');
+  const resultBox   = document.getElementById('result-box');
+  const logList     = document.getElementById('log-list');
+  const spinner     = document.getElementById('spinner');
+  const progressTitle = document.getElementById('progress-title');
+
+  progressBox.style.display = 'block';
+  resultBox.style.display   = 'none';
+  logList.innerHTML          = '';
+  spinner.style.display      = 'block';
+  progressTitle.textContent  = 'Procesando documento…';
+
+  const form = new FormData();
+  form.append('docx', file);
+
+  function addLog(msg) {
+    const li = document.createElement('li');
+    li.textContent = msg;
+    logList.appendChild(li);
+    logList.scrollTop = logList.scrollHeight;
+  }
+
+  addLog(`Subiendo ${file.name}…`);
+
+  // Usar XMLHttpRequest para poder mostrar progreso de upload
+  const xhr = new XMLHttpRequest();
+  xhr.open('POST', '/api/convert', true);
+
+  xhr.upload.addEventListener('progress', e => {
+    if (e.lengthComputable) {
+      const pct = Math.round((e.loaded / e.total) * 100);
+      progressTitle.textContent = `Subiendo archivo… ${pct}%`;
+    }
+  });
+
+  xhr.addEventListener('load', () => {
+    spinner.style.display = 'none';
+    progressTitle.textContent = 'Procesamiento completado';
+
+    let data;
+    try { data = JSON.parse(xhr.responseText); }
+    catch (_) { data = { ok: false, error: 'Respuesta inválida del servidor.' }; }
+
+    // Mostrar logs del servidor
+    if (data.logs) data.logs.forEach(addLog);
+
+    showResult(data);
+    loadConverted();
+  });
+
+  xhr.addEventListener('error', () => {
+    spinner.style.display = 'none';
+    showResult({ ok: false, error: 'Error de red al conectar con el servidor.' });
+  });
+
+  xhr.send(form);
+}
+
+function showResult(data) {
+  const box    = document.getElementById('result-box');
+  const header = document.getElementById('result-header');
+  const body   = document.getElementById('result-body');
+
+  box.style.display = 'block';
+
+  if (data.ok) {
+    box.className = 'result-box success';
+    const icon = data.skipped ? '⏭' : '✅';
+    header.textContent = `${icon} ${data.message || 'Conversión exitosa'}`;
+
+    let html = '';
+    if (!data.skipped) {
+      html += `<div class="result-stats">
+        <div class="stat"><div class="stat-val">${data.totalScore ?? '—'}</div><div class="stat-lbl">Puntaje total</div></div>
+        <div class="stat"><div class="stat-val">${data.blocks ?? '—'}</div><div class="stat-lbl">Bloques</div></div>
+        <div class="stat"><div class="stat-val">${data.totalVars ?? '—'}</div><div class="stat-lbl">Variables</div></div>
+      </div>`;
+    }
+
+    if (data.warnings && data.warnings.length > 0) {
+      html += `<p style="font-size:.8rem;color:#92400e;margin:.75rem 0 .25rem;font-weight:600;">Advertencias auto-corregidas:</p>
+        <ul id="warnings-list">${data.warnings.map(w => `<li>${w}</li>`).join('')}</ul>`;
+    }
+
+    html += `<div class="result-actions">
+      <a href="/analizar.html" class="btn-primary">Ver candidatos</a>
+      <a href="/candidato.html?id=${data.candidateId}" class="btn-secondary">Ver este candidato</a>
+      <button class="btn-secondary" onclick="resetForm()">Convertir otro</button>
+    </div>`;
+
+    body.innerHTML = html;
+
+  } else {
+    box.className = 'result-box error';
+    header.textContent = '✕ Error en la conversión';
+    body.innerHTML = `
+      <pre id="error-detail">${data.error || 'Error desconocido'}</pre>
+      <div class="result-actions">
+        <button class="btn-secondary" onclick="resetForm()">Intentar con otro archivo</button>
+      </div>`;
+  }
+}
+
+function resetForm() {
+  document.getElementById('file-input').value = '';
+  document.getElementById('file-name').textContent = '';
+  document.getElementById('progress-box').style.display = 'none';
+  document.getElementById('result-box').style.display   = 'none';
+  document.getElementById('log-list').innerHTML = '';
+}
+
+async function loadConverted() {
+  const container = document.getElementById('converted-list');
+  try {
+    const resp = await fetch('/api/convert/status');
+    const data = await resp.json();
+    if (!data.ok || !data.candidates.length) {
+      container.innerHTML = '<p class="empty-msg">No hay candidatos aún.</p>';
+      return;
+    }
+    container.innerHTML = data.candidates.map(c => {
+      const badge = c.fromDocx
+        ? `<span class="ci-badge docx">DOCX</span>`
+        : `<span class="ci-badge">JSON</span>`;
+      const score = c.totalScore !== undefined ? `<span class="ci-score">${c.totalScore}</span>` : '';
+      const date  = c.convertedAt
+        ? `<span class="ci-file">${new Date(c.convertedAt).toLocaleDateString('es-PE')}</span>`
+        : '';
+      return `<div class="converted-item">
+        ${badge}
+        <span class="ci-name">${c.name}</span>
+        ${score}
+        <span class="ci-file">${c.file}</span>
+        ${date}
+      </div>`;
+    }).join('');
+  } catch (_) {
+    container.innerHTML = '<p class="empty-msg">No se pudo cargar la lista.</p>';
+  }
+}
+
+// Cargar al inicio
+loadConverted();
+</script>
+</body>
+</html>
