@@ -420,24 +420,81 @@ let gVarData = {}; // varId → { name, blockId, blockName, scores: { candId: va
 
 // ── Build variable index ──────────────────────────────────────────────────────
 
+// ── Variable name normalizer ──────────────────────────────────────────────────
+
+function normalizeVarName(raw) {
+  return (raw || '')
+    // Remove leading "Variable N:" or "Var. N." prefixes
+    .replace(/^variable\s*\d+\s*[:\-\.]\s*/i, '')
+    // Remove trailing score like "— 8.3/10", "(8.3/10)", ": 8.30"
+    .replace(/\s*[\u2013\u2014\-]+\s*\d+[\.,]\d+\s*\/\s*10\s*$/i, '')
+    .replace(/\s*\(\s*\d+[\.,]\d+\s*\/\s*10\s*\)\s*$/i, '')
+    .replace(/\s*:\s*\d+[\.,]\d+\s*$/i, '')
+    // Normalize diacritics for comparison only
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 function buildVarIndex(candidates) {
-  gVarData = {};
+  // Step 1: collect raw entries per canonical block
+  // raw: { blockId, key(normalized name), id, name, scores, summaries }
+  const blockEntries = {}; // blockId → Map(normalizedName → entry)
+  let totalDupes = 0;
+
   candidates.forEach(c => {
     (c.blocks || []).forEach(b => {
-      const cid = mapBlockId(b.id, b.name);
+      const cid = mapBlockId(b.id, b.name) || b.id;
+      if (!blockEntries[cid]) blockEntries[cid] = new Map();
+      const seen = blockEntries[cid];
+
       (b.variables || []).forEach(v => {
-        if (!gVarData[v.id]) {
-          gVarData[v.id] = {
-            id: v.id, name: v.name,
-            blockId: cid || b.id, blockName: cid ? canonicalBlockInfo(cid).label : b.name,
-            scores: {}, summaries: {}
-          };
+        const normName = normalizeVarName(v.name);
+
+        // Check if already seen under this canonical block
+        if (!seen.has(normName)) {
+          seen.set(normName, {
+            id: v.id,
+            name: v.name,   // keep original display name of first instance
+            blockId: cid,
+            blockName: canonicalBlockInfo(cid)?.label || b.name,
+            scores: {},
+            summaries: {}
+          });
+        } else if (seen.get(normName).id !== v.id) {
+          totalDupes++;
+          console.log('[heatmap] Variable duplicada ignorada:', v.name, '(norm:', normName + ')');
         }
-        gVarData[v.id].scores[c.id] = v.final_score;
-        if (v.summary) gVarData[v.id].summaries[c.id] = v.summary;
+
+        // Always fill scores from all candidates
+        const entry = seen.get(normName);
+        if (entry.scores[c.id] == null) {
+          entry.scores[c.id] = v.final_score;
+        }
+        if (v.summary && !entry.summaries[c.id]) {
+          entry.summaries[c.id] = v.summary;
+        }
       });
     });
   });
+
+  // Step 2: flatten into gVarData keyed by (blockId + normName)
+  gVarData = {};
+  let totalVars = 0;
+  Object.entries(blockEntries).forEach(([cid, seen]) => {
+    const unique = seen.size;
+    totalVars += unique;
+    console.log('[heatmap] Heatmap deduplicado:', unique, 'variables únicas en', canonicalBlockInfo(cid)?.label || cid);
+    seen.forEach((entry, normName) => {
+      const key = cid + '::' + normName;
+      gVarData[key] = entry;
+    });
+  });
+
+  if (totalDupes > 0) {
+    console.log('[heatmap] Se eliminaron', totalDupes, 'variables duplicadas antes del render');
+  }
 }
 
 // ── S1: Abstract ──────────────────────────────────────────────────────────────
@@ -628,8 +685,8 @@ function renderHeatmapFilter(candidates) {
 }
 
 function renderHeatmapTable(candidates) {
-  const rows = Object.values(gVarData).filter(r => r.blockId === hmActiveBlock);
-  if (!rows.length) {
+  const entries = Object.entries(gVarData).filter(([, r]) => r.blockId === hmActiveBlock);
+  if (!entries.length) {
     document.getElementById('hmTable').innerHTML = `<tbody><tr><td colspan="${candidates.length+1}" style="padding:20px;color:var(--muted);text-align:center">Sin variables para este bloque.</td></tr></tbody>`;
     return;
   }
@@ -639,12 +696,13 @@ function renderHeatmapTable(candidates) {
     ${candidates.map(c => `<th style="color:${c._color}">${c.name.split(' ')[0]}</th>`).join('')}
   </tr></thead><tbody>`;
 
-  rows.forEach(row => {
+  entries.forEach(([key, row]) => {
+    const safeKey = key.replace(/'/g, "\\'");
     html += `<tr>
       <td>${row.name}</td>
       ${candidates.map(c => {
         const s = row.scores[c.id];
-        return `<td onclick="openModal('${row.id}')">
+        return `<td onclick="openModal('${safeKey}')">
           <span class="hm-cell ${hmClass(s)}" title="Clic para ver detalle">${s != null ? fmt(s) : '—'}</span>
         </td>`;
       }).join('')}

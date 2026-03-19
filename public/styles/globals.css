@@ -107,6 +107,11 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .topnav a:hover { color: var(--text); background: var(--border-soft); }
 .topnav a.active { color: var(--primary); background: var(--primary-soft); font-weight: 600; }
 
+/* Menú items ocultos visualmente — las rutas siguen funcionando */
+.topnav a[href="heatmap.html"],
+.topnav a[href="/convertir.html"],
+.topnav a[href="validacion.html"] { display: none !important; }
+
 /* ─── BREADCRUMB ────────────────────────────────────── */
 .breadcrumb {
   display: flex;

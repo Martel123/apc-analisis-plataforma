@@ -1,0 +1,126 @@
+QUIERO QUE HAGAS DOS CORRECCIONES ESPECÍFICAS EN LA PLATAFORMA.
+
+NO QUIERO REHACER NADA.
+NO QUIERO ELIMINAR FUNCIONALIDAD.
+QUIERO AJUSTES PUNTUALES Y LIMPIOS.
+
+==================================================
+PARTE 1 — DEDUPLICACIÓN FINAL EN EL HEATMAP DE VARIABLES
+==================================================
+
+PROBLEMA:
+Aunque ya se corrigió la deduplicación de bloques, en el heatmap de variables todavía aparecen variables repetidas.
+
+Ejemplos:
+- Digitalización del Estado aparece dos veces
+- Innovación tecnológica aparece dos veces
+- Regulación de inteligencia artificial aparece dos veces
+- Protección de datos y ciberseguridad aparece dos veces
+
+ESTO SIGNIFICA:
+El heatmap está usando variables sin una deduplicación final correcta.
+
+--------------------------------------------------
+OBJETIVO
+--------------------------------------------------
+
+Quiero que en el heatmap cada variable aparezca SOLO UNA VEZ por bloque canónico.
+
+--------------------------------------------------
+REGLA OBLIGATORIA
+--------------------------------------------------
+
+ANTES DE RENDERIZAR EL HEATMAP:
+
+1. normalizar variables por nombre base
+2. eliminar duplicados
+3. agrupar por bloque canónico
+4. si una variable aparece repetida por recapitulación, resumen o variación de formato, conservar solo una
+
+--------------------------------------------------
+NORMALIZACIÓN DE NOMBRE DE VARIABLE
+--------------------------------------------------
+
+Debes normalizar:
+- mayúsculas/minúsculas
+- espacios extra
+- guiones largos
+- puntajes pegados al nombre
+- variantes mínimas de escritura
+
+Ejemplo:
+- "Digitalización del Estado"
+- "Digitalización del Estado — 8.3/10"
+- "Variable 27: Digitalización del Estado"
+
+Todo eso debe mapear al mismo nombre base:
+Digitalización del Estado
+
+Igual con:
+- Innovación tecnológica
+- Regulación de inteligencia artificial
+- Protección de datos y ciberseguridad
+- y cualquier otra variable
+
+--------------------------------------------------
+REGLA DE CONSERVACIÓN
+--------------------------------------------------
+
+Si hay duplicados:
+- conservar solo una instancia por variable normalizada dentro del bloque canónico
+- priorizar la variable principal, no la recapitulativa
+- si hay conflicto, conservar la primera instancia estructural válida
+
+--------------------------------------------------
+LOGS QUE QUIERO
+--------------------------------------------------
+
+Quiero logs como:
+- "Variable duplicada ignorada en heatmap: Digitalización del Estado — 8.3/10"
+- "Heatmap deduplicado: 4 variables únicas en Tecnología"
+- "Se eliminaron X variables duplicadas antes del render"
+
+--------------------------------------------------
+RESULTADO ESPERADO
+--------------------------------------------------
+
+En el heatmap:
+- cada variable aparece una sola vez
+- no deben repetirse filas
+- la visualización debe quedar limpia y comparable
+
+==================================================
+PARTE 2 — OCULTAR OPCIONES DEL MENÚ (SIN ELIMINARLAS)
+==================================================
+
+QUIERO OCULTAR DEL MENÚ DE NAVEGACIÓN, SIN BORRAR RUTAS NI ARCHIVOS:
+
+- Heatmap
+- Convertir DOCX
+- Validación
+
+REGLAS:
+- ocultar solo visualmente del menú
+- NO eliminar archivos
+- NO eliminar endpoints
+- NO romper navegación interna
+- si entro manualmente por URL, debe seguir funcionando
+
+RESULTADO:
+El menú debe verse más limpio y centrado en:
+- inicio
+- analizar candidato
+- comparar candidatos
+- metodología (si aplica)
+- otros ítems importantes
+
+==================================================
+IMPORTANTE
+==================================================
+
+NO quiero que elimines funcionalidad.
+SOLO:
+1. deduplicación final del heatmap
+2. ocultar esos ítems del menú
+
+EJECUTA ESTAS DOS CORRECCIONES AHORA.
