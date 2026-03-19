@@ -72,17 +72,11 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 
 .brand-mark {
-  width: 36px;
-  height: 36px;
-  border-radius: 9px;
-  background: var(--primary);
-  color: white;
-  display: grid;
-  place-items: center;
-  font-weight: 800;
-  font-size: 12px;
-  letter-spacing: 0.05em;
+  height: 34px;
+  width: auto;
+  display: block;
   flex-shrink: 0;
+  object-fit: contain;
 }
 
 .brand-text { display: flex; flex-direction: column; line-height: 1.2; }
