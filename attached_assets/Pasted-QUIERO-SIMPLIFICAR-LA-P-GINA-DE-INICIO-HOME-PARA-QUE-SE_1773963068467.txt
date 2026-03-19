@@ -1,0 +1,109 @@
+QUIERO SIMPLIFICAR LA PÁGINA DE INICIO (HOME) PARA QUE SEA MUCHO MÁS LIMPIA, CENTRADA Y FÁCIL DE LEER.
+
+NO QUIERO REHACER TODA LA PLATAFORMA.
+QUIERO SOLO AJUSTAR LA HOME.
+
+==================================================
+OBJETIVO
+==================================================
+
+Quiero que la home se vea como una pantalla de entrada clara y elegante.
+
+Debe servir para que el usuario entienda rápido qué puede hacer y elija una acción.
+
+NO debe verse como dashboard ni como página cargada de contenido.
+
+==================================================
+CAMBIOS OBLIGATORIOS
+==================================================
+
+1. ELIMINAR DE LA HOME:
+- el bloque “Resumen técnico general — todos los candidatos”
+
+QUIERO BORRARLO DE LA PÁGINA DE INICIO.
+NO solo ocultarlo visualmente parcialmente.
+Debe dejar de renderizarse en la home.
+
+2. CENTRAR TODO EL CONTENIDO PRINCIPAL
+
+Quiero que el contenido central de la home quede centrado y más limpio.
+
+Debe incluir solo:
+
+- título principal
+- subtítulo breve
+- dos botones principales
+
+3. ESTRUCTURA NUEVA DE LA HOME
+
+--------------------------------------------------
+HEADER SUPERIOR
+--------------------------------------------------
+
+Mantener branding/logo arriba.
+
+Menú limpio.
+
+--------------------------------------------------
+HERO CENTRAL
+--------------------------------------------------
+
+Todo centrado horizontalmente.
+
+Elementos:
+
+A. TÍTULO GRANDE
+Ejemplo:
+“Candidatos presidenciales”
+
+B. SUBTÍTULO CORTO
+Algo simple como:
+“Explora análisis técnicos individuales o compara candidatos de forma clara y estructurada.”
+
+C. BOTONES PRINCIPALES
+- Analizar un candidato
+- Comparar candidatos
+
+Los botones deben ser grandes, claros y protagonistas.
+
+4. REDUCIR TEXTO
+No quiero varios párrafos explicativos.
+No quiero saturación visual.
+No quiero bloques técnicos en la home.
+
+5. ESTILO VISUAL
+Quiero que se vea:
+- simple
+- sobrio
+- limpio
+- centrado
+- fácil de leer
+- enfocado en elección de acción
+
+6. ESPACIADO
+Agregar más aire vertical y horizontal.
+Que no se vea apretado.
+
+7. NO TOCAR
+- análisis individual
+- comparación
+- backend
+- estructura de datos
+
+SOLO AJUSTAR LA HOME.
+
+==================================================
+RESULTADO ESPERADO
+==================================================
+
+La home debe verse como una pantalla inicial clara, con:
+
+- branding arriba
+- título grande
+- subtítulo corto
+- dos botones centrales
+- sin resumen técnico general
+- sin bloques innecesarios
+- todo centrado y fácil de leer
+
+EJECUTA ESTA CORRECCIÓN AHORA.
