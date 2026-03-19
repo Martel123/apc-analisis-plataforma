@@ -285,74 +285,119 @@ function parseStructure(fullText) {
  *   criteria: {diagnostico, propuesta, medidas, implementacion, viabilidad, especificidad}
  *   criteria_sum, formula_result, final_score
  *
- * Uses 4 strategies from most to least specific.
- * Returns only fields found confidently; others stay undefined.
- * Also returns _parseNote for Phase 3 logging.
+ * Two named parsers + two fallback strategies:
+ *
+ *  Parser B  — "10. Calificación final" tabular section (D = 1 / 2 per line)
+ *  Parser A  — Compact single-line (D:1 P:2 M:1 I:0 V:1 E:0)
+ *  Strategy 2 — Full name labels (Diagnóstico: 2)
+ *  Strategy 3 — Line-by-line single letters including "/2" suffix
+ *  Strategy 4 — Header-row table (D P M Im V E / 2 1 0 0 1 0)
+ *
+ * Returns: { criteria?, criteria_sum?, formula_result?, final_score?, _parseNote, _logs[] }
  */
 function extractHardData(text) {
   const result = {};
   const crit   = {};
-  let   note   = 'sin patrón';
+  const logs   = [];
+  let   source = null;
 
-  // ── Strategy 1: Compact full-line ─────────────────────────────────────
-  // Handles: "D:1 P:2 M:1 I:0 V:1 E:0"
-  //          "D=1, P=2, M=1, Im=0, V=1, E=0"
-  //          "D 1 / P 2 / M 1 / I 0 / V 1 / E 0"
-  //          "Rúbrica: D:1 P:2 M:1 I:0 V:1 E:0"
-  // The pattern matches D … P … M … I(m)? … V … E in order on the same text region.
-  const SEP  = '[\\s:=]*';   // optional separator after key letter
-  const BETW = '[\\s,\\/|]+'; // between pairs: spaces, commas, slashes, pipes
-  const V1   = '([012])';
-  const compactRx = new RegExp(
-    `D${SEP}${V1}${BETW}P${SEP}${V1}${BETW}M${SEP}${V1}${BETW}I(?:m)?${SEP}${V1}${BETW}V${SEP}${V1}${BETW}E${SEP}${V1}`,
-    'i'
-  );
-  const cm = compactRx.exec(text);
-  if (cm) {
-    ['diagnostico','propuesta','medidas','implementacion','viabilidad','especificidad'].forEach((k, i) => {
-      crit[k] = parseInt(cm[i + 1], 10);
-    });
-    note = 'estrategia-1-compact';
+  // ── Parser B: Tabular "Calificación final" section ────────────────────
+  // Real format:
+  //   10. Calificación final
+  //   D = 1 / 2
+  //   P = 2 / 2
+  //   M = 1 / 2
+  //   Im = 0 / 2
+  //   V = 2 / 2
+  //   E = 2 / 2
+  //   SUMA: 8 / 12
+  //   NOTA: 6.7 / 10
+  const SECTION_RX = /(?:10\.\s*)?calificaci[oó]n\s+final|criterio\s+puntaje|criterio[\s\S]{0,40}puntaje/i;
+  const secMatch = SECTION_RX.exec(text);
+
+  if (secMatch) {
+    const sectionText = text.slice(secMatch.index);
+    logs.push(`Se encontró sección Calificación final en la variable`);
+
+    // Each criterion: "D = 1 / 2", "Im = 0 / 2", "D: 1", "D 1"
+    const tabRx = /^(D|P|M|Im?|V|E)\s*[:\-=]\s*([012])\s*(?:\/\s*2)?\s*$/gim;
+    let tm;
+    while ((tm = tabRx.exec(sectionText)) !== null) {
+      const key = CRITERIA_MAP[tm[1].toLowerCase()];
+      if (key && crit[key] === undefined) crit[key] = parseInt(tm[2], 10);
+    }
+
+    if (Object.keys(crit).length === 6) {
+      source = 'parser-B-tabular';
+      const c = crit;
+      logs.push(`Parser B exitoso: D=${c.diagnostico} P=${c.propuesta} M=${c.medidas} Im=${c.implementacion} V=${c.viabilidad} E=${c.especificidad}`);
+    } else {
+      logs.push(`Parser B parcial: ${Object.keys(crit).length}/6 criterios encontrados — ${JSON.stringify(crit)}`);
+    }
   }
 
-  // ── Strategy 2: Long-form full names (unambiguous) ────────────────────
-  // Handles: "Diagnóstico: 2", "Viabilidad = 1", "Especificidad: 0"
+  // ── Parser A: Compact single-line ────────────────────────────────────
+  // Real formats:
+  //   "📊 RÚBRICA: D:1 P:1 M:0 I:0 V:1 E:0 → Suma: 3/12"
+  //   "D=2 P=2 M=1 Im=0 V=1 E=1"
+  //   "D 2 P 2 M 1 I 0 V 1 E 1"
+  //   "D = 1 / 2  P = 2 / 2  M = 1 / 2  Im = 0 / 2  V = 2 / 2  E = 2 / 2" (all on one line)
+  // BETW includes digits so "/2" denominators are absorbed between pairs.
+  if (Object.keys(crit).length < 6) {
+    const SEP  = '[\\s:=]*';        // separator after key (colon, equals, space — optional)
+    const BETW = '[\\s,\\/|0-9]+';  // between pairs: absorbs "/2" denominators too
+    const V1   = '([012])';
+    const compactRx = new RegExp(
+      'D' + SEP + V1 + BETW +
+      'P' + SEP + V1 + BETW +
+      'M' + SEP + V1 + BETW +
+      'I(?:m)?' + SEP + V1 + BETW +
+      'V' + SEP + V1 + BETW +
+      'E' + SEP + V1,
+      'i'
+    );
+    const cm = compactRx.exec(text);
+    if (cm) {
+      ['diagnostico','propuesta','medidas','implementacion','viabilidad','especificidad'].forEach((k, i) => {
+        if (crit[k] === undefined) crit[k] = parseInt(cm[i + 1], 10);
+      });
+      if (Object.keys(crit).length === 6) {
+        source = 'parser-A-compact';
+        const c = crit;
+        logs.push(`Parser A exitoso: D=${c.diagnostico} P=${c.propuesta} M=${c.medidas} I=${c.implementacion} V=${c.viabilidad} E=${c.especificidad}`);
+      }
+    }
+  }
+
+  // ── Strategy 2: Full name labels ──────────────────────────────────────
+  // Handles: "Diagnóstico: 2", "Implementación = 1", "Especificidad: 0"
   if (Object.keys(crit).length < 6) {
     const RX_WORD = /\b(diagnostico|diagnóstico|propuesta|medidas|implementaci[oó]n|viabilidad|especificidad)\s*[:\-=]\s*([012])\b/gi;
     let m;
     while ((m = RX_WORD.exec(text)) !== null) {
       const key = CRITERIA_MAP[m[1].toLowerCase()];
-      if (key && crit[key] === undefined) {
-        crit[key] = parseInt(m[2], 10);
-        note = 'estrategia-2-fullname';
-      }
+      if (key && crit[key] === undefined) { crit[key] = parseInt(m[2], 10); source = 'fullname'; }
     }
   }
 
-  // ── Strategy 3: Single-letter abbreviations, start-of-line anchored ───
-  // Handles: "D: 2", "Im: 1", "I: 0", "V: 1", "E: 0" each on its own line
-  // or "- D: 2", "• P: 1" etc.
-  // We anchor to start-of-line / after bullet to avoid false matches in words.
+  // ── Strategy 3: Line-by-line single letters (enhanced) ───────────────
+  // Handles: "D: 2", "Im: 1", "I=0", "D = 1 / 2" — one per line
+  // Also handles optional leading bullet/emoji: "• D: 2", "📊 E: 1"
   if (Object.keys(crit).length < 6) {
     const lines = text.split(/\r?\n/);
     for (const line of lines) {
-      const t = line.trim().replace(/^[-•*▸►]\s*/, '');
-      // Match: ABBR[optional sep][value]   e.g. "D: 2", "Im 1", "I=0"
-      const lm = /^(D|P|M|Im?|V|E)\s*[:\-=]?\s*([012])\s*$/i.exec(t);
+      const t = line.trim().replace(/^[-•*▸►📊🔷🔹]\s*/, '');
+      // Matches "D: 2", "Im: 1", "I=0", "D = 1 / 2"
+      const lm = /^(D|P|M|Im?|V|E)\s*[:\-=]\s*([012])\s*(?:\/\s*2)?\s*$/i.exec(t);
       if (lm) {
         const key = CRITERIA_MAP[lm[1].toLowerCase()];
-        if (key && crit[key] === undefined) {
-          crit[key] = parseInt(lm[2], 10);
-          note = 'estrategia-3-linebyline';
-        }
+        if (key && crit[key] === undefined) { crit[key] = parseInt(lm[2], 10); source = 'linebyline'; }
       }
     }
   }
 
-  // ── Strategy 4: Header-row table "D P M Im V E" + numbers below ───────
-  // Handles DOCX tables extracted as:
-  //   D  P  M  Im  V  E
-  //   2  1  0  0   1  0
+  // ── Strategy 4: Header-row table ─────────────────────────────────────
+  // Handles: "D  P  M  Im  V  E" header followed by "2  1  0  0  1  0"
   if (Object.keys(crit).length < 6) {
     const hdrRx = /\bD\s+P\s+M\s+Im?\s+V\s+E\b/i;
     const hdrMatch = hdrRx.exec(text);
@@ -362,39 +407,56 @@ function extractHardData(text) {
       if (nums) {
         const keys = ['diagnostico','propuesta','medidas','implementacion','viabilidad','especificidad'];
         keys.forEach((k, i) => { if (crit[k] === undefined) crit[k] = parseInt(nums[i + 1], 10); });
-        note = 'estrategia-4-headertable';
+        source = 'headertable';
       }
     }
   }
 
-  // ── Assign criteria only when all 6 are present ───────────────────────
+  // ── Assign criteria ───────────────────────────────────────────────────
   if (Object.keys(crit).length === 6) {
-    result.criteria  = crit;
-    result._parseNote = note;
+    result.criteria   = crit;
+    result._parseNote = source || 'unknown';
   } else {
-    result._parseNote = `incompleto(${Object.keys(crit).length}/6)-${note}`;
+    result._parseNote = 'incompleto(' + Object.keys(crit).length + '/6)-' + (source || 'sin patrón');
   }
 
-  // ── Criteria sum ───────────────────────────────────────────────────────
-  const sumM = /(?:suma\s+criterios|criteria[_\s]sum|total\s+criterios|suma|subtotal)\s*[:\-=]\s*(\d+)/i.exec(text);
-  if (sumM) result.criteria_sum = parseInt(sumM[1], 10);
+  // ── Criteria sum ──────────────────────────────────────────────────────
+  // Handles: "SUMA: 8/12", "SUMA: 8 / 12", "Suma criterios: 8"
+  const sumM = /(?:suma(?:\s+criterios)?|criteria[_\s]sum|total\s+criterios|subtotal)\s*[:\-=]\s*(\d+)\s*(?:\/\s*12)?/i.exec(text);
+  if (sumM) {
+    result.criteria_sum = parseInt(sumM[1], 10);
+    logs.push('SUMA detectada: ' + sumM[1] + '/12');
+  }
 
-  // ── Formula result "(8/12) × 10 = 6.7" ────────────────────────────────
-  const fmM = /\(\s*(\d+)\s*\/\s*12\s*\)\s*[×x\*]\s*10\s*=\s*([\d.]+)/i.exec(text);
+  // ── Formula result ────────────────────────────────────────────────────
+  // Handles: "(8/12) × 10 = 6.7", "(8 / 12) × 10 = 6.7 / 10"
+  const fmM = /\(\s*(\d+)\s*\/\s*12\s*\)\s*[×x\*]\s*10\s*[=:]\s*([\d.]+)/i.exec(text);
   if (fmM) {
     if (result.criteria_sum === undefined) result.criteria_sum = parseInt(fmM[1], 10);
     result.formula_result = parseFloat(fmM[2]);
   }
 
-  // ── Final score ────────────────────────────────────────────────────────
-  const scM = /(?:puntaje\s+(?:final|variable|total)|final[_\s]score|calificaci[oó]n\s+final|nota\s+final)\s*[:\-=]\s*([\d.]+)/i.exec(text);
-  if (scM) result.final_score = parseFloat(scM[1]);
+  // ── Final score ───────────────────────────────────────────────────────
+  // Handles: "Puntaje final: 6.7", "NOTA: 6.7 / 10", "Calificación: 2.5 / 10"
+  //          "Calificación final: 6.7", "nota final: 5.0", "nota: 5.0"
+  const scM = /(?:puntaje\s+(?:final|variable|total)|final[_\s]score|calificaci[oó]n(?:\s+final)?|nota(?:\s+final)?)\s*[:\-=]\s*([\d.]+)\s*(?:\/\s*10)?/i.exec(text);
+  if (scM) {
+    result.final_score = parseFloat(scM[1]);
+    logs.push('NOTA detectada: ' + scM[1] + '/10');
+  }
 
-  // Fallback: derive final_score from formula result if available
+  // Derive final_score from formula if missing
   if (result.formula_result !== undefined && result.final_score === undefined) {
     result.final_score = result.formula_result;
   }
 
+  // Fallback log: score found but no criteria
+  if (result.final_score !== undefined && !result.criteria) {
+    logs.push('Se detectó nota final pero no se pudo reconstruir la rúbrica');
+    logs.push('Intentar parser flexible de criterios sueltos (ver logs de variable)');
+  }
+
+  result._logs = logs;
   return result;
 }
 
@@ -829,12 +891,17 @@ async function processDocx(buffer, onProgress) {
   // ── Phase 3 ────────────────────────────────────────────────────────────
   onProgress?.({ phase: '3', message: 'Extrayendo rúbricas y puntajes localmente…', pct: 15 });
 
-  let critFound   = 0;
+  let critFound     = 0;
   const critMissing = [];
 
   for (const block of blocks) {
     for (const v of block.variables) {
       v.hardData = extractHardData(v.text || '');
+
+      // Emit per-variable logs from the parser (_logs array)
+      for (const logLine of (v.hardData._logs || [])) {
+        onProgress?.({ phase: '3', message: `[${v.name}] ${logLine}`, pct: 15 });
+      }
 
       const c = v.hardData.criteria;
       if (c && Object.keys(c).length === 6) {
@@ -848,7 +915,7 @@ async function processDocx(buffer, onProgress) {
         critMissing.push(v.name);
         onProgress?.({
           phase: '3',
-          message: `No se pudo extraer rúbrica en: ${v.name} (${v.hardData._parseNote || 'sin patrón'}) — texto: "${(v.text || '').slice(0, 80).replace(/\n/g, ' ')}"`,
+          message: `No se pudo extraer rúbrica en: ${v.name} (${v.hardData._parseNote || 'sin patrón'}) — texto inicio: "${(v.text || '').slice(0, 120).replace(/\n/g, ' ')}"`,
           pct: 15
         });
       }
@@ -857,9 +924,13 @@ async function processDocx(buffer, onProgress) {
 
   const varsWithScores = blocks.flatMap(b => b.variables).filter(v => v.hardData?.final_score !== undefined).length;
 
+  if (critMissing.length > 0) {
+    onProgress?.({ phase: '3', message: `Variables sin rúbrica: ${critMissing.join(' | ')}`, pct: 16 });
+  }
+
   onProgress?.({
     phase: '3',
-    message: `Fase 3 completada: ${critFound}/${totalVars} variables con rúbrica completa, ${varsWithScores}/${totalVars} con puntaje final${critMissing.length > 0 ? ` — Sin rúbrica: ${critMissing.join(', ')}` : ''}`,
+    message: `Fase 3 completada: ${critFound}/${totalVars} variables con rúbrica completa, ${varsWithScores}/${totalVars} con puntaje final`,
     pct: 17
   });
 
