@@ -46,34 +46,57 @@ app.post('/api/convert', upload.single('docx'), async (req, res) => {
   }
 
   const logs = [];
-  const onProgress = (msg) => {
+  const onProgress = (update) => {
+    const msg = typeof update === 'string' ? update : `[Fase ${update.phase}] ${update.message}`;
     logs.push(msg);
     console.log('[converter]', msg);
   };
 
-  try {
-    const result = await processDocx(req.file.path, onProgress);
+  let filePath = req.file.path;
 
-    // Limpiar archivo temporal después de procesar
-    try { fs.unlinkSync(req.file.path); } catch (_) {}
+  try {
+    // Read buffer from disk (processDocx expects a Buffer)
+    const buffer = fs.readFileSync(filePath);
+
+    const result = await processDocx(buffer, onProgress);
+
+    // Clean up temp file
+    try { fs.unlinkSync(filePath); } catch (_) {}
+
+    if (!result.success) {
+      return res.status(422).json({
+        ok:             false,
+        errors:         result.errors || ['Error desconocido en la conversión'],
+        structureFound: result.structureFound || null,
+        logs
+      });
+    }
+
+    // Save to /analisis/<candidateId>.json
+    const json = result.json;
+    json._converted_from_docx = true;
+    json._converted_at = new Date().toISOString();
+
+    const candidateId = json.candidate?.id || 'candidato';
+    const outputFile  = path.join(ANALISIS_DIR, `${candidateId}.json`);
+    fs.writeFileSync(outputFile, JSON.stringify(json, null, 2), 'utf8');
+
+    const totalScore = json.candidate?.total_score ?? null;
+    const totalVars  = json.blocks?.reduce((s, b) => s + (b.variables?.length || 0), 0) ?? 0;
 
     res.json({
-      ok:         true,
-      skipped:    result.skipped,
-      candidateId: result.candidateId,
-      outputFile: path.basename(result.outputFile),
-      totalScore: result.totalScore,
-      blocks:     result.blocks,
-      totalVars:  result.totalVars,
-      warnings:   result.warnings,
-      message:    result.message || `Conversión exitosa → /analisis/${path.basename(result.outputFile)}`,
+      ok:          true,
+      candidateId,
+      outputFile:  path.basename(outputFile),
+      totalScore,
+      blocks:      json.blocks?.length ?? 0,
+      totalVars,
+      message:     `Conversión exitosa → /analisis/${path.basename(outputFile)}`,
       logs
     });
 
   } catch (err) {
-    // Limpiar archivo temporal
-    try { if (req.file?.path) fs.unlinkSync(req.file.path); } catch (_) {}
-
+    try { if (filePath) fs.unlinkSync(filePath); } catch (_) {}
     console.error('[converter] Error:', err.message);
     res.status(422).json({
       ok:    false,

@@ -170,8 +170,48 @@ Donde cada criterio vale 0, 1 o 2 puntos.
 3. Completar todos los campos
 4. Guardar → auto-registrado en toda la plataforma
 
+## Conversor DOCX→JSON (Arquitectura Híbrida v5)
+
+**Ruta:** `POST /api/convert` · UI: `/convertir.html`
+**Archivo:** `converter/docx-processor.js`
+
+### Principio fundamental
+El código detecta la estructura; la IA solo interpreta narrativa por variable.
+
+### 8 fases del pipeline
+
+| Fase | Descripción | IA? |
+|------|-------------|-----|
+| 1 | Extracción completa del texto del DOCX | NO |
+| 2 | Parseo estructural: detecta bloques (`BLOQUE N:`) y variables (`Variable N:`) con regex | NO |
+| 3 | Extracción de datos duros: D, P, M, Im, V, E, criteria_sum, formula, final_score | NO |
+| 4 | Enriquecimiento narrativo por variable: 2 llamadas acotadas (A: campos cortos, B: 10 secciones) | SÍ |
+| 5 | Merge con prioridad absoluta: los datos del código nunca pueden ser modificados por la IA | — |
+| 6 | Metadatos candidato+metodología desde encabezado (local + IA fallback) | Opcional |
+| 7 | Ensamblaje del JSON final | — |
+| 8 | Validación estricta: 8 bloques, 30 variables, todos los campos. Error → no se guarda nada | — |
+
+### Reglas absolutas del conversor
+- La IA NO descubre bloques ni variables
+- La IA NO modifica puntajes extraídos localmente
+- Zero auto-corrección de fórmulas o puntajes
+- Cache por SHA-256: documentos ya validados no se reprocesarán
+
+### Formato del DOCX requerido
+- Bloques: `BLOQUE 1: Nombre del bloque`
+- Variables: `Variable 1: Nombre de la variable`
+- Puntajes: `D: 2` / `P: 1` / `M: 1` / `Im: 1` / `V: 1` / `E: 2`
+- Fórmula: `(8/12) × 10 = 6.67`
+- Score final: `Puntaje final: 6.67`
+
+### Llamadas IA por documento típico (30 variables)
+- Fase 6 metadatos: 1–2 llamadas
+- Fase 4: 30 variables × 2 llamadas = 60 llamadas
+- **Total: ~62 llamadas pequeñas y acotadas**
+
 ## Tech Stack
 - Backend: Node.js + Express (puerto 3000)
 - Frontend: HTML + CSS + Vanilla JS
 - Charts: Chart.js 4.4 (CDN)
 - Fonts: Inter + Sora (Google Fonts)
+- Conversor: mammoth (DOCX→texto) + OpenAI gpt-4o-mini (narrativa)

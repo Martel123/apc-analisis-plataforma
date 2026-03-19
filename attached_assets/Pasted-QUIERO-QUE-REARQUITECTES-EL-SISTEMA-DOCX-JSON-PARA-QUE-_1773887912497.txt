@@ -1,0 +1,316 @@
+QUIERO QUE REARQUITECTES EL SISTEMA DOCX → JSON PARA QUE PASE DE UN MODELO “FULL IA” A UN MODELO HÍBRIDO, MÁS ESTABLE, MÁS BARATO Y MÁS PRECISO.
+
+NO QUIERO QUE REHAGAS TODO DESDE CERO.
+QUIERO QUE MODIFIQUES EL SISTEMA ACTUAL.
+
+OBJETIVO:
+La IA ya no debe descubrir toda la estructura del documento.
+LA ESTRUCTURA PRINCIPAL DEBE SALIR DEL CÓDIGO.
+LA IA SOLO DEBE INTERPRETAR Y MAPEAR EL CONTENIDO DE CADA VARIABLE AL JSON.
+
+=====================================
+PROBLEMA ACTUAL
+=====================================
+
+El sistema actual depende demasiado de la IA para:
+- detectar bloques
+- detectar variables
+- inferir estructura
+- reconstruir el documento
+
+Eso está generando errores:
+- falsos bloques
+- truncamiento
+- confusión entre subtítulos y variables
+- demasiada fragilidad frente a documentos con formatos no idénticos
+
+QUIERO CAMBIAR ESO.
+
+=====================================
+NUEVO PRINCIPIO ARQUITECTÓNICO
+=====================================
+
+REGLA PRINCIPAL:
+
+LA IA NO DEBE DESCUBRIR LA ESTRUCTURA.
+LA IA DEBE RELLENAR UNA ESTRUCTURA YA DETECTADA POR EL CÓDIGO.
+
+=====================================
+ARQUITECTURA HÍBRIDA OBLIGATORIA
+=====================================
+
+FASE 1 — EXTRACCIÓN LOCAL
+- leer todo el DOCX localmente
+- extraer texto completo
+- preservar orden
+- detectar párrafos y líneas
+
+FASE 2 — PARSEO ESTRUCTURAL LOCAL (SIN IA)
+EL CÓDIGO debe detectar localmente:
+
+1. bloques
+2. variables
+3. tablas de puntaje
+4. líneas de fórmula
+5. cierres de variable
+
+NO usar IA para esto.
+
+-------------------------------------
+DETECCIÓN DE BLOQUES
+-------------------------------------
+
+Usar regex + heurísticas editoriales.
+
+Detectar como bloque:
+- líneas que empiezan con “BLOQUE”
+- o variantes claramente equivalentes
+- preferir encabezados aislados
+- preferir encabezados que contienen número de bloque o posición estructural clara
+
+NO clasificar como bloque:
+- nombres de instituciones
+- subtítulos
+- conclusiones
+- evaluaciones técnicas
+- frases narrativas
+- alertas metodológicas
+
+El sistema debe poder tolerar que los nombres exactos cambien,
+pero debe seguir reconociendo que hay una jerarquía de bloques principales.
+
+-------------------------------------
+DETECCIÓN DE VARIABLES
+-------------------------------------
+
+Usar regex + heurísticas locales.
+
+Detectar como variable:
+- líneas tipo “Variable X: ...”
+- variantes razonables equivalentes claramente numeradas
+
+Cada variable debe quedar delimitada localmente:
+- inicio = encabezado de variable
+- fin = siguiente variable o siguiente bloque
+
+IMPORTANTE:
+EL TEXTO COMPLETO DE CADA VARIABLE DEBE EXTRAERSE LOCALMENTE.
+LA IA NO DEBE RECIBIR MÁS TEXTO DEL NECESARIO.
+
+-------------------------------------
+FASE 3 — EXTRACCIÓN LOCAL DE DATOS DUROS
+-------------------------------------
+
+Sin IA, el código debe intentar capturar directamente, cuando sea posible:
+
+- nombre del candidato
+- partido
+- período
+- nombre del bloque
+- nombre de la variable
+- tabla D, P, M, Im, V, E
+- criteria_sum
+- formula_result
+- final_score
+- average_score del bloque
+- total_score si aparece explícito
+
+Esto debe salir con parsing local siempre que el texto lo permita.
+
+SI EL CÓDIGO PUEDE EXTRAER UN DATO DE FORMA CONFIABLE,
+NO DEBE PEDÍRSELO A LA IA.
+
+-------------------------------------
+FASE 4 — IA SOLO POR VARIABLE
+-------------------------------------
+
+Ahora sí usar IA, pero SOLO para una variable a la vez.
+
+INPUT A LA IA:
+- nombre del bloque
+- nombre de la variable
+- texto completo de esa variable
+- schema exacto esperado
+
+LA IA SOLO DEBE HACER:
+- mapear el contenido narrativo al schema JSON
+- identificar:
+  - summary
+  - strengths
+  - weaknesses
+  - gaps
+  - conclusion
+  - sections:
+    - what_it_evaluates
+    - why_it_matters
+    - current_problem
+    - plan_proposal
+    - concrete_measures
+    - implementation
+    - potential_impact
+    - missing_elements
+    - technical_evaluation
+- completar sources si están presentes en el texto
+- respetar exactamente los puntajes ya extraídos localmente si existen
+
+REGLAS:
+- 1 llamada = 1 variable
+- NO agrupar variables
+- NO procesar bloques completos
+- NO procesar el documento completo
+
+-------------------------------------
+FASE 5 — REGLA DE PRIORIDAD DE DATOS
+-------------------------------------
+
+DEBES IMPLEMENTAR ESTA JERARQUÍA:
+
+1. dato extraído localmente por código confiable
+2. dato inferido por IA desde el texto de ESA variable
+3. si no existe en el texto → null / vacío / error según corresponda
+
+IMPORTANTE:
+LA IA NO PUEDE SOBREESCRIBIR DATOS EXTRAÍDOS LOCALMENTE DE FORMA CONFIABLE.
+
+ESPECIALMENTE:
+- D, P, M, Im, V, E
+- criteria_sum
+- formula_result
+- final_score
+- average_score
+- total_score
+
+-------------------------------------
+FASE 6 — METHODOLOGY Y CANDIDATE
+-------------------------------------
+
+Candidate y Methodology pueden extraerse con una combinación de:
+- parsing local primero
+- IA solo si hace falta
+
+Pero NO enviar el documento completo.
+Solo enviar el tramo inicial relevante del documento.
+
+-------------------------------------
+FASE 7 — ENSAMBLAJE FINAL
+-------------------------------------
+
+Construir el JSON final así:
+
+- candidate
+- methodology
+- blocks
+  - variables
+
+Cada variable debe venir de:
+- estructura local detectada
+- datos duros extraídos localmente
+- contenido narrativo mapeado por IA
+
+-------------------------------------
+FASE 8 — VALIDACIÓN ESTRICTA
+-------------------------------------
+
+Antes de guardar en /analisis, validar:
+
+1. JSON válido
+2. existe candidate
+3. existe methodology
+4. existe blocks
+5. hay 8 bloques
+6. hay 30 variables
+7. cada variable tiene:
+   - id
+   - name
+   - final_score
+   - rating_label
+   - summary
+   - strengths
+   - weaknesses
+   - gaps
+   - conclusion
+   - corrected_methodology
+   - correction_note
+   - sections
+   - criteria
+   - criteria_sum
+   - formula_result
+   - score_table
+   - sources
+8. criteria contiene D, P, M, Im, V, E
+9. si los puntajes fueron extraídos localmente, la IA no los cambió
+10. ningún bloque vacío
+11. ninguna variable vacía
+12. ninguna variable mezclada con otra
+13. no hay bloques inventados
+14. no hay variables inventadas
+
+SI FALLA ALGO:
+- NO guardar
+- mostrar error claro
+
+=====================================
+REGLAS ABSOLUTAS
+=====================================
+
+- PROHIBIDO depender de IA para detectar toda la estructura
+- PROHIBIDO enviar el documento completo para que la IA “adivine”
+- PROHIBIDO inventar variables o bloques
+- PROHIBIDO modificar puntajes
+- PROHIBIDO autocorregir fórmulas
+- PROHIBIDO resumir el contenido
+- PROHIBIDO mezclar texto de variables distintas
+
+=====================================
+ROBUSTEZ
+=====================================
+
+El sistema debe tolerar que:
+- los documentos no sigan el mismo patrón exacto
+- cambien algunos títulos internos
+- algunas secciones estén formuladas distinto
+- existan notas metodológicas intermedias
+- existan textos como “Elementos del mismo sector...”
+- existan alertas o advertencias que no forman parte de la estructura principal
+
+Por eso:
+- la detección gruesa debe ser local y estructural
+- la interpretación fina debe ser semántica y por variable
+
+=====================================
+COSTO
+=====================================
+
+Quiero bajar costos.
+
+Implementa:
+- parsing local primero
+- IA solo por variable
+- cache solo si pasó validación
+- cero llamadas innecesarias
+
+=====================================
+NO QUIERO
+=====================================
+
+- otro sistema full IA
+- parches
+- heurísticas débiles
+- que la IA “adivine” bloques
+- que subtítulos internos se conviertan en bloques
+- que el sistema dependa de que todos los documentos tengan el mismo formato exacto
+
+=====================================
+RESULTADO FINAL ESPERADO
+=====================================
+
+Quiero un sistema híbrido donde:
+
+- el código detecta la estructura principal
+- el código extrae puntajes y datos duros cuando pueda
+- la IA interpreta solo una variable a la vez
+- el JSON final sea estable, fiel al documento y reutilizable
+
+=====================================
+EJECUTA ESTA REARQUITECTURA AHORA
+=====================================

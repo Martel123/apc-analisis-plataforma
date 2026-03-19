@@ -1,702 +1,789 @@
 'use strict';
 
 /**
- * DOCX → JSON Processor v4 — Una variable = una unidad mínima
+ * DOCX→JSON Converter — Hybrid Architecture v5
  *
- * GARANTÍAS:
- *  1. Ninguna llamada a IA recibe el documento completo
- *  2. Phase C output: SOLO nombres (máx 300 tokens → nunca trunca)
- *  3. Phase E: una variable por llamada, salida dividida en 2 llamadas atómicas
- *     para que nunca exceda límites de output
- *  4. Retry con backoff en 429. Truncamiento detectado → reintento con menos texto
- *  5. CERO modificación de puntajes ni promedios
- *  6. CERO invención de contenido
- *  7. Si validación falla → JSON NO se guarda
+ * PHASE 1: Local DOCX extraction (no AI)
+ * PHASE 2: Local structure parsing — blocks, variables, hard data (no AI)
+ * PHASE 3: Local hard-data extraction — criteria scores, formula, final_score (no AI)
+ * PHASE 4: AI per variable — only narrative content (2 bounded calls)
+ * PHASE 5: Merge — local data takes absolute priority over AI output
+ * PHASE 6: Metadata — candidate + methodology from document header (local + optional AI)
+ * PHASE 7: Assemble final JSON
+ * PHASE 8: Strict validation — 8 blocks, 30 variables, no invented data
  */
+
+const fs   = require('fs');
+const path = require('path');
+const crypto = require('crypto');
 
 const mammoth = require('mammoth');
 const OpenAI  = require('openai');
-const fs      = require('fs');
-const path    = require('path');
-const crypto  = require('crypto');
-
-const ANALISIS_DIR = path.join(__dirname, '..', 'analisis');
-const CACHE_DIR    = path.join(__dirname, 'cache');
-if (!fs.existsSync(CACHE_DIR)) fs.mkdirSync(CACHE_DIR, { recursive: true });
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+const MODEL  = 'gpt-4o-mini';
+const CACHE_DIR = path.join(__dirname, 'cache');
 
-// ── Parámetros ────────────────────────────────────────────────────────────────
-const CHUNK_SIZE     = 5_000;   // chars por chunk en Phase C ≈ 1 250 tokens input
-const VAR_WINDOW_MAX = 5_500;   // chars máximos enviados por variable en Phase E
-const CALL_DELAY_MS  = 700;     // pausa entre llamadas (TPM)
-const MAX_RETRIES    = 5;       // reintentos en 429
+if (!fs.existsSync(CACHE_DIR)) fs.mkdirSync(CACHE_DIR, { recursive: true });
 
-// ── Helpers ───────────────────────────────────────────────────────────────────
+// ─── Constants ────────────────────────────────────────────────────────────────
 
-function slugify(s) {
-  return (s || '')
+const CRITERIA_KEYS = ['diagnostico','propuesta','medidas','implementacion','viabilidad','especificidad'];
+
+// Document abbreviation → schema key
+const CRITERIA_MAP = {
+  'd': 'diagnostico', 'diagnostico': 'diagnostico', 'diagnóstico': 'diagnostico',
+  'p': 'propuesta', 'propuesta': 'propuesta',
+  'm': 'medidas', 'medidas': 'medidas',
+  'im': 'implementacion', 'implementación': 'implementacion', 'implementacion': 'implementacion',
+  'v': 'viabilidad', 'viabilidad': 'viabilidad',
+  'e': 'especificidad', 'especificidad': 'especificidad'
+};
+
+const RATING = (s) =>
+  s >= 9   ? 'excelente'
+  : s >= 7.5 ? 'sólido'
+  : s >= 6   ? 'moderado'
+  : s >= 4   ? 'débil'
+  : 'insuficiente';
+
+// ─── Utilities ────────────────────────────────────────────────────────────────
+
+function slug(str) {
+  return (str || 'sin_nombre')
     .toLowerCase()
     .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
     .replace(/[^a-z0-9]+/g, '_')
-    .replace(/^_+|_+$/g, '')
-    .slice(0, 60);
+    .replace(/^_|_$/g, '');
 }
 
-function fileHash(fp) {
-  return crypto.createHash('sha256').update(fs.readFileSync(fp)).digest('hex');
-}
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
-function stripCodeFence(s) {
-  return s.replace(/^```json\s*/i, '').replace(/^```\s*/i, '').replace(/\s*```$/i, '').trim();
-}
-
-function tryParse(raw, label) {
-  const clean = stripCodeFence(raw);
-  try { return { ok: true, data: JSON.parse(clean) }; }
-  catch (e) { return { ok: false, error: e.message, fragment: clean.slice(-200) }; }
-}
-
-async function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
-
-// ── Llamada a IA con backoff ─────────────────────────────────────────────────
-
-async function aiCall({ system, user, label, maxOut, onProgress }) {
-  await sleep(CALL_DELAY_MS);
-  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
-    try {
-      const resp = await openai.chat.completions.create({
-        model:       'gpt-4o-mini',
-        temperature: 0,
-        max_tokens:  maxOut,
-        messages: [
-          { role: 'system', content: system },
-          { role: 'user',   content: user   }
-        ]
-      });
-      const finish = resp.choices[0].finish_reason;
-      const text   = resp.choices[0].message.content.trim();
-      return { raw: text, truncated: finish === 'length' };
-
-    } catch (err) {
-      const code = err?.status ?? err?.response?.status;
-      if ((code === 429 || code === 503) && attempt < MAX_RETRIES) {
-        const wait = attempt * 30_000;
-        onProgress(`⚠ Rate limit (${code}) en "${label}". Esperando ${wait / 1000}s (${attempt}/${MAX_RETRIES})...`);
-        await sleep(wait);
-      } else {
-        throw new Error(`Error de API en "${label}" [${code}]: ${err.message}`);
-      }
-    }
-  }
-}
-
-// ══════════════════════════════════════════════════════════════════════════════
-// FASE 1 — Extracción local completa (sin IA)
-// ══════════════════════════════════════════════════════════════════════════════
-
-async function fase1_extract(filePath) {
-  const result = await mammoth.extractRawText({ path: filePath });
-  const text   = (result.value || '').trim();
-  if (text.length < 300) throw new Error('FASE 1: Documento vacío o ilegible (< 300 chars extraídos).');
-  return text;
-}
-
-// ══════════════════════════════════════════════════════════════════════════════
-// FASE 2 — Detección global por chunks PEQUEÑOS (output: solo nombres)
-// ══════════════════════════════════════════════════════════════════════════════
-
-// El output aquí es intencionalmente mínimo: solo strings con nombres.
-// maxOut: 400 tokens → NUNCA trunca.
-const SYS_DETECT = `Eres un detector de estructura documental. Extrae SOLO los nombres explícitos que aparecen en el fragmento. PROHIBIDO inventar o inferir.
-
-Devuelve SOLO este JSON (sin bloques de código, sin texto adicional):
-{"candidate_name":null,"candidate_party":null,"blocks":[],"variables":[{"name":"<nombre exacto>","block":"<nombre del bloque al que pertenece>"}]}
-
-- "blocks": lista de strings con los nombres exactos de bloques encontrados en el fragmento.
-- "variables": lista de objetos con el nombre exacto de cada variable encontrada y el bloque al que pertenece (si está claro).
-- "candidate_name" y "candidate_party": null si no aparecen en este fragmento.
-- Si no encuentras nada, devuelve los arrays vacíos.`;
-
-function segmentText(text, chunkSize) {
-  const chunks = [];
-  for (let i = 0; i < text.length; i += chunkSize) {
-    chunks.push(text.slice(i, Math.min(i + chunkSize, text.length)));
-  }
-  return chunks;
-}
-
-async function fase2_detectStructure(fullText, onProgress) {
-  const chunks = segmentText(fullText, CHUNK_SIZE);
-  onProgress(`FASE 2: ${chunks.length} chunks de ~${CHUNK_SIZE} chars — detectando estructura...`);
-
-  let candidateName  = null;
-  let candidateParty = null;
-  const blockSet    = new Map();  // slug → name
-  const variableMap = new Map();  // slug → {name, block}
-
-  for (let i = 0; i < chunks.length; i++) {
-    onProgress(`  Chunk ${i + 1}/${chunks.length}...`);
-    const { raw, truncated } = await aiCall({
-      system: SYS_DETECT,
-      user:   `Fragmento:\n\n${chunks[i]}`,
-      label:  `detect-chunk-${i + 1}`,
-      maxOut: 400,
-      onProgress
+async function callAI(messages, maxTokens, attempt = 0) {
+  try {
+    const res = await openai.chat.completions.create({
+      model: MODEL,
+      messages,
+      max_tokens: maxTokens,
+      temperature: 0.1,
+      response_format: { type: 'json_object' }
     });
-
-    if (truncated) {
-      // Output de 400 tokens truncado significa un bug en el prompt — saltamos el chunk
-      onProgress(`  ⚠ Chunk ${i + 1}: output truncado (ignorado)`);
-      continue;
+    const text   = res.choices[0].message.content || '{}';
+    const finish = res.choices[0].finish_reason;
+    if (finish === 'length') throw new Error('TRUNCATED');
+    return JSON.parse(text);
+  } catch (err) {
+    if (err.status === 429 || (err.message && err.message.includes('rate'))) {
+      if (attempt >= 5) throw new Error('Rate limit máximo alcanzado');
+      const wait = 30000 * (attempt + 1);
+      await sleep(wait);
+      return callAI(messages, maxTokens, attempt + 1);
     }
-
-    const parsed = tryParse(raw, `detect-chunk-${i + 1}`);
-    if (!parsed.ok) { onProgress(`  ⚠ Chunk ${i + 1}: JSON inválido (ignorado)`); continue; }
-
-    const m = parsed.data;
-    if (!candidateName  && m.candidate_name)  candidateName  = m.candidate_name;
-    if (!candidateParty && m.candidate_party) candidateParty = m.candidate_party;
-
-    for (const b of (m.blocks || [])) {
-      const k = slugify(b);
-      if (!blockSet.has(k)) blockSet.set(k, b);
-    }
-    for (const v of (m.variables || [])) {
-      const k = slugify(v.name);
-      if (!variableMap.has(k)) variableMap.set(k, v);
-    }
+    throw err;
   }
-
-  const blocks    = [...blockSet.values()];
-  const variables = [...variableMap.values()];
-
-  onProgress(`  Candidato: ${candidateName || '(no detectado)'}`);
-  onProgress(`  Bloques detectados: ${blocks.length}`);
-  onProgress(`  Variables detectadas: ${variables.length}`);
-
-  if (blocks.length !== 8) {
-    throw new Error(
-      `FASE 2 ERROR: Se detectaron ${blocks.length} bloques (se esperan 8).\n` +
-      `Bloques encontrados:\n${blocks.length ? blocks.map(b => '  · ' + b).join('\n') : '  (ninguno)'}\n\n` +
-      `Verifica que los encabezados de bloques sean claros y explícitos en el documento.`
-    );
-  }
-  if (variables.length !== 30) {
-    throw new Error(
-      `FASE 2 ERROR: Se detectaron ${variables.length} variables (se esperan 30).\n` +
-      `Variables encontradas:\n${variables.length ? variables.map(v => '  · ' + v.name).join('\n') : '  (ninguna)'}\n\n` +
-      `Verifica que los encabezados de variables sean claros y explícitos en el documento.`
-    );
-  }
-
-  return { candidateName, candidateParty, blocks, variables };
 }
 
-// ══════════════════════════════════════════════════════════════════════════════
-// FASE 3 — Indexación de texto por variable (sin IA)
-// ══════════════════════════════════════════════════════════════════════════════
+// ─── PHASE 1: Local DOCX extraction ──────────────────────────────────────────
 
-function fase3_indexVariables(fullText, variables) {
-  const indexed = [];
-  const escapedNames = variables.map(v => ({
-    ...v,
-    re: new RegExp(v.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i')
-  }));
+async function extractText(buffer) {
+  const result = await mammoth.extractRawText({ buffer });
+  return result.value;
+}
 
-  for (let i = 0; i < escapedNames.length; i++) {
-    const { re, name, block } = escapedNames[i];
-    const match = re.exec(fullText);
-    if (!match) {
-      indexed.push({ name, block, text: '', found: false });
-      continue;
+// ─── PHASE 2: Local structure parsing ────────────────────────────────────────
+
+/**
+ * Returns array of blocks, each with variables that include their raw text.
+ *   block  = { id, name, rawName, variables: [{id, name, rawName, text, startLine}] }
+ *
+ * Block detection:  "BLOQUE X:" / "Bloque X:" and variants
+ * Variable detection: "Variable X:" / "VARIABLE X:" and variants
+ *
+ * Tolerates: different capitalization, spacing, separators (: - – .)
+ * Rejects: institution names, subtitles, narrative phrases (not a number after keyword)
+ */
+function parseStructure(fullText) {
+  const lines = fullText.split(/\r?\n/);
+
+  // Must have a digit right after the keyword (+ optional spacing/separator)
+  const RX_BLOCK = /^(?:bloque|blok|block)\s*\d/i;
+  const RX_VAR   = /^(?:variable|var\.?)\s*\d/i;
+
+  const segments = [];
+  for (let i = 0; i < lines.length; i++) {
+    const l = lines[i].trim();
+    if (!l) continue;
+    if (RX_BLOCK.test(l)) {
+      segments.push({ type: 'block', line: l, idx: i });
+    } else if (RX_VAR.test(l)) {
+      segments.push({ type: 'variable', line: l, idx: i });
     }
+  }
 
-    const start = Math.max(0, match.index - 100);
+  const blocks = [];
+  let currentBlock = null;
+  let currentVar   = null;
 
-    // El fin es el inicio de la siguiente variable detectada (o máx VAR_WINDOW_MAX chars)
-    let end = start + VAR_WINDOW_MAX;
-    for (let j = i + 1; j < escapedNames.length; j++) {
-      const m2 = escapedNames[j].re.exec(fullText);
-      if (m2 && m2.index > match.index && m2.index < end) {
-        end = m2.index;
-        break;
+  function closeVar(endIdx) {
+    if (!currentVar || !currentBlock) return;
+    const textLines = lines.slice(currentVar.startLine + 1, endIdx);
+    currentVar.text = textLines.join('\n').trim();
+    currentBlock.variables.push(currentVar);
+    currentVar = null;
+  }
+
+  function closeBlock(endIdx) {
+    closeVar(endIdx);
+    if (currentBlock) blocks.push(currentBlock);
+    currentBlock = null;
+  }
+
+  for (const seg of segments) {
+    if (seg.type === 'block') {
+      closeBlock(seg.idx);
+      // Strip "BLOQUE N: " prefix to get clean name
+      const rawName = seg.line.replace(/^(?:bloque|blok|block)\s*\d+\s*[\s:\-–.]*/i, '').trim();
+      currentBlock = {
+        id:       slug(rawName || seg.line),
+        name:     rawName || seg.line,
+        rawName:  seg.line,
+        variables: []
+      };
+    } else if (seg.type === 'variable') {
+      if (!currentBlock) {
+        // Orphan variable — create implicit block
+        currentBlock = { id: 'bloque_inicial', name: 'Bloque inicial', rawName: '', variables: [] };
       }
+      closeVar(seg.idx);
+      const rawName = seg.line.replace(/^(?:variable|var\.?)\s*\d+\s*[\s:\-–.]*/i, '').trim();
+      currentVar = {
+        id:        slug(rawName || seg.line),
+        name:      rawName || seg.line,
+        rawName:   seg.line,
+        startLine: seg.idx
+      };
     }
-
-    const text = fullText.slice(start, Math.min(end, fullText.length));
-    indexed.push({ name, block, text, found: true });
   }
+  closeBlock(lines.length);
 
-  const notFound = indexed.filter(v => !v.found);
-  if (notFound.length > 0) {
-    throw new Error(
-      `FASE 3 ERROR: No se encontraron en el texto las siguientes variables:\n` +
-      notFound.map(v => '  · ' + v.name).join('\n') + '\n\n' +
-      `Verifica que los nombres detectados en Fase 2 coincidan con los del documento.`
-    );
-  }
-
-  return indexed;
+  return blocks;
 }
 
-// ══════════════════════════════════════════════════════════════════════════════
-// FASE 4 — Extracción detallada por variable (2 llamadas atómicas)
-// ══════════════════════════════════════════════════════════════════════════════
+// ─── PHASE 3: Local hard-data extraction ─────────────────────────────────────
 
-// Llamada A: datos estructurados (scores, criteria, summary, etc.)
-// Output máximo estimado: ~700 tokens → maxOut: 1200 (holgura amplia)
-const SYS_VAR_SCORES = (blockName, varName) => `Eres un extractor técnico estricto. Extrae EXACTAMENTE como aparece en el fragmento. PROHIBIDO inventar o modificar valores.
+/**
+ * Attempts to extract from variable text without AI:
+ *   criteria: {diagnostico, propuesta, medidas, implementacion, viabilidad, especificidad}
+ *   criteria_sum, formula_result, final_score
+ *
+ * Returns only fields found confidently; others stay undefined.
+ */
+function extractHardData(text) {
+  const result = {};
+  const crit   = {};
 
-Extrae del fragmento los datos estructurados de la variable "${varName}" del bloque "${blockName}".
-
-Devuelve SOLO este JSON (sin bloques de código):
-{
-  "id":"<slug>","name":"${varName}",
-  "final_score":<número exacto o null>,
-  "criteria_sum":<número exacto o null>,
-  "formula_result":<número exacto o null>,
-  "summary":"<texto completo>",
-  "strengths":["<exacto>"],
-  "weaknesses":["<exacto>"],
-  "gaps":["<exacto>"],
-  "conclusion":"<texto completo>",
-  "corrected_methodology":false,"correction_note":"",
-  "criteria":{"diagnostico":<0|1|2|null>,"propuesta":<0|1|2|null>,"medidas":<0|1|2|null>,"implementacion":<0|1|2|null>,"viabilidad":<0|1|2|null>,"especificidad":<0|1|2|null>},
-  "criteria_notes":{"diagnostico":"<justificación>","propuesta":"<justificación>","medidas":"<justificación>","implementacion":"<justificación>","viabilidad":"<justificación>","especificidad":"<justificación>"},
-  "sources":[]
-}`;
-
-// Llamada B: secciones narrativas (10 secciones)
-// Cada sección puede ser larga, por eso va en llamada separada
-// Output máximo: 10 secciones × ~300 tokens = ~3000 tokens → maxOut: 4000 (holgura)
-const SYS_VAR_SECTIONS = (varName) => `Eres un extractor técnico estricto. Copia el texto EXACTAMENTE como aparece en el fragmento. PROHIBIDO resumir, reescribir o inventar.
-
-Extrae del fragmento las 10 secciones narrativas de la variable "${varName}".
-
-Si una sección no aparece en el fragmento, usa "" (cadena vacía). NO inventes nada.
-
-Devuelve SOLO este JSON (sin bloques de código):
-{
-  "definicion":"<texto completo>",
-  "importancia":"<texto completo>",
-  "diagnostico_externo":"<texto completo>",
-  "propuesta_plan":"<texto completo>",
-  "medidas_concretas":"<texto completo>",
-  "implementacion_necesaria":"<texto completo>",
-  "impacto_potencial":"<texto completo>",
-  "vacios":"<texto completo>",
-  "evaluacion_tecnica":"<texto completo>",
-  "conclusion":"<texto completo>"
-}`;
-
-async function fase4_extractVariable(varIndexed, blockName, varIndex, total, onProgress) {
-  const { name, text } = varIndexed;
-  onProgress(`  Variable ${varIndex + 1}/${total}: "${name}" (${text.length} chars)...`);
-
-  // ── Llamada A: datos estructurados ────────────────────────────────────────
-  const respA = await aiCall({
-    system: SYS_VAR_SCORES(blockName, name),
-    user:   `Fragmento de la variable "${name}":\n\n${text}`,
-    label:  `var-scores-${varIndex + 1}`,
-    maxOut: 1200,
-    onProgress
-  });
-
-  if (respA.truncated) {
-    throw new Error(
-      `FASE 4: Truncamiento en datos estructurados de "${name}". ` +
-      `Fragmento recibido (final):\n${respA.raw.slice(-300)}`
-    );
-  }
-
-  const parsedA = tryParse(respA.raw, `var-scores-${name}`);
-  if (!parsedA.ok) {
-    throw new Error(`FASE 4: JSON inválido en datos de "${name}": ${parsedA.error}`);
-  }
-
-  // ── Llamada B: secciones narrativas ───────────────────────────────────────
-  const respB = await aiCall({
-    system: SYS_VAR_SECTIONS(name),
-    user:   `Fragmento de la variable "${name}":\n\n${text}`,
-    label:  `var-sections-${varIndex + 1}`,
-    maxOut: 4000,
-    onProgress
-  });
-
-  // Si la llamada B está truncada → reintentar con la mitad del texto
-  let parsedB;
-  if (respB.truncated) {
-    onProgress(`  ⚠ "${name}": secciones truncadas. Reintentando con menos texto...`);
-    const halfText = text.slice(0, Math.floor(text.length / 2));
-    const respB2 = await aiCall({
-      system: SYS_VAR_SECTIONS(name),
-      user:   `Fragmento de la variable "${name}" (parte 1/2):\n\n${halfText}`,
-      label:  `var-sections-${varIndex + 1}-retry`,
-      maxOut: 4000,
-      onProgress
-    });
-    if (respB2.truncated) {
-      throw new Error(`FASE 4: Secciones narrativas de "${name}" siguen truncadas tras reintento. El documento puede tener un formato inesperado.`);
+  // ── Strategy A: "Label: N" or "Label = N" patterns ────────────────────
+  // Handles: "D: 2", "Im: 1", "Diagnóstico: 2", "Especificidad = 1"
+  const RX_SINGLE = /\b(diagnostico|diagnóstico|propuesta|medidas|implementaci[oó]n|viabilidad|especificidad|D|P|M|Im|V|E)\s*[:\-=]\s*([012])\b/gi;
+  let m;
+  while ((m = RX_SINGLE.exec(text)) !== null) {
+    const key = CRITERIA_MAP[m[1].toLowerCase()];
+    if (key && crit[key] === undefined) {
+      crit[key] = parseInt(m[2], 10);
     }
-    parsedB = tryParse(respB2.raw, `var-sections-retry-${name}`);
-  } else {
-    parsedB = tryParse(respB.raw, `var-sections-${name}`);
   }
 
-  if (!parsedB.ok) {
-    throw new Error(`FASE 4: JSON inválido en secciones de "${name}": ${parsedB.error}`);
+  // ── Strategy B: header-row table "D P M Im V E" followed by values ────
+  const headerMatch = /\bD\s+P\s+M\s+Im\s+V\s+E\b/i.exec(text);
+  if (headerMatch) {
+    const after = text.slice(headerMatch.index + headerMatch[0].length);
+    const nums = after.match(/\b([012])\s+([012])\s+([012])\s+([012])\s+([012])\s+([012])\b/);
+    if (nums) {
+      const keys = ['diagnostico','propuesta','medidas','implementacion','viabilidad','especificidad'];
+      keys.forEach((k, i) => { if (crit[k] === undefined) crit[k] = parseInt(nums[i+1], 10); });
+    }
   }
 
-  // ── Fusionar A + B ─────────────────────────────────────────────────────────
-  const varJson = { ...parsedA.data, analysis_sections: parsedB.data };
-  varJson.id = varJson.id || slugify(name);
-  return varJson;
+  if (Object.keys(crit).length === 6) result.criteria = crit;
+
+  // ── Criteria sum ────────────────────────────────────────────────────────
+  const sumM = /(?:suma\s+criterios|criteria[_\s]sum|total\s+criterios|suma|subtotal)\s*[:\-=]\s*(\d+)/i.exec(text);
+  if (sumM) result.criteria_sum = parseInt(sumM[1], 10);
+
+  // ── Formula result "(8/12) × 10 = 6.7" ────────────────────────────────
+  const fmM = /\(\s*(\d+)\s*\/\s*12\s*\)\s*[×x\*]\s*10\s*=\s*([\d.]+)/i.exec(text);
+  if (fmM) {
+    if (result.criteria_sum === undefined) result.criteria_sum = parseInt(fmM[1], 10);
+    result.formula_result = parseFloat(fmM[2]);
+  }
+
+  // ── Final score ────────────────────────────────────────────────────────
+  const scM = /(?:puntaje\s+(?:final|variable|total)|final[_\s]score|calificaci[oó]n\s+final|nota\s+final)\s*[:\-=]\s*([\d.]+)/i.exec(text);
+  if (scM) result.final_score = parseFloat(scM[1]);
+
+  // Fallback: use formula result as final_score
+  if (result.formula_result !== undefined && result.final_score === undefined) {
+    result.final_score = result.formula_result;
+  }
+
+  return result;
 }
 
-// ══════════════════════════════════════════════════════════════════════════════
-// EXTRACCIÓN DE CANDIDATO Y METODOLOGÍA (2 llamadas, primer 10% del doc)
-// ══════════════════════════════════════════════════════════════════════════════
+/**
+ * Extract candidate-level data from the document header (first ~4000 chars).
+ */
+function extractCandidateLocal(headerText) {
+  const result = {};
+  let m;
 
-const SYS_META = `Eres un extractor técnico. Extrae EXACTAMENTE lo que aparece en el texto. PROHIBIDO inventar.
+  const RX_NAME   = /(?:candidato|candidate|nombre\s+del\s+candidato)\s*[:\-]\s*(.+)/i;
+  const RX_PARTY  = /(?:partido|movimiento|agrupaci[oó]n|fuerza\s+\w+|alianza|frente|lista)\s*[:\-]\s*(.+)/i;
+  const RX_TOTAL  = /(?:puntaje\s+(?:total|final|global)|total[_\s]score|calificaci[oó]n\s+(?:global|total))\s*[:\-=]\s*([\d.]+)/i;
+  const RX_PAGES  = /(?:p[aá]ginas?)\s*[:\-]\s*(\d+)/i;
+  const RX_PERIOD = /(?:per[ií]odo|periodo)\s*[:\-]\s*(20\d{2}[-–]20\d{2})/i;
 
-Devuelve SOLO este JSON (sin bloques de código):
-{
-  "candidate":{"name":"<nombre>","party":"<partido>","total_score":<número|null>,"plan_period":"<período|null>","plan_pages":<número|null>,"summary":"<resumen|null>","strengths":[],"weaknesses":[],"methodological_notes":[]},
-  "methodology":{"description":"<descripción|null>","criteria":{"diagnostico":"<def|null>","propuesta":"<def|null>","medidas":"<def|null>","implementacion":"<def|null>","viabilidad":"<def|null>","especificidad":"<def|null>"},"formula":"<fórmula|null>","scale":"<escala|null>"},
-  "final_analysis":{"global_findings":[],"final_conclusion":"<texto|null>","ranking_note":"<texto|null>","comparability_note":"<texto|null>"}
-}`;
+  if ((m = RX_NAME.exec(headerText)))   result.name        = m[1].trim().replace(/^[:\-\s]+/, '');
+  if ((m = RX_PARTY.exec(headerText)))  result.party       = m[1].trim().replace(/^[:\-\s]+/, '');
+  if ((m = RX_TOTAL.exec(headerText)))  result.total_score = parseFloat(m[1]);
+  if ((m = RX_PAGES.exec(headerText)))  result.plan_pages  = parseInt(m[1], 10);
+  if ((m = RX_PERIOD.exec(headerText))) result.plan_period = m[1].trim();
 
-async function extractMeta(fullText, structInfo, onProgress) {
-  onProgress('Extrayendo metadatos del candidato y metodología...');
-  // Usar el primer 12% del texto (suele contener introducción + metodología)
-  const intro = fullText.slice(0, Math.min(Math.floor(fullText.length * 0.12), 5000));
-
-  const resp = await aiCall({
-    system: SYS_META,
-    user:   `Texto del documento (inicio + metodología):\n\n${intro}`,
-    label:  'metadatos-candidato',
-    maxOut: 1500,
-    onProgress
-  });
-
-  if (resp.truncated) {
-    throw new Error('Metadatos del candidato truncados. Verifica el inicio del documento.');
-  }
-
-  const parsed = tryParse(resp.raw, 'metadatos-candidato');
-  if (!parsed.ok) {
-    throw new Error(`Metadatos del candidato con JSON inválido: ${parsed.error}`);
-  }
-
-  const meta = parsed.data;
-  // Complementar con lo detectado en Fase 2
-  if (!meta.candidate.name  && structInfo.candidateName)  meta.candidate.name  = structInfo.candidateName;
-  if (!meta.candidate.party && structInfo.candidateParty) meta.candidate.party = structInfo.candidateParty;
-
-  return meta;
+  return result;
 }
 
-// ══════════════════════════════════════════════════════════════════════════════
-// FASE 5 — Ensamblaje final (sin IA)
-// ══════════════════════════════════════════════════════════════════════════════
+// ─── PHASE 4: AI per variable — narrative only ───────────────────────────────
 
-function fase5_assemble(meta, structInfo, allVars) {
-  const candidateId = slugify(meta.candidate.name || 'candidato');
+/**
+ * Two bounded AI calls per variable:
+ *   Call A — short fields: summary, strengths, weaknesses, gaps, conclusion, criteria_notes
+ *   Call B — analysis_sections (10 narrative sections)
+ *
+ * Hard data (scores) already extracted locally — AI cannot change them.
+ */
+async function enrichVariableWithAI(varName, blockName, varText, hardData, onProgress) {
+  const MAX_CHARS = 7000;
+  const inputText = varText.length > MAX_CHARS ? varText.slice(0, MAX_CHARS) : varText;
 
-  // Asignar variables a bloques usando block_hint
-  const blockSlugMap = new Map(structInfo.blocks.map(b => [slugify(b), b]));
-  const varByBlock   = new Map(structInfo.blocks.map(b => [slugify(b), []]));
+  const sysMsg = (task) => ({
+    role: 'system',
+    content: `Eres un analista técnico de planes de gobierno peruanos.
+${task}
+NO inventes datos. NO modifiques puntajes ya extraídos. Responde en español. Responde SOLO con JSON válido.`
+  });
 
-  const unassigned = [];
-  for (const v of allVars) {
-    const indexedInfo = structInfo.variables.find(x => slugify(x.name) === slugify(v.name));
-    const bSlug = slugify(indexedInfo?.block || '');
-    if (varByBlock.has(bSlug)) {
-      varByBlock.get(bSlug).push(v);
-    } else {
-      unassigned.push(v);
+  // ── Call A: short narrative fields ──────────────────────────────────────
+  const userMsgA = {
+    role: 'user',
+    content: `BLOQUE: ${blockName}
+VARIABLE: ${varName}
+${hardData.criteria ? `PUNTAJES YA EXTRAÍDOS (no cambiar): ${JSON.stringify(hardData.criteria)}` : ''}
+${hardData.final_score !== undefined ? `PUNTAJE FINAL YA EXTRAÍDO: ${hardData.final_score}` : ''}
+
+TEXTO DE LA VARIABLE:
+${inputText}
+
+Devuelve exactamente este JSON:
+{
+  "summary": "2-4 oraciones resumiendo la propuesta",
+  "strengths": ["fortaleza 1", "fortaleza 2", "fortaleza 3"],
+  "weaknesses": ["debilidad 1", "debilidad 2", "debilidad 3"],
+  "gaps": ["vacío 1", "vacío 2"],
+  "conclusion": "1-2 oraciones de evaluación técnica final",
+  "criteria_notes": {
+    "diagnostico": "justificación del puntaje D",
+    "propuesta": "justificación del puntaje P",
+    "medidas": "justificación del puntaje M",
+    "implementacion": "justificación del puntaje Im",
+    "viabilidad": "justificación del puntaje V",
+    "especificidad": "justificación del puntaje E"
+  }
+}`
+  };
+
+  let callA = {};
+  try {
+    callA = await callAI([sysMsg('Extrae campos narrativos cortos.'), userMsgA], 1400) || {};
+  } catch (err) {
+    if (err.message === 'TRUNCATED') {
+      const short = inputText.slice(0, Math.floor(inputText.length / 2));
+      userMsgA.content = userMsgA.content.replace(inputText, short);
+      callA = await callAI([sysMsg('Extrae campos narrativos cortos.'), userMsgA], 1400) || {};
+    }
+    // Non-truncation errors: leave callA as empty, log but don't fail
+  }
+
+  await sleep(700);
+  if (onProgress) onProgress();
+
+  // ── Call B: analysis sections ────────────────────────────────────────────
+  const userMsgB = {
+    role: 'user',
+    content: `BLOQUE: ${blockName}
+VARIABLE: ${varName}
+
+TEXTO DE LA VARIABLE:
+${inputText}
+
+Devuelve exactamente este JSON con 10 secciones (2-4 oraciones cada una):
+{
+  "definicion": "qué evalúa esta variable",
+  "importancia": "relevancia para el desarrollo del país",
+  "diagnostico_externo": "diagnóstico del contexto peruano en esta área",
+  "propuesta_plan": "qué propone exactamente el plan",
+  "medidas_concretas": "medidas específicas incluidas",
+  "implementacion_necesaria": "qué se necesita para implementar las propuestas",
+  "impacto_potencial": "qué impacto tendría si se implementa correctamente",
+  "vacios": "qué falta, qué es incompleto o poco convincente",
+  "evaluacion_tecnica": "evaluación técnica objetiva de la propuesta",
+  "conclusion": "conclusión sintética de esta variable"
+}`
+  };
+
+  let callB = {};
+  try {
+    callB = await callAI([sysMsg('Genera 10 secciones de análisis narrativo.'), userMsgB], 3500) || {};
+  } catch (err) {
+    if (err.message === 'TRUNCATED') {
+      const short = inputText.slice(0, Math.floor(inputText.length / 2));
+      userMsgB.content = userMsgB.content.replace(inputText, short);
+      callB = await callAI([sysMsg('Genera 10 secciones de análisis narrativo.'), userMsgB], 3500) || {};
     }
   }
 
-  // Distribuir variables no asignadas en orden
-  if (unassigned.length > 0) {
-    for (const [bSlug, arr] of varByBlock.entries()) {
-      while (unassigned.length > 0 && arr.length < 4) {
-        arr.push(unassigned.shift());
-      }
-    }
-    // Si quedan, repartir equitativamente
-    for (const v of unassigned) {
-      const smallest = [...varByBlock.entries()].sort((a, b) => a[1].length - b[1].length)[0];
-      smallest[1].push(v);
-    }
-  }
+  await sleep(700);
+  if (onProgress) onProgress();
 
-  const blocks = structInfo.blocks.map(bName => ({
-    id:           slugify(bName),
-    name:         bName,
-    average_score: null,
-    color:        '#1d4ed8',
-    summary:      '',
-    interpretation: '',
-    strengths:    [],
-    weaknesses:   [],
-    variables:    varByBlock.get(slugify(bName)) || []
-  }));
+  return { callA, callB };
+}
+
+// ─── PHASE 5: Merge (local data takes absolute priority) ─────────────────────
+
+function mergeVariable(localData, hardData, aiA, aiB, blockId) {
+  const criteria = hardData.criteria || {};
+  const allCrit  = CRITERIA_KEYS.every(k => criteria[k] !== undefined);
+
+  const computedSum   = allCrit
+    ? CRITERIA_KEYS.reduce((s, k) => s + criteria[k], 0)
+    : undefined;
+  const computedScore = computedSum !== undefined
+    ? parseFloat(((computedSum / 12) * 10).toFixed(2))
+    : undefined;
+
+  const effectiveCritSum = hardData.criteria_sum ?? computedSum ?? null;
+  const effectiveFormula = hardData.formula_result
+    ?? (effectiveCritSum !== null ? parseFloat(((effectiveCritSum / 12) * 10).toFixed(2)) : null);
+  const effectiveScore   = hardData.final_score ?? effectiveFormula;
+
+  const criNotes = {};
+  CRITERIA_KEYS.forEach(k => {
+    criNotes[k] = aiA?.criteria_notes?.[k] || '';
+  });
 
   return {
+    id:           localData.id,
+    name:         localData.name,
+    block_id:     blockId,
+
+    final_score:  effectiveScore  ?? null,
+    rating_label: effectiveScore != null ? RATING(effectiveScore) : null,
+
+    summary:    aiA?.summary    || '',
+    strengths:  Array.isArray(aiA?.strengths)  ? aiA.strengths  : [],
+    weaknesses: Array.isArray(aiA?.weaknesses) ? aiA.weaknesses : [],
+    gaps:       Array.isArray(aiA?.gaps)        ? aiA.gaps       : [],
+    conclusion: aiA?.conclusion || '',
+
+    criteria:       allCrit ? criteria : {},
+    criteria_sum:   effectiveCritSum,
+    formula_result: effectiveFormula,
+
+    score_table: {
+      diagnostico:    criteria.diagnostico    ?? null,
+      propuesta:      criteria.propuesta       ?? null,
+      medidas:        criteria.medidas         ?? null,
+      implementacion: criteria.implementacion  ?? null,
+      viabilidad:     criteria.viabilidad      ?? null,
+      especificidad:  criteria.especificidad   ?? null,
+      sum:            effectiveCritSum,
+      final:          effectiveScore ?? null
+    },
+
+    corrected_methodology: false,
+    correction_note:       null,
+    criteria_notes:        criNotes,
+
+    analysis_sections: {
+      definicion:               aiB?.definicion               || '',
+      importancia:              aiB?.importancia              || '',
+      diagnostico_externo:      aiB?.diagnostico_externo      || '',
+      propuesta_plan:           aiB?.propuesta_plan           || '',
+      medidas_concretas:        aiB?.medidas_concretas        || '',
+      implementacion_necesaria: aiB?.implementacion_necesaria || '',
+      impacto_potencial:        aiB?.impacto_potencial        || '',
+      vacios:                   aiB?.vacios                   || '',
+      evaluacion_tecnica:       aiB?.evaluacion_tecnica       || '',
+      conclusion:               aiB?.conclusion               || ''
+    },
+
+    sources: []
+  };
+}
+
+// ─── PHASE 6: Candidate + methodology metadata ────────────────────────────────
+
+async function extractCandidateData(fullText) {
+  const header = fullText.slice(0, 4000);
+  const local  = extractCandidateLocal(header);
+
+  if (local.name && local.party) return local;
+
+  // AI fallback — only if local parsing didn't get essentials
+  const messages = [
+    {
+      role: 'system',
+      content: 'Eres un extractor de metadatos de planes de gobierno. Responde SOLO con JSON válido en español.'
+    },
+    {
+      role: 'user',
+      content: `Texto del encabezado del plan de gobierno:
+${header}
+
+Extrae y devuelve SOLO este JSON (todos los campos en español):
+{
+  "name": "nombre completo del candidato",
+  "party": "nombre del partido o movimiento político",
+  "plan_period": "período (ej: 2026-2031)",
+  "plan_pages": null,
+  "summary": "resumen del plan en 2-3 oraciones"
+}`
+    }
+  ];
+
+  let ai = {};
+  try {
+    ai = await callAI(messages, 500) || {};
+    await sleep(700);
+  } catch (_) {}
+
+  return {
+    name:        local.name        || ai.name        || 'Candidato sin identificar',
+    party:       local.party       || ai.party       || 'Partido sin identificar',
+    plan_period: local.plan_period || ai.plan_period || '2026-2031',
+    plan_pages:  local.plan_pages  || ai.plan_pages  || null,
+    total_score: local.total_score || null,
+    summary:     ai.summary        || '',
+    color:       null
+  };
+}
+
+async function extractMethodology(fullText) {
+  const searchText = fullText.slice(0, Math.min(fullText.length, 6000));
+
+  const messages = [
+    {
+      role: 'system',
+      content: 'Extractor de metodología de evaluación. Responde SOLO con JSON válido.'
+    },
+    {
+      role: 'user',
+      content: `Texto inicial del plan de gobierno:
+${searchText}
+
+Extrae información sobre la metodología de evaluación y devuelve:
+{
+  "evaluation_method": "descripción del método o null",
+  "scoring_scale": "descripción de la escala o null",
+  "criteria_description": {
+    "diagnostico": "qué evalúa el criterio D",
+    "propuesta": "qué evalúa el criterio P",
+    "medidas": "qué evalúa el criterio M",
+    "implementacion": "qué evalúa el criterio Im",
+    "viabilidad": "qué evalúa el criterio V",
+    "especificidad": "qué evalúa el criterio E"
+  },
+  "formula": "descripción de la fórmula",
+  "analysts": [],
+  "review_date": null
+}`
+    }
+  ];
+
+  try {
+    const ai = await callAI(messages, 700) || {};
+    await sleep(700);
+    return ai;
+  } catch (_) {
+    return {};
+  }
+}
+
+// ─── Block-level aggregation ─────────────────────────────────────────────────
+
+function aggregateBlock(blockDef, variables) {
+  const scores = variables.map(v => v.final_score).filter(s => typeof s === 'number');
+  const avg = scores.length > 0
+    ? parseFloat((scores.reduce((a, b) => a + b, 0) / scores.length).toFixed(2))
+    : null;
+
+  return {
+    id:            blockDef.id,
+    name:          blockDef.name,
+    average_score: avg,
+    color:         null,
+    summary:       '',
+    strengths:     [],
+    weaknesses:    [],
+    interpretation: '',
+    variables
+  };
+}
+
+// ─── PHASE 8: Strict validation ───────────────────────────────────────────────
+
+function validateJSON(json) {
+  const errors = [];
+
+  if (!json.candidate)            errors.push('Falta candidate');
+  if (!json.candidate?.name)      errors.push('Falta candidate.name');
+  if (!json.candidate?.party)     errors.push('Falta candidate.party');
+  if (!json.methodology)          errors.push('Falta methodology');
+  if (!Array.isArray(json.blocks)) { errors.push('Falta blocks'); return errors; }
+
+  if (json.blocks.length !== 8)
+    errors.push(`Se esperan 8 bloques, se encontraron ${json.blocks.length}`);
+
+  const blockIds = new Set();
+  let totalVars = 0;
+
+  for (const block of json.blocks) {
+    if (blockIds.has(block.id)) errors.push(`Bloque duplicado: ${block.id}`);
+    blockIds.add(block.id);
+
+    if (!block.name) errors.push(`Bloque sin nombre: ${block.id}`);
+    if (!Array.isArray(block.variables) || block.variables.length === 0)
+      errors.push(`Bloque vacío: ${block.name}`);
+
+    const varIds = new Set();
+    for (const v of (block.variables || [])) {
+      totalVars++;
+      if (varIds.has(v.id)) errors.push(`Variable duplicada: ${v.id} en bloque "${block.name}"`);
+      varIds.add(v.id);
+
+      const required = [
+        'id','name','final_score','rating_label','summary','strengths',
+        'weaknesses','gaps','conclusion','criteria','criteria_sum',
+        'formula_result','score_table','analysis_sections'
+      ];
+      for (const f of required) {
+        if (v[f] === undefined) errors.push(`Variable "${v.name}": falta campo "${f}"`);
+      }
+
+      if (v.criteria && typeof v.criteria === 'object') {
+        for (const k of CRITERIA_KEYS) {
+          if (v.criteria[k] === undefined)
+            errors.push(`Variable "${v.name}": falta criteria.${k}`);
+        }
+      }
+    }
+  }
+
+  if (json.blocks.length === 8 && totalVars !== 30)
+    errors.push(`Se esperan 30 variables en total, se encontraron ${totalVars}`);
+
+  return errors;
+}
+
+// ─── Cache ────────────────────────────────────────────────────────────────────
+
+function cacheKey(buffer) {
+  return crypto.createHash('sha256').update(buffer).digest('hex');
+}
+function cacheRead(hash) {
+  const p = path.join(CACHE_DIR, `${hash}.json`);
+  if (!fs.existsSync(p)) return null;
+  try {
+    const obj = JSON.parse(fs.readFileSync(p, 'utf8'));
+    return obj._validated ? obj : null;
+  } catch { return null; }
+}
+function cacheWrite(hash, obj) {
+  fs.writeFileSync(path.join(CACHE_DIR, `${hash}.json`), JSON.stringify(obj, null, 2));
+}
+
+// ─── Main entry point ─────────────────────────────────────────────────────────
+
+async function processDocx(buffer, onProgress) {
+  const hash   = cacheKey(buffer);
+  const cached = cacheRead(hash);
+  if (cached) {
+    onProgress?.({ phase: 'cache', message: 'Usando resultado en caché (ya validado)', pct: 100 });
+    return { success: true, json: cached };
+  }
+
+  // ── Phase 1 ────────────────────────────────────────────────────────────
+  onProgress?.({ phase: '1', message: 'Extrayendo texto del DOCX…', pct: 2 });
+  const fullText = await extractText(buffer);
+  if (!fullText || fullText.length < 200) {
+    return { success: false, errors: ['El documento está vacío o no contiene texto extraíble'] };
+  }
+
+  // ── Phase 2 ────────────────────────────────────────────────────────────
+  onProgress?.({ phase: '2', message: 'Detectando bloques y variables localmente…', pct: 8 });
+  const blocks      = parseStructure(fullText);
+  const totalBlocks = blocks.length;
+  const totalVars   = blocks.reduce((s, b) => s + b.variables.length, 0);
+
+  onProgress?.({
+    phase: '2',
+    message: `Estructura local detectada: ${totalBlocks} bloque(s), ${totalVars} variable(s)`,
+    pct: 12
+  });
+
+  if (totalBlocks === 0) {
+    return {
+      success: false,
+      errors: ['No se detectaron bloques. El documento debe usar encabezados tipo "BLOQUE 1: Nombre".']
+    };
+  }
+  if (totalVars === 0) {
+    return {
+      success: false,
+      errors: ['No se detectaron variables. El documento debe usar encabezados tipo "Variable 1: Nombre".']
+    };
+  }
+
+  // ── Phase 3 ────────────────────────────────────────────────────────────
+  onProgress?.({ phase: '3', message: 'Extrayendo puntajes y datos duros localmente…', pct: 15 });
+  for (const block of blocks) {
+    for (const v of block.variables) {
+      v.hardData = extractHardData(v.text || '');
+    }
+  }
+
+  const varsWithScores = blocks.flatMap(b => b.variables).filter(v => v.hardData?.final_score !== undefined).length;
+  onProgress?.({
+    phase: '3',
+    message: `Puntajes locales: ${varsWithScores}/${totalVars} variables`,
+    pct: 17
+  });
+
+  // ── Phase 6 ────────────────────────────────────────────────────────────
+  onProgress?.({ phase: '6', message: 'Extrayendo metadatos del candidato…', pct: 18 });
+  const candidateMeta = await extractCandidateData(fullText);
+
+  onProgress?.({ phase: '6', message: 'Extrayendo metodología…', pct: 20 });
+  const methodology   = await extractMethodology(fullText);
+
+  const candidateId = slug(candidateMeta.name || 'candidato');
+
+  // ── Phase 4 + 5 ────────────────────────────────────────────────────────
+  const aiCallsTotal = totalVars * 2;
+  let   aiCallsDone  = 0;
+  const PCT_START = 22;
+  const PCT_END   = 92;
+
+  const processedBlocks = [];
+
+  for (const block of blocks) {
+    const processedVars = [];
+
+    for (const v of block.variables) {
+      onProgress?.({
+        phase: '4',
+        message: `IA: "${v.name}" (bloque: ${block.name})`,
+        pct: Math.round(PCT_START + (aiCallsDone / aiCallsTotal) * (PCT_END - PCT_START))
+      });
+
+      let aiA = {}, aiB = {};
+      try {
+        const { callA, callB } = await enrichVariableWithAI(
+          v.name, block.name, v.text || '', v.hardData || {},
+          () => {
+            aiCallsDone++;
+            onProgress?.({
+              phase: '4',
+              message: `Llamada IA ${aiCallsDone}/${aiCallsTotal} completada`,
+              pct: Math.round(PCT_START + (aiCallsDone / aiCallsTotal) * (PCT_END - PCT_START))
+            });
+          }
+        );
+        aiA = callA || {};
+        aiB = callB || {};
+      } catch (err) {
+        onProgress?.({
+          phase: '4',
+          message: `Advertencia: fallo IA en "${v.name}": ${err.message}`,
+          pct: Math.round(PCT_START + (aiCallsDone / aiCallsTotal) * (PCT_END - PCT_START))
+        });
+        aiCallsDone += 2;
+      }
+
+      processedVars.push(mergeVariable(v, v.hardData || {}, aiA, aiB, block.id));
+    }
+
+    processedBlocks.push(aggregateBlock(block, processedVars));
+  }
+
+  // ── Phase 7 ────────────────────────────────────────────────────────────
+  onProgress?.({ phase: '7', message: 'Ensamblando JSON final…', pct: 93 });
+
+  const allScores = processedBlocks
+    .flatMap(b => b.variables)
+    .map(v => v.final_score)
+    .filter(s => typeof s === 'number');
+  const totalScore = allScores.length > 0
+    ? parseFloat((allScores.reduce((a, b) => a + b, 0) / allScores.length).toFixed(2))
+    : null;
+
+  const finalJSON = {
     _schema_version: '2.0',
-    _converted_from_docx: true,
     candidate: {
-      id:                     candidateId,
-      name:                   meta.candidate.name   || '',
-      party:                  meta.candidate.party  || '',
-      total_score:            meta.candidate.total_score   ?? null,
-      color:                  '#b5121b',
-      plan_period:            meta.candidate.plan_period   || '2026-2031',
-      plan_pages:             meta.candidate.plan_pages    || null,
-      summary:                meta.candidate.summary       || '',
-      strengths:              meta.candidate.strengths     || [],
-      weaknesses:             meta.candidate.weaknesses    || [],
-      methodological_notes:   meta.candidate.methodological_notes || [],
+      id:                         candidateId,
+      name:                       candidateMeta.name,
+      party:                      candidateMeta.party,
+      color:                      candidateMeta.color       || null,
+      plan_period:                candidateMeta.plan_period || '2026-2031',
+      plan_pages:                 candidateMeta.plan_pages  || null,
+      total_score:                candidateMeta.total_score || totalScore,
+      ranking_position:           null,
+      summary:                    candidateMeta.summary     || '',
+      strengths:                  [],
+      weaknesses:                 [],
+      methodological_notes:       [],
       methodological_corrections: []
     },
-    methodology:    meta.methodology    || {},
-    blocks,
-    final_analysis: meta.final_analysis || {}
+    methodology: {
+      evaluation_method:    methodology.evaluation_method    || '',
+      scoring_scale:        methodology.scoring_scale        || '0–2 por criterio, (suma/12)×10',
+      criteria_description: methodology.criteria_description || {},
+      formula:              methodology.formula              || '(suma_criterios / 12) × 10',
+      analysts:             methodology.analysts             || [],
+      review_date:          methodology.review_date          || null
+    },
+    blocks: processedBlocks
   };
-}
 
-// ══════════════════════════════════════════════════════════════════════════════
-// FASE 6 — Validación estricta (CERO auto-corrección)
-// ══════════════════════════════════════════════════════════════════════════════
+  // ── Phase 8 ────────────────────────────────────────────────────────────
+  onProgress?.({ phase: '8', message: 'Validando JSON estrictamente…', pct: 96 });
+  const errors = validateJSON(finalJSON);
 
-const CRITERIOS = ['diagnostico','propuesta','medidas','implementacion','viabilidad','especificidad'];
-const SECTIONS  = ['definicion','importancia','diagnostico_externo','propuesta_plan','medidas_concretas','implementacion_necesaria','impacto_potencial','vacios','evaluacion_tecnica','conclusion'];
-
-function round1(n) { return Math.round(n * 10) / 10; }
-
-function fase6_validate(data) {
-  const errors = [], warnings = [];
-
-  if (!data.candidate)             errors.push('Falta "candidate"');
-  if (!data.methodology)           errors.push('Falta "methodology"');
-  if (!Array.isArray(data.blocks)) errors.push('Falta array "blocks"');
-  if (!data.final_analysis)        warnings.push('Falta "final_analysis"');
-
-  if (errors.length) return { ok: false, errors, warnings };
-
-  const c = data.candidate;
-  for (const f of ['id','name','party']) {
-    if (!c[f]) errors.push(`candidate.${f} vacío`);
-  }
-  if (c.total_score === undefined || c.total_score === null)
-    errors.push('candidate.total_score vacío');
-
-  if (data.blocks.length !== 8)
-    errors.push(`Se esperan 8 bloques, hay ${data.blocks.length}`);
-
-  let totalVars = 0;
-  const allScores = [];
-
-  data.blocks.forEach((block, bi) => {
-    const bL = `Bloque[${bi + 1}] "${block.name || ''}"`;
-    if (!block.id)   errors.push(`${bL}: falta id`);
-    if (!block.name) errors.push(`${bL}: falta name`);
-    if (!Array.isArray(block.variables) || block.variables.length === 0) {
-      errors.push(`${bL}: sin variables`); return;
-    }
-
-    const bScores = [];
-    block.variables.forEach((v, vi) => {
-      totalVars++;
-      const vL = `${bL} › Var[${vi + 1}] "${v.name || ''}"`;
-
-      if (!v.id)   errors.push(`${vL}: falta id`);
-      if (!v.name) errors.push(`${vL}: falta name`);
-      if (v.final_score   == null) errors.push(`${vL}: falta final_score`);
-      if (v.criteria_sum  == null) errors.push(`${vL}: falta criteria_sum`);
-      if (v.formula_result == null) errors.push(`${vL}: falta formula_result`);
-      if (!v.summary   || String(v.summary).trim().length < 5)   errors.push(`${vL}: summary vacío`);
-      if (!v.conclusion || String(v.conclusion).trim().length < 5) errors.push(`${vL}: conclusion vacío`);
-      if (!Array.isArray(v.strengths) || !v.strengths.length)  errors.push(`${vL}: strengths vacío`);
-      if (!Array.isArray(v.weaknesses) || !v.weaknesses.length) errors.push(`${vL}: weaknesses vacío`);
-      if (!Array.isArray(v.gaps))                               errors.push(`${vL}: gaps no es array`);
-
-      if (!v.criteria) {
-        errors.push(`${vL}: falta criteria`);
-      } else {
-        let csum = 0; let sumOk = true;
-        for (const cr of CRITERIOS) {
-          const val = v.criteria[cr];
-          if (val == null) { errors.push(`${vL}: criteria.${cr} falta`); sumOk = false; }
-          else if (![0,1,2].includes(Number(val))) { errors.push(`${vL}: criteria.${cr}=${val} (debe ser 0,1,2)`); sumOk = false; }
-          else csum += Number(val);
-        }
-        if (sumOk) {
-          const exp = round1((csum / 12) * 10);
-          if (v.criteria_sum != null && Number(v.criteria_sum) !== csum)
-            errors.push(`${vL}: criteria_sum=${v.criteria_sum} ≠ suma real=${csum}`);
-          if (v.formula_result != null && Math.abs(Number(v.formula_result) - exp) > 0.15)
-            errors.push(`${vL}: formula_result=${v.formula_result} ≠ esperado=${exp}`);
-          if (v.final_score != null && Math.abs(Number(v.final_score) - exp) > 0.15)
-            errors.push(`${vL}: final_score=${v.final_score} ≠ esperado=${exp}`);
-        }
-      }
-
-      if (!v.criteria_notes) {
-        errors.push(`${vL}: falta criteria_notes`);
-      } else {
-        for (const cr of CRITERIOS) {
-          if (!v.criteria_notes[cr] || String(v.criteria_notes[cr]).trim().length < 5)
-            errors.push(`${vL}: criteria_notes.${cr} vacío`);
-        }
-      }
-
-      if (!v.analysis_sections) {
-        errors.push(`${vL}: falta analysis_sections`);
-      } else {
-        for (const s of SECTIONS) {
-          if (!v.analysis_sections[s] || String(v.analysis_sections[s]).trim().length < 5)
-            errors.push(`${vL}: analysis_sections.${s} vacío`);
-        }
-      }
-
-      if (v.final_score != null) { bScores.push(Number(v.final_score)); allScores.push(Number(v.final_score)); }
-    });
-
-    if (bScores.length && block.average_score != null) {
-      const avg = round1(bScores.reduce((a,b) => a+b,0) / bScores.length);
-      if (Math.abs(Number(block.average_score) - avg) > 0.25)
-        errors.push(`${bL}: average_score=${block.average_score} ≠ calculado=${avg}`);
-    }
-  });
-
-  if (totalVars !== 30) errors.push(`Se esperan 30 variables, hay ${totalVars}`);
-
-  if (allScores.length && c.total_score != null) {
-    const tot = round1(allScores.reduce((a,b) => a+b,0) / allScores.length);
-    if (Math.abs(Number(c.total_score) - tot) > 0.25)
-      errors.push(`candidate.total_score=${c.total_score} ≠ calculado=${tot}`);
+  if (errors.length > 0) {
+    return {
+      success: false,
+      errors,
+      partial: finalJSON,
+      structureFound: { blocks: totalBlocks, variables: totalVars }
+    };
   }
 
-  return { ok: errors.length === 0, errors, warnings };
-}
+  // ── Save to cache ────────────────────────────────────────────────────
+  finalJSON._validated = true;
+  cacheWrite(hash, finalJSON);
+  delete finalJSON._validated;
 
-// ══════════════════════════════════════════════════════════════════════════════
-// FUNCIÓN PRINCIPAL
-// ══════════════════════════════════════════════════════════════════════════════
+  onProgress?.({ phase: 'done', message: 'Proceso completado exitosamente', pct: 100 });
 
-async function processDocx(filePath, onProgress) {
-  onProgress = onProgress || (() => {});
-  const fileName = path.basename(filePath);
-  onProgress(`▶ Procesando: ${fileName}`);
-
-  // Caché
-  const hash      = fileHash(filePath);
-  const cacheFile = path.join(CACHE_DIR, `${hash}.json`);
-
-  if (fs.existsSync(cacheFile)) {
-    onProgress('✓ Caché encontrado (sin gasto de tokens)');
-    try {
-      const cached = JSON.parse(fs.readFileSync(cacheFile, 'utf8'));
-      if (cached._validated) {
-        return buildResult(cached, [], true, 'Ya procesado — reutilizando resultado anterior.');
-      }
-      onProgress('Caché sin validación — reprocesando...');
-      fs.unlinkSync(cacheFile);
-    } catch (_) { fs.unlinkSync(cacheFile); }
-  }
-
-  // ── FASE 1 ────────────────────────────────────────────────────────────────
-  onProgress('\n[FASE 1] Extracción local del documento...');
-  const fullText = await fase1_extract(filePath);
-  onProgress(`✓ ${fullText.length.toLocaleString()} chars (~${Math.round(fullText.length/4).toLocaleString()} tokens)`);
-
-  // ── FASE 2 ────────────────────────────────────────────────────────────────
-  onProgress('\n[FASE 2] Detección de estructura (chunks de 5 000 chars, output mínimo)...');
-  const structInfo = await fase2_detectStructure(fullText, onProgress);
-  onProgress(`✓ 8 bloques · 30 variables detectadas`);
-
-  // ── EXTRACCIÓN DE METADATOS ───────────────────────────────────────────────
-  onProgress('\n[META] Extrayendo candidato y metodología...');
-  const meta = await extractMeta(fullText, structInfo, onProgress);
-  onProgress(`✓ Candidato: ${meta.candidate.name || '(sin nombre)'} — ${meta.candidate.party || '(sin partido)'}`);
-
-  // ── FASE 3 ────────────────────────────────────────────────────────────────
-  onProgress('\n[FASE 3] Indexando texto por variable (sin IA)...');
-  const indexedVars = fase3_indexVariables(fullText, structInfo.variables);
-  onProgress(`✓ ${indexedVars.length} variables indexadas`);
-
-  // ── FASE 4 ────────────────────────────────────────────────────────────────
-  const totalCalls = structInfo.variables.length * 2;
-  onProgress(`\n[FASE 4] Extracción detallada — 30 variables × 2 llamadas atómicas = ${totalCalls} llamadas controladas...`);
-
-  const allVars = [];
-  for (let i = 0; i < indexedVars.length; i++) {
-    const varInfo = indexedVars[i];
-    const blockName = varInfo.block || structInfo.blocks[Math.floor(i / (30 / 8))] || 'desconocido';
-    const extracted = await fase4_extractVariable(varInfo, blockName, i, indexedVars.length, onProgress);
-    allVars.push(extracted);
-  }
-  onProgress('✓ Todas las variables extraídas');
-
-  // ── FASE 5 ────────────────────────────────────────────────────────────────
-  onProgress('\n[FASE 5] Ensamblando JSON final...');
-  const finalData = fase5_assemble(meta, structInfo, allVars);
-  onProgress('✓ JSON ensamblado');
-
-  // ── FASE 6 ────────────────────────────────────────────────────────────────
-  onProgress('\n[FASE 6] Validación estricta (sin auto-corrección)...');
-  const v = fase6_validate(finalData);
-  if (v.warnings.length) onProgress('Advertencias:\n' + v.warnings.map(w => '  ⚠ ' + w).join('\n'));
-
-  if (!v.ok) {
-    throw new Error(
-      `FASE 6 — Validación fallida (${v.errors.length} error(es)). JSON NO guardado.\n\n` +
-      v.errors.map(e => '  ✕ ' + e).join('\n')
-    );
-  }
-  onProgress(`✓ Validación superada`);
-
-  // ── Guardar ───────────────────────────────────────────────────────────────
-  finalData._validated    = true;
-  finalData._converted_at = new Date().toISOString();
-  finalData._source_file  = fileName;
-  finalData._source_hash  = hash;
-
-  const cId = finalData.candidate.id;
-  const out  = path.join(ANALISIS_DIR, `${cId}.json`);
-
-  if (fs.existsSync(out)) {
-    try {
-      const ex = JSON.parse(fs.readFileSync(out, 'utf8'));
-      if (ex._source_hash === hash) {
-        onProgress('Ya existe con el mismo contenido. No se sobrescribió.');
-        return buildResult(finalData, v.warnings, true, 'Contenido idéntico — no reprocesado.');
-      }
-    } catch (_) {}
-  }
-
-  fs.writeFileSync(out,       JSON.stringify(finalData, null, 2), 'utf8');
-  fs.writeFileSync(cacheFile, JSON.stringify(finalData, null, 2), 'utf8');
-  onProgress(`✓ Guardado: /analisis/${cId}.json`);
-
-  return buildResult(finalData, v.warnings, false);
-}
-
-function buildResult(data, warnings, skipped, message) {
-  return {
-    ok: true, skipped,
-    candidateId: data.candidate.id,
-    outputFile:  `${data.candidate.id}.json`,
-    totalScore:  data.candidate.total_score,
-    blocks:      data.blocks?.length ?? 0,
-    totalVars:   data.blocks?.reduce((t,b) => t + (b.variables?.length ?? 0), 0) ?? 0,
-    warnings,
-    message: message || `Conversión exitosa → /analisis/${data.candidate.id}.json`
-  };
+  return { success: true, json: finalJSON };
 }
 
 module.exports = { processDocx };

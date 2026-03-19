@@ -395,15 +395,19 @@
 
   <!-- Instructions -->
   <div class="instructions">
-    <h2>¿Cómo funciona?</h2>
+    <h2>Arquitectura híbrida — el código detecta la estructura; la IA solo interpreta</h2>
     <ol class="steps">
-      <li><strong>Fase 1:</strong> extracción local del texto completo — sin IA, sin truncar.</li>
-      <li><strong>Fase 2:</strong> detección de estructura en chunks de 5 000 chars. Cada llamada devuelve solo nombres (máx 400 tokens output) — nunca trunca.</li>
-      <li><strong>Fase 3:</strong> indexación local de texto por variable — cada variable obtiene su fragmento específico, sin IA.</li>
-      <li><strong>Fase 4:</strong> <strong>30 variables × 2 llamadas atómicas garantizadas.</strong> Llamada A: datos estructurados. Llamada B: secciones narrativas. Si B trunca → reintento automático con menos texto.</li>
-      <li><strong>Fase 5:</strong> ensamblaje y validación estricta — ningún puntaje se modifica. Si algo falla, no se guarda nada y se muestra el error exacto.</li>
-      <li>Documentos ya procesados (mismo hash) no se reprocesarán — cero gasto de tokens adicional.</li>
+      <li><strong>Fase 1 — Extracción local:</strong> se lee el DOCX completo y se extrae todo el texto sin IA, sin truncar, preservando el orden.</li>
+      <li><strong>Fase 2 — Parseo estructural local (sin IA):</strong> el código detecta bloques (<code>BLOQUE N: …</code>) y variables (<code>Variable N: …</code>) usando regex robustos. No usa IA para esto.</li>
+      <li><strong>Fase 3 — Datos duros locales (sin IA):</strong> el código extrae directamente del texto los puntajes D, P, M, Im, V, E, la suma de criterios, la fórmula y el puntaje final de cada variable.</li>
+      <li><strong>Fase 4 — IA solo por variable:</strong> para cada variable, 2 llamadas acotadas: una para resumen/fortalezas/debilidades/brechas y otra para las 10 secciones narrativas. La IA no descubre estructura ni puntajes.</li>
+      <li><strong>Fase 5 — Prioridad absoluta de datos locales:</strong> los puntajes extraídos por código nunca pueden ser modificados por la IA. Si el código extrajo D=2, el JSON final tendrá D=2.</li>
+      <li><strong>Fase 6 — Validación estricta:</strong> 8 bloques, 30 variables, todos los campos requeridos. Si algo falla, no se guarda nada y se muestra el error exacto.</li>
+      <li>Documentos ya procesados (mismo hash SHA-256) no se reprocesarán — cero costo adicional.</li>
     </ol>
+    <div style="margin-top:1rem;padding:0.75rem 1rem;background:#f0f4ff;border-left:3px solid #1d4ed8;border-radius:4px;font-size:0.85rem;color:#1e3a5f;">
+      <strong>Formato requerido del DOCX:</strong> los bloques deben usar encabezados tipo <code>BLOQUE 1: Nombre</code> y las variables <code>Variable 1: Nombre</code>. Los puntajes deben seguir el patrón <code>D: 2 / P: 1 / M: 1 / Im: 1 / V: 1 / E: 2</code> y la fórmula <code>(8/12) × 10 = 6.67</code>.
+    </div>
   </div>
 </main>
 
@@ -518,11 +522,6 @@ function showResult(data) {
       </div>`;
     }
 
-    if (data.warnings && data.warnings.length > 0) {
-      html += `<p style="font-size:.8rem;color:#92400e;margin:.75rem 0 .25rem;font-weight:600;">Advertencias auto-corregidas:</p>
-        <ul id="warnings-list">${data.warnings.map(w => `<li>${w}</li>`).join('')}</ul>`;
-    }
-
     html += `<div class="result-actions">
       <a href="/analizar.html" class="btn-primary">Ver candidatos</a>
       <a href="/candidato.html?id=${data.candidateId}" class="btn-secondary">Ver este candidato</a>
@@ -534,8 +533,31 @@ function showResult(data) {
   } else {
     box.className = 'result-box error';
     header.textContent = '✕ Error en la conversión';
-    body.innerHTML = `
-      <pre id="error-detail">${data.error || 'Error desconocido'}</pre>
+
+    let errorHtml = '';
+
+    // Single error string (network/server crash)
+    if (data.error) {
+      errorHtml += `<pre id="error-detail">${data.error}</pre>`;
+    }
+
+    // Validation errors array (structure / field problems)
+    if (Array.isArray(data.errors) && data.errors.length > 0) {
+      errorHtml += `<p style="font-size:.85rem;font-weight:600;margin:.5rem 0 .25rem;color:#7f1d1d;">Errores de validación (${data.errors.length}):</p>
+        <ul style="margin:0 0 .75rem;padding-left:1.4rem;font-size:.82rem;color:#991b1b;">
+          ${data.errors.map(e => `<li>${e}</li>`).join('')}
+        </ul>`;
+    }
+
+    // Structure info if partial detection happened
+    if (data.structureFound) {
+      const sf = data.structureFound;
+      errorHtml += `<p style="font-size:.8rem;color:#92400e;margin:.25rem 0;">Estructura detectada localmente: <strong>${sf.blocks} bloque(s)</strong>, <strong>${sf.variables} variable(s)</strong>. Se esperan 8 bloques y 30 variables.</p>`;
+    }
+
+    if (!errorHtml) errorHtml = '<pre id="error-detail">Error desconocido</pre>';
+
+    body.innerHTML = errorHtml + `
       <div class="result-actions">
         <button class="btn-secondary" onclick="resetForm()">Intentar con otro archivo</button>
       </div>`;
