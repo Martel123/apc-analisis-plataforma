@@ -256,7 +256,24 @@ function parseStructure(fullText) {
   }
   closeBlock(lines.length);
 
-  return { blocks, parseLog };
+  // ── Post-process: drop empty blocks ──────────────────────────────────────
+  // A real structural block always has ≥1 variable under it.
+  // Recap/summary lines (e.g. "BLOQUE 3: SEGURIDAD — 2.7/10") that slipped
+  // through dedup will never have variables → drop them and log.
+  const nonEmpty = [];
+  for (const b of blocks) {
+    if (b.variables.length === 0) {
+      parseLog.push(`Bloque vacío eliminado (resumen sin variables): ${b.rawName}`);
+    } else {
+      nonEmpty.push(b);
+    }
+  }
+
+  if (nonEmpty.length < blocks.length) {
+    parseLog.push(`Se eliminaron ${blocks.length - nonEmpty.length} bloque(s) vacío(s)`);
+  }
+
+  return { blocks: nonEmpty, parseLog };
 }
 
 // ─── PHASE 3: Local hard-data extraction ─────────────────────────────────────

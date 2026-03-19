@@ -584,19 +584,26 @@ async function pollJob(jobId) {
     stopPolling();
     spinner.style.display = 'none';
     if (progressBar) progressBar.style.width = '100%';
-    progressTitle.textContent = 'Procesamiento completado';
-    showResult({ ok: true, ...data.result });
-    loadConverted();
+    progressTitle.textContent = 'Procesamiento completado — 100%';
+    // pequeño delay para que el usuario vea el 100% antes del resultado
+    setTimeout(() => {
+      showResult({ ok: true, ...data.result });
+      loadConverted();
+    }, 300);
   } else if (data.status === 'error') {
     stopPolling();
     spinner.style.display = 'none';
-    progressTitle.textContent = 'Error en el procesamiento';
-    showResult({
-      ok:             false,
-      error:          data.error   || null,
-      errors:         data.errors  || null,
-      structureFound: data.structureFound || null
-    });
+    // Llevar la barra al 100% (el procesamiento técnico terminó aunque haya fallado)
+    if (progressBar) progressBar.style.width = '100%';
+    progressTitle.textContent = 'Procesamiento completo — validación fallida';
+    setTimeout(() => {
+      showResult({
+        ok:             false,
+        error:          data.error   || null,
+        errors:         data.errors  || null,
+        structureFound: data.structureFound || null
+      });
+    }, 300);
   }
   // Si status es 'queued' o 'running' → seguir esperando
 }

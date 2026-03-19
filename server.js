@@ -124,6 +124,7 @@ async function runJob(jobId, filePath, fileName) {
     buffer = fs.readFileSync(filePath);
     log(`Archivo leído: ${(buffer.length / 1024).toFixed(0)} KB`);
   } catch (err) {
+    job.pct    = 100;
     job.status = 'error';
     job.error  = `No se pudo leer el archivo subido: ${err.message}`;
     log(`ERROR: ${job.error}`);
@@ -136,6 +137,7 @@ async function runJob(jobId, filePath, fileName) {
   try {
     result = await processDocx(buffer, progress);
   } catch (err) {
+    job.pct    = 100;
     job.status = 'error';
     job.error  = `Error inesperado en el procesador: ${err.message}`;
     log(`ERROR fatal: ${err.message}`);
@@ -143,11 +145,15 @@ async function runJob(jobId, filePath, fileName) {
     return;
   }
 
+  // Always reach 100% visually — success or validation failure
+  job.pct = 100;
+
   if (!result.success) {
+    log(`Procesamiento técnico: completado (100%)`);
+    log(`Validación final: FALLIDA — ${result.errors?.length || 0} error(es)`);
     job.status         = 'error';
     job.errors         = result.errors || ['Error desconocido'];
     job.structureFound = result.structureFound || null;
-    log(`Conversión fallida: ${result.errors?.length || 0} error(es) de validación`);
     return;
   }
 
@@ -165,7 +171,6 @@ async function runJob(jobId, filePath, fileName) {
     const totalVars  = json.blocks?.reduce((s, b) => s + (b.variables?.length || 0), 0) ?? 0;
 
     job.status = 'done';
-    job.pct    = 100;
     job.result = {
       candidateId,
       outputFile:  path.basename(outputFile),

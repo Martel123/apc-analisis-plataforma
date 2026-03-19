@@ -1,0 +1,101 @@
+QUIERO QUE HAGAS UNA CORRECCIÓN FINAL Y ESPECÍFICA DEL PARSER ESTRUCTURAL Y DEL PROGRESO DEL FRONTEND.
+
+EL SISTEMA YA DETECTA 30 VARIABLES, PERO SIGUE DETECTANDO 1 BLOQUE EXTRA:
+
+- SEGURIDAD — 2.7/10
+
+Y ESE BLOQUE QUEDA VACÍO.
+
+ESO SIGNIFICA QUE TODAVÍA SE ESTÁ TOMANDO UNA LÍNEA RESUMEN CON PUNTAJE COMO SI FUERA BLOQUE REAL.
+
+=====================================
+PARTE 1 — CORRECCIÓN FINAL DEL PARSER
+=====================================
+
+OBJETIVO:
+Detectar exactamente 8 bloques y 30 variables.
+
+REGLA NUEVA OBLIGATORIA PARA BLOQUES:
+
+UN BLOQUE REAL NO PUEDE SER UNA LÍNEA QUE TERMINE O INCLUYA SOLO EL PUNTAJE DEL BLOQUE COMO RESUMEN.
+
+DEBES RECHAZAR COMO BLOQUE:
+- "SEGURIDAD — 2.7/10"
+- "ECONOMÍA — 6.0/10"
+- "SALUD — 2.2/10"
+- cualquier línea equivalente que sea solo nombre + puntaje
+
+ESAS LÍNEAS SON RESÚMENES, NO ENCABEZADOS ESTRUCTURALES.
+
+IMPLEMENTA ESTOS FILTROS:
+
+1. Si una línea parece bloque pero contiene solo:
+   [nombre del bloque] + guion + [puntaje]
+   y NO tiene formato de encabezado principal
+   → ignorarla
+
+2. Priorizar como bloques reales solo:
+   - encabezados largos editoriales
+   - primera aparición estructural del bloque
+   - encabezados que abren una sección con variables debajo
+
+3. Si un bloque detectado no recibe ninguna variable:
+   - intentar mapearlo a un bloque ya existente por nombre normalizado
+   - si es duplicado resumen → eliminarlo
+   - NO dejar bloques vacíos en la estructura final
+
+4. Agregar una regla de deduplicación por nombre base:
+   Ejemplo:
+   - "SEGURIDAD Y ORDEN PÚBLICO"
+   - "SEGURIDAD"
+   - "SEGURIDAD — 2.7/10"
+
+   deben compararse por un nombre normalizado/base.
+   Si uno ya existe y el nuevo solo agrega puntaje o versión abreviada:
+   → ignorar el nuevo
+
+5. Si al final hay 9 bloques y uno está vacío:
+   - eliminar automáticamente el bloque vacío si coincide con un duplicado resumido de otro bloque existente
+
+QUIERO LOGS COMO:
+- "Bloque resumen ignorado: SEGURIDAD — 2.7/10"
+- "Bloque vacío eliminado por duplicado resumido: SEGURIDAD — 2.7/10"
+
+=====================================
+PARTE 2 — CORRECCIÓN DEL PROGRESO DEL FRONTEND
+=====================================
+
+EL FRONTEND SE QUEDA VISUALMENTE EN 91%, PERO EL BACKEND SIGUE HASTA VALIDACIÓN.
+
+QUIERO QUE EL PROGRESO VISUAL REFLEJE EL PROCESO REAL.
+
+IMPLEMENTA ESTO:
+
+1. El progreso NO debe quedarse congelado en 91%
+2. Debe avanzar también durante:
+   - Fase 7 (ensamblaje)
+   - Fase 8 (validación)
+3. Si el proceso termina con error de validación:
+   - mostrar 100% del procesamiento técnico completado
+   - y luego mostrar “falló validación”
+   - NO dar sensación de que se quedó colgado
+
+QUIERO QUE EL USUARIO VEA CLARAMENTE:
+- procesamiento completado
+- validación final
+- resultado final: éxito o error
+
+=====================================
+RESULTADO ESPERADO
+=====================================
+
+Después de esta corrección:
+
+- exactamente 8 bloques
+- exactamente 30 variables
+- ningún bloque vacío
+- el bloque resumen "SEGURIDAD — 2.7/10" no debe entrar
+- el progreso visual debe llegar al final real del proceso
+- si falla, debe fallar claramente, no parecer colgado
+
+EJECUTA ESTA CORRECCIÓN AHORA.
