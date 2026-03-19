@@ -1,0 +1,2113 @@
+{
+  "_schema_version": "2.0",
+  "candidate": {
+    "id": "jorge_nieto_degregori",
+    "name": "Jorge Nieto Degregori",
+    "party": "Partido del Buen Gobierno (PBG)",
+    "color": null,
+    "plan_period": "2026-2031",
+    "plan_pages": 98,
+    "total_score": 7.08,
+    "ranking_position": null,
+    "summary": "El plan de gobierno del PBG propone un cambio en el modelo económico del Perú, buscando diversificar la economía y aumentar la recaudación tributaria para financiar servicios públicos. Se enfoca en la formalización del empleo y la mejora de la capacidad del Estado para gestionar recursos, con metas cuantificadas y matrices de indicadores para el año 2031.",
+    "strengths": [],
+    "weaknesses": [],
+    "methodological_notes": [],
+    "methodological_corrections": []
+  },
+  "methodology": {
+    "evaluation_method": "Cada variable del plan de gobierno se evalúa con seis criterios. Solo se puntúa lo que está escrito explícitamente en el documento. Nada implícito, nada supuesto.",
+    "scoring_scale": "Cada criterio recibe entre 0 y 2 puntos. El puntaje final: (suma ÷ 12) × 10.",
+    "criteria_description": {
+      "diagnostico": "¿El plan describe con datos reales la situación actual del país?",
+      "propuesta": "¿La propuesta está orientada a resolver el problema?",
+      "medidas": "¿Hay acciones específicas y no solo palabras generales?",
+      "implementacion": "¿Se dice cómo se va a hacer y quién lo ejecutará?",
+      "viabilidad": "¿Es realista con los recursos e instituciones del Perú?",
+      "especificidad": "¿El plan nombra al menos dos de estos elementos: institución responsable, instrumento, norma, presupuesto o meta con número?"
+    },
+    "formula": "(suma ÷ 12) × 10",
+    "analysts": [],
+    "review_date": null
+  },
+  "blocks": [
+    {
+      "id": "economia_7_7_10",
+      "name": "ECONOMÍA — 7.7/10",
+      "average_score": 7.67,
+      "color": null,
+      "summary": "",
+      "strengths": [],
+      "weaknesses": [],
+      "interpretation": "",
+      "variables": [
+        {
+          "id": "politica_tributaria_7_5_10",
+          "name": "Política tributaria ✓ — 7.5/10",
+          "block_id": "economia_7_7_10",
+          "final_score": 7.5,
+          "rating_label": "sólido",
+          "summary": "El plan propone reformar el sistema tributario peruano con cuatro ejes: ampliar la base tributaria, hacer el sistema más justo, combatir la evasión y crear un impuesto al carbono. Se establece una meta de recaudación del 18% del PBI para 2031.",
+          "strengths": [
+            "Propuesta del impuesto al carbono como innovación",
+            "Meta cuantificada del 18% del PBI",
+            "Fortalecimiento de la SUNAT y el Consejo Fiscal"
+          ],
+          "weaknesses": [
+            "Falta de especificidad operativa",
+            "No se detalla la tasa del impuesto al carbono",
+            "Ausencia de un cronograma claro para la implementación"
+          ],
+          "gaps": [
+            "No se especifican las exoneraciones a eliminar",
+            "Falta de un plan para la economía digital"
+          ],
+          "conclusion": "El plan es ambicioso y apunta en la dirección correcta, pero carece de detalles operativos que son cruciales para su ejecución efectiva.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2
+          },
+          "criteria_sum": 9,
+          "formula_result": 7.5,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2,
+            "sum": 9,
+            "final": 7.5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El diagnóstico es correcto y refleja la baja recaudación tributaria en el país.",
+            "propuesta": "Las propuestas son claras y abordan los problemas identificados en el diagnóstico.",
+            "medidas": "Se presentan medidas concretas, aunque algunas carecen de detalle.",
+            "implementacion": "Se identifican cambios necesarios, pero falta claridad en costos y cronogramas.",
+            "viabilidad": "La viabilidad es cuestionable sin un plan claro para la implementación.",
+            "especificidad": "La especificidad es insuficiente, ya que faltan detalles operativos importantes."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas para reformar el sistema de impuestos en Perú, analizando qué cobra el Estado, a quién, con qué progresividad y su efectividad en la lucha contra la evasión fiscal.",
+            "importancia": "La política tributaria es crucial para el financiamiento de servicios públicos como educación y salud. Una recaudación adecuada permite al Estado cumplir con sus funciones y mejorar la calidad de vida de los ciudadanos.",
+            "diagnostico_externo": "Actualmente, la presión tributaria en Perú es de 15.8% del PBI, significativamente inferior al promedio de la OCDE y de América Latina. La alta informalidad y la existencia de múltiples regímenes tributarios especiales contribuyen a una recaudación ineficiente.",
+            "propuesta_plan": "El plan propone cuatro ejes: ampliar la base tributaria, hacer el sistema más justo, combatir la evasión y crear un impuesto al carbono, con la meta de alcanzar el 18% del PBI en recaudación para 2031.",
+            "medidas_concretas": "Las medidas específicas incluyen la implementación de un impuesto al carbono, la publicación anual del mapa de gastos tributarios, la facturación electrónica universal, y la simplificación de los regímenes tributarios existentes.",
+            "implementacion_necesaria": "Para implementar las propuestas se requieren cambios institucionales, legales y presupuestales, incluyendo la reorganización de SUNAT y la reforma de la Ley del Impuesto a la Renta, entre otros.",
+            "impacto_potencial": "Alcanzar la meta del 18% del PBI podría significar una recaudación adicional de entre S/ 20,000 y 25,000 millones anuales, además de incentivar la reducción de la contaminación a través del impuesto al carbono.",
+            "vacios": "El plan carece de especificaciones sobre la tasa del impuesto al carbono, el cronograma de eliminación de exoneraciones y la fuente de financiamiento para modernizar SUNAT, lo que dificulta su viabilidad.",
+            "evaluacion_tecnica": "La propuesta es ambiciosa y apunta en la dirección correcta, pero la falta de detalles operativos y un cronograma claro limita su evaluación como política ejecutable.",
+            "conclusion": "En resumen, el plan tributario es el más ambicioso del proceso electoral, destacando la meta del 18% y el impuesto al carbono, aunque necesita mayor especificidad para ser considerado completamente viable."
+          },
+          "sources": []
+        },
+        {
+          "id": "gasto_publico_6_7_10",
+          "name": "Gasto público — 6.7/10",
+          "block_id": "economia_7_7_10",
+          "final_score": 6.67,
+          "rating_label": "moderado",
+          "summary": "El plan propone mantener la disciplina fiscal y mejorar la calidad del gasto a través de la creación de una Oficina de Evaluación Presupuestaria y un Fondo Soberano de Riqueza. También busca la transparencia total del gasto público y la racionalización de consultorías.",
+          "strengths": [
+            "Propuestas técnicamente sólidas como la Oficina Presupuestaria y el Fondo Soberano",
+            "Referentes exitosos en otros países",
+            "Enfoque en la mejora de la calidad del gasto público"
+          ],
+          "weaknesses": [
+            "Falta de estrategia específica para la baja ejecución de gobiernos regionales y locales",
+            "No se define la meta de déficit fiscal al 2031",
+            "Ausencia de un mecanismo concreto para las evaluaciones ex post"
+          ],
+          "gaps": [
+            "No se cuantifica el ahorro fiscal esperado",
+            "No se especifica el capital inicial del Fondo Soberano"
+          ],
+          "conclusion": "El plan presenta propuestas bien concebidas a nivel nacional, pero carece de un enfoque claro para abordar el problema más urgente de la inversión subnacional. Esto limita su efectividad en la mejora del gasto público.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1
+          },
+          "criteria_sum": 8,
+          "formula_result": 6.67,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1,
+            "sum": 8,
+            "final": 6.67
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El diagnóstico refleja la gravedad del déficit fiscal y la baja ejecución del gasto público.",
+            "propuesta": "Las propuestas son innovadoras y se basan en modelos exitosos de otros países.",
+            "medidas": "Las medidas son específicas, aunque algunas son más declarativas que operativas.",
+            "implementacion": "Se requieren cambios institucionales y legales significativos para implementar las propuestas.",
+            "viabilidad": "La viabilidad es cuestionable debido a la falta de cuantificación de ahorros y capital inicial.",
+            "especificidad": "La especificidad es baja en cuanto a la ejecución de las propuestas y la resolución de problemas inmediatos."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas para que el Estado gaste de manera sostenible, eficiente y con transparencia, considerando aspectos como el equilibrio fiscal, la calidad del gasto y los mecanismos de control.",
+            "importancia": "La correcta gestión del gasto público es crucial para evitar la corrupción y la pérdida de recursos, lo que a su vez afecta la credibilidad del gobierno y la efectividad de las políticas públicas en el Perú.",
+            "diagnostico_externo": "El Perú enfrenta un déficit fiscal del 3.8% del PBI y una baja ejecución de inversión pública, con más de S/ 10,000 millones sin gastar anualmente y más de 2,300 obras paralizadas, lo que refleja serias debilidades en la gestión del gasto.",
+            "propuesta_plan": "El plan propone mantener la disciplina fiscal y mejorar la calidad del gasto mediante la creación de una Oficina de Evaluación Presupuestaria, la transparencia total del gasto público, y la creación de un Fondo Soberano de Riqueza, entre otras medidas.",
+            "medidas_concretas": "Las medidas específicas incluyen la creación de la Oficina de Evaluación Presupuestaria, la constitución del Fondo Soberano de Riqueza, la racionalización de consultorías y la implementación de evaluaciones ex post del gasto con carácter vinculante.",
+            "implementacion_necesaria": "Para implementar las propuestas se requieren cambios institucionales y legales, como la creación de la Oficina de Evaluación Presupuestaria mediante ley, la constitución del Fondo Soberano y reformas a la Ley de Presupuesto.",
+            "impacto_potencial": "Si se implementan correctamente, las propuestas podrían mejorar la calidad de la legislación fiscal, actuar como un amortiguador en períodos de baja minera y liberar recursos para inversión productiva a través de la racionalización del gasto.",
+            "vacios": "El plan carece de definiciones claras sobre la meta de déficit fiscal al 2031, el capital inicial del Fondo Soberano, la cantidad de consultorías a eliminar y la estrategia para abordar las obras paralizadas, que es un problema crítico.",
+            "evaluacion_tecnica": "Las propuestas de la Oficina Presupuestaria y el Fondo Soberano son técnicamente sólidas y tienen precedentes exitosos en otros países, aunque la falta de una estrategia para la inversión subnacional es una debilidad significativa.",
+            "conclusion": "En resumen, el plan presenta propuestas bien concebidas a nivel nacional, pero no aborda adecuadamente el problema urgente de la baja ejecución de inversión pública en los gobiernos regionales y locales."
+          },
+          "sources": []
+        },
+        {
+          "id": "politica_de_inversion_privada_7_5_10",
+          "name": "Política de inversión privada ✓ — 7.5/10",
+          "block_id": "economia_7_7_10",
+          "final_score": 7.5,
+          "rating_label": "sólido",
+          "summary": "La propuesta busca diversificar la economía peruana hacia sectores de mayor valor agregado, como energía y agroindustria, y fortalecer instituciones como INDECOPI. Incluye un presupuesto explícito para programas de productividad y competitividad, así como el relanzamiento de asociaciones público-privadas.",
+          "strengths": [
+            "Diversificación hacia sectores de alto valor agregado",
+            "Presupuesto explícito para programas de productividad",
+            "Fortalecimiento de INDECOPI para combatir monopolios"
+          ],
+          "weaknesses": [
+            "Falta de estrategia para abordar conflictos sociales",
+            "Incertidumbre política que afecta la inversión",
+            "Baja ejecución de la cartera de APP"
+          ],
+          "gaps": [
+            "No se aborda cómo mejorar el proceso de consulta previa",
+            "Falta de medidas para garantizar seguridad jurídica en contratos existentes"
+          ],
+          "conclusion": "La propuesta es ambiciosa y coherente, pero su efectividad está limitada por la falta de atención a los conflictos sociales que obstaculizan la inversión. Sin una estrategia clara para estos problemas, los incentivos a la inversión podrían ser insuficientes.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2
+          },
+          "criteria_sum": 9,
+          "formula_result": 7.5,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2,
+            "sum": 9,
+            "final": 7.5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El diagnóstico refleja la caída de la inversión privada y los conflictos sociales que afectan el clima de inversión.",
+            "propuesta": "La propuesta es coherente y busca diversificar la economía, aunque carece de un enfoque en conflictos sociales.",
+            "medidas": "Las medidas son específicas y cuentan con un presupuesto explícito, lo que justifica el puntaje.",
+            "implementacion": "Se requieren cambios institucionales y legales significativos para implementar las propuestas.",
+            "viabilidad": "La viabilidad está comprometida por la incertidumbre política y los conflictos sociales existentes.",
+            "especificidad": "La propuesta incluye detalles sobre financiamiento y programas específicos, lo que respalda el puntaje."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas para fomentar la inversión privada en el Perú, considerando aspectos como el clima de inversión, asociaciones público-privadas, seguridad jurídica e incentivos sectoriales.",
+            "importancia": "La inversión privada es crucial para el crecimiento económico y la generación de empleo en el país, representando cerca del 18% del PBI. Un entorno favorable para la inversión es esencial para mantener la confianza del sector privado, especialmente en un contexto de alta conflictividad social.",
+            "diagnostico_externo": "En 2023, la inversión privada cayó un 2.7% y el Perú enfrenta cuatro años de retracción en sectores distintos a la minería. Además, los conflictos socioambientales han bloqueado proyectos por más de USD 6,000 millones, lo que refleja un entorno desafiante para la inversión.",
+            "propuesta_plan": "El plan propone diversificar la economía hacia sectores de mayor valor agregado, como energía, agroindustria y economía digital, y fortalecer a INDECOPI para sancionar prácticas anticompetitivas. También busca relanzar las APP y crear parques industriales en regiones.",
+            "medidas_concretas": "Las medidas específicas incluyen el Programa Nacional de Productividad y Competitividad con un presupuesto de S/ 1,900 millones, el relanzamiento de APP con mayor transparencia, y el fortalecimiento de INDECOPI. Estas acciones están orientadas a mejorar la competitividad y fomentar la inversión.",
+            "implementacion_necesaria": "Para implementar las propuestas, se requieren cambios institucionales en Proinversión y en el marco de APP, así como un fortalecimiento de INDECOPI. También es necesario asegurar financiamiento explícito para los programas propuestos.",
+            "impacto_potencial": "Si se implementan correctamente, las propuestas podrían diversificar la economía, reducir la volatilidad del crecimiento y mejorar la competitividad de las MYPE, que son fundamentales para el tejido empresarial del país.",
+            "vacios": "El plan carece de una estrategia clara para abordar los conflictos sociales que afectan la inversión. Sin un enfoque en la resolución de estos conflictos, los incentivos propuestos podrían tener un impacto limitado.",
+            "evaluacion_tecnica": "La propuesta es ambiciosa y coherente, con un presupuesto parcial explícito, pero su efectividad está condicionada a la resolución de conflictos sociales y a la mejora del clima de inversión.",
+            "conclusion": "En resumen, la propuesta de diversificación es sólida, pero su éxito depende de abordar los conflictos sociales que obstaculizan la inversión privada en el Perú."
+          },
+          "sources": []
+        },
+        {
+          "id": "formalizacion_laboral_8_3_10",
+          "name": "Formalización laboral ✓ — 8.3/10",
+          "block_id": "economia_7_7_10",
+          "final_score": 8.33,
+          "rating_label": "sólido",
+          "summary": "La propuesta de formalización laboral se centra en el Registro Nacional del Trabajador Autoempleado (RENTAE), que busca integrar a trabajadores informales al sistema formal mediante incentivos como microcréditos y protección social. Además, se plantea fortalecer la SUNAFIL y simplificar los trámites para la formalización de empresas, con metas claras de reducción de la informalidad y formalización de pequeñas empresas.",
+          "strengths": [
+            "Propuesta innovadora con el RENTAE",
+            "Metas cuantificadas y claras",
+            "Estrategia multidimensional que incluye formación dual"
+          ],
+          "weaknesses": [
+            "Falta de especificidad en las leyes laborales a modificar",
+            "No se detalla el número de inspectores adicionales para SUNAFIL",
+            "Ausencia de hitos intermedios para la meta del 55%"
+          ],
+          "gaps": [
+            "Estrategia para el sector rural no mencionada",
+            "Financiamiento a largo plazo del RENTAE no especificado"
+          ],
+          "conclusion": "La propuesta es la más completa del proceso electoral, con un enfoque sólido y metas ambiciosas. Sin embargo, la falta de detalles sobre cambios legales específicos limita su viabilidad.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2
+          },
+          "criteria_sum": 10,
+          "formula_result": 8.33,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2,
+            "sum": 10,
+            "final": 8.33
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "La alta tasa de informalidad laboral y sus consecuencias justifican un diagnóstico crítico.",
+            "propuesta": "La propuesta del RENTAE y sus beneficios son innovadores y bien estructurados.",
+            "medidas": "Las medidas concretas están claramente definidas y cuantificadas.",
+            "implementacion": "Se identifican cambios institucionales y legales necesarios, aunque faltan detalles.",
+            "viabilidad": "La meta de reducción de informalidad es ambiciosa pero técnicamente posible.",
+            "especificidad": "Se mencionan elementos específicos, pero faltan detalles en algunos aspectos clave."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas para que más trabajadores y empresas operen dentro de la ley, asegurando contratos, acceso a seguridad social y cumplimiento de obligaciones fiscales.",
+            "importancia": "La formalización laboral es crucial para abordar la informalidad, que es el problema estructural más grave del mercado laboral peruano, afectando la productividad y la recaudación fiscal, además de excluir a millones de trabajadores de la protección social.",
+            "diagnostico_externo": "Actualmente, la tasa de informalidad laboral en Perú es del 76.1%, la más alta de América del Sur después de Bolivia, con un sector informal que representa el 18.2% del PBI y un salario promedio en el sector informal que es 2.3 veces menor que en el formal.",
+            "propuesta_plan": "El plan propone la creación del Registro Nacional del Trabajador Autoempleado (RENTAE), que permitirá a los trabajadores por cuenta propia registrarse y acceder a microcréditos, protección social y apoyo técnico, además de fortalecer la SUNAFIL y simplificar trámites para la formalización.",
+            "medidas_concretas": "Se detallan medidas como el RENTAE con ministerios responsables, metas cuantificadas de reducción de informalidad y formalización de MYPE, y un presupuesto parcial de S/ 500 millones en 5 años para la formalización y simplificación de MYPE.",
+            "implementacion_necesaria": "Para implementar el plan se requieren cambios institucionales, legales y presupuestales, incluyendo la creación del RENTAE, la expansión del cuerpo de inspectores de SUNAFIL y la simplificación del régimen tributario para MYPE.",
+            "impacto_potencial": "Si se logra reducir la informalidad del 76% al 55% en 5 años, se formalizarían aproximadamente 3.5 millones de trabajadores adicionales, lo que representaría un avance significativo en la formalización laboral en la región.",
+            "vacios": "El plan carece de especificaciones sobre qué leyes laborales se modificarán, cuántos inspectores adicionales tendrá la SUNAFIL, cómo se financiará el RENTAE y su sostenibilidad a largo plazo, así como una estrategia clara para el sector rural.",
+            "evaluacion_tecnica": "La propuesta es la más detallada y sistémica del proceso electoral, con un enfoque innovador en el RENTAE, aunque la falta de claridad sobre las reformas laborales específicas limita su efectividad.",
+            "conclusion": "En resumen, la propuesta de formalización es completa y ambiciosa, con un enfoque multidimensional que podría transformar el mercado laboral, aunque necesita mayor claridad en algunos aspectos clave."
+          },
+          "sources": []
+        },
+        {
+          "id": "politica_minera_y_recursos_naturales_8_3_10",
+          "name": "Política minera y recursos naturales — 8.3/10",
+          "block_id": "economia_7_7_10",
+          "final_score": 8.33,
+          "rating_label": "sólido",
+          "summary": "La propuesta de política minera busca implementar una nueva legislación con enfoque territorial, ambiental y social, crear una Agencia Nacional de Formalización Minera y establecer corredores mineros sostenibles. Además, se propone una plataforma digital para la trazabilidad del oro y reformar el sistema de concesiones para formalizar a más de 150,000 mineros y reducir la deforestación por minería ilegal a cero hectáreas al 2031.",
+          "strengths": [
+            "Propuesta integral y bien estructurada",
+            "Enfoque en la formalización de mineros artesanales",
+            "Iniciativas para combatir la minería ilegal y mejorar la trazabilidad"
+          ],
+          "weaknesses": [
+            "Falta de especificación en el presupuesto y plazos",
+            "Riesgo de implementación debido a la capacidad institucional",
+            "Ambición de la meta de deforestación cero"
+          ],
+          "gaps": [
+            "Mecanismo concreto de consulta previa vinculante",
+            "Estrategia específica para resolver conflictos socioambientales"
+          ],
+          "conclusion": "El plan es técnicamente sólido y presenta un enfoque innovador, pero su éxito dependerá de la capacidad de ejecución y la voluntad política para llevarlo a cabo.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2
+          },
+          "criteria_sum": 10,
+          "formula_result": 8.33,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2,
+            "sum": 10,
+            "final": 8.33
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El diagnóstico es claro al identificar los problemas actuales en el sector minero y su impacto social y ambiental.",
+            "propuesta": "La propuesta es completa y aborda múltiples aspectos críticos de la minería en Perú.",
+            "medidas": "Las medidas son específicas y están bien definidas, aunque faltan detalles en su implementación.",
+            "implementacion": "La implementación presenta desafíos significativos debido a la falta de capacidad institucional.",
+            "viabilidad": "La viabilidad es cuestionable por la ambición de las metas y la falta de recursos claros.",
+            "especificidad": "La especificidad es alta en las medidas propuestas, pero hay vacíos en el presupuesto y plazos."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas para regular la minería en Perú, abarcando aspectos como la concesión de derechos mineros, la distribución de beneficios, la lucha contra la minería ilegal y la gestión de conflictos socioambientales.",
+            "importancia": "La minería es crucial para la economía peruana, representando el 60% de las exportaciones y el 10% del PBI. Sin embargo, también es una fuente significativa de conflictos sociales y problemas ambientales, lo que hace esencial su regulación adecuada.",
+            "diagnostico_externo": "Actualmente, Perú es un líder mundial en la producción de minerales, pero enfrenta graves conflictos socioambientales, con el 65% de los conflictos sociales relacionados con la minería. La minería ilegal ha causado una deforestación alarmante en la Amazonía, lo que agrava la situación.",
+            "propuesta_plan": "El plan propone una nueva legislación minera con un enfoque integral que incluye aspectos territoriales, ambientales y sociales, así como la creación de una Agencia Nacional de Formalización Minera y la implementación de corredores mineros sostenibles.",
+            "medidas_concretas": "Entre las medidas específicas se incluyen la creación de una plataforma digital para la trazabilidad del oro, límites en la concentración de concesiones por empresa y la penalización de la minería ilegal en áreas protegidas.",
+            "implementacion_necesaria": "Para implementar estas propuestas, se requieren cambios institucionales, legales y presupuestales, incluyendo la creación de la Agencia de Formalización y la modificación de la Ley General de Minería.",
+            "impacto_potencial": "La formalización de mineros artesanales podría aumentar la recaudación fiscal y reducir la contaminación por mercurio, mientras que la trazabilidad del oro ayudaría a combatir el lavado de activos y a disminuir los conflictos sociales.",
+            "vacios": "El plan carece de detalles sobre el mecanismo de consulta previa, el presupuesto de la Agencia de Formalización y la estrategia para abordar los conflictos socioambientales activos, lo que limita su viabilidad.",
+            "evaluacion_tecnica": "Técnicamente, el plan es el más completo del proceso electoral, con propuestas que han tenido éxito en otros países, aunque el desafío radica en la ejecución efectiva de estas medidas.",
+            "conclusion": "En resumen, la propuesta minera es sólida y coherente, pero su éxito dependerá de la capacidad institucional y la voluntad política para llevar a cabo las reformas necesarias."
+          },
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "seguridad_y_orden_publico_7_5_10",
+      "name": "SEGURIDAD Y ORDEN PÚBLICO — 7.5/10",
+      "average_score": 7.5,
+      "color": null,
+      "summary": "",
+      "strengths": [],
+      "weaknesses": [],
+      "interpretation": "",
+      "variables": [
+        {
+          "id": "seguridad_ciudadana_8_3_10",
+          "name": "Seguridad ciudadana — 8.3/10",
+          "block_id": "seguridad_y_orden_publico_7_5_10",
+          "final_score": 8.33,
+          "rating_label": "sólido",
+          "summary": "La propuesta de seguridad ciudadana se centra en la creación de la Plataforma Nacional de Análisis Criminal (PNAC) que integra datos de diversas instituciones para mejorar la respuesta al crimen. Además, incluye la implementación de 8 Zonas Seguras y un sistema de respuesta de emergencias, con metas claras de reducción de extorsiones y tiempos de respuesta.",
+          "strengths": [
+            "Integración de datos de cinco instituciones",
+            "Definición clara de Zonas Seguras",
+            "Metas cuantificadas y ambiciosas"
+          ],
+          "weaknesses": [
+            "Falta de presupuesto para la PNAC y Zonas Seguras",
+            "Ausencia de estrategia contra el narcotráfico",
+            "No se menciona coordinación con gobiernos locales"
+          ],
+          "gaps": [
+            "No hay estrategia de prevención social del delito",
+            "No se especifica el costo de implementación"
+          ],
+          "conclusion": "La propuesta es técnicamente sólida y coherente, aunque sufre de debilidades significativas en la falta de presupuesto y estrategia contra el narcotráfico.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2
+          },
+          "criteria_sum": 10,
+          "formula_result": 8.33,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2,
+            "sum": 10,
+            "final": 8.33
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El diagnóstico refleja la alta percepción de inseguridad y el aumento de delitos, justificando el puntaje D.",
+            "propuesta": "La propuesta es clara y bien estructurada, lo que justifica el puntaje P.",
+            "medidas": "Las medidas son concretas y específicas, justificando el puntaje M.",
+            "implementacion": "La implementación requiere cambios significativos y no se detalla el presupuesto, justificando el puntaje Im.",
+            "viabilidad": "La viabilidad es limitada por la falta de presupuesto y estrategia, justificando el puntaje V.",
+            "especificidad": "La especificidad es alta en las medidas propuestas, justificando el puntaje E."
+          },
+          "analysis_sections": {
+            "definicion": "La variable de seguridad ciudadana evalúa las estrategias y propuestas del gobierno para garantizar la protección de los ciudadanos frente a la delincuencia y el crimen organizado.",
+            "importancia": "La seguridad ciudadana es fundamental para el desarrollo del país, ya que la percepción de inseguridad afecta la inversión, el turismo y el crecimiento económico sostenible.",
+            "diagnostico_externo": "El contexto peruano presenta un alto nivel de inseguridad, con un 85% de la población sintiéndose insegura y un aumento significativo en delitos como la extorsión, lo que refleja un grave problema social.",
+            "propuesta_plan": "El plan propone la creación de la Plataforma Nacional de Análisis Criminal (PNAC), que integrará datos de diversas instituciones para mejorar la respuesta ante el crimen, así como la implementación de 8 Zonas Seguras en áreas críticas.",
+            "medidas_concretas": "Entre las medidas específicas se incluyen la integración de cinco instituciones clave, la creación de laboratorios criminalísticos en todas las regiones y protocolos anti-extorsión con protección a víctimas.",
+            "implementacion_necesaria": "Para implementar estas propuestas se requieren cambios institucionales y legales, así como un presupuesto claro que aún no ha sido especificado en el plan.",
+            "impacto_potencial": "Si se implementa correctamente, la PNAC podría transformar la respuesta al crimen organizado y reducir significativamente la extorsión y el tiempo de respuesta ante emergencias.",
+            "vacios": "El plan carece de un presupuesto definido, no aborda la problemática del narcotráfico y no establece cómo se coordinará con los gobiernos locales ni incluye una estrategia de prevención social del delito.",
+            "evaluacion_tecnica": "La propuesta de seguridad ciudadana es considerada bien desarrollada y coherente, aunque la omisión del narcotráfico representa una debilidad estructural importante.",
+            "conclusion": "En resumen, la variable de seguridad ciudadana presenta una propuesta sólida, pero necesita abordar vacíos críticos para ser verdaderamente efectiva en la lucha contra la delincuencia."
+          },
+          "sources": []
+        },
+        {
+          "id": "reforma_policial_6_7_10",
+          "name": "Reforma policial — 6.7/10",
+          "block_id": "seguridad_y_orden_publico_7_5_10",
+          "final_score": 6.67,
+          "rating_label": "moderado",
+          "summary": "El PBG propone equipar tecnológicamente a la PNP mediante la implementación de la PNAC y laboratorios criminalísticos. Sin embargo, no se presenta una reforma institucional concreta que aborde la meritocracia, la capacitación y la reducción de la corrupción interna.",
+          "strengths": [
+            "Propuesta de equipamiento tecnológico",
+            "Enfoque en la reducción de la corrupción interna",
+            "Reconocimiento de la debilidad estructural de la PNP"
+          ],
+          "weaknesses": [
+            "Falta de propuesta de reforma de la carrera policial",
+            "No se menciona un incremento salarial",
+            "Ausencia de un plan de formación y capacitación"
+          ],
+          "gaps": [
+            "No hay estrategia de control interno y disciplinario",
+            "No se propone mejorar la relación PNP-ciudadanía"
+          ],
+          "conclusion": "La propuesta presenta avances tecnológicos, pero carece de un enfoque integral para reformar la PNP como institución. Sin cambios en salarios y estructura, la corrupción y la ineficiencia persistirán.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1
+          },
+          "criteria_sum": 8,
+          "formula_result": 6.67,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1,
+            "sum": 8,
+            "final": 6.67
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El diagnóstico es correcto al identificar la debilidad estructural de la PNP, lo que justifica el puntaje D.",
+            "propuesta": "La propuesta se centra en la tecnología, pero no aborda reformas necesarias, justificando el puntaje P.",
+            "medidas": "Las medidas son limitadas y no concretas, lo que justifica el puntaje M.",
+            "implementacion": "La implementación carece de un plan claro, justificando el puntaje Im.",
+            "viabilidad": "La viabilidad es baja debido a la falta de propuestas concretas, justificando el puntaje V.",
+            "especificidad": "La especificidad es limitada, ya que no se detallan acciones concretas, justificando el puntaje E."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa la propuesta de reforma policial en el contexto de la Policía Nacional del Perú (PNP), analizando su estructura, funcionamiento y las medidas planteadas para mejorar su eficacia y eficiencia.",
+            "importancia": "La reforma policial es crucial para garantizar la seguridad y el orden público en el país. Sin una PNP sólida y bien estructurada, las estrategias de seguridad no pueden ser efectivas, lo que afecta directamente la calidad de vida de los ciudadanos.",
+            "diagnostico_externo": "Actualmente, la PNP enfrenta serios problemas estructurales, como la provisionalidad en los cargos directivos, salarios bajos y una capacitación insuficiente. Estos factores contribuyen a la corrupción interna y a la desconfianza de la ciudadanía hacia la institución.",
+            "propuesta_plan": "El plan de gobierno propone equipar a la PNP con tecnología avanzada, como la PNAC y laboratorios criminalísticos, y menciona la necesidad de reorganizar la institución con un enfoque en meritocracia y especialización.",
+            "medidas_concretas": "Sin embargo, el plan carece de medidas concretas sobre la reforma de la carrera policial, el incremento salarial, la capacitación del personal y el control interno. Se enfoca más en la tecnificación que en una reforma estructural profunda.",
+            "implementacion_necesaria": "Para implementar las propuestas, se requiere un compromiso claro de inversión en salarios y formación, así como un plan detallado para la selección y promoción de los efectivos policiales basado en méritos.",
+            "impacto_potencial": "Si se implementan correctamente las propuestas, se podría mejorar significativamente la eficacia de la PNP, reducir la corrupción y aumentar la confianza de la ciudadanía en la institución, lo que a su vez contribuiría a una mayor seguridad en el país.",
+            "vacios": "La propuesta es incompleta, ya que no aborda aspectos fundamentales como la reforma de la carrera policial, el aumento de salarios y la mejora de la relación entre la PNP y la ciudadanía. Sin estas medidas, las soluciones tecnológicas propuestas podrían ser insuficientes.",
+            "evaluacion_tecnica": "Desde un punto de vista técnico, la propuesta presenta un diagnóstico acertado de la situación actual, pero las soluciones ofrecidas son superficiales y no abordan las causas profundas de los problemas en la PNP.",
+            "conclusion": "En resumen, aunque el PBG propone equipar tecnológicamente a la PNP, no aborda las reformas institucionales necesarias. La falta de propuestas concretas sobre salarios, formación y control interno representa una brecha significativa entre el diagnóstico y las soluciones planteadas."
+          },
+          "sources": []
+        },
+        {
+          "id": "sistema_penitenciario_6_7_10",
+          "name": "Sistema penitenciario — 6.7/10",
+          "block_id": "seguridad_y_orden_publico_7_5_10",
+          "final_score": 6.67,
+          "rating_label": "moderado",
+          "summary": "El plan propone instalar bloqueadores de señal en el 100% de los penales antes del 2028 para controlar la comunicación del crimen organizado. También sugiere separar a los internos según el tipo de crimen y fortalecer la inteligencia penitenciaria.",
+          "strengths": [
+            "Medida urgente y concreta con cronograma explícito",
+            "Separación de internos por perfil criminal",
+            "Fortalecimiento de la inteligencia penitenciaria"
+          ],
+          "weaknesses": [
+            "No aborda el problema del hacinamiento del 242%",
+            "Falta de especificación de costos para las medidas propuestas",
+            "Ausencia de un mecanismo claro para programas de reinserción"
+          ],
+          "gaps": [
+            "Estrategia para reducir el hacinamiento",
+            "Financiamiento de los bloqueadores y separación por perfil"
+          ],
+          "conclusion": "El plan es pragmático al priorizar el control del crimen organizado, pero su efectividad se ve comprometida por la falta de atención al hacinamiento. Sin una solución a este problema, las medidas de rehabilitación no podrán implementarse a gran escala.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1
+          },
+          "criteria_sum": 8,
+          "formula_result": 6.67,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1,
+            "sum": 8,
+            "final": 6.67
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El diagnóstico es insuficiente al no considerar el hacinamiento como un problema central.",
+            "propuesta": "La propuesta es clara y urgente, pero limitada en su alcance.",
+            "medidas": "Las medidas son concretas, aunque carecen de detalles sobre implementación y costos.",
+            "implementacion": "La implementación requiere cambios institucionales y legales que no están claramente definidos.",
+            "viabilidad": "La viabilidad es baja debido a la falta de recursos y estrategias para el hacinamiento.",
+            "especificidad": "La especificidad es limitada, ya que no se detallan costos ni mecanismos de financiamiento."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa el estado y las propuestas relacionadas con el sistema penitenciario en Perú, centrándose en la situación actual de los penales, la rehabilitación de internos y el control del crimen organizado desde las cárceles.",
+            "importancia": "La seguridad y el orden público son fundamentales para el desarrollo del país, ya que un sistema penitenciario eficaz puede reducir la criminalidad y facilitar la reinserción social de los delincuentes, contribuyendo así a una sociedad más segura.",
+            "diagnostico_externo": "El sistema penitenciario peruano enfrenta un grave problema de hacinamiento, con una ocupación del 242% en los penales. Además, la mayoría de los internos tiene acceso a teléfonos móviles, lo que permite la dirección de actividades delictivas desde prisión.",
+            "propuesta_plan": "El plan propone la instalación de bloqueadores de señal en el 100% de los penales antes del 2028, así como la separación de internos según el tipo de crimen y el fortalecimiento de la inteligencia penitenciaria mediante la coordinación entre INPE, PNP y MP.",
+            "medidas_concretas": "Entre las medidas específicas se incluyen la creación de programas de reinserción laboral y educativa, la revisión de la política de beneficios penitenciarios y la implementación de bloqueadores de señal en los penales.",
+            "implementacion_necesaria": "Para implementar las propuestas, se requieren cambios institucionales, como un mayor presupuesto para el INPE, así como reformas legales para la separación de internos y ajustes presupuestales que no están claramente especificados en el plan.",
+            "impacto_potencial": "Si se implementan correctamente las medidas, se podría romper el canal de comunicación del crimen organizado desde las cárceles, lo que podría llevar a una reducción significativa de las extorsiones y mejorar la rehabilitación de los internos.",
+            "vacios": "El plan carece de una estrategia clara para abordar el hacinamiento del 242%, lo que limita la viabilidad de cualquier programa de rehabilitación. Además, no se especifican los costos de las medidas propuestas ni cómo se financiarán.",
+            "evaluacion_tecnica": "Desde un punto de vista técnico, el plan es pragmático al priorizar el control del crimen organizado, pero su efectividad se ve comprometida por la falta de atención al hacinamiento y la ausencia de un análisis financiero detallado.",
+            "conclusion": "En resumen, el plan penitenciario presenta propuestas urgentes y necesarias para controlar el crimen organizado, pero su éxito dependerá de abordar el problema del hacinamiento y de contar con un financiamiento claro para su implementación."
+          },
+          "sources": []
+        },
+        {
+          "id": "politica_contra_el_crimen_organizado_8_3_10",
+          "name": "Política contra el crimen organizado — 8.3/10",
+          "block_id": "seguridad_y_orden_publico_7_5_10",
+          "final_score": 8.33,
+          "rating_label": "sólido",
+          "summary": "La propuesta más relevante es la creación de la ONECRO, que actuará como un ente coordinador para unificar la respuesta del Estado contra el crimen organizado. Se busca articular esfuerzos entre diversas instituciones y establecer una estrategia nacional anti-extorsión con metas cuantificadas.",
+          "strengths": [
+            "Creación de la ONECRO como ente coordinador",
+            "Articulación con la PNAC para cruzar datos",
+            "Coordinación internacional con DEA e Interpol"
+          ],
+          "weaknesses": [
+            "Falta de un presupuesto específico para la ONECRO",
+            "Dependencia de cambios institucionales y legales",
+            "Ambición de la meta de reducción de extorsión sin un plan claro"
+          ],
+          "gaps": [
+            "No hay estrategia específica para el narcotráfico",
+            "Omisión de vínculos entre minería ilegal y narcotráfico"
+          ],
+          "conclusion": "La propuesta es técnica y bien estructurada, pero su efectividad se ve comprometida por la falta de atención al narcotráfico, que es la principal fuente de financiamiento del crimen organizado. Sin abordar esta omisión, la ONECRO podría enfrentar limitaciones significativas en su implementación.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2
+          },
+          "criteria_sum": 10,
+          "formula_result": 8.33,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2,
+            "sum": 10,
+            "final": 8.33
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El diagnóstico es sólido al identificar el crimen organizado como la principal amenaza a la seguridad del Estado.",
+            "propuesta": "La propuesta es clara y bien definida, con un enfoque en la creación de la ONECRO y la coordinación interinstitucional.",
+            "medidas": "Las medidas son concretas y específicas, incluyendo la integración de inteligencia y la estrategia anti-extorsión.",
+            "implementacion": "La implementación depende de cambios institucionales y legales que no están garantizados.",
+            "viabilidad": "La viabilidad es limitada debido a la falta de un presupuesto claro y la necesidad de reformas legales.",
+            "especificidad": "La especificidad es adecuada en términos de metas cuantificadas, pero carece de detalles sobre el narcotráfico."
+          },
+          "analysis_sections": {
+            "definicion": "La variable evalúa la política contra el crimen organizado en el Perú, enfocándose en las estrategias y medidas propuestas para combatir esta problemática que afecta la seguridad del Estado.",
+            "importancia": "La relevancia de esta variable radica en que el crimen organizado, especialmente el narcotráfico, representa una de las principales amenazas a la seguridad y estabilidad del país, impactando en la vida cotidiana de los ciudadanos y en el desarrollo económico.",
+            "diagnostico_externo": "El diagnóstico actual revela que el Perú es el segundo productor mundial de cocaína, con un aumento significativo en la extorsión y la trata de personas, lo que indica una situación crítica que requiere atención inmediata y efectiva.",
+            "propuesta_plan": "El plan propone la creación de la Oficina Nacional de Estrategia contra el Crimen Organizado (ONECRO), que coordinará las acciones del Estado y establecerá una estrategia nacional anti-extorsión con metas claras de reducción.",
+            "medidas_concretas": "Entre las medidas concretas se incluye la creación de la ONECRO, la integración de inteligencia entre diversas instituciones y la coordinación con organismos internacionales como la DEA e Interpol.",
+            "implementacion_necesaria": "Para implementar las propuestas se requieren cambios institucionales, legales y presupuestales, incluyendo la creación de la ONECRO mediante ley y la reforma del marco legal relacionado con el lavado de activos.",
+            "impacto_potencial": "Si se implementa correctamente, la ONECRO podría mejorar la coordinación entre entidades estatales y reducir significativamente la extorsión, lo que contribuiría a desarticular las redes de crimen organizado.",
+            "vacios": "El plan presenta una omisión crítica al no abordar el narcotráfico, que es la principal fuente de financiamiento del crimen organizado, lo que limita su efectividad en la lucha contra este fenómeno.",
+            "evaluacion_tecnica": "Desde una perspectiva técnica, la propuesta es sólida en términos de coordinación y metas cuantificadas, pero su falta de enfoque en el narcotráfico representa un vacío significativo que debe ser abordado.",
+            "conclusion": "En resumen, aunque la propuesta contra el crimen organizado es bien desarrollada y técnica, su efectividad se ve comprometida por la omisión de estrategias específicas para combatir el narcotráfico."
+          },
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "justicia_y_estado_de_derecho_7_5_10",
+      "name": "JUSTICIA Y ESTADO DE DERECHO — 7.5/10",
+      "average_score": 7.5,
+      "color": null,
+      "summary": "",
+      "strengths": [],
+      "weaknesses": [],
+      "interpretation": "",
+      "variables": [
+        {
+          "id": "reforma_del_sistema_judicial_8_3_10",
+          "name": "Reforma del sistema judicial — 8.3/10",
+          "block_id": "justicia_y_estado_de_derecho_7_5_10",
+          "final_score": 8.33,
+          "rating_label": "sólido",
+          "summary": "La propuesta busca reformar el sistema judicial peruano mediante la creación del CNRJ, que coordinará las acciones de diversas instituciones para mejorar la eficiencia y el acceso a la justicia. Se plantean objetivos claros como reducir la provisionalidad judicial y modernizar tecnológicamente el sistema.",
+          "strengths": [
+            "Enfoque integral que aborda el aislamiento institucional",
+            "Metas cuantificadas y específicas para mejorar la justicia",
+            "Propuestas de modernización tecnológica y expansión de cobertura judicial"
+          ],
+          "weaknesses": [
+            "Falta de cronograma de implementación del CNRJ",
+            "Incertidumbre sobre el costo de llevar juzgados de paz a todos los distritos",
+            "Reforma del TC requiere una mayoría difícil de alcanzar en el Congreso"
+          ],
+          "gaps": [
+            "No se presenta una estrategia para resolver la carga procesal acumulada",
+            "Falta de financiamiento estable para el Fondo Nacional de Apoyo a la Justicia de Paz"
+          ],
+          "conclusion": "La propuesta es bien desarrollada y aborda problemas estructurales del sistema judicial, aunque enfrenta riesgos políticos significativos. Su éxito dependerá de la capacidad de implementar las reformas necesarias en un contexto de fragmentación política.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2
+          },
+          "criteria_sum": 10,
+          "formula_result": 8.33,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2,
+            "sum": 10,
+            "final": 8.33
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El diagnóstico refleja una situación crítica del sistema judicial con baja confianza ciudadana y alta provisionalidad.",
+            "propuesta": "La propuesta es clara y aborda múltiples aspectos del sistema judicial, con objetivos medibles.",
+            "medidas": "Las medidas son concretas y detalladas, aunque algunas requieren cambios legales y presupuestales.",
+            "implementacion": "La implementación presenta desafíos significativos, especialmente en términos de cambios institucionales y legales.",
+            "viabilidad": "La viabilidad es cuestionable debido a la necesidad de consenso político para reformas clave.",
+            "especificidad": "La especificidad es alta, con metas y acciones claramente definidas."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa la propuesta de reforma del sistema judicial en el Perú, analizando su capacidad para mejorar la eficiencia y la confianza en el Poder Judicial.",
+            "importancia": "La reforma del sistema judicial es crucial para garantizar el Estado de Derecho, la protección de los derechos ciudadanos y el acceso a la justicia, elementos fundamentales para el desarrollo social y económico del país.",
+            "diagnostico_externo": "El diagnóstico actual muestra un sistema judicial con baja confianza ciudadana y alta provisionalidad en los jueces, lo que afecta la resolución de casos y la percepción de justicia en la población.",
+            "propuesta_plan": "El plan propone cinco objetivos claros, incluyendo la reducción de la provisionalidad judicial, la modernización tecnológica del sistema y la ampliación del acceso a la justicia de paz.",
+            "medidas_concretas": "Entre las medidas específicas se incluye la creación del CNRJ, el aumento del número de magistrados del TC, la expansión de juzgados de paz y la eliminación de tasas judiciales en procesos de familia.",
+            "implementacion_necesaria": "Para implementar las propuestas se requieren cambios institucionales y legales, así como un financiamiento estable para el Fondo Nacional de Apoyo a la Justicia de Paz.",
+            "impacto_potencial": "Si se implementa correctamente, la reforma podría transformar el acceso a la justicia, mejorar la eficiencia del sistema y aumentar la confianza de la ciudadanía en las instituciones judiciales.",
+            "vacios": "Faltan detalles sobre el cronograma de implementación, el costo de expansión de juzgados de paz y una estrategia clara para abordar la carga procesal acumulada.",
+            "evaluacion_tecnica": "La propuesta es bien desarrollada y aborda problemas estructurales, aunque enfrenta riesgos políticos significativos, especialmente en la reforma del TC en un contexto de fragmentación parlamentaria.",
+            "conclusion": "La reforma del sistema judicial es una de las propuestas más completas del plan, pero su éxito dependerá de la superación de obstáculos políticos y de la claridad en su implementación."
+          },
+          "sources": []
+        },
+        {
+          "id": "lucha_contra_la_corrupcion_8_3_10",
+          "name": "Lucha contra la corrupción — 8.3/10",
+          "block_id": "justicia_y_estado_de_derecho_7_5_10",
+          "final_score": 8.33,
+          "rating_label": "sólido",
+          "summary": "La propuesta anticorrupción se centra en la creación de un ecosistema de integridad que incluye la Carrera Directiva Pública, la Plataforma 'Estado Íntegro Perú 2031' y el Registro Único de Obras y Compras del Perú (RUOCP). Se busca profesionalizar el servicio civil, hacer los procesos de contratación completamente digitales y trazables, y sancionar efectivamente la corrupción.",
+          "strengths": [
+            "Propuesta técnicamente completa",
+            "Innovación con inteligencia artificial para detección de riesgos",
+            "Fortalecimiento de la ciudadanía a través de denuncias anónimas"
+          ],
+          "weaknesses": [
+            "Dependencia del CNIBG de la PCM",
+            "Falta de estrategia para recuperar los S/ 22,000 millones en perjuicios",
+            "Inexistencia de un plan para la corrupción en gobiernos subnacionales"
+          ],
+          "gaps": [
+            "Compatibilidad entre IA anticorrupción y legislación de protección de datos personales",
+            "Cuantificación del presupuesto para el CNIBG y la Plataforma 'Estado Íntegro'"
+          ],
+          "conclusion": "La propuesta presenta un enfoque integral y bien estructurado para combatir la corrupción en el Perú. Sin embargo, su éxito dependerá de la voluntad política y de la implementación efectiva de las medidas propuestas.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2
+          },
+          "criteria_sum": 10,
+          "formula_result": 8.33,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2,
+            "sum": 10,
+            "final": 8.33
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El diagnóstico refleja la gravedad de la corrupción en el país y su impacto económico.",
+            "propuesta": "La propuesta es clara y aborda múltiples aspectos de la corrupción de manera integral.",
+            "medidas": "Las medidas son concretas y están bien definidas, aunque requieren cambios institucionales y legales.",
+            "implementacion": "La implementación presenta desafíos significativos, especialmente en términos de cambios institucionales y presupuestales.",
+            "viabilidad": "La viabilidad es cuestionable debido a la falta de cuantificación de recursos necesarios.",
+            "especificidad": "La especificidad es alta, con metas cuantificadas y un enfoque claro en la profesionalización y trazabilidad."
+          },
+          "analysis_sections": {
+            "definicion": "La variable 'Lucha contra la corrupción' evalúa las estrategias y propuestas del plan de gobierno para combatir la corrupción en el Perú, así como su efectividad y viabilidad.",
+            "importancia": "La lucha contra la corrupción es crucial para el desarrollo del país, ya que la corrupción erosiona la confianza en las instituciones, afecta la inversión y desvía recursos públicos que podrían ser utilizados para el bienestar social.",
+            "diagnostico_externo": "El diagnóstico del contexto peruano revela una situación alarmante, con altos niveles de corrupción que generan pérdidas significativas al Estado y una percepción negativa en la ciudadanía, evidenciada por la posición del Perú en el Índice de Percepción de la Corrupción.",
+            "propuesta_plan": "El plan propone cinco objetivos claros: profesionalizar el servicio civil, hacer los procesos de contratación inviolables, sancionar efectivamente la corrupción, crear una plataforma de detección de riesgos y fortalecer la participación ciudadana en la vigilancia de la corrupción.",
+            "medidas_concretas": "Las medidas específicas incluyen la creación del Centro Nacional de Integridad y Buen Gobierno, la implementación de la Plataforma 'Estado Íntegro', el Registro Único de Obras y Compras del Perú, y la Carrera Directiva Pública para asegurar la meritocracia en los cargos públicos.",
+            "implementacion_necesaria": "Para implementar estas propuestas se requieren cambios institucionales, legales y presupuestales, incluyendo la creación de nuevas leyes y la asignación de recursos adecuados para las nuevas instituciones y plataformas propuestas.",
+            "impacto_potencial": "Si se implementan correctamente, estas medidas podrían transformar el panorama de la corrupción en el Perú, reduciendo significativamente los sobreprecios en contrataciones y rompiendo el ciclo de captura política en la burocracia.",
+            "vacios": "Sin embargo, el plan presenta vacíos importantes, como la falta de una estrategia para recuperar los recursos perdidos por corrupción y la dependencia del CNIBG de la PCM, lo que podría comprometer su independencia.",
+            "evaluacion_tecnica": "Desde una perspectiva técnica, la propuesta es bien desarrollada y coherente, pero el riesgo principal radica en la ubicación del CNIBG dentro de la PCM, lo que podría limitar su efectividad.",
+            "conclusion": "En conclusión, la variable 'Lucha contra la corrupción' presenta una propuesta integral y técnicamente sólida, aunque enfrenta desafíos significativos en su implementación y en la garantía de independencia institucional."
+          },
+          "sources": []
+        },
+        {
+          "id": "autonomia_de_instituciones_6_7_10",
+          "name": "Autonomía de instituciones — 6.7/10",
+          "block_id": "justicia_y_estado_de_derecho_7_5_10",
+          "final_score": 6.67,
+          "rating_label": "moderado",
+          "summary": "El PBG propone reformas para garantizar la autonomía institucional en el Perú, incluyendo cambios constitucionales para desfasar los mandatos del BCRP y la SBS, así como la creación de Autoridades Nacionales de Control. Sin embargo, presenta contradicciones al incluir el CNIBG dentro de la PCM, lo que compromete la autonomía que busca defender.",
+          "strengths": [
+            "Propuestas sólidas para proteger la autonomía de instituciones financieras",
+            "Enfoque en la reforma del TC para restaurar credibilidad",
+            "Implementación de la Carrera Directiva Pública para reducir la captura política"
+          ],
+          "weaknesses": [
+            "Contradicción interna al colocar el CNIBG dentro de la PCM",
+            "Reformas constitucionales requieren consenso político difícil de alcanzar",
+            "No aborda la protección de reguladores de interferencias políticas"
+          ],
+          "gaps": [
+            "Falta de medidas para proteger a OSIPTEL, OSINERGMIN y SUNASS",
+            "No se menciona el sistema electoral bajo presión"
+          ],
+          "conclusion": "El PBG presenta una defensa adecuada de la autonomía institucional, pero enfrenta desafíos significativos en su implementación debido a la falta de consenso político y contradicciones internas.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1
+          },
+          "criteria_sum": 8,
+          "formula_result": 6.67,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1,
+            "sum": 8,
+            "final": 6.67
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "La erosión sistemática de la autonomía institucional justifica el puntaje D.",
+            "propuesta": "Las propuestas son relevantes pero contradictorias, lo que justifica el puntaje P.",
+            "medidas": "Las medidas son concretas pero insuficientes para abordar todas las debilidades, justificando el puntaje M.",
+            "implementacion": "Los cambios requeridos son complejos y dependen de múltiples factores, lo que justifica el puntaje Im.",
+            "viabilidad": "El consenso político necesario para las reformas es difícil de lograr, justificando el puntaje V.",
+            "especificidad": "La falta de detalles en la protección de reguladores y el sistema electoral justifica el puntaje E."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa la autonomía de las instituciones en el Perú, considerando su independencia y capacidad para operar sin interferencias políticas.",
+            "importancia": "La autonomía institucional es fundamental para garantizar una gobernanza efectiva, la estabilidad económica y la justicia, ya que permite que las instituciones actúen de manera imparcial y eficiente.",
+            "diagnostico_externo": "El contexto peruano muestra una erosión de la autonomía institucional, evidenciada por la suspensión de la JNJ, la operación del TC con magistrados vencidos y presiones sobre la SUNEDU y organismos reguladores.",
+            "propuesta_plan": "El plan propone reformas constitucionales y estructurales para asegurar la independencia de instituciones clave como el BCRP, la SBS y el TC, así como la creación de nuevas autoridades de control.",
+            "medidas_concretas": "Entre las medidas específicas se incluyen la reforma constitucional para desfasar mandatos del BCRP y SBS, la creación de Autoridades Nacionales de Control y la reforma del TC para aumentar su número de miembros.",
+            "implementacion_necesaria": "Para implementar estas propuestas se requieren cambios institucionales, legales y presupuestales, incluyendo reformas constitucionales que demandan un alto consenso político.",
+            "impacto_potencial": "Si se implementan correctamente, estas reformas podrían restaurar la credibilidad de las instituciones y reducir la captura política, fortaleciendo así el estado de derecho en el país.",
+            "vacios": "El plan carece de estrategias claras para proteger a los reguladores de interferencias políticas y presenta contradicciones internas que podrían comprometer su efectividad.",
+            "evaluacion_tecnica": "Desde una perspectiva técnica, las propuestas más sólidas requieren un consenso político que ha sido difícil de alcanzar en el contexto actual, lo que limita su viabilidad.",
+            "conclusion": "En resumen, aunque el PBG defiende la autonomía institucional, enfrenta desafíos significativos en su implementación y presenta contradicciones que deben ser abordadas para lograr un verdadero fortalecimiento de las instituciones."
+          },
+          "sources": []
+        },
+        {
+          "id": "reforma_constitucional_6_7_10",
+          "name": "Reforma constitucional — 6.7/10",
+          "block_id": "justicia_y_estado_de_derecho_7_5_10",
+          "final_score": 6.67,
+          "rating_label": "moderado",
+          "summary": "El PBG propone reformas constitucionales específicas a través de la vía ordinaria, evitando la creación de una nueva constitución. Las reformas incluyen la disociación de mandatos del BCRP y la SBS, la modificación del sistema de nombramiento de magistrados del TC y la creación de una comisión especial para revisar legislación cuestionada.",
+          "strengths": [
+            "Propuesta de reformas técnicas específicas",
+            "Evita el riesgo de una asamblea constituyente",
+            "Busca mejorar la autonomía de instituciones clave"
+          ],
+          "weaknesses": [
+            "Falta de especificidad sobre las 'leyes pro crimen'",
+            "No se detalla el texto de las reformas constitucionales",
+            "Dificultad para alcanzar los dos tercios en un Congreso fragmentado"
+          ],
+          "gaps": [
+            "No se menciona una estrategia para la aprobación de reformas",
+            "No se aborda el impacto de la fragmentación parlamentaria en la implementación"
+          ],
+          "conclusion": "La propuesta es responsable y técnica, pero enfrenta desafíos políticos significativos para su implementación. La falta de claridad en algunos aspectos limita su viabilidad.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1
+          },
+          "criteria_sum": 8,
+          "formula_result": 6.67,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1,
+            "sum": 8,
+            "final": 6.67
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El diagnóstico es adecuado, identificando la necesidad de reformas sin proponer una nueva constitución.",
+            "propuesta": "La propuesta es clara y se enfoca en reformas específicas, aunque carece de detalles en algunos puntos.",
+            "medidas": "Las medidas son limitadas y no se especifican claramente los pasos a seguir para la implementación.",
+            "implementacion": "La implementación requiere cambios institucionales y legales, pero no se detallan los mecanismos necesarios.",
+            "viabilidad": "La viabilidad es baja debido a la fragmentación del Congreso y la dificultad de alcanzar consensos.",
+            "especificidad": "La especificidad es insuficiente, ya que no se detallan las leyes a derogar ni el texto de las reformas."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas de reforma constitucional presentadas en el plan de gobierno, enfocándose en su viabilidad y adecuación al contexto político actual.",
+            "importancia": "La reforma constitucional es crucial para fortalecer el estado de derecho y la justicia en el país, garantizando la autonomía de las instituciones y la credibilidad del sistema judicial.",
+            "diagnostico_externo": "El contexto peruano se caracteriza por un parlamento fragmentado y una desconfianza generalizada en las instituciones, lo que dificulta la implementación de reformas significativas.",
+            "propuesta_plan": "El plan propone reformas específicas a la constitución a través de la vía ordinaria, evitando la creación de una nueva constitución por asamblea constituyente.",
+            "medidas_concretas": "Las medidas incluyen la disociación de los mandatos del BCRP y la SBS del ciclo presidencial, la reforma del sistema de nombramiento de magistrados del TC, y la creación de una comisión especial para revisar legislación anticonstitucional.",
+            "implementacion_necesaria": "Para implementar las propuestas se requieren cambios institucionales, legales y la aprobación en dos legislaturas consecutivas o un referéndum, además de una mayoría simple para la derogación de ciertas leyes.",
+            "impacto_potencial": "Si se implementan correctamente, estas reformas podrían mejorar la autonomía de las instituciones financieras y restaurar la credibilidad del Tribunal Constitucional, además de resolver incertidumbres jurídicas.",
+            "vacios": "El plan no especifica cuáles son las 'leyes pro crimen' a derogar ni proporciona detalles sobre el texto de las reformas, además de carecer de una estrategia clara para alcanzar los dos tercios necesarios en el Congreso.",
+            "evaluacion_tecnica": "La propuesta presenta un enfoque técnico responsable, pero enfrenta desafíos políticos significativos debido a la fragmentación del parlamento, lo que limita su viabilidad.",
+            "conclusion": "En resumen, aunque las reformas constitucionales propuestas son necesarias y técnicamente sólidas, su implementación se ve amenazada por el contexto político actual y la falta de claridad en ciertos aspectos."
+          },
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "educacion_7_1_10",
+      "name": "EDUCACIÓN — 7.1/10",
+      "average_score": 7.08,
+      "color": null,
+      "summary": "",
+      "strengths": [],
+      "weaknesses": [],
+      "interpretation": "",
+      "variables": [
+        {
+          "id": "educacion_escolar_8_3_10",
+          "name": "Educación escolar ✓ — 8.3/10",
+          "block_id": "educacion_7_1_10",
+          "final_score": 8.33,
+          "rating_label": "sólido",
+          "summary": "La propuesta educativa busca garantizar trayectorias completas, mejorar aprendizajes, revalorizar la carrera docente, universalizar el acceso a educación superior, cerrar brechas de infraestructura y consolidar gobernanza educativa. Se plantean metas específicas como alcanzar un 70% de estudiantes en nivel satisfactorio y 100% de escuelas con conectividad.",
+          "strengths": [
+            "Propuesta con objetivos claros y medibles",
+            "Instrumentos concretos como el SINEU y el sistema de alerta temprana",
+            "Enfoque en la revalorización de la carrera docente"
+          ],
+          "weaknesses": [
+            "Falta de compromiso presupuestal claro",
+            "No se cuantifica el costo del plan de infraestructura educativa",
+            "La meta del 70% en nivel satisfactorio es ambiciosa y sin precedentes"
+          ],
+          "gaps": [
+            "No se especifica cuánto se gastará en educación como porcentaje del PBI",
+            "No hay una estrategia concreta de mejora curricular"
+          ],
+          "conclusion": "La propuesta es sólida y bien estructurada, pero su viabilidad depende de un compromiso presupuestal claro. Sin un plan financiero, las metas planteadas podrían ser inalcanzables.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2
+          },
+          "criteria_sum": 10,
+          "formula_result": 8.33,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2,
+            "sum": 10,
+            "final": 8.33
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El diagnóstico presenta una situación educativa deficiente con datos claros sobre rendimiento y deserción.",
+            "propuesta": "La propuesta incluye seis objetivos específicos y metas cuantificadas que abordan los problemas identificados.",
+            "medidas": "Las medidas concretas son adecuadas y están alineadas con los objetivos propuestos.",
+            "implementacion": "La implementación requiere cambios institucionales y legales, pero no se especifican costos.",
+            "viabilidad": "La viabilidad es limitada por la falta de un compromiso presupuestal claro.",
+            "especificidad": "La propuesta es específica en sus metas y en los instrumentos a utilizar."
+          },
+          "analysis_sections": {
+            "definicion": "La variable 'Educación escolar' evalúa la calidad y efectividad del sistema educativo en el Perú, centrándose en la formación de estudiantes en niveles de secundaria y su capacidad para alcanzar aprendizajes significativos.",
+            "importancia": "La educación escolar es fundamental para el desarrollo del capital humano, influyendo directamente en la productividad, el ingreso y la movilidad social a largo plazo, lo que a su vez impacta en el crecimiento económico del país.",
+            "diagnostico_externo": "El diagnóstico actual revela que el Perú presenta resultados deficientes en evaluaciones internacionales como PISA, con un bajo porcentaje de estudiantes alcanzando niveles satisfactorios en comprensión lectora y matemáticas, además de una alta tasa de deserción escolar, especialmente en zonas rurales.",
+            "propuesta_plan": "El plan propone seis objetivos clave, incluyendo la implementación de un sistema de alerta temprana para prevenir la deserción escolar, mejorar los aprendizajes en áreas críticas, revalorizar la carrera docente y garantizar el acceso universal a la educación superior.",
+            "medidas_concretas": "Entre las medidas concretas se incluyen la creación del SINEU para integrar datos educativos, la implementación de modalidades educativas interculturales y la meta de que el 50% de los docentes alcancen escalas salariales 4–7.",
+            "implementacion_necesaria": "Para implementar las propuestas se requieren cambios institucionales, legales y presupuestales, incluyendo la reforma de la Ley de Reforma Magisterial y la cuantificación de los costos asociados a la infraestructura educativa y al aumento salarial docente.",
+            "impacto_potencial": "Si se implementan correctamente las propuestas, se podría lograr una mejora significativa en los aprendizajes, con el potencial de retener a los 380,000 estudiantes que abandonan cada año y cerrar brechas digitales a través de la conectividad universal.",
+            "vacios": "El plan carece de un compromiso claro sobre el gasto en educación como porcentaje del PBI, no cuantifica el incremento salarial docente ni los costos de infraestructura, y la meta de alcanzar un 70% de estudiantes en nivel satisfactorio es ambiciosa y carece de una estrategia curricular concreta.",
+            "evaluacion_tecnica": "Desde una perspectiva técnica, la propuesta es sólida y bien estructurada, con instrumentos concretos y metas específicas, aunque su viabilidad se ve comprometida por la falta de claridad en el financiamiento y la necesidad de triplicar los resultados actuales en un corto plazo.",
+            "conclusion": "En resumen, la variable 'Educación escolar' presenta una propuesta bien desarrollada con objetivos claros y medidas concretas, pero enfrenta desafíos significativos en términos de financiamiento y la ambición de sus metas de aprendizaje."
+          },
+          "sources": []
+        },
+        {
+          "id": "infraestructura_educativa_5_0_10",
+          "name": "Infraestructura educativa — 5.0/10",
+          "block_id": "educacion_7_1_10",
+          "final_score": 5,
+          "rating_label": "débil",
+          "summary": "El PBG propone un plan multianual para cerrar brechas en infraestructura educativa, priorizando riesgo, equidad y resiliencia. Se establecen metas ambiciosas como lograr 0% de locales en riesgo de colapso y 100% de conectividad en escuelas.",
+          "strengths": [
+            "Metas claras y ambiciosas",
+            "Enfoque en equidad y resiliencia",
+            "Reconocimiento de la importancia de la infraestructura educativa"
+          ],
+          "weaknesses": [
+            "Falta de financiamiento identificado",
+            "No se menciona el papel de gobiernos regionales",
+            "Ausencia de cronograma para la implementación"
+          ],
+          "gaps": [
+            "Déficit de S/ 28,000 millones sin fuente de financiamiento",
+            "Propuestas sin respaldo fiscal"
+          ],
+          "conclusion": "La propuesta es ambiciosa pero carece de viabilidad debido a la falta de financiamiento. Sin un plan claro para cubrir el déficit, las metas son solo aspiraciones.",
+          "criteria": {
+            "implementacion": 0,
+            "especificidad": 0,
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "viabilidad": 1
+          },
+          "criteria_sum": 6,
+          "formula_result": 5,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 0,
+            "viabilidad": 1,
+            "especificidad": 0,
+            "sum": 6,
+            "final": 5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El diagnóstico revela un deterioro significativo en la infraestructura educativa, justificando el puntaje D.",
+            "propuesta": "La propuesta es ambiciosa pero carece de detalles sobre financiamiento, justificando el puntaje P.",
+            "medidas": "Las medidas son insuficientes para abordar el déficit, justificando el puntaje M.",
+            "implementacion": "No se presenta un plan de implementación claro, justificando el puntaje Im.",
+            "viabilidad": "La falta de financiamiento hace que la propuesta no sea viable, justificando el puntaje V.",
+            "especificidad": "La propuesta carece de especificidad en cuanto a fuentes de financiamiento, justificando el puntaje E."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa la calidad y adecuación de la infraestructura educativa en el país, considerando aspectos como el estado físico de los locales escolares y la disponibilidad de conectividad a internet.",
+            "importancia": "La infraestructura educativa es fundamental para garantizar el acceso y la calidad del aprendizaje. Una infraestructura inadecuada puede afectar la seguridad de estudiantes y docentes, así como limitar las oportunidades de aprendizaje en un mundo cada vez más digital.",
+            "diagnostico_externo": "Actualmente, el 54% de los locales escolares públicos en Perú presenta algún nivel de deterioro, y el 12% está en riesgo de colapso. Además, solo el 48% de las escuelas cuenta con conectividad a internet, lo que agrava la exclusión educativa, especialmente en zonas rurales.",
+            "propuesta_plan": "El plan propone un enfoque multianual para cerrar las brechas en infraestructura educativa, priorizando la reducción del riesgo, la equidad y la resiliencia. Se establecen estándares mínimos de calidad e inclusión, así como la meta de lograr conectividad integral del 100% en todos los locales escolares.",
+            "medidas_concretas": "Entre las medidas específicas se incluyen la construcción de infraestructura flexible y multipropósito, así como la implementación de criterios de sostenibilidad ambiental. También se plantea la eliminación del riesgo de colapso en los locales escolares.",
+            "implementacion_necesaria": "Para implementar estas propuestas, se requiere un financiamiento significativo, estimado en S/ 28,000 millones, así como un cronograma claro y la identificación de fuentes de financiamiento. Es crucial involucrar a los gobiernos regionales en el proceso.",
+            "impacto_potencial": "Si se implementan correctamente las propuestas, se podría mejorar significativamente la calidad de la educación en el país, garantizando un entorno seguro para el aprendizaje y acceso equitativo a la educación digital.",
+            "vacios": "El plan carece de un financiamiento identificado para cubrir el déficit de S/ 28,000 millones, lo que hace que las metas propuestas sean poco más que aspiraciones. No se menciona un cronograma ni el papel de los gobiernos regionales en el financiamiento.",
+            "evaluacion_tecnica": "Desde una perspectiva técnica, la propuesta presenta metas ambiciosas pero carece de un respaldo fiscal sólido. Sin un presupuesto claro y fuentes de financiamiento, las metas de 0% en riesgo y 100% de conectividad son inviables.",
+            "conclusion": "En resumen, la variable de infraestructura educativa refleja una propuesta ambiciosa pero sin respaldo fiscal, lo que limita su viabilidad y efectividad en el corto y mediano plazo."
+          },
+          "sources": []
+        },
+        {
+          "id": "educacion_superior_7_5_10",
+          "name": "Educación superior ✓ — 7.5/10",
+          "block_id": "educacion_7_1_10",
+          "final_score": 7.5,
+          "rating_label": "sólido",
+          "summary": "La propuesta busca aumentar el acceso a educación superior del 39% al 60% para 2031, priorizando a estudiantes de zonas rurales y pueblos originarios. Se plantea fortalecer PRONABEC y articular institutos técnicos con sectores productivos para mejorar la empleabilidad.",
+          "strengths": [
+            "Enfoque en equidad territorial",
+            "Fortalecimiento de PRONABEC como instrumento clave",
+            "Articulación de IEST y CETPRO con sectores productivos"
+          ],
+          "weaknesses": [
+            "Falta de presupuesto para nuevas universidades regionales",
+            "Riesgo de sacrificar calidad por aumento de cobertura",
+            "No se aborda el financiamiento estudiantil más allá de PRONABEC"
+          ],
+          "gaps": [
+            "Ausencia de estrategia de calidad en la expansión",
+            "Falta de reforma del sistema de admisión universitaria"
+          ],
+          "conclusion": "La propuesta es bien desarrollada y tiene un enfoque correcto en equidad, aunque presenta debilidades significativas en términos de presupuesto y calidad. Es crucial abordar estos aspectos para garantizar una educación superior efectiva.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2
+          },
+          "criteria_sum": 9,
+          "formula_result": 7.5,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2,
+            "sum": 9,
+            "final": 7.5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El diagnóstico refleja la situación actual de la educación superior y las brechas existentes.",
+            "propuesta": "La propuesta es clara y establece metas cuantificables para mejorar el acceso a la educación superior.",
+            "medidas": "Las medidas son concretas y están alineadas con los objetivos propuestos.",
+            "implementacion": "La implementación requiere cambios institucionales y legales que no están completamente detallados.",
+            "viabilidad": "La viabilidad es cuestionable debido a la falta de presupuesto para nuevas universidades.",
+            "especificidad": "La especificidad es adecuada, con metas claras y un enfoque en grupos prioritarios."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa la situación y propuestas relacionadas con la educación superior en el Perú, enfocándose en el acceso, calidad y equidad en la formación de capital humano calificado.",
+            "importancia": "La educación superior es fundamental para la movilidad social y el desarrollo del capital humano, lo que a su vez impacta en la competitividad y crecimiento económico del país.",
+            "diagnostico_externo": "En el Perú, solo el 39% de los jóvenes entre 18 y 24 años accede a educación superior, con una brecha significativa entre áreas urbanas y rurales. La tasa de empleabilidad de los egresados universitarios es del 62%, lo que indica desafíos en la conexión entre educación y mercado laboral.",
+            "propuesta_plan": "El plan propone aumentar el acceso a educación superior del 39% al 60% para 2031, fortalecer PRONABEC priorizando a estudiantes de zonas rurales y promover carreras estratégicas en áreas clave como ciencia y tecnología.",
+            "medidas_concretas": "Se incluyen medidas como la articulación de institutos técnicos y centros técnico-productivos con sectores productivos, el fortalecimiento de SUNEDU y la meta de que al menos el 50% de los becarios provengan de zonas rurales.",
+            "implementacion_necesaria": "Para implementar las propuestas, se requieren cambios institucionales y legales, así como un aumento en el presupuesto de PRONABEC y la creación de nuevas universidades públicas regionales.",
+            "impacto_potencial": "Si se implementa correctamente, el plan podría incorporar aproximadamente 700,000 jóvenes adicionales al sistema de educación superior, mejorando la movilidad social y la empleabilidad técnica.",
+            "vacios": "El plan carece de un presupuesto claro para la creación de nuevas universidades regionales y no aborda la calidad educativa ni el financiamiento estudiantil más allá de PRONABEC.",
+            "evaluacion_tecnica": "La propuesta es bien desarrollada y enfatiza la equidad territorial, pero presenta debilidades en la falta de estrategias para garantizar la calidad educativa y el financiamiento adecuado.",
+            "conclusion": "En resumen, la variable de educación superior presenta una propuesta con un enfoque correcto en equidad y acceso, aunque enfrenta desafíos significativos en términos de calidad y financiamiento."
+          },
+          "sources": []
+        },
+        {
+          "id": "formacion_tecnica_7_5_10",
+          "name": "Formación técnica ✓ — 7.5/10",
+          "block_id": "educacion_7_1_10",
+          "final_score": 7.5,
+          "rating_label": "sólido",
+          "summary": "La propuesta busca articular los institutos técnicos con los sectores productivos y expandir la formación dual, permitiendo que los estudiantes trabajen y estudien simultáneamente. También se plantea fortalecer la certificación de competencias laborales y crear módulos de capacitación flexible, con el objetivo de certificar a 600,000 trabajadores para el 2031.",
+          "strengths": [
+            "Articulación con sectores productivos",
+            "Meta cuantificada de trabajadores certificados",
+            "Fortalecimiento de la formación dual"
+          ],
+          "weaknesses": [
+            "Ambigüedad en el financiamiento de la formación dual",
+            "Falta de presupuesto para expansión de IEST",
+            "Calidad heterogénea de IEST privados"
+          ],
+          "gaps": [
+            "No se especifica cuántos IEST nuevos se crearán",
+            "No hay estrategia para mejorar la calidad de IEST de baja calidad"
+          ],
+          "conclusion": "La propuesta está bien desarrollada y apunta en la dirección correcta, aunque presenta vacíos importantes en cuanto a financiamiento y calidad. Se requiere atención a estos aspectos para asegurar su efectividad.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2
+          },
+          "criteria_sum": 9,
+          "formula_result": 7.5,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2,
+            "sum": 9,
+            "final": 7.5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El diagnóstico identifica la formación técnica como un eslabón débil y de alta demanda en el mercado laboral.",
+            "propuesta": "La propuesta incluye medidas concretas y metas claras para mejorar la formación técnica.",
+            "medidas": "Las medidas son específicas y están alineadas con la propuesta, aunque faltan detalles sobre financiamiento.",
+            "implementacion": "La implementación requiere cambios institucionales y legales, así como coordinación entre diversas entidades.",
+            "viabilidad": "La viabilidad es limitada por la falta de presupuesto específico para la expansión de IEST.",
+            "especificidad": "La especificidad es adecuada, aunque hay ambigüedades en algunos mecanismos propuestos."
+          },
+          "analysis_sections": {
+            "definicion": "La variable 'Formación técnica' evalúa la calidad y efectividad de la educación técnica en el Perú, así como su alineación con las necesidades del mercado laboral.",
+            "importancia": "La formación técnica es crucial para el desarrollo económico del país, ya que contribuye a la creación de una fuerza laboral calificada que puede satisfacer la demanda de sectores productivos en crecimiento.",
+            "diagnostico_externo": "El Perú cuenta con una amplia red de Institutos de Educación Superior Tecnológica (IEST) y Centros de Educación Técnico Productiva (CETPRO), pero enfrenta desafíos significativos en calidad y empleabilidad, con una tasa de solo 58% de egresados que logran empleo.",
+            "propuesta_plan": "El plan de gobierno propone articular los IEST con sectores productivos, expandir la formación dual, fortalecer la certificación de competencias laborales y crear módulos de capacitación flexible.",
+            "medidas_concretas": "Se incluyen medidas como la consolidación de la gestión territorial de IEST y CETPRO, la implementación de la formación dual, la certificación de competencias con metas cuantificadas y la creación de Centros de Innovación Productiva (CITEs) en todas las regiones.",
+            "implementacion_necesaria": "Para implementar estas propuestas, se requieren cambios institucionales y legales, así como un presupuesto específico que apoye la expansión de los IEST y la certificación de competencias.",
+            "impacto_potencial": "Si se implementan correctamente, estas medidas podrían mejorar significativamente la empleabilidad técnica, facilitar la formalización laboral y reducir el desajuste entre la oferta educativa y la demanda del mercado.",
+            "vacios": "El plan carece de detalles sobre la creación de nuevos IEST, el financiamiento de la formación dual y no aborda la calidad de los IEST privados, que representan el 60% del total.",
+            "evaluacion_tecnica": "La propuesta es bien desarrollada y apunta en la dirección correcta, pero presenta vacíos importantes que podrían limitar su efectividad en la práctica.",
+            "conclusion": "En resumen, la variable 'Formación técnica' muestra un enfoque positivo hacia la mejora del sistema educativo, aunque necesita abordar aspectos críticos para garantizar su éxito."
+          },
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "salud_7_8_10",
+      "name": "SALUD — 7.8/10",
+      "average_score": 7.78,
+      "color": null,
+      "summary": "",
+      "strengths": [],
+      "weaknesses": [],
+      "interpretation": "",
+      "variables": [
+        {
+          "id": "sistema_de_salud_publica_8_3_10",
+          "name": "Sistema de salud pública — 8.3/10",
+          "block_id": "salud_7_8_10",
+          "final_score": 8.33,
+          "rating_label": "sólido",
+          "summary": "La propuesta busca integrar todos los subsistemas de salud en un solo sistema accesible con el DNI, implementar una Historia Clínica Electrónica Única y reducir el gasto de bolsillo en salud. Se plantea asegurar cobertura universal y disminuir la anemia infantil significativamente.",
+          "strengths": [
+            "Integración de subsistemas de salud",
+            "Aseguramiento universal con DNI",
+            "Historia Clínica Electrónica Única"
+          ],
+          "weaknesses": [
+            "Falta de compromiso sobre el gasto en salud como porcentaje del PBI",
+            "Metas de cobertura sin sustento fiscal verificable",
+            "Ausencia de estrategia para recursos humanos en salud"
+          ],
+          "gaps": [
+            "No se cuantifica el incremento del presupuesto de salud",
+            "No hay estrategia para integrar a EsSalud al sistema único"
+          ],
+          "conclusion": "La propuesta es ambiciosa y coherente, pero carece de un marco financiero claro que respalde sus metas. Sin un compromiso fiscal definido, las aspiraciones de cobertura y reducción de costos son difíciles de alcanzar.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2
+          },
+          "criteria_sum": 10,
+          "formula_result": 8.33,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2,
+            "sum": 10,
+            "final": 8.33
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El diagnóstico refleja la grave situación del sistema de salud en Perú, con altos costos de bolsillo y baja cobertura efectiva.",
+            "propuesta": "La propuesta es integral y busca abordar las deficiencias del sistema actual mediante la integración y el aseguramiento universal.",
+            "medidas": "Las medidas son concretas y cuantificadas, aunque requieren un respaldo financiero claro.",
+            "implementacion": "La implementación requiere cambios institucionales y legales significativos que no están completamente detallados.",
+            "viabilidad": "La viabilidad es cuestionable sin un compromiso claro de financiamiento y recursos humanos.",
+            "especificidad": "La especificidad es adecuada, con metas claras, aunque faltan detalles sobre la ejecución y financiamiento."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa el sistema de salud pública en el Perú, analizando su estructura, cobertura, calidad de atención y financiamiento.",
+            "importancia": "El acceso a salud de calidad es fundamental para el bienestar de la población y la productividad del país, siendo un derecho humano esencial que debe ser garantizado por el Estado.",
+            "diagnostico_externo": "El sistema de salud en Perú presenta una alta dependencia del gasto de bolsillo por parte de las familias, con una cobertura efectiva insuficiente y altos índices de anemia y desnutrición infantil, lo que evidencia una grave crisis en el sector.",
+            "propuesta_plan": "El plan propone integrar todos los subsistemas de salud en un único sistema accesible con solo el DNI, además de crear una Historia Clínica Electrónica Única y un Sistema Único de Emergencia Nacional.",
+            "medidas_concretas": "Se incluyen medidas como el aseguramiento universal, la creación de un tarifario único nacional, auditorías semestrales y metas específicas para reducir el gasto de bolsillo y la anemia infantil.",
+            "implementacion_necesaria": "Para implementar las propuestas se requieren cambios institucionales, legales y presupuestales, incluyendo la definición de un presupuesto claro para el sector salud.",
+            "impacto_potencial": "La correcta implementación podría reducir significativamente el gasto de bolsillo y la pobreza relacionada con gastos en salud, además de mejorar la atención y seguimiento de los pacientes.",
+            "vacios": "El plan carece de un compromiso claro sobre el incremento del gasto en salud como porcentaje del PBI, lo que deja las metas propuestas como aspiraciones sin un respaldo fiscal sólido.",
+            "evaluacion_tecnica": "La propuesta es bien desarrollada y coherente, pero su viabilidad está condicionada a la disponibilidad de recursos financieros y a la integración efectiva de los diferentes subsistemas de salud.",
+            "conclusion": "La variable de salud pública presenta una propuesta integral y ambiciosa, pero su éxito dependerá de la claridad en el financiamiento y la implementación de cambios estructurales necesarios."
+          },
+          "sources": []
+        },
+        {
+          "id": "infraestructura_hospitalaria_6_7_10",
+          "name": "Infraestructura hospitalaria — 6.7/10",
+          "block_id": "salud_7_8_10",
+          "final_score": 6.67,
+          "rating_label": "moderado",
+          "summary": "El plan propone abordar la infraestructura hospitalaria como un problema de gestión y control, enfocándose en la digitalización de los establecimientos y la prohibición de adendas en contratos de construcción. Se busca alcanzar un 90% de establecimientos de primer nivel con atención extendida y médico disponible, pero no se plantea una inversión física nueva para cerrar el déficit existente.",
+          "strengths": [
+            "Medidas de control e integridad sólidas",
+            "Prohibición de adendas que inflan costos",
+            "Digitalización de establecimientos con metas claras"
+          ],
+          "weaknesses": [
+            "No se aborda el déficit físico del primer nivel",
+            "Falta de propuesta de construcción de nuevos hospitales",
+            "El plan no cuantifica el presupuesto necesario para infraestructura"
+          ],
+          "gaps": [
+            "Ausencia de un plan de inversión física cuantificado",
+            "No se consideran las necesidades de infraestructura en regiones deficitarias"
+          ],
+          "conclusion": "Las medidas propuestas son adecuadas para mejorar la gestión, pero no abordan la urgente necesidad de inversión en infraestructura hospitalaria. Sin un plan de inversión claro, las metas de cobertura son difíciles de alcanzar.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1
+          },
+          "criteria_sum": 8,
+          "formula_result": 6.67,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1,
+            "sum": 8,
+            "final": 6.67
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El diagnóstico refleja un déficit severo en infraestructura hospitalaria, justificando el puntaje D.",
+            "propuesta": "La propuesta se centra en la gestión y control, pero carece de soluciones de inversión, justificando el puntaje P.",
+            "medidas": "Las medidas son concretas y específicas, pero no resuelven el déficit físico, justificando el puntaje M.",
+            "implementacion": "La implementación requiere cambios institucionales y legales, pero no se cuantifica el presupuesto, justificando el puntaje Im.",
+            "viabilidad": "La viabilidad es limitada debido a la falta de un plan de inversión claro, justificando el puntaje V.",
+            "especificidad": "La especificidad es baja ya que no se detallan los costos ni el presupuesto necesario, justificando el puntaje E."
+          },
+          "analysis_sections": {
+            "definicion": "La variable evalúa la infraestructura hospitalaria en el Perú, considerando su capacidad, equipamiento y distribución geográfica en relación con las necesidades de salud de la población.",
+            "importancia": "La infraestructura hospitalaria es fundamental para garantizar el acceso a servicios de salud de calidad. Sin una infraestructura adecuada, es imposible implementar políticas de cobertura universal y atender adecuadamente a la población.",
+            "diagnostico_externo": "El Perú presenta un déficit significativo en infraestructura hospitalaria, con una densidad de camas de 1.6 por 1,000 habitantes, muy por debajo del estándar de la OMS y del promedio latinoamericano. Además, el déficit en el primer nivel de atención se estima en S/ 15,000 millones.",
+            "propuesta_plan": "El plan propone abordar la infraestructura como un problema de gestión, enfocándose en la digitalización de los establecimientos, auditorías semestrales y la prohibición de adendas que inflan costos, sin contemplar una inversión física nueva significativa.",
+            "medidas_concretas": "Las medidas incluyen la digitalización de 2,577 establecimientos, auditorías semestrales con un tablero público, la prohibición de adendas en contratos de construcción y el despliegue de unidades móviles para atención en zonas alejadas.",
+            "implementacion_necesaria": "Para implementar las propuestas, se requieren cambios institucionales en el MINSA, reformas legales para eliminar adendas injustificadas y un presupuesto cuantificado que aborde el déficit de infraestructura hospitalaria.",
+            "impacto_potencial": "Si se implementan correctamente las medidas, se podría mejorar significativamente el acceso a servicios de salud en zonas rurales, resolver el cuello de botella en el primer nivel y generar ahorros en costos de construcción.",
+            "vacios": "El plan carece de una propuesta clara para cerrar el déficit físico de S/ 15,000 millones y no incluye un plan de inversión cuantificado para la construcción de nuevos hospitales en regiones deficitarias.",
+            "evaluacion_tecnica": "Desde una perspectiva técnica, las medidas de gestión y transparencia son adecuadas, pero no abordan la necesidad urgente de inversión en infraestructura física, lo que limita la efectividad del plan.",
+            "conclusion": "En resumen, aunque las medidas de control son sólidas, la falta de un plan de inversión física cuantificado hace que las metas de cobertura del primer nivel sean difíciles de alcanzar, dejando un vacío crítico en la atención de salud."
+          },
+          "sources": []
+        },
+        {
+          "id": "financiamiento_del_sistema_de_salud_8_3_10",
+          "name": "Financiamiento del sistema de salud ✓ — 8.3/10",
+          "block_id": "salud_7_8_10",
+          "final_score": 8.33,
+          "rating_label": "sólido",
+          "summary": "La propuesta se centra en innovar el financiamiento del sistema de salud mediante licencias obligatorias para medicamentos en emergencias, compras corporativas masivas y un observatorio de precios. Se busca reducir el gasto de bolsillo y mejorar la planificación presupuestaria a través de una asignación multianual vinculada a resultados.",
+          "strengths": [
+            "Instrumentos de financiamiento innovadores",
+            "Propuestas técnicamente sólidas",
+            "Meta cuantificada para reducir el gasto de bolsillo"
+          ],
+          "weaknesses": [
+            "Ausencia de compromiso de gasto en salud como porcentaje del PBI",
+            "No aborda la reforma del financiamiento de EsSalud",
+            "Falta de claridad sobre el gasto público necesario"
+          ],
+          "gaps": [
+            "Compromiso de gasto en salud",
+            "Reforma del financiamiento de EsSalud"
+          ],
+          "conclusion": "El bloque de salud presenta propuestas sólidas, pero la falta de un compromiso claro de gasto limita su viabilidad. Sin un sustento fiscal, las metas de cobertura son meras aspiraciones.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2
+          },
+          "criteria_sum": 10,
+          "formula_result": 8.33,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2,
+            "sum": 10,
+            "final": 8.33
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El diagnóstico refleja la crítica situación del gasto en salud en Perú, destacando la ineficiencia y el alto gasto de bolsillo.",
+            "propuesta": "La propuesta incluye medidas innovadoras y precedentes internacionales que podrían mejorar el sistema de salud.",
+            "medidas": "Las medidas concretas son claras y están alineadas con la propuesta, aunque requieren cambios institucionales y legales.",
+            "implementacion": "La implementación requiere cambios significativos en la estructura institucional y legal, lo que puede ser un desafío.",
+            "viabilidad": "La viabilidad es cuestionable debido a la falta de un compromiso de gasto claro y la necesidad de reformas adicionales.",
+            "especificidad": "La especificidad es adecuada, con detalles sobre las medidas y metas propuestas."
+          },
+          "analysis_sections": {
+            "definicion": "La variable evalúa el financiamiento del sistema de salud en Perú, analizando cómo se estructura el financiamiento, quiénes son los responsables de pagarlo y cómo se distribuyen los recursos entre la población.",
+            "importancia": "El financiamiento adecuado es crucial para garantizar un sistema de salud equitativo y sostenible. Un sistema de salud bien financiado puede reducir el gasto de bolsillo y mejorar el acceso a servicios de salud para toda la población.",
+            "diagnostico_externo": "Actualmente, el gasto público en salud en Perú es del 3.5% del PBI, uno de los más bajos de América del Sur. Además, el gasto de bolsillo representa el 34% del gasto total, lo que empobrece a muchas familias y refleja ineficiencias en la planificación del presupuesto del sector salud.",
+            "propuesta_plan": "El plan propone el uso de licencias obligatorias para la producción de medicamentos genéricos en situaciones de emergencia, así como la implementación de compras corporativas masivas para negociar precios más bajos. También sugiere la creación de un observatorio de precios de medicamentos y una asignación multianual del presupuesto de salud vinculada a resultados.",
+            "medidas_concretas": "Entre las medidas específicas se incluyen las compras corporativas a través de PERÚ COMPRAS y organismos internacionales, la creación de un observatorio de precios bajo DIGEMID/MINSA, y la implementación de un tarifario único nacional para el intercambio prestacional entre subsistemas.",
+            "implementacion_necesaria": "Para implementar estas propuestas, se requieren cambios institucionales, como el fortalecimiento de PERÚ COMPRAS y la creación del observatorio de precios. También son necesarios cambios legales, como la aprobación de la Ley de licencias obligatorias y reformas en el modelo presupuestario hacia una asignación multianual.",
+            "impacto_potencial": "Si se implementan correctamente, las compras corporativas podrían reducir el costo de medicamentos entre un 30% y un 60%. Además, la presupuestación multianual mejoraría la planificación y podría disminuir el gasto concentrado en el último trimestre del año.",
+            "vacios": "Una de las principales omisiones es la falta de un compromiso claro sobre el gasto en salud como porcentaje del PBI. Esto limita la viabilidad de las metas propuestas y deja sin abordar la reforma del financiamiento de EsSalud y la portabilidad del seguro entre empleadores.",
+            "evaluacion_tecnica": "La propuesta presenta instrumentos de financiamiento innovadores y técnicamente sólidos, como las compras corporativas y las licencias obligatorias. Sin embargo, la ausencia de un compromiso de gasto en salud es una debilidad crítica que afecta la credibilidad del plan.",
+            "conclusion": "En resumen, el financiamiento del sistema de salud es una variable bien desarrollada en el plan, con propuestas innovadoras y técnicamente correctas, aunque su efectividad se ve comprometida por la falta de un compromiso claro de gasto público en salud."
+          },
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "politica_social_6_1_10",
+      "name": "POLÍTICA SOCIAL — 6.1/10",
+      "average_score": 6.11,
+      "color": null,
+      "summary": "",
+      "strengths": [],
+      "weaknesses": [],
+      "interpretation": "",
+      "variables": [
+        {
+          "id": "reduccion_de_pobreza_6_7_10",
+          "name": "Reducción de pobreza — 6.7/10",
+          "block_id": "politica_social_6_1_10",
+          "final_score": 6.67,
+          "rating_label": "moderado",
+          "summary": "La propuesta se basa en una estrategia de crecimiento económico inclusivo, reforma de programas sociales y universalización de servicios básicos. Se busca reducir la pobreza monetaria al 20% y eliminar prácticamente la pobreza extrema para 2031.",
+          "strengths": [
+            "Orientación hacia un crecimiento económico inclusivo",
+            "Reforma de programas sociales con enfoque productivo",
+            "Meta clara de reducción de pobreza"
+          ],
+          "weaknesses": [
+            "Dependencia del crecimiento económico del 5%",
+            "Falta de un plan específico para la pobreza rural estructural",
+            "Ausencia de un vínculo claro con un sistema de protección social universal"
+          ],
+          "gaps": [
+            "No hay tratamiento diferenciado para regiones con alta pobreza",
+            "No se cuantifica el presupuesto adicional necesario"
+          ],
+          "conclusion": "La propuesta tiene un enfoque correcto, pero su efectividad depende de condiciones económicas que no están garantizadas. Se requiere un plan alternativo para abordar la pobreza rural y asegurar la sostenibilidad de la estrategia.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1
+          },
+          "criteria_sum": 8,
+          "formula_result": 6.67,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1,
+            "sum": 8,
+            "final": 6.67
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "La pobreza actual es alta y se ha incrementado desde la pandemia, lo que justifica un puntaje bajo.",
+            "propuesta": "La propuesta es clara y busca metas específicas, lo que justifica un puntaje medio.",
+            "medidas": "Las medidas son limitadas y no están completamente desarrolladas, justificando un puntaje bajo.",
+            "implementacion": "La implementación requiere cambios significativos y no se detalla un plan claro, lo que justifica un puntaje bajo.",
+            "viabilidad": "La viabilidad depende de factores externos como el crecimiento económico, lo que justifica un puntaje bajo.",
+            "especificidad": "La falta de atención a la pobreza rural y a regiones específicas justifica un puntaje bajo."
+          },
+          "analysis_sections": {
+            "definicion": "La variable 'Reducción de pobreza' evalúa las estrategias y medidas propuestas para disminuir la pobreza monetaria y extrema en el país, así como su enfoque en la inclusión social y el desarrollo económico.",
+            "importancia": "La reducción de la pobreza es fundamental para el desarrollo sostenible del Perú, ya que impacta directamente en la calidad de vida de la población, la cohesión social y la estabilidad económica del país.",
+            "diagnostico_externo": "El diagnóstico actual muestra que la pobreza monetaria se sitúa en 29.0% y la pobreza extrema en 5.7%, con una pobreza rural alarmante del 45.7%. Las regiones más afectadas presentan cifras preocupantes que requieren atención inmediata.",
+            "propuesta_plan": "El plan de gobierno propone una estrategia de tres pilares: crecimiento económico inclusivo, reforma de programas sociales con enfoque productivo y universalización de servicios básicos, con metas claras para reducir la pobreza monetaria al 20% para 2031.",
+            "medidas_concretas": "Entre las medidas concretas se incluyen el rediseño de programas sociales con un enfoque territorial, priorización de transferencias directas y la creación de cooperativas de nueva generación para pequeños productores.",
+            "implementacion_necesaria": "Para implementar estas propuestas se requieren cambios institucionales, legales y presupuestales, incluyendo la reforma del sistema de focalización y la creación de un Sistema Nacional de Cuidados.",
+            "impacto_potencial": "Si se logra el crecimiento del 5% y la reducción de la informalidad al 50%, la meta de pobreza del 20% es alcanzable. Además, el rediseño de programas podría tener un impacto positivo similar al de experiencias exitosas en otros países.",
+            "vacios": "La estrategia presenta vacíos significativos, como la dependencia del crecimiento económico y la falta de un plan específico para abordar la pobreza rural estructural. También carece de un enfoque diferenciado para las regiones más afectadas.",
+            "evaluacion_tecnica": "Desde una perspectiva técnica, la propuesta tiene una orientación conceptual adecuada, pero su debilidad radica en la falta de un plan alternativo en caso de que no se alcance el crecimiento proyectado.",
+            "conclusion": "En resumen, aunque la propuesta para la reducción de pobreza es prometedora, su efectividad dependerá de la implementación de reformas estructurales y de un enfoque más específico hacia la pobreza rural y las regiones más vulnerables."
+          },
+          "sources": []
+        },
+        {
+          "id": "programas_sociales_6_7_10",
+          "name": "Programas sociales — 6.7/10",
+          "block_id": "politica_social_6_1_10",
+          "final_score": 6.67,
+          "rating_label": "moderado",
+          "summary": "El Sistema Nacional de Cuidados es la propuesta más innovadora del plan, reconociendo el trabajo de cuidado como real y creando infraestructura de apoyo. Además, se busca rediseñar los programas sociales para ayudar a las familias a salir de la pobreza de manera productiva.",
+          "strengths": [
+            "Reconocimiento del trabajo de cuidado como labor real",
+            "Propuesta de rediseño de programas sociales con enfoque productivo",
+            "Afiliación automática al sistema de pensiones para trabajadores independientes"
+          ],
+          "weaknesses": [
+            "No identifica cuáles programas se reformarán, fusionarán o eliminarán",
+            "No cuantifica el costo del Sistema Nacional de Cuidados",
+            "No aborda cómo reducir el 30% de filtración en los programas"
+          ],
+          "gaps": [
+            "Falta de mecanismos para que beneficiarios se gradúen de los programas",
+            "No se especifica el presupuesto del Sistema Nacional de Cuidados"
+          ],
+          "conclusion": "La propuesta tiene un enfoque innovador, pero carece de detalles cruciales para su implementación efectiva. Sin claridad en los cambios a realizar, es difícil evaluar su viabilidad.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1
+          },
+          "criteria_sum": 8,
+          "formula_result": 6.67,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1,
+            "sum": 8,
+            "final": 6.67
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El diagnóstico revela una falta de coordinación y cobertura en los programas sociales existentes.",
+            "propuesta": "La propuesta introduce un enfoque innovador con el Sistema Nacional de Cuidados y rediseño de programas.",
+            "medidas": "Las medidas son concretas pero limitadas en detalle y alcance.",
+            "implementacion": "La implementación requiere cambios institucionales y legales que no están completamente definidos.",
+            "viabilidad": "La viabilidad es incierta debido a la falta de cuantificación y planificación detallada.",
+            "especificidad": "La especificidad es baja, ya que no se detallan los programas a modificar ni los costos asociados."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa la efectividad y la coordinación de los programas sociales en el Perú, así como su capacidad para atender las necesidades de la población en situación de vulnerabilidad.",
+            "importancia": "Los programas sociales son fundamentales para reducir la pobreza y mejorar la calidad de vida de los ciudadanos, especialmente en un país como Perú, donde una parte significativa de la población vive en condiciones de pobreza extrema.",
+            "diagnostico_externo": "El contexto actual muestra una gran cantidad de programas sociales con escasa coordinación y una alta tasa de filtración, lo que significa que muchos recursos no llegan a quienes realmente los necesitan. Además, un porcentaje considerable de hogares en pobreza extrema no está cubierto por ningún programa.",
+            "propuesta_plan": "El plan propone la creación del Sistema Nacional de Cuidados, que busca reconocer y apoyar el trabajo de cuidado, así como rediseñar los programas sociales para que sean más efectivos en la lucha contra la pobreza.",
+            "medidas_concretas": "Entre las medidas específicas se incluyen la creación del Sistema Nacional de Cuidados, la afiliación automática al sistema de pensiones para trabajadores independientes, y una Remuneración Mínima Vital progresiva para mayores de 85 años.",
+            "implementacion_necesaria": "Para implementar estas propuestas se requieren cambios institucionales y legales, así como una coordinación efectiva entre diferentes ministerios y la asignación de un presupuesto adecuado, que actualmente no está cuantificado.",
+            "impacto_potencial": "Si se implementa correctamente, el Sistema Nacional de Cuidados podría liberar a muchas mujeres para que ingresen al mercado laboral formal y aumentar la cobertura previsional de los trabajadores independientes, mejorando así la seguridad social en el país.",
+            "vacios": "El plan carece de detalles sobre qué programas específicos se reformarán, fusionarán o eliminarán, y no cuantifica el costo del Sistema Nacional de Cuidados ni presenta un mecanismo para que los beneficiarios salgan de los programas cuando mejoren su situación.",
+            "evaluacion_tecnica": "Desde una perspectiva técnica, la propuesta del Sistema Nacional de Cuidados es innovadora, pero su éxito dependerá de la claridad en la implementación y la capacidad de abordar las debilidades actuales en la filtración y cobertura de los programas sociales.",
+            "conclusion": "En resumen, aunque el Sistema Nacional de Cuidados representa un avance significativo en la política social del país, la falta de detalles y la ausencia de un plan claro para la reforma de los programas existentes son aspectos críticos que deben abordarse para garantizar su efectividad."
+          },
+          "sources": []
+        },
+        {
+          "id": "vivienda_5_0_10",
+          "name": "Vivienda — 5.0/10",
+          "block_id": "politica_social_6_1_10",
+          "final_score": 5,
+          "rating_label": "débil",
+          "summary": "El plan propone metas ambiciosas para mejorar el acceso a vivienda y saneamiento en el Perú, incluyendo aumentar el acceso a agua potable y saneamiento rural. Sin embargo, estas metas carecen de un sustento fiscal claro, lo que limita su viabilidad.",
+          "strengths": [
+            "Metas ambiciosas para mejorar el acceso a servicios básicos",
+            "Enfoque en la modernización de las Empresas Prestadoras de Servicio",
+            "Reconocimiento del déficit habitacional y la necesidad de intervención"
+          ],
+          "weaknesses": [
+            "Desconexión entre las metas propuestas y el presupuesto disponible",
+            "Falta de identificación de fuentes de financiamiento",
+            "Dependencia de subsidios masivos no cuantificados"
+          ],
+          "gaps": [
+            "Ausencia de un plan de financiamiento claro",
+            "Inexistencia de medidas específicas para el quintil más pobre"
+          ],
+          "conclusion": "La propuesta presenta buenas intenciones, pero su falta de viabilidad financiera y de implementación efectiva la convierte en una aspiración más que en un plan concreto.",
+          "criteria": {
+            "implementacion": 0,
+            "especificidad": 0,
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "viabilidad": 1
+          },
+          "criteria_sum": 6,
+          "formula_result": 5,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 0,
+            "viabilidad": 1,
+            "especificidad": 0,
+            "sum": 6,
+            "final": 5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El diagnóstico identifica correctamente el déficit habitacional y las condiciones de vivienda en el país.",
+            "propuesta": "La propuesta incluye metas claras, pero carece de un plan de financiamiento.",
+            "medidas": "Las medidas son cuantificables, pero no se especifican los recursos necesarios para su implementación.",
+            "implementacion": "No se presentan cambios institucionales o legales concretos que aseguren la implementación efectiva.",
+            "viabilidad": "La viabilidad es baja debido a la falta de financiamiento identificado para las metas propuestas.",
+            "especificidad": "La especificidad es nula, ya que no se detallan los mecanismos de financiamiento ni los plazos de ejecución."
+          },
+          "analysis_sections": {
+            "definicion": "La variable de Vivienda evalúa el estado actual del déficit habitacional en el Perú, tanto cuantitativo como cualitativo, así como el acceso a servicios básicos como agua potable y saneamiento.",
+            "importancia": "La vivienda adecuada es fundamental para el bienestar de la población, ya que impacta directamente en la salud, la educación y la calidad de vida de los ciudadanos, siendo un pilar esencial para el desarrollo social y económico del país.",
+            "diagnostico_externo": "El Perú enfrenta un déficit habitacional significativo, con 1.9 millones de viviendas necesarias, y una alta proporción de viviendas informales en Lima. Además, el acceso a servicios de saneamiento rural es alarmantemente bajo, lo que agrava la situación de vulnerabilidad de la población.",
+            "propuesta_plan": "El plan propone metas ambiciosas para mejorar el acceso a agua potable y saneamiento, así como asegurar que un porcentaje significativo de la población en pobreza tenga acceso a vivienda adecuada y que las edificaciones nuevas sean certificadas como seguras y sostenibles.",
+            "medidas_concretas": "Se incluyen medidas como la actualización de planes de desarrollo urbano en el 80% de las ciudades, el aumento del acceso a agua potable y saneamiento, y la modernización de las Empresas Prestadoras de Servicio (EPS) con contratos de gestión modernos.",
+            "implementacion_necesaria": "Para implementar estas propuestas se requieren cambios institucionales, legales y presupuestales, incluyendo un mayor presupuesto para el Ministerio de Vivienda, Construcción y Saneamiento (MVCS) y la identificación de fuentes de financiamiento para las inversiones necesarias.",
+            "impacto_potencial": "Si se implementan correctamente, las propuestas podrían reducir drásticamente el déficit de saneamiento rural, mejorando la salud pública y reduciendo la mortalidad infantil, además de aumentar la seguridad de las edificaciones frente a desastres naturales.",
+            "vacios": "El plan carece de un análisis detallado sobre la fuente de financiamiento para las ambiciosas metas propuestas, lo que genera dudas sobre su viabilidad. Además, no se abordan adecuadamente las necesidades del quintil más pobre de la población.",
+            "evaluacion_tecnica": "Desde una perspectiva técnica, las metas son adecuadas y necesarias, pero su desconexión con el presupuesto disponible y la falta de un plan de financiamiento claro limitan su efectividad y viabilidad.",
+            "conclusion": "En resumen, la variable de Vivienda presenta metas correctas pero desconectadas del contexto fiscal, lo que la convierte en una aspiración sin un plan claro para su implementación efectiva."
+          },
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "infraestructura_y_desarrollo_7_2_10",
+      "name": "INFRAESTRUCTURA Y DESARROLLO — 7.2/10",
+      "average_score": 7.22,
+      "color": null,
+      "summary": "",
+      "strengths": [],
+      "weaknesses": [],
+      "interpretation": "",
+      "variables": [
+        {
+          "id": "infraestructura_publica_5_0_10",
+          "name": "Infraestructura pública — 5.0/10",
+          "block_id": "infraestructura_y_desarrollo_7_2_10",
+          "final_score": 5,
+          "rating_label": "débil",
+          "summary": "La propuesta incluye la construcción de cinco nuevas líneas de tren que conectarían el interior del país con los puertos del Pacífico, así como la culminación de proyectos en marcha y el impulso de la electromovilidad. Se busca reducir el costo logístico del 27% al 18% del PBI para el 2031.",
+          "strengths": [
+            "Propuesta ambiciosa de integración ferroviaria",
+            "Identificación de proyectos en continuidad",
+            "Meta cuantificada para la reducción del costo logístico"
+          ],
+          "weaknesses": [
+            "Falta de financiamiento identificado para proyectos ferroviarios",
+            "Desconexión con la realidad presupuestal",
+            "Ausencia de estrategia para obras paralizadas"
+          ],
+          "gaps": [
+            "Necesidad de cambios institucionales y legales",
+            "Estrategia ausente para las 2,300 obras paralizadas"
+          ],
+          "conclusion": "La propuesta es transformadora pero carece de viabilidad debido a la falta de financiamiento y planificación. Sin una estrategia clara, los proyectos se quedan en una visión sin ejecución.",
+          "criteria": {
+            "implementacion": 0,
+            "especificidad": 0,
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "viabilidad": 1
+          },
+          "criteria_sum": 6,
+          "formula_result": 5,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 0,
+            "viabilidad": 1,
+            "especificidad": 0,
+            "sum": 6,
+            "final": 5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El diagnóstico revela un déficit significativo en infraestructura pública y un alto costo logístico.",
+            "propuesta": "La propuesta es ambiciosa pero desconectada de la realidad presupuestal.",
+            "medidas": "Las medidas son específicas pero carecen de financiamiento claro.",
+            "implementacion": "No hay un plan claro para implementar los proyectos propuestos.",
+            "viabilidad": "La viabilidad es baja debido a la falta de financiamiento y estrategia.",
+            "especificidad": "La especificidad es limitada, ya que no se identifican fuentes de financiamiento."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa la calidad y el estado de la infraestructura pública en el Perú, considerando su impacto en el crecimiento económico y la cohesión territorial.",
+            "importancia": "La infraestructura pública es fundamental para el desarrollo del país, ya que su déficit afecta directamente la competitividad y el bienestar de la población, representando una pérdida significativa del PBI anual.",
+            "diagnostico_externo": "El Perú enfrenta un alto costo logístico que representa el 27% del PBI, con una infraestructura vial y ferroviaria insuficiente y un gran número de obras públicas paralizadas que comprometen miles de millones de soles.",
+            "propuesta_plan": "El plan propone la construcción de cinco nuevas líneas de tren que conecten el interior del país con los puertos del Pacífico, así como la culminación de proyectos en marcha y el impulso de la electromovilidad.",
+            "medidas_concretas": "Se detallan las rutas ferroviarias con origen y destino, se identifican proyectos en continuidad y se presenta una hoja de ruta para la electromovilidad y plataformas de logística 4.0.",
+            "implementacion_necesaria": "Para implementar las propuestas se requieren cambios institucionales, legales y presupuestales, incluyendo una reforma del marco de APP y una estrategia para las obras paralizadas.",
+            "impacto_potencial": "La integración ferroviaria podría transformar la competitividad territorial y liberar recursos significativos al reducir el costo logístico, además de disminuir la dependencia de combustibles importados.",
+            "vacios": "La propuesta carece de financiamiento identificado para los proyectos ferroviarios, lo que la desconecta de la realidad presupuestal, y no aborda la urgente situación de las obras paralizadas.",
+            "evaluacion_tecnica": "La evaluación técnica indica que, aunque la visión de infraestructura es ambiciosa, la falta de un plan financiero sólido y la ausencia de estrategias para problemas existentes limitan su viabilidad.",
+            "conclusion": "La variable refleja una visión transformadora para la infraestructura pública, pero su desconexión con la realidad presupuestal y la falta de estrategias para problemas urgentes justifican una puntuación baja."
+          },
+          "sources": []
+        },
+        {
+          "id": "transporte_8_3_10",
+          "name": "Transporte ✓ — 8.3/10",
+          "block_id": "infraestructura_y_desarrollo_7_2_10",
+          "final_score": 8.33,
+          "rating_label": "sólido",
+          "summary": "El plan propone una estrategia de transporte multimodal con seis objetivos clave, incluyendo la mejora de infraestructura y la reducción de costos y tiempos de tránsito. Se establecen metas cuantificadas para aumentar la conectividad y la sostenibilidad en el transporte.",
+          "strengths": [
+            "Estrategia bien estructurada",
+            "MTC como institución rectora",
+            "Metas cuantificadas claras"
+          ],
+          "weaknesses": [
+            "Falta de enfoque en seguridad vial",
+            "No hay presupuesto total consolidado",
+            "Inversión en expansión ferroviaria no detallada"
+          ],
+          "gaps": [
+            "Ausencia de medidas para la seguridad vial",
+            "Falta de un presupuesto consolidado para conectividad rural"
+          ],
+          "conclusion": "El plan es sólido en su propuesta y objetivos, pero la omisión de la seguridad vial representa un riesgo significativo. Se requiere atención urgente a este aspecto para garantizar la efectividad del plan.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2
+          },
+          "criteria_sum": 10,
+          "formula_result": 8.33,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2,
+            "sum": 10,
+            "final": 8.33
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El diagnóstico presenta una situación crítica del transporte en el país, justificando el puntaje bajo.",
+            "propuesta": "La propuesta es clara y bien definida, lo que justifica el puntaje alto.",
+            "medidas": "Las medidas son concretas y cuantificadas, lo que respalda el puntaje alto.",
+            "implementacion": "La implementación presenta desafíos significativos, lo que justifica el puntaje bajo.",
+            "viabilidad": "La viabilidad es limitada por la falta de presupuesto y detalles de inversión, justificando el puntaje bajo.",
+            "especificidad": "La especificidad es alta debido a las múltiples metas cuantificadas, justificando el puntaje alto."
+          },
+          "analysis_sections": {
+            "definicion": "La variable de transporte evalúa la eficiencia y efectividad del sistema de transporte en el Perú, considerando su impacto en la logística, la integración de mercados y el acceso a servicios.",
+            "importancia": "El transporte es fundamental para el desarrollo económico del país, ya que influye en los costos logísticos, la competitividad exportadora y la conectividad de las regiones, especialmente en un país con geografía fragmentada como el Perú.",
+            "diagnostico_externo": "Actualmente, el Perú enfrenta desafíos significativos en su sistema de transporte, como altos costos logísticos, congestión vehicular en Lima y una infraestructura deficiente, lo que afecta la movilidad y la seguridad de los ciudadanos.",
+            "propuesta_plan": "El plan propone una estrategia de transporte multimodal con seis objetivos clave, que incluyen la mejora de la infraestructura y la reducción de costos y tiempos de tránsito, así como la promoción de la sostenibilidad y la inclusión territorial.",
+            "medidas_concretas": "Entre las medidas concretas se encuentran la culminación de proyectos como el Puerto de Chancay y el Tren de Cercanías, así como la implementación de hidrovías y una hoja de ruta para la electromovilidad.",
+            "implementacion_necesaria": "Para implementar las propuestas, se requieren cambios institucionales, legales y presupuestales, incluyendo un mayor presupuesto para el MTC y reformas en el marco de concesiones viales y ferroviarias.",
+            "impacto_potencial": "La correcta implementación del plan podría reducir significativamente el costo logístico y mejorar la conectividad rural, beneficiando a millones de peruanos y contribuyendo a la eficiencia económica del país.",
+            "vacios": "El plan carece de un enfoque en la seguridad vial, un aspecto crítico dado el alto índice de mortalidad por accidentes de tránsito, y no presenta un presupuesto consolidado para alcanzar las metas propuestas.",
+            "evaluacion_tecnica": "La propuesta es bien estructurada y cuenta con metas cuantificadas, pero la omisión de la seguridad vial y la falta de un presupuesto claro limitan su efectividad y viabilidad.",
+            "conclusion": "En resumen, la variable de transporte presenta una estrategia sólida con objetivos claros, pero necesita abordar urgentemente la seguridad vial y asegurar la disponibilidad de recursos para su implementación efectiva."
+          },
+          "sources": []
+        },
+        {
+          "id": "energia_8_3_10",
+          "name": "Energía ✓ — 8.3/10",
+          "block_id": "infraestructura_y_desarrollo_7_2_10",
+          "final_score": 8.33,
+          "rating_label": "sólido",
+          "summary": "La propuesta busca elevar la participación de las energías renovables no convencionales del 5% al 30% en la matriz eléctrica para 2030, alcanzar un 70% total de renovables al 2031 y electrificar el 100% de las zonas rurales. Además, se plantea la creación del Órgano Nacional de Planificación Energética y el desarrollo de un Plan Energético Nacional 2025-2050.",
+          "strengths": [
+            "Transición energética ambiciosa",
+            "Meta cuantificada del 70% de renovables",
+            "Creación de una nueva institución para la planificación energética"
+          ],
+          "weaknesses": [
+            "Falta de claridad sobre costos de proyectos",
+            "No se especifica mecanismo de subastas para inversión privada",
+            "Dependencia del 43% de combustibles importados no abordada"
+          ],
+          "gaps": [
+            "Estrategia para reducir dependencia de combustibles importados",
+            "Mecanismo de financiamiento para la transición energética"
+          ],
+          "conclusion": "La propuesta es sólida y bien estructurada, pero enfrenta desafíos significativos en términos de financiamiento y viabilidad. La falta de claridad en algunos aspectos críticos podría limitar su implementación efectiva.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2
+          },
+          "criteria_sum": 10,
+          "formula_result": 8.33,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2,
+            "sum": 10,
+            "final": 8.33
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El diagnóstico identifica la dependencia de combustibles importados y la subutilización de recursos renovables.",
+            "propuesta": "La propuesta es ambiciosa y establece metas claras para la transición energética.",
+            "medidas": "Se presentan medidas concretas como la creación del Órgano Nacional de Planificación Energética y el Plan Energético Nacional.",
+            "implementacion": "La implementación requiere cambios institucionales y legales que no están completamente detallados.",
+            "viabilidad": "La viabilidad es cuestionable debido a la falta de información sobre costos y mecanismos de financiamiento.",
+            "especificidad": "La propuesta es específica en cuanto a metas y medidas, pero carece de detalles sobre la ejecución."
+          },
+          "analysis_sections": {
+            "definicion": "La variable 'Energía' evalúa las propuestas y estrategias del plan de gobierno en relación a la producción, distribución y uso de energía en el Perú, enfocándose en la transición hacia fuentes renovables y sostenibles.",
+            "importancia": "La energía es un insumo fundamental para el desarrollo económico del país. La transición hacia fuentes limpias no solo reduce la dependencia de combustibles importados, sino que también es crucial para mitigar el cambio climático y asegurar un futuro sostenible.",
+            "diagnostico_externo": "Actualmente, el 59% de la electricidad en Perú proviene de fuentes renovables, aunque solo el 5% es de energías no convencionales como solar y eólica. Además, el país enfrenta una alta dependencia de combustibles importados, lo que lo hace vulnerable a fluctuaciones en el mercado internacional.",
+            "propuesta_plan": "El plan propone aumentar la participación de energías renovables no convencionales del 5% al 30% para 2030, alcanzar un 70% total de renovables para 2031, y electrificar el 100% de las zonas rurales. También incluye la creación de un Polo Petroquímico del Sur y el desarrollo de hidrógeno verde.",
+            "medidas_concretas": "Se establece la creación del Órgano Nacional de Planificación Energética como una nueva institución, se fija una meta cuantificada del 70% de renovables para 2031, y se presenta el Plan Energético Nacional 2025–2050 como un instrumento de planificación a largo plazo.",
+            "implementacion_necesaria": "Para implementar estas propuestas, se requieren cambios institucionales, como la creación del nuevo órgano de planificación, así como cambios legales y presupuestales que incluyan un marco regulatorio para las energías renovables y la cuantificación de costos.",
+            "impacto_potencial": "Si se logra aumentar la participación de energías renovables no convencionales, se podría reducir significativamente la dependencia de combustibles importados, disminuir los costos de energía a largo plazo y posicionar al Perú como un líder en la transición energética en la región.",
+            "vacios": "El plan carece de detalles sobre el costo de los proyectos necesarios para alcanzar las metas propuestas y no especifica un mecanismo claro para atraer inversión privada. Además, no se aborda una estrategia explícita para reducir la dependencia de combustibles importados.",
+            "evaluacion_tecnica": "La propuesta es ambiciosa y bien estructurada, con una clara identificación de metas y la creación de una nueva institución. Sin embargo, la falta de un plan financiero y de mecanismos de implementación puede poner en riesgo su viabilidad.",
+            "conclusion": "La variable 'Energía' presenta una propuesta sólida y ambiciosa para la transición energética en Perú, pero enfrenta desafíos significativos en términos de financiamiento y planificación que deben ser abordados para garantizar su éxito."
+          },
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "tecnologia_y_estado_digital_6_0_10",
+      "name": "TECNOLOGÍA Y ESTADO DIGITAL — 6.0/10",
+      "average_score": 5.63,
+      "color": null,
+      "summary": "",
+      "strengths": [],
+      "weaknesses": [],
+      "interpretation": "",
+      "variables": [
+        {
+          "id": "digitalizacion_del_estado_8_3_10",
+          "name": "Digitalización del Estado — 8.3/10",
+          "block_id": "tecnologia_y_estado_digital_6_0_10",
+          "final_score": 8.33,
+          "rating_label": "sólido",
+          "summary": "La propuesta de digitalización del Estado busca conectar al 80% de la población a internet de banda ancha y digitalizar el 85% de los trámites públicos. Incluye la creación de una institución única de gobernanza digital y la implementación de centros digitales en distritos rurales.",
+          "strengths": [
+            "Metas concretas y ambiciosas",
+            "Uso de tecnologías específicas como satélite y fibra óptica",
+            "Enfoque en la conectividad rural"
+          ],
+          "weaknesses": [
+            "Falta de costeo consolidado",
+            "Ausencia de estrategia de inclusión digital",
+            "No se identifica la fuente de financiamiento"
+          ],
+          "gaps": [
+            "No hay estrategia de alfabetización digital para adultos mayores",
+            "No hay estrategia de protección de datos personales"
+          ],
+          "conclusion": "La propuesta es bien desarrollada y ambiciosa, pero presenta debilidades significativas en la planificación financiera y en la inclusión social. Se requiere atención a los vacíos identificados para su éxito.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2
+          },
+          "criteria_sum": 10,
+          "formula_result": 8.33,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2,
+            "sum": 10,
+            "final": 8.33
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El diagnóstico refleja la situación actual del país en términos de digitalización y acceso a internet.",
+            "propuesta": "La propuesta es clara y establece metas específicas para mejorar la digitalización del Estado.",
+            "medidas": "Las medidas son concretas y están alineadas con las metas propuestas.",
+            "implementacion": "La implementación carece de un plan financiero claro y de identificación de fuentes de financiamiento.",
+            "viabilidad": "La viabilidad es cuestionable debido a la falta de un plan de financiamiento y a los altos costos estimados.",
+            "especificidad": "La especificidad es alta, ya que se mencionan tecnologías y objetivos claros."
+          },
+          "analysis_sections": {
+            "definicion": "La variable 'Digitalización del Estado' evalúa el grado de avance y las propuestas del gobierno para modernizar los servicios públicos a través de la tecnología digital, buscando mejorar la eficiencia y accesibilidad de los trámites estatales.",
+            "importancia": "La digitalización del Estado es crucial para el desarrollo del país, ya que permite optimizar recursos, reducir la burocracia y facilitar el acceso a servicios públicos, especialmente en un contexto donde la conectividad es fundamental para el crecimiento económico y social.",
+            "diagnostico_externo": "El diagnóstico actual del Perú revela que solo el 35% de los trámites públicos están completamente digitalizados y que existe una gran disparidad en el acceso a internet, especialmente en áreas rurales, lo que limita la inclusión y la eficiencia del gobierno.",
+            "propuesta_plan": "El plan propone conectar al 80% de la población a internet de banda ancha, digitalizar el 85% de los trámites públicos y asegurar la interoperabilidad de todos los sistemas del Estado, además de establecer una institución rectora única para la gobernanza digital.",
+            "medidas_concretas": "Entre las medidas concretas se incluyen la creación de un satélite nacional de telecomunicaciones, la expansión de la red de fibra óptica al 95% de los distritos y la implementación de un Centro de Desarrollo Digital en cada distrito rural.",
+            "implementacion_necesaria": "Para implementar estas propuestas se requiere una inversión significativa, estimada entre S/ 7,000 millones, sin embargo, el plan no detalla las fuentes de financiamiento ni un cronograma claro para su ejecución.",
+            "impacto_potencial": "Si se implementa correctamente, la digitalización del Estado podría transformar la relación entre el gobierno y los ciudadanos, mejorando la eficiencia administrativa y aumentando la inclusión social, especialmente para grupos vulnerables.",
+            "vacios": "El plan carece de estrategias específicas para la alfabetización digital de adultos mayores y la inclusión de personas con discapacidad, así como de un enfoque en la protección de datos personales en el contexto de la digitalización masiva.",
+            "evaluacion_tecnica": "Desde una perspectiva técnica, la propuesta es ambiciosa y bien estructurada, pero presenta debilidades en la falta de un costeo consolidado y en la identificación de fuentes de financiamiento, lo que podría comprometer su viabilidad.",
+            "conclusion": "En resumen, la variable 'Digitalización del Estado' presenta una propuesta ambiciosa y bien desarrollada, pero necesita abordar las brechas en inclusión digital y financiamiento para ser realmente efectiva."
+          },
+          "sources": []
+        },
+        {
+          "id": "innovacion_tecnologica_8_3_10",
+          "name": "Innovación tecnológica — 8.3/10",
+          "block_id": "tecnologia_y_estado_digital_6_0_10",
+          "final_score": 8.33,
+          "rating_label": "sólido",
+          "summary": "El plan propone la creación de un Ministerio de Ciencia, Tecnología e Innovación, el fortalecimiento de CONCYTEC y la implementación de parques científicos y tecnológicos en diversas regiones del país. Se busca aumentar la inversión en I+D del 0.15% al 0.6% del PBI para 2030, otorgar 1,000 becas de posgrado anuales y alcanzar 500 patentes por año para 2031.",
+          "strengths": [
+            "Creación de un Ministerio de CTI con rango ministerial",
+            "Metas cuantificadas para la inversión en I+D",
+            "Diversificación geográfica de los parques científicos"
+          ],
+          "weaknesses": [
+            "Falta de cronograma para el aumento presupuestal",
+            "No se especifican sectores tecnológicos prioritarios",
+            "Requiere cuadruplicar el presupuesto de I+D en un corto plazo"
+          ],
+          "gaps": [
+            "Falta de identificación de fuentes de financiamiento",
+            "Ausencia de un plan detallado para la implementación"
+          ],
+          "conclusion": "La propuesta es ambiciosa y bien estructurada, pero enfrenta desafíos significativos en términos de financiamiento y planificación. La falta de un cronograma y de prioridades claras puede dificultar su implementación efectiva.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2
+          },
+          "criteria_sum": 10,
+          "formula_result": 8.33,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2,
+            "sum": 10,
+            "final": 8.33
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El diagnóstico refleja una situación crítica en I+D, con bajos niveles de inversión y escasez de investigadores.",
+            "propuesta": "La propuesta es integral y busca abordar las deficiencias actuales mediante la creación de nuevas instituciones y metas claras.",
+            "medidas": "Las medidas son concretas y están alineadas con los objetivos propuestos, aunque requieren recursos significativos.",
+            "implementacion": "La implementación presenta desafíos legales y logísticos que no están completamente resueltos.",
+            "viabilidad": "La viabilidad es cuestionable debido a la falta de un plan de financiamiento claro para el aumento del presupuesto.",
+            "especificidad": "La especificidad es adecuada, aunque se echan en falta detalles sobre la priorización de sectores tecnológicos."
+          },
+          "analysis_sections": {
+            "definicion": "La variable 'Innovación tecnológica' evalúa las estrategias y propuestas del gobierno para fomentar la investigación y el desarrollo tecnológico en el país, así como la capacidad de innovación de las empresas peruanas.",
+            "importancia": "La innovación tecnológica es crucial para el desarrollo económico y social del Perú, ya que impulsa la competitividad, mejora la productividad y permite la creación de empleos de calidad en un mundo cada vez más globalizado.",
+            "diagnostico_externo": "El diagnóstico del contexto peruano revela que el país presenta una baja inversión en I+D, con solo el 0.15% del PBI, y una escasa cantidad de investigadores por millón de habitantes, lo que limita su capacidad de innovación y competitividad en el ámbito global.",
+            "propuesta_plan": "El plan propone la creación de un Ministerio de Ciencia, Tecnología e Innovación, el fortalecimiento de CONCYTEC, la creación de parques científicos y tecnológicos, y un aumento gradual de la inversión en I+D hasta alcanzar el 1% del PBI para 2030.",
+            "medidas_concretas": "Las medidas específicas incluyen la creación de un nuevo ministerio, la implementación de 6 parques científicos, la meta de otorgar 1,000 becas de posgrado anuales y alcanzar 500 patentes por año para 2031.",
+            "implementacion_necesaria": "Para implementar estas propuestas, se requiere la aprobación de leyes para crear el ministerio, la identificación de terrenos y financiamiento para los parques científicos, y un plan claro para cuadruplicar el presupuesto de I+D en un plazo de cinco años.",
+            "impacto_potencial": "Si se implementa correctamente, el plan podría transformar el panorama de la innovación en el Perú, aumentando la capacidad de investigación y desarrollo, mejorando la competitividad de las empresas y generando un entorno propicio para la creación de nuevas tecnologías.",
+            "vacios": "El plan carece de un cronograma detallado para el aumento del presupuesto y no especifica qué sectores tecnológicos se priorizarán en los parques científicos, lo que genera incertidumbre sobre su viabilidad.",
+            "evaluacion_tecnica": "Desde una perspectiva técnica, la propuesta es ambiciosa y bien estructurada, pero enfrenta desafíos significativos en términos de financiamiento y planificación que deben ser abordados para garantizar su éxito.",
+            "conclusion": "En resumen, la estrategia de innovación tecnológica es integral y bien desarrollada, pero su implementación efectiva depende de la identificación de fuentes de financiamiento y un plan claro para alcanzar las metas propuestas."
+          },
+          "sources": []
+        },
+        {
+          "id": "regulacion_de_inteligencia_artificial_1_7_10",
+          "name": "Regulación de inteligencia artificial — 1.7/10",
+          "block_id": "tecnologia_y_estado_digital_6_0_10",
+          "final_score": 1.67,
+          "rating_label": "insuficiente",
+          "summary": "El plan propone el uso de inteligencia artificial (IA) en diversas áreas del Estado, como seguridad y salud, pero carece de un marco regulatorio específico. Esto genera riesgos significativos, como la discriminación algorítmica y la falta de transparencia en decisiones automatizadas.",
+          "strengths": [
+            "Propuesta de uso de IA en múltiples sectores",
+            "Reconocimiento de la importancia de la IA en la gestión pública",
+            "Enfoque en la modernización del Estado"
+          ],
+          "weaknesses": [
+            "Falta de un marco regulatorio específico para la IA",
+            "Ausencia de principios éticos en el uso de IA",
+            "Riesgos de discriminación y opacidad en decisiones automatizadas"
+          ],
+          "gaps": [
+            "Necesidad de una Ley Marco de IA",
+            "Falta de una autoridad de supervisión de algoritmos"
+          ],
+          "conclusion": "La propuesta presenta una grave contradicción al promover el uso masivo de IA sin una regulación adecuada. Esto pone en riesgo los principios de buen gobierno y la protección de los ciudadanos.",
+          "criteria": {
+            "diagnostico": 1,
+            "propuesta": 0,
+            "medidas": 0,
+            "implementacion": 0,
+            "viabilidad": 1,
+            "especificidad": 0
+          },
+          "criteria_sum": 2,
+          "formula_result": 1.67,
+          "score_table": {
+            "diagnostico": 1,
+            "propuesta": 0,
+            "medidas": 0,
+            "implementacion": 0,
+            "viabilidad": 1,
+            "especificidad": 0,
+            "sum": 2,
+            "final": 1.67
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El diagnóstico es muy débil debido a la falta de regulación y los riesgos asociados al uso de IA.",
+            "propuesta": "La propuesta es inexistente, ya que no se presentan medidas concretas para regular la IA.",
+            "medidas": "No se especifican medidas para la implementación de una política de IA responsable.",
+            "implementacion": "No hay un plan claro para la implementación de regulaciones sobre IA.",
+            "viabilidad": "La viabilidad es baja, dado que no se presentan mecanismos de supervisión.",
+            "especificidad": "La especificidad es nula, ya que no se detallan principios o normas para el uso de IA."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa la propuesta del plan de gobierno en relación con la regulación de la inteligencia artificial (IA) y su uso en diversas políticas públicas.",
+            "importancia": "La regulación de la IA es crucial para garantizar que su implementación en el Estado sea ética, transparente y no discriminatoria, lo que impacta directamente en la confianza de los ciudadanos en las instituciones.",
+            "diagnostico_externo": "En el contexto peruano, la falta de un marco regulatorio para la IA es preocupante, especialmente cuando países vecinos como Brasil, Chile y Colombia ya están desarrollando sus propias regulaciones.",
+            "propuesta_plan": "El plan menciona el uso de IA en áreas como seguridad, anticorrupción, microfinanzas y salud, pero no presenta un marco regulatorio específico para su implementación.",
+            "medidas_concretas": "No se incluyen medidas concretas en el plan para la regulación de la IA, como leyes, autoridades de supervisión o principios éticos.",
+            "implementacion_necesaria": "Para implementar una política de IA responsable, se necesitaría una Ley Marco de IA, una autoridad de supervisión, estándares de auditoría y formación para funcionarios públicos.",
+            "impacto_potencial": "Si se implementa correctamente, una regulación adecuada de la IA podría prevenir la discriminación algorítmica y garantizar el uso ético de los datos ciudadanos.",
+            "vacios": "El plan es incompleto al no abordar la necesidad de un marco regulatorio, lo que genera una desconexión entre el uso propuesto de la IA y su gobernanza.",
+            "evaluacion_tecnica": "Desde una perspectiva técnica, la propuesta es muy débil, ya que carece de los elementos necesarios para una regulación efectiva de la IA.",
+            "conclusion": "La variable refleja una grave paradoja en el plan, donde se promueve el uso masivo de IA sin las salvaguardias necesarias, contradiciendo principios fundamentales de buen gobierno."
+          },
+          "sources": []
+        },
+        {
+          "id": "proteccion_de_datos_y_ciberseguridad_5_8_10",
+          "name": "Protección de datos y ciberseguridad — 5.8/10",
+          "block_id": "tecnologia_y_estado_digital_6_0_10",
+          "final_score": 4.17,
+          "rating_label": "débil",
+          "summary": "El plan propone la creación del Sistema Nacional de Protección de Activos Críticos (SINAPAC) para mejorar la ciberseguridad en el Estado, adoptando estándares internacionales y garantizando la recuperación rápida de sistemas críticos. Sin embargo, su enfoque es limitado al sector financiero y no aborda adecuadamente la protección de datos personales.",
+          "strengths": [
+            "Propuesta de creación del SINAPAC",
+            "Adopción de estándares internacionales de ciberseguridad",
+            "Meta de recuperación rápida de sistemas críticos"
+          ],
+          "weaknesses": [
+            "Enfoque limitado al sector financiero",
+            "Ley de Protección de Datos Personales desactualizada",
+            "Falta de estrategia de ciberseguridad para otros sectores"
+          ],
+          "gaps": [
+            "Protección de datos personales de ciudadanos",
+            "Estrategia de ciberseguridad para salud y educación"
+          ],
+          "conclusion": "La propuesta presenta instrumentos técnicos adecuados, pero su alcance es insuficiente para abordar la ciberseguridad de manera integral. Es crucial actualizar la legislación para proteger datos sensibles en un entorno digital creciente.",
+          "criteria": {
+            "diagnostico": 2,
+            "implementacion": 0,
+            "especificidad": 0,
+            "propuesta": 1,
+            "medidas": 1,
+            "viabilidad": 1
+          },
+          "criteria_sum": 5,
+          "formula_result": 4.17,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 0,
+            "viabilidad": 1,
+            "especificidad": 0,
+            "sum": 5,
+            "final": 4.17
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El diagnóstico refleja la vulnerabilidad del país ante ciberataques y la falta de preparación de las entidades públicas.",
+            "propuesta": "La propuesta es relevante pero limitada en su alcance, enfocándose principalmente en el sector financiero.",
+            "medidas": "Las medidas son concretas y específicas, aunque no abarcan todos los sectores necesarios.",
+            "implementacion": "La implementación requiere cambios institucionales y legales significativos que no están claramente definidos.",
+            "viabilidad": "La viabilidad es cuestionable debido a la falta de un presupuesto cuantificado para el SINAPAC.",
+            "especificidad": "La especificidad es baja, ya que no se detallan las acciones para otros sectores críticos."
+          },
+          "analysis_sections": {
+            "definicion": "La variable 'Protección de datos y ciberseguridad' evalúa las estrategias y medidas propuestas para salvaguardar la información personal y la infraestructura digital del Estado peruano frente a ciberataques.",
+            "importancia": "La protección de datos y la ciberseguridad son fundamentales para garantizar la confianza de los ciudadanos en el uso de servicios digitales, así como para proteger la integridad de la información sensible del Estado y de los ciudadanos.",
+            "diagnostico_externo": "El Perú enfrenta un contexto crítico en ciberseguridad, evidenciado por ciberataques recientes a instituciones clave como RENIEC y EsSalud, y una baja preparación institucional, con solo el 15% de las entidades públicas con planes de continuidad operacional.",
+            "propuesta_plan": "El plan propone la creación del Sistema Nacional de Protección de Activos Críticos (SINAPAC), la adopción de estándares internacionales de ciberseguridad y la garantía de recuperación rápida de sistemas críticos tras un ataque.",
+            "medidas_concretas": "Las medidas específicas incluyen la implementación del SINAPAC, la adopción de estándares ISO 22301 y NIST, y la exigencia de certificaciones de ciberseguridad para todas las microfinancieras.",
+            "implementacion_necesaria": "Para implementar estas propuestas, se requieren cambios institucionales, legales y presupuestales, incluyendo la creación de una agencia especializada en ciberseguridad y la actualización de la Ley 29733 de Protección de Datos Personales.",
+            "impacto_potencial": "Si se implementa correctamente, el SINAPAC podría mejorar significativamente la respuesta estatal ante ciberataques, protegiendo tanto la infraestructura digital como los datos personales de los ciudadanos.",
+            "vacios": "El enfoque del plan es limitado, ya que se centra principalmente en el sector financiero y no aborda adecuadamente la protección de datos personales en general, ni incluye estrategias para sectores críticos como salud y educación.",
+            "evaluacion_tecnica": "Desde una perspectiva técnica, aunque los instrumentos propuestos son adecuados, la falta de un enfoque integral y la necesidad urgente de actualizar la legislación existente son aspectos que debilitan la propuesta.",
+            "conclusion": "En resumen, la variable presenta instrumentos técnicos correctos, pero su alcance es insuficiente, especialmente en la protección de datos personales, lo que plantea serias preocupaciones dado el contexto de digitalización propuesto."
+          },
+          "sources": []
+        }
+      ]
+    }
+  ],
+  "_converted_from_docx": true,
+  "_converted_at": "2026-03-19T12:39:18.418Z"
+}

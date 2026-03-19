@@ -31,11 +31,13 @@ if (!fs.existsSync(CACHE_DIR)) fs.mkdirSync(CACHE_DIR, { recursive: true });
 const CRITERIA_KEYS = ['diagnostico','propuesta','medidas','implementacion','viabilidad','especificidad'];
 
 // Document abbreviation → schema key
+// NOTE: 'i' is included for documents that use "I:0" instead of "Im:0"
 const CRITERIA_MAP = {
   'd': 'diagnostico', 'diagnostico': 'diagnostico', 'diagnóstico': 'diagnostico',
   'p': 'propuesta', 'propuesta': 'propuesta',
   'm': 'medidas', 'medidas': 'medidas',
-  'im': 'implementacion', 'implementación': 'implementacion', 'implementacion': 'implementacion',
+  'i': 'implementacion', 'im': 'implementacion',
+  'implementación': 'implementacion', 'implementacion': 'implementacion',
   'v': 'viabilidad', 'viabilidad': 'viabilidad',
   'e': 'especificidad', 'especificidad': 'especificidad'
 };
@@ -283,37 +285,97 @@ function parseStructure(fullText) {
  *   criteria: {diagnostico, propuesta, medidas, implementacion, viabilidad, especificidad}
  *   criteria_sum, formula_result, final_score
  *
+ * Uses 4 strategies from most to least specific.
  * Returns only fields found confidently; others stay undefined.
+ * Also returns _parseNote for Phase 3 logging.
  */
 function extractHardData(text) {
   const result = {};
   const crit   = {};
+  let   note   = 'sin patrón';
 
-  // ── Strategy A: "Label: N" or "Label = N" patterns ────────────────────
-  // Handles: "D: 2", "Im: 1", "Diagnóstico: 2", "Especificidad = 1"
-  const RX_SINGLE = /\b(diagnostico|diagnóstico|propuesta|medidas|implementaci[oó]n|viabilidad|especificidad|D|P|M|Im|V|E)\s*[:\-=]\s*([012])\b/gi;
-  let m;
-  while ((m = RX_SINGLE.exec(text)) !== null) {
-    const key = CRITERIA_MAP[m[1].toLowerCase()];
-    if (key && crit[key] === undefined) {
-      crit[key] = parseInt(m[2], 10);
+  // ── Strategy 1: Compact full-line ─────────────────────────────────────
+  // Handles: "D:1 P:2 M:1 I:0 V:1 E:0"
+  //          "D=1, P=2, M=1, Im=0, V=1, E=0"
+  //          "D 1 / P 2 / M 1 / I 0 / V 1 / E 0"
+  //          "Rúbrica: D:1 P:2 M:1 I:0 V:1 E:0"
+  // The pattern matches D … P … M … I(m)? … V … E in order on the same text region.
+  const SEP  = '[\\s:=]*';   // optional separator after key letter
+  const BETW = '[\\s,\\/|]+'; // between pairs: spaces, commas, slashes, pipes
+  const V1   = '([012])';
+  const compactRx = new RegExp(
+    `D${SEP}${V1}${BETW}P${SEP}${V1}${BETW}M${SEP}${V1}${BETW}I(?:m)?${SEP}${V1}${BETW}V${SEP}${V1}${BETW}E${SEP}${V1}`,
+    'i'
+  );
+  const cm = compactRx.exec(text);
+  if (cm) {
+    ['diagnostico','propuesta','medidas','implementacion','viabilidad','especificidad'].forEach((k, i) => {
+      crit[k] = parseInt(cm[i + 1], 10);
+    });
+    note = 'estrategia-1-compact';
+  }
+
+  // ── Strategy 2: Long-form full names (unambiguous) ────────────────────
+  // Handles: "Diagnóstico: 2", "Viabilidad = 1", "Especificidad: 0"
+  if (Object.keys(crit).length < 6) {
+    const RX_WORD = /\b(diagnostico|diagnóstico|propuesta|medidas|implementaci[oó]n|viabilidad|especificidad)\s*[:\-=]\s*([012])\b/gi;
+    let m;
+    while ((m = RX_WORD.exec(text)) !== null) {
+      const key = CRITERIA_MAP[m[1].toLowerCase()];
+      if (key && crit[key] === undefined) {
+        crit[key] = parseInt(m[2], 10);
+        note = 'estrategia-2-fullname';
+      }
     }
   }
 
-  // ── Strategy B: header-row table "D P M Im V E" followed by values ────
-  const headerMatch = /\bD\s+P\s+M\s+Im\s+V\s+E\b/i.exec(text);
-  if (headerMatch) {
-    const after = text.slice(headerMatch.index + headerMatch[0].length);
-    const nums = after.match(/\b([012])\s+([012])\s+([012])\s+([012])\s+([012])\s+([012])\b/);
-    if (nums) {
-      const keys = ['diagnostico','propuesta','medidas','implementacion','viabilidad','especificidad'];
-      keys.forEach((k, i) => { if (crit[k] === undefined) crit[k] = parseInt(nums[i+1], 10); });
+  // ── Strategy 3: Single-letter abbreviations, start-of-line anchored ───
+  // Handles: "D: 2", "Im: 1", "I: 0", "V: 1", "E: 0" each on its own line
+  // or "- D: 2", "• P: 1" etc.
+  // We anchor to start-of-line / after bullet to avoid false matches in words.
+  if (Object.keys(crit).length < 6) {
+    const lines = text.split(/\r?\n/);
+    for (const line of lines) {
+      const t = line.trim().replace(/^[-•*▸►]\s*/, '');
+      // Match: ABBR[optional sep][value]   e.g. "D: 2", "Im 1", "I=0"
+      const lm = /^(D|P|M|Im?|V|E)\s*[:\-=]?\s*([012])\s*$/i.exec(t);
+      if (lm) {
+        const key = CRITERIA_MAP[lm[1].toLowerCase()];
+        if (key && crit[key] === undefined) {
+          crit[key] = parseInt(lm[2], 10);
+          note = 'estrategia-3-linebyline';
+        }
+      }
     }
   }
 
-  if (Object.keys(crit).length === 6) result.criteria = crit;
+  // ── Strategy 4: Header-row table "D P M Im V E" + numbers below ───────
+  // Handles DOCX tables extracted as:
+  //   D  P  M  Im  V  E
+  //   2  1  0  0   1  0
+  if (Object.keys(crit).length < 6) {
+    const hdrRx = /\bD\s+P\s+M\s+Im?\s+V\s+E\b/i;
+    const hdrMatch = hdrRx.exec(text);
+    if (hdrMatch) {
+      const after = text.slice(hdrMatch.index + hdrMatch[0].length);
+      const nums  = after.match(/\b([012])\s+([012])\s+([012])\s+([012])\s+([012])\s+([012])\b/);
+      if (nums) {
+        const keys = ['diagnostico','propuesta','medidas','implementacion','viabilidad','especificidad'];
+        keys.forEach((k, i) => { if (crit[k] === undefined) crit[k] = parseInt(nums[i + 1], 10); });
+        note = 'estrategia-4-headertable';
+      }
+    }
+  }
 
-  // ── Criteria sum ────────────────────────────────────────────────────────
+  // ── Assign criteria only when all 6 are present ───────────────────────
+  if (Object.keys(crit).length === 6) {
+    result.criteria  = crit;
+    result._parseNote = note;
+  } else {
+    result._parseNote = `incompleto(${Object.keys(crit).length}/6)-${note}`;
+  }
+
+  // ── Criteria sum ───────────────────────────────────────────────────────
   const sumM = /(?:suma\s+criterios|criteria[_\s]sum|total\s+criterios|suma|subtotal)\s*[:\-=]\s*(\d+)/i.exec(text);
   if (sumM) result.criteria_sum = parseInt(sumM[1], 10);
 
@@ -328,7 +390,7 @@ function extractHardData(text) {
   const scM = /(?:puntaje\s+(?:final|variable|total)|final[_\s]score|calificaci[oó]n\s+final|nota\s+final)\s*[:\-=]\s*([\d.]+)/i.exec(text);
   if (scM) result.final_score = parseFloat(scM[1]);
 
-  // Fallback: use formula result as final_score
+  // Fallback: derive final_score from formula result if available
   if (result.formula_result !== undefined && result.final_score === undefined) {
     result.final_score = result.formula_result;
   }
@@ -765,17 +827,39 @@ async function processDocx(buffer, onProgress) {
   }
 
   // ── Phase 3 ────────────────────────────────────────────────────────────
-  onProgress?.({ phase: '3', message: 'Extrayendo puntajes y datos duros localmente…', pct: 15 });
+  onProgress?.({ phase: '3', message: 'Extrayendo rúbricas y puntajes localmente…', pct: 15 });
+
+  let critFound   = 0;
+  const critMissing = [];
+
   for (const block of blocks) {
     for (const v of block.variables) {
       v.hardData = extractHardData(v.text || '');
+
+      const c = v.hardData.criteria;
+      if (c && Object.keys(c).length === 6) {
+        critFound++;
+        onProgress?.({
+          phase: '3',
+          message: `Rúbrica extraída: ${v.name} → D=${c.diagnostico} P=${c.propuesta} M=${c.medidas} I=${c.implementacion} V=${c.viabilidad} E=${c.especificidad} (${v.hardData._parseNote})`,
+          pct: 15
+        });
+      } else {
+        critMissing.push(v.name);
+        onProgress?.({
+          phase: '3',
+          message: `No se pudo extraer rúbrica en: ${v.name} (${v.hardData._parseNote || 'sin patrón'}) — texto: "${(v.text || '').slice(0, 80).replace(/\n/g, ' ')}"`,
+          pct: 15
+        });
+      }
     }
   }
 
   const varsWithScores = blocks.flatMap(b => b.variables).filter(v => v.hardData?.final_score !== undefined).length;
+
   onProgress?.({
     phase: '3',
-    message: `Puntajes locales: ${varsWithScores}/${totalVars} variables`,
+    message: `Fase 3 completada: ${critFound}/${totalVars} variables con rúbrica completa, ${varsWithScores}/${totalVars} con puntaje final${critMissing.length > 0 ? ` — Sin rúbrica: ${critMissing.join(', ')}` : ''}`,
     pct: 17
   });
 
