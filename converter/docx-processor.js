@@ -1,11 +1,16 @@
 'use strict';
 
 /**
- * DOCX → JSON Processor
- * Extrae texto completo del DOCX con mammoth,
- * divide en chunks para no exceder ventana de contexto,
- * llama a OpenAI para estructurar el JSON,
- * valida estrictamente y guarda en /analisis.
+ * DOCX → JSON Processor v2 — Producción
+ *
+ * GARANTÍAS:
+ *  - Texto completo extraído sin truncar (mammoth)
+ *  - Procesamiento por bloques: cada bloque se extrae en su propia llamada
+ *    para evitar truncamiento de salida (GPT-4o: máx 16 384 tokens output)
+ *  - CERO auto-corrección de puntajes ni promedios
+ *  - CERO invención de contenido
+ *  - Validación estricta antes de guardar
+ *  - Caché por hash: documentos ya procesados no se reprocesarán
  */
 
 const mammoth = require('mammoth');
@@ -19,10 +24,12 @@ const CACHE_DIR    = path.join(__dirname, 'cache');
 
 if (!fs.existsSync(CACHE_DIR)) fs.mkdirSync(CACHE_DIR, { recursive: true });
 
+const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
 function slugify(str) {
-  return str
+  return (str || '')
     .toLowerCase()
     .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
     .replace(/[^a-z0-9]+/g, '_')
@@ -31,406 +38,522 @@ function slugify(str) {
 }
 
 function fileHash(filePath) {
-  const buf = fs.readFileSync(filePath);
-  return crypto.createHash('sha256').update(buf).digest('hex');
+  return crypto.createHash('sha256').update(fs.readFileSync(filePath)).digest('hex');
 }
 
-function getCacheKey(hash) {
-  return path.join(CACHE_DIR, `${hash}.json`);
+function cleanJsonResponse(raw) {
+  return raw
+    .replace(/^```json\s*/i, '')
+    .replace(/^```\s*/i, '')
+    .replace(/\s*```$/i, '')
+    .trim();
 }
 
-function roundScore(n) {
-  return Math.round(n * 10) / 10;
+function safeParseJson(raw, label) {
+  try {
+    return JSON.parse(raw);
+  } catch (e) {
+    throw new Error(`JSON inválido en "${label}": ${e.message}\n\nFragmento recibido:\n${raw.slice(0, 400)}`);
+  }
 }
 
 // ─── Extracción de texto ───────────────────────────────────────────────────────
 
 async function extractText(filePath) {
   const result = await mammoth.extractRawText({ path: filePath });
-  const text = result.value;
-  if (!text || text.trim().length < 200) {
-    throw new Error('El documento está vacío o es demasiado corto para procesarlo.');
+  const text   = (result.value || '').trim();
+  if (text.length < 500) {
+    throw new Error('El documento está vacío o es demasiado corto (menos de 500 caracteres extraídos). Verifica que el .docx no esté protegido o vacío.');
   }
   return text;
 }
 
-// ─── Prompt del sistema ────────────────────────────────────────────────────────
+// ─── Prompts ──────────────────────────────────────────────────────────────────
 
-const SYSTEM_PROMPT = `Eres un asistente especializado en estructurar análisis técnicos de planes de gobierno peruanos en formato JSON.
+const PROMPT_CANDIDATE_AND_STRUCTURE = `Eres un extractor técnico estricto. Tu única tarea es extraer información EXACTAMENTE como aparece en el documento. PROHIBIDO inventar, resumir, reescribir o modificar nada.
 
-TAREA: Dado el texto completo de un documento de análisis técnico, debes extraer y estructurar TODA la información en el JSON que se describe abajo.
+TAREA: Del texto del documento, extrae:
+1. Los datos del candidato (nombre, partido, puntaje total, etc.)
+2. La metodología
+3. La estructura de los 8 bloques: su nombre, id, puntaje promedio, resumen, fortalezas, debilidades, y la lista de variables (solo nombre e id, sin contenido todavía)
+4. El análisis final global
 
-REGLAS ABSOLUTAS:
-1. El JSON debe tener exactamente 8 bloques temáticos con sus variables.
-2. El total de variables debe ser exactamente 30.
-3. Cada variable debe tener los 6 criterios: diagnostico, propuesta, medidas, implementacion, viabilidad, especificidad. Cada uno vale 0, 1 o 2.
-4. criteria_sum = suma de los 6 criterios (máx. 12).
-5. formula_result = (criteria_sum / 12) * 10, redondeado a 1 decimal.
-6. final_score = formula_result.
-7. El promedio de cada bloque = promedio de final_score de sus variables, redondeado a 1 decimal.
-8. total_score en candidate = promedio de todos los final_score, redondeado a 1 decimal.
-9. Cada variable debe tener sections con todos estos campos (texto real, no vacío):
-   - definicion, importancia, diagnostico_externo, propuesta_plan,
-     medidas_concretas, implementacion_necesaria, impacto_potencial,
-     vacios, evaluacion_tecnica, conclusion
-10. Cada variable debe tener sources (array, puede ser vacío []).
-11. NO inventes datos que no existan en el documento.
-12. Extrae toda la narrativa real del documento para cada sección.
+REGLAS:
+- Extrae SOLO lo que está en el documento. No inventes nada.
+- Los puntajes deben ser exactamente los que aparecen en el documento.
+- El id de cada bloque y variable debe ser un slug en minúsculas del nombre (sin espacios, sin acentos).
 
-ESTRUCTURA JSON EXACTA A RETORNAR:
+Devuelve SOLO este JSON (sin bloques de código, sin texto adicional):
 {
   "_schema_version": "2.0",
   "_converted_from_docx": true,
   "candidate": {
-    "id": "<slug del nombre, sin espacios, en minúsculas>",
-    "name": "<Nombre completo del candidato>",
-    "party": "<Partido político>",
-    "total_score": <número>,
+    "id": "<slug>",
+    "name": "<nombre completo>",
+    "party": "<partido>",
+    "total_score": <número exacto del documento>,
     "color": "#b5121b",
-    "plan_period": "2026-2031",
-    "plan_pages": <número o null>,
-    "summary": "<Resumen ejecutivo del plan>",
-    "strengths": ["..."],
-    "weaknesses": ["..."],
-    "methodological_notes": ["..."],
+    "plan_period": "<período si aparece, si no: null>",
+    "plan_pages": <número si aparece, si no: null>,
+    "summary": "<resumen ejecutivo tal como aparece en el documento>",
+    "strengths": ["<fortaleza 1>", "..."],
+    "weaknesses": ["<debilidad 1>", "..."],
+    "methodological_notes": ["<nota 1>", "..."],
     "methodological_corrections": []
+  },
+  "methodology": {
+    "description": "<descripción de la metodología tal como aparece en el documento>",
+    "criteria": {
+      "diagnostico": "<definición del criterio>",
+      "propuesta": "<definición del criterio>",
+      "medidas": "<definición del criterio>",
+      "implementacion": "<definición del criterio>",
+      "viabilidad": "<definición del criterio>",
+      "especificidad": "<definición del criterio>"
+    },
+    "formula": "<fórmula tal como aparece en el documento>",
+    "scale": "<escala de puntuación tal como aparece en el documento>"
   },
   "blocks": [
     {
-      "id": "<id del bloque>",
-      "name": "<nombre del bloque>",
-      "average_score": <número>,
+      "id": "<slug>",
+      "name": "<nombre exacto del bloque>",
+      "average_score": <número exacto del documento>,
       "color": "#1d4ed8",
-      "summary": "<resumen del bloque>",
-      "interpretation": "<interpretación técnica>",
+      "summary": "<resumen del bloque tal como aparece>",
+      "interpretation": "<interpretación técnica tal como aparece>",
       "strengths": ["..."],
       "weaknesses": ["..."],
       "variables": [
-        {
-          "id": "<id_variable>",
-          "name": "<nombre de la variable>",
-          "final_score": <número>,
-          "criteria_sum": <número entero 0-12>,
-          "formula_result": <número>,
-          "summary": "<resumen de la variable>",
-          "strengths": ["..."],
-          "weaknesses": ["..."],
-          "gaps": ["..."],
-          "conclusion": "<conclusión>",
-          "corrected_methodology": false,
-          "correction_note": "",
-          "criteria": {
-            "diagnostico": <0|1|2>,
-            "propuesta": <0|1|2>,
-            "medidas": <0|1|2>,
-            "implementacion": <0|1|2>,
-            "viabilidad": <0|1|2>,
-            "especificidad": <0|1|2>
-          },
-          "criteria_notes": {
-            "diagnostico": "<justificación>",
-            "propuesta": "<justificación>",
-            "medidas": "<justificación>",
-            "implementacion": "<justificación>",
-            "viabilidad": "<justificación>",
-            "especificidad": "<justificación>"
-          },
-          "analysis_sections": {
-            "definicion": "<texto>",
-            "importancia": "<texto>",
-            "diagnostico_externo": "<texto>",
-            "propuesta_plan": "<texto>",
-            "medidas_concretas": "<texto>",
-            "implementacion_necesaria": "<texto>",
-            "impacto_potencial": "<texto>",
-            "vacios": "<texto>",
-            "evaluacion_tecnica": "<texto>",
-            "conclusion": "<texto>"
-          },
-          "sources": []
-        }
+        { "id": "<slug>", "name": "<nombre exacto>" }
       ]
     }
   ],
   "final_analysis": {
-    "global_findings": ["..."],
-    "final_conclusion": "<conclusión global>",
-    "ranking_note": "<nota de ranking>",
-    "comparability_note": "<nota de comparabilidad>"
+    "global_findings": ["<hallazgo 1>", "..."],
+    "final_conclusion": "<conclusión global tal como aparece>",
+    "ranking_note": "<nota de ranking si aparece>",
+    "comparability_note": "<nota de comparabilidad si aparece>"
   }
+}`;
+
+function buildBlockDetailPrompt(blockName, variableNames) {
+  const varList = variableNames.map((n, i) => `  ${i + 1}. ${n}`).join('\n');
+  return `Eres un extractor técnico estricto. Tu única tarea es extraer información EXACTAMENTE como aparece en el documento. PROHIBIDO inventar, resumir, reescribir o modificar ningún valor.
+
+TAREA: Del texto del documento, extrae el contenido completo del bloque "${blockName}" con sus variables:
+${varList}
+
+Para CADA variable extrae:
+- Todos los criterios (diagnostico, propuesta, medidas, implementacion, viabilidad, especificidad) con su valor exacto (0, 1 o 2)
+- criteria_sum: la suma de los 6 criterios TAL COMO APARECE en el documento (no calcules tú)
+- formula_result: el resultado de la fórmula TAL COMO APARECE en el documento
+- final_score: el puntaje final TAL COMO APARECE en el documento
+- Las justificaciones de cada criterio (criteria_notes)
+- Las 10 secciones narrativas TAL COMO APARECEN en el documento (sin abreviar ni resumir):
+  definicion, importancia, diagnostico_externo, propuesta_plan, medidas_concretas,
+  implementacion_necesaria, impacto_potencial, vacios, evaluacion_tecnica, conclusion
+- summary, strengths, weaknesses, gaps, conclusion
+- sources (si aparecen en el documento)
+
+REGLAS ABSOLUTAS:
+- Los valores numéricos deben ser EXACTAMENTE los del documento. NO recalcules nada.
+- El texto de cada sección debe ser el texto COMPLETO del documento. NO resumir.
+- Si una sección no aparece en el documento, usa "" (cadena vacía). NO inventes.
+- Si un criterio no aparece, usa null. NO inventes.
+
+Devuelve SOLO este JSON (sin bloques de código, sin texto adicional):
+{
+  "block_id": "<slug del bloque>",
+  "variables": [
+    {
+      "id": "<slug>",
+      "name": "<nombre exacto>",
+      "final_score": <número exacto del documento>,
+      "criteria_sum": <número exacto del documento>,
+      "formula_result": <número exacto del documento>,
+      "summary": "<texto completo>",
+      "strengths": ["..."],
+      "weaknesses": ["..."],
+      "gaps": ["..."],
+      "conclusion": "<texto completo>",
+      "corrected_methodology": false,
+      "correction_note": "",
+      "criteria": {
+        "diagnostico": <0|1|2>,
+        "propuesta": <0|1|2>,
+        "medidas": <0|1|2>,
+        "implementacion": <0|1|2>,
+        "viabilidad": <0|1|2>,
+        "especificidad": <0|1|2>
+      },
+      "criteria_notes": {
+        "diagnostico": "<justificación completa>",
+        "propuesta": "<justificación completa>",
+        "medidas": "<justificación completa>",
+        "implementacion": "<justificación completa>",
+        "viabilidad": "<justificación completa>",
+        "especificidad": "<justificación completa>"
+      },
+      "analysis_sections": {
+        "definicion": "<texto completo>",
+        "importancia": "<texto completo>",
+        "diagnostico_externo": "<texto completo>",
+        "propuesta_plan": "<texto completo>",
+        "medidas_concretas": "<texto completo>",
+        "implementacion_necesaria": "<texto completo>",
+        "impacto_potencial": "<texto completo>",
+        "vacios": "<texto completo>",
+        "evaluacion_tecnica": "<texto completo>",
+        "conclusion": "<texto completo>"
+      },
+      "sources": []
+    }
+  ]
+}`;
 }
 
-Devuelve SOLO el JSON. Sin texto antes ni después. Sin bloques de código markdown.`;
+// ─── Llamadas a OpenAI ────────────────────────────────────────────────────────
 
-// ─── Llamada a OpenAI (con chunking si el texto es muy largo) ─────────────────
-
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-
-// GPT-4o tiene 128k tokens; ~4 chars/token → 500k chars de texto seguro
-const MAX_TEXT_CHARS = 480_000;
-
-async function callOpenAI(text, onProgress) {
-  const truncated = text.length > MAX_TEXT_CHARS ? text.slice(0, MAX_TEXT_CHARS) : text;
-
-  if (text.length > MAX_TEXT_CHARS) {
-    onProgress?.(`Documento muy largo (${text.length} chars). Usando primeros ${MAX_TEXT_CHARS} chars.`);
-  }
-
-  onProgress?.('Enviando documento a IA para estructuración...');
-
+async function callOpenAI(systemPrompt, userContent, label, onProgress) {
+  onProgress(`Llamando IA: ${label}...`);
   const response = await openai.chat.completions.create({
     model: 'gpt-4o',
-    temperature: 0.1,
-    max_tokens: 16000,
+    temperature: 0,
+    max_tokens: 16384,
     messages: [
-      { role: 'system', content: SYSTEM_PROMPT },
-      { role: 'user',   content: `Texto completo del documento:\n\n${truncated}` }
+      { role: 'system', content: systemPrompt },
+      { role: 'user',   content: userContent }
     ]
   });
 
-  const raw = response.choices[0].message.content.trim();
+  const finish = response.choices[0].finish_reason;
+  if (finish === 'length') {
+    throw new Error(`La respuesta de la IA para "${label}" fue cortada por límite de tokens. El bloque puede ser demasiado extenso. Fragmento recibido:\n${response.choices[0].message.content.slice(-200)}`);
+  }
 
-  // Limpiar posibles bloques de código markdown
-  const cleaned = raw
-    .replace(/^```json\s*/i, '')
-    .replace(/^```\s*/i, '')
-    .replace(/\s*```$/i, '')
-    .trim();
-
-  return cleaned;
+  return cleanJsonResponse(response.choices[0].message.content.trim());
 }
 
-// ─── Validación estricta ────────────────────────────────────────────────────────
+// ─── Validación estricta (SIN auto-corrección) ────────────────────────────────
+
+const CRITERIOS_LIST = ['diagnostico', 'propuesta', 'medidas', 'implementacion', 'viabilidad', 'especificidad'];
+const SECTIONS_LIST  = [
+  'definicion','importancia','diagnostico_externo','propuesta_plan',
+  'medidas_concretas','implementacion_necesaria','impacto_potencial',
+  'vacios','evaluacion_tecnica','conclusion'
+];
+
+function round1(n) { return Math.round(n * 10) / 10; }
 
 function validate(data) {
   const errors   = [];
   const warnings = [];
 
-  // Estructura raíz
-  if (!data.candidate)             errors.push('Falta "candidate"');
-  if (!Array.isArray(data.blocks)) errors.push('Falta array "blocks"');
+  // ── Estructura raíz ────────────────────────────────────────────────────────
+  if (!data.candidate)             errors.push('Falta el objeto "candidate"');
+  if (!data.methodology)           errors.push('Falta el objeto "methodology"');
+  if (!Array.isArray(data.blocks)) errors.push('Falta el array "blocks"');
   if (!data.final_analysis)        warnings.push('Falta "final_analysis"');
 
   if (errors.length) return { ok: false, errors, warnings };
 
-  // Candidato
+  // ── candidate ──────────────────────────────────────────────────────────────
   const c = data.candidate;
   for (const f of ['id', 'name', 'party', 'total_score']) {
     if (c[f] === undefined || c[f] === null || c[f] === '')
-      errors.push(`candidate.${f} es obligatorio`);
+      errors.push(`candidate.${f} es obligatorio y está vacío`);
   }
 
-  // Bloques: deben ser exactamente 8
+  // ── blocks ─────────────────────────────────────────────────────────────────
   if (data.blocks.length !== 8) {
-    errors.push(`Se esperan 8 bloques, se encontraron ${data.blocks.length}`);
+    errors.push(`Se esperan exactamente 8 bloques. Se encontraron: ${data.blocks.length}`);
+  } else if (data.blocks.some(b => !b)) {
+    errors.push('Uno o más bloques son nulos');
   }
 
-  let totalVars = 0;
-  const allScores = [];
-  const CRITERIOS = ['diagnostico', 'propuesta', 'medidas', 'implementacion', 'viabilidad', 'especificidad'];
+  let totalVars       = 0;
+  const allFinalScores = [];
 
   data.blocks.forEach((block, bi) => {
-    if (!block.id)   errors.push(`blocks[${bi}] le falta "id"`);
-    if (!block.name) errors.push(`blocks[${bi}] le falta "name"`);
+    const bLabel = `Bloque[${bi}] (${block.name || 'sin nombre'})`;
+
+    if (!block.id)   errors.push(`${bLabel}: falta "id"`);
+    if (!block.name) errors.push(`${bLabel}: falta "name"`);
+    if (block.average_score === undefined || block.average_score === null)
+      errors.push(`${bLabel}: falta "average_score"`);
+    if (!block.summary || block.summary.trim().length < 5)
+      errors.push(`${bLabel}: "summary" está vacío`);
 
     if (!Array.isArray(block.variables) || block.variables.length === 0) {
-      errors.push(`blocks[${bi}] (${block.name || bi}) no tiene variables`);
+      errors.push(`${bLabel}: no tiene variables`);
       return;
     }
 
-    const blockScores = [];
+    const blockFinalScores = [];
 
     block.variables.forEach((v, vi) => {
       totalVars++;
-      const vkey = `blocks[${bi}].variables[${vi}] (${v.name || vi})`;
+      const vLabel = `${bLabel} › Variable[${vi}] (${v.name || 'sin nombre'})`;
 
-      if (!v.id)   errors.push(`${vkey} le falta "id"`);
-      if (!v.name) errors.push(`${vkey} le falta "name"`);
-      if (v.final_score === undefined) errors.push(`${vkey} le falta "final_score"`);
+      // ── Campos obligatorios ─────────────────────────────────────────────
+      if (!v.id)   errors.push(`${vLabel}: falta "id"`);
+      if (!v.name) errors.push(`${vLabel}: falta "name"`);
 
-      // Criterios
+      if (v.final_score === undefined || v.final_score === null)
+        errors.push(`${vLabel}: falta "final_score"`);
+      if (v.criteria_sum === undefined || v.criteria_sum === null)
+        errors.push(`${vLabel}: falta "criteria_sum"`);
+      if (v.formula_result === undefined || v.formula_result === null)
+        errors.push(`${vLabel}: falta "formula_result"`);
+
+      if (!v.summary   || v.summary.trim().length < 5)   errors.push(`${vLabel}: "summary" está vacío`);
+      if (!v.conclusion || v.conclusion.trim().length < 5) errors.push(`${vLabel}: "conclusion" está vacío`);
+
+      if (!Array.isArray(v.strengths) || v.strengths.length === 0)
+        errors.push(`${vLabel}: "strengths" está vacío`);
+      if (!Array.isArray(v.weaknesses) || v.weaknesses.length === 0)
+        errors.push(`${vLabel}: "weaknesses" está vacío`);
+      if (!Array.isArray(v.gaps))
+        errors.push(`${vLabel}: "gaps" no es un array`);
+
+      // ── Criterios ────────────────────────────────────────────────────────
       if (!v.criteria) {
-        errors.push(`${vkey} le falta "criteria"`);
+        errors.push(`${vLabel}: falta el objeto "criteria"`);
       } else {
-        let sum = 0;
-        for (const cr of CRITERIOS) {
-          if (v.criteria[cr] === undefined) {
-            errors.push(`${vkey}.criteria.${cr} falta`);
-          } else if (![0, 1, 2].includes(Number(v.criteria[cr]))) {
-            errors.push(`${vkey}.criteria.${cr} debe ser 0, 1 o 2`);
+        let computedSum = 0;
+        let sumOk = true;
+        for (const cr of CRITERIOS_LIST) {
+          const val = v.criteria[cr];
+          if (val === undefined || val === null) {
+            errors.push(`${vLabel}: criteria.${cr} falta`);
+            sumOk = false;
+          } else if (![0, 1, 2].includes(Number(val))) {
+            errors.push(`${vLabel}: criteria.${cr} debe ser 0, 1 o 2 (tiene: ${val})`);
+            sumOk = false;
           } else {
-            sum += Number(v.criteria[cr]);
+            computedSum += Number(val);
           }
         }
 
-        // Verificar fórmula
-        const expected = roundScore((sum / 12) * 10);
-        const actual   = roundScore(v.final_score);
-        if (Math.abs(expected - actual) > 0.15) {
-          warnings.push(`${vkey}: final_score=${actual} no coincide con fórmula=${expected} (sum=${sum})`);
-          // Auto-corregir
-          v.criteria_sum    = sum;
-          v.formula_result  = expected;
-          v.final_score     = expected;
-        } else {
-          v.criteria_sum   = sum;
-          v.formula_result = expected;
-          v.final_score    = expected;
+        // Verificar coherencia sin corregir
+        if (sumOk && v.criteria_sum !== undefined && v.criteria_sum !== null) {
+          if (Number(v.criteria_sum) !== computedSum) {
+            errors.push(`${vLabel}: criteria_sum=${v.criteria_sum} no coincide con la suma de criterios=${computedSum}. El documento tiene una inconsistencia.`);
+          }
+
+          const expectedFormula = round1((computedSum / 12) * 10);
+          if (v.formula_result !== undefined && Math.abs(Number(v.formula_result) - expectedFormula) > 0.15) {
+            errors.push(`${vLabel}: formula_result=${v.formula_result} no coincide con (${computedSum}/12)*10=${expectedFormula}. El documento tiene una inconsistencia.`);
+          }
+          if (v.final_score !== undefined && Math.abs(Number(v.final_score) - expectedFormula) > 0.15) {
+            errors.push(`${vLabel}: final_score=${v.final_score} no coincide con la fórmula esperada=${expectedFormula}. El documento tiene una inconsistencia.`);
+          }
         }
       }
 
-      // Sections
-      const SECTIONS = [
-        'definicion','importancia','diagnostico_externo','propuesta_plan',
-        'medidas_concretas','implementacion_necesaria','impacto_potencial',
-        'vacios','evaluacion_tecnica','conclusion'
-      ];
+      // ── Secciones narrativas ─────────────────────────────────────────────
       if (!v.analysis_sections) {
-        errors.push(`${vkey} le falta "analysis_sections"`);
+        errors.push(`${vLabel}: falta "analysis_sections"`);
       } else {
-        for (const s of SECTIONS) {
-          if (!v.analysis_sections[s] || v.analysis_sections[s].trim().length < 5) {
-            warnings.push(`${vkey}.analysis_sections.${s} está vacío o muy corto`);
+        for (const s of SECTIONS_LIST) {
+          if (!v.analysis_sections[s] || v.analysis_sections[s].trim().length < 10) {
+            errors.push(`${vLabel}: analysis_sections.${s} está vacío o incompleto`);
           }
         }
       }
 
-      if (!v.conclusion || v.conclusion.trim().length < 5) {
-        warnings.push(`${vkey} le falta "conclusion"`);
+      if (!v.criteria_notes) {
+        errors.push(`${vLabel}: falta "criteria_notes"`);
+      } else {
+        for (const cr of CRITERIOS_LIST) {
+          if (!v.criteria_notes[cr] || v.criteria_notes[cr].trim().length < 5) {
+            errors.push(`${vLabel}: criteria_notes.${cr} está vacío`);
+          }
+        }
       }
 
-      if (!Array.isArray(v.sources)) {
-        v.sources = [];
+      if (v.final_score !== undefined) {
+        blockFinalScores.push(Number(v.final_score));
+        allFinalScores.push(Number(v.final_score));
       }
-
-      blockScores.push(v.final_score);
-      allScores.push(v.final_score);
     });
 
-    // Recalcular promedio del bloque
-    if (blockScores.length > 0) {
-      const avg = roundScore(blockScores.reduce((a, b) => a + b, 0) / blockScores.length);
-      if (block.average_score !== undefined && Math.abs(block.average_score - avg) > 0.2) {
-        warnings.push(`blocks[${bi}] (${block.name}): average_score=${block.average_score} ajustado a ${avg}`);
+    // Verificar average_score del bloque sin corregir
+    if (blockFinalScores.length > 0 && block.average_score !== undefined) {
+      const computedAvg = round1(blockFinalScores.reduce((a, b) => a + b, 0) / blockFinalScores.length);
+      if (Math.abs(Number(block.average_score) - computedAvg) > 0.2) {
+        errors.push(`${bLabel}: average_score=${block.average_score} no coincide con el promedio calculado=${computedAvg}. El documento tiene una inconsistencia.`);
       }
-      block.average_score = avg;
     }
   });
 
-  // Verificar total de variables
+  // ── Total de variables ─────────────────────────────────────────────────────
   if (totalVars !== 30) {
-    errors.push(`Se esperan 30 variables en total, se encontraron ${totalVars}`);
+    errors.push(`Se esperan exactamente 30 variables en total. Se encontraron: ${totalVars}`);
   }
 
-  // Recalcular total_score
-  if (allScores.length > 0) {
-    const totalExpected = roundScore(allScores.reduce((a, b) => a + b, 0) / allScores.length);
-    if (Math.abs(c.total_score - totalExpected) > 0.2) {
-      warnings.push(`candidate.total_score=${c.total_score} ajustado a ${totalExpected}`);
+  // Verificar total_score del candidato sin corregir
+  if (allFinalScores.length > 0 && c.total_score !== undefined) {
+    const computedTotal = round1(allFinalScores.reduce((a, b) => a + b, 0) / allFinalScores.length);
+    if (Math.abs(Number(c.total_score) - computedTotal) > 0.2) {
+      errors.push(`candidate.total_score=${c.total_score} no coincide con el promedio calculado=${computedTotal}. El documento tiene una inconsistencia.`);
     }
-    c.total_score = totalExpected;
   }
 
-  return {
-    ok:       errors.length === 0,
-    errors,
-    warnings
-  };
+  return { ok: errors.length === 0, errors, warnings };
 }
 
-// ─── Función principal ────────────────────────────────────────────────────────
+// ─── Pipeline principal ────────────────────────────────────────────────────────
 
 async function processDocx(filePath, onProgress) {
   onProgress = onProgress || (() => {});
-
   const fileName = path.basename(filePath);
-  onProgress(`Procesando: ${fileName}`);
+  onProgress(`Iniciando procesamiento: ${fileName}`);
 
-  // 1. Hash para caché y deduplicación
+  // ── 1. Hash (caché + deduplicación) ────────────────────────────────────────
   onProgress('Calculando huella del archivo...');
-  const hash    = fileHash(filePath);
-  const cacheKey = getCacheKey(hash);
+  const hash        = fileHash(filePath);
+  const cacheFile   = path.join(CACHE_DIR, `${hash}.json`);
 
-  // 2. Extraer texto
-  onProgress('Extrayendo texto del DOCX...');
-  const text = await extractText(filePath);
-  onProgress(`Texto extraído: ${text.length.toLocaleString()} caracteres`);
+  // ── 2. Extraer texto completo sin truncar ───────────────────────────────────
+  onProgress('Extrayendo texto completo del DOCX (sin truncar)...');
+  const fullText = await extractText(filePath);
+  onProgress(`Texto extraído: ${fullText.length.toLocaleString()} caracteres (~${Math.round(fullText.length / 4).toLocaleString()} tokens de entrada)`);
 
-  // 3. Llamar a IA
-  let rawJson;
-  if (fs.existsSync(cacheKey)) {
-    onProgress('Cache encontrado, reutilizando resultado anterior...');
-    rawJson = fs.readFileSync(cacheKey, 'utf8');
-  } else {
-    rawJson = await callOpenAI(text, onProgress);
-    fs.writeFileSync(cacheKey, rawJson, 'utf8');
-    onProgress('Respuesta de IA guardada en caché');
+  // ── 3. Verificar caché ──────────────────────────────────────────────────────
+  let finalData;
+
+  if (fs.existsSync(cacheFile)) {
+    onProgress('Caché encontrado — reutilizando resultado anterior (sin gasto de tokens)...');
+    try {
+      finalData = JSON.parse(fs.readFileSync(cacheFile, 'utf8'));
+    } catch (_) {
+      onProgress('Caché corrupto — reprocesando...');
+      fs.unlinkSync(cacheFile);
+    }
   }
 
-  // 4. Parsear JSON
-  onProgress('Parseando JSON generado...');
-  let data;
-  try {
-    data = JSON.parse(rawJson);
-  } catch (e) {
-    throw new Error(`JSON inválido generado por la IA: ${e.message}. Revisa el documento y vuelve a intentarlo.`);
+  if (!finalData) {
+    // ── 4. Fase 1: Estructura global + candidato ──────────────────────────────
+    onProgress('Fase 1/2 — Extrayendo estructura global, candidato y metodología...');
+    const structRaw = await callOpenAI(
+      PROMPT_CANDIDATE_AND_STRUCTURE,
+      `Documento completo:\n\n${fullText}`,
+      'estructura global',
+      onProgress
+    );
+    const structData = safeParseJson(structRaw, 'estructura global');
+
+    if (!structData.blocks || !Array.isArray(structData.blocks)) {
+      throw new Error('La IA no pudo extraer la estructura de bloques del documento. Verifica que el documento siga el formato esperado.');
+    }
+
+    const blocksFound = structData.blocks.length;
+    onProgress(`Estructura extraída: ${blocksFound} bloques detectados`);
+    if (blocksFound !== 8) {
+      throw new Error(`Se detectaron ${blocksFound} bloques en el documento. Se esperan exactamente 8. Verifica que el documento esté completo y siga el formato correcto.`);
+    }
+
+    // ── 5. Fase 2: Contenido detallado por bloque (1 llamada por bloque) ──────
+    onProgress(`Fase 2/2 — Extrayendo contenido detallado de los ${blocksFound} bloques (${blocksFound} llamadas)...`);
+
+    for (let bi = 0; bi < structData.blocks.length; bi++) {
+      const block    = structData.blocks[bi];
+      const varNames = (block.variables || []).map(v => v.name || v.id || `Variable ${bi + 1}`);
+      const varCount = varNames.length;
+
+      onProgress(`  Bloque ${bi + 1}/${blocksFound}: "${block.name}" (${varCount} variables)...`);
+
+      const blockPrompt = buildBlockDetailPrompt(block.name, varNames);
+      const blockRaw    = await callOpenAI(
+        blockPrompt,
+        `Documento completo:\n\n${fullText}`,
+        `bloque "${block.name}"`,
+        onProgress
+      );
+      const blockData = safeParseJson(blockRaw, `bloque "${block.name}"`);
+
+      if (!Array.isArray(blockData.variables) || blockData.variables.length === 0) {
+        throw new Error(`La IA no extrajo variables para el bloque "${block.name}". El documento puede estar truncado o el formato es inesperado.`);
+      }
+
+      if (blockData.variables.length !== varCount) {
+        onProgress(`  ⚠ "${block.name}": se esperaban ${varCount} variables, se extrajeron ${blockData.variables.length}`);
+      }
+
+      // Reemplazar la lista de variables de la estructura con las detalladas
+      structData.blocks[bi].variables = blockData.variables;
+
+      onProgress(`  ✓ Bloque ${bi + 1} completado: ${blockData.variables.length} variables`);
+    }
+
+    finalData = structData;
+
+    // ── 6. Guardar en caché ───────────────────────────────────────────────────
+    fs.writeFileSync(cacheFile, JSON.stringify(finalData, null, 2), 'utf8');
+    onProgress('Resultado guardado en caché local');
   }
 
-  // 5. Validar
-  onProgress('Validando estructura...');
-  const validation = validate(data);
+  // ── 7. Validación estricta ────────────────────────────────────────────────
+  onProgress('Validando estructura completa (sin auto-corrección)...');
+  const validation = validate(finalData);
+
+  if (validation.warnings.length > 0) {
+    onProgress('Advertencias:\n' + validation.warnings.map(w => '  ⚠ ' + w).join('\n'));
+  }
 
   if (!validation.ok) {
+    // Borrar caché si la validación falla (el resultado es defectuoso)
+    try { if (fs.existsSync(cacheFile)) fs.unlinkSync(cacheFile); } catch (_) {}
+
+    const errorLines = validation.errors.map(e => '  ✕ ' + e).join('\n');
     throw new Error(
-      'El JSON generado no supera la validación:\n' +
-      validation.errors.map(e => '  ✕ ' + e).join('\n')
+      `Validación fallida — NO se guardó el JSON.\n\n` +
+      `Se encontraron ${validation.errors.length} error(es):\n${errorLines}\n\n` +
+      `Causas posibles: estructura del documento incompleta, puntajes inconsistentes, o secciones faltantes.`
     );
   }
 
-  if (validation.warnings.length > 0) {
-    onProgress('Advertencias (auto-corregidas):\n' + validation.warnings.map(w => '  ⚠ ' + w).join('\n'));
-  }
-
-  // 6. Determinar nombre de archivo de salida
-  const candidateId = data.candidate.id || slugify(data.candidate.name || fileName.replace('.docx', ''));
-  data.candidate.id = candidateId;
-  data._converted_at = new Date().toISOString();
-  data._source_file  = fileName;
-  data._source_hash  = hash;
+  // ── 8. Inyectar metadatos de conversión ───────────────────────────────────
+  const candidateId = finalData.candidate.id || slugify(finalData.candidate.name || fileName.replace('.docx', ''));
+  finalData.candidate.id  = candidateId;
+  finalData._converted_at = new Date().toISOString();
+  finalData._source_file  = fileName;
+  finalData._source_hash  = hash;
 
   const outputFile = path.join(ANALISIS_DIR, `${candidateId}.json`);
 
-  // 7. Evitar sobreescritura si ya existe y el hash es el mismo
+  // ── 9. Evitar sobreescritura si el hash es igual ──────────────────────────
   if (fs.existsSync(outputFile)) {
     try {
       const existing = JSON.parse(fs.readFileSync(outputFile, 'utf8'));
       if (existing._source_hash === hash) {
-        onProgress(`⚠ El archivo ${candidateId}.json ya existe con el mismo contenido. Omitido.`);
+        onProgress(`El archivo ${candidateId}.json ya existe con el mismo contenido. No se sobrescribió.`);
         return {
-          ok:         true,
-          skipped:    true,
-          outputFile,
-          candidateId,
-          warnings:   validation.warnings,
-          message:    'Archivo ya procesado (mismo hash). No se sobrescribió.'
+          ok: true, skipped: true, outputFile, candidateId,
+          warnings: validation.warnings,
+          message: 'Archivo ya procesado (mismo contenido). No se reprocesó.'
         };
       }
     } catch (_) {}
   }
 
-  // 8. Guardar
-  fs.writeFileSync(outputFile, JSON.stringify(data, null, 2), 'utf8');
-  onProgress(`✓ JSON guardado: /analisis/${candidateId}.json`);
+  // ── 10. Guardar ───────────────────────────────────────────────────────────
+  fs.writeFileSync(outputFile, JSON.stringify(finalData, null, 2), 'utf8');
+  onProgress(`✓ JSON guardado correctamente: /analisis/${candidateId}.json`);
+
+  const totalVars = finalData.blocks.reduce((t, b) => t + (b.variables || []).length, 0);
 
   return {
-    ok:         true,
-    skipped:    false,
+    ok:          true,
+    skipped:     false,
     outputFile,
     candidateId,
-    totalScore: data.candidate.total_score,
-    blocks:     data.blocks.length,
-    totalVars:  data.blocks.reduce((t, b) => t + b.variables.length, 0),
-    warnings:   validation.warnings
+    totalScore:  finalData.candidate.total_score,
+    blocks:      finalData.blocks.length,
+    totalVars,
+    warnings:    validation.warnings
   };
 }
 

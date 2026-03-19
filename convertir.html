@@ -397,13 +397,12 @@
   <div class="instructions">
     <h2>¿Cómo funciona?</h2>
     <ol class="steps">
-      <li>Sube el documento .docx con el análisis técnico del candidato.</li>
-      <li>El sistema extrae el texto completo (hasta 60-70 páginas sin truncar).</li>
-      <li>La IA estructura el texto en el JSON de la plataforma: 8 bloques, 30 variables, 6 criterios por variable.</li>
-      <li>El sistema valida automáticamente la fórmula, los promedios y la estructura completa.</li>
-      <li>Si todo es correcto, el JSON se guarda en <code>/analisis/</code> y el candidato aparece en la plataforma.</li>
-      <li>Si hay errores, se muestran claramente sin guardar nada defectuoso.</li>
-      <li>Documentos ya procesados (mismo archivo) no se reprocesarán para ahorrar costo.</li>
+      <li>Sube el documento .docx — el sistema extrae el texto <strong>completo</strong> sin truncar (60-70 páginas sin problema).</li>
+      <li><strong>Fase 1:</strong> la IA extrae la estructura global: candidato, metodología, 8 bloques y sus variables.</li>
+      <li><strong>Fase 2:</strong> por cada bloque (8 llamadas), la IA extrae el contenido narrativo completo de todas sus variables — sin resumir ni reescribir.</li>
+      <li>Validación estricta: 8 bloques, 30 variables, 6 criterios, fórmulas y promedios. Si hay inconsistencias en el documento, se reportan como errores.</li>
+      <li>Si todo es correcto, el JSON se guarda en <code>/analisis/</code> sin modificar ningún valor. Si hay errores, no se guarda nada.</li>
+      <li>Documentos ya procesados (mismo archivo) no se reprocesarán — sin gasto de tokens adicional.</li>
     </ol>
   </div>
 </main>

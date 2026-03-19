@@ -1,0 +1,177 @@
+QUIERO QUE CORRIJAS EL SISTEMA DOCX → JSON QUE ACABAS DE IMPLEMENTAR.
+
+NO QUIERO QUE CREES UN SISTEMA NUEVO.
+QUIERO QUE MODIFIQUES EL ACTUAL PARA QUE SEA RIGUROSO, FIEL AL DOCUMENTO Y APTO PARA PRODUCCIÓN.
+
+HAY ERRORES CRÍTICOS QUE DEBES CORREGIR:
+
+=====================================
+1. PROHIBIDO MODIFICAR PUNTAJES
+=====================================
+
+EL SISTEMA ACTUAL AUTO-CORRIGE PUNTAJES.
+ESTO ESTÁ MAL.
+
+REGLA ABSOLUTA:
+- NO recalcular puntajes
+- NO corregir puntajes
+- NO ajustar fórmulas
+- NO cambiar ningún valor numérico
+
+SI HAY INCONSISTENCIAS:
+- DEBES REPORTAR ERROR
+- NO DEBES CORREGIR NADA
+
+EJEMPLO:
+Si (criteria_sum / 12) * 10 ≠ final_score:
+→ marcar error
+→ NO modificar el valor
+
+=====================================
+2. PROHIBIDO INVENTAR VARIABLES
+=====================================
+
+EL SISTEMA NO DEBE COMPLETAR INFORMACIÓN FALTANTE.
+
+REGLA:
+- NO inventar variables
+- NO completar bloques automáticamente
+- NO generar contenido si no está en el DOCX
+
+VALIDACIÓN OBLIGATORIA:
+- deben existir EXACTAMENTE 30 variables reales
+- deben existir EXACTAMENTE 8 bloques
+
+SI FALTAN:
+→ ERROR
+→ NO completar automáticamente
+
+=====================================
+3. PROHIBIDO TRUNCAR DOCUMENTOS
+=====================================
+
+LOS DOCX SON DE 60–70 PÁGINAS.
+
+EL SISTEMA ACTUAL PUEDE ESTAR PROCESANDO TODO EN UNA SOLA LLAMADA A IA.
+
+ESTO ES INSEGURO.
+
+DEBES IMPLEMENTAR:
+
+- procesamiento por partes (chunks)
+- reconstrucción final completa
+- verificación de que TODO el documento fue procesado
+
+DEBES ASEGURAR:
+- ninguna sección se pierde
+- ninguna variable queda incompleta
+- ningún bloque queda cortado
+
+=====================================
+4. VALIDACIÓN ESTRICTA (OBLIGATORIA)
+=====================================
+
+ANTES DE GUARDAR EL JSON EN /analisis:
+
+DEBES VALIDAR TODO:
+
+1. JSON válido
+2. existe "candidate"
+3. existe "methodology"
+4. existe "blocks"
+5. hay 8 bloques
+6. hay 30 variables en total
+7. cada variable tiene:
+   - criteria (D, P, M, Im, V, E)
+   - criteria_sum
+   - formula_result
+   - final_score
+8. cada variable tiene:
+   - summary
+   - strengths
+   - weaknesses
+   - gaps
+   - conclusion
+   - sections completas
+9. ninguna variable está vacía o incompleta
+10. ningún bloque está vacío
+
+SI FALLA ALGO:
+→ NO GUARDAR JSON
+→ MOSTRAR ERROR CLARO
+
+=====================================
+5. FIDELIDAD AL DOCUMENTO (CRÍTICO)
+=====================================
+
+EL SISTEMA DEBE SER 100% FIEL AL DOCX.
+
+REGLAS:
+- NO resumir
+- NO reinterpretar
+- NO reescribir
+- NO simplificar
+- NO cambiar redacción
+- NO omitir contenido
+
+TODO debe salir EXACTAMENTE del documento.
+
+=====================================
+6. DETECCIÓN DE ERRORES REALES
+=====================================
+
+QUIERO QUE EL SISTEMA SEA ESTRICTO.
+
+SI DETECTAS:
+- variable incompleta
+- bloque faltante
+- puntaje inconsistente
+- estructura incompleta
+- secciones faltantes
+
+DEBES MOSTRAR ERRORES COMO:
+
+- "faltan variables"
+- "bloque incompleto"
+- "criterios faltantes"
+- "estructura incompleta"
+- "documento truncado"
+
+NO QUIERO SILENCIO.
+QUIERO ERRORES VISIBLES.
+
+=====================================
+7. NO ROMPER EL SISTEMA EXISTENTE
+=====================================
+
+- NO elimines /convertir.html
+- NO rompas la navegación
+- NO rompas la lectura de /analisis
+- SOLO MEJORA EL MOTOR INTERNO
+
+=====================================
+8. COSTO (IMPORTANTE)
+=====================================
+
+- optimiza uso de tokens
+- NO hagas múltiples llamadas innecesarias
+- usa procesamiento local cuando sea posible
+- usa IA solo para estructuración
+
+=====================================
+RESULTADO FINAL QUE ESPERO
+=====================================
+
+Después de estas correcciones:
+
+- subo un DOCX
+- el sistema procesa TODO correctamente
+- si está bien → guarda JSON en /analisis
+- si está mal → muestra error claro
+- NUNCA inventa datos
+- NUNCA cambia puntajes
+- NUNCA trunca contenido
+
+=====================================
+EJECUTA LAS CORRECCIONES AHORA
+=====================================
