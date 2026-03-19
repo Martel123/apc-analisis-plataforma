@@ -95,6 +95,44 @@
       transition: color 0.15s;
     }
     .home-how-btn:hover { color: var(--primary); }
+    /* ── Abstract ── */
+    .home-abstract {
+      margin: 28px 0 32px;
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .abstract-header {
+      display: flex; align-items: center; gap: 10px;
+      padding: 14px 20px 12px;
+      border-bottom: 1px solid var(--border-soft);
+      background: var(--bg);
+    }
+    .abstract-header-title {
+      font-size: 12px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.07em; color: var(--muted);
+    }
+    .abstract-body { padding: 18px 20px; }
+    .abstract-rows {
+      display: flex; flex-direction: column; gap: 9px; margin-bottom: 16px;
+    }
+    .abstract-row {
+      display: flex; align-items: baseline; gap: 8px;
+      font-size: 13.5px; line-height: 1.4;
+    }
+    .abstract-row-icon { font-size: 14px; flex-shrink: 0; }
+    .abstract-row-label { color: var(--muted); flex-shrink: 0; }
+    .abstract-row-val { font-weight: 700; color: var(--text); }
+    .abstract-row-score { color: var(--muted); font-size: 12px; }
+    .abstract-divider { border: none; border-top: 1px solid var(--border-soft); margin: 14px 0; }
+    .abstract-insight {
+      font-size: 13px; line-height: 1.65; color: var(--text-2);
+      font-style: italic;
+    }
+    .abstract-insight strong { color: var(--text); font-style: normal; }
+    .abstract-loading { padding: 20px; color: var(--muted); font-size: 13px; }
+
     .home-stats {
       display: flex;
       gap: 24px;
@@ -150,6 +188,16 @@
         <p class="home-desc">
           Explora un análisis individual o compara candidatos para identificar fortalezas, debilidades, vacíos y consistencia metodológica.
         </p>
+
+        <!-- ABSTRACT TÉCNICO GENERAL -->
+        <div class="home-abstract" id="homeAbstract">
+          <div class="abstract-header">
+            <span>📊</span>
+            <span class="abstract-header-title">Resumen técnico general — todos los candidatos</span>
+          </div>
+          <div class="abstract-body abstract-loading" id="abstractContent">Cargando resumen…</div>
+        </div>
+
         <div class="home-actions">
           <a href="analizar.html" class="btn-primary">Analizar un candidato</a>
           <a href="comparar.html" class="btn-secondary">Comparar candidatos</a>
@@ -214,10 +262,120 @@
 </div>
 
 <script src="public/js/data.js"></script>
+<script src="public/js/block-mapper.js"></script>
 <script>
+  function fmt1(s) { return s != null ? parseFloat(s).toFixed(1) : '—'; }
+
+  function stddev(arr) {
+    const valid = arr.filter(s => s != null);
+    if (valid.length < 2) return 999;
+    const avg = valid.reduce((a, b) => a + b, 0) / valid.length;
+    return Math.sqrt(valid.reduce((a, s) => a + (s - avg) ** 2, 0) / valid.length);
+  }
+
+  function buildAbstract(candidates) {
+    if (!candidates.length) return '<div class="abstract-loading">Sin candidatos disponibles.</div>';
+
+    // Assign canonical scores to each candidate
+    const withScores = candidates.map(c => ({
+      ...c,
+      _cs: getCanonicalScores(c)
+    }));
+
+    // Leader
+    const leader = [...withScores].sort((a, b) => (b.total_score || 0) - (a.total_score || 0))[0];
+
+    // Most balanced (lowest stddev)
+    const balanced = withScores.reduce((best, c) => {
+      const vals = Object.values(c._cs).filter(s => s != null);
+      const sd = vals.length >= 2 ? stddev(vals) : 999;
+      return sd < (best.sd ?? 999) ? { c, sd } : best;
+    }, {}).c || leader;
+
+    // Most specialized (highest single block, not overall leader)
+    let topBlock = null, topBlockScore = -1, topBlockCand = null;
+    withScores.forEach(c => {
+      Object.entries(c._cs).forEach(([bid, s]) => {
+        if (s != null && s > topBlockScore) { topBlockScore = s; topBlock = bid; topBlockCand = c; }
+      });
+    });
+
+    // Most gaps (most null canonical blocks)
+    const mostGaps = withScores.reduce((worst, c) => {
+      const nulls = Object.values(c._cs).filter(s => s == null).length;
+      return nulls > (worst.nulls ?? -1) ? { c, nulls } : worst;
+    }, {}).c || withScores[withScores.length - 1];
+
+    // System-wide block averages
+    const blockAvgs = {};
+    CANONICAL_BLOCKS.forEach(b => {
+      const vals = withScores.map(c => c._cs[b.id]).filter(s => s != null);
+      blockAvgs[b.id] = vals.length ? vals.reduce((a, x) => a + x, 0) / vals.length : null;
+    });
+    const sortedBlocks = CANONICAL_BLOCKS.filter(b => blockAvgs[b.id] != null)
+      .sort((a, z) => blockAvgs[z.id] - blockAvgs[a.id]);
+    const strongestBlock = sortedBlocks[0];
+    const weakestBlock  = sortedBlocks[sortedBlocks.length - 1];
+
+    // Build insight text
+    const weakestBlocksBelow5 = CANONICAL_BLOCKS.filter(b => blockAvgs[b.id] != null && blockAvgs[b.id] < 5);
+    let insight = `El análisis comparativo muestra que <strong>${leader.name}</strong> lidera con ${fmt1(leader.total_score)}/10, pero ningún candidato supera el umbral de 8/10, `;
+    if (weakestBlocksBelow5.length >= 2) {
+      insight += `y existe una debilidad transversal en <strong>${weakestBlocksBelow5.map(b => b.label).join(' y ')}</strong>, lo que sugiere problemas estructurales en el sistema político más allá de propuestas individuales.`;
+    } else {
+      insight += `lo que refleja limitaciones generalizadas en especificidad técnica e instrumentos de implementación.`;
+    }
+
+    const topBlockInfo = topBlock ? canonicalBlockInfo(topBlock) : null;
+
+    return `
+    <div class="abstract-rows">
+      <div class="abstract-row">
+        <span class="abstract-row-icon">🏆</span>
+        <span class="abstract-row-label">Mejor candidato general:</span>
+        <span class="abstract-row-val">${leader.name}</span>
+        <span class="abstract-row-score">${fmt1(leader.total_score)}/10</span>
+      </div>
+      <div class="abstract-row">
+        <span class="abstract-row-icon">⚖️</span>
+        <span class="abstract-row-label">Más equilibrado:</span>
+        <span class="abstract-row-val">${balanced.name}</span>
+        <span class="abstract-row-score">(menor dispersión entre bloques)</span>
+      </div>
+      ${topBlockCand ? `<div class="abstract-row">
+        <span class="abstract-row-icon">📈</span>
+        <span class="abstract-row-label">Mayor especialización:</span>
+        <span class="abstract-row-val">${topBlockCand.name}</span>
+        <span class="abstract-row-score">${topBlockInfo?.label} ${fmt1(topBlockScore)}/10</span>
+      </div>` : ''}
+      <div class="abstract-row">
+        <span class="abstract-row-icon">⚠️</span>
+        <span class="abstract-row-label">Más vacíos estructurales:</span>
+        <span class="abstract-row-val">${mostGaps.name}</span>
+      </div>
+      ${strongestBlock ? `<div class="abstract-row">
+        <span class="abstract-row-icon">💪</span>
+        <span class="abstract-row-label">Bloque más fuerte del sistema:</span>
+        <span class="abstract-row-val">${strongestBlock.label}</span>
+        <span class="abstract-row-score">prom. ${fmt1(blockAvgs[strongestBlock.id])}/10</span>
+      </div>` : ''}
+      ${weakestBlock ? `<div class="abstract-row">
+        <span class="abstract-row-icon">📉</span>
+        <span class="abstract-row-label">Bloque más débil del sistema:</span>
+        <span class="abstract-row-val">${weakestBlock.label}</span>
+        <span class="abstract-row-score">prom. ${fmt1(blockAvgs[weakestBlock.id])}/10</span>
+      </div>` : ''}
+    </div>
+    <hr class="abstract-divider">
+    <p class="abstract-insight">💡 <strong>Insight del sistema:</strong> ${insight}</p>`;
+  }
+
   async function init() {
     const candidates = await DataLayer.getCandidates();
     document.getElementById('statCandidates').textContent = candidates.length;
+    const el = document.getElementById('abstractContent');
+    el.classList.remove('abstract-loading');
+    el.innerHTML = buildAbstract(candidates);
   }
   init();
 

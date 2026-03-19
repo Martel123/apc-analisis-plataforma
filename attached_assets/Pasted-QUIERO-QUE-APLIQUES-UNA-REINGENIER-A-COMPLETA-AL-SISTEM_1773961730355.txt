@@ -1,0 +1,266 @@
+QUIERO QUE APLIQUES UNA REINGENIERÍA COMPLETA AL SISTEMA DE COMPARACIÓN DE CANDIDATOS Y ADEMÁS AGREGUES UN ABSTRACT PRINCIPAL EN LA PANTALLA DE INICIO.
+
+NO QUIERO EXPLICACIONES.
+NO QUIERO PLANES.
+QUIERO IMPLEMENTACIÓN DIRECTA.
+
+==================================================
+OBJETIVO GENERAL
+==================================================
+
+CONVERTIR LA PLATAFORMA EN UNA HERRAMIENTA DE DECISIÓN INTELIGENTE, NO SOLO DE VISUALIZACIÓN.
+
+==================================================
+PARTE 0 — ABSTRACT EN LA PANTALLA DE INICIO (NUEVO)
+==================================================
+
+EN EL HOME (pantalla inicial), ANTES DE LOS BOTONES:
+
+AGREGAR UN BLOQUE LLAMADO:
+
+“Resumen técnico general”
+
+Este abstract debe:
+
+1. SER AUTOMÁTICO
+2. USAR TODOS LOS JSON DISPONIBLES EN /analisis
+3. SER UNA VERSIÓN AMPLIADA DE LAS CONCLUSIONES
+
+--------------------------------------------------
+CONTENIDO DEL ABSTRACT
+--------------------------------------------------
+
+Debe incluir:
+
+- quién lidera en puntaje total general
+- cuál candidato es más equilibrado (menor varianza entre bloques)
+- cuál tiene los picos más altos (especialización)
+- cuál presenta más vacíos estructurales
+
+- bloque más fuerte del sistema (en general)
+- bloque más débil del sistema (en general)
+
+- insight general del sistema:
+
+Ejemplo:
+
+“El análisis comparativo muestra que, aunque algunos candidatos destacan en bloques específicos como seguridad o infraestructura, existe una debilidad transversal en política social y financiamiento, lo que sugiere que el sistema político presenta problemas estructurales más allá de propuestas individuales.”
+
+--------------------------------------------------
+FORMATO
+--------------------------------------------------
+
+Debe verse como:
+
+- bloque tipo “insight”
+- no párrafo gigante
+- con bullets o frases cortas
+
+Ejemplo:
+
+🏆 Mejor candidato general: X  
+⚖️ Más equilibrado: Y  
+📈 Mayor especialización: Z  
+⚠️ Más vacíos estructurales: W  
+
+💡 Insight del sistema:
+(texto corto, potente, técnico)
+
+--------------------------------------------------
+UBICACIÓN
+--------------------------------------------------
+
+Debe estar:
+
+HOME
+↓
+ABSTRACT
+↓
+BOTONES:
+- Analizar candidato
+- Comparar candidatos
+
+==================================================
+PARTE 1 — NORMALIZACIÓN DE BLOQUES (CRÍTICO)
+==================================================
+
+IMPLEMENTAR TAXONOMÍA CANÓNICA:
+
+- economia
+- seguridad
+- justicia_estado_derecho
+- educacion
+- salud
+- politica_social
+- infraestructura_desarrollo
+- tecnologia_estado_digital
+
+REGLAS:
+
+- TODOS los documentos deben mapearse a estos bloques
+- NO usar nombres originales para comparar
+- crear mapper automático
+
+==================================================
+PARTE 2 — REDISEÑO DE COMPARACIÓN
+==================================================
+
+--------------------------------------------------
+SECCIÓN 1 — ABSTRACT COMPARATIVO (ARRIBA)
+--------------------------------------------------
+
+Debe ser lo primero que ve el usuario.
+
+Debe incluir:
+
+- mejor candidato general
+- más equilibrado
+- más especializado
+- más débil
+
+Y reglas tipo:
+
+- “Si priorizas seguridad → X”
+- “Si priorizas consistencia → Y”
+
+--------------------------------------------------
+SECCIÓN 2 — TARJETAS RESUMEN
+--------------------------------------------------
+
+Una por candidato:
+
+- nombre
+- partido
+- puntaje total
+- mejor bloque
+- peor bloque
+
+--------------------------------------------------
+SECCIÓN 3 — TABLA ÚNICA POR BLOQUES
+--------------------------------------------------
+
+- 8 bloques
+- puntajes
+- colores
+- columna de ganador
+- diferencia de puntaje
+
+--------------------------------------------------
+SECCIÓN 4 — HEATMAP (FIX OBLIGATORIO)
+--------------------------------------------------
+
+IMPLEMENTAR:
+
+- solo 1 bloque visible por defecto
+- filtro por bloque
+- virtualización
+- memoización
+- debounce
+
+NO PERMITIR CRASH.
+
+--------------------------------------------------
+SECCIÓN 5 — MODAL DE VARIABLE (DRILL-DOWN)
+--------------------------------------------------
+
+CLICK EN VARIABLE → MODAL
+
+Debe mostrar:
+
+- puntajes
+- resumen por candidato
+- veredicto automático
+
+--------------------------------------------------
+SECCIÓN 6 — DIFERENCIAS CLAVE
+--------------------------------------------------
+
+Top variables con mayor diferencia entre candidatos.
+
+--------------------------------------------------
+SECCIÓN 7 — ALERTAS AUTOMÁTICAS
+--------------------------------------------------
+
+Detectar patrones:
+
+- todos fallan en X
+- nadie implementa Y
+
+--------------------------------------------------
+SECCIÓN 8 — FORTALEZAS Y DEBILIDADES
+--------------------------------------------------
+
+Solo 2 por candidato.
+
+--------------------------------------------------
+SECCIÓN 9 — CONCLUSIÓN FINAL
+--------------------------------------------------
+
+Resumen claro, no redundante.
+
+==================================================
+PARTE 3 — MODO INTERACTIVO
+==================================================
+
+AGREGAR:
+
+“¿Qué te importa más?”
+
+Sliders:
+
+- economia
+- seguridad
+- etc.
+
+Debe recalcular:
+- ranking
+- abstract
+
+==================================================
+PARTE 4 — LIMPIEZA
+==================================================
+
+ELIMINAR:
+
+- redundancia
+- duplicación
+- múltiples rankings innecesarios
+
+==================================================
+PARTE 5 — RENDIMIENTO
+==================================================
+
+OBLIGATORIO:
+
+- evitar re-render masivo
+- lazy load
+- componentes separados
+
+==================================================
+PARTE 6 — DESCARGA WORD
+==================================================
+
+Mantener con estructura:
+
+1. título
+2. candidatos
+3. tabla
+4. variables clave
+5. fortalezas
+6. debilidades
+7. conclusión
+
+==================================================
+RESULTADO FINAL
+==================================================
+
+PLATAFORMA DEBE:
+
+- no crashear
+- no repetir información
+- mostrar insights claros
+- permitir decisiones
+- tener abstract en home
+- tener profundidad real
+
+IMPLEMENTA TODO ESTO AHORA.

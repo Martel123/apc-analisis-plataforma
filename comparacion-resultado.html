@@ -9,260 +9,206 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="public/styles/globals.css">
   <style>
-    .page-wrap { padding: 0 0 80px; }
-    /* ── Header ── */
-    .comp-header {
-      padding: 40px 0 32px;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 0;
-    }
-    .comp-header-eyebrow {
-      display: inline-flex; align-items: center; gap: 6px;
-      padding: 4px 11px; background: var(--primary-soft); color: var(--primary);
-      border-radius: 99px; font-size: 11.5px; font-weight: 700;
-      letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 14px;
-    }
-    .comp-header h1 {
-      font-family: 'Sora', sans-serif; font-size: clamp(1.6rem,3.5vw,2.4rem);
-      font-weight: 900; letter-spacing: -0.03em; margin: 0 0 6px;
-    }
-    .comp-header-sub { font-size: 1rem; color: var(--text-2); margin: 0 0 24px; }
-    .comp-header-actions { display: flex; gap: 10px; flex-wrap: wrap; }
-    .btn-download {
-      display: inline-flex; align-items: center; gap: 7px;
-      background: var(--primary); color: #fff; padding: 9px 18px;
-      border-radius: 8px; font-size: 13.5px; font-weight: 700;
-      border: none; cursor: pointer;
-      transition: background 0.15s;
-    }
-    .btn-download:hover { background: var(--primary-dark); }
-    .btn-change {
-      display: inline-flex; align-items: center; gap: 7px;
-      background: var(--surface); color: var(--text-2);
-      padding: 9px 18px; border-radius: 8px; font-size: 13.5px;
-      font-weight: 600; border: 1.5px solid var(--border);
-      cursor: pointer; text-decoration: none;
-      transition: border-color 0.15s, color 0.15s;
-    }
-    .btn-change:hover { border-color: var(--text-2); color: var(--text); }
+    body { background: var(--bg); }
+    .page-wrap { padding: 0 0 100px; }
 
-    /* ── Section layout ── */
-    .comp-section {
-      padding: 40px 0 0;
-    }
-    .section-title {
-      font-family: 'Sora', sans-serif;
-      font-size: 1.25rem; font-weight: 800;
-      margin: 0 0 20px; display: flex; align-items: center; gap: 10px;
-    }
-    .section-title span {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 30px; height: 30px; border-radius: 8px;
-      background: var(--primary); color: #fff;
-      font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 800;
-      flex-shrink: 0;
-    }
-    .divider { border: none; border-top: 1px solid var(--border); margin: 40px 0 0; }
+    /* ── NAV STATE ── */
+    .topnav a.active { color: var(--primary); background: var(--primary-soft); }
 
-    /* ── Resumen cards ── */
-    .summary-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
-    }
-    .summary-card {
-      background: var(--surface);
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-    }
-    .summary-card-stripe { height: 5px; }
-    .summary-card-body { padding: 20px 22px 22px; }
-    .summary-card-name {
-      font-family: 'Sora', sans-serif;
-      font-size: 1.05rem; font-weight: 800; margin: 0 0 3px;
-    }
-    .summary-card-party { font-size: 12px; color: var(--muted); margin: 0 0 16px; }
-    .summary-score-big {
-      font-family: 'Sora', sans-serif;
-      font-size: 2.8rem; font-weight: 900; line-height: 1; margin-bottom: 4px;
-    }
-    .summary-meta { font-size: 12.5px; color: var(--muted); margin-bottom: 14px; }
-    .summary-best-worst { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .summary-bw-item { font-size: 12px; }
-    .summary-bw-label { color: var(--muted); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px; }
-    .summary-bw-val { font-weight: 700; color: var(--text); }
-
-    /* ── Winners bar ── */
-    .winners-bar {
-      display: flex; flex-wrap: wrap; gap: 10px;
-    }
-    .winner-chip {
-      display: flex; align-items: center; gap: 8px;
-      background: var(--surface); border: 1.5px solid var(--border);
-      border-radius: 10px; padding: 8px 14px;
-    }
-    .winner-chip-dot {
-      width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
-    }
-    .winner-chip-category {
-      font-size: 11.5px; color: var(--muted); font-weight: 600;
-      text-transform: uppercase; letter-spacing: 0.05em;
-    }
-    .winner-chip-name { font-size: 13px; font-weight: 700; }
-    .winner-chip-score { font-size: 12px; color: var(--muted); }
-
-    /* ── Block table ── */
-    .block-table-wrap { overflow-x: auto; }
-    .block-table {
-      width: 100%; border-collapse: collapse; font-size: 14px;
-    }
-    .block-table th {
-      padding: 11px 16px; text-align: left;
-      font-size: 12px; font-weight: 700; color: var(--muted);
-      text-transform: uppercase; letter-spacing: 0.05em;
-      border-bottom: 2px solid var(--border);
-    }
-    .block-table th.cand-col { text-align: center; }
-    .block-table td { padding: 10px 16px; border-bottom: 1px solid var(--border-soft); }
-    .block-table tr:last-child td { border-bottom: none; }
-    .block-table td.block-name { font-weight: 700; }
-    .block-table td.score-cell { text-align: center; }
-    .score-cell-inner {
-      display: inline-flex; flex-direction: column; align-items: center; gap: 2px;
-    }
-    .score-pill {
-      padding: 4px 12px; border-radius: 99px;
-      font-weight: 800; font-size: 14px; font-family: 'Sora', sans-serif;
-    }
-    .score-pill.lvl-strong   { background: #dcfce7; color: #15803d; }
-    .score-pill.lvl-solid    { background: #dbeafe; color: #1d4ed8; }
-    .score-pill.lvl-medium   { background: #fef3c7; color: #92400e; }
-    .score-pill.lvl-weak     { background: #ffedd5; color: #c2410c; }
-    .score-pill.lvl-very-weak{ background: #fee2e2; color: #b91c1c; }
-    .score-pill.lvl-none     { background: var(--border); color: var(--muted); }
-    .score-pill-label { font-size: 10.5px; color: var(--muted); }
-
-    /* ── Heatmap ── */
-    .heatmap-filter {
-      display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 18px;
-    }
-    .hf-btn {
-      padding: 5px 13px; border-radius: 99px; font-size: 12.5px; font-weight: 600;
-      border: 1.5px solid var(--border); background: var(--surface); color: var(--text-2);
-      cursor: pointer; transition: border-color 0.15s, color 0.15s, background 0.15s;
-    }
-    .hf-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
-    .heatmap-wrap { overflow-x: auto; }
-    .heatmap-table { width: 100%; border-collapse: collapse; font-size: 13px; }
-    .heatmap-table th {
-      padding: 9px 12px; font-size: 11.5px; font-weight: 700; color: var(--muted);
-      text-transform: uppercase; letter-spacing: 0.04em;
-      border-bottom: 2px solid var(--border); text-align: center;
-    }
-    .heatmap-table th:first-child { text-align: left; min-width: 160px; }
-    .heatmap-table td { padding: 7px 12px; border-bottom: 1px solid var(--border-soft); text-align: center; }
-    .heatmap-table td:first-child { text-align: left; font-size: 12.5px; }
-    .heatmap-table tr:last-child td { border-bottom: none; }
-    .hm-block-header td {
-      background: var(--bg); font-weight: 700; font-size: 11.5px;
-      color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em;
-      padding: 8px 12px 5px;
-    }
-    .hm-cell {
-      display: inline-flex; align-items: center; justify-content: center;
-      min-width: 46px; height: 32px; border-radius: 7px;
-      font-weight: 800; font-size: 13px; font-family: 'Sora', sans-serif;
-    }
-    .hm-none   { background: #f1f1ef; color: #aaa; }
-    .hm-lvl0   { background: #fee2e2; color: #b91c1c; }
-    .hm-lvl1   { background: #ffedd5; color: #c2410c; }
-    .hm-lvl2   { background: #fef3c7; color: #92400e; }
-    .hm-lvl3   { background: #dbeafe; color: #1d4ed8; }
-    .hm-lvl4   { background: #dcfce7; color: #15803d; }
-
-    /* ── Block accordion ── */
-    .block-accordion { display: flex; flex-direction: column; gap: 10px; }
-    .acc-item {
-      background: var(--surface); border: 1.5px solid var(--border);
-      border-radius: var(--radius); overflow: hidden;
-    }
-    .acc-header {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 14px 18px; cursor: pointer; transition: background 0.12s;
-    }
-    .acc-header:hover { background: var(--bg); }
-    .acc-header-left { display: flex; align-items: center; gap: 12px; }
-    .acc-header-name { font-weight: 700; font-size: 15px; }
-    .acc-scores-row { display: flex; gap: 8px; }
-    .acc-score-chip {
-      display: flex; align-items: center; gap: 5px;
-      font-size: 12px; padding: 2px 8px; border-radius: 99px;
-      border: 1.5px solid; font-weight: 700;
-    }
-    .acc-chevron { transition: transform 0.2s; color: var(--muted); }
-    .acc-item.open .acc-chevron { transform: rotate(180deg); }
-    .acc-body { display: none; padding: 0 18px 18px; }
-    .acc-item.open .acc-body { display: block; }
-    .acc-var-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
-    .acc-var-table th {
-      padding: 8px 12px; font-size: 11px; font-weight: 700;
-      color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em;
-      border-bottom: 1px solid var(--border); text-align: left;
-    }
-    .acc-var-table td { padding: 9px 12px; border-bottom: 1px solid var(--border-soft); vertical-align: top; }
-    .acc-var-table tr:last-child td { border-bottom: none; }
-    .acc-var-name { font-weight: 700; margin-bottom: 3px; }
-    .acc-var-level { font-size: 11px; color: var(--muted); }
-    .acc-var-summary { font-size: 12px; color: var(--text-2); line-height: 1.5; }
-
-    /* ── Strengths / Weaknesses ── */
-    .sw-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    @media (max-width: 680px) { .sw-grid { grid-template-columns: 1fr; } }
-    .sw-column { background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius-lg); padding: 22px; }
-    .sw-col-title {
-      font-size: 12px; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.07em; margin-bottom: 16px; display: flex; align-items: center; gap: 7px;
-    }
-    .sw-dot { width: 8px; height: 8px; border-radius: 50%; }
-    .sw-cand-block { margin-bottom: 16px; }
-    .sw-cand-block:last-child { margin-bottom: 0; }
-    .sw-cand-name { font-size: 12.5px; font-weight: 700; margin-bottom: 7px; display: flex; align-items: center; gap: 6px; }
-    .sw-cand-name::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; }
-    .sw-list li {
-      font-size: 12.5px; color: var(--text-2); line-height: 1.5;
-      padding: 3px 0 3px 14px; position: relative;
-    }
-    .sw-list li::before {
-      content: '—'; position: absolute; left: 0; color: var(--muted-light);
-    }
-
-    /* ── Conclusion ── */
-    .conclusion-box {
-      background: var(--surface); border: 1.5px solid var(--border);
-      border-radius: var(--radius-lg); padding: 28px 32px;
-    }
-    .conclusion-text {
-      font-size: 15px; line-height: 1.75; color: var(--text-2);
-    }
-    .conclusion-text strong { color: var(--text); }
-
-    /* ── Loading ── */
+    /* ── LOADING ── */
     .full-loading {
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      min-height: 60vh; gap: 16px; color: var(--muted);
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      min-height:70vh;gap:14px;color:var(--muted);
     }
-    .spinner {
-      width: 36px; height: 36px; border: 3px solid var(--border);
-      border-top-color: var(--primary); border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
+    .spinner { width:34px;height:34px;border:3px solid var(--border);border-top-color:var(--primary);border-radius:50%;animation:spin .75s linear infinite; }
+    @keyframes spin{to{transform:rotate(360deg)}}
 
-    @media (max-width: 640px) {
-      .summary-grid { grid-template-columns: 1fr; }
-      .winners-bar { gap: 7px; }
-      .winner-chip { padding: 6px 10px; }
+    /* ── HEADER ── */
+    .comp-header { padding:36px 0 28px;border-bottom:1px solid var(--border);margin-bottom:0; }
+    .comp-eyebrow { display:inline-flex;align-items:center;gap:6px;padding:4px 11px;background:var(--primary-soft);color:var(--primary);border-radius:99px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px; }
+    .comp-header h1 { font-family:'Sora',sans-serif;font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:900;letter-spacing:-.03em;margin:0 0 4px; }
+    .comp-header-sub { font-size:.95rem;color:var(--text-2);margin:0 0 20px; }
+    .comp-header-actions { display:flex;gap:8px;flex-wrap:wrap; }
+    .btn-dl { display:inline-flex;align-items:center;gap:6px;background:var(--primary);color:#fff;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:700;border:none;cursor:pointer;transition:background .15s; }
+    .btn-dl:hover { background:var(--primary-dark); }
+    .btn-dl:disabled { opacity:.5;cursor:not-allowed; }
+    .btn-back { display:inline-flex;align-items:center;gap:6px;background:var(--surface);color:var(--text-2);padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;border:1.5px solid var(--border);text-decoration:none;transition:border-color .15s; }
+    .btn-back:hover { border-color:var(--text-2); }
+
+    /* ── SECTION ── */
+    .comp-section { padding:36px 0 0; }
+    .section-title { font-family:'Sora',sans-serif;font-size:1.1rem;font-weight:800;margin:0 0 18px;display:flex;align-items:center;gap:9px; }
+    .section-num { display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:7px;background:var(--primary);color:#fff;font-family:'Inter',sans-serif;font-size:12px;font-weight:800;flex-shrink:0; }
+    .divider { border:none;border-top:1px solid var(--border);margin:36px 0 0; }
+
+    /* ── ABSTRACT COMPARATIVO ── */
+    .comp-abstract {
+      background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;
+    }
+    .comp-abstract-header {
+      display:flex;align-items:center;gap:8px;padding:12px 18px;
+      background:var(--bg);border-bottom:1px solid var(--border-soft);
+      font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);
+    }
+    .comp-abstract-body { padding:18px 20px; }
+    .abs-rows { display:flex;flex-direction:column;gap:8px;margin-bottom:14px; }
+    .abs-row { display:flex;align-items:baseline;gap:7px;font-size:13.5px; }
+    .abs-icon { font-size:13px;flex-shrink:0; }
+    .abs-label { color:var(--muted);flex-shrink:0; }
+    .abs-val { font-weight:700; }
+    .abs-note { font-size:12px;color:var(--muted); }
+    .abs-divider { border:none;border-top:1px solid var(--border-soft);margin:14px 0; }
+    .abs-recs { display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px; }
+    .abs-rec { display:flex;align-items:center;gap:6px;padding:6px 12px;background:var(--bg);border:1px solid var(--border);border-radius:8px;font-size:12.5px; }
+    .abs-rec strong { font-weight:700; }
+    .abs-insight { font-size:13px;line-height:1.7;color:var(--text-2);font-style:italic; }
+    .abs-insight strong { color:var(--text);font-style:normal; }
+
+    /* ── SUMMARY CARDS ── */
+    .summary-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px; }
+    .sum-card { background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-lg);overflow:hidden; }
+    .sum-stripe { height:4px; }
+    .sum-body { padding:18px 20px 20px; }
+    .sum-name { font-family:'Sora',sans-serif;font-size:1rem;font-weight:800;margin:0 0 2px;line-height:1.2; }
+    .sum-party { font-size:11.5px;color:var(--muted);margin:0 0 14px; }
+    .sum-score { font-family:'Sora',sans-serif;font-size:2.4rem;font-weight:900;line-height:1;margin-bottom:3px; }
+    .sum-meta { font-size:12px;color:var(--muted);margin-bottom:12px; }
+    .sum-bw { display:grid;grid-template-columns:1fr 1fr;gap:8px; }
+    .sum-bw-item { font-size:11.5px; }
+    .sum-bw-label { color:var(--muted);font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:1px; }
+    .sum-bw-val { font-weight:700;font-size:12px; }
+
+    /* ── BLOCK TABLE ── */
+    .block-tbl-wrap { overflow-x:auto; }
+    .block-tbl { width:100%;border-collapse:collapse;font-size:13.5px; }
+    .block-tbl th { padding:10px 14px;font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;border-bottom:2px solid var(--border);text-align:left; }
+    .block-tbl th.c-cand { text-align:center; }
+    .block-tbl td { padding:8px 14px;border-bottom:1px solid var(--border-soft); }
+    .block-tbl tr:last-child td { border-bottom:none; }
+    .block-tbl tr:hover td { background:var(--bg); }
+    .block-icon { font-size:14px;margin-right:6px; }
+    .block-name-cell { font-weight:700; }
+    .block-diff-cell { text-align:center; }
+    .score-chip {
+      display:inline-flex;align-items:center;justify-content:center;
+      min-width:42px;height:28px;border-radius:7px;
+      font-weight:800;font-size:13px;font-family:'Sora',sans-serif;
+      text-align:center;
+    }
+    .sc-strong   { background:#dcfce7;color:#15803d; }
+    .sc-solid    { background:#dbeafe;color:#1d4ed8; }
+    .sc-medium   { background:#fef3c7;color:#92400e; }
+    .sc-weak     { background:#ffedd5;color:#c2410c; }
+    .sc-very-weak{ background:#fee2e2;color:#b91c1c; }
+    .sc-none     { background:#f1f1ef;color:#aaa; }
+    .winner-pill { display:inline-flex;align-items:center;gap:4px;padding:2px 9px;border-radius:99px;font-size:11px;font-weight:700;border:1.5px solid; }
+    .diff-badge  { font-weight:800;font-size:12px; }
+
+    /* ── HEATMAP ── */
+    .hm-filter { display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px; }
+    .hm-btn { padding:5px 12px;border-radius:99px;font-size:12px;font-weight:600;border:1.5px solid var(--border);background:var(--surface);color:var(--text-2);cursor:pointer;transition:all .12s; }
+    .hm-btn.active { background:var(--primary);color:#fff;border-color:var(--primary); }
+    .hm-wrap { overflow-x:auto; }
+    .hm-table { width:100%;border-collapse:collapse;font-size:12.5px; }
+    .hm-table th { padding:8px 12px;font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;border-bottom:2px solid var(--border);text-align:center; }
+    .hm-table th:first-child { text-align:left;min-width:150px; }
+    .hm-table td { padding:5px 10px;border-bottom:1px solid var(--border-soft);text-align:center;cursor:pointer; }
+    .hm-table td:first-child { text-align:left;font-size:12px;cursor:default; }
+    .hm-table tr:hover td { background:var(--bg); }
+    .hm-cell {
+      display:inline-flex;align-items:center;justify-content:center;
+      min-width:44px;height:30px;border-radius:6px;
+      font-weight:800;font-size:12.5px;font-family:'Sora',sans-serif;
+      transition:transform .1s;
+    }
+    .hm-cell:hover { transform:scale(1.08); }
+    .hm-none  { background:#f1f1ef;color:#bbb; }
+    .hm-0     { background:#fecaca;color:#991b1b; }
+    .hm-1     { background:#fed7aa;color:#9a3412; }
+    .hm-2     { background:#fef08a;color:#713f12; }
+    .hm-3     { background:#bfdbfe;color:#1e3a8a; }
+    .hm-4     { background:#bbf7d0;color:#14532d; }
+
+    /* ── MODAL VARIABLE ── */
+    .modal-overlay { position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:500;display:none;align-items:center;justify-content:center;padding:20px; }
+    .modal-overlay.open { display:flex; }
+    .modal-box { background:var(--surface);border-radius:var(--radius-lg);width:100%;max-width:680px;max-height:80vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.2); }
+    .modal-head { padding:18px 22px 14px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:start; }
+    .modal-title { font-family:'Sora',sans-serif;font-weight:800;font-size:1.05rem;margin:0 12px 0 0; }
+    .modal-subtitle { font-size:12px;color:var(--muted);margin:4px 0 0; }
+    .modal-close { background:none;border:none;font-size:18px;cursor:pointer;color:var(--muted);padding:0;line-height:1;flex-shrink:0; }
+    .modal-body { padding:18px 22px 22px; }
+    .modal-scores { display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-bottom:16px; }
+    .modal-score-card { background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px 14px;text-align:center; }
+    .modal-score-cand { font-size:11.5px;color:var(--muted);margin-bottom:4px;font-weight:600; }
+    .modal-score-num { font-family:'Sora',sans-serif;font-size:1.6rem;font-weight:900; }
+    .modal-score-level { font-size:11px;color:var(--muted); }
+    .modal-verdict { background:var(--primary-soft);border-radius:8px;padding:12px 14px;font-size:13px;line-height:1.6;color:var(--text-2); }
+    .modal-verdict strong { color:var(--text); }
+    .modal-summaries { margin-top:14px;display:flex;flex-direction:column;gap:10px; }
+    .modal-sum-item { border-left:3px solid;padding:8px 12px;border-radius:0 6px 6px 0; }
+    .modal-sum-cand { font-size:11.5px;font-weight:700;margin-bottom:3px; }
+    .modal-sum-text { font-size:12.5px;color:var(--text-2);line-height:1.5; }
+
+    /* ── KEY DIFFERENCES ── */
+    .diff-list { display:flex;flex-direction:column;gap:10px; }
+    .diff-item { background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);padding:14px 16px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px; }
+    .diff-varname { font-weight:700;margin-bottom:2px;font-size:14px; }
+    .diff-block { font-size:11.5px;color:var(--muted); }
+    .diff-scores { display:flex;gap:6px;margin-top:6px;flex-wrap:wrap; }
+    .diff-score-pill { display:flex;align-items:center;gap:4px;font-size:12px;padding:2px 8px;border-radius:99px;border:1.5px solid;font-weight:600; }
+    .diff-gap { text-align:center; }
+    .diff-gap-num { font-family:'Sora',sans-serif;font-size:1.5rem;font-weight:900; }
+    .diff-gap-label { font-size:11px;color:var(--muted); }
+
+    /* ── ALERTS ── */
+    .alerts-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px; }
+    .alert-card { background:var(--surface);border-radius:var(--radius);padding:14px 16px;display:flex;gap:12px;align-items:flex-start;border:1.5px solid; }
+    .alert-card.alert-warn { border-color:#fde68a;background:#fffbeb; }
+    .alert-card.alert-info { border-color:#bfdbfe;background:#eff6ff; }
+    .alert-card.alert-danger { border-color:#fecaca;background:#fff5f5; }
+    .alert-icon { font-size:18px;flex-shrink:0; }
+    .alert-title { font-weight:700;font-size:13.5px;margin-bottom:2px; }
+    .alert-desc { font-size:12.5px;color:var(--text-2);line-height:1.5; }
+
+    /* ── SW ── */
+    .sw-grid { display:grid;grid-template-columns:1fr 1fr;gap:16px; }
+    @media(max-width:640px){.sw-grid{grid-template-columns:1fr;}}
+    .sw-col { background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:20px; }
+    .sw-col-title { font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:14px;display:flex;align-items:center;gap:7px; }
+    .sw-cand { margin-bottom:14px; }
+    .sw-cand:last-child{margin-bottom:0;}
+    .sw-cand-name { font-size:12.5px;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:5px; }
+    .sw-dot { width:6px;height:6px;border-radius:50%;flex-shrink:0; }
+    .sw-ul li { font-size:12.5px;color:var(--text-2);padding:2px 0 2px 12px;position:relative;line-height:1.5; }
+    .sw-ul li::before { content:'–';position:absolute;left:0;color:var(--muted-light); }
+
+    /* ── CONCLUSION ── */
+    .conclusion-box { background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:24px 28px; }
+    .conclusion-text { font-size:14.5px;line-height:1.8;color:var(--text-2); }
+    .conclusion-text strong { color:var(--text); }
+
+    /* ── INTERACTIVE MODE ── */
+    .interactive-box { background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:20px 24px; }
+    .interactive-intro { font-size:13px;color:var(--text-2);margin-bottom:18px;line-height:1.6; }
+    .sliders-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px 24px;margin-bottom:20px; }
+    .slider-row { display:flex;flex-direction:column;gap:5px; }
+    .slider-label { display:flex;justify-content:space-between;font-size:12.5px;font-weight:600; }
+    .slider-label span { color:var(--muted);font-weight:400; }
+    input[type=range] { width:100%;accent-color:var(--primary); }
+    .interactive-ranking { display:flex;flex-direction:column;gap:8px; }
+    .rank-item { display:flex;align-items:center;gap:12px;background:var(--bg);border-radius:8px;padding:10px 14px;transition:background .15s; }
+    .rank-pos { font-family:'Sora',sans-serif;font-size:1.1rem;font-weight:900;color:var(--muted);width:20px;text-align:center;flex-shrink:0; }
+    .rank-dot { width:10px;height:10px;border-radius:50%;flex-shrink:0; }
+    .rank-name { font-weight:700;flex:1; }
+    .rank-score { font-family:'Sora',sans-serif;font-weight:800;font-size:1.05rem; }
+    .rank-bar-wrap { width:80px;height:5px;background:var(--border);border-radius:99px;overflow:hidden; }
+    .rank-bar-fill { height:100%;border-radius:99px;transition:width .3s; }
+
+    @media(max-width:600px){
+      .summary-grid{grid-template-columns:1fr;}
+      .sw-grid{grid-template-columns:1fr;}
+      .sliders-grid{grid-template-columns:1fr;}
     }
   </style>
 </head>
@@ -297,98 +243,138 @@
 
   <!-- HEADER -->
   <div class="comp-header">
-    <div class="comp-header-eyebrow">▸ Comparación técnica</div>
-    <h1 id="compTitle">Comparación de candidatos</h1>
-    <p class="comp-header-sub" id="compSubtitle"></p>
+    <div class="comp-eyebrow">▸ Comparación técnica</div>
+    <h1 id="compTitle">Comparación</h1>
+    <p class="comp-header-sub" id="compSub"></p>
     <div class="comp-header-actions">
-      <button class="btn-download" id="btnDownload">
-        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Descargar comparación
+      <button class="btn-dl" id="btnDl">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Descargar Word
       </button>
-      <a href="comparar.html" class="btn-change">
-        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      <a href="comparar.html" class="btn-back">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
         Cambiar candidatos
       </a>
     </div>
   </div>
 
-  <!-- SECCIÓN 1: Resumen rápido -->
+  <!-- S1: Abstract comparativo -->
   <div class="comp-section">
-    <div class="section-title"><span>1</span> Resumen rápido</div>
+    <div class="section-title"><span class="section-num">1</span> Análisis comparativo</div>
+    <div class="comp-abstract">
+      <div class="comp-abstract-header">📊 Resumen automático · actualizado con prioridades</div>
+      <div class="comp-abstract-body" id="absBody"></div>
+    </div>
+  </div>
+  <hr class="divider">
+
+  <!-- S2: Tarjetas resumen -->
+  <div class="comp-section">
+    <div class="section-title"><span class="section-num">2</span> Resumen por candidato</div>
     <div class="summary-grid" id="summaryGrid"></div>
   </div>
   <hr class="divider">
 
-  <!-- SECCIÓN 2: Ganadores por categoría -->
+  <!-- S3: Tabla por bloques -->
   <div class="comp-section">
-    <div class="section-title"><span>2</span> Ganadores por categoría</div>
-    <div class="winners-bar" id="winnersBar"></div>
-  </div>
-  <hr class="divider">
-
-  <!-- SECCIÓN 3: Tabla por bloques -->
-  <div class="comp-section">
-    <div class="section-title"><span>3</span> Tabla comparativa por bloques</div>
-    <div class="block-table-wrap">
-      <table class="block-table" id="blockTable"></table>
+    <div class="section-title"><span class="section-num">3</span> Tabla comparativa por bloques</div>
+    <div class="block-tbl-wrap">
+      <table class="block-tbl" id="blockTbl"></table>
     </div>
   </div>
   <hr class="divider">
 
-  <!-- SECCIÓN 4: Heatmap -->
+  <!-- S4: Heatmap -->
   <div class="comp-section">
-    <div class="section-title"><span>4</span> Heatmap de variables</div>
-    <div class="heatmap-filter" id="heatmapFilter"></div>
-    <div class="heatmap-wrap">
-      <table class="heatmap-table" id="heatmapTable"></table>
+    <div class="section-title"><span class="section-num">4</span> Heatmap de variables</div>
+    <div class="hm-filter" id="hmFilter"></div>
+    <div class="hm-wrap">
+      <table class="hm-table" id="hmTable"></table>
     </div>
   </div>
   <hr class="divider">
 
-  <!-- SECCIÓN 5: Detalle por bloque -->
+  <!-- S5: Diferencias clave -->
   <div class="comp-section">
-    <div class="section-title"><span>5</span> Comparación profunda por bloque</div>
-    <div class="block-accordion" id="blockAccordion"></div>
+    <div class="section-title"><span class="section-num">5</span> Diferencias clave</div>
+    <div class="diff-list" id="diffList"></div>
   </div>
   <hr class="divider">
 
-  <!-- SECCIÓN 6: Fortalezas y debilidades -->
+  <!-- S6: Alertas automáticas -->
   <div class="comp-section">
-    <div class="section-title"><span>6</span> Fortalezas y debilidades comparadas</div>
+    <div class="section-title"><span class="section-num">6</span> Alertas del sistema</div>
+    <div class="alerts-grid" id="alertsGrid"></div>
+  </div>
+  <hr class="divider">
+
+  <!-- S7: Fortalezas y debilidades -->
+  <div class="comp-section">
+    <div class="section-title"><span class="section-num">7</span> Fortalezas y debilidades</div>
     <div class="sw-grid" id="swGrid"></div>
   </div>
   <hr class="divider">
 
-  <!-- SECCIÓN 7: Conclusión -->
+  <!-- S8: Conclusión -->
   <div class="comp-section">
-    <div class="section-title"><span>7</span> Conclusión comparativa</div>
+    <div class="section-title"><span class="section-num">8</span> Conclusión comparativa</div>
     <div class="conclusion-box">
       <p class="conclusion-text" id="conclusionText"></p>
+    </div>
+  </div>
+  <hr class="divider">
+
+  <!-- S9: Modo interactivo -->
+  <div class="comp-section">
+    <div class="section-title"><span class="section-num">9</span> ¿Qué te importa más? — Ranking personalizado</div>
+    <div class="interactive-box">
+      <p class="interactive-intro">
+        Ajusta los sliders para ponderar los bloques según tus prioridades. El ranking se recalcula en tiempo real.
+      </p>
+      <div class="sliders-grid" id="slidersGrid"></div>
+      <div class="interactive-ranking" id="interactiveRanking"></div>
     </div>
   </div>
 
 </div>
 </div>
 
+<!-- MODAL VARIABLE -->
+<div class="modal-overlay" id="varModal">
+  <div class="modal-box">
+    <div class="modal-head">
+      <div>
+        <div class="modal-title" id="modalVarName"></div>
+        <div class="modal-subtitle" id="modalVarBlock"></div>
+      </div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
 <script src="public/js/data.js"></script>
+<script src="public/js/block-mapper.js"></script>
 <script>
+'use strict';
+
 const PALETTE = ['#b5121b','#1d4ed8','#16a34a','#d97706','#7c3aed','#0891b2','#be185d'];
 
+// ── Utilities ─────────────────────────────────────────────────────────────────
+
 function getIds() {
-  const p = new URLSearchParams(location.search);
-  const ids = p.get('ids') || '';
-  return ids.split(',').map(s => s.trim()).filter(Boolean);
+  return (new URLSearchParams(location.search).get('ids') || '')
+    .split(',').map(s => s.trim()).filter(Boolean);
 }
 
 function assignColors(candidates) {
-  return candidates.map((c, i) => ({
-    ...c,
-    _color: c.color || PALETTE[i % PALETTE.length]
-  }));
+  return candidates.map((c, i) => ({ ...c, _color: c.color || PALETTE[i % PALETTE.length] }));
 }
 
-function scoreLevel(s) {
-  if (s === null || s === undefined) return 'none';
+function fmt(s, d=1) { return s != null ? parseFloat(s).toFixed(d) : '—'; }
+
+function scLevel(s) {
+  if (s == null) return 'none';
   if (s >= 8) return 'strong';
   if (s >= 6) return 'solid';
   if (s >= 4) return 'medium';
@@ -396,8 +382,8 @@ function scoreLevel(s) {
   return 'very-weak';
 }
 
-function scoreLevelLabel(s) {
-  if (s === null || s === undefined) return 'Sin datos';
+function scLabel(s) {
+  if (s == null) return 'Sin datos';
   if (s >= 8) return 'Muy sólido';
   if (s >= 6) return 'Sólido';
   if (s >= 4) return 'Intermedio';
@@ -406,41 +392,173 @@ function scoreLevelLabel(s) {
 }
 
 function hmClass(s) {
-  if (s === null || s === undefined) return 'hm-none';
-  if (s >= 8) return 'hm-lvl4';
-  if (s >= 6) return 'hm-lvl3';
-  if (s >= 4) return 'hm-lvl2';
-  if (s >= 2) return 'hm-lvl1';
-  return 'hm-lvl0';
+  if (s == null) return 'hm-none';
+  if (s >= 8) return 'hm-4';
+  if (s >= 6) return 'hm-3';
+  if (s >= 4) return 'hm-2';
+  if (s >= 2) return 'hm-1';
+  return 'hm-0';
 }
 
-function fmt(s) { return s != null ? s.toFixed(1) : '—'; }
+function chip(s, cls) {
+  return `<span class="score-chip sc-${cls || scLevel(s)}">${fmt(s)}</span>`;
+}
 
-// ── Render helpers ─────────────────────────────────────────────────────────
+function stddev(arr) {
+  const v = arr.filter(x => x != null);
+  if (v.length < 2) return 0;
+  const avg = v.reduce((a, b) => a + b, 0) / v.length;
+  return Math.sqrt(v.reduce((a, x) => a + (x - avg) ** 2, 0) / v.length);
+}
+
+// ── Global state ──────────────────────────────────────────────────────────────
+
+let gCandidates = [];
+let gWeights = {};
+let hmActiveBlock = null;
+let gVarData = {}; // varId → { name, blockId, blockName, scores: { candId: val }, summaries: { candId: str } }
+
+// ── Build variable index ──────────────────────────────────────────────────────
+
+function buildVarIndex(candidates) {
+  gVarData = {};
+  candidates.forEach(c => {
+    (c.blocks || []).forEach(b => {
+      const cid = mapBlockId(b.id, b.name);
+      (b.variables || []).forEach(v => {
+        if (!gVarData[v.id]) {
+          gVarData[v.id] = {
+            id: v.id, name: v.name,
+            blockId: cid || b.id, blockName: cid ? canonicalBlockInfo(cid).label : b.name,
+            scores: {}, summaries: {}
+          };
+        }
+        gVarData[v.id].scores[c.id] = v.final_score;
+        if (v.summary) gVarData[v.id].summaries[c.id] = v.summary;
+      });
+    });
+  });
+}
+
+// ── S1: Abstract ──────────────────────────────────────────────────────────────
+
+function renderAbstract(candidates, weights) {
+  const withCS = candidates.map(c => ({ ...c, _cs: getCanonicalScores(c) }));
+
+  // Weighted scores
+  const totalW = Object.values(weights).reduce((a, b) => a + b, 0) || 1;
+  const weightedScore = (c) => {
+    let sum = 0, wsum = 0;
+    CANONICAL_BLOCKS.forEach(b => {
+      const w = weights[b.id] || 0;
+      const s = c._cs[b.id];
+      if (s != null && w > 0) { sum += s * w; wsum += w; }
+    });
+    return wsum > 0 ? sum / wsum : c.total_score || 0;
+  };
+
+  const sorted = [...withCS].sort((a, b) => weightedScore(b) - weightedScore(a));
+  const leader = sorted[0];
+  const last   = sorted[sorted.length - 1];
+
+  // Balanced
+  const balanced = withCS.reduce((best, c) => {
+    const sd = stddev(Object.values(c._cs).filter(s => s != null));
+    return sd < (best.sd ?? 999) ? { c, sd } : best;
+  }, {}).c || leader;
+
+  // Specialized (highest single block)
+  let topCid = null, topScore = -1, topCand = null;
+  withCS.forEach(c => {
+    Object.entries(c._cs).forEach(([bid, s]) => {
+      if (s != null && s > topScore) { topScore = s; topCid = bid; topCand = c; }
+    });
+  });
+
+  // Recommendations
+  const recs = CANONICAL_BLOCKS.map(b => {
+    let best = null, bestS = -1;
+    withCS.forEach(c => {
+      const s = c._cs[b.id];
+      if (s != null && s > bestS) { bestS = s; best = c; }
+    });
+    return best ? { block: b, best, score: bestS } : null;
+  }).filter(Boolean);
+
+  // Insight
+  const blockAvgs = {};
+  CANONICAL_BLOCKS.forEach(b => {
+    const vals = withCS.map(c => c._cs[b.id]).filter(s => s != null);
+    blockAvgs[b.id] = vals.length ? vals.reduce((a, x) => a + x, 0) / vals.length : null;
+  });
+  const weak = CANONICAL_BLOCKS.filter(b => blockAvgs[b.id] != null && blockAvgs[b.id] < 5);
+  let insight = `<strong>${leader.name}</strong> lidera esta comparación con ${fmt(weightedScore(leader))}/10 (ponderado).`;
+  if (balanced.id !== leader.id) insight += ` <strong>${balanced.name}</strong> es el más equilibrado entre bloques.`;
+  if (weak.length) insight += ` Se detecta debilidad transversal en <strong>${weak.map(b => b.label).join(', ')}</strong>.`;
+  if (last.id !== leader.id) insight += ` <strong>${last.name}</strong> muestra el perfil técnico más limitado.`;
+
+  const topBlockInfo = topCid ? canonicalBlockInfo(topCid) : null;
+
+  document.getElementById('absBody').innerHTML = `
+    <div class="abs-rows">
+      <div class="abs-row">
+        <span class="abs-icon">🏆</span><span class="abs-label">Mejor candidato:</span>
+        <span class="abs-val">${leader.name}</span>
+        <span class="abs-note">${fmt(weightedScore(leader))}/10</span>
+      </div>
+      <div class="abs-row">
+        <span class="abs-icon">⚖️</span><span class="abs-label">Más equilibrado:</span>
+        <span class="abs-val">${balanced.name}</span>
+        <span class="abs-note">menor dispersión entre bloques</span>
+      </div>
+      ${topCand ? `<div class="abs-row">
+        <span class="abs-icon">📈</span><span class="abs-label">Mayor especialización:</span>
+        <span class="abs-val">${topCand.name}</span>
+        <span class="abs-note">${topBlockInfo?.label || ''} ${fmt(topScore)}/10</span>
+      </div>` : ''}
+      <div class="abs-row">
+        <span class="abs-icon">⚠️</span><span class="abs-label">Perfil más débil:</span>
+        <span class="abs-val">${last.name}</span>
+        <span class="abs-note">${fmt(weightedScore(last))}/10</span>
+      </div>
+    </div>
+    <hr class="abs-divider">
+    <div class="abs-recs">
+      ${recs.slice(0, 5).map(r => `
+        <div class="abs-rec">
+          <span>${r.block.icon}</span>
+          <span>Si priorizas <strong>${r.block.label}</strong> → <strong>${r.best.name.split(' ')[0]}</strong> (${fmt(r.score)})</span>
+        </div>`).join('')}
+    </div>
+    <hr class="abs-divider">
+    <p class="abs-insight">💡 ${insight}</p>`;
+}
+
+// ── S2: Summary cards ─────────────────────────────────────────────────────────
 
 function renderSummary(candidates) {
   const sorted = [...candidates].sort((a, b) => (b.total_score || 0) - (a.total_score || 0));
-  document.getElementById('summaryGrid').innerHTML = sorted.map((c, i) => {
-    const allVars = c.blocks.flatMap(b => b.variables.map(v => ({ ...v, blockName: b.name })));
-    const best = [...c.blocks].sort((a, b) => (b.average_score || 0) - (a.average_score || 0))[0];
-    const worst = [...c.blocks].sort((a, b) => (a.average_score || 0) - (b.average_score || 0))[0];
-    const scCol = c._color;
+  document.getElementById('summaryGrid').innerHTML = sorted.map(c => {
+    const cs = getCanonicalScores(c);
+    const scored = CANONICAL_BLOCKS.map(b => ({ b, s: cs[b.id] })).filter(x => x.s != null);
+    const best  = scored.sort((a, z) => z.s - a.s)[0];
+    const worst = scored.sort((a, z) => a.s - z.s)[0];
     return `
-    <div class="summary-card">
-      <div class="summary-card-stripe" style="background:${c._color}"></div>
-      <div class="summary-card-body">
-        <h3 class="summary-card-name">${c.name}</h3>
-        <p class="summary-card-party">${c.party || '—'}</p>
-        <div class="summary-score-big" style="color:${c._color}">${fmt(c.total_score)}</div>
-        <div class="summary-meta">/ 10 &nbsp;·&nbsp; ${scoreLevelLabel(c.total_score)} &nbsp;·&nbsp; #${i+1} en esta comparación</div>
-        <div class="summary-best-worst">
-          <div class="summary-bw-item">
-            <div class="summary-bw-label">✦ Mejor bloque</div>
-            <div class="summary-bw-val">${best?.name || '—'} (${fmt(best?.average_score)})</div>
+    <div class="sum-card">
+      <div class="sum-stripe" style="background:${c._color}"></div>
+      <div class="sum-body">
+        <h3 class="sum-name">${c.name}</h3>
+        <p class="sum-party">${c.party || '—'}</p>
+        <div class="sum-score" style="color:${c._color}">${fmt(c.total_score)}</div>
+        <div class="sum-meta">/ 10 · ${scLabel(c.total_score)}</div>
+        <div class="sum-bw">
+          <div class="sum-bw-item">
+            <div class="sum-bw-label">✦ Mejor bloque</div>
+            <div class="sum-bw-val">${best ? best.b.label.split(' ')[0] + ' ' + fmt(best.s) : '—'}</div>
           </div>
-          <div class="summary-bw-item">
-            <div class="summary-bw-label">▾ Bloque más débil</div>
-            <div class="summary-bw-val">${worst?.name || '—'} (${fmt(worst?.average_score)})</div>
+          <div class="sum-bw-item">
+            <div class="sum-bw-label">▾ Más débil</div>
+            <div class="sum-bw-val">${worst ? worst.b.label.split(' ')[0] + ' ' + fmt(worst.s) : '—'}</div>
           </div>
         </div>
       </div>
@@ -448,335 +566,407 @@ function renderSummary(candidates) {
   }).join('');
 }
 
-function renderWinners(candidates) {
-  const allBlockIds = [...new Set(candidates.flatMap(c => c.blocks.map(b => b.id)))];
-  const categories = [
-    { label: 'Puntaje general', get: (c) => c.total_score },
-    ...allBlockIds.map(bid => ({
-      label: candidates.flatMap(c => c.blocks).find(b => b.id === bid)?.name || bid,
-      get: (c) => c.blocks.find(b => b.id === bid)?.average_score ?? null
-    }))
-  ];
-
-  const chips = categories.map(cat => {
-    let best = null, bestScore = -1;
-    candidates.forEach(c => {
-      const s = cat.get(c);
-      if (s !== null && s !== undefined && s > bestScore) { best = c; bestScore = s; }
-    });
-    if (!best) return '';
-    return `
-    <div class="winner-chip">
-      <div class="winner-chip-dot" style="background:${best._color}"></div>
-      <div>
-        <div class="winner-chip-category">${cat.label}</div>
-        <div class="winner-chip-name">${best.name.split(' ')[0]}</div>
-      </div>
-      <div class="winner-chip-score">${fmt(bestScore)}</div>
-    </div>`;
-  });
-  document.getElementById('winnersBar').innerHTML = chips.join('');
-}
+// ── S3: Block table ───────────────────────────────────────────────────────────
 
 function renderBlockTable(candidates) {
-  const allBlockIds = [...new Set(candidates.flatMap(c => c.blocks.map(b => b.id)))];
-  const blockNames = {};
-  candidates.flatMap(c => c.blocks).forEach(b => { blockNames[b.id] = b.name; });
-
   let html = `<thead><tr>
     <th>Bloque</th>
-    ${candidates.map(c => `<th class="cand-col" style="color:${c._color}">${c.name}</th>`).join('')}
-    <th>Líder</th>
+    ${candidates.map(c => `<th class="c-cand" style="color:${c._color}">${c.name.split(' ')[0]}</th>`).join('')}
+    <th class="c-cand">Líder</th>
+    <th class="c-cand">Diferencia</th>
   </tr></thead><tbody>`;
 
-  allBlockIds.forEach(bid => {
-    const scores = candidates.map(c => c.blocks.find(b => b.id === bid)?.average_score ?? null);
-    const max = Math.max(...scores.filter(s => s !== null));
-    const leader = candidates[scores.indexOf(max)];
+  CANONICAL_BLOCKS.forEach(b => {
+    const scores = candidates.map(c => getCanonicalScores(c)[b.id]);
+    const valid = scores.filter(s => s != null);
+    const max = valid.length ? Math.max(...valid) : null;
+    const min = valid.length ? Math.min(...valid) : null;
+    const diff = (max != null && min != null && valid.length >= 2) ? max - min : null;
+    const leaderIdx = max != null ? scores.indexOf(max) : -1;
+    const leader = leaderIdx >= 0 ? candidates[leaderIdx] : null;
 
     html += `<tr>
-      <td class="block-name">${blockNames[bid] || bid}</td>
+      <td class="block-name-cell">
+        <span class="block-icon">${b.icon}</span>${b.label}
+      </td>
       ${scores.map((s, i) => {
-        const lvl = scoreLevel(s);
-        const isWinner = s === max && s !== null;
-        return `<td class="score-cell">
-          <div class="score-cell-inner">
-            <span class="score-pill lvl-${lvl}" style="${isWinner ? `outline:2px solid ${candidates[i]._color};outline-offset:2px` : ''}">${fmt(s)}</span>
-          </div>
+        const isWin = s === max && s != null && valid.length >= 2;
+        return `<td style="text-align:center">
+          ${chip(s)}
+          ${isWin ? `<div style="font-size:10px;color:${candidates[i]._color};font-weight:700;margin-top:2px">▲</div>` : ''}
         </td>`;
       }).join('')}
-      <td style="font-size:12.5px;font-weight:700;color:${leader?._color || 'var(--muted)'}">
-        ${leader ? leader.name.split(' ')[0] : '—'}
+      <td style="text-align:center">
+        ${leader ? `<span class="winner-pill" style="color:${leader._color};border-color:${leader._color}20;background:${leader._color}10">${leader.name.split(' ')[0]}</span>` : '<span style="color:var(--muted)">—</span>'}
+      </td>
+      <td class="block-diff-cell">
+        <span class="diff-badge" style="color:${diff > 3 ? '#b91c1c' : diff > 1.5 ? '#d97706' : diff != null ? '#16a34a' : 'var(--muted)'}">
+          ${diff != null ? 'Δ' + fmt(diff) : '—'}
+        </span>
       </td>
     </tr>`;
   });
 
   html += '</tbody>';
-  document.getElementById('blockTable').innerHTML = html;
+  document.getElementById('blockTbl').innerHTML = html;
 }
 
-let allHeatmapRows = [];
-let activeBlockFilter = 'all';
+// ── S4: Heatmap ───────────────────────────────────────────────────────────────
 
-function renderHeatmap(candidates, filter) {
-  const allBlockIds = [...new Set(candidates.flatMap(c => c.blocks.map(b => b.id)))];
-  const blockNames = {};
-  candidates.flatMap(c => c.blocks).forEach(b => { blockNames[b.id] = b.name; });
-
-  const varMap = {};
-  candidates.forEach(c => {
-    c.blocks.forEach(b => {
-      b.variables.forEach(v => {
-        if (!varMap[v.id]) varMap[v.id] = { id: v.id, name: v.name, blockId: b.id, blockName: b.name, scores: {} };
-        varMap[v.id].scores[c.id] = v.final_score;
-      });
-    });
-  });
-  allHeatmapRows = Object.values(varMap);
-
-  // Build filter buttons
-  const filterEl = document.getElementById('heatmapFilter');
-  filterEl.innerHTML = `<button class="hf-btn ${activeBlockFilter === 'all' ? 'active' : ''}" data-bid="all">Todos</button>` +
-    allBlockIds.map(bid => `<button class="hf-btn ${activeBlockFilter === bid ? 'active' : ''}" data-bid="${bid}">${blockNames[bid] || bid}</button>`).join('');
-  filterEl.querySelectorAll('.hf-btn').forEach(btn => {
+function renderHeatmapFilter(candidates) {
+  const filter = document.getElementById('hmFilter');
+  filter.innerHTML = CANONICAL_BLOCKS.map(b =>
+    `<button class="hm-btn${hmActiveBlock === b.id ? ' active' : ''}" data-bid="${b.id}">${b.icon} ${b.label}</button>`
+  ).join('');
+  filter.querySelectorAll('.hm-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      activeBlockFilter = btn.dataset.bid;
-      filterEl.querySelectorAll('.hf-btn').forEach(b => b.classList.toggle('active', b.dataset.bid === activeBlockFilter));
-      buildHeatmapTable(candidates, activeBlockFilter);
+      hmActiveBlock = btn.dataset.bid;
+      filter.querySelectorAll('.hm-btn').forEach(b => b.classList.toggle('active', b.dataset.bid === hmActiveBlock));
+      renderHeatmapTable(candidates);
     });
   });
-
-  buildHeatmapTable(candidates, filter || 'all');
 }
 
-function buildHeatmapTable(candidates, filter) {
-  const rows = filter === 'all' ? allHeatmapRows : allHeatmapRows.filter(r => r.blockId === filter);
-  const byBlock = {};
-  rows.forEach(r => {
-    if (!byBlock[r.blockId]) byBlock[r.blockId] = { name: r.blockName, vars: [] };
-    byBlock[r.blockId].vars.push(r);
-  });
+function renderHeatmapTable(candidates) {
+  const rows = Object.values(gVarData).filter(r => r.blockId === hmActiveBlock);
+  if (!rows.length) {
+    document.getElementById('hmTable').innerHTML = `<tbody><tr><td colspan="${candidates.length+1}" style="padding:20px;color:var(--muted);text-align:center">Sin variables para este bloque.</td></tr></tbody>`;
+    return;
+  }
 
   let html = `<thead><tr>
     <th>Variable</th>
     ${candidates.map(c => `<th style="color:${c._color}">${c.name.split(' ')[0]}</th>`).join('')}
   </tr></thead><tbody>`;
 
-  Object.values(byBlock).forEach(blk => {
-    html += `<tr class="hm-block-header"><td colspan="${candidates.length + 1}">${blk.name}</td></tr>`;
-    blk.vars.forEach(row => {
-      html += `<tr>
-        <td>${row.name}</td>
-        ${candidates.map(c => {
-          const s = row.scores[c.id];
-          return `<td><span class="hm-cell ${hmClass(s)}">${s != null ? s.toFixed(1) : '—'}</span></td>`;
-        }).join('')}
-      </tr>`;
-    });
+  rows.forEach(row => {
+    html += `<tr>
+      <td>${row.name}</td>
+      ${candidates.map(c => {
+        const s = row.scores[c.id];
+        return `<td onclick="openModal('${row.id}')">
+          <span class="hm-cell ${hmClass(s)}" title="Clic para ver detalle">${s != null ? fmt(s) : '—'}</span>
+        </td>`;
+      }).join('')}
+    </tr>`;
   });
 
   html += '</tbody>';
-  document.getElementById('heatmapTable').innerHTML = html;
+  document.getElementById('hmTable').innerHTML = html;
 }
 
-function renderAccordion(candidates) {
-  const allBlockIds = [...new Set(candidates.flatMap(c => c.blocks.map(b => b.id)))];
-  const blockNames = {};
-  candidates.flatMap(c => c.blocks).forEach(b => { blockNames[b.id] = b.name; });
+// ── S5: Key differences ───────────────────────────────────────────────────────
 
-  const html = allBlockIds.map((bid, idx) => {
-    const scores = candidates.map(c => c.blocks.find(b => b.id === bid)?.average_score ?? null);
-    const scoreChips = candidates.map((c, i) => {
-      const s = scores[i];
-      return `<span class="acc-score-chip" style="color:${c._color};border-color:${c._color}20;background:${c._color}10">
-        ${c.name.split(' ')[0]}: ${fmt(s)}
-      </span>`;
-    }).join('');
+function renderDifferences(candidates) {
+  const rows = Object.values(gVarData);
+  const diffs = rows.map(r => {
+    const vals = candidates.map(c => r.scores[c.id]).filter(s => s != null);
+    const diff = vals.length >= 2 ? Math.max(...vals) - Math.min(...vals) : null;
+    return { ...r, diff };
+  }).filter(x => x.diff != null).sort((a, b) => b.diff - a.diff).slice(0, 8);
 
-    // Variables
-    const varMap = {};
-    candidates.forEach(c => {
-      const blk = c.blocks.find(b => b.id === bid);
-      (blk?.variables || []).forEach(v => {
-        if (!varMap[v.id]) varMap[v.id] = { name: v.name, data: {} };
-        varMap[v.id].data[c.id] = v;
-      });
-    });
-
-    const varRows = Object.values(varMap).map(vr => {
-      return `<tr>
-        <td><div class="acc-var-name">${vr.name}</div></td>
-        ${candidates.map(c => {
-          const v = vr.data[c.id];
-          const s = v?.final_score;
-          const sum = v?.summary ? v.summary.slice(0, 90) + (v.summary.length > 90 ? '…' : '') : '—';
-          return `<td>
-            <span class="hm-cell ${hmClass(s)}" style="margin-bottom:4px">${s != null ? s.toFixed(1) : '—'}</span>
-            <div class="acc-var-summary">${sum}</div>
-          </td>`;
-        }).join('')}
-      </tr>`;
-    }).join('');
-
+  document.getElementById('diffList').innerHTML = diffs.map(r => {
+    const bInfo = canonicalBlockInfo(r.blockId);
     return `
-    <div class="acc-item" id="acc-${bid}">
-      <div class="acc-header" onclick="toggleAcc('${bid}')">
-        <div class="acc-header-left">
-          <span class="acc-header-name">${blockNames[bid] || bid}</span>
-          <div class="acc-scores-row">${scoreChips}</div>
+    <div class="diff-item">
+      <div>
+        <div class="diff-varname">${r.name}</div>
+        <div class="diff-block">${bInfo.icon} ${bInfo.label}</div>
+        <div class="diff-scores">
+          ${candidates.map(c => {
+            const s = r.scores[c.id];
+            return `<span class="diff-score-pill" style="color:${c._color};border-color:${c._color}30;background:${c._color}08">
+              ${c.name.split(' ')[0]}: ${fmt(s)}
+            </span>`;
+          }).join('')}
         </div>
-        <svg class="acc-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
-      <div class="acc-body">
-        <table class="acc-var-table">
-          <thead><tr>
-            <th style="min-width:140px">Variable</th>
-            ${candidates.map(c => `<th style="color:${c._color}">${c.name}</th>`).join('')}
-          </tr></thead>
-          <tbody>${varRows}</tbody>
-        </table>
+      <div class="diff-gap">
+        <div class="diff-gap-num" style="color:${r.diff > 4 ? '#b91c1c' : r.diff > 2.5 ? '#d97706' : '#2563eb'}">Δ${fmt(r.diff)}</div>
+        <div class="diff-gap-label">brecha</div>
       </div>
     </div>`;
   }).join('');
+}
 
-  document.getElementById('blockAccordion').innerHTML = html;
-  // Open first accordion
-  if (allBlockIds.length > 0) {
-    document.getElementById('acc-' + allBlockIds[0])?.classList.add('open');
+// ── S6: Alerts ────────────────────────────────────────────────────────────────
+
+function renderAlerts(candidates) {
+  const alerts = [];
+
+  // All fail in a block (below 4)
+  CANONICAL_BLOCKS.forEach(b => {
+    const vals = candidates.map(c => getCanonicalScores(c)[b.id]).filter(s => s != null);
+    if (vals.length === candidates.length && vals.every(s => s < 4)) {
+      alerts.push({
+        type: 'danger', icon: '🚨',
+        title: `Todos débiles en ${b.label}`,
+        desc: `Ningún candidato supera 4/10 en este bloque. Problema estructural del sistema.`
+      });
+    } else if (vals.length === candidates.length && vals.every(s => s < 5)) {
+      alerts.push({
+        type: 'warn', icon: '⚠️',
+        title: `${b.label} por debajo de 5/10 en todos`,
+        desc: `Todos los planes muestran debilidades en ${b.label}.`
+      });
+    }
+  });
+
+  // No candidate implements well (all vars with low implementation)
+  const allVars = Object.values(gVarData);
+  const highDiff = allVars.filter(r => {
+    const vals = candidates.map(c => r.scores[c.id]).filter(s => s != null);
+    return vals.length >= 2 && (Math.max(...vals) - Math.min(...vals)) > 4;
+  });
+  if (highDiff.length >= 3) {
+    alerts.push({
+      type: 'info', icon: '📊',
+      title: `${highDiff.length} variables con brecha alta`,
+      desc: `Hay diferencias mayores a 4 puntos entre candidatos en ${highDiff.length} variables. Las propuestas son significativamente dispares.`
+    });
   }
+
+  // Missing block data
+  candidates.forEach(c => {
+    const cs = getCanonicalScores(c);
+    const missing = CANONICAL_BLOCKS.filter(b => cs[b.id] == null);
+    if (missing.length >= 2) {
+      alerts.push({
+        type: 'warn', icon: '🔍',
+        title: `${c.name}: bloques sin datos`,
+        desc: `Faltan puntajes en ${missing.map(b => b.label).join(', ')}.`
+      });
+    }
+  });
+
+  if (!alerts.length) {
+    alerts.push({ type: 'info', icon: '✅', title: 'Sin alertas críticas', desc: 'Los datos comparativos están completos y sin patrones de falla transversal.' });
+  }
+
+  document.getElementById('alertsGrid').innerHTML = alerts.slice(0, 6).map(a => `
+    <div class="alert-card alert-${a.type}">
+      <span class="alert-icon">${a.icon}</span>
+      <div>
+        <div class="alert-title">${a.title}</div>
+        <div class="alert-desc">${a.desc}</div>
+      </div>
+    </div>`).join('');
 }
 
-function toggleAcc(bid) {
-  const el = document.getElementById('acc-' + bid);
-  el?.classList.toggle('open');
-}
+// ── S7: Strengths / Weaknesses ────────────────────────────────────────────────
 
 function renderSW(candidates) {
-  const strCol = document.createElement('div');
-  strCol.className = 'sw-column';
-  strCol.innerHTML = `<div class="sw-col-title"><div class="sw-dot" style="background:#16a34a"></div>Fortalezas por candidato</div>` +
-    candidates.map(c => {
-      const items = [
-        ...(c.strengths || []),
-        ...(c.blocks || []).flatMap(b => b.strengths || [])
-      ].filter((s, i, arr) => s && arr.indexOf(s) === i).slice(0, 5);
-      return `<div class="sw-cand-block">
-        <div class="sw-cand-name" style="color:${c._color}">
-          <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:${c._color}"></span>
-          ${c.name}
-        </div>
-        <ul class="sw-list">${items.length ? items.map(s => `<li>${s}</li>`).join('') : '<li>Sin fortalezas registradas</li>'}</ul>
+  const strHtml = `
+    <div class="sw-col-title"><div class="sw-dot" style="background:#16a34a"></div>Fortalezas (top 2 por candidato)</div>
+    ${candidates.map(c => {
+      const items = [...(c.strengths || []), ...(c.blocks || []).flatMap(b => b.strengths || [])]
+        .filter((s, i, a) => s && a.indexOf(s) === i).slice(0, 2);
+      return `<div class="sw-cand">
+        <div class="sw-cand-name"><div class="sw-dot" style="background:${c._color}"></div>${c.name}</div>
+        <ul class="sw-ul">${items.length ? items.map(s => `<li>${s}</li>`).join('') : '<li style="color:var(--muted)">Sin datos</li>'}</ul>
       </div>`;
-    }).join('');
+    }).join('')}`;
 
-  const weakCol = document.createElement('div');
-  weakCol.className = 'sw-column';
-  weakCol.innerHTML = `<div class="sw-col-title"><div class="sw-dot" style="background:#dc2626"></div>Debilidades por candidato</div>` +
-    candidates.map(c => {
-      const items = [
-        ...(c.weaknesses || []),
-        ...(c.blocks || []).flatMap(b => b.weaknesses || [])
-      ].filter((s, i, arr) => s && arr.indexOf(s) === i).slice(0, 5);
-      return `<div class="sw-cand-block">
-        <div class="sw-cand-name" style="color:${c._color}">
-          <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:${c._color}"></span>
-          ${c.name}
-        </div>
-        <ul class="sw-list">${items.length ? items.map(s => `<li>${s}</li>`).join('') : '<li>Sin debilidades registradas</li>'}</ul>
+  const weakHtml = `
+    <div class="sw-col-title"><div class="sw-dot" style="background:#dc2626"></div>Debilidades (top 2 por candidato)</div>
+    ${candidates.map(c => {
+      const items = [...(c.weaknesses || []), ...(c.blocks || []).flatMap(b => b.weaknesses || [])]
+        .filter((s, i, a) => s && a.indexOf(s) === i).slice(0, 2);
+      return `<div class="sw-cand">
+        <div class="sw-cand-name"><div class="sw-dot" style="background:${c._color}"></div>${c.name}</div>
+        <ul class="sw-ul">${items.length ? items.map(s => `<li>${s}</li>`).join('') : '<li style="color:var(--muted)">Sin datos</li>'}</ul>
       </div>`;
-    }).join('');
+    }).join('')}`;
 
-  const grid = document.getElementById('swGrid');
-  grid.innerHTML = '';
-  grid.appendChild(strCol);
-  grid.appendChild(weakCol);
+  document.getElementById('swGrid').innerHTML = `
+    <div class="sw-col">${strHtml}</div>
+    <div class="sw-col">${weakHtml}</div>`;
 }
+
+// ── S8: Conclusion ────────────────────────────────────────────────────────────
 
 function renderConclusion(candidates) {
   const sorted = [...candidates].sort((a, b) => (b.total_score || 0) - (a.total_score || 0));
   const leader = sorted[0];
   const last = sorted[sorted.length - 1];
-  const names = candidates.map(c => `<strong>${c.name}</strong>`).join(', ');
 
-  // Most balanced (lowest std dev across blocks)
-  const balanced = candidates.reduce((best, c) => {
-    const scores = c.blocks.map(b => b.average_score || 0).filter(s => s > 0);
-    if (!scores.length) return best;
-    const avg = scores.reduce((a, b) => a + b, 0) / scores.length;
-    const std = Math.sqrt(scores.reduce((a, s) => a + (s - avg) ** 2, 0) / scores.length);
-    return (!best || std < best.std) ? { c, std } : best;
-  }, null);
-
-  // Best single block winner
   const blockWins = {};
-  const allBlockIds = [...new Set(candidates.flatMap(c => c.blocks.map(b => b.id)))];
-  allBlockIds.forEach(bid => {
+  CANONICAL_BLOCKS.forEach(b => {
     let best = null, bestS = -1;
     candidates.forEach(c => {
-      const s = c.blocks.find(b => b.id === bid)?.average_score ?? null;
-      if (s !== null && s > bestS) { best = c; bestS = s; }
+      const s = getCanonicalScores(c)[b.id];
+      if (s != null && s > bestS) { best = c; bestS = s; }
     });
     if (best) blockWins[best.id] = (blockWins[best.id] || 0) + 1;
   });
-  const mostWins = candidates.reduce((best, c) => ((blockWins[c.id] || 0) > (blockWins[best?.id] || 0)) ? c : best, candidates[0]);
+  const mostWins = candidates.reduce((b, c) => ((blockWins[c.id]||0) > (blockWins[b?.id]||0)) ? c : b, candidates[0]);
 
-  const text = `
-    La comparación técnica entre ${names} muestra diferencias significativas en su abordaje programático.
-    <strong>${leader.name}</strong> lidera con un puntaje general de <strong>${fmt(leader.total_score)}/10</strong>,
-    lo que refleja mayor consistencia técnica y profundidad propositiva en su plan de gobierno.
-    ${balanced ? `<strong>${balanced.c.name}</strong> presenta el mejor equilibrio entre bloques, con menor dispersión en sus puntajes sectoriales, lo que indica un programa de gobierno más homogéneo.` : ''}
-    ${mostWins && mostWins.id !== leader.id ? `<strong>${mostWins.name}</strong> lidera en el mayor número de bloques individuales (${blockWins[mostWins.id] || 0}), aunque su puntaje global no sea el más alto.` : ''}
-    <strong>${last.name}</strong> muestra el menor puntaje promedio (${fmt(last.total_score)}/10),
-    con vacíos estructurales más marcados que limitan la viabilidad de su propuesta.
-    En términos metodológicos, ningún candidato alcanza aún el umbral de sólido (8/10) en el puntaje global,
-    lo que sugiere que los planes de gobierno evaluados presentan propuestas con nivel de detalle y especificidad técnica insuficiente para garantizar implementación efectiva.
-  `.trim();
+  const balanced = candidates.reduce((best, c) => {
+    const vals = Object.values(getCanonicalScores(c)).filter(s => s != null);
+    const sd = stddev(vals);
+    return sd < (best.sd ?? 999) ? { c, sd } : best;
+  }, {}).c;
+
+  let text = `La comparación técnica de <strong>${candidates.map(c => c.name).join(', ')}</strong> revela diferencias estructurales relevantes en sus planes de gobierno. `;
+  text += `<strong>${leader.name}</strong> lidera con un puntaje total de <strong>${fmt(leader.total_score)}/10</strong> (${scLabel(leader.total_score)}), `;
+  if (mostWins && mostWins.id !== leader.id) {
+    text += `aunque <strong>${mostWins.name}</strong> encabeza más bloques individuales (${blockWins[mostWins.id] || 0}), lo que indica especialización temática sin consistencia global. `;
+  } else {
+    text += `consolidando el liderazgo tanto en puntaje global como en bloques individuales. `;
+  }
+  if (balanced && balanced.id !== leader.id) {
+    text += `<strong>${balanced.name}</strong> muestra el programa más equilibrado entre áreas de política pública. `;
+  }
+  text += `<strong>${last.name}</strong> presenta el perfil técnico más limitado con ${fmt(last.total_score)}/10. `;
+  text += `Ningún candidato supera el umbral de sólido (8/10), lo que indica que todos los planes evaluados requieren mayor especificidad técnica e instrumentos de implementación más detallados.`;
 
   document.getElementById('conclusionText').innerHTML = text;
 }
 
-// ── DOCX download ────────────────────────────────────────────────────────────
+// ── S9: Interactive / Sliders ─────────────────────────────────────────────────
+
+function initSliders(candidates) {
+  CANONICAL_BLOCKS.forEach(b => { gWeights[b.id] = 5; });
+
+  document.getElementById('slidersGrid').innerHTML = CANONICAL_BLOCKS.map(b => `
+    <div class="slider-row">
+      <div class="slider-label">
+        <label for="sl_${b.id}">${b.icon} ${b.label}</label>
+        <span id="slv_${b.id}">5</span>
+      </div>
+      <input type="range" id="sl_${b.id}" min="0" max="10" step="1" value="5"
+        oninput="onSlider('${b.id}', this.value)">
+    </div>`).join('');
+
+  renderWeightedRanking(candidates);
+}
+
+let _debounceTimer = null;
+function onSlider(bid, val) {
+  gWeights[bid] = parseInt(val);
+  document.getElementById('slv_' + bid).textContent = val;
+  clearTimeout(_debounceTimer);
+  _debounceTimer = setTimeout(() => {
+    renderWeightedRanking(gCandidates);
+    renderAbstract(gCandidates, gWeights);
+  }, 80);
+}
+
+function renderWeightedRanking(candidates) {
+  const scored = candidates.map(c => {
+    const cs = getCanonicalScores(c);
+    let sum = 0, wsum = 0;
+    CANONICAL_BLOCKS.forEach(b => {
+      const w = gWeights[b.id] || 0;
+      const s = cs[b.id];
+      if (s != null && w > 0) { sum += s * w; wsum += w; }
+    });
+    const ws = wsum > 0 ? sum / wsum : c.total_score || 0;
+    return { ...c, _ws: ws };
+  }).sort((a, b) => b._ws - a._ws);
+
+  const maxWs = scored[0]?._ws || 10;
+
+  document.getElementById('interactiveRanking').innerHTML = scored.map((c, i) => `
+    <div class="rank-item">
+      <span class="rank-pos">${i + 1}</span>
+      <div class="rank-dot" style="background:${c._color}"></div>
+      <span class="rank-name">${c.name}</span>
+      <div class="rank-bar-wrap">
+        <div class="rank-bar-fill" style="width:${(c._ws / 10 * 100).toFixed(0)}%;background:${c._color}"></div>
+      </div>
+      <span class="rank-score" style="color:${c._color}">${fmt(c._ws)}</span>
+    </div>`).join('');
+}
+
+// ── Modal ─────────────────────────────────────────────────────────────────────
+
+function openModal(varId) {
+  const row = gVarData[varId];
+  if (!row) return;
+  const modal = document.getElementById('varModal');
+  const bInfo = canonicalBlockInfo(row.blockId);
+
+  document.getElementById('modalVarName').textContent = row.name;
+  document.getElementById('modalVarBlock').textContent = `${bInfo.icon} ${bInfo.label}`;
+
+  const scores = gCandidates.map(c => ({ ...c, _s: row.scores[c.id] }));
+  const valid = scores.filter(x => x._s != null);
+  const maxS = valid.length ? Math.max(...valid.map(x => x._s)) : null;
+
+  // Auto verdict
+  let verdict = '';
+  if (valid.length >= 2) {
+    const sorted = [...valid].sort((a, b) => b._s - a._s);
+    verdict = `<strong>${sorted[0].name}</strong> lidera con ${fmt(sorted[0]._s)}/10 (${scLabel(sorted[0]._s)}).`;
+    if (maxS - Math.min(...valid.map(x => x._s)) > 2.5) {
+      verdict += ` Hay una brecha significativa de ${fmt(maxS - Math.min(...valid.map(x => x._s)))} puntos entre candidatos.`;
+    }
+  }
+
+  document.getElementById('modalBody').innerHTML = `
+    <div class="modal-scores">
+      ${scores.map(c => `
+        <div class="modal-score-card">
+          <div class="modal-score-cand" style="color:${c._color}">${c.name.split(' ')[0]}</div>
+          <div class="modal-score-num" style="color:${c._color}">${fmt(c._s)}</div>
+          <div class="modal-score-level">${scLabel(c._s)}</div>
+        </div>`).join('')}
+    </div>
+    ${verdict ? `<div class="modal-verdict">🔍 ${verdict}</div>` : ''}
+    ${scores.some(c => row.summaries[c.id]) ? `
+    <div class="modal-summaries">
+      ${scores.filter(c => row.summaries[c.id]).map(c => `
+        <div class="modal-sum-item" style="border-color:${c._color};background:${c._color}08">
+          <div class="modal-sum-cand" style="color:${c._color}">${c.name}</div>
+          <div class="modal-sum-text">${row.summaries[c.id]}</div>
+        </div>`).join('')}
+    </div>` : ''}`;
+
+  modal.classList.add('open');
+}
+
+function closeModal() {
+  document.getElementById('varModal').classList.remove('open');
+}
+
+document.getElementById('varModal').addEventListener('click', e => {
+  if (e.target === document.getElementById('varModal')) closeModal();
+});
+
+// ── Word export ───────────────────────────────────────────────────────────────
 
 async function downloadDocx(candidates) {
-  const btn = document.getElementById('btnDownload');
-  const orig = btn.innerHTML;
-  btn.innerHTML = '<span style="opacity:0.7">Generando…</span>';
+  const btn = document.getElementById('btnDl');
+  btn.textContent = 'Generando…';
   btn.disabled = true;
-
   try {
-    const ids = candidates.map(c => c.id);
     const res = await fetch('/api/comparison-docx', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ids })
+      body: JSON.stringify({ ids: candidates.map(c => c.id) })
     });
-    if (!res.ok) throw new Error('Error del servidor: ' + res.status);
+    if (!res.ok) throw new Error('Error ' + res.status);
     const blob = await res.blob();
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `comparacion_${ids.join('_vs_')}.docx`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+    a.download = `comparacion_${candidates.map(c => c.id).join('_vs_')}.docx`;
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
     URL.revokeObjectURL(url);
-  } catch (e) {
-    alert('Error al generar el Word: ' + e.message);
-  } finally {
-    btn.innerHTML = orig;
-    btn.disabled = false;
-  }
+  } catch (e) { alert('Error al generar Word: ' + e.message); }
+  finally { btn.innerHTML = '<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Descargar Word'; btn.disabled = false; }
 }
 
-// ── Init ─────────────────────────────────────────────────────────────────────
+// ── Init ──────────────────────────────────────────────────────────────────────
 
 async function init() {
   const ids = getIds();
   if (ids.length < 2) {
     document.getElementById('loadingView').innerHTML = `
       <div style="text-align:center;padding:60px 20px">
-        <p style="color:var(--muted);margin-bottom:16px">Selecciona al menos 2 candidatos para comparar.</p>
-        <a href="comparar.html" class="btn-change">← Ir a selección</a>
+        <p style="color:var(--muted);margin-bottom:16px">Selecciona al menos 2 candidatos.</p>
+        <a href="comparar.html" class="btn-back">← Ir a selección</a>
       </div>`;
     return;
   }
@@ -784,29 +974,40 @@ async function init() {
   const all = await DataLayer.getCandidates();
   const raw = ids.map(id => all.find(c => c.id === id)).filter(Boolean);
   if (raw.length < 2) {
-    document.getElementById('loadingView').innerHTML = `<div style="text-align:center;padding:60px 20px;color:var(--muted)">No se encontraron los candidatos solicitados. <a href="comparar.html">Volver</a></div>`;
+    document.getElementById('loadingView').innerHTML = `<div style="text-align:center;padding:40px;color:var(--muted)">No se encontraron los candidatos. <a href="comparar.html">Volver</a></div>`;
     return;
   }
 
-  const candidates = assignColors(raw);
+  gCandidates = assignColors(raw);
 
   // Header
-  const names = candidates.map(c => c.name.split(' ')[0]).join(' vs ');
-  document.getElementById('compTitle').textContent = `Comparación técnica`;
-  document.getElementById('compSubtitle').textContent = candidates.map(c => c.name).join(' · ');
-  document.title = `${names} · Comparación · Planes de Gobierno`;
+  document.getElementById('compTitle').textContent = 'Comparación técnica';
+  document.getElementById('compSub').textContent = gCandidates.map(c => c.name).join(' · ');
+  document.title = `${gCandidates.map(c => c.name.split(' ')[0]).join(' vs ')} · Comparación`;
+
+  // Build var index
+  buildVarIndex(gCandidates);
+
+  // Set initial heatmap block
+  hmActiveBlock = CANONICAL_BLOCKS[0].id;
+
+  // Init weights
+  CANONICAL_BLOCKS.forEach(b => { gWeights[b.id] = 5; });
 
   // Render all sections
-  renderSummary(candidates);
-  renderWinners(candidates);
-  renderBlockTable(candidates);
-  renderHeatmap(candidates, 'all');
-  renderAccordion(candidates);
-  renderSW(candidates);
-  renderConclusion(candidates);
+  renderAbstract(gCandidates, gWeights);
+  renderSummary(gCandidates);
+  renderBlockTable(gCandidates);
+  renderHeatmapFilter(gCandidates);
+  renderHeatmapTable(gCandidates);
+  renderDifferences(gCandidates);
+  renderAlerts(gCandidates);
+  renderSW(gCandidates);
+  renderConclusion(gCandidates);
+  initSliders(gCandidates);
 
   // Download button
-  document.getElementById('btnDownload').addEventListener('click', () => downloadDocx(candidates));
+  document.getElementById('btnDl').addEventListener('click', () => downloadDocx(gCandidates));
 
   // Show
   document.getElementById('loadingView').style.display = 'none';
