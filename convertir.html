@@ -397,12 +397,13 @@
   <div class="instructions">
     <h2>¿Cómo funciona?</h2>
     <ol class="steps">
-      <li>Sube el documento .docx — el sistema extrae el texto <strong>completo</strong> sin truncar (60-70 páginas sin problema).</li>
-      <li><strong>Fase 1:</strong> la IA extrae la estructura global: candidato, metodología, 8 bloques y sus variables.</li>
-      <li><strong>Fase 2:</strong> por cada bloque (8 llamadas), la IA extrae el contenido narrativo completo de todas sus variables — sin resumir ni reescribir.</li>
-      <li>Validación estricta: 8 bloques, 30 variables, 6 criterios, fórmulas y promedios. Si hay inconsistencias en el documento, se reportan como errores.</li>
-      <li>Si todo es correcto, el JSON se guarda en <code>/analisis/</code> sin modificar ningún valor. Si hay errores, no se guarda nada.</li>
-      <li>Documentos ya procesados (mismo archivo) no se reprocesarán — sin gasto de tokens adicional.</li>
+      <li><strong>Fase A:</strong> extracción local completa del DOCX — texto íntegro sin truncar, sin IA.</li>
+      <li><strong>Fase B:</strong> segmentación inteligente en chunks de ~6 000 chars respetando encabezados del documento.</li>
+      <li><strong>Fase C:</strong> mapeo estructural — una llamada IA pequeña por chunk. Nunca se envía el documento completo en una sola llamada.</li>
+      <li><strong>Fase D:</strong> consolidación local — reconstruye la estructura global (8 bloques, 30 variables). Si no cuadra, error inmediato.</li>
+      <li><strong>Fase E:</strong> extracción variable a variable — 30 llamadas IA controladas, cada una recibe solo la sección relevante de esa variable.</li>
+      <li><strong>Fase F+G:</strong> ensamblaje y validación estricta. Ningún puntaje se modifica. Si algo falla, no se guarda nada.</li>
+      <li>Documentos ya procesados (mismo hash) no se reprocesarán — cero gasto de tokens adicional.</li>
     </ol>
   </div>
 </main>

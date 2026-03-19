@@ -1,0 +1,226 @@
+QUIERO QUE HAGAS UNA CORRECCIÓN DEFINITIVA DEL SISTEMA DOCX → JSON PARA QUE PUEDA PROCESAR DOCUMENTOS MUY LARGOS DE FORMA ROBUSTA, ESTABLE Y ESCALABLE, SIN FALLAR POR TOKENS, SIN TRUNCAR CONTENIDO Y SIN INVENTAR INFORMACIÓN.
+
+EL OBJETIVO YA NO ES SOLO SOPORTAR UN DOCUMENTO DE 60–70 PÁGINAS.
+QUIERO QUE EL SISTEMA QUEDE PREPARADO PARA DOCUMENTOS MÁS LARGOS TAMBIÉN.
+
+=====================================
+PROBLEMA ACTUAL
+=====================================
+
+El sistema falló con error 429 por límite TPM porque todavía envía demasiado contenido en una sola llamada, especialmente en la Fase 1.
+
+NO QUIERO UN PARCHE.
+QUIERO UNA SOLUCIÓN ARQUITECTÓNICA DEFINITIVA.
+
+=====================================
+OBJETIVO TÉCNICO
+=====================================
+
+Debes rediseñar el pipeline para que NUNCA dependa de mandar el documento completo en una sola llamada.
+
+El sistema debe funcionar correctamente incluso si el DOCX tiene:
+- muchas páginas
+- mucho texto
+- tablas extensas
+- estructura repetitiva
+- análisis muy detallados
+
+=====================================
+ARQUITECTURA OBLIGATORIA
+=====================================
+
+DEBES IMPLEMENTAR UN PIPELINE MULTIETAPA, JERÁRQUICO Y POR CHUNKS.
+
+FASE A — EXTRACCIÓN LOCAL
+- leer el DOCX completo localmente
+- extraer TODO el texto sin truncar
+- detectar párrafos, títulos, subtítulos y separadores útiles
+- calcular longitud total
+- NO enviar aún nada completo a la IA
+
+FASE B — SEGMENTACIÓN INTELIGENTE
+- dividir el documento en chunks seguros
+- cada chunk debe respetar límites conservadores
+- NO cortar a mitad de sección si se puede evitar
+- usar segmentación por encabezados, bloques, variables o patrones estructurales cuando existan
+- si no hay encabezados claros, usar segmentación por tamaño + solapamiento controlado
+
+REQUISITOS DE CHUNKING:
+- cada chunk debe quedar muy por debajo del límite real del modelo
+- usa un margen de seguridad amplio
+- no dependas del límite máximo teórico
+- el sistema debe ajustarse automáticamente según tamaño del documento
+- debe soportar cualquier longitud total mediante N chunks
+
+FASE C — MAPEO ESTRUCTURAL PARCIAL
+Para cada chunk, extrae SOLAMENTE:
+- títulos detectados
+- bloques detectados
+- variables detectadas
+- metodología si aparece
+- datos del candidato si aparecen
+- señales de continuidad entre secciones
+
+NO intentes generar el JSON final aquí.
+
+FASE D — CONSOLIDACIÓN DE ESTRUCTURA
+- combinar resultados de todos los chunks
+- reconstruir estructura global real del documento
+- detectar candidate
+- detectar methodology
+- detectar bloques reales
+- detectar variables reales
+- eliminar duplicados
+- resolver solapamientos
+- validar consistencia estructural
+
+SI NO SE LOGRA UNA ESTRUCTURA GLOBAL COHERENTE:
+- mostrar error claro
+- NO continuar
+- NO inventar nada
+
+FASE E — EXTRACCIÓN DETALLADA POR UNIDADES PEQUEÑAS
+Una vez detectada la estructura global, debes procesar por unidades pequeñas y controladas:
+- un bloque a la vez
+- o incluso una variable a la vez si el bloque es muy largo
+
+LA REGLA ES:
+NUNCA pedir demasiado output en una sola llamada.
+
+Cada unidad debe extraerse de forma independiente y luego ensamblarse.
+
+FASE F — ENSAMBLAJE FINAL
+- construir el JSON final completo
+- unir candidate + methodology + blocks + variables
+- preservar el contenido fiel al documento
+- no resumir
+- no reescribir
+- no completar huecos con invenciones
+
+FASE G — VALIDACIÓN ESTRICTA
+Antes de guardar en /analisis, validar obligatoriamente:
+
+1. JSON válido
+2. existe candidate
+3. existe methodology
+4. existe blocks
+5. hay exactamente 8 bloques
+6. hay exactamente 30 variables reales
+7. cada variable tiene:
+   - criteria
+   - criteria_sum
+   - formula_result
+   - final_score
+   - summary
+   - strengths
+   - weaknesses
+   - gaps
+   - conclusion
+   - sections
+   - sources
+8. criteria contiene D, P, M, Im, V, E
+9. ninguna variable está vacía
+10. ningún bloque está vacío
+11. no hay texto truncado evidente
+12. no hay duplicados
+13. no hay bloques inventados
+14. no hay variables inventadas
+
+SI FALLA ALGO:
+- error bloqueante
+- NO guardar JSON
+
+=====================================
+REGLAS ABSOLUTAS
+=====================================
+
+1. PROHIBIDO enviar el documento completo en una sola llamada
+2. PROHIBIDO asumir que el documento “cabe” por poco
+3. PROHIBIDO trabajar al límite de tokens
+4. PROHIBIDO inventar bloques o variables faltantes
+5. PROHIBIDO modificar puntajes
+6. PROHIBIDO autocorregir fórmulas
+7. PROHIBIDO resumir contenido
+8. PROHIBIDO guardar resultados parciales como si fueran válidos
+
+=====================================
+ESTRATEGIA DE ROBUSTEZ OBLIGATORIA
+=====================================
+
+El sistema debe ser tolerante a documentos:
+- más largos de lo esperado
+- con encabezados imperfectos
+- con estructura repetida
+- con tablas extensas
+- con texto redundante
+- con variaciones de formato DOCX
+
+Debes implementar:
+- chunking dinámico
+- procesamiento incremental
+- consolidación progresiva
+- validación por etapa
+- fail-fast si algo se rompe
+- logging claro de cada fase
+
+=====================================
+COSTO Y EFICIENCIA
+=====================================
+
+Quiero que optimices costo y estabilidad.
+
+Implementa:
+- extracción local gratis siempre
+- chunking eficiente
+- llamadas pequeñas y controladas
+- reutilización por hash/cache SOLO si el resultado previo pasó validación completa
+- cero reprocesamiento innecesario
+
+IMPORTANTE:
+NO priorices “menos llamadas” si eso aumenta riesgo de truncamiento.
+PRIMERO robustez.
+LUEGO costo.
+
+=====================================
+MENSAJES DE ERROR
+=====================================
+
+Quiero errores claros y útiles, por ejemplo:
+- documento demasiado grande para estrategia actual
+- estructura global incompleta
+- no se detectaron 8 bloques
+- no se detectaron 30 variables
+- bloque 3 incompleto
+- variable 12 incompleta
+- inconsistencia en criterios
+- output truncado detectado
+- metodología ausente
+
+=====================================
+NO QUIERO
+=====================================
+
+- soluciones frágiles
+- parches temporales
+- lógica que funcione “solo para este archivo”
+- una implementación pensada solo para 60–70 páginas
+
+QUIERO UN SISTEMA GENERAL Y ROBUSTO.
+
+=====================================
+RESULTADO FINAL ESPERADO
+=====================================
+
+Después de esta corrección:
+- yo subo cualquier DOCX razonablemente largo
+- el sistema lo procesa por etapas
+- nunca falla por mandar demasiado en una sola llamada
+- nunca trunca por diseño
+- nunca inventa información
+- nunca corrige puntajes
+- si sale bien, guarda en /analisis
+- si sale mal, me dice exactamente por qué
+
+=====================================
+EJECUTA ESTA REARQUITECTURA AHORA
+=====================================
