@@ -93,22 +93,59 @@ async function extractText(buffer) {
 // ─── PHASE 2: Local structure parsing ────────────────────────────────────────
 
 /**
- * Returns array of blocks, each with variables that include their raw text.
- *   block  = { id, name, rawName, variables: [{id, name, rawName, text, startLine}] }
+ * Normalize a block/variable display name for deduplication:
+ *  - lowercase + remove accents
+ *  - strip trailing score: "— 6.0/10", "– Puntaje: 6.7", "(6.0/10)", "6.0/10"
+ *  - strip trailing parenthetical or annotation
+ *  - collapse spaces
+ */
+function normalizeName(name) {
+  return name
+    .toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    // strip "— 6.0/10", "– 6.0", "(6.0/10)", "6.0/10", "/ 10"
+    .replace(/\s*[—–\-]\s*[\d.,]+\s*\/?\s*\d*/g, '')
+    .replace(/\s*\([\d.,]+\s*\/\s*\d+\)/g, '')
+    .replace(/\s*[\d.,]+\s*\/\s*10\b/g, '')
+    // strip "puntaje promedio: X", "score: X", etc.
+    .replace(/\s*(puntaje|promedio|score|calificacion|nota)\s*.*$/i, '')
+    // strip trailing separators
+    .replace(/[\s:—–\-.]+$/, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/**
+ * Extract variable number from raw header line (if present).
+ * "Variable 12: ..." → 12
+ * "var. 3 ..."       → 3
+ * Returns null if not found.
+ */
+function extractVarNumber(line) {
+  const m = /^(?:variable|var\.?)\s*(\d+)/i.exec(line.trim());
+  return m ? parseInt(m[1], 10) : null;
+}
+
+/**
+ * Returns { blocks, parseLog }
+ *   blocks   = array of blocks with variables (first-occurrence wins)
+ *   parseLog = string[] of deduplication messages
  *
- * Block detection:  "BLOQUE X:" / "Bloque X:" and variants
- * Variable detection: "Variable X:" / "VARIABLE X:" and variants
+ * Block detection:  "BLOQUE N:" / "Bloque N:" and variants
+ * Variable detection: "Variable N:" / "VARIABLE N:" and variants
  *
- * Tolerates: different capitalization, spacing, separators (: - – .)
- * Rejects: institution names, subtitles, narrative phrases (not a number after keyword)
+ * KEY RULE: normalize → deduplicate → first occurrence wins.
+ * Any subsequent match of the same block/variable key is ignored
+ * (handles recap tables, score summaries, end-of-document repetitions).
  */
 function parseStructure(fullText) {
   const lines = fullText.split(/\r?\n/);
 
-  // Must have a digit right after the keyword (+ optional spacing/separator)
+  // Must have a digit right after the keyword
   const RX_BLOCK = /^(?:bloque|blok|block)\s*\d/i;
   const RX_VAR   = /^(?:variable|var\.?)\s*\d/i;
 
+  // Collect all candidate lines
   const segments = [];
   for (let i = 0; i < lines.length; i++) {
     const l = lines[i].trim();
@@ -120,6 +157,62 @@ function parseStructure(fullText) {
     }
   }
 
+  // Deduplication sets
+  const seenBlockKeys = new Set();  // normalized block name
+  const seenVarKeys   = new Set();  // normalized var name OR "num:N"
+  const parseLog = [];
+
+  // Deduplicate segments — keep only first occurrence per key
+  const dedupedSegments = [];
+  for (const seg of segments) {
+    if (seg.type === 'block') {
+      // Extract name after "BLOQUE N: "
+      const rawName = seg.line
+        .replace(/^(?:bloque|blok|block)\s*\d+\s*[\s:\-–.]*/i, '')
+        .trim();
+      const key = normalizeName(rawName || seg.line);
+      if (seenBlockKeys.has(key)) {
+        parseLog.push(`Bloque duplicado ignorado: ${seg.line}`);
+        continue;
+      }
+      seenBlockKeys.add(key);
+      seg._cleanName = rawName || seg.line;
+      dedupedSegments.push(seg);
+    } else {
+      // Extract name after "Variable N: "
+      const rawName = seg.line
+        .replace(/^(?:variable|var\.?)\s*\d+\s*[\s:\-–.]*/i, '')
+        .trim();
+      const varNum = extractVarNumber(seg.line);
+      const nameKey = normalizeName(rawName || seg.line);
+
+      // A variable is a duplicate if same number OR same normalized name
+      const numKey = varNum !== null ? `num:${varNum}` : null;
+      const isDup  = (numKey && seenVarKeys.has(numKey)) || seenVarKeys.has(nameKey);
+
+      if (isDup) {
+        parseLog.push(`Variable duplicada ignorada: ${seg.line}`);
+        continue;
+      }
+      if (numKey)   seenVarKeys.add(numKey);
+      seenVarKeys.add(nameKey);
+
+      seg._cleanName = rawName || seg.line;
+      dedupedSegments.push(seg);
+    }
+  }
+
+  const totalBlocks = dedupedSegments.filter(s => s.type === 'block').length;
+  const totalVars   = dedupedSegments.filter(s => s.type === 'variable').length;
+  const dupBlocks   = segments.filter(s => s.type === 'block').length - totalBlocks;
+  const dupVars     = segments.filter(s => s.type === 'variable').length - totalVars;
+
+  if (dupBlocks > 0) parseLog.push(`Se eliminaron ${dupBlocks} bloque(s) duplicado(s)`);
+  if (dupVars   > 0) parseLog.push(`Se eliminaron ${dupVars} variable(s) duplicada(s)`);
+
+  parseLog.push(`Estructura final deduplicada: ${totalBlocks} bloque(s), ${totalVars} variable(s)`);
+
+  // Build hierarchy from deduplicated segments
   const blocks = [];
   let currentBlock = null;
   let currentVar   = null;
@@ -138,35 +231,32 @@ function parseStructure(fullText) {
     currentBlock = null;
   }
 
-  for (const seg of segments) {
+  for (const seg of dedupedSegments) {
     if (seg.type === 'block') {
       closeBlock(seg.idx);
-      // Strip "BLOQUE N: " prefix to get clean name
-      const rawName = seg.line.replace(/^(?:bloque|blok|block)\s*\d+\s*[\s:\-–.]*/i, '').trim();
       currentBlock = {
-        id:       slug(rawName || seg.line),
-        name:     rawName || seg.line,
-        rawName:  seg.line,
+        id:        slug(seg._cleanName),
+        name:      seg._cleanName,
+        rawName:   seg.line,
         variables: []
       };
-    } else if (seg.type === 'variable') {
+    } else {
       if (!currentBlock) {
-        // Orphan variable — create implicit block
         currentBlock = { id: 'bloque_inicial', name: 'Bloque inicial', rawName: '', variables: [] };
       }
       closeVar(seg.idx);
-      const rawName = seg.line.replace(/^(?:variable|var\.?)\s*\d+\s*[\s:\-–.]*/i, '').trim();
       currentVar = {
-        id:        slug(rawName || seg.line),
-        name:      rawName || seg.line,
+        id:        slug(seg._cleanName),
+        name:      seg._cleanName,
         rawName:   seg.line,
-        startLine: seg.idx
+        startLine: seg.idx,
+        varNum:    extractVarNumber(seg.line)
       };
     }
   }
   closeBlock(lines.length);
 
-  return blocks;
+  return { blocks, parseLog };
 }
 
 // ─── PHASE 3: Local hard-data extraction ─────────────────────────────────────
@@ -629,13 +719,18 @@ async function processDocx(buffer, onProgress) {
 
   // ── Phase 2 ────────────────────────────────────────────────────────────
   onProgress?.({ phase: '2', message: 'Detectando bloques y variables localmente…', pct: 8 });
-  const blocks      = parseStructure(fullText);
+  const { blocks, parseLog } = parseStructure(fullText);
   const totalBlocks = blocks.length;
   const totalVars   = blocks.reduce((s, b) => s + b.variables.length, 0);
 
+  // Emit deduplication log to frontend
+  for (const msg of parseLog) {
+    onProgress?.({ phase: '2', message: msg, pct: 10 });
+  }
+
   onProgress?.({
     phase: '2',
-    message: `Estructura local detectada: ${totalBlocks} bloque(s), ${totalVars} variable(s)`,
+    message: `Estructura deduplicada: ${totalBlocks} bloque(s), ${totalVars} variable(s)`,
     pct: 12
   });
 

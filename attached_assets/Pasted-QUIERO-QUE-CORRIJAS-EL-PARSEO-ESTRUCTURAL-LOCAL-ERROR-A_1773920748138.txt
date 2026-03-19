@@ -1,0 +1,148 @@
+QUIERO QUE CORRIJAS EL PARSEO ESTRUCTURAL LOCAL.
+
+ERROR ACTUAL:
+El sistema detectó 16 bloques y 60 variables cuando deben ser 8 bloques y 30 variables.
+
+ESTO SIGNIFICA QUE EL PARSER ESTÁ DUPLICANDO LA ESTRUCTURA DEL DOCUMENTO.
+
+=====================================
+DIAGNÓSTICO
+=====================================
+
+El parser está tomando como estructura principal tanto:
+
+1. los encabezados reales de bloques y variables
+2. como los resúmenes, tablas o líneas de puntaje que reaparecen después
+
+Ejemplos incorrectos detectados:
+- ECONOMÍA — 6.0/10
+- SEGURIDAD — 2.7/10
+- JUSTICIA Y ESTADO DE DERECHO — 2.9/10
+- etc.
+
+Esos no son bloques nuevos.
+Son resúmenes o variantes del mismo bloque ya detectado.
+
+Además, las variables también están siendo duplicadas por el mismo motivo.
+
+=====================================
+OBJETIVO
+=====================================
+
+El parser debe detectar SOLO la estructura principal del documento:
+- 8 bloques reales
+- 30 variables reales
+
+Y debe IGNORAR:
+- tablas resumen
+- cuadros de puntajes
+- repeticiones al final de bloque
+- encabezados repetidos con puntaje
+- listados recapitulativos
+
+=====================================
+REGLAS OBLIGATORIAS
+=====================================
+
+1. UN BLOQUE SOLO SE ABRE UNA VEZ
+Si ya existe un bloque con el mismo nombre normalizado, no abrir otro.
+
+2. UNA VARIABLE SOLO SE ABRE UNA VEZ
+Si ya existe una variable con el mismo número o nombre normalizado, no duplicarla.
+
+3. NORMALIZAR NOMBRES ANTES DE COMPARAR
+Debes normalizar:
+- mayúsculas/minúsculas
+- espacios dobles
+- tildes si hace falta
+- guiones largos
+- y ELIMINAR puntajes pegados al nombre
+
+Ejemplo:
+- "ECONOMÍA"
+- "ECONOMÍA — 6.0/10"
+- "BLOQUE 1: ECONOMÍA — Puntaje promedio: 6.0/10"
+
+Todo eso debe mapear al mismo bloque base:
+ECONOMÍA
+
+Igual para variables:
+- "Política tributaria"
+- "Variable 1: Política tributaria"
+- "Política tributaria — 8.3/10"
+
+Todo debe mapear a la misma variable base.
+
+=====================================
+FILTROS OBLIGATORIOS
+=====================================
+
+NO debes tratar como bloque o variable:
+- filas de tabla
+- líneas resumen
+- recapitulaciones
+- títulos acompañados solo por puntaje
+- secciones de promedio del bloque
+- listados tipo cuadro D/P/M/Im/V/E
+- repeticiones de nombres en cuadros de cierre
+
+=====================================
+HEURÍSTICA CORRECTA
+=====================================
+
+PRIORIDAD MÁXIMA:
+Tomar como estructura principal solo la PRIMERA aparición válida de cada bloque y de cada variable en el flujo del documento.
+
+Si el mismo nombre reaparece más adelante en una tabla o resumen:
+→ ignorarlo
+
+=====================================
+VALIDACIÓN NUEVA
+=====================================
+
+Antes de pasar a ensamblaje final:
+
+1. deduplicar bloques por nombre normalizado
+2. deduplicar variables por:
+   - número si existe
+   - nombre normalizado si no existe número
+3. verificar que:
+   - haya exactamente 8 bloques
+   - haya exactamente 30 variables
+
+Si antes de deduplicar hubo más elementos, registrar en logs:
+- cuántos duplicados fueron eliminados
+- qué nombres estaban duplicados
+
+=====================================
+LOGS QUE QUIERO
+=====================================
+
+Quiero logs como:
+- "Bloque duplicado ignorado: ECONOMÍA — 6.0/10"
+- "Variable duplicada ignorada: Política tributaria — 8.3/10"
+- "Se eliminaron 8 bloques duplicados"
+- "Se eliminaron 30 variables duplicadas"
+
+=====================================
+IMPORTANTE
+=====================================
+
+No quiero que arregles esto con IA.
+Quiero que lo soluciones en el parser local.
+
+El problema no es semántico.
+Es de deduplicación y de detección de estructura principal vs estructura recapitulativa.
+
+=====================================
+RESULTADO FINAL ESPERADO
+=====================================
+
+Después de esta corrección:
+- 8 bloques reales
+- 30 variables reales
+- sin bloques vacíos
+- sin variables duplicadas
+- sin confundir resúmenes con estructura principal
+
+EJECUTA ESTA CORRECCIÓN AHORA.
