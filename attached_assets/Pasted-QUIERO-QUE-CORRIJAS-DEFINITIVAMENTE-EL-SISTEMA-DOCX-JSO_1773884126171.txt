@@ -1,0 +1,202 @@
+QUIERO QUE CORRIJAS DEFINITIVAMENTE EL SISTEMA DOCX → JSON.
+
+EL SISTEMA YA TIENE CHUNKING, PERO SIGUE FALLANDO POR TRUNCAMIENTO DE OUTPUT.
+
+ERROR ACTUAL:
+"Output truncado en mapeo-chunk-X"
+
+ESTO DEMUESTRA QUE:
+- el input ya está bien dividido
+- PERO el output sigue siendo demasiado grande
+
+ESTO ES UN ERROR DE DISEÑO.
+
+=====================================
+OBJETIVO
+=====================================
+
+QUIERO UN SISTEMA QUE NUNCA FALLE POR TOKENS:
+- ni por input
+- ni por output
+- ni con documentos largos
+- ni con documentos extremadamente largos
+
+=====================================
+SOLUCIÓN DEFINITIVA (OBLIGATORIA)
+=====================================
+
+DEBES CAMBIAR COMPLETAMENTE LA UNIDAD DE PROCESAMIENTO.
+
+YA NO SE PROCESA:
+- ni por documento
+- ni por chunk de texto
+- ni por bloque
+
+SE PROCESA POR VARIABLE INDIVIDUAL.
+
+=====================================
+ARQUITECTURA FINAL
+=====================================
+
+FASE 1 — EXTRACCIÓN LOCAL
+- leer TODO el DOCX completo
+- sin truncar
+- dividir en chunks SOLO para lectura interna
+
+-------------------------------------
+
+FASE 2 — DETECCIÓN GLOBAL (POR CHUNKS PEQUEÑOS)
+
+- procesar chunks pequeños
+- detectar:
+  - candidate
+  - methodology
+  - bloques
+  - variables
+
+- construir lista global REAL de:
+  - 8 bloques
+  - 30 variables
+
+- SI NO HAY 30 VARIABLES:
+  → ERROR
+  → NO CONTINUAR
+
+-------------------------------------
+
+FASE 3 — INDEXACIÓN DE TEXTO POR VARIABLE (CLAVE)
+
+DEBES HACER ESTO:
+
+- recorrer TODO el documento
+- asignar fragmentos de texto a cada variable detectada
+
+CADA VARIABLE DEBE TENER:
+- su texto completo asociado
+- aunque esté distribuido en varias partes del documento
+
+IMPORTANTE:
+- no depender de un solo chunk
+- reconstruir el contexto completo de cada variable
+
+-------------------------------------
+
+FASE 4 — PROCESAMIENTO POR VARIABLE (CRÍTICO)
+
+PARA CADA VARIABLE:
+
+1. tomar SOLO el texto de esa variable
+2. enviar SOLO ese texto a la IA
+3. pedir SOLO UNA VARIABLE en output
+
+REGLAS:
+
+- 1 llamada = 1 variable
+- PROHIBIDO agrupar variables
+- PROHIBIDO procesar bloques completos
+
+-------------------------------------
+
+FASE 5 — CONTROL DE TAMAÑO (OBLIGATORIO)
+
+SI UNA VARIABLE ES DEMASIADO GRANDE:
+
+- dividir la variable en SUB-CHUNKS
+- procesar por secciones:
+  - definición
+  - diagnóstico
+  - propuestas
+  - evaluación
+
+- luego unir los resultados
+
+-------------------------------------
+
+FASE 6 — DETECCIÓN DE TRUNCAMIENTO
+
+DEBES DETECTAR SI LA RESPUESTA ESTÁ CORTADA:
+
+- JSON inválido
+- falta cierre de llaves
+- faltan secciones
+- texto abruptamente cortado
+
+SI PASA:
+→ REINTENTAR con menos texto
+
+-------------------------------------
+
+FASE 7 — ENSAMBLAJE FINAL
+
+- juntar todas las variables
+- agrupar en bloques
+- añadir candidate
+- añadir methodology
+- construir JSON completo
+
+-------------------------------------
+
+FASE 8 — VALIDACIÓN ESTRICTA
+
+ANTES DE GUARDAR:
+
+VALIDAR:
+
+- JSON válido
+- 8 bloques
+- 30 variables
+- cada variable tiene:
+  - criteria (D, P, M, Im, V, E)
+  - criteria_sum
+  - formula_result
+  - final_score
+  - summary
+  - strengths
+  - weaknesses
+  - gaps
+  - conclusion
+  - sections
+  - sources
+
+SI FALTA ALGO:
+→ ERROR
+→ NO GUARDAR
+
+-------------------------------------
+
+=====================================
+REGLAS ABSOLUTAS
+=====================================
+
+- PROHIBIDO mandar demasiado texto en una llamada
+- PROHIBIDO confiar en maxTokens como solución
+- PROHIBIDO output grande
+- PROHIBIDO truncamiento
+- PROHIBIDO perder información
+- PROHIBIDO inventar contenido
+- PROHIBIDO modificar puntajes
+
+=====================================
+OPTIMIZACIÓN INTELIGENTE
+=====================================
+
+- usar chunks pequeños
+- usar llamadas pequeñas
+- usar cache SOLO si pasó validación
+- evitar reprocesamiento
+
+=====================================
+OBJETIVO FINAL
+=====================================
+
+Quiero que el sistema:
+
+- procese documentos de cualquier tamaño
+- nunca falle por tokens
+- nunca trunque
+- nunca invente
+- sea 100% estable
+
+=====================================
+EJECUTA ESTA REARQUITECTURA AHORA
+=====================================

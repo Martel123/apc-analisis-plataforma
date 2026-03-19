@@ -397,12 +397,11 @@
   <div class="instructions">
     <h2>¿Cómo funciona?</h2>
     <ol class="steps">
-      <li><strong>Fase A:</strong> extracción local completa del DOCX — texto íntegro sin truncar, sin IA.</li>
-      <li><strong>Fase B:</strong> segmentación inteligente en chunks de ~6 000 chars respetando encabezados del documento.</li>
-      <li><strong>Fase C:</strong> mapeo estructural — una llamada IA pequeña por chunk. Nunca se envía el documento completo en una sola llamada.</li>
-      <li><strong>Fase D:</strong> consolidación local — reconstruye la estructura global (8 bloques, 30 variables). Si no cuadra, error inmediato.</li>
-      <li><strong>Fase E:</strong> extracción variable a variable — 30 llamadas IA controladas, cada una recibe solo la sección relevante de esa variable.</li>
-      <li><strong>Fase F+G:</strong> ensamblaje y validación estricta. Ningún puntaje se modifica. Si algo falla, no se guarda nada.</li>
+      <li><strong>Fase 1:</strong> extracción local del texto completo — sin IA, sin truncar.</li>
+      <li><strong>Fase 2:</strong> detección de estructura en chunks de 5 000 chars. Cada llamada devuelve solo nombres (máx 400 tokens output) — nunca trunca.</li>
+      <li><strong>Fase 3:</strong> indexación local de texto por variable — cada variable obtiene su fragmento específico, sin IA.</li>
+      <li><strong>Fase 4:</strong> <strong>30 variables × 2 llamadas atómicas garantizadas.</strong> Llamada A: datos estructurados. Llamada B: secciones narrativas. Si B trunca → reintento automático con menos texto.</li>
+      <li><strong>Fase 5:</strong> ensamblaje y validación estricta — ningún puntaje se modifica. Si algo falla, no se guarda nada y se muestra el error exacto.</li>
       <li>Documentos ya procesados (mismo hash) no se reprocesarán — cero gasto de tokens adicional.</li>
     </ol>
   </div>
