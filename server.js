@@ -1,6 +1,7 @@
 const express  = require('express');
 const fs       = require('fs');
 const path     = require('path');
+const crypto   = require('crypto');
 const multer   = require('multer');
 const { processDocx } = require('./converter/docx-processor');
 
@@ -15,12 +16,57 @@ if (!fs.existsSync(UPLOADS_DIR))  fs.mkdirSync(UPLOADS_DIR,  { recursive: true }
 
 app.use(express.static(path.join(__dirname)));
 
+// ── In-memory job store ────────────────────────────────────────────────────────
+
+/**
+ * jobId → {
+ *   status: 'queued' | 'running' | 'done' | 'error',
+ *   pct: 0-100,
+ *   logs: string[],
+ *   result: object | null,
+ *   error: string | null,
+ *   errors: string[] | null,
+ *   structureFound: object | null,
+ *   createdAt: Date
+ * }
+ */
+const jobs = new Map();
+
+function newJob() {
+  const id = crypto.randomBytes(8).toString('hex');
+  jobs.set(id, {
+    status:         'queued',
+    pct:            0,
+    logs:           [],
+    result:         null,
+    error:          null,
+    errors:         null,
+    structureFound: null,
+    createdAt:      new Date()
+  });
+  return id;
+}
+
+function jobLog(id, msg) {
+  const job = jobs.get(id);
+  if (!job) return;
+  job.logs.push(msg);
+  console.log(`[job:${id}]`, msg);
+}
+
+// Expire completed jobs after 30 minutes
+setInterval(() => {
+  const cutoff = Date.now() - 30 * 60 * 1000;
+  for (const [id, job] of jobs) {
+    if (job.createdAt.getTime() < cutoff) jobs.delete(id);
+  }
+}, 5 * 60 * 1000);
+
 // ── Multer: recibe sólo DOCX ──────────────────────────────────────────────────
 
 const storage = multer.diskStorage({
   destination: UPLOADS_DIR,
   filename: (_req, file, cb) => {
-    // Nombre seguro con timestamp para evitar colisiones
     const safe = file.originalname.replace(/[^a-zA-Z0-9._-]/g, '_');
     cb(null, `${Date.now()}_${safe}`);
   }
@@ -28,7 +74,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({
   storage,
-  limits: { fileSize: 50 * 1024 * 1024 }, // 50 MB
+  limits: { fileSize: 50 * 1024 * 1024 },
   fileFilter: (_req, file, cb) => {
     const ok =
       file.mimetype === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' ||
@@ -38,41 +84,75 @@ const upload = multer({
   }
 });
 
-// ── API: subir y convertir DOCX ───────────────────────────────────────────────
+// ── POST /api/convert — recibe el archivo y lanza job en background ───────────
 
-app.post('/api/convert', upload.single('docx'), async (req, res) => {
+app.post('/api/convert', upload.single('docx'), (req, res) => {
   if (!req.file) {
     return res.status(400).json({ ok: false, error: 'No se recibió ningún archivo DOCX.' });
   }
 
-  const logs = [];
-  const onProgress = (update) => {
-    const msg = typeof update === 'string' ? update : `[Fase ${update.phase}] ${update.message}`;
-    logs.push(msg);
-    console.log('[converter]', msg);
+  const jobId    = newJob();
+  const filePath = req.file.path;
+  const fileName = req.file.originalname;
+
+  // Responder inmediatamente con el jobId — no esperar el procesamiento
+  res.json({ ok: true, jobId, message: 'Procesamiento iniciado' });
+
+  // Lanzar el procesamiento en el siguiente tick (no bloquea el servidor)
+  setImmediate(() => runJob(jobId, filePath, fileName));
+});
+
+// ── Background job runner ─────────────────────────────────────────────────────
+
+async function runJob(jobId, filePath, fileName) {
+  const job = jobs.get(jobId);
+  job.status = 'running';
+
+  const log = (msg) => jobLog(jobId, msg);
+  const progress = (update) => {
+    const msg = typeof update === 'string'
+      ? update
+      : `[Fase ${update.phase}] ${update.message}`;
+    job.pct = typeof update === 'object' ? (update.pct || job.pct) : job.pct;
+    jobLog(jobId, msg);
   };
 
-  let filePath = req.file.path;
+  log(`Iniciando conversión: ${fileName}`);
 
+  let buffer;
   try {
-    // Read buffer from disk (processDocx expects a Buffer)
-    const buffer = fs.readFileSync(filePath);
-
-    const result = await processDocx(buffer, onProgress);
-
-    // Clean up temp file
+    buffer = fs.readFileSync(filePath);
+    log(`Archivo leído: ${(buffer.length / 1024).toFixed(0)} KB`);
+  } catch (err) {
+    job.status = 'error';
+    job.error  = `No se pudo leer el archivo subido: ${err.message}`;
+    log(`ERROR: ${job.error}`);
+    return;
+  } finally {
     try { fs.unlinkSync(filePath); } catch (_) {}
+  }
 
-    if (!result.success) {
-      return res.status(422).json({
-        ok:             false,
-        errors:         result.errors || ['Error desconocido en la conversión'],
-        structureFound: result.structureFound || null,
-        logs
-      });
-    }
+  let result;
+  try {
+    result = await processDocx(buffer, progress);
+  } catch (err) {
+    job.status = 'error';
+    job.error  = `Error inesperado en el procesador: ${err.message}`;
+    log(`ERROR fatal: ${err.message}`);
+    if (err.stack) log(err.stack.split('\n')[1] || '');
+    return;
+  }
 
-    // Save to /analisis/<candidateId>.json
+  if (!result.success) {
+    job.status         = 'error';
+    job.errors         = result.errors || ['Error desconocido'];
+    job.structureFound = result.structureFound || null;
+    log(`Conversión fallida: ${result.errors?.length || 0} error(es) de validación`);
+    return;
+  }
+
+  // Guardar en /analisis
+  try {
     const json = result.json;
     json._converted_from_docx = true;
     json._converted_at = new Date().toISOString();
@@ -84,29 +164,44 @@ app.post('/api/convert', upload.single('docx'), async (req, res) => {
     const totalScore = json.candidate?.total_score ?? null;
     const totalVars  = json.blocks?.reduce((s, b) => s + (b.variables?.length || 0), 0) ?? 0;
 
-    res.json({
-      ok:          true,
+    job.status = 'done';
+    job.pct    = 100;
+    job.result = {
       candidateId,
       outputFile:  path.basename(outputFile),
       totalScore,
       blocks:      json.blocks?.length ?? 0,
       totalVars,
-      message:     `Conversión exitosa → /analisis/${path.basename(outputFile)}`,
-      logs
-    });
-
+      message:     `Conversión exitosa → /analisis/${path.basename(outputFile)}`
+    };
+    log(`Completado: candidato="${json.candidate?.name}", ${totalVars} variables, puntaje=${totalScore}`);
   } catch (err) {
-    try { if (filePath) fs.unlinkSync(filePath); } catch (_) {}
-    console.error('[converter] Error:', err.message);
-    res.status(422).json({
-      ok:    false,
-      error: err.message,
-      logs
-    });
+    job.status = 'error';
+    job.error  = `Error al guardar el JSON: ${err.message}`;
+    log(`ERROR al guardar: ${err.message}`);
   }
+}
+
+// ── GET /api/job/:jobId — polling de progreso ─────────────────────────────────
+
+app.get('/api/job/:jobId', (req, res) => {
+  const job = jobs.get(req.params.jobId);
+  if (!job) {
+    return res.status(404).json({ ok: false, error: 'Job no encontrado o expirado' });
+  }
+  res.json({
+    ok:             true,
+    status:         job.status,
+    pct:            job.pct,
+    logs:           job.logs,
+    result:         job.result,
+    error:          job.error,
+    errors:         job.errors,
+    structureFound: job.structureFound
+  });
 });
 
-// ── API: estado de conversiones recientes ─────────────────────────────────────
+// ── GET /api/convert/status — lista de candidatos convertidos ─────────────────
 
 app.get('/api/convert/status', (_req, res) => {
   try {
@@ -116,10 +211,10 @@ app.get('/api/convert/status', (_req, res) => {
         try {
           const data = JSON.parse(fs.readFileSync(path.join(ANALISIS_DIR, f), 'utf8'));
           return {
-            file:       f,
-            name:       data.candidate?.name || '—',
-            totalScore: data.candidate?.total_score,
-            fromDocx:   !!data._converted_from_docx,
+            file:        f,
+            name:        data.candidate?.name || '—',
+            totalScore:  data.candidate?.total_score,
+            fromDocx:    !!data._converted_from_docx,
             convertedAt: data._converted_at || null
           };
         } catch (_) {
@@ -134,7 +229,7 @@ app.get('/api/convert/status', (_req, res) => {
   }
 });
 
-// ── API: candidates ────────────────────────────────────────────────────────────
+// ── GET /api/candidates ────────────────────────────────────────────────────────
 
 app.get('/api/candidates', (_req, res) => {
   if (!fs.existsSync(ANALISIS_DIR)) {
@@ -157,7 +252,7 @@ app.get('/api/candidates', (_req, res) => {
   res.json({ candidates, count: candidates.length });
 });
 
-// ── API: validate ──────────────────────────────────────────────────────────────
+// ── GET /api/validate ─────────────────────────────────────────────────────────
 
 app.get('/api/validate', (_req, res) => {
   if (!fs.existsSync(ANALISIS_DIR)) {
@@ -174,7 +269,6 @@ app.get('/api/validate', (_req, res) => {
       const content = fs.readFileSync(path.join(ANALISIS_DIR, file), 'utf8');
       const data    = JSON.parse(content);
 
-      // ── candidate ──────────────────────────────────────────────────
       if (!data.candidate) {
         report.issues.push('Falta el objeto raíz "candidate"');
       } else {
@@ -191,7 +285,6 @@ app.get('/api/validate', (_req, res) => {
           report.issues.push('candidate.methodological_corrections debe ser un array');
       }
 
-      // ── blocks ─────────────────────────────────────────────────────
       if (!data.blocks || !Array.isArray(data.blocks)) {
         report.issues.push('Falta el array "blocks"');
       } else {
@@ -246,7 +339,6 @@ app.get('/api/validate', (_req, res) => {
         });
       }
 
-      // ── final_analysis ─────────────────────────────────────────────
       if (!data.final_analysis) {
         report.warnings.push('Falta el objeto "final_analysis"');
       } else if (!data.final_analysis.final_conclusion) {
@@ -264,12 +356,19 @@ app.get('/api/validate', (_req, res) => {
   res.json({ reports, total: files.length });
 });
 
-// ── Iniciar servidor ───────────────────────────────────────────────────────────
+// ── Global error handler ──────────────────────────────────────────────────────
+
+app.use((err, _req, res, _next) => {
+  console.error('[server] Error no capturado:', err.message);
+  res.status(500).json({ ok: false, error: err.message });
+});
+
+// ── Iniciar servidor ──────────────────────────────────────────────────────────
 
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`Servidor corriendo en http://0.0.0.0:${PORT}`);
   console.log(`Leyendo candidatos desde: ${ANALISIS_DIR}`);
-  console.log(`Conversor DOCX activo en: POST /api/convert`);
+  console.log(`Conversor DOCX activo en: POST /api/convert + GET /api/job/:jobId`);
   if (!process.env.OPENAI_API_KEY) {
     console.warn('⚠ OPENAI_API_KEY no configurada. El conversor DOCX no funcionará.');
   }

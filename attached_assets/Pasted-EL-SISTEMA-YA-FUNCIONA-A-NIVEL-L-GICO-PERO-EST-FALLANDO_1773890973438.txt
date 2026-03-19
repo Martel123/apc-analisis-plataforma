@@ -1,0 +1,121 @@
+EL SISTEMA YA FUNCIONA A NIVEL LÓGICO, PERO ESTÁ FALLANDO CON:
+
+"Error de red al conectar con el servidor"
+
+ESTO INDICA QUE EL BACKEND ESTÁ CRASHEANDO O HACIENDO TIMEOUT.
+
+QUIERO QUE HAGAS EL SISTEMA ROBUSTO A NIVEL DE EJECUCIÓN.
+
+=====================================
+OBJETIVO
+=====================================
+
+El sistema debe poder procesar documentos largos SIN CAERSE, SIN TIMEOUT Y SIN PERDER EL PROCESO.
+
+=====================================
+PROBLEMAS A CORREGIR
+=====================================
+
+1. PROCESO DEMASIADO LARGO EN UNA SOLA REQUEST
+2. ERRORES NO CAPTURADOS
+3. FALTA DE REINTENTOS
+4. FALTA DE LOGS DETALLADOS
+5. POSIBLE SATURACIÓN DE LLAMADAS A IA
+
+=====================================
+SOLUCIONES OBLIGATORIAS
+=====================================
+
+1. MANEJO GLOBAL DE ERRORES (CRÍTICO)
+
+Envuelve TODO el pipeline en try/catch:
+
+- cada fase debe capturar errores
+- cada error debe devolver mensaje claro
+- NUNCA debe romper la conexión
+
+-------------------------------------
+
+2. LOGS DETALLADOS
+
+Quiero logs como:
+
+- "Iniciando Fase 1"
+- "Fase 2 completada"
+- "Procesando variable 12/30"
+- "Error en variable 18"
+- "Reintentando variable 18"
+
+-------------------------------------
+
+3. PROCESAMIENTO PROGRESIVO (CLAVE)
+
+NO hacer todo en una sola ejecución bloqueante.
+
+Implementa:
+
+- procesamiento por etapas
+- o procesamiento por variable con respuesta parcial
+
+OPCIÓN MÍNIMA:
+- enviar progreso al frontend cada cierto tiempo
+
+-------------------------------------
+
+4. TIMEOUT Y REINTENTOS
+
+Para llamadas a IA:
+
+- si falla → reintentar 1–2 veces
+- si vuelve a fallar → error controlado
+
+-------------------------------------
+
+5. CONTROL DE VELOCIDAD
+
+No hacer 30 llamadas seguidas sin control.
+
+Implementa:
+
+- pequeño delay entre llamadas (ej: 100–300 ms)
+- o procesamiento secuencial controlado
+
+-------------------------------------
+
+6. RESPUESTA SEGURA AL FRONTEND
+
+SI ALGO FALLA:
+
+NO devolver "error de red"
+
+DEVOLVER:
+
+- "Error en variable X"
+- "Timeout en fase Y"
+- "Fallo en llamada a IA"
+
+-------------------------------------
+
+7. NO BLOQUEAR EL SERVIDOR
+
+Asegurar que:
+
+- el proceso no congele el servidor
+- el servidor siempre responda
+
+-------------------------------------
+
+=====================================
+OBJETIVO FINAL
+=====================================
+
+Quiero que:
+
+- el sistema nunca se caiga
+- nunca devuelva error de red genérico
+- siempre dé error específico
+- pueda procesar documentos largos sin romperse
+
+=====================================
+EJECUTA ESTAS CORRECCIONES AHORA
+=====================================

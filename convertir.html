@@ -115,6 +115,16 @@
       border-radius: 10px;
       overflow: hidden;
     }
+    .progress-track {
+      height: 3px;
+      background: #f0ede8;
+    }
+    .progress-fill {
+      height: 100%;
+      background: #b5121b;
+      width: 0%;
+      transition: width .4s ease;
+    }
     .progress-header {
       background: #f5f3ef;
       padding: .75rem 1.25rem;
@@ -374,6 +384,9 @@
 
   <!-- Progress -->
   <div id="progress-box">
+    <div class="progress-track">
+      <div class="progress-fill" id="progress-bar"></div>
+    </div>
     <div class="progress-header">
       <div class="spinner" id="spinner"></div>
       <span id="progress-title">Procesando documento…</span>
@@ -441,64 +454,151 @@ function handleFile(file) {
   upload(file);
 }
 
+// ── Estado del polling ──────────────────────────────────────────────────────
+let pollInterval = null;
+let seenLogs = 0;
+
+function stopPolling() {
+  if (pollInterval) { clearInterval(pollInterval); pollInterval = null; }
+}
+
+// ── Upload + arrancar job ────────────────────────────────────────────────────
 function upload(file) {
-  // Reset UI
-  const progressBox = document.getElementById('progress-box');
-  const resultBox   = document.getElementById('result-box');
-  const logList     = document.getElementById('log-list');
-  const spinner     = document.getElementById('spinner');
+  stopPolling();
+  seenLogs = 0;
+
+  const progressBox   = document.getElementById('progress-box');
+  const resultBox     = document.getElementById('result-box');
+  const logList       = document.getElementById('log-list');
+  const spinner       = document.getElementById('spinner');
   const progressTitle = document.getElementById('progress-title');
+  const progressBar   = document.getElementById('progress-bar');
 
   progressBox.style.display = 'block';
   resultBox.style.display   = 'none';
-  logList.innerHTML          = '';
-  spinner.style.display      = 'block';
-  progressTitle.textContent  = 'Procesando documento…';
-
-  const form = new FormData();
-  form.append('docx', file);
+  logList.innerHTML         = '';
+  spinner.style.display     = 'block';
+  progressTitle.textContent = 'Subiendo archivo…';
+  if (progressBar) progressBar.style.width = '0%';
 
   function addLog(msg) {
     const li = document.createElement('li');
-    li.textContent = msg;
+    li.textContent = typeof msg === 'object' ? JSON.stringify(msg) : msg;
     logList.appendChild(li);
     logList.scrollTop = logList.scrollHeight;
   }
 
-  addLog(`Subiendo ${file.name}…`);
+  addLog(`Subiendo ${file.name} (${(file.size/1024).toFixed(0)} KB)…`);
 
-  // Usar XMLHttpRequest para poder mostrar progreso de upload
+  const form = new FormData();
+  form.append('docx', file);
+
+  // XHR para upload con barra de progreso real
   const xhr = new XMLHttpRequest();
   xhr.open('POST', '/api/convert', true);
 
   xhr.upload.addEventListener('progress', e => {
-    if (e.lengthComputable) {
-      const pct = Math.round((e.loaded / e.total) * 100);
-      progressTitle.textContent = `Subiendo archivo… ${pct}%`;
+    if (e.lengthComputable && progressBar) {
+      progressBar.style.width = Math.round((e.loaded / e.total) * 10) + '%';
     }
   });
 
   xhr.addEventListener('load', () => {
-    spinner.style.display = 'none';
-    progressTitle.textContent = 'Procesamiento completado';
-
     let data;
     try { data = JSON.parse(xhr.responseText); }
-    catch (_) { data = { ok: false, error: 'Respuesta inválida del servidor.' }; }
+    catch (_) {
+      spinner.style.display = 'none';
+      showResult({ ok: false, error: `Respuesta inválida del servidor (HTTP ${xhr.status}). Revisa los logs del servidor.` });
+      return;
+    }
 
-    // Mostrar logs del servidor
-    if (data.logs) data.logs.forEach(addLog);
+    if (!data.ok || !data.jobId) {
+      spinner.style.display = 'none';
+      showResult({ ok: false, error: data.error || 'No se recibió un jobId del servidor.' });
+      return;
+    }
 
-    showResult(data);
-    loadConverted();
+    addLog(`Archivo recibido. Job iniciado: ${data.jobId}`);
+    progressTitle.textContent = 'Procesando documento en el servidor…';
+    if (progressBar) progressBar.style.width = '10%';
+
+    // Arrancar polling cada 2 segundos
+    pollInterval = setInterval(() => pollJob(data.jobId), 2000);
   });
 
   xhr.addEventListener('error', () => {
     spinner.style.display = 'none';
-    showResult({ ok: false, error: 'Error de red al conectar con el servidor.' });
+    showResult({ ok: false, error: 'No se pudo conectar con el servidor. ¿Está corriendo?' });
   });
 
+  xhr.addEventListener('timeout', () => {
+    spinner.style.display = 'none';
+    showResult({ ok: false, error: 'Timeout al subir el archivo. Intenta con un archivo más pequeño.' });
+  });
+
+  xhr.timeout = 60000; // 60s para upload
   xhr.send(form);
+}
+
+// ── Polling del job ──────────────────────────────────────────────────────────
+async function pollJob(jobId) {
+  const progressTitle = document.getElementById('progress-title');
+  const progressBar   = document.getElementById('progress-bar');
+  const logList       = document.getElementById('log-list');
+  const spinner       = document.getElementById('spinner');
+
+  function addLog(msg) {
+    const li = document.createElement('li');
+    li.textContent = typeof msg === 'object' ? JSON.stringify(msg) : msg;
+    logList.appendChild(li);
+    logList.scrollTop = logList.scrollHeight;
+  }
+
+  let data;
+  try {
+    const resp = await fetch(`/api/job/${jobId}`);
+    data = await resp.json();
+  } catch (err) {
+    // Red momentáneamente caída — no parar el polling aún
+    addLog(`(Reintentando conexión…)`);
+    return;
+  }
+
+  // Mostrar logs nuevos del servidor
+  if (Array.isArray(data.logs)) {
+    const newLogs = data.logs.slice(seenLogs);
+    newLogs.forEach(addLog);
+    seenLogs = data.logs.length;
+  }
+
+  // Actualizar barra de progreso
+  if (progressBar && data.pct != null) {
+    progressBar.style.width = Math.max(10, data.pct) + '%';
+  }
+  if (progressTitle && data.pct != null) {
+    progressTitle.textContent = `Procesando… ${data.pct}%`;
+  }
+
+  // ¿Terminó?
+  if (data.status === 'done') {
+    stopPolling();
+    spinner.style.display = 'none';
+    if (progressBar) progressBar.style.width = '100%';
+    progressTitle.textContent = 'Procesamiento completado';
+    showResult({ ok: true, ...data.result });
+    loadConverted();
+  } else if (data.status === 'error') {
+    stopPolling();
+    spinner.style.display = 'none';
+    progressTitle.textContent = 'Error en el procesamiento';
+    showResult({
+      ok:             false,
+      error:          data.error   || null,
+      errors:         data.errors  || null,
+      structureFound: data.structureFound || null
+    });
+  }
+  // Si status es 'queued' o 'running' → seguir esperando
 }
 
 function showResult(data) {
@@ -565,11 +665,15 @@ function showResult(data) {
 }
 
 function resetForm() {
+  stopPolling();
+  seenLogs = 0;
   document.getElementById('file-input').value = '';
   document.getElementById('file-name').textContent = '';
   document.getElementById('progress-box').style.display = 'none';
   document.getElementById('result-box').style.display   = 'none';
   document.getElementById('log-list').innerHTML = '';
+  const bar = document.getElementById('progress-bar');
+  if (bar) bar.style.width = '0%';
 }
 
 async function loadConverted() {
