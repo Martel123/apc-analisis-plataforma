@@ -1,0 +1,344 @@
+QUIERO QUE CONSTRUYAS EL FLUJO COMPLETO DE COMPARACIÓN ENTRE CANDIDATOS DENTRO DE ESTA MISMA PLATAFORMA, RESPETANDO EL SISTEMA ACTUAL Y SIN ROMPER NADA DE LO QUE YA FUNCIONA.
+
+NO QUIERO UNA IDEA GENERAL.
+NO QUIERO TEORÍA.
+QUIERO IMPLEMENTACIÓN REAL.
+
+OBJETIVO:
+Ya existe el flujo para analizar un candidato individual.
+Ahora quiero el flujo completo para comparar candidatos.
+
+EL FLUJO DEBE SER ASÍ:
+
+1. desde la pantalla de inicio, el usuario puede elegir:
+   - Analizar un candidato
+   - Comparar candidatos
+
+2. si elige “Comparar candidatos”, entra a una página de selección
+
+3. en esa página puede seleccionar:
+   - mínimo 2 candidatos
+   - máximo 3 candidatos
+
+4. cuando presiona “Hacer comparación”, entra a la página de comparación completa
+
+5. en esa página se muestra:
+   - resumen rápido por candidato
+   - ganadores por categoría
+   - tabla comparativa por bloques
+   - heatmap de variables
+   - detalle comparativo por bloque
+   - fortalezas y debilidades comparadas
+   - conclusión comparativa final
+
+6. además, debe existir un botón para descargar la comparación en Word
+
+==================================================
+REGLA CLAVE
+==================================================
+
+NO QUIERO QUE REHAGAS LA PLATAFORMA.
+QUIERO QUE AGREGUES ESTE FLUJO SOBRE EL SISTEMA ACTUAL.
+
+USA LOS JSON YA EXISTENTES EN /analisis COMO FUENTE DE DATOS.
+
+==================================================
+PÁGINAS QUE QUIERO
+==================================================
+
+QUIERO ESTE FLUJO:
+
+- Home actual
+- /comparar.html  -> selección de candidatos
+- /comparacion-resultado.html -> resultado comparativo
+
+Si prefieres hacerlo con una sola página y estados dinámicos, está bien, PERO visualmente debe sentirse como un flujo claro de dos pasos:
+1. selección
+2. resultado
+
+==================================================
+PARTE 1 — PANTALLA DE SELECCIÓN (/comparar.html)
+==================================================
+
+OBJETIVO:
+Que el usuario elija 2 o 3 candidatos de forma visual y clara.
+
+ESTRUCTURA:
+
+A. Header
+- título: “Comparar candidatos”
+- subtítulo: “Selecciona 2 o 3 candidatos para comparar sus análisis técnicos”
+
+B. Barra informativa
+- mínimo 2 candidatos
+- máximo 3 candidatos
+- la comparación incluirá puntaje total, bloques, variables, fortalezas y debilidades
+
+C. Grid de cards de candidatos
+Cada card debe mostrar:
+- nombre
+- partido
+- puntaje total
+- ranking
+- color identificador
+- mini resumen corto
+- estado de selección
+
+D. Barra inferior fija o sticky
+Debe mostrar:
+- contador: “2 de 3 seleccionados”
+- botón “Limpiar”
+- botón “Hacer comparación”
+
+REGLAS:
+- menos de 2 seleccionados: botón principal desactivado
+- 2 o 3 seleccionados: botón principal activado
+- más de 3: no permitir
+
+==================================================
+PARTE 2 — PÁGINA DE RESULTADO COMPARATIVO
+==================================================
+
+OBJETIVO:
+Mostrar la comparación completa de forma visual, seria, técnica y legible.
+
+==================================================
+SECCIÓN 1 — ENCABEZADO COMPARATIVO
+==================================================
+
+Arriba de todo:
+
+- título: “Comparación de candidatos”
+- subtítulo dinámico con los nombres comparados
+  ejemplo: “Acuña vs López Chau vs Nieto”
+
+Botones:
+- “Descargar comparación”
+- “Cambiar candidatos”
+
+==================================================
+SECCIÓN 2 — RESUMEN RÁPIDO
+==================================================
+
+Tarjetas grandes, una por candidato.
+
+Cada tarjeta debe mostrar:
+- nombre
+- partido
+- puntaje total
+- posición en ranking
+- mejor bloque
+- bloque más débil
+
+==================================================
+SECCIÓN 3 — GANADORES POR CATEGORÍA
+==================================================
+
+Una franja visual con mini-cajas o chips mostrando:
+
+- mejor puntaje general
+- mejor en economía
+- mejor en seguridad
+- mejor en justicia
+- mejor en educación
+- mejor en salud
+- mejor en política social
+- mejor en infraestructura
+- mejor en tecnología
+
+==================================================
+SECCIÓN 4 — TABLA COMPARATIVA POR BLOQUES
+==================================================
+
+Tabla limpia.
+
+Filas:
+- Economía
+- Seguridad
+- Justicia
+- Educación
+- Salud
+- Política social
+- Infraestructura
+- Tecnología
+
+Columnas:
+- candidato 1
+- candidato 2
+- candidato 3
+
+Cada celda debe mostrar:
+- puntaje del bloque
+- color de fondo según nivel
+
+ESCALA DE COLOR:
+- verde: fuerte
+- amarillo: medio
+- rojo: débil
+- gris: ausente o muy pobre
+
+==================================================
+SECCIÓN 5 — HEATMAP DE VARIABLES
+==================================================
+
+Esto es obligatorio.
+
+Debe existir una matriz visual donde:
+- filas = variables
+- columnas = candidatos
+- color = puntaje
+
+Debe incluir:
+- nombre de variable
+- puntaje visible
+- colores según intensidad
+
+Además:
+- filtro por bloque
+  - Todos
+  - Economía
+  - Seguridad
+  - Justicia
+  - Educación
+  - Salud
+  - Política social
+  - Infraestructura
+  - Tecnología
+
+==================================================
+SECCIÓN 6 — COMPARACIÓN PROFUNDA POR BLOQUE
+==================================================
+
+Debe existir una sección por bloque, preferiblemente con tabs o acordeones.
+
+Por ejemplo, si el usuario entra a “Economía”, debe ver:
+
+- Política tributaria
+- Gasto público
+- Inversión privada
+- Formalización laboral
+- Política minera
+
+Para cada variable mostrar:
+- puntaje de cada candidato
+- nivel (sólida, media, débil, ausente)
+- resumen corto de 1 línea por candidato
+
+EJEMPLO:
+Acuña: buena especificidad, pero implementación débil
+López Chau: diagnóstico correcto, pero casi sin instrumentos
+Nieto: propuesta más estructurada, aunque con tensión fiscal
+
+==================================================
+SECCIÓN 7 — FORTALEZAS Y DEBILIDADES COMPARADAS
+==================================================
+
+Diseño en dos columnas:
+
+Columna izquierda:
+- Fortalezas comparadas
+
+Columna derecha:
+- Debilidades comparadas
+
+Debe usar la información ya existente en los JSON:
+- structural_strengths
+- structural_weaknesses
+- o equivalentes
+
+==================================================
+SECCIÓN 8 — CONCLUSIÓN COMPARATIVA FINAL
+==================================================
+
+Debe existir un texto final bien redactado que compare:
+
+- quién lidera en puntaje general
+- quién muestra mejor equilibrio entre bloques
+- quién concentra mejores fortalezas
+- quién presenta más vacíos estructurales
+
+Debe sonar técnico, claro y profesional.
+
+==================================================
+PARTE 3 — DESCARGA EN WORD
+==================================================
+
+QUIERO UN BOTÓN:
+- “Descargar comparación”
+
+Debe generar un documento Word (.docx) limpio, formal y legible.
+
+ESTRUCTURA DEL WORD:
+1. título de la comparación
+2. candidatos comparados
+3. puntaje total de cada uno
+4. tabla comparativa por bloques
+5. variables destacadas
+6. fortalezas comparadas
+7. debilidades comparadas
+8. conclusión final
+
+NO quiero exportar la página tal cual.
+QUIERO generar un documento comparativo real.
+
+==================================================
+PARTE 4 — FUENTE DE DATOS
+==================================================
+
+Usa los archivos JSON ya guardados en /analisis.
+
+El sistema debe:
+- listar automáticamente los candidatos disponibles
+- leer sus bloques, variables, puntajes, fortalezas y debilidades
+- construir la comparación sin tocar manualmente el código cada vez que agregue un nuevo JSON
+
+==================================================
+PARTE 5 — DISEÑO
+==================================================
+
+QUIERO QUE VISUALMENTE SE SIENTA COMO:
+- dashboard técnico
+- aplicación seria
+- sistema profesional
+- no blog
+- no página de texto largo
+
+ESTILO:
+- limpio
+- moderno
+- colores APC
+- visualmente fuerte pero sobrio
+- bien jerarquizado
+- responsive
+
+==================================================
+PARTE 6 — REGLAS IMPORTANTES
+==================================================
+
+- NO romper el análisis individual
+- NO romper la lectura actual de /analisis
+- NO rehacer todo el proyecto
+- integrar este flujo al sistema actual
+- aprovechar el motor ya existente
+- mantener compatibilidad con futuros candidatos
+
+==================================================
+RESULTADO ESPERADO
+==================================================
+
+Quiero que al terminar exista:
+
+1. acceso desde el home a “Comparar candidatos”
+2. página de selección visual de 2 o 3 candidatos
+3. página de comparación completa
+4. heatmap de variables
+5. tabla comparativa por bloques
+6. detalle por bloque
+7. fortalezas y debilidades comparadas
+8. conclusión comparativa
+9. descarga en Word
+
+NO ME DES UNA EXPLICACIÓN.
+NO ME DES UN PLAN.
+NO ME PREGUNTES QUÉ PREFIERO.
+IMPLEMENTA DIRECTAMENTE EL FLUJO COMPLETO.

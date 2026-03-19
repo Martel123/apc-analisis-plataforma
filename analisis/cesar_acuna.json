@@ -1,0 +1,2109 @@
+{
+  "_schema_version": "2.0",
+  "candidate": {
+    "id": "cesar_acuna",
+    "name": "César Acuña",
+    "party": "Alianza para el Progreso",
+    "color": null,
+    "plan_period": "2026-2031",
+    "plan_pages": null,
+    "total_score": 6.25,
+    "ranking_position": null,
+    "summary": "El plan de gobierno de César Acuña propone una reforma tributaria que busca eliminar regímenes ineficientes y establecer un régimen progresivo simplificado para las MYPE. Se enfoca en la formalización de pequeños negocios a través de un Régimen Simplificado para la Formalización, con microaportes vinculados a beneficios sociales inmediatos.",
+    "strengths": [],
+    "weaknesses": [],
+    "methodological_notes": [],
+    "methodological_corrections": []
+  },
+  "methodology": {
+    "evaluation_method": "Evaluación técnica de la propuesta tributaria basada en criterios específicos relacionados con la política tributaria.",
+    "scoring_scale": "Escala de 1 a 2 para cada criterio, donde 1 es insuficiente y 2 es adecuado.",
+    "criteria_description": {
+      "diagnostico": "Evalúa la presentación de datos sobre presión tributaria, tasa de evasión e informalidad empresarial.",
+      "propuesta": "Evalúa la articulación y coherencia técnica de la propuesta tributaria.",
+      "medidas": "Evalúa la claridad y detalle de las medidas propuestas, incluyendo tablas de transición y estimaciones de costos.",
+      "implementacion": "Evalúa la identificación de normas de migración y el mandato operativo para SUNAT.",
+      "viabilidad": "Evalúa la compatibilidad de la reforma con la estabilidad fiscal y la realismo de las metas propuestas.",
+      "especificidad": "Evalúa la especificidad de los montos y tasas propuestas, así como la identificación de mecanismos de transición."
+    },
+    "formula": "La calificación final se calcula como (suma de puntajes obtenidos / suma de puntajes posibles) × 10.",
+    "analysts": [],
+    "review_date": null
+  },
+  "blocks": [
+    {
+      "id": "economia_puntaje_promedio_7_5",
+      "name": "ECONOMÍA - Puntaje promedio: 7.5",
+      "average_score": 7,
+      "color": null,
+      "summary": "",
+      "strengths": [],
+      "weaknesses": [],
+      "interpretation": "",
+      "variables": [
+        {
+          "id": "politica_tributaria",
+          "name": "Política tributaria",
+          "block_id": "economia_puntaje_promedio_7_5",
+          "final_score": 6.7,
+          "rating_label": "moderado",
+          "summary": "La propuesta tributaria de César Acuña busca eliminar regímenes tributarios ineficientes y establecer un Régimen Simplificado para la Formalización (RSF) que promueva la formalización de microempresas a través de microaportes. Además, se plantea un sistema de tasas progresivas que favorezca a las pequeñas empresas y fomente la equidad fiscal.",
+          "strengths": [
+            "Innovación del Régimen Simplificado para la Formalización (RSF)",
+            "Propuesta técnicamente coherente y articulada",
+            "Compatibilidad con la estabilidad fiscal"
+          ],
+          "weaknesses": [
+            "Ausencia de norma de implementación",
+            "Falta de mandato operativo a SUNAT",
+            "No se presenta una tabla de transición tributaria"
+          ],
+          "gaps": [
+            "Falta de estimación del costo fiscal de la marcha blanca",
+            "No hay estrategia de comunicación para la transición"
+          ],
+          "conclusion": "La propuesta tributaria es innovadora y coherente, pero su efectividad se ve comprometida por la falta de un marco normativo claro y un mandato operativo para su implementación.",
+          "criteria": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 0,
+            "viabilidad": 2,
+            "especificidad": 2
+          },
+          "criteria_sum": 8,
+          "formula_result": 6.7,
+          "score_table": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 0,
+            "viabilidad": 2,
+            "especificidad": 2,
+            "sum": 8,
+            "final": 6.7
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El plan menciona la necesidad de reducir la informalidad como objetivo de la reforma, pero no presenta datos propios de presión tributaria, tasa de evasión ni informalidad empresarial en el cuerpo del documento.",
+            "propuesta": "RSF, régimen progresivo, digitalización SUNAT y marcha blanca constituyen una propuesta articulada y técnicamente correcta.",
+            "medidas": "Las medidas (tasas, RSF, prellenado) están escritas, pero faltan tanto la tabla de transición tributaria como la estimación del costo fiscal de la marcha blanca.",
+            "implementacion": "Sin norma de migración del RER/RMT identificada. SUNAT no aparece con mandato operativo ni presupuesto de modernización.",
+            "viabilidad": "La reforma es compatible con la estabilidad fiscal. No tiene metas de presión tributaria irrealistas. El RSF no es recaudatorio por diseño.",
+            "especificidad": "RSF con montos específicos (S/20/40/60+), tasas progresivas por tramos (0/1/5/10/20/30%) y marcha blanca identificada como mecanismo de transición."
+          },
+          "analysis_sections": {
+            "definicion": "La política tributaria evalúa cómo el candidato propone modificar el sistema de impuestos, incluyendo regímenes, tasas, mecanismos de formalización y la relación entre recaudación y equidad fiscal.",
+            "importancia": "Es crucial para el desarrollo del país, ya que un diseño tributario adecuado puede ampliar la base imponible, reducir la evasión y promover la formalización, lo que a su vez fortalece la economía nacional.",
+            "diagnostico_externo": "El Perú presenta una presión tributaria baja del 14.1% del PBI en 2024, muy por debajo del promedio latinoamericano. Además, la evasión fiscal es alta, con un 50% en el IR empresarial y un 35% en el IGV, y la informalidad laboral alcanza el 72.8%.",
+            "propuesta_plan": "El plan de César Acuña propone eliminar regímenes tributarios actuales y migrar a un régimen general progresivo, con tasas que van del 0% al 30% según la utilidad neta, y crear un Régimen Simplificado para la Formalización (RSF) para microempresas.",
+            "medidas_concretas": "Las medidas incluyen la creación del RSF con tramos de microaporte, la eliminación del RER y RMT, la implementación de tasas progresivas, declaraciones prellenadas y un período de marcha blanca sin sanciones.",
+            "implementacion_necesaria": "Para implementar estas propuestas se requiere una norma legal para la migración de contribuyentes, un decreto que establezca el RSF, modernización tecnológica de SUNAT y una campaña de difusión masiva.",
+            "impacto_potencial": "Si se implementa correctamente, el RSF podría formalizar millones de pequeños negocios, ampliar la base imponible y generar un entorno más competitivo, lo que a mediano plazo podría traducirse en mayor recaudación y protección social.",
+            "vacios": "Los vacíos incluyen la falta de una tabla de transición tributaria, la ausencia de estimaciones del costo fiscal de la marcha blanca, y la falta de un mandato operativo claro para SUNAT y presupuesto de modernización.",
+            "evaluacion_tecnica": "La propuesta es técnicamente coherente, destacando el RSF como una innovación relevante. Sin embargo, la falta de una norma de implementación y un mandato operativo a SUNAT limita su viabilidad.",
+            "conclusion": "La variable obtiene una calificación de 6.7/10, destacando la innovación del RSF y la coherencia técnica, pero con debilidades en la implementación que podrían obstaculizar su efectividad."
+          },
+          "sources": []
+        },
+        {
+          "id": "gasto_publico",
+          "name": "Gasto público",
+          "block_id": "economia_puntaje_promedio_7_5",
+          "final_score": 5.8,
+          "rating_label": "débil",
+          "summary": "El plan de gobierno propone una política fiscal responsable con el cumplimiento de la regla fiscal y la creación de un Centro de Gobierno para el seguimiento del gasto. Se busca reformar el Sistema Nacional de Programación Multianual para mejorar la ejecución presupuestal y reducir obras paralizadas.",
+          "strengths": [
+            "Declaración de responsabilidad fiscal",
+            "Creación del Centro de Gobierno con seguimiento semestral",
+            "Reforma de Invierte.pe para mejorar la ejecución"
+          ],
+          "weaknesses": [
+            "Falta de una tabla de financiamiento integrada",
+            "Compromisos de gasto sin fuente fiscal identificada",
+            "Centro de Gobierno sin norma presupuestaria específica"
+          ],
+          "gaps": [
+            "Ausencia de estrategia explícita de consolidación fiscal",
+            "Falta de datos cuantificados sobre déficit y deuda"
+          ],
+          "conclusion": "La variable de gasto público presenta una orientación correcta, pero la falta de financiamiento integrado limita la credibilidad del plan. La brecha entre la intención fiscal y los compromisos reales es preocupante.",
+          "criteria": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1
+          },
+          "criteria_sum": 7,
+          "formula_result": 5.8,
+          "score_table": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1,
+            "sum": 7,
+            "final": 5.8
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "\"Cumplimiento de la regla fiscal\" es una declaración de objetivo, no un diagnóstico cuantificado del estado del gasto público. El plan no presenta datos del déficit 3.5% ni de la deuda 33.9% con fuentes propias.",
+            "propuesta": "Responsabilidad fiscal, CMI semestral y reforma de Invierte.pe son orientación correcta.",
+            "medidas": "El CMI y la reforma de Invierte.pe son instrumentos reales pero no equivalen a una tabla de financiamiento del plan completo.",
+            "implementacion": "El Centro de Gobierno está definido como coordinador pero sin norma presupuestaria específica.",
+            "viabilidad": "El plan declara responsabilidad fiscal pero la acumulación de compromisos sin fuente fiscal identificada genera riesgo de desequilibrio.",
+            "especificidad": "Regla fiscal como objetivo y CMI como instrumento. Sin tabla de financiamiento del plan."
+          },
+          "analysis_sections": {
+            "definicion": "La variable de gasto público evalúa cómo el candidato propone gestionar el presupuesto del Estado, incluyendo el nivel de gasto, su composición, los mecanismos de ejecución y las reglas fiscales que se aplicarán.",
+            "importancia": "Un manejo responsable del gasto público es fundamental para la estabilidad macroeconómica del país. En el contexto peruano, un déficit fiscal creciente puede encarecer la deuda soberana y limitar la inversión productiva, afectando directamente la calidad de vida de la población.",
+            "diagnostico_externo": "El Ministerio de Economía y Finanzas (MEF) reporta un déficit fiscal de 3.5% del PBI para 2024, lo que representa un incumplimiento de la regla fiscal por segundo año consecutivo. Además, la deuda pública se sitúa en 33.9% del PBI y hay 2,300 obras paralizadas que suman S/22,000 millones.",
+            "propuesta_plan": "El plan de gobierno propone una 'política fiscal responsable' con el cumplimiento de la regla fiscal y la creación de un Centro de Gobierno (CdG) que utilizará un Cuadro de Mando Integral (CMI) para el seguimiento semestral del plan.",
+            "medidas_concretas": "Las medidas específicas incluyen la declaración de cumplimiento de la regla fiscal, la creación del CdG con CMI semestral, la reforma del Sistema Nacional de Programación Multianual (Invierte.pe) para mejorar la ejecución presupuestal y una rendición de cuentas semestral.",
+            "implementacion_necesaria": "Para implementar estas propuestas, se requiere un decreto supremo que establezca el CdG, una norma que reforme Invierte.pe y un sistema de seguimiento presupuestal integrado. Sin embargo, el plan no detalla cómo financiará sus compromisos acumulados.",
+            "impacto_potencial": "Un manejo fiscal responsable podría proteger el grado de inversión del país y reducir el costo del financiamiento soberano. Si la reforma de Invierte.pe es exitosa, podría desbloquear S/22,000 millones en obras paralizadas, mejorando así la inversión pública.",
+            "vacios": "Los vacíos críticos incluyen la falta de una tabla de financiamiento integrada, la ausencia de fuentes fiscales identificadas para los compromisos de gasto acumulados y la falta de una norma presupuestaria específica para el Centro de Gobierno.",
+            "evaluacion_tecnica": "La declaración de responsabilidad fiscal es positiva, pero carece de respaldo en una tabla de financiamiento. Aunque el CMI y la reforma de Invierte.pe son pasos correctos, no constituyen una solución integral a la acumulación de compromisos sin financiamiento.",
+            "conclusion": "La variable de gasto público obtiene una calificación de 5.8/10, lo que indica que es el punto más débil del bloque económico. La falta de una tabla de financiamiento integrada y la acumulación de compromisos sin fuentes identificadas limitan la credibilidad del plan en su conjunto."
+          },
+          "sources": []
+        },
+        {
+          "id": "politica_de_inversion_privada",
+          "name": "Política de inversión privada",
+          "block_id": "economia_puntaje_promedio_7_5",
+          "final_score": 7.5,
+          "rating_label": "sólido",
+          "summary": "La propuesta busca atraer y facilitar la inversión privada mediante la adjudicación de US$80,000 millones en asociaciones público-privadas (APPs) y la creación de parques industriales y Zonas Económicas Especiales. Incluye reformas constitucionales y un road show internacional para mejorar la imagen del país ante inversionistas.",
+          "strengths": [
+            "Propuesta articulada con medidas concretas",
+            "Meta cuantificada de inversión ambiciosa",
+            "Enfoque pro-inversión sin riesgos macroeconómicos sistémicos"
+          ],
+          "weaknesses": [
+            "Falta de diagnóstico cuantitativo sobre la caída de la inversión",
+            "Reformas constitucionales requieren mayorías no garantizadas",
+            "Ausencia de estrategia para resolver conflictos sociales"
+          ],
+          "gaps": [
+            "No hay un mecanismo específico de facilitación de permisos para proyectos en cartera",
+            "La meta de US$80,000 millones supera el histórico de adjudicación"
+          ],
+          "conclusion": "La propuesta tiene una alta densidad propositiva, pero la ambición de la meta genera dudas sobre su viabilidad. La falta de estrategia para resolver conflictos sociales limita su implementación efectiva.",
+          "criteria": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2
+          },
+          "criteria_sum": 9,
+          "formula_result": 7.5,
+          "score_table": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2,
+            "sum": 9,
+            "final": 7.5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El plan no diagnostica cuantitativamente por qué la inversión cayó a 15.8% del PBI ni analiza las causas estructurales de la parálisis de proyectos.",
+            "propuesta": "US$80,000M APPs, road show, reforma normativa, ZEE, 16 parques y OCEX activos: propuesta articulada.",
+            "medidas": "US$80,000M APPs (meta), road show (mecanismo), Art. 56+Art. 71 CP (normas), 16 parques (número específico), ZEE.",
+            "implementacion": "Proinversión/MINFRA nombrados con mandato. Sin estrategia de resolución de conflictos sociales que desbloqueen los proyectos.",
+            "viabilidad": "Meta US$80,000M supera 3-4x el histórico. Reforma Art. 56 y Art. 71 requieren 2/3 del Congreso.",
+            "especificidad": "US$80,000M APPs (meta cuantificada), 16 parques industriales (número), ZEE, Art. 56 y Art. 71 (normas)."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa cómo el candidato propone atraer, facilitar y proteger la inversión privada nacional y extranjera como motor del crecimiento y la generación de empleo formal.",
+            "importancia": "La inversión privada es el principal componente del crecimiento económico sostenido. Su relevancia radica en que el Perú enfrenta una cartera de proyectos paralizados y la brecha de infraestructura solo puede cerrarse con la participación del sector privado.",
+            "diagnostico_externo": "El BCRP reporta que la inversión privada cayó a 15.8% del PBI en 2024, por debajo del promedio de la última década. Además, los conflictos sociales han paralizado proyectos mineros por más de USD 22,000 millones, afectando gravemente la competitividad del país.",
+            "propuesta_plan": "El plan articula seis medidas principales, incluyendo una meta de adjudicar US$80,000 millones en APPs y Proyectos en Activos en el quinquenio, un road show presidencial internacional y reformas constitucionales para facilitar la inversión.",
+            "medidas_concretas": "Las medidas específicas incluyen la meta cuantificada de US$80,000M en APPs, un road show internacional, reformas a los artículos 56 y 71 de la Constitución, la creación de 16 parques industriales y el establecimiento de Zonas Económicas Especiales.",
+            "implementacion_necesaria": "Para implementar las propuestas, se requiere una reforma constitucional para los artículos 56 y 71, una norma específica para las ZEE, la reestructuración de Proinversión y MINFRA, y un protocolo de road show presidencial con métricas definidas.",
+            "impacto_potencial": "Si se alcanzara la mitad de la meta propuesta, el impacto en empleo formal, PBI y recaudación sería significativo. Las ZEE y los parques industriales podrían generar clústeres económicos en regiones con potencial, mejorando la imagen del país ante inversionistas.",
+            "vacios": "Los vacíos más importantes incluyen la falta de una estrategia para resolver los conflictos sociales, la ambiciosa meta de US$80,000M que supera el histórico de adjudicación, y la necesidad de mayorías en el Congreso para las reformas constitucionales.",
+            "evaluacion_tecnica": "La propuesta presenta una lógica pro-inversión sin riesgos sistémicos, pero la meta de US$80,000M es ambiciosa y genera dudas sobre su viabilidad. La ausencia de una estrategia para resolver conflictos sociales es una omisión crítica.",
+            "conclusion": "La variable obtiene un puntaje de 7.5/10, destacándose por su densidad propositiva y medidas cuantificadas. Sin embargo, la ambición de la meta y la falta de estrategias para conflictos sociales limitan su efectividad."
+          },
+          "sources": []
+        },
+        {
+          "id": "formalizacion_laboral",
+          "name": "Formalización laboral",
+          "block_id": "economia_puntaje_promedio_7_5",
+          "final_score": 7.5,
+          "rating_label": "sólido",
+          "summary": "La propuesta busca reducir la informalidad laboral en Perú mediante la implementación de un Régimen de Simplificación Formal (RSF) y la simplificación regulatoria. Se plantean medidas concretas como ventanillas únicas y un análisis de impacto regulatorio para facilitar la formalización de microempresas.",
+          "strengths": [
+            "Enfoque propositivo y no persecutorio",
+            "Instrumentos técnicamente correctos y articulados",
+            "Medidas cuantificadas y específicas"
+          ],
+          "weaknesses": [
+            "No aborda los costos laborales no tributarios",
+            "Falta de presupuesto específico para la campaña de formalización",
+            "No se establecen metas cuantificadas de formalización"
+          ],
+          "gaps": [
+            "Ausencia de un plan para abordar costos laborales no tributarios",
+            "Falta de presupuesto definido para las Agencias Regionales de Desarrollo"
+          ],
+          "conclusion": "El enfoque de la propuesta es sólido, pero la omisión de los costos laborales no tributarios limita su viabilidad estructural. Sin abordar este componente, la formalización total enfrentará desafíos significativos.",
+          "criteria": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2
+          },
+          "criteria_sum": 9,
+          "formula_result": 7.5,
+          "score_table": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2,
+            "sum": 9,
+            "final": 7.5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "\"Informal\" aparece en el plan citando a Douglas North sobre instituciones, no como diagnóstico estadístico de informalidad laboral. El bloque de formalización no cuantifica la tasa del 72.8%.",
+            "propuesta": "RSF, RIA, silencio positivo y ventanilla única son instrumentos técnicamente correctos y articulados.",
+            "medidas": "RSF con montos S/20/40/60+, RIA (instrumento), silencio positivo y ventanilla única como medidas identificadas.",
+            "implementacion": "CNCP como PMO y ARD como brazo territorial. Sin presupuesto específico de la campaña de formalización.",
+            "viabilidad": "El enfoque es correcto, pero sin abordar costos laborales no tributarios la formalización tiene límites estructurales.",
+            "especificidad": "RSF con montos (S/20/40/60+), CNCP-PMO (institución con mandato), RIA (instrumento normativo)."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas para reducir la informalidad laboral y empresarial, incluyendo la simplificación regulatoria, incentivos a la contratación formal, protección social a informales y reformas tributarias.",
+            "importancia": "La informalidad laboral en el Perú afecta a más del 72% de la PEA, impactando negativamente en la productividad y la protección social, lo que hace crucial abordar esta problemática para el desarrollo económico del país.",
+            "diagnostico_externo": "Según el INEI/ENAHO 2024, la informalidad laboral alcanza el 72.8% de la PEA, siendo más pronunciada en microempresas. Además, el costo de cumplimiento regulatorio es significativamente más alto en Perú que en países similares.",
+            "propuesta_plan": "El plan de gobierno propone seis instrumentos clave, incluyendo el RSF con microaportes, simplificación regulatoria, silencio positivo para licencias, ventanillas únicas digitales, rediseño del CNCP y creación de Agencias Regionales de Desarrollo.",
+            "medidas_concretas": "Las medidas específicas incluyen microaportes vinculados a beneficios de salud y crédito, implementación del RIA para nueva regulación, y la creación de ventanillas únicas interoperables con identidad digital.",
+            "implementacion_necesaria": "Para implementar las propuestas, se requiere la creación de normas para el RSF, un decreto para el RIA, reformas en procedimientos municipales, inversión en tecnología para ventanillas digitales y reestructuración del CNCP.",
+            "impacto_potencial": "Si se formaliza el 20% de los informales en cinco años, se podría lograr un impacto significativo en protección social, recaudación y productividad, además de ampliar la cobertura de salud y previsión.",
+            "vacios": "Los vacíos más importantes incluyen la falta de abordaje de costos laborales no tributarios, la ausencia de un presupuesto específico para la campaña de formalización y la falta de metas cuantificadas para la formalización.",
+            "evaluacion_tecnica": "La propuesta es técnicamente correcta y propositiva, pero no aborda los costos laborales no tributarios, lo que limita su efectividad en la formalización de microempresas.",
+            "conclusion": "La variable obtiene un puntaje de 7.5/10, destacando su enfoque propositivo y medidas específicas, aunque la omisión de costos laborales no tributarios representa una brecha crítica que podría limitar su éxito."
+          },
+          "sources": []
+        },
+        {
+          "id": "politica_minera_y_recursos_naturales",
+          "name": "Política minera y recursos naturales",
+          "block_id": "economia_puntaje_promedio_7_5",
+          "final_score": 7.5,
+          "rating_label": "sólido",
+          "summary": "El plan de gobierno propone medidas para viabilizar la cartera de proyectos mineros paralizados, incluyendo la creación de un Régimen MAPE y un sistema de trazabilidad mediante blockchain. También busca centralizar la certificación ambiental y ofrecer incentivos para la formalización de la minería artesanal.",
+          "strengths": [
+            "Diagnóstico cuantificado con datos propios sobre proyectos mineros",
+            "Propuestas articuladas y respaldadas por experiencias exitosas",
+            "Enfoque jurídicamente seguro sin expropiaciones ni arbitrajes"
+          ],
+          "weaknesses": [
+            "Falta de meta cuantificada de mineros a formalizar",
+            "Ausencia de norma de creación del Régimen MAPE",
+            "Riesgos técnicos del blockchain en zonas sin conectividad"
+          ],
+          "gaps": [
+            "Vacío crítico en la norma de creación del Régimen MAPE",
+            "Falta de estrategia de diálogo social para conflictos socioambientales"
+          ],
+          "conclusion": "La variable es la más sólida del bloque, destacando su enfoque seguro y la necesidad de implementar el Régimen MAPE. Sin embargo, enfrenta desafíos técnicos y normativos que deben ser abordados.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2
+          },
+          "criteria_sum": 9,
+          "formula_result": 7.5,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2,
+            "sum": 9,
+            "final": 7.5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El plan cuantifica explícitamente el problema: más de 60 proyectos en espera de poder entrar en fases de explotación, involucrando más de US$60,000 millones.",
+            "propuesta": "Régimen MAPE, trazabilidad, SENACE ampliado y ventanilla única son propuesta articulada.",
+            "medidas": "Ventanilla única, MAPE con tramos, blockchain para trazabilidad. Sin meta cuantificada de mineros a formalizar ni costo del paquete de incentivos.",
+            "implementacion": "MINEM ventanilla única, PCM+MINTER para minería ilegal. Sin norma de creación del MAPE.",
+            "viabilidad": "Sin expropiaciones ni arbitrajes. El blockchain en zonas sin conectividad tiene riesgo técnico real.",
+            "especificidad": "Régimen MAPE (norma nueva), blockchain (instrumento), SENACE ampliado (reforma institucional específica)."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas para gestionar el desarrollo minero y los recursos naturales, incluyendo el destrabe de inversiones, la formalización de la minería artesanal, la gestión ambiental y la distribución de beneficios.",
+            "importancia": "La minería es crucial para la economía peruana, generando el 60% de las exportaciones y el 10% del PBI. Sin embargo, enfrenta desafíos significativos debido a conflictos sociales y la minería ilegal, que afecta tanto al medio ambiente como a la economía formal.",
+            "diagnostico_externo": "El MINEM reporta más de 60 proyectos mineros detenidos, con una cartera de inversión potencial de más de USD 60,000 millones. Además, existen 192 conflictos socioambientales activos, de los cuales el 67% está relacionado con actividades extractivas.",
+            "propuesta_plan": "El plan de gobierno propone cinco medidas clave: viabilizar la cartera de inversiones mediante una ventanilla única digital, crear un Régimen MAPE, implementar un sistema de trazabilidad mediante blockchain, reorganizar SENACE y ofrecer un paquete de incentivos para la formalización.",
+            "medidas_concretas": "Las medidas específicas incluyen la creación de una ventanilla única digital para unificar trámites, el Régimen MAPE con tramos diferenciados, un sistema de trazabilidad para explosivos y mercurio, la reorganización de SENACE y un paquete de créditos con garantía estatal.",
+            "implementacion_necesaria": "Para implementar estas propuestas, se requiere la creación de una norma para el Régimen MAPE, un decreto para reorganizar SENACE, inversión en infraestructura tecnológica para el sistema de trazabilidad y el desarrollo de la plataforma digital.",
+            "impacto_potencial": "Si se logra viabilizar la mitad de la cartera paralizada, se podría generar un crecimiento adicional del PBI de 2-3 puntos porcentuales. La formalización de la minería artesanal también podría reducir el financiamiento de actividades criminales y detener la deforestación.",
+            "vacios": "Los principales vacíos incluyen la falta de una norma para el Régimen MAPE, barreras técnicas del blockchain en zonas sin conectividad, la ausencia de metas cuantificadas para la formalización de mineros y la falta de una estrategia de diálogo social para abordar los conflictos.",
+            "evaluacion_tecnica": "El plan minero es jurídicamente seguro, ya que no propone expropiaciones ni modifica contratos existentes. Sin embargo, el uso de blockchain enfrenta desafíos técnicos en áreas con poca conectividad, lo que limita su viabilidad.",
+            "conclusion": "La variable obtiene un puntaje de 7.5/10, siendo la más sólida del bloque. Su enfoque es jurídicamente seguro y conceptualmente correcto, aunque carece de una norma de implementación y enfrenta riesgos técnicos en su ejecución."
+          },
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "seguridad_puntaje_promedio_6_2",
+      "name": "Seguridad - Puntaje promedio: 6.2",
+      "average_score": 6.25,
+      "color": null,
+      "summary": "",
+      "strengths": [],
+      "weaknesses": [],
+      "interpretation": "",
+      "variables": [
+        {
+          "id": "seguridad_ciudadana",
+          "name": "Seguridad ciudadana",
+          "block_id": "seguridad_puntaje_promedio_6_2",
+          "final_score": 7.5,
+          "rating_label": "sólido",
+          "summary": "El plan de gobierno propone la creación de un nuevo Ministerio de Defensa y Seguridad Interna, la integración de las Fuerzas Armadas y la Policía Nacional del Perú, y la implementación de una plataforma de inteligencia criminal con inteligencia artificial. Además, se busca rediseñar el Sistema Nacional de Seguridad Ciudadana (SINASEC) y establecer corredores urbanos seguros en distritos con alta incidencia delictiva.",
+          "strengths": [
+            "Integración de FF.AA. y PNP para una estrategia coherente",
+            "SINASEC con metas vinculantes para alcaldes",
+            "Plataforma de inteligencia criminal con precedentes positivos"
+          ],
+          "weaknesses": [
+            "Nuevo ministerio sin presupuesto ni cronograma",
+            "Reforma de la Ley Orgánica del Ejecutivo requiere mayoría congresal",
+            "Corredores urbanos seguros carecen de número y presupuesto definidos"
+          ],
+          "gaps": [
+            "Falta de licitación y cronograma para la plataforma IA",
+            "Intenciones sin medidas concretas debido a la falta de presupuesto"
+          ],
+          "conclusion": "La variable de seguridad es la más sólida del bloque, destacando la integración institucional y la corresponsabilidad de los alcaldes. Sin embargo, la dependencia de reformas legislativas y la falta de recursos son limitantes significativas.",
+          "criteria": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 2,
+            "viabilidad": 1,
+            "especificidad": 2
+          },
+          "criteria_sum": 9,
+          "formula_result": 7.5,
+          "score_table": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 2,
+            "viabilidad": 1,
+            "especificidad": 2,
+            "sum": 9,
+            "final": 7.5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El plan menciona 'reducción drástica de homicidios, extorsiones y delitos violentos' sin una sola estadística propia de victimización, tasa de homicidios ni extorsiones.",
+            "propuesta": "Nuevo ministerio integrado + plataforma IA criminal + SINASEC con metas vinculantes + corredores seguros.",
+            "medidas": "Las instituciones y plataformas propuestas son correctas pero sin presupuesto ni cronograma son intenciones, no medidas.",
+            "implementacion": "El SINASEC con metas vinculantes para GOREs y municipalidades es el instrumento de implementación más concreto y descentralizado del bloque.",
+            "viabilidad": "El nuevo ministerio requiere reforma de la Ley Orgánica del Ejecutivo. Sin mayoría parlamentaria, la creación es incierta.",
+            "especificidad": "Ministerio de Defensa y Seguridad Interna (institución nueva), plataforma IA criminal (instrumento), SINASEC con metas."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas para reducir la inseguridad cotidiana, abarcando aspectos como la estrategia policial, la coordinación interinstitucional, la prevención del delito y la aplicación de tecnología en la seguridad.",
+            "importancia": "La inseguridad ciudadana es considerada el principal problema por la ciudadanía peruana, afectando directamente la inversión privada, la actividad económica y la calidad de vida de la población.",
+            "diagnostico_externo": "Según el INEI 2024, el 25.6% de la población urbana fue víctima de un delito en el último año. Además, el MININTER reporta un aumento del 679% en extorsiones entre 2020 y 2024, y la PNP registró 1,423 homicidios en 2023, un incremento del 18% respecto al año anterior.",
+            "propuesta_plan": "El plan de gobierno propone crear un nuevo Ministerio de Defensa y Seguridad Interna, fortalecer la DINI, rediseñar el SINASEC, implementar una plataforma nacional de inteligencia criminal con IA, establecer corredores urbanos seguros y fomentar la Policía de Proximidad.",
+            "medidas_concretas": "Las medidas específicas incluyen la creación del nuevo ministerio, el fortalecimiento de la DINI, el rediseño del SINASEC con metas vinculantes, la implementación de una plataforma de inteligencia criminal con IA, la creación de corredores urbanos seguros y la Policía de Proximidad con patrullaje sectorizado.",
+            "implementacion_necesaria": "Para implementar estas propuestas, se requiere una reforma de la Ley Orgánica del Ejecutivo para crear el nuevo ministerio, un decreto para rediseñar el SINASEC, inversión en tecnología para la plataforma de IA y convenios con municipalidades para la Policía de Proximidad.",
+            "impacto_potencial": "La creación de un ministerio integrado podría eliminar la fragmentación institucional, permitiendo una estrategia de seguridad más coherente. Además, el SINASEC con metas vinculantes fomentaría la corresponsabilidad de los alcaldes, y la plataforma de IA podría mejorar la capacidad de anticipar y responder al delito.",
+            "vacios": "Los vacíos del plan incluyen la falta de presupuesto y cronograma para el nuevo ministerio, la incertidumbre sobre la reforma de la Ley 29158, la ausencia de números y presupuesto definidos para los corredores urbanos seguros, y la falta de un cronograma de implementación para la plataforma de IA.",
+            "evaluacion_tecnica": "La propuesta presenta una arquitectura institucional coherente, con la integración de FF.AA. y PNP y el SINASEC con metas vinculantes. Sin embargo, la falta de presupuesto y cronograma para el nuevo ministerio y la necesidad de una reforma legislativa compleja son limitaciones significativas.",
+            "conclusion": "La variable de seguridad ciudadana obtiene una calificación de 7.5/10, siendo la más sólida del bloque. Los puntos fuertes son el SINASEC con metas vinculantes y la especificidad institucional, mientras que las principales brechas son la dependencia de una reforma legislativa y la falta de recursos para las propuestas más ambiciosas."
+          },
+          "sources": []
+        },
+        {
+          "id": "reforma_policial",
+          "name": "Reforma policial",
+          "block_id": "seguridad_puntaje_promedio_6_2",
+          "final_score": 5.8,
+          "rating_label": "débil",
+          "summary": "La propuesta busca reformar la Policía Nacional del Perú mediante una reingeniería que incluya un currículo orientado a criminalística y tecnología, así como la recuperación de su rol en la investigación preliminar. Se plantea un incremento del presupuesto y la integración de la PNP bajo un nuevo ministerio para mejorar su funcionamiento y relación con la ciudadanía.",
+          "strengths": [
+            "Enfoque en la reingeniería de la PNP",
+            "Recuperación del rol investigador de la PNP",
+            "Propuesta de mayor presupuesto con gestión profesionalizada"
+          ],
+          "weaknesses": [
+            "Falta de un número específico de efectivos a reclutar",
+            "Ausencia de un presupuesto específico para la reforma curricular",
+            "No se presenta un cronograma para el cambio curricular"
+          ],
+          "gaps": [
+            "Sin mecanismo externo de supervisión de la depuración",
+            "Sin metas cuantificadas de reducción de corrupción interna"
+          ],
+          "conclusion": "La variable presenta un diagnóstico correcto, pero el plan es escueto y carece de detalles cruciales para su implementación efectiva. Se requiere un mayor desarrollo para abordar adecuadamente los problemas de la PNP.",
+          "criteria": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1
+          },
+          "criteria_sum": 7,
+          "formula_result": 5.8,
+          "score_table": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1,
+            "sum": 7,
+            "final": 5.8
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "Se eliminan las provisionalidades, pero no se cuantifican los problemas existentes.",
+            "propuesta": "La reingeniería se enfoca en aspectos clave como criminalística y un nuevo ministerio.",
+            "medidas": "La propuesta carece de detalles sobre efectivos, presupuesto y cronograma.",
+            "implementacion": "No se incluye un organismo externo para supervisar la reforma.",
+            "viabilidad": "Conceptualmente viable, pero sin un desarrollo ejecutivo claro.",
+            "especificidad": "La reingeniería y el currículo son mencionados, pero faltan metas concretas."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas para transformar la Policía Nacional del Perú, abarcando aspectos como la formación, carrera, depuración, equipamiento, presupuesto y relación con la ciudadanía.",
+            "importancia": "La Policía Nacional del Perú (PNP) es fundamental para la seguridad cotidiana del país. Su deficiencia en formación y la corrupción interna son obstáculos que deben ser abordados para garantizar un servicio efectivo y confiable.",
+            "diagnostico_externo": "El diagnóstico actual revela una alta rotación en la dirección de la PNP, que promedia 6 meses, lo que dificulta la implementación de estrategias a largo plazo. Además, se registran numerosas quejas por excesos policiales y un alto porcentaje de comisarías con casos de corrupción sin sancionar.",
+            "propuesta_plan": "El plan de gobierno propone cuatro medidas clave: reingeniería de la PNP con un currículo reformulado, recuperación del rol de la PNP en la investigación preliminar, incremento del presupuesto con gestión profesionalizada, e integración de la PNP bajo un nuevo Ministerio de Defensa y Seguridad Interna.",
+            "medidas_concretas": "Las medidas específicas incluyen la reingeniería de la estructura organizacional de la PNP, la reforma del currículo de formación con énfasis en criminalística y tecnología, la recuperación del rol investigador de la PNP, y un aumento del presupuesto con gestión profesionalizada.",
+            "implementacion_necesaria": "Para implementar estas propuestas, se requiere una norma de reorganización de la PNP, un rediseño curricular con la participación de expertos, un incremento presupuestal con mecanismos de rendición de cuentas, y coordinación con el Ministerio Público para restablecer el rol investigador.",
+            "impacto_potencial": "Una PNP reformada podría aumentar significativamente las tasas de esclarecimiento de delitos y mejorar la confianza ciudadana a través de una mayor presencia en el territorio. Un mejor presupuesto y gestión profesionalizada también contribuirían a reducir la corrupción estructural.",
+            "vacios": "Los principales vacíos del plan incluyen la falta de un número específico de efectivos a reclutar, un presupuesto detallado para la reforma curricular, un cronograma de implementación, y la ausencia de un mecanismo externo de supervisión del proceso de depuración.",
+            "evaluacion_tecnica": "La evaluación técnica indica que, aunque el diagnóstico sobre la pérdida del rol investigador de la PNP es correcto, el plan es escueto y carece de detalles cruciales como el número de efectivos, presupuesto y cronograma, lo que limita su viabilidad como política pública.",
+            "conclusion": "La variable de reforma policial obtiene una calificación de 5.8/10, siendo la más subdesarrollada del bloque. Aunque la orientación es adecuada, el contenido es insuficiente y carece de elementos clave para su implementación efectiva, lo que es preocupante dado el papel central de la PNP en la seguridad del país."
+          },
+          "sources": []
+        },
+        {
+          "id": "sistema_penitenciario",
+          "name": "Sistema penitenciario",
+          "block_id": "seguridad_puntaje_promedio_6_2",
+          "final_score": 7.5,
+          "rating_label": "sólido",
+          "summary": "El plan propone abordar el hacinamiento en el sistema penitenciario mediante la construcción de nuevas cárceles a través de Asociaciones Público-Privadas (APP) y obras por impuesto (OXI), así como el acondicionamiento temporal de cuarteles militares. Se busca aliviar la situación crítica de las cárceles peruanas, que operan al 242% de su capacidad, y reducir la criminalidad que se gestiona desde dentro de los penales.",
+          "strengths": [
+            "Medidas concretas bien definidas",
+            "Uso de mecanismos con precedentes positivos en el Perú",
+            "Secuencia temporal clara entre soluciones temporales y permanentes"
+          ],
+          "weaknesses": [
+            "Falta de un rol claro para el INPE",
+            "Ausencia de un cronograma y presupuesto específicos",
+            "Ignora la estrategia de resocialización de internos"
+          ],
+          "gaps": [
+            "No se establece un número de cárceles a construir",
+            "No hay estimación del costo total del programa"
+          ],
+          "conclusion": "La propuesta es sólida en términos de medidas y mecanismos, pero carece de detalles cruciales para su implementación efectiva. La falta de un enfoque en la resocialización limita su potencial para reducir la reincidencia delictiva.",
+          "criteria": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2
+          },
+          "criteria_sum": 9,
+          "formula_result": 7.5,
+          "score_table": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2,
+            "sum": 9,
+            "final": 7.5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El plan no presenta datos propios del hacinamiento del 242%, del déficit de infraestructura ni de los internos con teléfonos activos.",
+            "propuesta": "APP/OXI con cuarteles militares como solución temporal y una secuencia temporal→permanente clara.",
+            "medidas": "APP para cárceles nuevas, OXI para impacto rápido, IOARR en cuarteles, secuencia temporal→permanente bien articulada.",
+            "implementacion": "Sin INPE con mandato explícito. Sin número de cárceles ni cronograma de construcción.",
+            "viabilidad": "APP/OXI para cárceles tiene precedente positivo en Perú. Cuarteles como cárceles temporales es operativamente manejable pero complejo.",
+            "especificidad": "APP y OXI como mecanismos identificados, IOARR en cuarteles como instrumento temporal con secuencia definida."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas del candidato para mejorar el sistema penitenciario, incluyendo la construcción de nuevas cárceles, la reducción del hacinamiento, el control de actividades criminales desde los penales y programas de rehabilitación para internos.",
+            "importancia": "El sistema penitenciario es crucial para la seguridad del país, ya que las cárceles actuales son focos de crimen organizado, donde se coordinan actividades delictivas desde dentro. Mejorar este sistema es esencial para reducir la criminalidad y promover la reinserción social.",
+            "diagnostico_externo": "El sistema penitenciario peruano está colapsado, operando al 242% de su capacidad, con más de 97,000 internos en instalaciones diseñadas para 40,000. Además, el acceso a teléfonos móviles por parte de los internos permite que las bandas criminales operen desde las cárceles, lo que agrava la situación.",
+            "propuesta_plan": "El plan propone una solución en dos etapas: primero, acondicionar cuarteles militares como cárceles temporales para aliviar el hacinamiento, y segundo, construir nuevas cárceles mediante Asociaciones Público-Privadas (APP) y obras por impuesto (OXI) para una solución a largo plazo.",
+            "medidas_concretas": "Las medidas incluyen la construcción de nuevas cárceles a través de APP, el uso de OXI para un impacto rápido, y el acondicionamiento temporal de cuarteles militares. Se establece una secuencia clara: primero cuarteles, luego cárceles permanentes, y finalmente la devolución de los cuarteles a las Fuerzas Armadas.",
+            "implementacion_necesaria": "Para implementar estas propuestas se requiere una norma legal que autorice el uso de cuarteles como penitenciarías, un proceso de adjudicación de APPs a través de Proinversión, y un mandato claro al INPE para liderar y supervisar el proceso, lo cual actualmente no está definido.",
+            "impacto_potencial": "Si se llevan a cabo las construcciones de nuevas cárceles, el hacinamiento podría reducirse significativamente, lo que limitaría la capacidad de los internos para coordinar actividades criminales. La experiencia previa con APP en el Perú respalda la viabilidad de esta propuesta.",
+            "vacios": "El plan presenta vacíos importantes, como la falta de un mandato claro para el INPE, la ausencia de un número específico de cárceles a construir, y la falta de un cronograma y presupuesto. Además, no se aborda la estrategia de resocialización para los internos, lo que es fundamental para evitar la reincidencia.",
+            "evaluacion_tecnica": "La propuesta tiene un enfoque pragmático y se basa en experiencias previas exitosas en el país. Sin embargo, la falta de detalles sobre el liderazgo del INPE y la ausencia de un plan de resocialización limitan su efectividad como política pública.",
+            "conclusion": "La variable obtiene una calificación de 7.5/10, lo que indica una propuesta sólida en términos de medidas concretas y mecanismos identificados. Sin embargo, la falta de un rol claro para el INPE y la ausencia de un enfoque en la resocialización son debilidades significativas que deben ser abordadas."
+          },
+          "sources": []
+        },
+        {
+          "id": "politica_contra_el_crimen_organizado",
+          "name": "Política contra el crimen organizado",
+          "block_id": "seguridad_puntaje_promedio_6_2",
+          "final_score": 4.2,
+          "rating_label": "débil",
+          "summary": "La variable evalúa las propuestas del candidato para combatir el crimen organizado, destacando la necesidad de inteligencia, cooperación internacional y un fortalecimiento institucional. Sin embargo, el plan carece de contenido específico y medidas concretas para abordar las economías criminales.",
+          "strengths": [
+            "Orientación estratégica correcta hacia la inteligencia avanzada",
+            "Propuesta de cooperación internacional",
+            "Fortalecimiento de la DINI como eje de inteligencia"
+          ],
+          "weaknesses": [
+            "Falta de estrategia específica contra economías criminales",
+            "No se menciona política de incautación de activos",
+            "Ausencia de articulación entre la Policía y la UIF"
+          ],
+          "gaps": [
+            "No hay metas operacionales definidas",
+            "No se presentan normas específicas para la persecución del crimen organizado"
+          ],
+          "conclusion": "La variable es la más débil del bloque de seguridad, con un desarrollo escaso y sin medidas concretas. La falta de contenido operacional impide considerarla una política pública efectiva.",
+          "criteria": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 0,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 0
+          },
+          "criteria_sum": 5,
+          "formula_result": 4.2,
+          "score_table": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 0,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 0,
+            "sum": 5,
+            "final": 4.2
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El diagnóstico es insuficiente, ya que no se aborda el crimen organizado como fenómeno propio ni se presentan datos relevantes.",
+            "propuesta": "La propuesta es correcta en términos de dirección, pero carece de contenido detallado.",
+            "medidas": "Las medidas son genéricas y no abordan las economías criminales específicas.",
+            "implementacion": "La implementación es débil, con solo la DINI mencionada y sin articulación clara entre instituciones.",
+            "viabilidad": "La viabilidad es cuestionable debido a la falta de desarrollo y contenido en la propuesta.",
+            "especificidad": "La especificidad es nula, ya que no se presentan estrategias concretas ni instrumentos identificados."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas del candidato para combatir el crimen organizado, incluyendo estrategias para desarticular redes, perseguir activos, atacar el lavado de dinero y coordinar con otros países.",
+            "importancia": "El crimen organizado representa una de las amenazas más graves y de rápido crecimiento en Perú, afectando la seguridad y la economía del país, por lo que es crucial abordarlo de manera efectiva.",
+            "diagnostico_externo": "Las estadísticas indican un aumento alarmante en las extorsiones y el narcotráfico, con el Perú como segundo productor de hoja de coca a nivel mundial y pérdidas significativas por corrupción vinculada al crimen organizado.",
+            "propuesta_plan": "El plan propone el uso de plataformas de inteligencia avanzada, cooperación internacional y el fortalecimiento de la DINI, integrando Fuerzas Armadas y Policía en un nuevo ministerio.",
+            "medidas_concretas": "Se identifican medidas como el uso de plataformas de inteligencia, análisis de datos, cooperación internacional y el fortalecimiento de la DINI, aunque carecen de detalles específicos.",
+            "implementacion_necesaria": "El plan no detalla qué institución ejecutará la estrategia anticriminal, ni establece mecanismos de coordinación entre la Policía y la UIF para el seguimiento de activos.",
+            "impacto_potencial": "Una estrategia bien implementada podría revertir el crecimiento de las extorsiones y reducir el flujo de dinero ilegal, pero el escaso desarrollo del plan limita su potencial impacto.",
+            "vacios": "Faltan estrategias específicas contra economías criminales, políticas de incautación de bienes, articulación entre la PNP y la UIF, y metas operacionales claras.",
+            "evaluacion_tecnica": "La variable es la más subdesarrollada del bloque de seguridad, con una orientación estratégica correcta pero sin contenido operacional, lo que impide considerarla una política pública efectiva.",
+            "conclusion": "La variable obtiene un puntaje de 4.2/10, siendo la más débil del bloque de seguridad, lo que refleja la falta de medidas concretas y la insuficiencia en el desarrollo de una política pública para combatir el crimen organizado."
+          },
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "justicia_y_estado_de_derecho_puntaje_promedio_6_0",
+      "name": "JUSTICIA Y ESTADO DE DERECHO - PUNTAJE PROMEDIO: 6.0",
+      "average_score": 6.05,
+      "color": null,
+      "summary": "",
+      "strengths": [],
+      "weaknesses": [],
+      "interpretation": "",
+      "variables": [
+        {
+          "id": "reforma_del_sistema_judicial",
+          "name": "Reforma del sistema judicial",
+          "block_id": "justicia_y_estado_de_derecho_puntaje_promedio_6_0",
+          "final_score": 4.2,
+          "rating_label": "débil",
+          "summary": "La propuesta busca mejorar el sistema judicial en Perú mediante la eliminación de la ratificación de jueces, la reforma del sistema de ascenso judicial basado en el desempeño, la creación de una carrera judicial desde practicantes de excelencia y la implementación de una fianza procesal. Sin embargo, se considera que son pocas medidas para un problema de gran complejidad.",
+          "strengths": [
+            "Orientaciones técnicamente correctas",
+            "Enfoque en la independencia judicial",
+            "Propuestas innovadoras como la carrera desde practicantes de excelencia"
+          ],
+          "weaknesses": [
+            "Falta de desarrollo en la reforma de la Junta Nacional de Justicia",
+            "No se presenta una estrategia para reducir la carga procesal",
+            "No se identifica ninguna institución responsable de la implementación"
+          ],
+          "gaps": [
+            "No se menciona un cronograma ni presupuesto para las reformas",
+            "La fianza procesal puede violar el artículo 139 de la Constitución"
+          ],
+          "conclusion": "La propuesta es débil y carece de contenido de implementación, lo que la convierte en un listado de buenas intenciones. Para un país con un bajo índice de Estado de Derecho, se requería un desarrollo mucho más robusto.",
+          "criteria": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 0,
+            "implementacion": 0,
+            "viabilidad": 1,
+            "especificidad": 1
+          },
+          "criteria_sum": 5,
+          "formula_result": 4.2,
+          "score_table": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 0,
+            "implementacion": 0,
+            "viabilidad": 1,
+            "especificidad": 1,
+            "sum": 5,
+            "final": 4.2
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El plan menciona provisionalidades y clientelismo sin cuantificarlos. No presenta la tasa del 41.7% de provisionales, la carga procesal acumulada ni la posición del Perú en el índice del WJP.",
+            "propuesta": "Eliminar la ratificación, reformar el ascenso por desempeño y crear una carrera desde practicantes de excelencia son orientaciones técnicamente correctas.",
+            "medidas": "El plan no desarrolla la reforma de la JNJ, no tiene estrategia de reducción de carga procesal, no reformula el Ministerio Público y no presenta una carrera judicial con cronograma y presupuesto.",
+            "implementacion": "No se identifica ninguna institución ejecutora de la reforma. La JNJ y el Poder Judicial son mencionados como objeto, no como actores con mandato.",
+            "viabilidad": "Viable en concepto. La fianza procesal tiene riesgo constitucional no analizado en el plan.",
+            "especificidad": "Eliminar la ratificación (objetivo) y fianza procesal (medida con riesgo constitucional no analizado). Sin metas cuantificadas."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas del candidato para mejorar el Poder Judicial y el Ministerio Público, enfocándose en la independencia de jueces y fiscales, la carrera judicial, la eficiencia en los procesos, la transparencia y el acceso a la justicia.",
+            "importancia": "La reforma del sistema judicial es crucial para garantizar el Estado de Derecho, ya que un sistema judicial débil puede llevar a la impunidad, la corrupción y la desconfianza ciudadana, afectando la inversión y la protección de los derechos.",
+            "diagnostico_externo": "El Perú ocupa el puesto 98 de 142 en el Índice de Estado de Derecho del World Justice Project 2024, con un 41.7% de jueces provisionales y una confianza ciudadana en el Poder Judicial de solo 22%, lo que refleja un sistema judicial en crisis.",
+            "propuesta_plan": "El plan propone eliminar la ratificación de jueces, reformar el sistema de ascenso judicial, crear una carrera judicial desde practicantes de excelencia y establecer una fianza para iniciar procesos judiciales, con excepciones para los más pobres.",
+            "medidas_concretas": "Las medidas específicas incluyen la eliminación de la ratificación de jueces, la reforma del ascenso judicial basado en el desempeño, la creación de una carrera judicial desde practicantes seleccionados y la implementación de una fianza procesal.",
+            "implementacion_necesaria": "Para implementar estas propuestas, se requiere identificar instituciones responsables, establecer un cronograma y presupuesto, y realizar un análisis constitucional sobre la fianza procesal para evitar conflictos con el acceso a la justicia.",
+            "impacto_potencial": "Si se implementan correctamente, estas reformas podrían mejorar la independencia del sistema judicial, reducir la provisionalidad y elevar la calidad del servicio judicial a largo plazo, aunque el impacto concreto es incierto debido a la falta de desarrollo en la propuesta.",
+            "vacios": "El plan presenta vacíos significativos, como la falta de propuestas para reformar la Junta Nacional de Justicia, estrategias para reducir la carga procesal, y no aborda la reforma del Ministerio Público ni identifica instituciones ejecutoras.",
+            "evaluacion_tecnica": "Desde una perspectiva técnica, el plan tiene orientaciones correctas, pero carece de desarrollo en áreas clave, lo que limita su viabilidad y efectividad en la práctica, además de presentar riesgos constitucionales no analizados.",
+            "conclusion": "La variable obtiene un puntaje de 4.2/10, siendo la más débil del bloque de justicia. Aunque la orientación es correcta, la falta de contenido de implementación y el riesgo constitucional de la fianza procesal hacen que la propuesta sea insuficiente para abordar los problemas del sistema judicial peruano."
+          },
+          "sources": []
+        },
+        {
+          "id": "lucha_anticorrupcion",
+          "name": "Lucha anticorrupción",
+          "block_id": "justicia_y_estado_de_derecho_puntaje_promedio_6_0",
+          "final_score": 7.5,
+          "rating_label": "sólido",
+          "summary": "La propuesta anticorrupción del plan de gobierno incluye la implementación de VigIA, un sistema de inteligencia artificial para detectar irregularidades en contratos públicos, y la modificación de la Ley 31358 para que las sanciones sean vinculantes. Además, se plantea un cambio en el enfoque de la Contraloría y la ampliación de plazos de prescripción en delitos complejos.",
+          "strengths": [
+            "Propuesta articulada y técnicamente sólida",
+            "VigIA tiene resultados verificables en Colombia",
+            "Medidas concretas y verificables con respaldo internacional"
+          ],
+          "weaknesses": [
+            "Falta de norma habilitante para VigIA",
+            "No hay cronograma de implementación definido",
+            "La Ley General de Contrataciones aún no está promulgada"
+          ],
+          "gaps": [
+            "No se cuantifica el problema de corrupción con datos propios",
+            "Falta de un protocolo explícito de coordinación entre instituciones"
+          ],
+          "conclusion": "La variable es la más sólida del bloque de justicia y una de las más destacadas del plan. Las medidas son concretas y tienen respaldo en experiencias internacionales, aunque requieren normas que aún no existen.",
+          "criteria": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2
+          },
+          "criteria_sum": 9,
+          "formula_result": 7.5,
+          "score_table": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2,
+            "sum": 9,
+            "final": 7.5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El plan lista las herramientas anticorrupción sin cuantificar el problema con datos propios.",
+            "propuesta": "VigIA + análisis Big Data + modificación Ley 31358 + reperfilamiento 60/25/15% + prescripción ampliada conforman una propuesta articulada y técnicamente sólida.",
+            "medidas": "VigIA (instrumento con precedente verificado en Colombia), Ley 31358 (norma específica), distribución 60/25/15% (métrica concreta), OpenTender y Percephtor, prescripción ampliada.",
+            "implementacion": "PCM, Contraloría, Ministerio Público, Poder Judicial, UIF y Procuraduría están mencionados. Pero VigIA no tiene norma habilitante ni cronograma de implementación.",
+            "viabilidad": "VigIA tiene precedente exitoso en Colombia. Pero no hay costo ni cronograma de implementación en el plan.",
+            "especificidad": "VigIA (instrumento específico con nombre y precedente), Ley 31358 (norma identificada), porcentajes 60/25/15% (métrica cuantificada)."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas del candidato para prevenir, detectar y sancionar la corrupción, incluyendo herramientas tecnológicas, marcos legales, instituciones responsables y cooperación internacional.",
+            "importancia": "La corrupción afecta la eficiencia del gasto público, incrementa costos en contratos estatales, debilita la confianza en las instituciones y desalienta la inversión, lo que tiene un impacto negativo en el desarrollo del país.",
+            "diagnostico_externo": "El Perú ocupa el puesto 99 de 180 en el Índice de Percepción de la Corrupción 2024, con un perjuicio económico por corrupción de S/24,268 millones en 2023 y más de 22,000 casos activos en el Ministerio Público, evidenciando un problema sistémico.",
+            "propuesta_plan": "El plan de gobierno presenta una propuesta anticorrupción que incluye la implementación de VigIA, un sistema de inteligencia artificial, el uso de plataformas de análisis de datos, la modificación de la Ley 31358 y un cambio en el enfoque de la Contraloría General.",
+            "medidas_concretas": "Las medidas específicas incluyen la implementación de VigIA, el uso de OpenTender y Percephtor, la modificación de la Ley 31358 para sanciones vinculantes, el cambio en la auditoría de la Contraloría y la ampliación de plazos de prescripción en delitos complejos.",
+            "implementacion_necesaria": "Para implementar estas propuestas se requiere una norma habilitante para VigIA, la modificación de la Ley 31358, un decreto de reorganización de la Contraloría y convenios de cooperación con Colombia, aunque no hay un cronograma definido.",
+            "impacto_potencial": "La implementación de VigIA podría identificar patrones irregulares en contratos públicos a gran escala, mientras que el cambio en la Contraloría podría permitir una gestión más eficiente y menos temerosa, reactivando obras paralizadas.",
+            "vacios": "Los vacíos incluyen la falta de una norma habilitante para VigIA, la inexistencia de la Ley General de Contrataciones Públicas, la ausencia de un cronograma de implementación y la necesidad de un protocolo de coordinación entre las instituciones involucradas.",
+            "evaluacion_tecnica": "La propuesta es sólida y bien diseñada, con instrumentos verificados en otros contextos, pero carece de la normativa necesaria para su ejecución y de un cronograma claro, lo que limita su viabilidad.",
+            "conclusion": "La variable obtiene una calificación de 7.5/10, destacándose como la más sólida del bloque de justicia, con medidas concretas y respaldadas internacionalmente, aunque presenta brechas en la normativa y la implementación."
+          },
+          "sources": []
+        },
+        {
+          "id": "modernizacion_del_estado",
+          "name": "Modernización del Estado",
+          "block_id": "justicia_y_estado_de_derecho_puntaje_promedio_6_0",
+          "final_score": 7.5,
+          "rating_label": "sólido",
+          "summary": "La propuesta busca modernizar el Estado peruano reduciendo el número de ministerios de 19 a 10, creando un Centro de Gobierno para la coordinación estratégica y estableciendo un sistema de meritocracia para los directivos. Además, se plantea un Shock Desregulatorio para eliminar trámites innecesarios y una rendición de cuentas semestral.",
+          "strengths": [
+            "Reducción significativa de ministerios que elimina duplicidades",
+            "Creación de un Centro de Gobierno para mejorar la gestión",
+            "Implementación de un Shock Desregulatorio con plazos definidos"
+          ],
+          "weaknesses": [
+            "Reforma de la Ley Orgánica del Ejecutivo requiere mayoría congresal",
+            "Resistencia política y burocrática significativa",
+            "Falta de presupuesto identificado para el Centro de Gobierno"
+          ],
+          "gaps": [
+            "No hay estrategia para enfrentar la resistencia política y burocrática",
+            "Proceso de selección con headhunters no tiene protocolo definido"
+          ],
+          "conclusion": "La propuesta es ambiciosa y estructural, pero enfrenta desafíos políticos significativos que podrían dificultar su implementación. La falta de una estrategia clara para superar la resistencia burocrática es un riesgo importante.",
+          "criteria": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2
+          },
+          "criteria_sum": 9,
+          "formula_result": 7.5,
+          "score_table": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2,
+            "sum": 9,
+            "final": 7.5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El plan no presenta datos propios sobre rotación directiva ni costos de duplicidades.",
+            "propuesta": "La propuesta incluye medidas estructurales y articuladas como la reducción de ministerios y la creación del CdG.",
+            "medidas": "Las medidas son específicas y cuantificadas, con un cronograma claro para su implementación.",
+            "implementacion": "La implementación enfrenta resistencia política significativa y requiere reformas legislativas complejas.",
+            "viabilidad": "Técnicamente viable, pero con alta complejidad política y normativa.",
+            "especificidad": "Las medidas incluyen números específicos y plazos identificados."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas del candidato para hacer más eficiente y funcional la estructura del Estado, incluyendo la cantidad de ministerios, la coordinación entre ellos, la selección de funcionarios, la simplificación de trámites y la rendición de cuentas.",
+            "importancia": "La modernización del Estado es crucial para el desarrollo del país, ya que una estructura estatal ineficiente impide la ejecución de políticas de largo plazo y afecta la capacidad de respuesta ante las necesidades de la población.",
+            "diagnostico_externo": "El costo logístico y transaccional del Estado peruano se estima en un 3.2% del PBI debido a ineficiencias, y la rotación de directivos públicos es alarmantemente alta, con un promedio de 7 meses en el cargo, lo que dificulta la continuidad en la gestión pública.",
+            "propuesta_plan": "El plan propone una reforma estructural del Poder Ejecutivo que incluye reducir los ministerios de 19 a 10, crear un Centro de Gobierno para la coordinación estratégica, establecer Oficinas Desconcentradas Sectoriales, implementar un sistema de meritocracia y llevar a cabo un Shock Desregulatorio.",
+            "medidas_concretas": "Las medidas específicas incluyen la reducción de ministerios, la creación del Centro de Gobierno, la implementación de Oficinas Desconcentradas, el reclutamiento de directivos mediante headhunters, un Shock Desregulatorio en cuatro fases y la rendición de cuentas semestral.",
+            "implementacion_necesaria": "Para implementar estas propuestas, es necesario reformar la Ley Orgánica del Ejecutivo, lo que requiere una mayoría en el Congreso, además de crear decretos para el Centro de Gobierno y las Oficinas Desconcentradas, y establecer normas para el reclutamiento meritocrático.",
+            "impacto_potencial": "Si se implementan correctamente, estas medidas podrían eliminar duplicidades que representan un costo significativo para el Estado, estabilizar la gestión pública y reducir los tiempos y costos de trámites, mejorando así la eficiencia del Estado.",
+            "vacios": "Los principales vacíos incluyen la falta de una estrategia para enfrentar la resistencia política y burocrática a la reducción de ministerios, la ausencia de un presupuesto para el Centro de Gobierno y la falta de un protocolo claro para el reclutamiento de directivos.",
+            "evaluacion_tecnica": "La propuesta de reducir ministerios y crear un Centro de Gobierno es ambiciosa y se basa en ejemplos exitosos de otros países, pero enfrenta desafíos significativos en términos de viabilidad política y normativa que no están adecuadamente abordados en el plan.",
+            "conclusion": "La variable de modernización del Estado obtiene una calificación de 7.5/10, destacándose por su densidad propositiva y su enfoque en la fragmentación del Estado, aunque enfrenta riesgos importantes relacionados con la complejidad política y la resistencia al cambio."
+          },
+          "sources": []
+        },
+        {
+          "id": "descentralizacion",
+          "name": "Descentralización",
+          "block_id": "justicia_y_estado_de_derecho_puntaje_promedio_6_0",
+          "final_score": 5,
+          "rating_label": "débil",
+          "summary": "La propuesta del plan de gobierno busca fortalecer la descentralización mediante la creación de Agencias Regionales de Desarrollo, el fortalecimiento de mancomunidades regionales, la elaboración de Planes Regionales de Competitividad y la creación de mesas ejecutivas para priorizar inversiones. Sin embargo, carece de una reforma estructural de competencias y de un fortalecimiento real de las capacidades institucionales de los gobiernos regionales.",
+          "strengths": [
+            "Propuesta de creación de Agencias Regionales de Desarrollo",
+            "Fortalecimiento de mancomunidades para proyectos suprarregionales",
+            "Mesas ejecutivas para priorizar inversiones"
+          ],
+          "weaknesses": [
+            "Falta de reforma de competencias entre niveles de gobierno",
+            "No se fortalece la capacidad institucional de los GOREs",
+            "La absorción del CEPLAN podría debilitar la planificación territorial"
+          ],
+          "gaps": [
+            "No hay cuantificación del diagnóstico sobre ejecución presupuestal",
+            "Falta de métricas para evaluar el fortalecimiento de la descentralización"
+          ],
+          "conclusion": "La variable de descentralización es la más débil del bloque de justicia, con instrumentos correctos pero insuficientes para una política real. La falta de una propuesta estructural y la debilidad en la planificación territorial son inconsistencias significativas del plan.",
+          "criteria": {
+            "diagnostico": 1,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1
+          },
+          "criteria_sum": 6,
+          "formula_result": 5,
+          "score_table": {
+            "diagnostico": 1,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1,
+            "sum": 6,
+            "final": 5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El plan no cuantifica el problema de ejecución regional ni conflictos sociales.",
+            "propuesta": "Los instrumentos propuestos no constituyen una política de descentralización estructural.",
+            "medidas": "Las medidas son útiles pero no abordan la reforma de competencias necesaria.",
+            "implementacion": "La implementación carece de un fortalecimiento de capacidades institucionales de los GOREs.",
+            "viabilidad": "Los instrumentos son factibles pero insuficientes para resolver la descentralización trunca.",
+            "especificidad": "No se presentan métricas claras para evaluar el fortalecimiento de la descentralización."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa qué propone el candidato para fortalecer los gobiernos regionales y municipales, mejorar la coordinación entre el nivel nacional y los territorios, y articular la inversión pública con el desarrollo de cada región.",
+            "importancia": "La descentralización es crucial para asegurar que los recursos y competencias transferidos a regiones y municipios se utilicen de manera efectiva, permitiendo una mejor atención a las necesidades locales y una ejecución presupuestal más eficiente.",
+            "diagnostico_externo": "La Contraloría reportó que la ejecución presupuestal de los gobiernos regionales promedió apenas el 55% en 2023, evidenciando una ineficiencia en el uso de recursos. Además, el 62% de los conflictos sociales en el país se relacionan con la ausencia del Estado en el territorio.",
+            "propuesta_plan": "El plan propone el 'fortalecimiento de la descentralización' mediante la creación de Agencias Regionales de Desarrollo, el fortalecimiento de mancomunidades regionales, la elaboración de Planes Regionales de Competitividad y la creación de mesas ejecutivas entre diversas entidades para priorizar inversiones.",
+            "medidas_concretas": "Las medidas específicas incluyen la creación o reactivación de ARD, el fortalecimiento de mancomunidades para proyectos suprarregionales, la elaboración de Planes Regionales de Competitividad y la formación de mesas ejecutivas entre el MEF, Proinversión, GOREs y municipalidades.",
+            "implementacion_necesaria": "Para implementar estas propuestas se requiere una norma que establezca las ARD con un presupuesto definido, coordinación con los gobiernos regionales para los Planes Regionales y un protocolo de funcionamiento para las mesas ejecutivas.",
+            "impacto_potencial": "Si se implementan correctamente, las ARD y las mesas ejecutivas podrían mejorar la coordinación entre la inversión pública y privada, desbloqueando proyectos paralizados y aumentando la ejecución presupuestal en las regiones.",
+            "vacios": "El plan presenta vacíos significativos, como la falta de una propuesta de reforma de competencias entre niveles de gobierno, el no fortalecimiento de capacidades institucionales de los GOREs y la ausencia de una redistribución de recursos hacia las regiones más rezagadas.",
+            "evaluacion_tecnica": "Aunque el plan incluye instrumentos de articulación territorial, carece de una política de descentralización estructural, lo que limita su efectividad. La falta de propuestas concretas para la reforma de competencias y el debilitamiento del CEPLAN son preocupantes.",
+            "conclusion": "La variable de descentralización obtiene una calificación de 5.0/10, siendo la más débil del bloque de justicia. Los instrumentos propuestos son correctos pero insuficientes para lograr una política de descentralización efectiva, lo que representa una inconsistencia notable en un partido con fuerte presencia en regiones pobres."
+          },
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "educacion_puntaje_promedio_6_2",
+      "name": "EDUCACIÓN - Puntaje promedio: 6.2",
+      "average_score": 6.25,
+      "color": null,
+      "summary": "",
+      "strengths": [],
+      "weaknesses": [],
+      "interpretation": "",
+      "variables": [
+        {
+          "id": "educacion_escolar",
+          "name": "Educación escolar",
+          "block_id": "educacion_puntaje_promedio_6_2",
+          "final_score": 5,
+          "rating_label": "débil",
+          "summary": "El plan de gobierno propone reformar la educación escolar en Perú a través de un currículo nacional básico y un currículo institucional autónomo, así como una carrera docente basada en resultados de aprendizaje. Se busca mejorar la calidad educativa y adaptarla a contextos locales, pero carece de medidas específicas para su implementación.",
+          "strengths": [
+            "Propuestas técnicamente correctas como CNB+CIA y carrera docente por resultados",
+            "Enfoque en la adaptación curricular a contextos locales",
+            "Reconocimiento de la importancia de la calidad docente"
+          ],
+          "weaknesses": [
+            "Falta de datos específicos sobre logros de aprendizaje",
+            "No se desarrolla una reforma curricular concreta",
+            "Ausencia de un cronograma para la certificación docente"
+          ],
+          "gaps": [
+            "No hay meta de mejora de aprendizajes al 2031",
+            "No se presenta un presupuesto para la reforma del MINEDU"
+          ],
+          "conclusion": "El plan presenta propuestas sólidas pero carece de detalles cruciales para su ejecución y evaluación. Sin metas claras y medidas desarrolladas, se convierte en una declaración de intenciones más que en una política educativa efectiva.",
+          "criteria": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 0,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1
+          },
+          "criteria_sum": 6,
+          "formula_result": 5,
+          "score_table": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 0,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1,
+            "sum": 6,
+            "final": 5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El plan no presenta datos propios de logros de aprendizaje, tasa de deserción ni déficit docente.",
+            "propuesta": "CNB+CIA, carrera docente por resultados y certificación inglés/IA son propuestas técnicamente correctas y con respaldo internacional.",
+            "medidas": "El plan enuncia los objetivos pero no desarrolla la reforma curricular, la política docente ni la estrategia de mejora de aprendizajes con medidas específicas.",
+            "implementacion": "MINEDU, DRE y UGEL reformadas están identificadas como ejecutoras. Sin presupuesto de la reforma.",
+            "viabilidad": "La carrera docente tiene precedente en Perú. La dualidad CNB+CIA es altamente compleja de implementar en todas las escuelas del país.",
+            "especificidad": "CNB+CIA (instrumentos curriculares) y certificación inglés/IA. Sin metas de aprendizaje al 2031."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas del candidato para mejorar la educación primaria y secundaria en Perú, enfocándose en la calidad de los aprendizajes, la formación docente, el diseño curricular y la cobertura educativa.",
+            "importancia": "La calidad de la educación escolar es fundamental para el desarrollo del capital humano en el país, ya que impacta en la capacidad de los futuros ciudadanos para contribuir al crecimiento económico y social del Perú.",
+            "diagnostico_externo": "El diagnóstico actual es alarmante, con solo el 30.4% de los estudiantes de segundo grado alcanzando niveles satisfactorios en lectura y un 24.1% en matemáticas, además de un bajo porcentaje del PBI destinado a educación y un alto deterioro de las infraestructuras escolares.",
+            "propuesta_plan": "El plan propone reformar el currículo educativo, mejorar la carrera docente, exigir certificaciones en inglés e inteligencia artificial para los docentes, y reestructurar el MINEDU y sus entidades regionales para reducir la burocracia.",
+            "medidas_concretas": "Las medidas específicas incluyen la implementación de un Currículo Nacional Básico y un Currículo Institucional Autónomo, la evaluación de docentes basada en resultados de aprendizaje, y la creación de una ventanilla única interoperable para la gestión educativa.",
+            "implementacion_necesaria": "Para implementar estas propuestas se requiere la creación de normas y decretos específicos, un programa nacional de certificación docente, y la asignación de un presupuesto adecuado para la reforma del MINEDU.",
+            "impacto_potencial": "Si se implementan correctamente, estas reformas podrían mejorar significativamente la calidad de la educación, reducir el abandono escolar y elevar los niveles de aprendizaje en los estudiantes, aunque sin metas claras es difícil medir el éxito.",
+            "vacios": "El plan presenta vacíos críticos, como la falta de metas de mejora de aprendizajes al 2031, la ausencia de un diseño curricular detallado, y la falta de un cronograma para la capacitación docente, lo que limita su viabilidad.",
+            "evaluacion_tecnica": "Desde una perspectiva técnica, las propuestas como la dualidad CNB+CIA y la carrera docente por resultados son válidas, pero la falta de desarrollo en las medidas y la ausencia de metas claras hacen que el plan sea más una declaración de intenciones que una política educativa concreta.",
+            "conclusion": "La variable obtiene una calificación de 5.0/10, siendo la más débil del bloque educativo. Aunque se identifican problemas y orientaciones correctas, la falta de medidas específicas y metas claras limita la efectividad del plan propuesto."
+          },
+          "sources": []
+        },
+        {
+          "id": "infraestructura_educativa",
+          "name": "Infraestructura educativa",
+          "block_id": "educacion_puntaje_promedio_6_2",
+          "final_score": 7.5,
+          "rating_label": "sólido",
+          "summary": "El plan de gobierno propone mejorar la infraestructura educativa mediante un Censo Nacional de Infraestructura Educativa, la creación de un Fondo de Apoyo a Escuelas Vulnerables y la expansión de los Colegios de Alto Rendimiento (COAR) a 25. Además, se sugiere utilizar mecanismos de asociación público-privada para financiar las mejoras necesarias en los locales escolares.",
+          "strengths": [
+            "Propuesta articulada y cuantificada",
+            "Mecanismos de financiamiento innovadores",
+            "Meta verificable de 25 COARs"
+          ],
+          "weaknesses": [
+            "Ambigüedad sobre quién ejecuta las obras durante la transición",
+            "Falta de presupuesto para el Fondo de Escuelas Vulnerables",
+            "Ausencia de cronograma para el Censo de Infraestructura Educativa"
+          ],
+          "gaps": [
+            "Extinción del PRONIED sin claridad en la ejecución de obras",
+            "Reforma legal necesaria para el 'canon educativo'"
+          ],
+          "conclusion": "La variable es la más concreta del bloque educativo, con medidas bien definidas y factibles. Sin embargo, la falta de claridad en la transición del PRONIED al MINFRA podría afectar la ejecución de las obras prometidas.",
+          "criteria": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2
+          },
+          "criteria_sum": 9,
+          "formula_result": 7.5,
+          "score_table": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2,
+            "sum": 9,
+            "final": 7.5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El plan menciona la necesidad de infraestructura educativa sin presentar datos propios del 54% de deterioro ni del déficit de S/28,000M.",
+            "propuesta": "Censo de Infraestructura Educativa, APP/OXI/SXI, COAR en cada región y 'canon educativo' conforman una propuesta articulada.",
+            "medidas": "25 COARs (meta cuantificada), APP/OXI/SXI (mecanismos específicos), Censo IE (instrumento previo), Fondo de Escuelas Vulnerables.",
+            "implementacion": "PRONIED se extingue y pasa al Ministerio de Infraestructura. Sin claridad sobre quién ejecuta las obras escolares durante la transición.",
+            "viabilidad": "APP/OXI para escuelas tiene precedente en Perú. 25 COARs en 5 años es factible con el presupuesto adecuado.",
+            "especificidad": "25 COARs (número específico), APP/OXI/SXI (mecanismos identificados), Censo IE (instrumento)."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa qué propone el candidato para mejorar la infraestructura física de las escuelas, incluyendo locales, equipamiento, conectividad a internet y mecanismos para financiar las mejoras.",
+            "importancia": "La infraestructura educativa es crucial para el aprendizaje, ya que un aula en mal estado puede afectar gravemente la calidad educativa. Las brechas son especialmente preocupantes en zonas rurales y periurbanas, donde las condiciones son precarias.",
+            "diagnostico_externo": "Según el MINEDU y el PRONIED, en 2024, el 54% de los locales escolares presentan deterioro y el 12% riesgo de colapso. Además, el déficit total de infraestructura educativa se estima en S/28,000 millones, y solo el 34% de las escuelas rurales tiene acceso a internet.",
+            "propuesta_plan": "El plan propone realizar un Censo Nacional de Infraestructura Educativa, utilizar mecanismos de APP, OXI y SXI para financiar mejoras, crear un Fondo de Apoyo a Escuelas Vulnerables, expandir los COAR a 25 y adaptar un modelo de 'canon educativo' para financiar infraestructura escolar.",
+            "medidas_concretas": "Las medidas específicas incluyen el Censo Nacional de Infraestructura Educativa, el uso de APP/OXI/SXI para financiamiento, la creación de un Fondo de Apoyo a Escuelas Vulnerables, la expansión de COARs y la implementación del 'canon educativo'.",
+            "implementacion_necesaria": "Para implementar las propuestas, se requiere una norma para el Censo Nacional de Infraestructura Educativa, estructuración de APPs, creación del Fondo de Escuelas Vulnerables y una norma para el 'canon educativo'.",
+            "impacto_potencial": "La implementación de los 25 COARs garantizaría acceso a educación de alto rendimiento en todo el país, y el Censo permitiría priorizar intervenciones urgentes, cerrando parte del déficit de S/28,000 millones.",
+            "vacios": "Los vacíos incluyen la extinción del PRONIED sin claridad sobre quién ejecutará las obras, la falta de presupuesto para el Fondo de Escuelas Vulnerables, y la ausencia de un cronograma para el Censo de Infraestructura Educativa.",
+            "evaluacion_tecnica": "La propuesta es concreta y factible, con mecanismos identificados y metas cuantificadas. Sin embargo, la ambigüedad sobre la ejecución de obras durante la transición de PRONIED al MINFRA es una debilidad crítica.",
+            "conclusion": "La variable obtiene una calificación de 7.5/10, destacándose como la más concreta del bloque educativo. La principal preocupación es la falta de claridad en la ejecución de obras, lo que podría paralizar las intervenciones necesarias."
+          },
+          "sources": []
+        },
+        {
+          "id": "educacion_superior",
+          "name": "Educación superior",
+          "block_id": "educacion_puntaje_promedio_6_2",
+          "final_score": 5.8,
+          "rating_label": "débil",
+          "summary": "El plan de gobierno propone mejorar la educación superior en Perú mediante la implementación de una Ruta Única de Aseguramiento de la Calidad, la creación de Institutos de Excelencia Regionales y el desarrollo de un Marco Nacional de Cualificaciones. Estas medidas buscan garantizar la calidad educativa y la conexión con el mercado laboral.",
+          "strengths": [
+            "Orientación técnicamente correcta en las propuestas",
+            "Instrumentos válidos como la Ruta Única de Aseguramiento",
+            "Potencial para mejorar la calidad educativa en regiones"
+          ],
+          "weaknesses": [
+            "Falta de diagnóstico cuantificado sobre educación superior",
+            "No se amplía el mandato de la SUNEDU",
+            "Ausencia de presupuesto para expandir vacantes en educación pública"
+          ],
+          "gaps": [
+            "No hay número definido de Institutos de Excelencia a crear",
+            "No hay metas cuantificadas para la acreditación de universidades"
+          ],
+          "conclusion": "La propuesta tiene un enfoque correcto, pero carece de detalles cruciales para su implementación efectiva. Sin un mandato claro para la SUNEDU, la reforma de calidad podría tener un impacto limitado.",
+          "criteria": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1
+          },
+          "criteria_sum": 7,
+          "formula_result": 5.8,
+          "score_table": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1,
+            "sum": 7,
+            "final": 5.8
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El plan no presenta diagnóstico cuantificado de educación superior. Sin datos de acceso, calidad ni brechas universitarias propias del documento.",
+            "propuesta": "Ruta Única de Aseguramiento, Institutos de Excelencia, MNCP y formación dual son una orientación técnicamente correcta.",
+            "medidas": "Institutos de Excelencia (sin número definido), Ruta Única, MNCP. Sin SUNEDU con mandato ampliado ni presupuesto.",
+            "implementacion": "MINEDU y SUNEDU mencionados. Sin mandato explícitamente reforzado para la SUNEDU.",
+            "viabilidad": "Factible con presupuesto. Sin especificación de escala.",
+            "especificidad": "Institutos de Excelencia (sin número), Ruta Única, MNCP. Sin metas cuantificadas."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa qué propone el candidato para mejorar la calidad y el acceso a la educación universitaria, incluyendo aspectos como licenciamiento, acreditación, gestión institucional y la pertinencia de la oferta educativa para el mercado laboral.",
+            "importancia": "La educación superior es crucial para el desarrollo del país, ya que una mayor calidad en la formación universitaria puede traducirse en una mejor empleabilidad y un crecimiento económico sostenido. La expansión de la cobertura universitaria en Perú ha sido significativa, pero la calidad de la educación sigue siendo un desafío.",
+            "diagnostico_externo": "El INEI reportó que el 39% de los jóvenes de 18 a 24 años accede a educación superior, pero muchas universidades aún no tienen licencia de funcionamiento. La SUNEDU ha identificado que solo el 60% de las universidades han completado el proceso de licenciamiento con resultados satisfactorios, lo que refleja una gran disparidad en la calidad educativa.",
+            "propuesta_plan": "El plan propone implementar una Ruta Única de Aseguramiento de la Calidad, crear Institutos de Excelencia Regionales, desarrollar un Marco Nacional de Cualificaciones, implementar formación dual y pasantías certificadas, y establecer observatorios sectoriales de demanda laboral.",
+            "medidas_concretas": "Las medidas específicas incluyen la creación de una Ruta Única de Aseguramiento de la Calidad, Institutos de Excelencia Regionales, el Marco Nacional de Cualificaciones, formación dual y pasantías certificadas. Sin embargo, no se define el número de Institutos de Excelencia a crear.",
+            "implementacion_necesaria": "Para implementar las propuestas, se requiere una norma que establezca la Ruta Única de Aseguramiento, un decreto para la creación de Institutos de Excelencia y una norma del Marco Nacional de Cualificaciones. La falta de un mandato reforzado para la SUNEDU limita la implementación efectiva.",
+            "impacto_potencial": "Si se implementa correctamente, la Ruta Única de Aseguramiento podría unificar los criterios de calidad, mejorando la oferta educativa. Los Institutos de Excelencia Regionales podrían aumentar el acceso a educación de calidad en regiones desatendidas, y el Marco Nacional de Cualificaciones facilitaría el reconocimiento de competencias en el mercado laboral.",
+            "vacios": "Los vacíos más importantes incluyen la falta de un número definido de Institutos de Excelencia, la ausencia de un presupuesto para expandir vacantes en educación pública, y la falta de una estrategia específica para las universidades sin licencia. Además, no se establece una meta de universidades a acreditar para 2031.",
+            "evaluacion_tecnica": "La evaluación técnica indica que la Ruta Única de Aseguramiento es un instrumento relevante, pero la falta de un mandato ampliado para la SUNEDU y la ausencia de presupuesto limitan su efectividad. Los Institutos de Excelencia tienen precedentes exitosos, pero su implementación carece de claridad.",
+            "conclusion": "La variable obtiene una calificación de 5.8/10, lo que indica que, aunque la orientación y los instrumentos son válidos, la falta de datos cuantificados, presupuesto y un mandato claro para la SUNEDU son debilidades significativas. Sin una arquitectura de implementación robusta, la reforma de calidad en la educación superior podría tener un alcance limitado."
+          },
+          "sources": []
+        },
+        {
+          "id": "formacion_tecnica_y_vocacional",
+          "name": "Formación técnica y vocacional",
+          "block_id": "educacion_puntaje_promedio_6_2",
+          "final_score": 6.7,
+          "rating_label": "moderado",
+          "summary": "El plan propone reformar la formación técnica en el Perú mediante la reorientación del PRONABEC para otorgar tres becas técnicas por cada universitaria, la implementación de educación secundaria técnica en colegios públicos, la reformulación de la oferta curricular de los CETPRO y la articulación del Marco Nacional de Cualificaciones con el mercado laboral. Estas medidas buscan atender la demanda de técnicos calificados en el país.",
+          "strengths": [
+            "El ratio 3:1 en PRONABEC es una medida de fácil implementación y alto impacto inmediato.",
+            "La secundaria técnica en colegios públicos ya existe y puede escalar rápidamente.",
+            "Los CETPRO reformulados responden a la demanda real de técnicos en megaproyectos."
+          ],
+          "weaknesses": [
+            "No se cuantifica la brecha de empleabilidad técnica.",
+            "Falta de presupuesto para ampliar las Becas Tec.",
+            "No se especifica el número de nuevos institutos técnicos a crear."
+          ],
+          "gaps": [
+            "No hay estrategia territorial para la implementación de las medidas.",
+            "No se establecen metas de empleabilidad técnica al 2031."
+          ],
+          "conclusion": "El ratio 3:1 del PRONABEC es la medida más eficiente del bloque educativo, pero la falta de presupuesto limita su alcance real. Sin recursos adicionales, la política no podrá aumentar el número total de beneficiarios técnicos.",
+          "criteria": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 0,
+            "viabilidad": 2,
+            "especificidad": 2
+          },
+          "criteria_sum": 8,
+          "formula_result": 6.7,
+          "score_table": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 0,
+            "viabilidad": 2,
+            "especificidad": 2,
+            "sum": 8,
+            "final": 6.7
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El plan menciona la necesidad de técnicos para megaproyectos sin cuantificar la brecha de empleabilidad técnica ni el desequilibrio entre becas universitarias y técnicas con datos propios.",
+            "propuesta": "Ratio 3:1 en PRONABEC, secundaria técnica en colegios públicos y CETPRO para megaproyectos son propuestas técnicamente correctas y pertinentes.",
+            "medidas": "Ratio 3:1 (meta cuantificada), secundaria técnica, CETPROS reformulados. Sin presupuesto de ampliación de Becas Tec.",
+            "implementacion": "MINEDU y PRONABEC nombrados pero sin presupuesto de Becas Tec ampliadas, sin número de institutos técnicos nuevos y sin estrategia territorial explícita.",
+            "viabilidad": "El ratio 3:1 solo requiere una resolución administrativa: es la medida de mayor viabilidad de todo el bloque educativo. La secundaria técnica ya existe y puede escalar.",
+            "especificidad": "Ratio 3:1 en PRONABEC (meta cuantificada), secundaria técnica en colegios públicos (política sistémica identificada)."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa qué propone el candidato para el sistema de educación técnico-productiva, incluyendo institutos tecnológicos, la articulación con el sector productivo, así como las becas y certificaciones de competencias.",
+            "importancia": "La formación técnica es crucial para la rápida inserción de los jóvenes en el mercado laboral y para satisfacer las necesidades de técnicos calificados en la economía peruana, donde existe un desbalance entre egresados universitarios y técnicos.",
+            "diagnostico_externo": "En 2024, solo el 25% de los Institutos de Educación Superior Tecnológica están articulados con sectores productivos, y la empleabilidad de los egresados técnicos es del 58%, lo que resalta la necesidad de mejorar la formación técnica en el país.",
+            "propuesta_plan": "El plan propone cuatro medidas clave: reorientar el PRONABEC para otorgar más becas técnicas, implementar educación secundaria técnica en colegios públicos, reformular la oferta curricular de los CETPRO y articular el Marco Nacional de Cualificaciones con el mercado laboral.",
+            "medidas_concretas": "Las medidas específicas incluyen el ratio 3:1 en el PRONABEC, la implementación de educación secundaria técnica, la reforma curricular de los CETPRO para alinearse con megaproyectos y la articulación del Marco Nacional de Cualificaciones.",
+            "implementacion_necesaria": "Para implementar estas propuestas se requiere una resolución administrativa del PRONABEC, un decreto para la educación secundaria técnica y la reforma curricular de los CETPRO, aunque la falta de presupuesto para ampliar las Becas Tec es una limitante significativa.",
+            "impacto_potencial": "Si se implementa correctamente, el ratio 3:1 podría multiplicar las Becas Tec en el primer año, y la educación secundaria técnica podría escalar rápidamente, respondiendo a la demanda de técnicos en infraestructura.",
+            "vacios": "Los vacíos incluyen la falta de presupuesto para ampliar las Becas Tec, la ausencia de un número definido de nuevos institutos técnicos, la falta de una estrategia territorial y la falta de metas de empleabilidad técnica a largo plazo.",
+            "evaluacion_tecnica": "El ratio 3:1 es la medida más eficiente del bloque educativo, ya que puede ejecutarse rápidamente y tiene un impacto inmediato, aunque la falta de presupuesto limita su efectividad real.",
+            "conclusion": "La variable obtiene una calificación de 6.7/10, siendo la segunda más sólida del bloque educativo, con un enfoque viable pero con limitaciones significativas en términos de presupuesto y estrategia."
+          },
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "salud_puntaje_promedio_6_4",
+      "name": "Salud - Puntaje promedio: 6.4",
+      "average_score": 6.4,
+      "color": null,
+      "summary": "",
+      "strengths": [],
+      "weaknesses": [],
+      "interpretation": "",
+      "variables": [
+        {
+          "id": "sistema_de_salud_publica",
+          "name": "Sistema de salud pública",
+          "block_id": "salud_puntaje_promedio_6_4",
+          "final_score": 7.5,
+          "rating_label": "sólido",
+          "summary": "El plan de gobierno propone mejorar el sistema de salud pública en Perú a través de cinco iniciativas clave, incluyendo el Plan Mil APP para modernizar centros de salud, la implementación de una Historia Clínica Digital interoperable, y la separación de roles en EsSalud. Estas medidas buscan cerrar la brecha entre la cobertura formal y el acceso real a servicios de salud.",
+          "strengths": [
+            "Propuesta articulada y técnicamente sólida con respaldo de modelos operativos previos.",
+            "Identificación de más de 1,000 centros de salud a intervenir, lo que muestra un enfoque claro.",
+            "La APP Salog ya ha demostrado su efectividad en Lima, lo que respalda su expansión."
+          ],
+          "weaknesses": [
+            "Falta de norma habilitante para APPs de primer nivel de atención, lo que limita la implementación.",
+            "No se presenta un cronograma regional de implementación, lo que genera incertidumbre.",
+            "La separación financiador-prestador en EsSalud requiere cambios legales que no están detallados."
+          ],
+          "gaps": [
+            "Ausencia de un presupuesto de transición mientras se adjudican las APPs.",
+            "No se incluyen estadísticas propias sobre el déficit del primer nivel de atención."
+          ],
+          "conclusion": "El Plan Mil es una propuesta concreta y necesaria para mejorar el acceso a la salud en Perú, aunque su éxito depende de la creación de normativas y la capacidad de ejecución de Proinversión.",
+          "criteria": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2
+          },
+          "criteria_sum": 9,
+          "formula_result": 7.5,
+          "score_table": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2,
+            "sum": 9,
+            "final": 7.5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El plan reconoce correctamente que el problema es el acceso efectivo, no la cobertura formal. Sin embargo, no presenta estadísticas propias del déficit del primer nivel de atención ni de la cobertura efectiva.",
+            "propuesta": "Plan Mil APP + HCD interoperable + APP Salog escalada + separación financiador-prestador en EsSalud conforman una propuesta articulada y técnicamente sólida.",
+            "medidas": "Plan Mil (más de 1,000 centros de categorías I-2/I-3), APP Salog (modelo operativo ya probado en Lima), HCD interoperable, equipamiento con IA diagnóstica.",
+            "implementacion": "MINSA como rector, Proinversión para las APPs. Sin norma habilitante para APPs de primer nivel de atención.",
+            "viabilidad": "La APP Salog ya opera en Lima: el precedente es real. El Plan Mil tiene diseño institucional previo. Sin cronograma regional de implementación.",
+            "especificidad": "Plan Mil (más de 1,000 centros con categorías I-2/I-3 identificadas), APP Salog (modelo operativo con referencia concreta."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas del candidato para organizar el sistema de salud pública, enfocándose en aspectos como la cobertura, el acceso efectivo a los servicios, el primer nivel de atención, la rectoría del Ministerio de Salud y la integración de subsistemas.",
+            "importancia": "La variable es crucial para el desarrollo del país, ya que el acceso real a servicios de salud es desigual a pesar de la cobertura formal. Mejorar el sistema de salud es fundamental para garantizar el bienestar de la población y reducir la brecha entre la cobertura y la realidad.",
+            "diagnostico_externo": "El diagnóstico actual revela que el Perú tiene una de las tasas de mortalidad por COVID-19 más altas del mundo, evidenciando un sistema de salud frágil. Además, el gasto público en salud es el más bajo de América del Sur y muchas regiones carecen de hospitales adecuados.",
+            "propuesta_plan": "El plan de gobierno propone cinco iniciativas clave: mejorar centros de salud mediante APPs, implementar una Historia Clínica Digital interoperable, expandir la APP Salog, separar los roles de financiador y prestador en EsSalud, y equipar hospitales con tecnología de IA diagnóstica.",
+            "medidas_concretas": "Las medidas específicas incluyen el Plan Mil APP para más de 1,000 centros de salud, la implementación de la HCD interoperable, la expansión de la APP Salog, la separación de roles en EsSalud y la adquisición de equipamiento con IA diagnóstica.",
+            "implementacion_necesaria": "Para implementar las propuestas, se requiere una norma habilitante para las APPs de primer nivel, la intervención de Proinversión como ejecutor, y normativas específicas para la expansión de la APP Salog y la separación de roles en EsSalud.",
+            "impacto_potencial": "Si se implementa correctamente, el Plan Mil APP podría mejorar significativamente la infraestructura y equipamiento de centros de salud, beneficiando a millones de usuarios. La interoperabilidad de la HCD podría eliminar la fragmentación de la información clínica, mejorando la atención al paciente.",
+            "vacios": "Los principales vacíos incluyen la falta de una norma habilitante para las APPs, la ausencia de un cronograma de implementación y la falta de un presupuesto de transición. Además, la separación de roles en EsSalud requiere cambios legales que no se detallan en el plan.",
+            "evaluacion_tecnica": "La propuesta del Plan Mil es una de las más concretas del proceso electoral, con un modelo técnico previo y un precedente operativo. Sin embargo, la falta de una norma habilitante y la dependencia de Proinversión para la ejecución son debilidades significativas.",
+            "conclusion": "En resumen, la variable del sistema de salud pública presenta una propuesta articulada y técnicamente sólida, pero enfrenta desafíos importantes en su implementación y ejecución que deben ser abordados para lograr un impacto real."
+          },
+          "sources": []
+        },
+        {
+          "id": "infraestructura_hospitalaria",
+          "name": "Infraestructura hospitalaria",
+          "block_id": "salud_puntaje_promedio_6_4",
+          "final_score": 7.5,
+          "rating_label": "sólido",
+          "summary": "El plan propone mejorar la infraestructura hospitalaria en Perú mediante la construcción y replicación de hospitales de alta complejidad, como la Torre Trecca, y la implementación de tecnología de inteligencia artificial en diagnósticos. Además, se plantea un sistema de mantenimiento preventivo para los hospitales existentes.",
+          "strengths": [
+            "Propuesta articulada y con diseño previo",
+            "Replicación de la Torre Trecca con precedente en Proinversión",
+            "Medidas concretas para mejorar la atención en salud"
+          ],
+          "weaknesses": [
+            "Falta de liderazgo claro para la expansión en regiones",
+            "Ausencia de un número específico de camas hospitalarias nuevas",
+            "No se presenta un presupuesto para la replicación de la Torre Trecca"
+          ],
+          "gaps": [
+            "No hay estrategia específica para las 16 regiones con hospitales inadecuados",
+            "Ambigüedad sobre quién ejecutará las obras en regiones"
+          ],
+          "conclusion": "La propuesta es sólida en términos de diseño y viabilidad, pero presenta vacíos importantes en liderazgo y planificación territorial. El mantenimiento preventivo es una medida clave que ha sido ignorada en administraciones anteriores.",
+          "criteria": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2
+          },
+          "criteria_sum": 9,
+          "formula_result": 7.5,
+          "score_table": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2,
+            "sum": 9,
+            "final": 7.5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El plan menciona la Torre Trecca y la necesidad de replicarla sin presentar datos propios del déficit de camas, establecimientos deteriorados ni brecha hospitalaria.",
+            "propuesta": "Plan Mil, Torre Trecca replicada, IA diagnóstica y APPs hospitalarias conforman una propuesta articulada.",
+            "medidas": "Plan Mil (más de 1,000 centros), Torre Trecca replicada en 4 zonas de Lima y regiones, IA diagnóstica, mantenimiento preventivo.",
+            "implementacion": "MINSA como rector, Proinversión para APPs. La Torre Trecca ya está en la cartera de Proinversión. Sin liderazgo claro para la expansión en regiones.",
+            "viabilidad": "La Torre Trecca ya está proyectada y diseñada. APPs hospitalarias tienen precedente positivo en el Perú.",
+            "especificidad": "Plan Mil (número de centros con categorías identificadas), Torre Trecca replicada (proyecto específico con referencia concreta)."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas del candidato para mejorar la infraestructura hospitalaria en Perú, incluyendo la construcción, rehabilitación, equipamiento y financiamiento de hospitales y establecimientos de salud de mayor complejidad.",
+            "importancia": "La infraestructura hospitalaria es crucial para garantizar el acceso a servicios de salud de calidad. Con más del 70% de los hospitales peruanos con más de 30 años de antigüedad, la renovación y mejora de estos establecimientos es esencial para atender adecuadamente a la población.",
+            "diagnostico_externo": "El diagnóstico actual revela que el Perú tiene una grave escasez de camas hospitalarias, con solo 1.6 camas por cada 1,000 habitantes, muy por debajo del estándar de la OMS. Además, la mayoría de los hospitales son obsoletos y la falta de mantenimiento ha generado una deuda acumulada significativa.",
+            "propuesta_plan": "El plan de gobierno propone cuatro medidas clave: el Plan Mil APP para el primer nivel de atención, la replicación del modelo de la Torre Trecca en Lima y regiones, el equipamiento de hospitales con tecnología de IA diagnóstica y un sistema de mantenimiento preventivo para hospitales existentes.",
+            "medidas_concretas": "Las medidas específicas incluyen la creación de más de 1,000 centros de salud, la construcción de hospitales replicados de la Torre Trecca en cuatro zonas de Lima, el equipamiento con IA diagnóstica y la implementación de APPs y obras por impuesto para nuevos hospitales.",
+            "implementacion_necesaria": "Para implementar estas propuestas, se requiere que Proinversión estructure la replicación de la Torre Trecca como APP, una norma para el programa de equipamiento con IA diagnóstica y la supervisión del MINSA, aunque no se identifica claramente quién liderará la expansión en regiones.",
+            "impacto_potencial": "La implementación de estas medidas podría aumentar significativamente la disponibilidad de camas hospitalarias en Lima y mejorar la precisión en el diagnóstico de enfermedades graves. Además, el mantenimiento preventivo podría detener el deterioro de los hospitales existentes, mejorando así la atención a la salud.",
+            "vacios": "Los vacíos más importantes incluyen la falta de un líder claro para la expansión hospitalaria en regiones, la ausencia de un número específico de camas a crear, la falta de presupuesto para la replicación de la Torre Trecca y la falta de una estrategia concreta para las regiones con hospitales inadecuados.",
+            "evaluacion_tecnica": "La propuesta de replicar la Torre Trecca es concreta y creíble, con un modelo ya diseñado. Sin embargo, la falta de liderazgo claro para la expansión en regiones y la ausencia de datos específicos sobre el déficit de camas son debilidades significativas.",
+            "conclusion": "La variable obtiene una calificación de 7.5/10, destacándose como una de las más sólidas del bloque de salud. Aunque las propuestas son concretas y tienen precedentes, la ambigüedad sobre el liderazgo en regiones y la falta de datos específicos limitan su efectividad."
+          },
+          "sources": []
+        },
+        {
+          "id": "financiamiento_del_sistema_de_salud",
+          "name": "Financiamiento del sistema de salud",
+          "block_id": "salud_puntaje_promedio_6_4",
+          "final_score": 4.2,
+          "rating_label": "débil",
+          "summary": "El plan de gobierno no establece un compromiso claro sobre el financiamiento del sistema de salud, delegando la responsabilidad a mecanismos como las APPs sin definir metas específicas. La falta de una propuesta concreta para un porcentaje del PBI destinado a salud limita la viabilidad de las reformas propuestas.",
+          "strengths": [],
+          "weaknesses": [
+            "Ausencia de un compromiso explícito de financiamiento del sistema de salud",
+            "Falta de una reforma del aseguramiento que unifique el SIS y EsSalud",
+            "Inexistencia de un fondo de transición para cubrir la deuda del SIS con prestadores"
+          ],
+          "gaps": [
+            "Sin meta de porcentaje del PBI en salud",
+            "Sin mecanismo de financiamiento corriente del sistema"
+          ],
+          "conclusion": "La variable de financiamiento del sistema de salud es la más débil del bloque y del plan completo, evidenciando un vacío estructural crítico. Sin una fuente de financiamiento clara, las propuestas de infraestructura carecen de viabilidad.",
+          "criteria": {
+            "diagnostico": 1,
+            "propuesta": 0,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1
+          },
+          "criteria_sum": 5,
+          "formula_result": 4.2,
+          "score_table": {
+            "diagnostico": 1,
+            "propuesta": 0,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1,
+            "sum": 5,
+            "final": 4.2
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El plan no presenta datos propios de gasto público en salud como porcentaje del PBI ni del gasto de bolsillo de las familias peruanas.",
+            "propuesta": "El plan no define el porcentaje del PBI asignado a salud, no presenta la fuente de financiamiento del sistema ni propone una reforma del aseguramiento.",
+            "medidas": "APPs como mecanismo de financiamiento de infraestructura con repago diferido, APP Salog para eficiencia en distribución de medicamentos. Nada más.",
+            "implementacion": "Proinversión para APPs es el único actor identificado. Sin fondo de transición ni mecanismo de financiamiento corriente.",
+            "viabilidad": "Las APPs de salud son válidas para infraestructura pero generan compromisos fiscales futuros no cuantificados en el plan.",
+            "especificidad": "APPs identificadas como mecanismo. Sin meta de porcentaje del PBI en salud ni monto comprometido."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas del candidato para garantizar que el sistema de salud cuente con recursos sostenibles, incluyendo fuentes de financiamiento, porcentaje del PBI asignado, mecanismos de aseguramiento y eficiencia del gasto.",
+            "importancia": "La variable es crucial porque sin financiamiento adecuado, ninguna reforma de salud puede ser efectiva. El Perú presenta un gasto en salud pública inferior al de otros países de América del Sur, lo que impacta negativamente en la calidad de los servicios de salud.",
+            "diagnostico_externo": "Según la OPS, el gasto público en salud en Perú es del 3.5% del PBI, el más bajo de la región. Además, el gasto de bolsillo representa el 34% del total, lo que puede llevar a las familias a endeudarse en caso de enfermedad.",
+            "propuesta_plan": "El plan no establece un porcentaje del PBI destinado a salud ni un compromiso claro de gasto estatal. Se delega el financiamiento a las APPs y al crecimiento de la recaudación, sin propuestas concretas para unificar el SIS y EsSalud.",
+            "medidas_concretas": "Las únicas medidas identificadas son el uso de APPs para financiar infraestructura y la APP Salog para mejorar la distribución de medicamentos. No se presentan otras propuestas significativas.",
+            "implementacion_necesaria": "La implementación del financiamiento sanitario es casi inexistente en el plan. Solo se menciona a Proinversión para las APPs, sin un fondo de transición ni un mecanismo para financiar el funcionamiento diario del sistema.",
+            "impacto_potencial": "El impacto del bloque de salud dependería del éxito de las APPs, que solo financian infraestructura y no el funcionamiento diario del sistema. Esto crea una brecha crítica que el plan no aborda.",
+            "vacios": "El plan presenta vacíos estructurales significativos, como la falta de un porcentaje del PBI para salud, la ausencia de una reforma del aseguramiento y la falta de un fondo para cubrir la deuda del SIS.",
+            "evaluacion_tecnica": "La falta de una fuente de financiamiento explícita es el vacío más crítico del bloque de salud. Las APPs son útiles para infraestructura, pero no resuelven el financiamiento operativo del sistema.",
+            "conclusion": "La variable obtiene un puntaje de 4.2/10, siendo la más débil del bloque de salud. La ausencia de propuestas claras de financiamiento socava la viabilidad de otras iniciativas en el plan."
+          },
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "politica_social_puntaje_promedio_4_2",
+      "name": "Política Social - Puntaje promedio: 4.2",
+      "average_score": 4.17,
+      "color": null,
+      "summary": "",
+      "strengths": [],
+      "weaknesses": [],
+      "interpretation": "",
+      "variables": [
+        {
+          "id": "reduccion_de_pobreza",
+          "name": "Reducción de pobreza",
+          "block_id": "politica_social_puntaje_promedio_4_2",
+          "final_score": 2.5,
+          "rating_label": "insuficiente",
+          "summary": "El plan de gobierno no presenta una política específica para la reducción de la pobreza, limitándose a menciones generales sobre atención a grupos vulnerables y crecimiento económico. No se identifican medidas concretas ni se establece un marco de implementación claro para abordar la pobreza en el país.",
+          "strengths": [
+            "Reconocimiento de la importancia del crecimiento económico a largo plazo",
+            "Identificación de la pobreza como un problema significativo en el país",
+            "Mención de la necesidad de atención a grupos vulnerables"
+          ],
+          "weaknesses": [
+            "Falta de un diagnóstico propio sobre la pobreza",
+            "Ausencia de programas específicos de transferencia",
+            "Inexistencia de un marco institucional para la reducción de pobreza"
+          ],
+          "gaps": [
+            "Sin metas de reducción de pobreza al 2031",
+            "Sin presupuesto asignado para políticas de reducción de pobreza"
+          ],
+          "conclusion": "La variable de reducción de pobreza es débil, reflejando la falta de una estrategia clara y efectiva para abordar el problema. La inconsistencia entre el lema del plan y la ausencia de políticas concretas es notable.",
+          "criteria": {
+            "diagnostico": 1,
+            "propuesta": 1,
+            "medidas": 0,
+            "implementacion": 0,
+            "viabilidad": 1,
+            "especificidad": 0
+          },
+          "criteria_sum": 3,
+          "formula_result": 2.5,
+          "score_table": {
+            "diagnostico": 1,
+            "propuesta": 1,
+            "medidas": 0,
+            "implementacion": 0,
+            "viabilidad": 1,
+            "especificidad": 0,
+            "sum": 3,
+            "final": 2.5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El plan no diagnostica la pobreza con datos propios. No presenta la tasa del 27.6% ni las causas estructurales con fuentes en el documento.",
+            "propuesta": "La estrategia implícita de crecimiento→empleo→reducción de pobreza tiene lógica económica pero no está articulada como política pública.",
+            "medidas": "Sin programas específicos, sin montos de transferencia, sin metas de reducción de pobreza al 2031.",
+            "implementacion": "Sin MIDIS ni ninguna institución con mandato explícito de reducción de pobreza.",
+            "viabilidad": "La estrategia de crecimiento tiene viabilidad económica a largo plazo pero es insuficiente para los cinco años del mandato.",
+            "especificidad": "Sin instrumento, sin monto, sin meta de reducción de pobreza."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas del candidato para reducir la pobreza, incluyendo transferencias condicionadas, seguridad alimentaria, generación de ingresos para los más pobres y protección social básica.",
+            "importancia": "La reducción de la pobreza es crucial para el desarrollo del país, ya que el crecimiento económico no garantiza automáticamente la mejora de las condiciones de vida de los más vulnerables sin políticas activas de redistribución.",
+            "diagnostico_externo": "El INEI reportó que la tasa de pobreza monetaria en Perú alcanzó el 27.6% en 2024, afectando a 9.39 millones de peruanos, con un retroceso significativo en los avances logrados antes de la pandemia.",
+            "propuesta_plan": "El plan de gobierno no presenta una política específica de reducción de pobreza, limitándose a menciones genéricas sobre atención a grupos vulnerables y una reforma de programas sociales sin un enfoque claro.",
+            "medidas_concretas": "No se identifican medidas concretas en el plan, ya que no se mencionan programas sociales existentes ni se establecen montos de transferencia o metas de reducción de pobreza.",
+            "implementacion_necesaria": "La implementación es inexistente, ya que no se designa ninguna institución con un mandato explícito para la reducción de pobreza, y el MIDIS no tiene un rol definido en el plan.",
+            "impacto_potencial": "El crecimiento económico podría tener un impacto positivo a largo plazo en la reducción de la pobreza, pero los 9.39 millones de personas en pobreza no pueden esperar cinco años para ver resultados.",
+            "vacios": "El plan presenta vacíos significativos, como la falta de una política específica de reducción de pobreza, ausencia de programas de transferencias condicionadas, y la falta de un presupuesto asignado.",
+            "evaluacion_tecnica": "La estrategia de crecimiento como vía principal para reducir la pobreza tiene lógica económica, pero no aborda las limitaciones críticas que enfrentan los más pobres en el acceso a oportunidades.",
+            "conclusion": "La variable obtiene una calificación de 2.5/10, reflejando una ausencia total de política de reducción de pobreza, lo que contrasta dramáticamente con el lema 'Más Justicia Social' del plan."
+          },
+          "sources": []
+        },
+        {
+          "id": "programas_sociales",
+          "name": "Programas sociales",
+          "block_id": "politica_social_puntaje_promedio_4_2",
+          "final_score": 2.5,
+          "rating_label": "insuficiente",
+          "summary": "La variable evalúa las propuestas del candidato para los programas sociales del Estado, destacando la necesidad de una reforma hacia un enfoque productivo e integral. Sin embargo, carece de contenido específico y no menciona programas clave como Juntos o Pensión 65.",
+          "strengths": [
+            "La idea de un enfoque productivo en los programas sociales es conceptualmente interesante.",
+            "La reforma previsional con EAF podría expandir la cobertura previsional.",
+            "El diagnóstico sobre la filtración en los programas sociales es relevante."
+          ],
+          "weaknesses": [
+            "No se presentan datos de cobertura ni impacto de los programas sociales existentes.",
+            "Falta de propuestas concretas y específicas para los programas sociales.",
+            "No hay un cronograma de transición ni costo fiscal cuantificado."
+          ],
+          "gaps": [
+            "Ausencia de programas sociales específicos mencionados por nombre.",
+            "No se proponen montos ni cambios de cobertura."
+          ],
+          "conclusion": "La variable presenta una debilidad significativa en su contenido programático, con una calificación de 2.5/10. La falta de menciones a programas sociales clave y la ausencia de detalles concretos limitan su viabilidad.",
+          "criteria": {
+            "diagnostico": 1,
+            "propuesta": 1,
+            "medidas": 0,
+            "implementacion": 0,
+            "viabilidad": 1,
+            "especificidad": 0
+          },
+          "criteria_sum": 3,
+          "formula_result": 2.5,
+          "score_table": {
+            "diagnostico": 1,
+            "propuesta": 1,
+            "medidas": 0,
+            "implementacion": 0,
+            "viabilidad": 1,
+            "especificidad": 0,
+            "sum": 3,
+            "final": 2.5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El plan no presenta datos de cobertura, filtración ni impacto de los programas sociales existentes.",
+            "propuesta": "La idea de un enfoque productivo en los programas sociales tiene orientación correcta pero carece de contenido específico.",
+            "medidas": "Sin programa social específico. Sin Pensión 65, Juntos, CONTIGO ni Qali Warma. Sin montos ni cambios de cobertura.",
+            "implementacion": "Sin MIDIS ni ninguna institución con mandato explícito de reforma de los programas sociales.",
+            "viabilidad": "La reforma previsional con EAF es posible. Sin costo fiscal cuantificado del capital semilla estatal.",
+            "especificidad": "Sin instrumento concreto, sin monto ni meta programática."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas del candidato en relación a los programas sociales del Estado, incluyendo transferencias monetarias condicionadas, programas de alimentación, pensiones sociales y protección a grupos vulnerables.",
+            "importancia": "Los programas sociales son fundamentales para atender a las personas en situación de vulnerabilidad, como adultos mayores en pobreza y familias con niños desnutridos, garantizando su acceso a recursos básicos y protección.",
+            "diagnostico_externo": "El MIDIS reporta que más del 30% de los beneficiarios de programas sociales no cumplen con los criterios de pobreza, lo que indica una filtración significativa. Sin embargo, estos programas siguen siendo esenciales para millones de peruanos.",
+            "propuesta_plan": "El plan propone una reforma de los programas sociales hacia un enfoque productivo e integral, buscando reestructurar los programas para que promuevan la inserción laboral y el emprendimiento, además de reemplazar las AFP con Empresas Administradoras de Fondos (EAF).",
+            "medidas_concretas": "Las medidas concretas son limitadas, destacando la declaración de un enfoque productivo y la reforma previsional con EAF y capital semilla estatal, sin mencionar programas específicos como Juntos o Pensión 65.",
+            "implementacion_necesaria": "Para implementar las propuestas, se requiere un mandato explícito del MIDIS, normas para la creación de las EAF, un costo fiscal cuantificado del capital semilla estatal y un cronograma de transición hacia el nuevo modelo previsional.",
+            "impacto_potencial": "Si se implementa correctamente, la reforma previsional podría aumentar la cobertura previsional, pero sin un costo fiscal claro, es difícil estimar su impacto real. La idea de establecer metas de salida de la pobreza es válida, pero carece de contenido específico.",
+            "vacios": "El plan presenta vacíos significativos, como la ausencia de programas sociales específicos, falta de montos de transferencia, y no menciona a los programas más importantes del país. También carece de un mecanismo claro para la salida de la pobreza.",
+            "evaluacion_tecnica": "La propuesta de reforma previsional es conceptualmente interesante, pero sin un costo fiscal cuantificado y sin un cronograma de transición, se queda en una idea sin sustento. La falta de contenido programático en la política social es preocupante.",
+            "conclusion": "La variable obtiene un puntaje de 2.5/10, lo que refleja una debilidad significativa en el contenido programático. La ausencia de los principales programas sociales en el plan es una omisión crítica que no puede ser compensada por declaraciones de principios."
+          },
+          "sources": []
+        },
+        {
+          "id": "vivienda",
+          "name": "Vivienda",
+          "block_id": "politica_social_puntaje_promedio_4_2",
+          "final_score": 7.5,
+          "rating_label": "sólido",
+          "summary": "El plan de gobierno propone la construcción de 1.25 millones de viviendas nuevas en cinco años, lo que implica un subsidio anual de S/15,000 millones financiado con deuda pública. Además, busca la extinción de COFOPRI y la centralización de competencias en el MVCS para mejorar la gestión del suelo urbano.",
+          "strengths": [
+            "Reconocimiento del costo fiscal real",
+            "Propuestas concretas y cuantificadas",
+            "Medidas para combatir la informalidad urbana"
+          ],
+          "weaknesses": [
+            "Meta de 244,000 viviendas al año es físicamente inviable",
+            "Resistencia esperada de los alcaldes a la reforma legislativa",
+            "Dependencia de financiamiento que no garantiza la producción"
+          ],
+          "gaps": [
+            "Falta de capacidad del sector formal para cuadruplicar la producción de viviendas",
+            "Inexistencia de suficientes constructoras y mano de obra calificada"
+          ],
+          "conclusion": "Aunque el plan es ambicioso y reconoce la necesidad de financiamiento, su viabilidad es cuestionable debido a la imposibilidad física de alcanzar las metas propuestas. Las medidas más realistas son la creación de un mercado de alquiler formal y la policía especializada en tráfico de tierras.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 0,
+            "especificidad": 2
+          },
+          "criteria_sum": 9,
+          "formula_result": 7.5,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 0,
+            "especificidad": 2,
+            "sum": 9,
+            "final": 7.5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El plan cuantifica el déficit explícitamente: '244,000 viviendas nuevas por año para cerrar el déficit cuantitativo'.",
+            "propuesta": "244,000 viviendas/año con reconocimiento del costo fiscal, extinción de COFOPRI, MVCS ampliado, vivienda multifamiliar y mercado de alquiler.",
+            "medidas": "244,000/año (meta), S/15,000M de subsidio con deuda +1.1% PBI (costo explicitado), extinción de COFOPRI, reforma de Ley de Municipalidades.",
+            "implementacion": "MVCS absorbe competencias municipales pero requiere reforma de la Ley Orgánica de Municipalidades, un proceso legislativo complejo con fuerte resistencia de los alcaldes.",
+            "viabilidad": "244,000 viviendas/año supera entre 3 y 4 veces la capacidad histórica del sector formal (50,000–80,000/año).",
+            "especificidad": "244,000 viviendas/año (meta cuantificada), S/15,000M (monto del subsidio), +1.1% PBI en deuda (costo fiscal explicitado)."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa qué propone el candidato para reducir el déficit de vivienda, incluyendo subsidios, acceso a crédito hipotecario, regulación del suelo urbano, vivienda de interés social y mejoramiento de asentamientos informales.",
+            "importancia": "Tener una vivienda digna es una de las necesidades más básicas de cualquier familia. En el Perú, millones de hogares viven en condiciones precarias, lo que resalta la urgencia de abordar el déficit habitacional.",
+            "diagnostico_externo": "El Ministerio de Vivienda reportó un déficit cuantitativo de 1.9 millones de viviendas en 2024. Además, el 93% del crecimiento urbano en los últimos 20 años ha sido informal, lo que evidencia la falta de soluciones efectivas por parte del Estado.",
+            "propuesta_plan": "El plan propone construir 1.25 millones de viviendas nuevas en cinco años, reconociendo que esto requeriría un subsidio de S/15,000 millones anuales, financiado mediante deuda pública.",
+            "medidas_concretas": "Las medidas específicas incluyen la meta de 244,000 viviendas nuevas por año, la extinción de COFOPRI, la reforma de la Ley Orgánica de Municipalidades, incentivos para vivienda multifamiliar, un mercado de alquiler formal y la creación de una policía especializada en tráfico de tierras.",
+            "implementacion_necesaria": "Para implementar estas propuestas, se requiere una reforma legislativa compleja, la extinción de COFOPRI, la obtención de instrumentos de endeudamiento y la creación de una nueva policía especializada.",
+            "impacto_potencial": "Si se lograra alcanzar incluso el 50% de la meta, el impacto sería significativo, mejorando la gestión del suelo urbano y ofreciendo alternativas de vivienda digna a quienes no pueden comprar.",
+            "vacios": "El vacío central es que la meta de 244,000 viviendas al año es físicamente inviable, ya que supera la capacidad histórica del sector formal, que ha producido entre 50,000 y 80,000 unidades anuales.",
+            "evaluacion_tecnica": "El plan reconoce el costo real de sus propuestas, pero la honestidad fiscal no resuelve la imposibilidad física de cuadruplicar la producción de viviendas en el primer año del gobierno.",
+            "conclusion": "La variable obtiene una calificación de 7.5/10, destacando la honestidad fiscal del plan, pero también su inviabilidad en términos de producción de viviendas, lo que limita su efectividad."
+          },
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "infraestuctura_puntaje_promedio_7_2",
+      "name": "Infraestuctura - Puntaje promedio: 7.2",
+      "average_score": 7.23,
+      "color": null,
+      "summary": "",
+      "strengths": [],
+      "weaknesses": [],
+      "interpretation": "",
+      "variables": [
+        {
+          "id": "infraestructura_publica",
+          "name": "Infraestructura pública",
+          "block_id": "infraestuctura_puntaje_promedio_7_2",
+          "final_score": 7.5,
+          "rating_label": "sólido",
+          "summary": "El plan de infraestructura propone un portafolio nacional de 72 proyectos con una inversión aproximada de S/143,000 millones, un Shock de Transitabilidad de S/1,000 millones para mejorar vías vecinales, y la centralización de APPs en un nuevo ministerio. Se busca cerrar la brecha de infraestructura que limita el desarrollo del país y mejorar la conectividad en todas las regiones.",
+          "strengths": [
+            "Diagnóstico cuantificado de la brecha de infraestructura",
+            "Propuestas concretas y medibles como el Shock de Transitabilidad",
+            "Centralización de APPs para mejorar la ejecución de proyectos"
+          ],
+          "weaknesses": [
+            "El MINFRA es un ministerio nuevo sin capacidad institucional instalada",
+            "La meta de S/143,000 millones en cinco años es excesivamente ambiciosa",
+            "Falta de un cronograma de adjudicación para los proyectos propuestos"
+          ],
+          "gaps": [
+            "No hay mecanismo específico para resolver conflictos sociales que paralizan proyectos",
+            "La capacidad de ejecución del nuevo ministerio es incierta"
+          ],
+          "conclusion": "La variable de infraestructura es la más completa del plan, con un diagnóstico sólido y propuestas específicas. Sin embargo, la ambición de las metas y la falta de capacidad institucional del nuevo ministerio son limitaciones significativas.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2
+          },
+          "criteria_sum": 9,
+          "formula_result": 7.5,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2,
+            "sum": 9,
+            "final": 7.5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El plan cuantifica la brecha con un portafolio nacional de 72 proyectos y un diagnóstico propio cuantificado.",
+            "propuesta": "Incluye medidas concretas como el Shock de Transitabilidad y la centralización de APPs.",
+            "medidas": "Identifica metas claras, aunque carece de un cronograma de adjudicación.",
+            "implementacion": "El MINFRA es un ministerio nuevo sin capacidad instalada, lo que complica la implementación.",
+            "viabilidad": "La meta de S/143,000 millones en cinco años supera el histórico de inversión pública en el país.",
+            "especificidad": "Presenta números específicos y montos claros para los proyectos y medidas propuestas."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa qué propone el candidato para cerrar la brecha de infraestructura del país, incluyendo la cartera de proyectos, mecanismos de financiamiento, capacidad de ejecución y coordinación entre niveles de gobierno.",
+            "importancia": "La brecha de infraestructura es uno de los principales frenos al desarrollo del Perú, ya que el alto costo logístico encarece bienes, aísla comunidades, reduce la productividad y limita el acceso a servicios básicos.",
+            "diagnostico_externo": "El Banco Mundial estima que el costo logístico en Perú equivale al 24% del PBI, con 2,300 obras paralizadas y una brecha total de infraestructura que supera los USD 100,000 millones.",
+            "propuesta_plan": "El plan propone cinco medidas centrales: un portafolio nacional de 72 proyectos, un Shock de Transitabilidad de S/1,000 millones, centralizar la gestión de APPs en un nuevo ministerio, reformar Invierte.pe y comprar maquinaria para municipalidades.",
+            "medidas_concretas": "Las medidas específicas incluyen un portafolio de 72 proyectos por S/143,000 millones, un Shock de Transitabilidad de S/1,000 millones, la centralización de APPs, la reforma de Invierte.pe y la compra de maquinaria para municipalidades provinciales.",
+            "implementacion_necesaria": "Para implementar las propuestas se requiere un decreto de creación del nuevo Ministerio de Infraestructura, una norma de centralización de APPs, la reforma de Invierte.pe y una norma de transferencia de S/1,000 millones a municipalidades.",
+            "impacto_potencial": "El Shock de Transitabilidad podría generar resultados visibles desde el primer año, mientras que la centralización de APPs podría acelerar la adjudicación de proyectos y el portafolio de 72 proyectos transformaría la conectividad en el país.",
+            "vacios": "Los vacíos incluyen la ambición de S/143,000 millones en cinco años, la falta de cronograma de adjudicación de proyectos y la ausencia de mecanismos para resolver conflictos sociales que paralizan obras.",
+            "evaluacion_tecnica": "El portafolio de 72 proyectos es el más detallado del proceso electoral, pero la meta de S/143,000 millones en cinco años supera los mejores quinquenios históricos y el nuevo ministerio deberá construir su capacidad institucional desde cero.",
+            "conclusion": "La variable de infraestructura obtiene 7.5/10, destacando por su diagnóstico cuantificado y medidas específicas, aunque enfrenta limitaciones en la ambición de sus metas y la necesidad de construir capacidad institucional en un nuevo ministerio."
+          },
+          "sources": []
+        },
+        {
+          "id": "transporte",
+          "name": "Transporte",
+          "block_id": "infraestuctura_puntaje_promedio_7_2",
+          "final_score": 6.7,
+          "rating_label": "moderado",
+          "summary": "El plan de transporte propone un Shock de Transitabilidad de S/1,000 millones y la finalización del aeropuerto de Chinchero antes de 2028, junto con la construcción de un monorriel que conecte el aeropuerto Jorge Chávez con el Metro de Lima. También se contempla la mejora de aeropuertos regionales y el desarrollo de un Puerto Seco en Juliaca.",
+          "strengths": [
+            "Shock de Transitabilidad como medida de impacto inmediato",
+            "Compromiso concreto con el aeropuerto de Chinchero",
+            "Propuesta articulada que incluye múltiples proyectos de infraestructura"
+          ],
+          "weaknesses": [
+            "Falta de cuantificación del déficit vial",
+            "Dependencia de APPs a largo plazo para el Metro",
+            "Ausencia de cronograma específico para las líneas L1 a L4"
+          ],
+          "gaps": [
+            "No hay norma de cofinanciamiento a los GOREs para el Shock de Transitabilidad",
+            "El monorriel aeroportuario carece de estudio técnico"
+          ],
+          "conclusion": "El Shock de Transitabilidad y Chinchero 2028 son las medidas más concretas y creíbles del bloque. La propuesta presenta una heterogeneidad que puede complicar su ejecución en el corto plazo.",
+          "criteria": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2
+          },
+          "criteria_sum": 8,
+          "formula_result": 6.7,
+          "score_table": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2,
+            "sum": 8,
+            "final": 6.7
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El plan propone el Shock de Transitabilidad y proyectos específicos pero no cuantifica el déficit vial con datos propios.",
+            "propuesta": "Shock de Transitabilidad, Chinchero 2028, aeropuertos regionales, Metro L1-L4, Puerto Seco Juliaca y Corredor Amazonas Norte conforman una propuesta articulada.",
+            "medidas": "Shock de Transitabilidad S/1,000 millones (monto), Chinchero antes de 2028 (cronograma), Grupo 3 de aeropuertos en 2027. Sin cronograma de L1-L4.",
+            "implementacion": "MTC, MINFRA y Proinversión como actores. Sin norma de cofinanciamiento a los GOREs para el Shock.",
+            "viabilidad": "Chinchero 2028 es posible con el proyecto ya estructurado. Las líneas L1-L4 del Metro son proyectos de 20 años o más. El monorriel no tiene estudio técnico.",
+            "especificidad": "Chinchero antes de 2028 (cronograma específico), Shock de Transitabilidad S/1,000 millones (monto), Grupo 3 de aeropuertos en 2027 (fecha)."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa qué propone el candidato para el sistema de transporte: carreteras, ferrocarriles, puertos, aeropuertos y movilidad urbana.",
+            "importancia": "El sistema de transporte es la columna vertebral de la conectividad del país. Sin vías adecuadas y un transporte urbano eficiente, las comunidades quedan aisladas y los costos logísticos se incrementan.",
+            "diagnostico_externo": "El MTC reportó que solo el 2.3% de las vías vecinales están pavimentadas, lo que afecta la conectividad rural. Además, el aeropuerto Jorge Chávez opera al límite de su capacidad y hay retrasos en la construcción del aeropuerto de Chinchero.",
+            "propuesta_plan": "El plan propone siete medidas, incluyendo un Shock de Transitabilidad de S/1,000 millones, la finalización del aeropuerto de Chinchero antes de 2028 y la construcción de un monorriel entre el aeropuerto Jorge Chávez y la Línea 2 del Metro.",
+            "medidas_concretas": "Las medidas específicas incluyen el Shock de Transitabilidad, la finalización de Chinchero, la adjudicación de aeropuertos regionales, el avance de las Líneas L1 a L4 del Metro, el desarrollo del Puerto Seco en Juliaca y el impulso del Corredor Amazonas Norte.",
+            "implementacion_necesaria": "Se requiere la participación del MTC, MINFRA y Proinversión, así como una norma de cofinanciamiento para el Shock de Transitabilidad y estudios técnicos para el monorriel aeroportuario.",
+            "impacto_potencial": "La implementación del Shock de Transitabilidad mejoraría la conectividad vecinal desde el primer año, mientras que Chinchero 2028 transformaría el turismo en el sur del Perú y el Puerto Seco integraría Puno con Brasil y Bolivia.",
+            "vacios": "Los vacíos incluyen la falta de cronograma para las líneas L1 a L4 del Metro, la ausencia de un estudio técnico para el monorriel y la falta de una norma de cofinanciamiento para el Shock de Transitabilidad.",
+            "evaluacion_tecnica": "El Shock de Transitabilidad es la medida de mayor impacto inmediato, mientras que Chinchero 2028 es un compromiso creíble. Sin embargo, la heterogeneidad de la propuesta presenta desafíos de gestión.",
+            "conclusion": "La variable obtiene 6.7/10 (Media-alta), destacando el Shock de Transitabilidad y Chinchero 2028 como las medidas más concretas. La clave estará en ejecutar lo que es viable en el quinquenio sin perder de vista el largo plazo."
+          },
+          "sources": []
+        },
+        {
+          "id": "energia",
+          "name": "Energía",
+          "block_id": "infraestuctura_puntaje_promedio_7_2",
+          "final_score": 7.5,
+          "rating_label": "sólido",
+          "summary": "El plan propone la extinción de Perupetro y la apertura de Petroperú a la inversión privada, así como la masificación del gas natural y el apoyo a proyectos estratégicos. Se busca mejorar la competitividad energética y reducir los precios del gas en regiones fuera de Lima.",
+          "strengths": [
+            "Extinción de Perupetro y cese de inyección pública a Petroperú son decisiones fiscalmente responsables.",
+            "Las adendas para masificación del gas tienen un modelo técnico previo exitoso.",
+            "Los montos cuantificados para inversión en gas y transmisión eléctrica son claros."
+          ],
+          "weaknesses": [
+            "No hay cronograma de extinción de Perupetro.",
+            "Falta de presupuesto detallado y cronograma para la masificación del gas.",
+            "No se proponen medidas concretas para la electrificación rural."
+          ],
+          "gaps": [
+            "No hay un instrumento específico para solucionar la brecha de electrificación rural del 16.7%.",
+            "El Lote Z-62 es especulativo y no hay garantías de reservas comercialmente viables."
+          ],
+          "conclusion": "La variable presenta propuestas viables y fiscalmente responsables, aunque carece de detalles en algunos aspectos críticos. La falta de un cronograma y medidas específicas para la electrificación rural son limitaciones importantes.",
+          "criteria": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 2,
+            "especificidad": 2
+          },
+          "criteria_sum": 9,
+          "formula_result": 7.5,
+          "score_table": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 2,
+            "especificidad": 2,
+            "sum": 9,
+            "final": 7.5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El plan menciona problemas sin cuantificar la brecha de electrificación ni el diferencial de precios del gas.",
+            "propuesta": "La propuesta es articulada y abarca medidas clave para el sector energético.",
+            "medidas": "Se identifican medidas concretas, pero faltan detalles sobre presupuesto y cronograma.",
+            "implementacion": "La implementación depende de actores clave, pero carece de un cronograma claro.",
+            "viabilidad": "La extinción de Perupetro es viable administrativamente y las adendas tienen un modelo técnico exitoso.",
+            "especificidad": "Se presentan montos claros para la masificación del gas y la transmisión eléctrica."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa qué propone el candidato para el sector energético, abarcando aspectos como electricidad, gas natural, energías renovables, eficiencia energética y el futuro de las empresas estatales del sector.",
+            "importancia": "La energía asequible y confiable es fundamental para la industria, el comercio y la vida cotidiana. Sin acceso a electricidad y gas, no se puede lograr una industria competitiva ni mejorar la calidad de vida de las familias.",
+            "diagnostico_externo": "El MINEM reportó en 2024 una brecha de electrificación rural del 16.7%, afectando a comunidades que aún carecen de electricidad. Además, el precio del gas en regiones fuera de Lima es significativamente más alto, lo que impacta negativamente en la competitividad industrial.",
+            "propuesta_plan": "El plan propone seis medidas clave, incluyendo la extinción de Perupetro, el cese de recursos públicos a Petroperú, la masificación del gas natural, una APP para llevar gas al Cusco, apoyo al Lote Z-62 y una adenda para reforzar el sistema de transmisión eléctrica.",
+            "medidas_concretas": "Las medidas específicas incluyen la extinción de Perupetro, el cese de inyección de recursos a Petroperú, adendas para masificación del gas, una APP para gas en Cusco, apoyo al Lote Z-62 y una adenda de S/1,800 millones para el sistema de transmisión eléctrica.",
+            "implementacion_necesaria": "Para implementar las propuestas se requiere un decreto de extinción de Perupetro, la apertura de Petroperú a la inversión privada, la estructuración de adendas de masificación de gas y la adjudicación de la APP para gas en Cusco.",
+            "impacto_potencial": "La implementación de estas medidas podría ahorrar al Estado S/4,000 millones al evitar inyecciones a Petroperú, mejorar la competitividad energética en regiones y desbloquear capacidad de distribución eléctrica, beneficiando a la población.",
+            "vacios": "El plan presenta vacíos significativos, como la falta de un cronograma para la extinción de Perupetro, la ausencia de un presupuesto detallado para la masificación del gas y la falta de medidas concretas para abordar la brecha de electrificación rural.",
+            "evaluacion_tecnica": "Desde una perspectiva técnica, la extinción de Perupetro y el cese de inyección pública a Petroperú son decisiones fiscalmente responsables, mientras que las adendas para masificación del gas son factibles, aunque el Lote Z-62 carece de garantías de reservas.",
+            "conclusion": "La variable 26 obtiene un puntaje de 7.5/10, destacándose como la más sólida del bloque de infraestructura. Las propuestas son viables administrativamente y fiscalmente responsables, aunque se requiere mayor claridad en la implementación y atención a la electrificación rural."
+          },
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "tecnologia_puntaje_promedio_6_2",
+      "name": "Tecnología- Puntaje promedio: 6.2",
+      "average_score": 6.25,
+      "color": null,
+      "summary": "",
+      "strengths": [],
+      "weaknesses": [],
+      "interpretation": "",
+      "variables": [
+        {
+          "id": "digitalizacion_del_estado",
+          "name": "Digitalización del Estado",
+          "block_id": "tecnologia_puntaje_promedio_6_2",
+          "final_score": 5,
+          "rating_label": "débil",
+          "summary": "El plan de gobierno propone digitalizar el Estado mediante la creación de un 'Zar de Tecnología', la implementación de una identidad digital biométrica y la instalación de 5,000 puntos WiFi rurales. Se busca lograr un Estado 100% transaccional en línea para 2030, aunque enfrenta desafíos significativos en términos de inversión y viabilidad.",
+          "strengths": [
+            "Propuesta de un Zar de Tecnología para centralizar decisiones",
+            "Meta ambiciosa de un Estado 100% digital",
+            "Iniciativas para cerrar la brecha digital con puntos WiFi rurales"
+          ],
+          "weaknesses": [
+            "Falta de inversión definida para la digitalización",
+            "No hay presupuesto para el Plan de Última Milla",
+            "El Zar de Tecnología carece de ley habilitante"
+          ],
+          "gaps": [
+            "No se especifica el costo de digitalizar 15,000 trámites",
+            "La extinción de OSIPTEL requiere una reforma no analizada"
+          ],
+          "conclusion": "El plan presenta propuestas innovadoras pero insuficientemente desarrolladas. La falta de un marco legal y de inversión limita su viabilidad y capacidad de implementación.",
+          "criteria": {
+            "diagnostico": 1,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1
+          },
+          "criteria_sum": 6,
+          "formula_result": 5,
+          "score_table": {
+            "diagnostico": 1,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1,
+            "sum": 6,
+            "final": 5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El plan menciona la brecha digital y promete un Estado 100% digital al 2030 sin presentar datos propios de conectividad, trámites digitalizados ni posición en el índice de gobierno digital.",
+            "propuesta": "El plan propone digitalización pero no define inversión pública en tecnología, no establece recursos para el Plan de Última Milla ni tiene política tecnológica con financiamiento.",
+            "medidas": "Zar de Tecnología, 5,000 puntos WiFi rurales, extinción de OSIPTEL. Sin presupuesto del Plan de Última Milla ni cronograma detallado.",
+            "implementacion": "Zar de Tecnología sin ley habilitante. Extinción de OSIPTEL requiere reforma de la Ley 26285.",
+            "viabilidad": "Estado 100% digital al 2030 es muy ambicioso para ejecutar en cuatro años dado el estado actual de los sistemas del Estado.",
+            "especificidad": "5,000 puntos WiFi rurales al 2031 (meta), extinción de OSIPTEL (norma). Sin presupuesto ni cronograma del Plan de Última Milla."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa qué propone el candidato para digitalizar los servicios públicos y la gestión del Estado, incluyendo trámites en línea, interoperabilidad entre sistemas, identidad digital, conectividad para zonas alejadas y gobierno electrónico.",
+            "importancia": "La digitalización del Estado es crucial no solo para modernizar la administración pública, sino también para combatir la corrupción al reducir los puntos de contacto entre ciudadanos y funcionarios. Además, facilita el acceso a servicios en zonas remotas sin necesidad de infraestructura física.",
+            "diagnostico_externo": "El Perú ocupa el puesto 71 de 193 países en el Índice de Desarrollo de Gobierno Digital en 2024. La brecha digital es significativa, con un 58.4% de acceso a internet en hogares, y un 85% de incompatibilidad entre sistemas informáticos del Estado que limita la interoperabilidad.",
+            "propuesta_plan": "El plan propone la creación de un 'Zar de Tecnología e Infraestructura Digital', un Estado 100% transaccional en línea para 2030, una identidad digital biométrica universal, y la instalación de 5,000 puntos WiFi rurales para mejorar la conectividad.",
+            "medidas_concretas": "Las medidas específicas incluyen la creación del Zar de Tecnología, la meta de un Estado 100% digital, la implementación de una identidad digital biométrica, la instalación de puntos WiFi rurales, y la extinción de OSIPTEL y PRONATEL para crear un nuevo fondo de última milla.",
+            "implementacion_necesaria": "Para implementar estas propuestas se requiere una ley habilitante para el Zar de Tecnología, la reforma de la Ley 26285 para extinguir OSIPTEL, y normas para la creación del nuevo fondo de última milla y el Plan de Última Milla.",
+            "impacto_potencial": "Un Estado 100% digital al 2030 podría eliminar miles de trámites presenciales, reduciendo oportunidades de corrupción y mejorando la eficiencia. La conectividad a través de los puntos WiFi rurales facilitaría el acceso a servicios digitales en comunidades desconectadas.",
+            "vacios": "El plan carece de una inversión definida para la digitalización y no presenta un presupuesto para el Plan de Última Milla. Además, la falta de una ley habilitante para el Zar de Tecnología limita su efectividad y la ambiciosa meta de un Estado 100% digital en cuatro años parece poco realista.",
+            "evaluacion_tecnica": "La propuesta del Zar de Tecnología es innovadora y se basa en modelos exitosos de otros países, pero la falta de un presupuesto claro y la necesidad de reformas legales son obstáculos significativos. La ambición del plan no se alinea con la actual incompatibilidad de sistemas en el Estado.",
+            "conclusion": "La variable obtiene una calificación de 5.0/10, reflejando propuestas con buena orientación pero insuficientemente desarrolladas. La falta de inversión y la ausencia de un marco legal adecuado limitan el potencial de transformación del plan."
+          },
+          "sources": []
+        },
+        {
+          "id": "innovacion_tecnologica",
+          "name": "Innovación tecnológica",
+          "block_id": "tecnologia_puntaje_promedio_6_2",
+          "final_score": 5,
+          "rating_label": "débil",
+          "summary": "El plan de gobierno propone una fusión institucional de CONCYTEC con más de 10 institutos de investigación para mejorar la capacidad de innovación del país. Además, se plantea la adquisición de un buque de investigación para el IMARPE y la creación de clústeres de innovación en colaboración con universidades y el sector privado.",
+          "strengths": [
+            "Fusión de institutos para reducir la fragmentación",
+            "Propuesta concreta del buque de investigación",
+            "Creación de clústeres de innovación para conectar investigación y producción"
+          ],
+          "weaknesses": [
+            "No se define una meta de inversión en I+D como porcentaje del PBI",
+            "Falta de presupuesto adicional para CONCYTEC",
+            "Complejidad en la fusión de instituciones con culturas organizacionales distintas"
+          ],
+          "gaps": [
+            "Ausencia de estrategia de articulación universidad-empresa más allá de los clústeres",
+            "No se asignan fondos adicionales para fortalecer la fusión"
+          ],
+          "conclusion": "La propuesta tiene un enfoque correcto pero carece de contenido necesario para un cambio estructural en el sistema de I+D. Sin presupuesto adicional, la fusión solo reorganiza sin fortalecer.",
+          "criteria": {
+            "diagnostico": 1,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1
+          },
+          "criteria_sum": 6,
+          "formula_result": 5,
+          "score_table": {
+            "diagnostico": 1,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1,
+            "sum": 6,
+            "final": 5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "I+D aparece como descripción funcional de los institutos a fusionar, no como diagnóstico del estado de la innovación.",
+            "propuesta": "El plan propone fusionar instituciones pero no define inversión en I+D como porcentaje del PBI ni tiene política industrial tecnológica con financiamiento.",
+            "medidas": "CONCYTEC fusiona más de 10 institutos, buque del IMARPE por OXI. Sin meta de I+D como porcentaje del PBI.",
+            "implementacion": "CONCYTEC con mandato ampliado como actor central. Sin presupuesto adicional de I+D asignado.",
+            "viabilidad": "La mega-fusión de más de 10 instituciones es muy compleja. Sin fondos adicionales, la fusión reorganiza sin fortalecer.",
+            "especificidad": "CONCYTEC más los 10 institutos nombrados individualmente (fusión normativa). Sin metas cuantificadas de inversión."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas del candidato para desarrollar la capacidad de innovación del país, incluyendo la inversión en investigación y desarrollo (I+D), la institucionalidad de ciencia y tecnología, la articulación entre universidades y empresas, y el ecosistema de startups.",
+            "importancia": "La innovación es fundamental para la productividad a largo plazo de una economía. Los países que invierten en I+D tienden a crecer más, generar empleos mejor remunerados y diversificar su economía, lo cual es crucial para el Perú, que actualmente invierte muy poco en este ámbito.",
+            "diagnostico_externo": "El Perú invierte solo el 0.15% de su PBI en I+D, el porcentaje más bajo de América Latina. Además, el país ocupa el puesto 70 de 132 en el Índice Global de Innovación, lo que refleja una grave fragmentación en sus institutos de investigación y una falta de conexión con el sector productivo.",
+            "propuesta_plan": "El plan de gobierno propone fusionar CONCYTEC con más de diez institutos de investigación, adquirir un buque de investigación para el IMARPE, crear clústeres de innovación en colaboración con universidades y el sector privado, y permitir que startups accedan a contratos públicos.",
+            "medidas_concretas": "Las medidas específicas incluyen la fusión de CONCYTEC con varios institutos de I+D, la adquisición de un buque de investigación para el IMARPE, la creación de clústeres de innovación, y el acceso de startups a contratos públicos como mecanismo de crecimiento.",
+            "implementacion_necesaria": "Para implementar estas propuestas se requiere un decreto de fusión de CONCYTEC, el proceso de OXI para el buque del IMARPE, una norma para los clústeres de innovación, y un mecanismo de compras públicas para startups. Sin embargo, la falta de presupuesto adicional para I+D es una brecha crítica.",
+            "impacto_potencial": "La fusión de institutos en CONCYTEC podría reducir la fragmentación y mejorar la eficiencia en el uso de recursos. El buque del IMARPE podría fortalecer la investigación oceánica, y los clústeres de innovación podrían fomentar ecosistemas productivos en diversas regiones del país.",
+            "vacios": "El plan carece de una meta de inversión en I+D como porcentaje del PBI, lo que es un indicador clave de compromiso. Además, no se asigna presupuesto adicional a CONCYTEC, y la fusión de múltiples instituciones con diferentes culturas organizacionales es un proceso complejo que podría tardar más de un quinquenio.",
+            "evaluacion_tecnica": "La propuesta de fusionar institutos de I+D en CONCYTEC es ambiciosa y lógica, pero carece de metas claras de inversión y financiamiento. La falta de un presupuesto adicional y la complejidad del proceso de fusión limitan su efectividad potencial.",
+            "conclusion": "La variable obtiene una calificación de 5.0/10, lo que indica que, aunque las propuestas son correctas, carecen del contenido necesario para generar un cambio estructural en el sistema de I+D. La ausencia de una meta de inversión en I+D es el vacío más significativo en un área donde la inversión es crucial."
+          },
+          "sources": []
+        },
+        {
+          "id": "regulacion_de_la_inteligencia_artificial",
+          "name": "Regulación de la inteligencia artificial",
+          "block_id": "tecnologia_puntaje_promedio_6_2",
+          "final_score": 7.5,
+          "rating_label": "sólido",
+          "summary": "El plan propone un marco regulatorio moderno para la inteligencia artificial en Perú, que incluye la creación del CERT-Perú y una Brigada Nacional de Ciberpolicía. Se busca establecer un uso responsable de la IA, protegiendo los derechos de los ciudadanos y mejorando la respuesta ante incidentes cibernéticos.",
+          "strengths": [
+            "Propuesta de un marco regulatorio moderno para IA",
+            "Creación del CERT-Perú para gestionar incidentes cibernéticos",
+            "Estrategia articulada con la Brigada Nacional de Ciberpolicía"
+          ],
+          "weaknesses": [
+            "Marco Regulatorio de IA declarado pero vacío",
+            "Falta de norma habilitante del CERT-Perú",
+            "No hay cronograma para el desarrollo del contenido del Marco Regulatorio de IA"
+          ],
+          "gaps": [
+            "El Marco Regulatorio de IA no especifica qué regula ni cómo se implementa",
+            "No hay norma de creación de la Brigada Ciberpolicía"
+          ],
+          "conclusion": "La propuesta tiene viabilidad política y amplía capacidades existentes, pero el desarrollo del marco regulatorio es crucial para su efectividad. Sin contenido específico, el marco regulatorio carece de sustancia.",
+          "criteria": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 2,
+            "especificidad": 2
+          },
+          "criteria_sum": 9,
+          "formula_result": 7.5,
+          "score_table": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 2,
+            "especificidad": 2,
+            "sum": 9,
+            "final": 7.5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El plan propone el marco regulatorio sin diagnosticar el estado actual de la IA en el Perú ni cuantificar los riesgos específicos que busca regular.",
+            "propuesta": "Marco Regulatorio de IA, CERT-Perú, Brigada Ciberpolicía e identidad biométrica conforman una estrategia articulada y técnicamente correcta.",
+            "medidas": "Marco Regulatorio de IA (declarado sin contenido específico), CERT-Perú como institución nueva, Brigada Ciberpolicía como unidad especializada.",
+            "implementacion": "Zar de Tecnología como coordinador. Sin norma habilitante del CERT-Perú ni de la Brigada Ciberpolicía.",
+            "viabilidad": "El CERT-Perú amplía capacidades existentes. El Marco de IA ya está en debate legislativo en el Congreso. La Brigada Ciberpolicía tiene precedente internacional.",
+            "especificidad": "CERT-Perú (institución nueva nombrada), Marco Regulatorio de IA (norma declarada), Brigada Ciberpolicía (unidad especializada identificada)."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa qué propone el candidato para establecer un marco regulatorio para la inteligencia artificial, abarcando aspectos como gobernanza, ética, protección de derechos de los ciudadanos, responsabilidad ante daños y el uso de IA en el sector público.",
+            "importancia": "La regulación de la inteligencia artificial es crucial para garantizar que su uso en el Estado peruano sea transparente y responsable, protegiendo así los derechos de los ciudadanos y evitando daños potenciales derivados de decisiones algorítmicas.",
+            "diagnostico_externo": "Actualmente, Perú carece de legislación específica sobre inteligencia artificial, y se encuentra en una etapa 'naciente' en términos de gobernanza de IA, según la UIT. La OCDE y el BID han señalado la necesidad urgente de marcos regulatorios en América Latina.",
+            "propuesta_plan": "El plan de gobierno propone seis medidas clave, incluyendo un Marco Regulatorio Moderno para IA, la creación del CERT-Perú, una Brigada Nacional de Ciberpolicía, una identidad digital biométrica unificada, el uso de IA y Big Data para la detección de patrones criminales, y la protección de infraestructura crítica nacional.",
+            "medidas_concretas": "Las medidas específicas incluyen la creación de un Marco Regulatorio Moderno para IA, el establecimiento del CERT-Perú, la formación de una Brigada Nacional de Ciberpolicía, la implementación de una identidad digital biométrica, el uso de IA para detectar patrones criminales y la protección de infraestructura crítica.",
+            "implementacion_necesaria": "Para implementar estas propuestas, se requiere una norma habilitante para el CERT-Perú, una norma de creación para la Brigada Ciberpolicía, y el desarrollo del contenido del Marco Regulatorio de IA, que actualmente está declarado pero vacío.",
+            "impacto_potencial": "La implementación de estas medidas podría institucionalizar la respuesta ante incidentes cibernéticos, mejorar la persecución de delitos digitales y proteger los derechos de los ciudadanos frente al uso de algoritmos en decisiones que les afectan.",
+            "vacios": "Los principales vacíos incluyen la falta de contenido específico en el Marco Regulatorio de IA, la ausencia de normas habilitantes para el CERT-Perú y la Brigada Ciberpolicía, y la falta de un cronograma para el desarrollo del contenido del marco regulatorio.",
+            "evaluacion_tecnica": "La propuesta tiene viabilidad política, ya que el Marco Regulatorio de IA está en debate legislativo. Sin embargo, la falta de contenido específico en el marco regulatorio limita su efectividad y claridad en la implementación.",
+            "conclusion": "La variable obtiene una calificación de 7.5/10, siendo la más sólida del bloque tecnológico. Aunque se presentan propuestas relevantes, el desarrollo concreto del Marco Regulatorio de IA es un aspecto crítico que queda pendiente."
+          },
+          "sources": []
+        },
+        {
+          "id": "proteccion_de_datos_y_ciberseguridad",
+          "name": "Protección de datos y ciberseguridad",
+          "block_id": "tecnologia_puntaje_promedio_6_2",
+          "final_score": 7.5,
+          "rating_label": "sólido",
+          "summary": "La propuesta del plan de gobierno se centra en la creación del CERT-Perú como centro nacional de ciberseguridad, la implementación de una Red Nacional de Comunicaciones Críticas y la creación de data centers soberanos. Además, se plantea un Centro de Fusión de Inteligencia y el uso de blockchain para mejorar la transparencia en contrataciones públicas.",
+          "strengths": [
+            "Propuesta articulada y técnicamente sólida",
+            "Medidas concretas e instituciones nuevas identificadas",
+            "Enfoque en la protección de datos y ciberseguridad como necesidad de seguridad nacional"
+          ],
+          "weaknesses": [
+            "Falta de presupuesto identificado para data centers soberanos",
+            "Norma habilitante para la Red de Comunicaciones Críticas no detallada",
+            "Marco legal de protección de datos desactualizado"
+          ],
+          "gaps": [
+            "Inversión necesaria para data centers sin presupuesto",
+            "Ausencia de cronograma de implementación del CERT-Perú"
+          ],
+          "conclusion": "La propuesta es una de las más completas en el ámbito de ciberseguridad, pero su efectividad se ve comprometida por la falta de un marco legal actualizado y la ausencia de financiamiento claro. La implementación de estas medidas es crucial para proteger la infraestructura digital del Estado y los datos de los ciudadanos.",
+          "criteria": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2
+          },
+          "criteria_sum": 9,
+          "formula_result": 7.5,
+          "score_table": {
+            "diagnostico": 1,
+            "propuesta": 2,
+            "medidas": 2,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 2,
+            "sum": 9,
+            "final": 7.5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El plan no presenta datos propios de ciberseguridad del país, lo que afecta la justificación del diagnóstico.",
+            "propuesta": "La propuesta incluye medidas concretas y articuladas que abordan la ciberseguridad de manera integral.",
+            "medidas": "Se identifican medidas concretas y nuevas instituciones que fortalecen la propuesta.",
+            "implementacion": "La implementación depende de actores clave, pero carece de presupuesto para los data centers.",
+            "viabilidad": "La propuesta es viable, pero enfrenta desafíos por la falta de presupuesto y normas habilitantes.",
+            "especificidad": "Las medidas y las instituciones están claramente definidas y nombradas en el plan."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa qué propone el candidato para proteger la infraestructura digital del Estado, los datos personales de los ciudadanos y la seguridad de las comunicaciones críticas del país.",
+            "importancia": "La protección de datos y ciberseguridad es crucial para salvaguardar la información sensible de los ciudadanos y garantizar la integridad de los servicios digitales del Estado, especialmente ante el aumento de ataques cibernéticos.",
+            "diagnostico_externo": "El Perú ocupa el puesto 93 de 193 en el Índice Global de Ciberseguridad 2024, y solo el 15% de las entidades estatales tiene un plan de continuidad ante incidentes cibernéticos, lo que indica una grave vulnerabilidad en la infraestructura digital del país.",
+            "propuesta_plan": "El plan propone la creación del CERT-Perú, una Red Nacional de Comunicaciones Críticas, un Centro de Fusión de Inteligencia, data centers soberanos, protección de infraestructura crítica y el uso de blockchain para la transparencia en contrataciones públicas.",
+            "medidas_concretas": "Las medidas específicas incluyen la creación del CERT-Perú, la implementación de una Red Nacional de Comunicaciones Críticas, un Centro de Fusión de Inteligencia, data centers soberanos y el uso de blockchain en contrataciones públicas.",
+            "implementacion_necesaria": "Para implementar estas propuestas se requiere una norma habilitante para el CERT-Perú, una norma para la Red de Comunicaciones Críticas, una norma para el Centro de Fusión de Inteligencia y una inversión de entre USD 200 y 500 millones para los data centers soberanos.",
+            "impacto_potencial": "La implementación de estas medidas podría transformar la respuesta ante incidentes cibernéticos, mejorar la coordinación interinstitucional y proteger la información crítica del Estado, reduciendo la dependencia de infraestructura extranjera.",
+            "vacios": "El plan presenta vacíos significativos, como la falta de presupuesto para los data centers soberanos, la ausencia de una norma habilitante para la Red de Comunicaciones Críticas y la necesidad de actualizar la Ley 29733 de 2011.",
+            "evaluacion_tecnica": "La propuesta del CERT-Perú es la más completa del proceso electoral, pero la falta de presupuesto y la omisión de la actualización legal son debilidades que podrían comprometer la efectividad de las medidas propuestas.",
+            "conclusion": "La variable obtiene una calificación de 7.5/10, destacándose como una de las más sólidas del bloque tecnológico, aunque presenta importantes brechas que deben ser abordadas para garantizar la protección efectiva de datos y ciberseguridad en el país."
+          },
+          "sources": []
+        }
+      ]
+    }
+  ],
+  "_converted_from_docx": true,
+  "_converted_at": "2026-03-19T20:43:02.670Z"
+}

@@ -1,0 +1,2113 @@
+{
+  "_schema_version": "2.0",
+  "candidate": {
+    "id": "ronald_atencio_calderon",
+    "name": "RONALD ATENCIO CALDERÓN",
+    "party": "Alianza Electoral Venceremos",
+    "color": null,
+    "plan_period": "2026-2031",
+    "plan_pages": null,
+    "total_score": 4.84,
+    "ranking_position": null,
+    "summary": "El plan de gobierno presenta un diagnóstico preciso sobre la situación económica del país, pero sus propuestas son consideradas de alto riesgo y técnicamente inejecutables debido a una brecha fiscal estructural significativa. La viabilidad de las medidas propuestas se ve comprometida por la inconsistencia fiscal y la falta de mecanismos de ejecución claros.",
+    "strengths": [],
+    "weaknesses": [],
+    "methodological_notes": [],
+    "methodological_corrections": []
+  },
+  "methodology": {
+    "evaluation_method": "Metodología D/P/M/Im/V/E",
+    "scoring_scale": "Escala de 0 a 2, donde 0 indica inviabilidad y 2 indica alta viabilidad.",
+    "criteria_description": {
+      "diagnostico": "Evalúa la precisión y veracidad de los datos del diagnóstico provenientes de fuentes externas verificables.",
+      "propuesta": "Evalúa la calidad y factibilidad de las propuestas presentadas en el plan.",
+      "medidas": "Evalúa la existencia de mecanismos reales de ejecución para las propuestas escritas.",
+      "implementacion": "Evalúa si la institución responsable tiene mandato, presupuesto y secuencia operativa concreta para implementar las propuestas.",
+      "viabilidad": "Evalúa el riesgo de que una propuesta sea técnicamente imposible de ejecutar sin daño sistémico.",
+      "especificidad": "Evalúa si el plan incluye números, leyes o montos que garanticen la ejecutabilidad y responsabilidad económica de las propuestas."
+    },
+    "formula": "La viabilidad (V) se reduce a 0 cuando una propuesta genera riesgos graves que la hacen técnicamente imposible de ejecutar.",
+    "analysts": [],
+    "review_date": null
+  },
+  "blocks": [
+    {
+      "id": "economia",
+      "name": "ECONOMÍA",
+      "average_score": 3.5,
+      "color": null,
+      "summary": "",
+      "strengths": [],
+      "weaknesses": [],
+      "interpretation": "",
+      "variables": [
+        {
+          "id": "politica_tributaria",
+          "name": "Política tributaria",
+          "block_id": "economia",
+          "final_score": 5,
+          "rating_label": "débil",
+          "summary": "El plan propone derogar exoneraciones tributarias injustificadas y establecer nuevos impuestos para aumentar la presión tributaria del 14.1% al 20% en cinco años. Se busca combatir la evasión y elusión tributaria, aunque la implementación enfrenta desafíos significativos.",
+          "strengths": [
+            "Identificación precisa del déficit de recaudación",
+            "Propuesta redistributiva articulada con instrumentos claros",
+            "Metas escalonadas verificables"
+          ],
+          "weaknesses": [
+            "Falta de mandato operativo y presupuesto para la SUNAT",
+            "Incertidumbre en la delegación de facultades al Ejecutivo",
+            "Meta del 20% en cinco años considerada irrealizable"
+          ],
+          "gaps": [
+            "Ausencia de un cronograma de implementación para nuevos impuestos",
+            "Falta de estrategia de transición para el sector agroexportador"
+          ],
+          "conclusion": "El plan presenta una propuesta coherente, pero carece de los instrumentos necesarios para su ejecución efectiva. Sin una SUNAT reforzada y sin mayoría parlamentaria, la viabilidad de las medidas es muy limitada.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 0,
+            "viabilidad": 0,
+            "especificidad": 1
+          },
+          "criteria_sum": 6,
+          "formula_result": 5,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 0,
+            "viabilidad": 0,
+            "especificidad": 1,
+            "sum": 6,
+            "final": 5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "BCRP 2024: presión tributaria 14.1% del PBI. SUNAT: evasión IGV 35%+, IR corporativo 50%.",
+            "propuesta": "Propuesta redistributiva articulada con 6 instrumentos y metas escalares verificables.",
+            "medidas": "Las metas existen pero la SUNAT no tiene mandato operativo. El mecanismo central de ejecución está ausente.",
+            "implementacion": "La delegación de facultades es incierta sin mayoría parlamentaria. La SUNAT no tiene mandato ni presupuesto adicional.",
+            "viabilidad": "La meta del 20% en cinco años no tiene precedente en la región. El impuesto a fortunas requiere reforma constitucional.",
+            "especificidad": "Hay especificidad: Ley Chlimper 2.0 como norma identificada + meta 14.1%→16.4% en año 1. Pero sin ejecutabilidad real."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas para modificar la política tributaria del Estado peruano, analizando qué impuestos se crean, eliminan o modifican, así como la estrategia para mejorar la recaudación fiscal. Se centra en la identificación precisa de problemas y en la viabilidad de los instrumentos propuestos para su solución.",
+            "importancia": "La política tributaria es crucial para el financiamiento de servicios públicos esenciales como salud, educación e infraestructura. Dado que Perú tiene una de las presiones tributarias más bajas de América Latina, mejorar la recaudación fiscal es fundamental para el desarrollo sostenible del país.",
+            "diagnostico_externo": "El diagnóstico revela que la presión tributaria en Perú ha caído al 14.1% del PBI, con una evasión significativa en impuestos como el IGV y el impuesto a la renta corporativa. La brecha de recaudación es alarmante, alcanzando aproximadamente S/79,000 millones anuales, lo que indica un potencial de recaudación no aprovechado.",
+            "propuesta_plan": "El plan propone derogar exoneraciones tributarias injustificadas y establecer nuevos impuestos, como el de sobreganancias mineras y el de grandes fortunas. Se establecen metas escalonadas para aumentar la presión tributaria del 14.1% al 20% en cinco años.",
+            "medidas_concretas": "Entre las medidas concretas se incluye la derogación de exoneraciones tributarias mediante la delegación de facultades al Ejecutivo, así como la implementación de nuevos impuestos. También se menciona el combate a la evasión tributaria, aunque sin detalles claros sobre su ejecución.",
+            "implementacion_necesaria": "Para implementar las propuestas, se requiere la aprobación del Congreso para la delegación de facultades al Ejecutivo, lo cual es incierto sin una mayoría parlamentaria. Además, la SUNAT necesita un mandato operativo y un presupuesto reforzado para llevar a cabo las nuevas medidas.",
+            "impacto_potencial": "Si se implementa correctamente, la propuesta podría generar ingresos significativos, con estimaciones de hasta S/27,000 millones anuales por la eliminación de exoneraciones. Sin embargo, la falta de mayoría parlamentaria podría limitar la recaudación efectiva.",
+            "vacios": "El plan carece de un cronograma de implementación para los nuevos impuestos y no aborda cómo se manejará la transición para sectores afectados, como el agroexportador. También falta un plan alternativo en caso de que el Congreso no otorgue las facultades necesarias.",
+            "evaluacion_tecnica": "La evaluación técnica muestra que, aunque las metas están definidas, la ausencia de un mandato reforzado para la SUNAT y la falta de mayoría parlamentaria generan incertidumbre sobre la implementación. La meta del 20% en cinco años es considerada irrealizable sin reformas estructurales previas.",
+            "conclusion": "En resumen, aunque el plan identifica correctamente el déficit de recaudación y propone una reforma redistributiva coherente, la falta de instrumentos de ejecución adecuados y la incertidumbre política limitan su viabilidad, resultando en una calificación débil de 5.0/10."
+          },
+          "sources": []
+        },
+        {
+          "id": "gasto_publico",
+          "name": "Gasto público",
+          "block_id": "economia",
+          "final_score": 2.5,
+          "rating_label": "insuficiente",
+          "summary": "La propuesta incluye un programa de 'Financiamiento Popular' con una garantía pública de S/20,000 millones para dinamizar pymes y un 'shock' de inversión pública en infraestructura. También se busca fortalecer el Banco de la Nación y regular las tasas de interés máximas.",
+          "strengths": [
+            "Diagnóstico preciso sobre la situación fiscal",
+            "Orientación hacia la inversión productiva",
+            "Propuestas que buscan dinamizar la economía"
+          ],
+          "weaknesses": [
+            "Falta de fuente fiscal para la garantía pública",
+            "Inexistencia de una tabla de financiamiento multianual",
+            "No se especifica qué se dejaría de gastar si la reforma tributaria fracasa"
+          ],
+          "gaps": [
+            "No hay cronograma de ejecución del shock de inversión",
+            "Falta de norma legal para el presupuesto participativo vinculante"
+          ],
+          "conclusion": "El plan presenta una brecha fiscal estructural significativa que lo hace técnicamente inviable. A pesar de algunas propuestas positivas, la falta de financiamiento claro limita su efectividad.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 0,
+            "implementacion": 0,
+            "viabilidad": 0,
+            "especificidad": 0
+          },
+          "criteria_sum": 3,
+          "formula_result": 2.5,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 0,
+            "implementacion": 0,
+            "viabilidad": 0,
+            "especificidad": 0,
+            "sum": 3,
+            "final": 2.5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "MEF 2024: déficit 3.5% PBI. BCRP: deuda 33.9% PBI. Contraloría: 2,300 obras paralizadas por S/22,000M.",
+            "propuesta": "La orientación hacia inversión productiva y gestión eficiente apunta en la dirección correcta, pero el diseño está incompleto.",
+            "medidas": "S/20,000M sin fuente es una intención, no una medida. El shock de inversión no tiene tabla de financiamiento.",
+            "implementacion": "Nombrar a COFIDE y al Banco de la Nación no reemplaza una arquitectura presupuestal real.",
+            "viabilidad": "Brecha de S/17,780-53,480M/año en el año 1. Si se ejecuta todo, el déficit llegaría al 7-10% del PBI.",
+            "especificidad": "S/20,000M sin fuente no tiene valor ejecutable. El shock de inversión no tiene especificidad de financiamiento."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas sobre cómo el Estado gasta el dinero, analizando en qué invierte, cuánto gasta, la viabilidad de ese gasto y su sostenibilidad a largo plazo. Se centra en la capacidad del plan para mejorar el gasto sin comprometer la estabilidad fiscal del país.",
+            "importancia": "El gasto público es fundamental para transformar la vida de las personas, ya que una política de gasto bien diseñada puede reducir la pobreza, construir infraestructura y dinamizar la economía. Un mal manejo del gasto, sin embargo, puede llevar a crisis fiscales que afectan desproporcionadamente a los sectores más vulnerables.",
+            "diagnostico_externo": "El diagnóstico actual muestra un déficit fiscal del 3.5% del PBI y una deuda pública del 33.9% del PBI. Además, existen 2,300 obras paralizadas valoradas en S/22,000 millones y los gobiernos regionales y locales solo ejecutan el 55% de su presupuesto de inversión.",
+            "propuesta_plan": "El plan propone un programa de 'Financiamiento Popular' con una garantía pública de S/20,000 millones para apoyar a pymes y otros sectores. También incluye un 'shock' de inversión pública en infraestructura y la creación de parques industriales regionales.",
+            "medidas_concretas": "Entre las medidas específicas se encuentran la garantía pública de S/20,000 millones, un shock de inversión pública sin tabla de financiamiento, y un presupuesto participativo vinculante sin norma legal que lo respalde. También se busca ampliar el crédito del Banco de la Nación a pymes y cooperativas.",
+            "implementacion_necesaria": "Para implementar estas propuestas, se requiere una reforma del sistema presupuestal y una norma que haga vinculante el presupuesto participativo. Además, es esencial contar con una tabla de financiamiento que explique la procedencia de los S/20,000 millones de garantía.",
+            "impacto_potencial": "Si se ejecuta el gasto según lo prometido, el déficit fiscal podría escalar entre el 7% y el 10% del PBI, lo que activaría una crisis de deuda soberana. Esto podría resultar en un encarecimiento del crédito y una depreciación del sol, afectando gravemente la economía.",
+            "vacios": "El plan carece de una tabla de financiamiento multianual y no identifica la fuente para los S/20,000 millones de garantía pública. También falta un cronograma de ejecución para el shock de inversión y no se menciona qué gastos se reducirían si la reforma tributaria no tiene éxito.",
+            "evaluacion_tecnica": "La evaluación técnica muestra que la propuesta es inviable debido a la incompatibilidad fiscal estructural. La brecha entre los compromisos de gasto y los ingresos adicionales que podría generar la reforma tributaria es insalvable, lo que lleva a una calificación muy baja.",
+            "conclusion": "En resumen, aunque el diagnóstico es preciso y la orientación hacia la inversión productiva es positiva, la brecha fiscal estructural y la falta de un diseño sólido hacen que esta variable sea técnicamente inviable, resultando en una calificación de 2.5/10."
+          },
+          "sources": []
+        },
+        {
+          "id": "politica_de_inversion_privada",
+          "name": "Política de inversión privada",
+          "block_id": "economia",
+          "final_score": 2.5,
+          "rating_label": "insuficiente",
+          "summary": "El plan propone revisar y renegociar contratos-ley para recuperar la soberanía sobre recursos estratégicos, modificar la Constitución para garantizar dicha soberanía, y reformar el régimen de concesiones mineras para incluir participación comunitaria. Sin embargo, estas propuestas presentan riesgos significativos para la inversión privada en el país.",
+          "strengths": [
+            "El diagnóstico sobre la inversión privada es sólido y basado en datos confiables.",
+            "La propuesta tiene coherencia ideológica interna.",
+            "Se reconoce la importancia de la inversión privada para el crecimiento económico del Perú."
+          ],
+          "weaknesses": [
+            "La propuesta de renegociar contratos-ley viola la Constitución.",
+            "No se establece un marco de compensación para las expropiaciones.",
+            "La implementación de las medidas propuestas podría paralizar el 60% de las exportaciones."
+          ],
+          "gaps": [
+            "No se define qué constituye una 'concesión ociosa'.",
+            "Falta un cronograma de transición y gradualidad en la implementación."
+          ],
+          "conclusion": "La evaluación técnica final indica que, a pesar de un diagnóstico sólido, las propuestas son inviables y presentan riesgos catastróficos para la economía. La falta de compensación y la activación de arbitrajes internacionales son preocupaciones clave.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 0,
+            "implementacion": 0,
+            "viabilidad": 0,
+            "especificidad": 0
+          },
+          "criteria_sum": 3,
+          "formula_result": 2.5,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 0,
+            "implementacion": 0,
+            "viabilidad": 0,
+            "especificidad": 0,
+            "sum": 3,
+            "final": 2.5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "D=2/2, basado en datos del BCRP y MINEM sobre la inversión privada y la cartera de proyectos.",
+            "propuesta": "P=1/2, coherencia ideológica interna pero falta de política de transición y compensación.",
+            "medidas": "M=0/2, la intención de expropiar sin compensación no es implementable.",
+            "implementacion": "Im=0/2, ausencia de institución de compensación y arquitectura de transición jurídica.",
+            "viabilidad": "V=0/2, riesgo de parálisis del 60% de exportaciones durante la incertidumbre constituyente.",
+            "especificidad": "E=0/2, falta de definición de compensación y umbral de 'ociosa', sin gradualidad."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas del plan de gobierno en relación a las reglas que rigen la inversión privada en el Perú, incluyendo aspectos como contratos de estabilidad jurídica, régimen de concesiones y seguridad legal para los inversionistas. Se centra en entender cómo estas propuestas podrían afectar la inversión en sectores clave para la economía nacional.",
+            "importancia": "La inversión privada es fundamental para el crecimiento económico del Perú, representando el 15.8% del PBI y con una cartera de proyectos mineros que supera los US$50,000 millones. Cambios bruscos en las reglas de inversión pueden tener consecuencias severas sobre el empleo, los ingresos fiscales y el bienestar de la población.",
+            "diagnostico_externo": "Según el BCRP, la inversión privada ha caído al 15.8% del PBI, y el MINEM reporta una cartera de proyectos mineros activa de más de US$50,000 millones. La incertidumbre política ha llevado a que Proinversión tenga 23 proyectos de APP en espera, lo que refleja un contexto de baja competitividad para la inversión.",
+            "propuesta_plan": "El plan propone revisar y renegociar contratos-ley para recuperar la soberanía sobre recursos estratégicos, modificar la Constitución para garantizar dicha soberanía, y reformar el régimen de concesiones mineras para incluir participación comunitaria. También sugiere la revocación o expropiación de concesiones consideradas 'ociosas'.",
+            "medidas_concretas": "Las medidas específicas incluyen la renegociación de contratos-ley, lo cual podría violar el Artículo 62 de la Constitución, y la expropiación de concesiones 'ociosas' sin definir criterios claros. Además, se plantea una reforma constitucional del régimen de concesiones mineras que requeriría una Asamblea Constituyente previa.",
+            "implementacion_necesaria": "Para implementar estas propuestas, se necesitaría una Asamblea Constituyente, un marco de compensación que cumpla con el derecho internacional, y una institucionalidad de transición. Sin embargo, el plan no menciona ninguna de estas condiciones necesarias para una implementación responsable.",
+            "impacto_potencial": "El impacto potencial de estas medidas podría ser catastrófico, ya que la minería representa el 60% de las exportaciones y el 10% del PBI. Una caída en la inversión minera podría llevar a una contracción de las reservas internacionales y a la depreciación del sol, afectando gravemente la economía.",
+            "vacios": "El plan carece de definiciones claras sobre qué constituye una 'concesión ociosa' y no establece un marco de compensación adecuado. Además, no incluye un cronograma de transición ni calcula el costo de los arbitrajes internacionales que podrían activarse.",
+            "evaluacion_tecnica": "La evaluación técnica de la propuesta es muy negativa, con un puntaje de 2.5/10. La intención de expropiar sin compensación es considerada una declaración política sin viabilidad, y la falta de un marco de compensación y transición jurídica agrava la situación.",
+            "conclusion": "En conclusión, aunque el diagnóstico sobre la inversión privada es sólido, las propuestas del plan son muy débiles y presentan riesgos catastróficos para la economía peruana. La falta de consideración por la Constitución y los estándares internacionales de compensación limita su viabilidad y efectividad."
+          },
+          "sources": []
+        },
+        {
+          "id": "formalizacion_laboral",
+          "name": "Formalización laboral",
+          "block_id": "economia",
+          "final_score": 5,
+          "rating_label": "débil",
+          "summary": "La propuesta busca elevar la Remuneración Mínima Vital (RMV) de S/1,130 a S/1,816, duplicar los inspectores de la SUNAFIL y alcanzar una tasa de sindicalización del 20%. Sin embargo, no incluye un cronograma gradual para la implementación del aumento salarial, lo que podría generar más informalidad en lugar de reducirla.",
+          "strengths": [
+            "Reconocimiento de la brecha entre el salario mínimo y la canasta básica familiar",
+            "Propuestas concretas para fortalecer la SUNAFIL",
+            "Distinción metodológica entre tipos de informalidad"
+          ],
+          "weaknesses": [
+            "Falta de un cronograma gradual para el aumento de la RMV",
+            "Ausencia de mecanismos de protección para microempresas de bajo margen",
+            "No se presenta un presupuesto específico para ampliar la SUNAFIL"
+          ],
+          "gaps": [
+            "No se especifica un plan de acción para la implementación gradual",
+            "Falta de medidas de apoyo para microempresas formales"
+          ],
+          "conclusion": "La propuesta es técnicamente débil debido a la falta de gradualidad en el aumento de la RMV, lo que podría resultar en un aumento de la informalidad. A pesar de sus buenas intenciones, la implementación irresponsable podría tener efectos adversos.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 0,
+            "especificidad": 1
+          },
+          "criteria_sum": 6,
+          "formula_result": 5,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 0,
+            "especificidad": 1,
+            "sum": 6,
+            "final": 5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "INEI/ENAHO 2024: informalidad 72.8% de la PEA. MTPE: RMV S/1,130 (-14% de poder adquisitivo 2018-2024).",
+            "propuesta": "La distinción metodológica entre informalidad asalariada y autoempleo es correcta. La orientación es adecuada.",
+            "medidas": "La RMV con monto específico y la SUNAFIL ampliada existen, pero el aumento del 60.7% sin gradualidad es técnicamente irresponsable.",
+            "implementacion": "SUNAFIL y MTPE tienen mandato diferenciado, pero sin presupuesto ni secuencia de implementación.",
+            "viabilidad": "Un aumento del 60.7% de la RMV sin gradualidad puede aumentar la informalidad. Paradoja contra el objetivo declarado.",
+            "especificidad": "La RMV de S/1,816 está fundamentada en la canasta básica + SUNAFIL reforzada. Sin gradualidad, la especificidad no se puede ejecutar responsablemente."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas para reducir el trabajo informal en Perú, centrándose en medidas como el aumento del salario mínimo, la ampliación de inspectores laborales, reformas en los regímenes de contratación e incentivos para la formalización de empresas.",
+            "importancia": "La formalización laboral es crucial para el desarrollo del país, ya que el 72.8% de los trabajadores peruanos son informales, lo que implica la falta de acceso a seguros de salud, pensiones y protección laboral, afectando la economía y el bienestar social.",
+            "diagnostico_externo": "Según la ENAHO 2024, la informalidad laboral afecta al 72.8% de la Población Económicamente Activa. Además, el salario mínimo actual es de S/1,130, mientras que la canasta básica familiar asciende a S/1,816, lo que refleja una brecha significativa en el poder adquisitivo.",
+            "propuesta_plan": "El plan propone elevar la Remuneración Mínima Vital (RMV) de S/1,130 a S/1,816, lo que representa un aumento del 60.7%. También sugiere alcanzar una tasa de sindicalización del 20% y duplicar el número de inspectores de la SUNAFIL.",
+            "medidas_concretas": "Las medidas específicas incluyen el aumento de la RMV sin un cronograma gradual, la meta de sindicalización del 20% sin mecanismos claros para alcanzarla, y la ampliación de inspectores de la SUNAFIL de 800 a 2,000.",
+            "implementacion_necesaria": "Para implementar estas propuestas, se requiere un cronograma gradual para el aumento de la RMV, presupuesto para ampliar la SUNAFIL y mecanismos de apoyo para microempresas que puedan enfrentar el incremento de costos.",
+            "impacto_potencial": "Si se implementa correctamente, la formalización laboral podría aumentar la recaudación del Estado, mejorar la productividad y permitir que más trabajadores accedan al sistema de pensiones, contribuyendo al desarrollo económico del país.",
+            "vacios": "El plan carece de un cronograma gradual para el aumento de la RMV, no incluye mecanismos de protección para microempresas de bajo margen y no presenta un presupuesto específico para la ampliación de la SUNAFIL.",
+            "evaluacion_tecnica": "La evaluación técnica indica que, aunque existen propuestas válidas, el aumento del 60.7% de la RMV sin gradualidad es irresponsable y podría generar más informalidad, contradiciendo el objetivo de la propuesta.",
+            "conclusion": "En conclusión, aunque el plan aborda la brecha entre el salario mínimo y la canasta básica, su falta de gradualidad y protección para microempresas presenta un riesgo significativo, resultando en una calificación final de 5.0/10, lo que indica una propuesta débil."
+          },
+          "sources": []
+        },
+        {
+          "id": "politica_minera_y_recursos_naturales",
+          "name": "Política minera y recursos naturales",
+          "block_id": "economia",
+          "final_score": 2.5,
+          "rating_label": "insuficiente",
+          "summary": "La propuesta busca modificar la Constitución para establecer soberanía sobre los recursos mineros, reformar el régimen de concesiones e incluir participación de las comunidades. También plantea medidas como la destrucción de dragas de minería ilegal y la creación de un Nuevo Banco Agrario para apoyar a los agricultores.",
+          "strengths": [
+            "Diagnóstico sólido sobre la importancia de la minería en la economía peruana",
+            "Propuestas que abordan la formalización de la minería artesanal",
+            "Medidas viables como la destrucción de dragas y el crédito agrario"
+          ],
+          "weaknesses": [
+            "Mezcla de medidas viables con propuestas destructivas",
+            "Falta de definición clara sobre concesiones 'ociosas'",
+            "Riesgo de arbitrajes internacionales por la reforma constitucional"
+          ],
+          "gaps": [
+            "No se define el umbral del 'latifundio'",
+            "No se incluye una arquitectura de compensación conforme al derecho internacional"
+          ],
+          "conclusion": "La política minera es muy débil debido a la mezcla de medidas que generan riesgo macroeconómico sistémico, lo que la hace inimplementable en su conjunto.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 0,
+            "implementacion": 0,
+            "viabilidad": 0,
+            "especificidad": 0
+          },
+          "criteria_sum": 3,
+          "formula_result": 2.5,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 0,
+            "implementacion": 0,
+            "viabilidad": 0,
+            "especificidad": 0,
+            "sum": 3,
+            "final": 2.5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "MINEM 2024 confirma que la minería aporta el 60% de las exportaciones y el 10% del PBI, con 192 conflictos socioambientales activos.",
+            "propuesta": "Distingue entre minería formal e ilegal, pero la reforma constitucional presenta riesgos significativos.",
+            "medidas": "Mezcla medidas viables con propuestas destructivas, lo que afecta la implementación general.",
+            "implementacion": "No existe una institución de transición jurídica que garantice la implementación de las reformas propuestas.",
+            "viabilidad": "La reforma constitucional activa arbitrajes CIADI sobre una cartera de US$50,000 millones, lo que representa un alto riesgo.",
+            "especificidad": "Falta de umbrales claros para 'latifundio' y 'concesión ociosa', así como una arquitectura de compensación definida."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas sobre cómo gestionar el sector extractivo, incluyendo la regulación minera, la relación con comunidades, la formalización de la minería artesanal, la reforma del régimen de concesiones y la política agraria. Se centra en la distinción entre minería formal e ilegal, y la necesidad de instrumentos diferenciados para cada una.",
+            "importancia": "La minería es crucial para la economía peruana, representando el 60% de las exportaciones y el 10% del PBI. Una política minera adecuada puede maximizar beneficios fiscales y sociales, mientras que una mala gestión puede generar conflictos sociales y destruir ingresos estatales.",
+            "diagnostico_externo": "Según el MINEM, la minería aporta significativamente a la economía, pero la Defensoría del Pueblo reporta 192 conflictos socioambientales, el 67% relacionados con minería. Además, el MINAM indica que la minería ilegal es responsable del 95% de la deforestación en la Amazonía.",
+            "propuesta_plan": "El plan propone modificar la Constitución para establecer soberanía sobre los recursos mineros, reformar el régimen de concesiones para incluir participación comunitaria, expropiar concesiones ociosas, y crear un Nuevo Banco Agrario para financiar a agricultores. También sugiere un impuesto a las sobreganancias mineras.",
+            "medidas_concretas": "Las medidas específicas incluyen la modificación constitucional para la soberanía minera, la expropiación de concesiones ociosas, la destrucción de dragas en ríos amazónicos, y la creación de un Nuevo Banco Agrario. Sin embargo, algunas medidas carecen de definición clara, como el umbral para concesiones ociosas.",
+            "implementacion_necesaria": "Para implementar las propuestas, se requiere un proceso constituyente con cláusulas de transición jurídica, un mecanismo de compensación conforme al derecho internacional, y la definición precisa de 'concesión ociosa'. También es necesario un cronograma claro para la formalización de la minería artesanal.",
+            "impacto_potencial": "Si se implementan correctamente, las medidas como la destrucción de dragas y el crédito agrario podrían tener un impacto positivo significativo. Sin embargo, la reforma constitucional podría generar riesgos macroeconómicos que afectarían la inversión y las exportaciones.",
+            "vacios": "El plan no define el umbral del 'latifundio' ni cuantifica qué constituye una 'concesión ociosa'. Además, carece de una arquitectura de compensación adecuada y no separa las medidas viables de las que generan riesgo sistémico.",
+            "evaluacion_tecnica": "La evaluación técnica indica que el conjunto de la política minera es inimplementable en su forma actual, ya que las propuestas constitucionales sin compensación dominan el conjunto. Esto genera un riesgo significativo para la inversión y las exportaciones.",
+            "conclusion": "La política minera presenta una mezcla de medidas viables y propuestas que generan riesgos macroeconómicos sistémicos, lo que hace que el conjunto sea inimplementable. La falta de claridad y definición en varios aspectos críticos limita la efectividad del plan."
+          },
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "seguridad",
+      "name": "SEGURIDAD",
+      "average_score": 6.27,
+      "color": null,
+      "summary": "",
+      "strengths": [],
+      "weaknesses": [],
+      "interpretation": "",
+      "variables": [
+        {
+          "id": "seguridad_ciudadana",
+          "name": "Seguridad ciudadana",
+          "block_id": "seguridad",
+          "final_score": 6.7,
+          "rating_label": "moderado",
+          "summary": "La propuesta del plan de seguridad ciudadana incluye la creación de un Comando Unificado de Combate al Crimen (CUCC) liderado por el Presidente, el incremento de efectivos policiales y el control militar de fronteras. También se plantea la captura de líderes criminales y el derribo de narco-avionetas como medidas clave para mejorar la seguridad en el país.",
+          "strengths": [
+            "Propuesta articulada para mejorar la coordinación interinstitucional",
+            "Incremento significativo de efectivos policiales",
+            "Medidas con precedentes positivos en otros países"
+          ],
+          "weaknesses": [
+            "Falta de presupuesto específico para el CUCC",
+            "Ausencia de marco legal para el derribo de avionetas",
+            "Meta de captura de los Quispe Palomino sin fundamento técnico"
+          ],
+          "gaps": [
+            "Necesidad de una norma ejecutiva para el CUCC",
+            "Requerimiento de un decreto que habilite el uso de fuerza"
+          ],
+          "conclusion": "El plan presenta una propuesta operativamente articulada, pero enfrenta serias deficiencias en términos de financiamiento y marco legal. La meta de captura en seis meses es considerada una sobrepromesa sin base técnica.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1
+          },
+          "criteria_sum": 8,
+          "formula_result": 6.7,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1,
+            "sum": 8,
+            "final": 6.7
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "INEI 2024: victimización 25.6%. MININTER 2024: extorsión +679%. Contraloría 2023: S/24,268M en pérdidas.",
+            "propuesta": "El CUCC presidencial resuelve el problema central de fragmentación interinstitucional. Estrategia articulada.",
+            "medidas": "El CUCC y el derribo de avionetas existen, pero sin presupuesto ni norma habilitante para el uso de fuerza.",
+            "implementacion": "PNP y FF.AA. nombradas. Sin financiamiento ni norma de uso de fuerza para el derribo.",
+            "viabilidad": "El CUCC es operativamente posible. La meta de 6 meses es una sobrepromesa sin base técnica.",
+            "especificidad": "El CUCC (institución) + meta de 6 meses. Pero esa meta es irrealizable como compromiso de política pública."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas para reducir la criminalidad urbana, mejorar la coordinación entre fuerzas de seguridad y disminuir la victimización de los ciudadanos. Se centra en la coherencia de la arquitectura institucional y la existencia de instrumentos verificables para su implementación.",
+            "importancia": "La inseguridad ciudadana es la principal preocupación de los peruanos, afectando la calidad de vida y desincentivando la inversión. Con una alta tasa de victimización y un alarmante aumento en la extorsión, es crucial abordar este problema para mejorar la seguridad y el bienestar de la población.",
+            "diagnostico_externo": "El INEI reporta una victimización urbana del 25.6%, mientras que el MININTER indica un crecimiento del 679% en extorsiones entre 2020 y 2024. Además, la Contraloría documentó pérdidas significativas por corrupción y la PNP registró un aumento en los homicidios, lo que refleja un contexto crítico en materia de seguridad.",
+            "propuesta_plan": "El plan propone la creación de un Comando Unificado de Combate al Crimen (CUCC) liderado por el Presidente, control militar de fronteras, y el uso de tecnología para la inteligencia policial. También incluye metas específicas como la captura de líderes criminales y el incremento de efectivos policiales.",
+            "medidas_concretas": "Se identifican medidas como la creación del CUCC, la captura de los hermanos Quispe Palomino en seis meses, el derribo de narco-avionetas, y el incremento de 20,000 efectivos policiales. También se propone reforzar la prevención del reclutamiento criminal y establecer un pacto social con mineros informales.",
+            "implementacion_necesaria": "Para implementar las propuestas, se requiere un presupuesto específico para el CUCC y una norma habilitante para el derribo de avionetas. Además, es necesaria una estrategia de prevención social complementaria y un decreto que regule el uso de la fuerza.",
+            "impacto_potencial": "Si se implementa correctamente, el CUCC podría mejorar la coordinación interinstitucional y reducir la fragmentación operativa en las fuerzas de seguridad. Sin embargo, la captura de los Quispe Palomino en seis meses es considerada una sobrepromesa, lo que podría limitar el impacto real de las medidas.",
+            "vacios": "El plan carece de un presupuesto específico para el CUCC y de un marco legal completo para el derribo de narco-avionetas. Además, la meta de captura de los Quispe Palomino en seis meses no tiene fundamento técnico, lo que genera dudas sobre su viabilidad.",
+            "evaluacion_tecnica": "La evaluación técnica muestra que, aunque el CUCC y el derribo de avionetas son propuestas válidas, carecen de presupuesto y marco legal. La PNP y las Fuerzas Armadas están nombradas, pero sin financiamiento adecuado, lo que limita la operatividad de las propuestas.",
+            "conclusion": "El bloque de seguridad ciudadana presenta una propuesta articulada, pero enfrenta serias deficiencias en términos de presupuesto y marco legal. A pesar de su potencial, la falta de fundamentos técnicos en algunas metas y la ausencia de recursos limitan su efectividad, resultando en una calificación de 6.7/10."
+          },
+          "sources": []
+        },
+        {
+          "id": "reforma_policial",
+          "name": "Reforma policial",
+          "block_id": "seguridad",
+          "final_score": 6.7,
+          "rating_label": "moderado",
+          "summary": "La propuesta busca depurar la corrupción en la Policía Nacional del Perú desde las escuelas de formación, evaluar el funcionamiento de las comisarías y modificar el Artículo 200 del Código Penal para mejorar la tipificación del delito de extorsión. Además, se plantea incorporar la participación ciudadana en la evaluación de comisarías y mejorar la formación en derechos humanos y técnicas de intervención.",
+          "strengths": [
+            "Lógica sistémica correcta en la depuración y evaluación",
+            "Modificación del Artículo 200 CP es técnicamente sólida",
+            "Incentivos estructurales adecuados para los policías"
+          ],
+          "weaknesses": [
+            "Falta de un organismo externo que supervise la depuración",
+            "Ausencia de un cronograma para la reforma policial",
+            "Carencia de presupuesto para equipamiento y modernización"
+          ],
+          "gaps": [
+            "Sin criterios claros para determinar quién es depurado",
+            "Necesidad de un presupuesto específico para modernización"
+          ],
+          "conclusion": "La reforma policial presenta una propuesta coherente, pero su éxito depende de la implementación de un organismo externo que supervise el proceso y de la asignación de recursos adecuados. Sin estas condiciones, la reforma podría ser ineficaz.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1
+          },
+          "criteria_sum": 8,
+          "formula_result": 6.7,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1,
+            "sum": 8,
+            "final": 6.7
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "MININTER 2024: rotación directiva 6 meses. Defensoría 2024: 1,247 quejas por excesos. PNP 2023: 42% de comisarías sin sancionar corrupción.",
+            "propuesta": "Depuración + evaluación articulada con lógica sistémica correcta.",
+            "medidas": "Artículo 200 CP y evaluación de comisarías existen. Sin organismo externo ni presupuesto de equipamiento.",
+            "implementacion": "PNP nombrada. Sin institución externa supervisora del proceso de depuración.",
+            "viabilidad": "Viable. Resistencia institucional esperable sin organismo externo que garantice el proceso.",
+            "especificidad": "Art. 200 CP (norma específica) + evaluación con efectos en ascenso."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas para mejorar la eficiencia, integridad y legitimidad de la Policía Nacional del Perú (PNP), enfocándose en la depuración institucional, la reforma de la carrera policial, la evaluación de desempeño y los mecanismos de participación ciudadana. Se considera si el plan va más allá de las declaraciones de buena voluntad y propone instrumentos sistémicos con supervisión externa independiente.",
+            "importancia": "La confianza ciudadana en la PNP es fundamental para cualquier estrategia de seguridad pública. Sin una policía legitimada, los esfuerzos en seguridad pierden eficacia, y la corrupción policial no solo tolera al crimen organizado, sino que en muchos casos lo alimenta activamente.",
+            "diagnostico_externo": "El MININTER reporta que los directivos de la PNP duran en promedio 6 meses en su cargo antes de ser rotados. Además, la Defensoría del Pueblo registró 1,247 quejas por excesos policiales en 2023, y el 42% de las comisarías tiene casos de corrupción sin sanción, lo que refleja un grave problema de confianza y efectividad.",
+            "propuesta_plan": "La Propuesta N°2 sugiere depurar la corrupción desde las escuelas de formación policial, evaluar el funcionamiento de comisarías con efectos directos en los ascensos de los policías, y modificar el Artículo 200 del Código Penal para mejorar la tipificación del delito de extorsión. También se propone incorporar la participación ciudadana en la evaluación de comisarías y dotar a la PNP de formación en técnicas de intervención y derechos humanos.",
+            "medidas_concretas": "Las medidas específicas incluyen la depuración desde las escuelas de formación policial, la evaluación de comisarías con efectos en el proceso de ascenso, la modificación del Artículo 200 del Código Penal, y la participación ciudadana en la evaluación del funcionamiento de las comisarías. Estas medidas buscan establecer un sistema más transparente y responsable dentro de la PNP.",
+            "implementacion_necesaria": "Para implementar estas propuestas, se necesitaría un organismo externo que supervise la depuración, la participación de SERVIR, un cronograma claro y un presupuesto específico para la modernización. Además, se requeriría una reforma del reglamento de carrera policial que vincule las evaluaciones a los ascensos.",
+            "impacto_potencial": "Si se implementa correctamente, vincular evaluaciones a ascensos generaría incentivos sistémicos que motivarían a los policías a actuar de manera ética. La modificación del Artículo 200 del Código Penal también mejoraría la tipificación del delito de extorsión, separándolo del derecho a la protesta, lo que podría fortalecer la confianza ciudadana en la PNP.",
+            "vacios": "El plan carece de una institución externa que controle el proceso de depuración, lo que podría llevar a que la reforma sea capturada internamente. También falta un cronograma de la reforma policial, un presupuesto de equipamiento y criterios claros para determinar quién es depurado y quién no.",
+            "evaluacion_tecnica": "La evaluación técnica muestra que, aunque existen propuestas concretas como el Artículo 200 del Código Penal y la evaluación de comisarías, la falta de un organismo externo supervisor y de presupuesto limita la efectividad del plan. La viabilidad es cuestionable debido a la resistencia institucional esperable sin un organismo que garantice el proceso.",
+            "conclusion": "La reforma policial presenta una lógica sistémica correcta al proponer depurar desde las escuelas y vincular evaluaciones a ascensos, lo que podría generar incentivos estructurales adecuados. Sin embargo, las carencias principales son la ausencia de un organismo externo que supervise la depuración y la falta de presupuesto de equipamiento, resultando en una calificación final de 6.7/10."
+          },
+          "sources": []
+        },
+        {
+          "id": "sistema_penitenciario",
+          "name": "Sistema penitenciario",
+          "block_id": "seguridad",
+          "final_score": 5,
+          "rating_label": "débil",
+          "summary": "La propuesta busca construir cinco mega-cárceles con altos estándares de seguridad y un enfoque en la resocialización de internos, además de bloquear las comunicaciones desde los penales. Se plantea como una solución al hacinamiento carcelario y a la operatividad del crimen organizado desde las cárceles.",
+          "strengths": [
+            "Identificación del problema del hacinamiento y crimen organizado",
+            "Enfoque dual de seguridad y resocialización",
+            "Propuesta de infraestructura penitenciaria específica"
+          ],
+          "weaknesses": [
+            "Falta de presupuesto para la construcción de mega-cárceles",
+            "Ausencia de cronograma de ejecución",
+            "El INPE no tiene mandato explícito para la implementación"
+          ],
+          "gaps": [
+            "No se incluye una estrategia para los penales existentes durante la transición",
+            "Falta de financiamiento claro para las propuestas"
+          ],
+          "conclusion": "El plan presenta una propuesta bien articulada, pero carece de los elementos necesarios para su ejecución efectiva. El impacto en el quinquenio será limitado debido a la falta de mandato y recursos.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 0,
+            "viabilidad": 1,
+            "especificidad": 1
+          },
+          "criteria_sum": 6,
+          "formula_result": 5,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 0,
+            "viabilidad": 1,
+            "especificidad": 1,
+            "sum": 6,
+            "final": 5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "INPE 2024: hacinamiento 242%. INPE 2023: 90% internos con teléfonos. Defensoría: 37.5% de inversiones pendientes.",
+            "propuesta": "Cinco mega-cárceles + resocialización tiene lógica correcta. Costoso y de impacto parcial en 5 años.",
+            "medidas": "El número específico (5) existe. Sin presupuesto (~S/3,000-5,000M) ni cronograma.",
+            "implementacion": "El INPE no aparece con mandato explícito de ejecución.",
+            "viabilidad": "Técnicamente factible, pero el impacto en el quinquenio será solo parcial (construcción tarda 3-5 años).",
+            "especificidad": "5 mega-cárceles (número específico). Sin fuente de financiamiento."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas para resolver el hacinamiento carcelario, cortar la operatividad del crimen organizado desde los penales y mejorar las condiciones de resocialización. Se busca determinar si el plan incluye soluciones estructurales con financiamiento real y un cronograma viable dentro del quinquenio.",
+            "importancia": "El sistema penitenciario colapsado es el eslabón más débil de la cadena de seguridad peruana. La resolución de estos problemas es fundamental para que cualquier estrategia de seguridad sea efectiva a largo plazo.",
+            "diagnostico_externo": "El INPE reporta un hacinamiento del 242% y estima que el 90% de los internos tienen teléfonos activos. Además, la Defensoría del Pueblo señala que el 37.5% de las inversiones del INPE están pendientes de culminación, lo que refleja un grave problema estructural.",
+            "propuesta_plan": "La Propuesta N°2 sugiere construir cinco nuevas mega-cárceles con altos estándares de seguridad y un enfoque en la resocialización. También se plantea el bloqueo efectivo de comunicaciones desde los penales para reducir la operatividad del crimen organizado.",
+            "medidas_concretas": "Las medidas específicas incluyen la construcción de 5 mega-cárceles, el cierre de la brecha de infraestructura penitenciaria y el bloqueo efectivo de las comunicaciones desde los penales. Estas acciones buscan mejorar tanto la seguridad como la resocialización de los internos.",
+            "implementacion_necesaria": "Para implementar estas propuestas, se requiere un mandato explícito al INPE, un presupuesto multianual estimado entre S/3,000 y S/5,000 millones, y un cronograma de construcción. También es necesaria una estrategia transitoria para los penales existentes durante la transición.",
+            "impacto_potencial": "El enfoque dual de seguridad y resocialización es técnicamente correcto y podría tener un impacto significativo en el control del crimen organizado desde los penales. Sin embargo, el tiempo de construcción limita el efecto real al quinquenio, ya que las nuevas cárceles podrían estar listas solo hacia el final del mandato.",
+            "vacios": "El plan carece de un presupuesto claro para las mega-cárceles y no incluye un cronograma de construcción. Además, el INPE no aparece con un mandato explícito, lo que deja la propuesta como una intención sin un instrumento de ejecución concreto.",
+            "evaluacion_tecnica": "La evaluación técnica muestra que, aunque la propuesta es factible, su impacto en el quinquenio será solo parcial. La ausencia de financiamiento y un cronograma claro limita la efectividad de las medidas propuestas.",
+            "conclusion": "El plan aborda correctamente el problema del hacinamiento y la operatividad criminal, pero su falta de presupuesto, cronograma y mandato explícito al INPE lo convierte en una propuesta débil. El impacto en el quinquenio será limitado, resultando en una calificación de 5.0/10."
+          },
+          "sources": []
+        },
+        {
+          "id": "politica_contra_el_crimen_organizado",
+          "name": "Política contra el crimen organizado",
+          "block_id": "seguridad",
+          "final_score": 6.7,
+          "rating_label": "moderado",
+          "summary": "La propuesta busca desarticular organizaciones criminales mediante la creación del CUCC, la derogación de cinco leyes pro-crimen y la articulación de la PNP con la UIF para rastrear el financiamiento del crimen. Además, se plantea un pacto social con mineros informales y cocaleros para facilitar su transición a la legalidad.",
+          "strengths": [
+            "Identificación clara de cinco leyes específicas a derogar",
+            "Articulación efectiva entre la PNP y la UIF",
+            "Propuestas concretas para abordar el crimen organizado"
+          ],
+          "weaknesses": [
+            "Dependencia de mayoría parlamentaria para la derogación de leyes",
+            "Falta de estrategia de desarrollo alternativo para el VRAEM",
+            "Ausencia de un costo operativo claro para las operaciones militares"
+          ],
+          "gaps": [
+            "Necesidad de un protocolo específico para operaciones en el VRAEM",
+            "Falta de evaluación de inteligencia actualizada"
+          ],
+          "conclusion": "La política contra el crimen organizado es técnicamente sólida, pero enfrenta desafíos significativos debido a la dependencia de la aprobación parlamentaria y la falta de un enfoque integral para el desarrollo en el VRAEM.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1
+          },
+          "criteria_sum": 8,
+          "formula_result": 6.7,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1,
+            "sum": 8,
+            "final": 6.7
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "Contraloría 2023: S/24,268M en pérdidas. MININTER 2024: extorsión +679%. UNODC: segundo productor de coca.",
+            "propuesta": "CUCC + leyes identificadas + enfoque normativo articulado. Estrategia con coherencia interna.",
+            "medidas": "Las 5 leyes con número de ley existen. La derogación requiere mayoría parlamentaria no asegurada.",
+            "implementacion": "PNP y UIF nombradas. Sin mayoría parlamentaria que garantice la derogación.",
+            "viabilidad": "Las operaciones militares son posibles. La derogación de leyes es incierta sin mayoría.",
+            "especificidad": "5 leyes con número de ley (normas específicas). Condicionadas a mayoría parlamentaria."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas para desarticular organizaciones criminales complejas, incluyendo carteles de drogas, redes de extorsión, trata de personas y lavado de activos. Se considera si el plan incluye una estrategia integral que combine operaciones de seguridad, reformas normativas y control financiero del crimen.",
+            "importancia": "El crimen organizado representa una de las principales amenazas a la seguridad nacional en Perú. Su impacto trasciende lo policial, afectando la soberanía del Estado, la economía y las instituciones, lo que hace crucial abordar esta problemática de manera efectiva.",
+            "diagnostico_externo": "Según la Contraloría, las pérdidas por corrupción alcanzan S/24,268 millones. Además, el MININTER reporta un incremento del 679% en casos de extorsión, y la UNODC posiciona a Perú como el segundo productor mundial de coca, lo que refleja un contexto crítico en la lucha contra el crimen organizado.",
+            "propuesta_plan": "El plan propone crear el CUCC, derogar cinco leyes pro-crimen, articular la PNP con la UIF para rastrear el financiamiento del crimen, derribar narco-avionetas y operar en el VRAEM, excluyendo Vizcatán. También se sugiere un pacto social con mineros informales y cocaleros para facilitar su transición hacia la legalidad.",
+            "medidas_concretas": "Las medidas específicas incluyen la derogación de las leyes 31751, 32104, 31990, 32108 y 32054, la articulación entre la PNP y la UIF, el derribo de narco-avionetas, y la creación de un pacto social con trabajadores mineros y productores cocaleros.",
+            "implementacion_necesaria": "Para implementar estas propuestas se requiere la colaboración de la PNP, la UIF y el CUCC. Además, la derogación de las leyes depende de una mayoría parlamentaria que no está garantizada, y se necesita fortalecer la UIF con más analistas y sistemas de inteligencia financiera.",
+            "impacto_potencial": "La derogación de las cinco leyes pro-crimen podría restaurar un marco normativo más efectivo, mientras que la articulación PNP-UIF mejoraría el rastreo de activos criminales. Sin embargo, el anuncio público de la estrategia en el VRAEM podría comprometer operaciones de inteligencia activas.",
+            "vacios": "El plan carece de una estrategia de desarrollo alternativo para el VRAEM y no presenta un costo operativo claro para las operaciones militares. Además, la necesidad de mayoría parlamentaria para la derogación de leyes es una limitante significativa.",
+            "evaluacion_tecnica": "La evaluación técnica muestra que, aunque las cinco leyes están identificadas, su derogación depende de una condición parlamentaria incierta. La articulación entre la PNP y la UIF es correcta, pero la falta de mayoría parlamentaria y la ausencia de una estrategia de desarrollo alternativo son obstáculos importantes.",
+            "conclusion": "La política contra el crimen organizado es una de las propuestas más articuladas del plan, con un enfoque normativo claro y medidas concretas. Sin embargo, su efectividad está condicionada por la necesidad de apoyo parlamentario y la falta de una estrategia integral para el desarrollo en áreas afectadas por el crimen."
+          },
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "justicia_y_estado_de_derecho",
+      "name": "JUSTICIA Y ESTADO DE DERECHO",
+      "average_score": 5.22,
+      "color": null,
+      "summary": "",
+      "strengths": [],
+      "weaknesses": [],
+      "interpretation": "",
+      "variables": [
+        {
+          "id": "reforma_del_sistema_judicial",
+          "name": "Reforma del sistema judicial",
+          "block_id": "justicia_y_estado_de_derecho",
+          "final_score": 5,
+          "rating_label": "débil",
+          "summary": "La propuesta busca crear 1,500 juzgados de paz y una Fiscalía especializada en derechos humanos para mejorar el acceso a la justicia en el Perú. También plantea cambios en la elección del Tribunal Constitucional y la derogación de un decreto que criminaliza la protesta social.",
+          "strengths": [
+            "Responde a una necesidad real de acceso a la justicia",
+            "Cubre un vacío institucional con la Fiscalía especializada en DDHH",
+            "Propone un número específico de juzgados"
+          ],
+          "weaknesses": [
+            "Falta de presupuesto para la implementación",
+            "Dependencia del Congreso para reformar el TC",
+            "Ausencia de un cronograma para la creación de los juzgados"
+          ],
+          "gaps": [
+            "Sin mecanismo alternativo para elegir el TC",
+            "Sin reforma del servicio civil judicial"
+          ],
+          "conclusion": "La propuesta presenta fortalezas en su enfoque, pero su viabilidad se ve comprometida por la falta de financiamiento y mecanismos claros para su implementación. La evaluación técnica final es débil, con un puntaje de 5.0/10.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 0,
+            "viabilidad": 1,
+            "especificidad": 1
+          },
+          "criteria_sum": 6,
+          "formula_result": 5,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 0,
+            "viabilidad": 1,
+            "especificidad": 1,
+            "sum": 6,
+            "final": 5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "WJP 2024: puesto 98/142. JNJ 2024: 41.7% de jueces son provisionales.",
+            "propuesta": "1,500 juzgados + Fiscalía especializada articulados, pero sin mecanismo real para reformar el TC.",
+            "medidas": "Número específico (1,500 juzgados). Sin presupuesto (~S/600-800M/año).",
+            "implementacion": "Sin presupuesto ni mecanismo alternativo real para reformar el TC.",
+            "viabilidad": "Factible si se financian los juzgados.",
+            "especificidad": "1,500 juzgados (número) + DL 1589 a derogar (norma). Sin fuente fiscal."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas para mejorar la eficiencia, cobertura e independencia del sistema de justicia en el Perú, incluyendo la creación de juzgados, la reforma de la carrera judicial, el acceso a justicia en zonas rurales y la modernización del Poder Judicial.",
+            "importancia": "Un sistema de justicia eficiente es fundamental para el Estado de Derecho, ya que su debilidad fomenta la impunidad, la corrupción y desincentiva la inversión. Además, la desigualdad en el acceso a la justicia entre zonas urbanas y rurales es un problema crítico que debe ser abordado.",
+            "diagnostico_externo": "Según el World Justice Project (WJP, 2024), Perú ocupa el puesto 98 de 142 en Estado de Derecho. Además, la Junta Nacional de Justicia (JNJ, 2024) indica que el 41.7% de los jueces son provisionales, y la confianza ciudadana en el Poder Judicial es solo del 22%.",
+            "propuesta_plan": "La Propuesta N°3 sugiere la creación de 1,500 juzgados de paz, una Fiscalía especializada en derechos humanos y crímenes de Estado, y cambios en las reglas de elección del Tribunal Constitucional y la Junta Nacional de Justicia para reducir la influencia del Congreso. También se propone derogar el Decreto Legislativo N°1589, que criminalizó la protesta social.",
+            "medidas_concretas": "Las medidas específicas incluyen la creación de 1,500 juzgados de paz (500 letrados y 1,000 no letrados), la Fiscalía especializada en derechos humanos y crímenes de Estado, y la derogación del Decreto Legislativo N°1589. Sin embargo, no se presenta un presupuesto claro para estas iniciativas.",
+            "implementacion_necesaria": "Para implementar estas propuestas se requiere la colaboración de la JNJ, el Poder Judicial y el Ministerio Público, así como un presupuesto multianual estimado entre S/600-800M al año para los juzgados. Además, se necesita una reforma legal para cambiar las reglas de elección del TC y un plan de formación para nuevos jueces y fiscales.",
+            "impacto_potencial": "La creación de 1,500 juzgados podría mejorar significativamente el acceso a la justicia en zonas rurales y periurbanas, donde actualmente es limitado. La Fiscalía especializada en derechos humanos podría llenar un vacío institucional importante, pero esto depende del financiamiento adecuado para que las propuestas se materialicen.",
+            "vacios": "El plan carece de un presupuesto específico para los 1,500 juzgados, no presenta un mecanismo alternativo concreto para elegir el TC sin depender del Congreso, y no incluye una reforma del servicio civil judicial ni un cronograma para la creación de los juzgados.",
+            "evaluacion_tecnica": "La evaluación técnica muestra que, aunque hay un número específico de juzgados propuestos, la falta de financiamiento y de un mecanismo alternativo para reformar el TC limita la viabilidad de la propuesta. La suma total de la evaluación es 6/12, resultando en una calificación de 5.0/10.",
+            "conclusion": "La propuesta de expansión judicial aborda una necesidad real en el sistema de justicia peruano, pero su debilidad principal radica en la falta de presupuesto y en la dependencia del Congreso para reformar el TC. Esto resulta en una calificación final de 5.0/10, considerada débil."
+          },
+          "sources": []
+        },
+        {
+          "id": "lucha_anticorrupcion",
+          "name": "Lucha anticorrupción",
+          "block_id": "justicia_y_estado_de_derecho",
+          "final_score": 6.7,
+          "rating_label": "moderado",
+          "summary": "La propuesta busca derogar cinco leyes que facilitan la corrupción y establecer una estrategia diferenciada entre la gran y pequeña corrupción. Además, promueve la integridad pública a través de campañas educativas y la participación de organizaciones civiles.",
+          "strengths": [
+            "Identificación de cinco leyes específicas a derogar",
+            "Estrategia diferenciada entre alta y pequeña corrupción",
+            "Articulación de instituciones como el TC, JNJ y Contraloría"
+          ],
+          "weaknesses": [
+            "Dependencia de mayoría parlamentaria para derogar leyes",
+            "Falta de reforma del servicio civil para combatir corrupción cotidiana",
+            "Ausencia de un aparato de control integral con presupuesto específico"
+          ],
+          "gaps": [
+            "Falta de indicadores de resultado de la estrategia anticorrupción",
+            "No se menciona un plan de acción concreto para la implementación"
+          ],
+          "conclusion": "La propuesta es técnicamente sólida, pero su éxito depende de la capacidad de obtener la mayoría parlamentaria necesaria. La lucha anticorrupción es crucial para recuperar recursos y restaurar la confianza institucional.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1
+          },
+          "criteria_sum": 8,
+          "formula_result": 6.7,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1,
+            "sum": 8,
+            "final": 6.7
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "TI 2024: puesto 99/180. Contraloría: S/24,268M en perjuicio documentado.",
+            "propuesta": "5 leyes identificadas + estrategia diferenciada. Es la propuesta técnicamente más sólida del bloque.",
+            "medidas": "5 leyes con número de ley. Requieren mayoría parlamentaria no asegurada.",
+            "implementacion": "TC, JNJ y Contraloría nombrados con función.",
+            "viabilidad": "Posible con mayoría parlamentaria. La reforma del TC requiere mayoría calificada.",
+            "especificidad": "5 leyes (normas específicas)."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas para reducir la corrupción en el Estado, incluyendo reformas normativas, fortalecimiento de órganos de control, estrategias diferenciadas por tipo de corrupción y mecanismos de transparencia. Se busca determinar si el plan presenta una estrategia coherente que pueda mitigar el perjuicio económico documentado.",
+            "importancia": "La lucha contra la corrupción es crucial para el desarrollo del país, ya que representa un costo significativo para la sociedad peruana. La corrupción desvía recursos del gasto social y destruye la confianza en las instituciones, afectando la calidad de vida de los ciudadanos.",
+            "diagnostico_externo": "Según Transparencia Internacional, Perú ocupa el puesto 99 de 180 en el Índice de Percepción de Corrupción. Además, la Contraloría ha documentado un perjuicio al Estado de S/24,268 millones en 2023, lo que refleja la gravedad del problema.",
+            "propuesta_plan": "El plan propone derogar cinco leyes que facilitan la corrupción, cambiar las reglas de elección del Tribunal Constitucional (TC) y la Junta Nacional de Justicia (JNJ), implementar una estrategia diferenciada entre gran corrupción y pequeña corrupción, y promover la integridad pública mediante campañas educativas.",
+            "medidas_concretas": "Se identifican cinco leyes específicas a derogar: 31751, 32104, 31990, 32108 y 32054. También se plantea cambiar las reglas del TC y la JNJ para disminuir la influencia del Congreso en estos organismos.",
+            "implementacion_necesaria": "Para implementar estas propuestas, se requiere una mayoría parlamentaria para derogar las leyes mencionadas. Además, sería necesaria una reforma del servicio civil, que no se menciona en el plan, para abordar la corrupción administrativa de bajo nivel.",
+            "impacto_potencial": "La derogación de las cinco leyes podría tener un impacto inmediato al restaurar un marco normativo más riguroso. La estrategia diferenciada permitiría abordar de manera más efectiva los distintos tipos de corrupción, potencialmente recuperando parte de los S/24,268 millones anuales en perjuicio documentado.",
+            "vacios": "El plan carece de una garantía de mayoría parlamentaria para la derogación de las leyes. También es insuficiente al no incluir una reforma del servicio civil ni un aparato de control integral con presupuesto específico, además de no presentar indicadores de resultado claros para la estrategia anticorrupción.",
+            "evaluacion_tecnica": "La evaluación técnica muestra que, aunque se identifican cinco leyes específicas y se nombran organismos con función, la falta de mayoría parlamentaria y la necesidad de reformas adicionales limitan la viabilidad de la propuesta. La calificación final es de 6.7/10, lo que indica una propuesta sólida pero con importantes limitaciones.",
+            "conclusion": "La lucha anticorrupción es la propuesta más sólida del bloque de justicia, destacando por su análisis técnico y la identificación de medidas concretas. Sin embargo, su éxito depende de factores políticos y de la implementación de reformas adicionales."
+          },
+          "sources": []
+        },
+        {
+          "id": "autonomia_institucional",
+          "name": "Autonomía institucional",
+          "block_id": "justicia_y_estado_de_derecho",
+          "final_score": 4.2,
+          "rating_label": "débil",
+          "summary": "El plan propone mecanismos de democracia directa, como referéndums vinculantes y la renovación por tercios del Congreso, para fortalecer la representación política. Sin embargo, confunde estos mecanismos con la autonomía institucional, lo que puede comprometer la independencia de organismos clave como el BCRP, OSIPTEL y OSINERGMIN.",
+          "strengths": [
+            "Propuestas de democracia directa que pueden mejorar la representación política",
+            "Mecanismos concretos identificados para el control ciudadano",
+            "Posibilidad de referéndums como herramienta de participación"
+          ],
+          "weaknesses": [
+            "Confusión entre democracia directa y autonomía institucional",
+            "Falta de protección específica para la independencia de los reguladores económicos",
+            "Ausencia de una institución garante de la autonomía de los reguladores"
+          ],
+          "gaps": [
+            "No se aborda la autonomía de los reguladores económicos",
+            "Falta de mecanismos que blinden al BCRP de presiones políticas"
+          ],
+          "conclusion": "La evaluación técnica final indica que el plan es muy débil, con un puntaje de 4.2/10. La falta de protección específica para los organismos reguladores es una deficiencia grave que puede afectar la estabilidad macroeconómica.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 0,
+            "viabilidad": 1,
+            "especificidad": 0
+          },
+          "criteria_sum": 5,
+          "formula_result": 4.2,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 0,
+            "viabilidad": 1,
+            "especificidad": 0,
+            "sum": 5,
+            "final": 4.2
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "WJP 2024: índice 0.48 en Estado de Derecho. JNJ suspendida dos veces. TC con sentencias cuestionadas.",
+            "propuesta": "La democracia directa tiene lógica, pero no es lo mismo que autonomía institucional.",
+            "medidas": "Referéndum y renovación por tercios existen. No abordan la autonomía de los reguladores económicos.",
+            "implementacion": "Sin institución garante de autonomía. BCRP, OSIPTEL y OSINERGMIN sin protección específica.",
+            "viabilidad": "El referéndum es posible.",
+            "especificidad": "Sin protección específica de la autonomía de los organismos reguladores."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas para proteger y fortalecer la independencia de las instituciones públicas clave, como el Poder Judicial, el Tribunal Constitucional, y los organismos reguladores. Se centra en la distinción entre democracia directa y autonomía institucional, conceptos que aunque relacionados, son distintos.",
+            "importancia": "La autonomía institucional es fundamental para proteger a los ciudadanos de la arbitrariedad del poder político. Sin instituciones independientes, la confianza en el sistema se erosiona, afectando la inversión y el desarrollo del país.",
+            "diagnostico_externo": "El índice de Estado de Derecho del WJP (2024) sitúa a Perú en 0.48 sobre 1, lo que indica serias deficiencias. Además, la JNJ fue suspendida en 2022-2023 y el Tribunal Constitucional ha emitido sentencias cuestionadas por sesgo político.",
+            "propuesta_plan": "El plan propone mecanismos de democracia directa, como referéndum vinculante y la renovación por tercios del Congreso. También sugiere que los ciudadanos tengan control directo sobre sus representantes electos.",
+            "medidas_concretas": "Se identifican medidas como referéndums vinculantes, la Asamblea Constituyente y la renovación por tercios del Congreso. Estas medidas buscan aumentar el control ciudadano sobre la representación política.",
+            "implementacion_necesaria": "Para implementar estas propuestas, se requiere una institución que garantice la autonomía de los reguladores específicos. Sin embargo, el plan no menciona explícitamente la protección de la independencia del BCRP, OSIPTEL y OSINERGMIN.",
+            "impacto_potencial": "Si se implementan correctamente, los mecanismos de democracia directa y la renovación por tercios podrían mejorar la calidad de la representación política. Sin embargo, la falta de protección específica para los organismos técnicos podría hacerlos vulnerables a la captura política.",
+            "vacios": "El plan confunde democracia directa con autonomía institucional, lo que es una deficiencia conceptual. Además, no se incluye una protección específica para el BCRP, OSIPTEL y OSINERGMIN, lo que es crítico para su independencia.",
+            "evaluacion_tecnica": "La evaluación técnica muestra que el plan tiene un puntaje de 4.2/10, indicando que es muy débil. La confusión entre democracia directa y autonomía institucional, junto con la falta de protección para los reguladores, son las principales debilidades.",
+            "conclusion": "En conclusión, el plan presenta serias deficiencias en la protección de la autonomía institucional, lo que podría comprometer la estabilidad macroeconómica del país. La calificación final de 4.2/10 refleja la necesidad de una revisión profunda de estas propuestas."
+          },
+          "sources": []
+        },
+        {
+          "id": "reforma_constitucional",
+          "name": "Reforma constitucional ⛔",
+          "block_id": "justicia_y_estado_de_derecho",
+          "final_score": 5,
+          "rating_label": "débil",
+          "summary": "La propuesta plantea convocar un referéndum para una Asamblea Constituyente plurinacional desde el primer día de gobierno, con ejes en la soberanía sobre recursos naturales y derechos colectivos. Se busca modernizar la Constitución, pero el proceso conlleva riesgos significativos para la inversión y la estabilidad institucional.",
+          "strengths": [
+            "Proceso constituyente descrito con mecanismo específico",
+            "Apoyo popular significativo para una nueva Constitución",
+            "Contenidos específicos en la propuesta"
+          ],
+          "weaknesses": [
+            "Incertidumbre de 18 a 36 meses que paraliza la inversión",
+            "Riesgos sistémicos asociados a la soberanía minera",
+            "Falta de cláusulas de protección para contratos existentes"
+          ],
+          "gaps": [
+            "Sin límites claros sobre el mandato de la Asamblea Constituyente",
+            "Sin mecanismos para estabilizar la incertidumbre durante el proceso"
+          ],
+          "conclusion": "La reforma constitucional presenta un proceso técnicamente descrito, pero su implementación podría generar riesgos macroeconómicos sistémicos. La incertidumbre sobre derechos de propiedad y concesiones podría afectar negativamente la inversión desde el anuncio.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 0,
+            "especificidad": 1
+          },
+          "criteria_sum": 6,
+          "formula_result": 5,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 0,
+            "especificidad": 1,
+            "sum": 6,
+            "final": 5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "El TC y el Congreso han mostrado sesgos y errores, con un 54% de apoyo a una nueva Constitución.",
+            "propuesta": "El proceso de referéndum está claramente definido para el primer día de gobierno.",
+            "medidas": "Se identifican medidas concretas como el referéndum y la Asamblea Constituyente con contenidos específicos.",
+            "implementacion": "El proceso es jurídicamente posible, pero carece de mecanismos de transición necesarios.",
+            "viabilidad": "La incertidumbre generada paraliza la inversión, lo que afecta la viabilidad del plan.",
+            "especificidad": "Aunque hay cronograma y contenidos, estos habilitan riesgos sistémicos en lugar de neutralizarlos."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas para modificar el marco constitucional, incluyendo cómo se convoca el proceso constituyente, los mecanismos a utilizar, los contenidos de la nueva constitución y la gestión de la transición jurídica. Se considera la precisión en la descripción del proceso y la evaluación de los riesgos asociados.",
+            "importancia": "La Constitución es fundamental para definir las reglas del Estado y un proceso de reforma bien diseñado puede modernizar las instituciones. Por el contrario, un mal diseño puede generar incertidumbre que paraliza la inversión y desestabiliza las instituciones existentes.",
+            "diagnostico_externo": "El Tribunal Constitucional ha emitido sentencias con sesgo político y el Congreso ha aprobado leyes que luego fueron declaradas inconstitucionales. Además, una encuesta de 2023 revela que el 54% de los peruanos apoya una nueva Constitución, lo que refleja un contexto de desconfianza en el marco legal actual.",
+            "propuesta_plan": "La Propuesta N°1 sugiere activar el procedimiento para convocar un referéndum a una Asamblea Constituyente plurinacional desde el primer día de gobierno. La nueva Constitución se centraría en la soberanía sobre recursos naturales y el reconocimiento de derechos colectivos de diversas comunidades.",
+            "medidas_concretas": "Se propone un referéndum el primer día de gobierno y la creación de una Asamblea Constituyente plurinacional con contenidos específicos. Los ejes constitucionales incluyen la soberanía sobre recursos naturales y una economía nacional de mercado popular y sostenible.",
+            "implementacion_necesaria": "El proceso constituyente mediante referéndum es jurídicamente viable, pero la propuesta carece de mecanismos de transición para inversiones existentes y cláusulas de estabilidad jurídica. Sin estas medidas, la implementación podría ser problemática y generar conflictos.",
+            "impacto_potencial": "El proceso constituyente podría tener un impacto significativo, similar a los precedentes en Bolivia y Ecuador, donde la inversión privada cayó entre el 15% y el 20% durante los procesos constituyentes. La incertidumbre generada podría afectar negativamente la economía peruana.",
+            "vacios": "El plan carece de cláusulas que protejan los contratos de inversión existentes y no establece límites claros sobre el mandato de la Asamblea Constituyente. Además, no se incluye un mecanismo para estabilizar la incertidumbre durante el proceso.",
+            "evaluacion_tecnica": "La evaluación técnica muestra que, aunque el proceso está descrito, habilita riesgos económicos significativos. La incertidumbre de 18 a 36 meses podría paralizar la inversión, lo que se traduce en una calificación débil de 5.0/10.",
+            "conclusion": "La reforma constitucional presenta un proceso técnicamente descrito, pero actúa como un vehículo para propuestas de soberanía minera que generan riesgos macroeconómicos. La incertidumbre sobre el régimen de concesiones y derechos de propiedad podría comenzar a afectar la inversión desde el anuncio de la reforma."
+          },
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "educacion",
+      "name": "EDUCACION",
+      "average_score": 4.8,
+      "color": null,
+      "summary": "",
+      "strengths": [],
+      "weaknesses": [],
+      "interpretation": "",
+      "variables": [
+        {
+          "id": "educacion_escolar",
+          "name": "Educacion escolar",
+          "block_id": "educacion",
+          "final_score": 5,
+          "rating_label": "débil",
+          "summary": "El plan propone elevar el gasto educativo al 6% del presupuesto nacional, derogar el Decreto Legislativo 882 que permite la educación con fines de lucro y masificar los Colegios de Alto Rendimiento (COAR). También sugiere una reforma curricular que incluya pensamiento crítico y formación técnica desde la secundaria.",
+          "strengths": [
+            "Aumento del gasto educativo propuesto",
+            "Eliminación de la educación con fines de lucro",
+            "Incorporación de una reforma curricular integral"
+          ],
+          "weaknesses": [
+            "Falta de un mandato explícito para el MINEDU",
+            "Ausencia de una fuente fiscal asegurada para el 6%",
+            "No hay cronograma de transición para estudiantes afectados por la derogación del DL 882"
+          ],
+          "gaps": [
+            "No se detalla un plan de implementación gradual de los COAR",
+            "Falta de mecanismos claros de ejecución"
+          ],
+          "conclusion": "La propuesta tiene una orientación correcta, pero carece de fundamentos sólidos para su implementación. Sin financiamiento garantizado y un mandato claro para el MINEDU, las intenciones quedan en el aire.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 0,
+            "viabilidad": 1,
+            "especificidad": 1
+          },
+          "criteria_sum": 6,
+          "formula_result": 5,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 0,
+            "viabilidad": 1,
+            "especificidad": 1,
+            "sum": 6,
+            "final": 5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "MINEDU/UMC 2024: 30.4% satisfactorio en lectura. UNESCO: 3.8% del PBI en educación.",
+            "propuesta": "Elevar al 6% + derogar DL 882: correcto en orientación, pero incompleto en diseño.",
+            "medidas": "El 6% y el DL 882 están escritos. Sin MINEDU con mandato ni fuente fiscal asegurada.",
+            "implementacion": "El MINEDU no está nombrado con mandato explícito.",
+            "viabilidad": "Posible si la reforma tributaria funciona (condición no asegurada).",
+            "especificidad": "Meta (6%) + norma (DL 882). Sin fuente fiscal asegurada."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa si el plan identifica correctamente el déficit educativo y propone instrumentos técnicamente viables para resolverlo. Se centra en la viabilidad de las propuestas en términos de financiamiento, instituciones responsables y mecanismos de ejecución concretos.",
+            "importancia": "La educación es la inversión más rentable que puede hacer un Estado, ya que un sistema educativo ineficaz perpetúa la pobreza. En Perú, los bajos resultados de aprendizaje son alarmantes, lo que subraya la necesidad de reformas efectivas para mejorar la productividad y las oportunidades de desarrollo.",
+            "diagnostico_externo": "Según el MINEDU y la UMC, solo el 30.4% de los estudiantes alcanza un nivel satisfactorio en lectura y el 24.1% en matemáticas. Además, el gasto educativo en Perú es solo del 3.8% del PBI, y el 12% de los locales escolares está en riesgo de colapso, lo que refleja una situación crítica.",
+            "propuesta_plan": "El plan propone elevar el gasto educativo al 6% del presupuesto nacional, eliminar el Decreto Legislativo 882 que permite la educación con fines de lucro, y masificar los Colegios de Alto Rendimiento (COAR) a nivel nacional. También sugiere una reforma curricular que incluya pensamiento crítico y formación técnica desde la secundaria.",
+            "medidas_concretas": "Las medidas específicas incluyen elevar el gasto educativo al 6% del presupuesto nacional, derogar el Decreto Legislativo 882, masificar los COAR en todo el país y realizar una reforma curricular enfocada en pensamiento crítico y educación ambiental.",
+            "implementacion_necesaria": "Para implementar estas propuestas, se requiere un mandato explícito para el MINEDU y una secuencia operativa definida. Además, el financiamiento del 6% depende de una reforma tributaria exitosa, y la derogación del DL 882 necesita un cronograma de transición para los estudiantes afectados.",
+            "impacto_potencial": "Si se implementan correctamente, estas medidas podrían elevar el gasto educativo al promedio latinoamericano, mejorando la infraestructura y la calidad educativa. La derogación del DL 882 podría restaurar el principio de que la educación no debe ser un negocio, pero sin financiamiento garantizado, las propuestas son solo intenciones.",
+            "vacios": "El plan carece de un mandato explícito para el MINEDU, no asegura una fuente fiscal para alcanzar el 6% y no presenta un cronograma de transición para los estudiantes afectados por la derogación del DL 882. También falta un plan de implementación gradual para los COAR.",
+            "evaluacion_tecnica": "La evaluación técnica muestra que, aunque el 6% y el DL 882 están mencionados, no hay un mandato claro para el MINEDU ni una fuente fiscal asegurada. La posibilidad de éxito depende de la reforma tributaria, que no está garantizada, lo que limita la viabilidad de las propuestas.",
+            "conclusion": "La propuesta presenta una orientación correcta hacia un mayor gasto y mejor calidad educativa, pero enfrenta problemas estructurales. Sin un financiamiento garantizado, un mandato claro para el MINEDU y un cronograma de transición, las propuestas quedan como intenciones bien formuladas, resultando en una calificación final de 5.0/10."
+          },
+          "sources": []
+        },
+        {
+          "id": "infraestructura_educativa",
+          "name": "Infraestructura educativa",
+          "block_id": "educacion",
+          "final_score": 4.2,
+          "rating_label": "débil",
+          "summary": "El plan propone mejorar la conectividad a internet en todos los colegios a través de PRONATEL y la creación de escuelas de alternancia para zonas rurales. Sin embargo, no aborda el déficit de infraestructura física, que es crítico para la seguridad de los estudiantes.",
+          "strengths": [
+            "Propuesta de conectividad a internet",
+            "Creación de escuelas de alternancia",
+            "Reconocimiento de la brecha tecnológica"
+          ],
+          "weaknesses": [
+            "Omisión del déficit de infraestructura física",
+            "Ausencia del PRONIED en el plan",
+            "Falta de metas específicas para infraestructura escolar"
+          ],
+          "gaps": [
+            "No se propone un presupuesto para infraestructura física",
+            "No hay un plan para reducir el porcentaje de colegios en mal estado"
+          ],
+          "conclusion": "El plan presenta deficiencias técnicas graves al no abordar el déficit de infraestructura física, lo que representa un peligro real para los estudiantes. La calificación final es 4.2/10, lo que indica una propuesta muy débil.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 0,
+            "viabilidad": 1,
+            "especificidad": 0
+          },
+          "criteria_sum": 5,
+          "formula_result": 4.2,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 0,
+            "viabilidad": 1,
+            "especificidad": 0,
+            "sum": 5,
+            "final": 4.2
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "PRONIED 2024: 54% con deterioro, 12% en riesgo de colapso. Deficit estimado: S/28,000M.",
+            "propuesta": "Conectividad con PRONATEL + escuelas de alternancia. Omite el deficit fisico.",
+            "medidas": "Internet en colegios (PRONATEL). Sin propuesta sobre infraestructura fisica.",
+            "implementacion": "El PRONIED esta ausente del plan.",
+            "viabilidad": "La conectividad es factible. La infraestructura fisica requiere S/28,000M no presupuestados.",
+            "especificidad": "Sin meta de infraestructura fisica escolar."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas para mejorar la infraestructura física y tecnológica de los colegios, incluyendo la construcción y rehabilitación de locales escolares, conectividad a internet y equipamiento. Se busca determinar si el plan aborda el déficit existente y si presenta soluciones con presupuesto y ejecutor identificados.",
+            "importancia": "La infraestructura educativa es crucial para garantizar un ambiente seguro y propicio para el aprendizaje. Un colegio en mal estado no solo es incómodo, sino que representa un peligro para los estudiantes, lo que hace que la mejora de la infraestructura sea una condición mínima para cualquier reforma educativa efectiva.",
+            "diagnostico_externo": "Según el PRONIED (2024), el 54% de los locales escolares presenta algún tipo de deterioro y el 12% está en riesgo de colapso. Además, se estima que la brecha de infraestructura educativa asciende a S/28,000 millones, y solo el 40% de las escuelas tiene acceso a internet de calidad suficiente para actividades educativas.",
+            "propuesta_plan": "El plan propone mejorar la conectividad a internet en todos los colegios a través de PRONATEL y la creación de escuelas de alternancia para zonas rurales. Sin embargo, no aborda de manera directa el déficit de infraestructura física de los locales escolares.",
+            "medidas_concretas": "Las medidas específicas identificadas incluyen la conectividad a internet en colegios mediante PRONATEL y la creación de escuelas de alternancia para zonas rurales. Estas propuestas buscan mejorar el acceso a recursos digitales y adaptarse a las necesidades de las comunidades rurales.",
+            "implementacion_necesaria": "Para implementar las propuestas, es fundamental la colaboración con PRONATEL para la conectividad. Sin embargo, el plan no menciona al PRONIED, la institución responsable de la construcción y rehabilitación de locales escolares, lo que deja el déficit físico sin atención.",
+            "impacto_potencial": "La implementación de la conectividad podría mejorar el acceso a recursos digitales y reducir la brecha tecnológica. Las escuelas de alternancia son un modelo probado en contextos rurales, pero si los locales escolares están en riesgo de colapso, las mejoras en conectividad y modelo educativo no tendrán el impacto deseado.",
+            "vacios": "El plan carece de propuestas concretas para abordar el déficit de infraestructura física escolar, que asciende a S/28,000 millones. Además, no se menciona al PRONIED, no hay metas para reducir el porcentaje de colegios en mal estado y no se presenta un presupuesto específico para infraestructura educativa física.",
+            "evaluacion_tecnica": "La evaluación técnica muestra que, aunque la conectividad con PRONATEL y las escuelas de alternancia son propuestas válidas, omiten el problema más urgente del déficit de infraestructura física. La ausencia del PRONIED y la falta de metas específicas para infraestructura física escolar son deficiencias significativas.",
+            "conclusion": "El plan aborda parcialmente el problema al proponer conectividad y escuelas de alternancia, pero omite completamente el déficit de infraestructura física. La ausencia del PRONIED y la falta de atención al 12% de colegios en riesgo de colapso son omisiones técnicamente graves, resultando en una calificación final de 4.2/10."
+          },
+          "sources": []
+        },
+        {
+          "id": "educacion_superior",
+          "name": "Educacion superior",
+          "block_id": "educacion",
+          "final_score": 5.8,
+          "rating_label": "débil",
+          "summary": "El plan propone duplicar las vacantes en universidades públicas y ampliar el mandato de la SUNEDU para supervisar toda la educación superior. Esto busca mejorar el acceso y la calidad de la educación universitaria en Perú.",
+          "strengths": [
+            "Duplicación de vacantes en universidades públicas",
+            "Ampliación del mandato de la SUNEDU",
+            "Enfoque en la regulación de calidad"
+          ],
+          "weaknesses": [
+            "Falta de presupuesto específico para la duplicación de vacantes",
+            "Ausencia de un cronograma de ampliación de vacantes por región",
+            "No hay un plan de formación de nuevos docentes universitarios"
+          ],
+          "gaps": [
+            "Necesidad de un presupuesto garantizado",
+            "Falta de un cronograma claro"
+          ],
+          "conclusion": "La propuesta es técnicamente sólida, pero sin un presupuesto garantizado, su implementación es incierta. La evaluación final es de 5.8/10, lo que indica debilidades significativas.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1
+          },
+          "criteria_sum": 7,
+          "formula_result": 5.8,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1,
+            "sum": 7,
+            "final": 5.8
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "INEI 2024: 39% de acceso a educación superior. SUNEDU: 50 universidades sin licencia.",
+            "propuesta": "SUNEDU con mandato ampliado es la medida más eficiente del bloque.",
+            "medidas": "Duplicar vacantes + SUNEDU a institutos. Sin ~S/2,000-3,000M/ano.",
+            "implementacion": "SUNEDU con mandato ampliado a institutos y CETPRO.",
+            "viabilidad": "Posible con reforma tributaria exitosa. Sin garantía.",
+            "especificidad": "SUNEDU + duplicar vacantes. Sin fuente fiscal."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas para mejorar el acceso y la calidad de la educación universitaria y superior en Perú, analizando si el plan incluye instrumentos para ampliar la cobertura sin sacrificar la calidad y si identifica a los responsables de su ejecución.",
+            "importancia": "La educación superior es crucial para el desarrollo del país, dado que solo el 39% de los jóvenes entre 18 y 24 años tiene acceso a ella. Además, la existencia de universidades sin licencia de calidad pone en riesgo la formación de miles de estudiantes, lo que subraya la necesidad de abordar estos problemas de acceso y calidad.",
+            "diagnostico_externo": "Según el INEI (2024), solo el 39% de los jóvenes de 18 a 24 años accede a educación superior. La SUNEDU ha reportado que 50 universidades operan sin licencia de calidad, lo que indica una grave deficiencia en el sistema educativo.",
+            "propuesta_plan": "El plan propone duplicar las vacantes en universidades públicas para aumentar el acceso a la educación superior y ampliar el mandato de la SUNEDU para supervisar no solo universidades, sino también institutos técnicos, CETPRO y escuelas pedagógicas.",
+            "medidas_concretas": "Las medidas específicas identificadas incluyen la duplicación de vacantes en universidades públicas y la ampliación del mandato de la SUNEDU a otros niveles de educación superior.",
+            "implementacion_necesaria": "Para implementar estas propuestas, se requiere un presupuesto específico que se estima entre S/2,000 y S/3,000 millones anuales para la duplicación de vacantes. Sin esta asignación presupuestal, las metas propuestas podrían no ser alcanzables.",
+            "impacto_potencial": "Si se implementa correctamente, la SUNEDU reforzada podría extender la regulación de calidad a todo el sistema de educación superior, cerrando instituciones que no cumplen con estándares. La duplicación de vacantes públicas podría permitir que miles de jóvenes accedan a educación de calidad.",
+            "vacios": "El plan carece de un presupuesto específico para la duplicación de vacantes, un cronograma de ampliación por región y un plan de formación de nuevos docentes universitarios, lo que limita su viabilidad.",
+            "evaluacion_tecnica": "La evaluación técnica muestra que, aunque las propuestas de duplicar vacantes y extender el mandato de la SUNEDU son sólidas, la falta de un presupuesto específico y de garantías fiscales limita su efectividad.",
+            "conclusion": "La propuesta de la SUNEDU con mandato ampliado es la más eficiente del bloque educativo, y aunque la duplicación de vacantes tiene una orientación correcta, la falta de un presupuesto garantizado deja la meta en el papel, resultando en una calificación final de 5.8/10, considerada débil."
+          },
+          "sources": []
+        },
+        {
+          "id": "formacion_tecnica",
+          "name": "Formacion tecnica",
+          "block_id": "educacion",
+          "final_score": 4.2,
+          "rating_label": "débil",
+          "summary": "El plan propone la creación de Centros de Innovación Tecnológica (CITEs) para articular la formación técnica con el mercado laboral y extender la supervisión de la SUNEDU a los institutos técnicos. Sin embargo, carece de un enfoque claro en la política de innovación y no establece metas cuantificadas de empleabilidad.",
+          "strengths": [
+            "Propuesta de CITEs como centros de articulación",
+            "Extensión de la supervisión de SUNEDU a institutos técnicos",
+            "Existencia de CITEs con capacidad real"
+          ],
+          "weaknesses": [
+            "Ausencia del CONCYTEC como rector de la política de innovación",
+            "Falta de metas cuantificadas de empleabilidad técnica",
+            "No se asigna presupuesto específico para los CITEs"
+          ],
+          "gaps": [
+            "No hay cronograma de articulación entre institutos y sectores productivos",
+            "Falta de un enfoque claro en la política de innovación"
+          ],
+          "conclusion": "El plan presenta una orientación correcta, pero su falta de metas y presupuesto lo convierte en una propuesta débil. Sin un enfoque claro, es difícil garantizar resultados efectivos.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 0,
+            "viabilidad": 1,
+            "especificidad": 0
+          },
+          "criteria_sum": 5,
+          "formula_result": 4.2,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 0,
+            "viabilidad": 1,
+            "especificidad": 0,
+            "sum": 5,
+            "final": 4.2
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "MINEDU 2024: 25% de IEST articulados a sectores productivos. Empleabilidad técnica: 58%.",
+            "propuesta": "CITEs + SUNEDU extendida a institutos técnicos: orientación correcta pero incompleta.",
+            "medidas": "CITEs y SUNEDU a IEST mencionados. Sin meta de empleabilidad.",
+            "implementacion": "CONCYTEC ausente del plan.",
+            "viabilidad": "Los CITEs son institución existente con experiencia.",
+            "especificidad": "Sin meta cuantificada de empleabilidad técnica."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas para fortalecer la formación técnico-profesional y su conexión real con el mercado laboral. Se centra en si el plan incluye instrumentos que conviertan a los institutos técnicos en una opción de calidad que mejore la empleabilidad de sus egresados.",
+            "importancia": "La formación técnica es crucial en un país con un alto índice de informalidad laboral, donde el 72.8% de los trabajadores están en esta situación. Mejorar la calidad de la formación técnica puede ayudar a reducir la brecha entre la educación y las necesidades del mercado laboral.",
+            "diagnostico_externo": "Según el MINEDU (2024), solo el 25% de los institutos técnicos superiores están articulados a sectores productivos, y la tasa de empleabilidad técnica es del 58%. Además, la inversión en investigación y desarrollo en Perú es de solo el 0.15% del PBI, el más bajo de la región.",
+            "propuesta_plan": "El plan propone la creación de los Centros de Innovación Tecnológica (CITEs) como centros de articulación entre la formación técnica y los sectores productivos. También sugiere extender la supervisión de la SUNEDU a los institutos técnicos superiores.",
+            "medidas_concretas": "Las medidas específicas identificadas incluyen la implementación de los CITEs y la extensión de la supervisión de la SUNEDU a los institutos técnicos. Estas acciones buscan mejorar la calidad y la relevancia de la formación técnica.",
+            "implementacion_necesaria": "Para implementar estas propuestas, se requiere un mandato claro para el CONCYTEC, así como la asignación de un presupuesto específico y la definición de metas cuantificadas de empleabilidad. Sin estos elementos, la propuesta carece de una política concreta.",
+            "impacto_potencial": "Si se implementan correctamente los CITEs y se supervisan los institutos por la SUNEDU, la calidad de la formación técnica podría mejorar significativamente. Sin embargo, la falta de un marco de evaluación y metas claras limita el potencial de impacto.",
+            "vacios": "El plan presenta varias carencias, como la ausencia del CONCYTEC como rector de la política de innovación, la falta de metas cuantificadas de empleabilidad técnica y la falta de un presupuesto específico para los CITEs. También carece de un cronograma para la articulación entre institutos y sectores productivos.",
+            "evaluacion_tecnica": "La evaluación técnica muestra que, aunque se mencionan los CITEs y la SUNEDU, no se establecen metas de empleabilidad. La ausencia del CONCYTEC y la falta de un enfoque cuantificado en la empleabilidad técnica son puntos críticos que afectan la viabilidad del plan.",
+            "conclusion": "El plan presenta una orientación correcta al incluir los CITEs y la supervisión de la SUNEDU, pero su efectividad se ve comprometida por la falta de un marco claro de implementación, metas y presupuesto. La calificación final de 4.2/10 refleja estas debilidades significativas."
+          },
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "salud",
+      "name": "SALUD",
+      "average_score": 3.87,
+      "color": null,
+      "summary": "",
+      "strengths": [],
+      "weaknesses": [],
+      "interpretation": "",
+      "variables": [
+        {
+          "id": "sistema_de_salud_publica",
+          "name": "Sistema de salud publica",
+          "block_id": "salud",
+          "final_score": 5.8,
+          "rating_label": "débil",
+          "summary": "La propuesta busca transformar el sistema de salud en Perú hacia un modelo único y universal que integre el MINSA, EsSalud y el SIS, garantizando acceso a atención médica de calidad para todos los ciudadanos. Incluye la creación de una Red Nacional de Farmacias Populares y la consagración de la salud como un derecho fundamental en la nueva Constitución.",
+          "strengths": [
+            "Diagnóstico contundente sobre la mortalidad por COVID-19",
+            "Propuesta coherente con medidas concretas como la Red de Farmacias",
+            "Articulación de la reforma constitucional con el sistema de salud"
+          ],
+          "weaknesses": [
+            "Dependencia de una cadena condicional para el financiamiento",
+            "Falta de un mecanismo propio de financiamiento",
+            "Ausencia de un cronograma de integración de los sistemas de salud"
+          ],
+          "gaps": [
+            "No hay meta de gasto en salud como porcentaje del PBI",
+            "No se contempla un fondo de contingencia para la transición"
+          ],
+          "conclusion": "La propuesta presenta elementos positivos, pero su implementación es técnicamente inviable debido a la falta de un financiamiento garantizado. La dependencia de condiciones externas pone en riesgo el sistema único de salud.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 0,
+            "especificidad": 1
+          },
+          "criteria_sum": 7,
+          "formula_result": 5.8,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 0,
+            "especificidad": 1,
+            "sum": 7,
+            "final": 5.8
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "OPS 2024: mortalidad COVID-19 más alta del mundo. MINSA 2022: 16 de 25 regiones sin capacidad adecuada.",
+            "propuesta": "Sistema único universal + farmacias populares + reforma constitucional articulados.",
+            "medidas": "Red de Farmacias + reforma constitucional escritas. Sin los S/8,000-15,000M/ano del sistema único.",
+            "implementacion": "MINSA, SIS y EsSalud nombrados con función.",
+            "viabilidad": "Cadena: referendum - reforma tributaria - metas de recaudación. Tres eslabones de riesgo.",
+            "especificidad": "Red de Farmacias (institución) + reforma constitucional (norma). Sin costo del sistema único."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa la propuesta de transformar el sistema de salud hacia la universalidad, asegurando que todos los peruanos tengan acceso a atención médica de calidad, independientemente de su ubicación o nivel de ingresos. Se cuestiona si el plan cuenta con los instrumentos y el financiamiento necesarios para lograr esta transformación.",
+            "importancia": "La importancia de esta variable radica en que Perú ha enfrentado una crisis sanitaria severa, evidenciada por la mayor mortalidad per cápita por COVID-19 en el mundo. Esto subraya la necesidad urgente de reformar un sistema de salud que ha sido históricamente subfinanciado y fragmentado.",
+            "diagnostico_externo": "El diagnóstico externo revela que Perú destina solo el 3.5% del PBI a salud pública, lo que es insuficiente para cubrir las necesidades del país. Además, 16 de las 25 regiones carecen de la capacidad adecuada para atención sanitaria, lo que agrava la situación de salud pública.",
+            "propuesta_plan": "El plan propone crear un sistema único de salud que unifique el MINSA, EsSalud y el SIS en un solo sistema universal. También sugiere la creación de una Red Nacional de Farmacias Populares y la consagración de la salud como un derecho fundamental en la nueva Constitución.",
+            "medidas_concretas": "Las medidas específicas incluyen la integración del MINSA, EsSalud y SIS en un sistema único, la creación de farmacias populares con precios accesibles, la ampliación de la atención primaria en zonas rurales y la formación de más médicos y enfermeras a través de becas del Estado.",
+            "implementacion_necesaria": "Para implementar estas propuestas, es esencial que el sistema único de salud obtenga financiamiento a través de un referéndum, la aprobación de una reforma tributaria y el cumplimiento de metas de recaudación. Sin estos pasos, el plan carece de viabilidad financiera.",
+            "impacto_potencial": "Si se implementa correctamente, la Red de Farmacias Populares podría reducir significativamente el gasto de bolsillo de las familias en medicamentos. Además, la integración del sistema de salud podría eliminar ineficiencias actuales, mejorando el acceso y la calidad de la atención médica.",
+            "vacios": "El plan carece de un mecanismo de financiamiento propio para el sistema de salud, no establece metas de gasto en salud como porcentaje del PBI, ni incluye un fondo de contingencia para la transición. También falta un cronograma claro para la integración de las entidades de salud.",
+            "evaluacion_tecnica": "La evaluación técnica muestra que, aunque la Red de Farmacias y la reforma constitucional están bien definidas, el sistema único de salud enfrenta riesgos significativos debido a su dependencia de una cadena condicional de financiamiento. Esto limita su viabilidad y efectividad.",
+            "conclusion": "En conclusión, aunque el diagnóstico y la propuesta son coherentes y relevantes, la dependencia de condiciones externas para el financiamiento del sistema único de salud hace que la propuesta sea técnicamente inimplementable. La calificación final de 5.8/10 refleja estas debilidades."
+          },
+          "sources": []
+        },
+        {
+          "id": "infraestructura_hospitalaria",
+          "name": "Infraestructura hospitalaria",
+          "block_id": "salud",
+          "final_score": 3.3,
+          "rating_label": "insuficiente",
+          "summary": "La propuesta evalúa la necesidad de un 'shock de inversión' en infraestructura sanitaria para mejorar los establecimientos de salud en Perú. Sin embargo, carece de detalles específicos como montos, metas y cronogramas que permitan su implementación efectiva.",
+          "strengths": [
+            "Reconocimiento de la necesidad de modernizar la infraestructura sanitaria",
+            "Orientación hacia una reforma del sistema de salud",
+            "Identificación del déficit de infraestructura existente"
+          ],
+          "weaknesses": [
+            "Falta de monto específico para la inversión",
+            "Ausencia de metas claras para la construcción o rehabilitación de establecimientos",
+            "No se menciona un cronograma de ejecución"
+          ],
+          "gaps": [
+            "No se asigna un mandato explícito al MINSA para infraestructura",
+            "Carece de especificidad técnica en las propuestas"
+          ],
+          "conclusion": "La propuesta es considerada muy débil debido a la falta de elementos técnicos esenciales para su implementación. Sin detalles claros, es difícil evaluar su viabilidad real.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 0,
+            "implementacion": 0,
+            "viabilidad": 1,
+            "especificidad": 0
+          },
+          "criteria_sum": 4,
+          "formula_result": 3.3,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 0,
+            "implementacion": 0,
+            "viabilidad": 1,
+            "especificidad": 0,
+            "sum": 4,
+            "final": 3.3
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "MINSA 2022: más del 70% de establecimientos con más de 30 años de antigüedad. OPS: 1.6 camas/1,000 hab.",
+            "propuesta": "\"Shock de inversión\" con orientación correcta, pero sin contenido técnico.",
+            "medidas": "Sin monto, meta ni cronograma específico para infraestructura sanitaria.",
+            "implementacion": "El MINSA no aparece con mandato de infraestructura.",
+            "viabilidad": "Factible en principio si se asigna financiamiento.",
+            "especificidad": "Sin especificidad sanitaria de infraestructura de ningún tipo."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas para mejorar la infraestructura física del sistema de salud en Perú, incluyendo hospitales, postas médicas y centros de salud. Se busca determinar si el plan presenta soluciones concretas con montos, metas y ejecutores identificados.",
+            "importancia": "La infraestructura sanitaria es fundamental para un sistema de salud eficiente. Con el 70% de los establecimientos de salud con más de 30 años de antigüedad y una baja cantidad de camas por habitante, la capacidad del Estado para atender a la población se ve seriamente limitada.",
+            "diagnostico_externo": "Según el MINSA (2022), más del 70% de los establecimientos de salud tienen más de 30 años de antigüedad. La OPS estima que Perú cuenta con solo 1.6 camas por cada 1,000 habitantes, muy por debajo del mínimo recomendado por la OMS, que es de 3 camas.",
+            "propuesta_plan": "El plan menciona un 'shock de inversión' en infraestructura sanitaria como parte de su reforma del sistema de salud. Sin embargo, no detalla cuántos hospitales o centros de salud se construirían ni asigna un monto específico para esta inversión.",
+            "medidas_concretas": "La única medida concreta identificada es el 'shock de inversión' en infraestructura sanitaria, pero carece de un monto, una meta o un cronograma definido para su ejecución.",
+            "implementacion_necesaria": "Para que la propuesta sea ejecutable, se requiere un monto específico de inversión, una meta clara de establecimientos a construir o rehabilitar, un cronograma por regiones y que el MINSA tenga un mandato y presupuesto explícito para infraestructura.",
+            "impacto_potencial": "Una inversión real en infraestructura sanitaria podría mejorar significativamente la capacidad del sistema de salud. Sin embargo, la falta de números, presupuesto y ejecutores nombrados convierte al 'shock de inversión' en una expresión vacía de contenido técnico.",
+            "vacios": "El plan carece de un monto específico para el shock de inversión sanitaria, no establece metas de establecimientos a construir o rehabilitar, y no presenta un cronograma de ejecución. Además, el MINSA no aparece con un mandato claro para la infraestructura.",
+            "evaluacion_tecnica": "La evaluación técnica muestra que, aunque la orientación es correcta, la propuesta carece de todos los elementos técnicos necesarios para su implementación. Sin monto, meta ni cronograma, y con el MINSA sin mandato de infraestructura, la propuesta es muy débil.",
+            "conclusion": "La calificación final de 3.3/10 indica que, aunque la orientación del plan es adecuada, no incluye los elementos técnicos necesarios para ser implementable. Sin un marco claro de financiamiento y ejecución, la propuesta resulta insuficiente."
+          },
+          "sources": []
+        },
+        {
+          "id": "financiamiento_del_sistema_de_salud",
+          "name": "Financiamiento del sistema de salud",
+          "block_id": "salud",
+          "final_score": 2.5,
+          "rating_label": "insuficiente",
+          "summary": "El plan de financiamiento del sistema de salud en Perú carece de un mecanismo propio y sostenible, dependiendo de una cadena condicional que incluye un referéndum y una reforma tributaria. Sin financiamiento garantizado, las promesas de mejora en el sistema de salud son inciertas.",
+          "strengths": [
+            "Diagnóstico sólido sobre la situación actual del financiamiento en salud",
+            "Reconocimiento de la importancia del financiamiento para el sistema de salud",
+            "Identificación de la dependencia de condiciones externas para el financiamiento"
+          ],
+          "weaknesses": [
+            "Falta de un mecanismo propio de financiamiento",
+            "Dependencia de una cadena condicional de tres eslabones",
+            "Ausencia de medidas concretas para asegurar el financiamiento"
+          ],
+          "gaps": [
+            "No se establece una meta de gasto en salud como porcentaje del PBI",
+            "No se propone un fondo de transición para el periodo inicial"
+          ],
+          "conclusion": "El financiamiento es el talón de Aquiles del bloque sanitario, lo que pone en riesgo todas las promesas de salud del plan. Sin una fuente propia e independiente, el sistema de salud queda vulnerable a fallos en la cadena condicional.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 0,
+            "implementacion": 0,
+            "viabilidad": 0,
+            "especificidad": 0
+          },
+          "criteria_sum": 3,
+          "formula_result": 2.5,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 0,
+            "implementacion": 0,
+            "viabilidad": 0,
+            "especificidad": 0,
+            "sum": 3,
+            "final": 2.5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "OPS 2023: 3.5% del PBI en gasto público de salud. OMS 2024: 34% de gasto de bolsillo familiar.",
+            "propuesta": "La reforma tributaria como fuente + reforma constitucional como obligación: orientación correcta pero condicional.",
+            "medidas": "Los instrumentos son condicionales. Sin mecanismo propio de financiamiento.",
+            "implementacion": "Sin fondo de transición ni mecanismo específico de financiamiento sanitario.",
+            "viabilidad": "Cadena condicional: referéndum - reforma tributaria - metas. Tres eslabones de riesgo.",
+            "especificidad": "Sin meta de % del PBI en salud. Sin fuente propia."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa si el plan tiene un mecanismo propio y sostenible para financiar el sistema de salud, centrándose en la procedencia de los fondos y la garantía de su llegada.",
+            "importancia": "El financiamiento es crucial para el funcionamiento del sistema de salud. En Perú, el bajo gasto en salud pública se traduce en problemas graves como hospitales colapsados y atención médica insuficiente.",
+            "diagnostico_externo": "Según la OPS (2023), Perú gasta solo el 3.5% del PBI en salud pública, el más bajo de América del Sur. Además, la OMS (2024) indica que el gasto de bolsillo representa el 34% del total, muy por encima del umbral crítico.",
+            "propuesta_plan": "El plan no presenta un mecanismo propio de financiamiento, dependiendo de una cadena condicional que incluye un referéndum, la aprobación de una reforma tributaria y el cumplimiento de metas de recaudación.",
+            "medidas_concretas": "No se identifican medidas concretas de financiamiento sanitario propio en el plan, ya que toda la responsabilidad fiscal se delega a la reforma tributaria.",
+            "implementacion_necesaria": "Para implementar un financiamiento sostenible, se necesitaría establecer una meta explícita de gasto en salud como porcentaje del PBI, un fondo de transición y un mecanismo de financiamiento independiente.",
+            "impacto_potencial": "Si la cadena condicional se cumple, el sistema de salud podría recibir los recursos necesarios para transformarse. Sin embargo, si falla, las promesas de salud quedarían sin respaldo financiero.",
+            "vacios": "El plan carece de una meta de gasto en salud, un fondo de transición y un mecanismo de financiamiento que no dependa de condiciones externas, lo que lo hace vulnerable.",
+            "evaluacion_tecnica": "La evaluación técnica muestra que los instrumentos son condicionales y carecen de un mecanismo propio, lo que resulta en un puntaje muy bajo en todos los criterios evaluados.",
+            "conclusion": "El financiamiento es el talón de Aquiles del bloque sanitario, y sin una fuente propia e independiente, las promesas de salud dependen de condiciones inciertas, resultando en una calificación final de 2.5/10."
+          },
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "politica_social",
+      "name": "POLITICA SOCIAL",
+      "average_score": 5.53,
+      "color": null,
+      "summary": "",
+      "strengths": [],
+      "weaknesses": [],
+      "interpretation": "",
+      "variables": [
+        {
+          "id": "reduccion_de_pobreza",
+          "name": "Reduccion de pobreza",
+          "block_id": "politica_social",
+          "final_score": 5.8,
+          "rating_label": "débil",
+          "summary": "La propuesta busca reducir la pobreza a través de transferencias directas a los más vulnerables, incluyendo aumentos en pensiones y bonos específicos. Se identifican las instituciones responsables y se plantean montos concretos para cada programa social.",
+          "strengths": [
+            "Montos específicos propuestos para programas sociales",
+            "Instituciones responsables claramente identificadas",
+            "Orientación redistributiva coherente"
+          ],
+          "weaknesses": [
+            "Dependencia del financiamiento de la reforma tributaria",
+            "Falta de fuente fiscal asegurada",
+            "Ausencia de un cronograma de implementación"
+          ],
+          "gaps": [
+            "Sin plan de contingencia si la reforma tributaria no genera ingresos esperados",
+            "Falta de claridad sobre la sostenibilidad del financiamiento"
+          ],
+          "conclusion": "La propuesta es la más articulada del bloque, pero su viabilidad está comprometida por la dependencia de la reforma tributaria. Sin un financiamiento asegurado, los montos prometidos son incumplibles.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 0,
+            "especificidad": 1
+          },
+          "criteria_sum": 7,
+          "formula_result": 5.8,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 0,
+            "especificidad": 1,
+            "sum": 7,
+            "final": 5.8
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "INEI 2024: 27.6% en pobreza. MIDIS: 68.7% de pobres en zonas urbanas.",
+            "propuesta": "Montos específicos con instituciones nominadas. Propuesta redistributiva articulada.",
+            "medidas": "Montos escritos (S/700, S/500, S/800). Sin fuente fiscal asegurada.",
+            "implementacion": "Pension 65, CONTIGO, Juntos, SIS y MIDIS nombrados con función.",
+            "viabilidad": "El gasto depende de reforma tributaria no asegurada. Si falla, los montos son incumplibles.",
+            "especificidad": "Montos explícitos + instituciones. Sin fuente fiscal."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas para reducir la pobreza mediante transferencias directas a los más vulnerables, como pensiones, bonos y programas de apoyo social. Se analiza si los montos propuestos son realistas, si las instituciones responsables están claramente identificadas y si el financiamiento está garantizado.",
+            "importancia": "La reducción de la pobreza es crucial para el desarrollo del país, ya que el 27.6% de los peruanos vive en situación de pobreza, lo que equivale a más de 9 millones de personas. Las transferencias directas del Estado son vitales para la subsistencia diaria de millones de ciudadanos, especialmente en el contexto de la pandemia que revirtió años de avances.",
+            "diagnostico_externo": "Según el INEI (2024), el 27.6% de la población peruana vive en situación de pobreza, con un 68.7% de los pobres concentrados en zonas urbanas, según el MIDIS. La CEPAL (2024) confirma que la pandemia ha revertido una década de avances en la reducción de la pobreza, lo que agrava la situación actual.",
+            "propuesta_plan": "El plan propone aumentar los montos de los principales programas sociales, como elevar la Pensión 65 a S/700 bimensuales, aumentar el bono de CONTIGO a S/500, crear un bono de S/800 para madres afiliadas al SIS y duplicar las transferencias del programa Juntos. Las instituciones responsables de estas medidas están claramente identificadas.",
+            "medidas_concretas": "Las medidas específicas incluyen: elevar la Pensión 65 a S/700 bimensuales, aumentar el bono de CONTIGO a S/500, crear un bono de S/800 para madres afiliadas al SIS y duplicar las transferencias del programa Juntos. Estas medidas están diseñadas para atender a los grupos más vulnerables.",
+            "implementacion_necesaria": "Para implementar estas propuestas, es necesario asegurar el financiamiento, que se estima en S/3,000-5,000 millones anuales. Esto depende de la efectividad de la reforma tributaria, que aún no está garantizada, lo que plantea un riesgo significativo para la viabilidad del plan.",
+            "impacto_potencial": "Si se logra el financiamiento, el impacto podría ser directo e inmediato, beneficiando a millones de adultos mayores, personas con discapacidad y madres en situación de vulnerabilidad. Además, el aumento del programa Juntos podría tener un efecto multiplicador al incentivar la asistencia escolar y los controles de salud.",
+            "vacios": "El plan carece de una fuente fiscal asegurada para los S/3,000-5,000 millones anuales necesarios para las transferencias. También falta un plan de contingencia en caso de que la reforma tributaria no genere los ingresos esperados y no se presenta un cronograma de implementación para los aumentos propuestos.",
+            "evaluacion_tecnica": "La evaluación técnica muestra que, aunque los montos están especificados y las instituciones responsables están nombradas, no hay una fuente fiscal asegurada. La dependencia del financiamiento de la reforma tributaria no garantizada es una debilidad crítica que afecta la viabilidad del plan.",
+            "conclusion": "La propuesta es la más articulada del bloque social, con montos específicos y una orientación redistributiva coherente. Sin embargo, la dependencia del financiamiento de la reforma tributaria, que no está asegurada, limita su efectividad, resultando en una calificación final de 5.8/10, considerada débil."
+          },
+          "sources": []
+        },
+        {
+          "id": "programas_sociales_y_sistema_previsional",
+          "name": "Programas sociales y sistema previsional",
+          "block_id": "politica_social",
+          "final_score": 5.8,
+          "rating_label": "débil",
+          "summary": "La propuesta busca implementar una reforma previsional tripartita donde aporten el trabajador, el empleador y el Estado. Se plantea derogar la Ley N.32445 para favorecer un sistema más equitativo y mejorar la focalización de los programas sociales para reducir la filtración.",
+          "strengths": [
+            "Diseño correcto de la reforma previsional",
+            "Identificación de la Ley N.32445 como un problema",
+            "Beneficio potencial para 6.7 millones de personas"
+          ],
+          "weaknesses": [
+            "Aporte estatal sin fuente de financiamiento definida",
+            "Costo elevado de S/5,000-10,000M/año",
+            "Falta de un cronograma de transición"
+          ],
+          "gaps": [
+            "Ausencia de un diseño actuarial que calcule el costo real del sistema",
+            "Falta de mecanismos para trabajadores actuales en el sistema AFP"
+          ],
+          "conclusion": "La propuesta presenta un diseño adecuado, pero el alto costo sin financiamiento puede agravar los problemas fiscales. Se requiere una evaluación más profunda para asegurar su viabilidad.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 0,
+            "especificidad": 1
+          },
+          "criteria_sum": 7,
+          "formula_result": 5.8,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 0,
+            "especificidad": 1,
+            "sum": 7,
+            "final": 5.8
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "MIDIS: filtración 30% en programas sociales. SBS: solo el 30% de la PEA afiliada a sistema previsional.",
+            "propuesta": "Reforma previsional tripartita articulada. Ley N.32445 identificada.",
+            "medidas": "Ley N.32445 + sistema tripartito. Aporte estatal sin fuente (~S/5,000-10,000M/año).",
+            "implementacion": "Juntos, Pension 65, CONTIGO, SIS y AFPs nombrados.",
+            "viabilidad": "El aporte estatal al sistema tripartito no tiene fuente. Agrava la brecha fiscal estructural.",
+            "especificidad": "Ley N.32445 (norma específica) + 6.7M beneficiarios (meta). Sin fuente del aporte estatal."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas para reformar el sistema de pensiones y mejorar los programas sociales existentes. Se centra en la viabilidad técnica del nuevo sistema previsional y su financiamiento real.",
+            "importancia": "La relevancia de esta variable radica en que el sistema previsional peruano excluye al 70% de los trabajadores, lo que implica que la mayoría de los peruanos no contará con una pensión digna al llegar a la vejez. La situación actual de las AFP ha generado cuestionamientos sobre la equidad y sostenibilidad del sistema.",
+            "diagnostico_externo": "Según la Superintendencia de Banca y Seguros (SBS), solo el 30% de la Población Económicamente Activa (PEA) está afiliada a un sistema previsional formal. Además, el MIDIS reporta una filtración del 30% en los programas sociales, lo que indica ineficiencias en la distribución de recursos.",
+            "propuesta_plan": "El plan propone una reforma previsional tripartita donde aportan el trabajador, el empleador y el Estado. También sugiere derogar la Ley N.32445, conocida como 'Ley Pro-AFP', para beneficiar a 6.7 millones de personas y mejorar la focalización de los programas sociales.",
+            "medidas_concretas": "Las medidas específicas incluyen la implementación de un sistema previsional tripartito, la derogación de la Ley N.32445 y la mejora en la focalización de los programas sociales para reducir la filtración del 30%.",
+            "implementacion_necesaria": "Para implementar estas propuestas, se requiere un diseño actuarial del sistema, un cronograma de transición y una fuente de financiamiento propia para el aporte estatal, que se estima entre S/5,000 y S/10,000 millones anuales.",
+            "impacto_potencial": "Si se financia adecuadamente, el sistema tripartito podría proporcionar cobertura previsional a millones de trabajadores que actualmente no la tienen. La derogación de la Ley Pro-AFP podría restaurar condiciones más equitativas en el sistema.",
+            "vacios": "El plan carece de un diseño actuarial que calcule el costo real del sistema a largo plazo, así como de una fuente de financiamiento clara para el aporte estatal. También falta un cronograma de transición y un mecanismo para los trabajadores actualmente en el sistema AFP.",
+            "evaluacion_tecnica": "La evaluación técnica muestra que, aunque la Ley N.32445 y el sistema tripartito están propuestos, el aporte estatal carece de una fuente de financiamiento, lo que agrava la brecha fiscal estructural. Se identifican metas y beneficiarios, pero la falta de financiamiento es un obstáculo significativo.",
+            "conclusion": "La reforma previsional tripartita presenta un diseño correcto y reconoce la problemática de la Ley N.32445. Sin embargo, el alto costo del aporte estatal sin una fuente fiscal definida representa el mayor pasivo no financiado del plan, resultando en una calificación final de 5.8/10, considerada débil."
+          },
+          "sources": []
+        },
+        {
+          "id": "vivienda",
+          "name": "Vivienda",
+          "block_id": "politica_social",
+          "final_score": 5,
+          "rating_label": "débil",
+          "summary": "La propuesta busca construir un millón de viviendas en cinco años bajo el modelo 'Barrio Obrero', utilizando terrenos estatales para reducir costos y reorganizando programas existentes. Sin embargo, la meta planteada es considerada irrealizable debido a la capacidad histórica del sector de construcción.",
+          "strengths": [
+            "Modelo 'Barrio Obrero' es estructuralmente correcto",
+            "Identificación de instituciones involucradas",
+            "Orientación adecuada hacia la reducción del déficit habitacional"
+          ],
+          "weaknesses": [
+            "Meta de un millón de viviendas es sobredimensionada",
+            "Falta de fuente fiscal para financiamiento",
+            "Ausencia de un cronograma por regiones prioritarias"
+          ],
+          "gaps": [
+            "Estrategia para ampliar la cadena de valor constructiva",
+            "Plan de financiamiento asegurado"
+          ],
+          "conclusion": "El plan presenta un enfoque adecuado, pero la meta es físicamente imposible, lo que limita su viabilidad. Se requiere una revisión de las metas para lograr un avance significativo en el déficit habitacional.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 0,
+            "especificidad": 1
+          },
+          "criteria_sum": 6,
+          "formula_result": 5,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 0,
+            "especificidad": 1,
+            "sum": 6,
+            "final": 5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "MVCS 2024 estima un déficit de 1.9M viviendas y CAPECO reporta capacidad histórica de 50,000-80,000 unidades/año.",
+            "propuesta": "Modelo 'Barrio Obrero' con terrenos estatales es correcto, pero la meta es incorrecta.",
+            "medidas": "Meta de 1M + reorganización de MIVIVIENDA/TECHO PROPIO, pero sobredimensionada 3-4 veces la capacidad histórica.",
+            "implementacion": "MIVIVIENDA, TECHO PROPIO, MIDIS, gobiernos regionales y locales están nombrados.",
+            "viabilidad": "200,000 unidades/año vs capacidad histórica de 50,000-80,000, físicamente imposible en el quinquenio.",
+            "especificidad": "Meta de 1M cuantificada, pero es irrealizable."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas para reducir el déficit habitacional en Perú, considerando cuántas viviendas se construirían, el modelo a utilizar, los beneficiarios y el financiamiento. La pregunta central es si la meta propuesta es físicamente posible dentro del quinquenio.",
+            "importancia": "El déficit habitacional de 1.9 millones de viviendas impacta directamente la calidad de vida de millones de familias peruanas. Vivir en condiciones precarias afecta la salud, la educación de los niños y la seguridad, lo que hace urgente la implementación de políticas sostenidas y realistas en este ámbito.",
+            "diagnostico_externo": "Según el Ministerio de Vivienda, Construcción y Saneamiento (MVCS, 2024), el déficit habitacional es de 1.9 millones de viviendas. La Cámara Peruana de la Construcción (CAPECO, 2024) indica que la capacidad histórica del sector formal es de 50,000 a 80,000 unidades anuales, lo que resalta la magnitud del desafío.",
+            "propuesta_plan": "El plan propone construir un millón de viviendas en cinco años bajo el modelo 'Barrio Obrero', utilizando terrenos del Estado para reducir costos y reorganizando los programas MIVIVIENDA y TECHO PROPIO. Se contempla la participación de gobiernos regionales y locales como ejecutores descentralizados.",
+            "medidas_concretas": "Las medidas específicas incluyen la construcción de un millón de viviendas en cinco años, el uso de terrenos estatales para abaratar costos, la reorganización de los programas MIVIVIENDA y TECHO PROPIO, y la participación activa de gobiernos regionales y locales.",
+            "implementacion_necesaria": "Para implementar el plan, se requiere un modelo estructuralmente correcto como el 'Barrio Obrero', pero la meta de un millón de viviendas en cinco años es irrealizable. Se necesitaría triplicar o cuadruplicar la capacidad constructiva del sector formal, lo que es físicamente imposible en el primer año de gobierno.",
+            "impacto_potencial": "Si se establece una meta realista, el modelo y las instituciones podrían permitir un avance significativo en la reducción del déficit habitacional. Sin embargo, una meta de un millón de viviendas podría llevar al fracaso y a la frustración de las familias que esperan soluciones.",
+            "vacios": "El plan carece de una meta alcanzable, ya que la propuesta de un millón de viviendas es entre tres y cuatro veces la capacidad histórica del sector. Además, no se presenta una fuente fiscal clara para el financiamiento ni un cronograma que priorice las regiones más deficitarias.",
+            "evaluacion_tecnica": "La evaluación técnica muestra que, aunque la meta existe, está sobredimensionada en relación a la capacidad histórica del sector. La propuesta incluye instituciones relevantes, pero la meta de 200,000 unidades anuales es físicamente imposible de alcanzar en el quinquenio.",
+            "conclusion": "La calificación final de 5.0/10 indica que, aunque el modelo y las instituciones están bien definidos, la propuesta es débil debido a la meta irrealizable de un millón de viviendas en cinco años, lo que limita su viabilidad y efectividad."
+          },
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "infraestructura_y_desarrollo",
+      "name": "INFRAESTRUCTURA Y DESARROLLO",
+      "average_score": 5,
+      "color": null,
+      "summary": "",
+      "strengths": [],
+      "weaknesses": [],
+      "interpretation": "",
+      "variables": [
+        {
+          "id": "infraestructura_publica",
+          "name": "Infraestructura pública",
+          "block_id": "infraestructura_y_desarrollo",
+          "final_score": 5,
+          "rating_label": "débil",
+          "summary": "El plan propone un Plan Nacional de Infraestructura Sostenible para la Competitividad, con metas cuantificadas para mejorar la infraestructura pública en el Perú, incluyendo más de 8,000 km de vías vecinales y un megaproyecto del tren costero. Sin embargo, enfrenta desafíos significativos en términos de implementación y financiamiento.",
+          "strengths": [
+            "Metas de caminos rurales son técnicamente sólidas",
+            "Alto impacto potencial en conectividad productiva",
+            "Métricas de km verificables"
+          ],
+          "weaknesses": [
+            "Ausencia de institución ejecutora con mandato y presupuesto",
+            "Sobrepromesa del tren costero como proyecto del quinquenio",
+            "Falta de tabla de financiamiento del plan"
+          ],
+          "gaps": [
+            "No hay mandato explícito para el MTC",
+            "El tren costero es un proyecto a largo plazo, no del quinquenio"
+          ],
+          "conclusion": "El plan presenta propuestas con potencial transformador, pero su viabilidad se ve comprometida por la falta de claridad en la ejecución y financiamiento. La evaluación técnica final sugiere que se necesita un enfoque más realista.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 0,
+            "viabilidad": 1,
+            "especificidad": 1
+          },
+          "criteria_sum": 6,
+          "formula_result": 5,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 0,
+            "viabilidad": 1,
+            "especificidad": 1,
+            "sum": 6,
+            "final": 5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "BM/MTC 2024: costo logístico 24% del PBI. Contraloría: 2,300 obras paralizadas por S/22,000M.",
+            "propuesta": "Plan Nacional de Infraestructura con métricas de caminos rurales verificables.",
+            "medidas": "Métricas de km verificables + tren costero. El tren es un proyecto de 15-20 años, no del quinquenio.",
+            "implementacion": "El MTC está implícito pero sin mandato explícito. Sin institución central ejecutora.",
+            "viabilidad": "Los caminos rurales son factibles. El tren costero no es del quinquenio.",
+            "especificidad": "Métricas de km de caminos verificables. El tren costero sobredimensiona el período."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas para mejorar la infraestructura del país, incluyendo carreteras, caminos rurales, puertos, canales de riego, saneamiento y conectividad productiva. Se centra en la viabilidad de las metas, la identificación de instituciones ejecutoras y el financiamiento disponible.",
+            "importancia": "La infraestructura es crucial para reducir los altos costos logísticos en el Perú, que representan un 24% del PBI. Sin una adecuada infraestructura, la economía rural no puede crecer, lo que profundiza la desigualdad territorial.",
+            "diagnostico_externo": "Según el Banco Mundial y el MTC, el costo logístico en el Perú es elevado y hay 2,300 obras paralizadas que suman S/22,000 millones. Además, solo el 2.3% de las vías vecinales está pavimentado, lo que refleja una grave deficiencia en la infraestructura.",
+            "propuesta_plan": "El plan propone un Plan Nacional de Infraestructura Sostenible para la Competitividad, con metas cuantificadas que incluyen más de 8,000 km de vías vecinales y 20,000 km de caminos intermedios. También se contempla infraestructura de saneamiento, riego tecnificado y un megaproyecto del tren costero.",
+            "medidas_concretas": "Se identifican medidas concretas como el Plan Nacional de Infraestructura con metas verificables de km de caminos rurales, así como la electrificación rural y la mejora de canales de irrigación. El tren costero se presenta como un megaproyecto a largo plazo.",
+            "implementacion_necesaria": "Para implementar el plan, es necesario que el MTC tenga un mandato explícito y un presupuesto asignado. Además, se requiere una institución central ejecutora que coordine y supervise las obras propuestas.",
+            "impacto_potencial": "La implementación de 8,000 km de vías vecinales podría mejorar significativamente la conectividad de comunidades rurales con los mercados. El riego tecnificado podría transformar la agricultura familiar, mientras que el tren costero tendría un impacto nacional, aunque su construcción es a largo plazo.",
+            "vacios": "El plan carece de un mandato explícito para el MTC y no presenta una institución central ejecutora. Además, la propuesta del tren costero es considerada una sobrepromesa, ya que su horizonte de ejecución es de 15 a 20 años, no del quinquenio.",
+            "evaluacion_tecnica": "La evaluación técnica muestra que las metas de km de caminos son verificables, pero el tren costero no se ajusta al horizonte del quinquenio. La falta de un mandato claro para el MTC y la ausencia de una institución ejecutora son deficiencias significativas.",
+            "conclusion": "El plan presenta metas de infraestructura sólidas y de alto impacto potencial, pero su efectividad se ve comprometida por la falta de una institución ejecutora con mandato y presupuesto, así como por la sobrepromesa del tren costero. La calificación final es 5.0/10, lo que indica una propuesta débil."
+          },
+          "sources": []
+        },
+        {
+          "id": "transporte",
+          "name": "Transporte ⛔",
+          "block_id": "infraestructura_y_desarrollo",
+          "final_score": 4.2,
+          "rating_label": "débil",
+          "summary": "La propuesta busca mejorar el transporte urbano y rural mediante la adquisición de 10,000 buses eléctricos, la implementación de un subsidio permanente al pasaje y la construcción de 8,000 km de caminos rurales. Sin embargo, el subsidio carece de una fuente fiscal identificada, lo que plantea serios desafíos para su sostenibilidad.",
+          "strengths": [
+            "Meta verificable de 8,000 km de caminos rurales",
+            "Sistema multimodal con subsidio orientado a los más pobres",
+            "Reducción de la contaminación urbana con buses eléctricos"
+          ],
+          "weaknesses": [
+            "Subsidio permanente sin fuente fiscal identificada",
+            "Inversión inicial elevada para los buses eléctricos",
+            "Falta de norma de cofinanciamiento del MTC"
+          ],
+          "gaps": [
+            "Falta de cronograma de adquisición de los buses",
+            "Ausencia de financiamiento para el subsidio permanente"
+          ],
+          "conclusion": "El plan presenta una propuesta sólida en términos de infraestructura, pero la falta de financiamiento para el subsidio permanente y los buses eléctricos limita su viabilidad. Esto genera un riesgo fiscal significativo que podría afectar la implementación del plan.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 0,
+            "viabilidad": 0,
+            "especificidad": 1
+          },
+          "criteria_sum": 5,
+          "formula_result": 4.2,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 0,
+            "viabilidad": 0,
+            "especificidad": 1,
+            "sum": 5,
+            "final": 4.2
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "MTC 2024: 2.3% de vías vecinales pavimentadas. Costo logístico: 24% del PBI.",
+            "propuesta": "Sistema multimodal con subsidio orientado hacia los más pobres. Orientación correcta.",
+            "medidas": "8,000 km de caminos (meta verificable). Subsidio S/2,000-5,000M/año y buses sin fuente fiscal.",
+            "implementacion": "El MTC está implícito. Sin norma de cofinanciamiento.",
+            "viabilidad": "El subsidio permanente de S/5,000M/año agrava la brecha fiscal sin financiamiento.",
+            "especificidad": "Meta de 8,000 km (cuantificada). El subsidio sin fuente no es especificidad útil."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas para mejorar el transporte urbano y rural, incluyendo la flota de buses, subsidios al pasaje, caminos vecinales y conectividad regional. Se centra en la sostenibilidad fiscal de estas propuestas y la identificación de fuentes de financiamiento.",
+            "importancia": "El transporte es fundamental para conectar a las personas con oportunidades laborales y mejorar su calidad de vida. En zonas rurales, la falta de infraestructura de transporte está directamente relacionada con la pobreza, lo que hace que su mejora sea esencial para el funcionamiento de la economía.",
+            "diagnostico_externo": "Según el MTC (2024), solo el 2.3% de las vías vecinales en Perú está pavimentado, y el costo logístico representa el 24% del PBI. Además, el transporte público urbano enfrenta problemas de flota envejecida y baja calidad.",
+            "propuesta_plan": "La Propuesta N°16 sugiere la adquisición de 10,000 buses eléctricos para el transporte urbano, la implementación de un subsidio permanente al pasaje de entre S/2,000 y S/5,000 millones anuales, y la construcción de 8,000 km de caminos rurales.",
+            "medidas_concretas": "Las medidas específicas incluyen la adquisición de 10,000 buses eléctricos, un subsidio permanente al transporte urbano de S/2,000-5,000 millones anuales, y la construcción de 8,000 km de caminos rurales.",
+            "implementacion_necesaria": "Para implementar estas propuestas, se requiere asegurar financiamiento para los 8,000 km de caminos rurales, así como una fuente fiscal identificada para el subsidio permanente, que representa un gasto recurrente significativo.",
+            "impacto_potencial": "La construcción de 8,000 km de caminos rurales podría mejorar significativamente la conectividad productiva, mientras que el subsidio al transporte beneficiaría a las personas de menores ingresos. Además, la introducción de buses eléctricos podría contribuir a la reducción de la contaminación urbana.",
+            "vacios": "El plan carece de una fuente fiscal clara para el subsidio permanente de S/5,000 millones anuales y para la inversión inicial en los buses eléctricos. También falta un cronograma de adquisición de los buses y una norma de cofinanciamiento definida por el MTC.",
+            "evaluacion_tecnica": "La evaluación técnica muestra que, aunque los 8,000 km de caminos son una meta verificable, el subsidio y los buses carecen de fuentes de financiamiento. Esto agrava la brecha fiscal, lo que limita la viabilidad de las propuestas.",
+            "conclusion": "La propuesta presenta una sólida meta de caminos rurales, pero el subsidio permanente al transporte sin una fuente fiscal identificada es un problema crítico que podría comprometer la sostenibilidad del plan. La calificación final es de 4.2/10, lo que indica una evaluación muy débil."
+          },
+          "sources": []
+        },
+        {
+          "id": "energia",
+          "name": "Energía",
+          "block_id": "infraestructura_y_desarrollo",
+          "final_score": 5.8,
+          "rating_label": "débil",
+          "summary": "La variable de energía del plan de gobierno busca ampliar el acceso a energía en zonas rurales, democratizar el uso del gas natural y avanzar hacia la transición energética. Propone duplicar el presupuesto del MINEM y completar el gasoducto del Sur para mejorar la electrificación y el acceso al gas en regiones desfavorecidas.",
+          "strengths": [
+            "Presupuesto específico para electrificación rural",
+            "Instituciones responsables identificadas (MINEM y FONAFE)",
+            "Propuestas concretas para avanzar hacia energías renovables"
+          ],
+          "weaknesses": [
+            "Historial de fracasos del gasoducto del Sur",
+            "Falta de un mecanismo diferenciado para gestionar el gasoducto",
+            "No se detalla la estrategia de transición a energías renovables"
+          ],
+          "gaps": [
+            "No hay plan de contingencia para el gasoducto",
+            "Falta de detalles sobre la gestión del gasoducto del Sur"
+          ],
+          "conclusion": "La propuesta de energía es la más sólida del bloque de infraestructura, con un puntaje de 5.8/10. Sin embargo, la debilidad del gasoducto del Sur plantea riesgos que deben ser abordados.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1
+          },
+          "criteria_sum": 7,
+          "formula_result": 5.8,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1,
+            "sum": 7,
+            "final": 5.8
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "MINEM 2024: brecha de electrificación 16.7%. OSINERGMIN: precio del gas al doble en regiones respecto a Lima.",
+            "propuesta": "Electrificación rural + gasoducto del Sur + Ley 32315 con lógica.",
+            "medidas": "Presupuesto MINEM con monto específico + Ley 32315. El gasoducto tiene historial de fracasos.",
+            "implementacion": "MINEM y FONAFE nombrados con función.",
+            "viabilidad": "La electrificación rural es factible. El gasoducto del Sur tiene historial de fracasos — riesgo medio.",
+            "especificidad": "Presupuesto MINEM con monto específico (S/1,100M/año) + Ley 32315 (norma)."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas para ampliar el acceso a energía en zonas rurales, democratizar el uso del gas natural y avanzar hacia la transición energética. Se considera si el plan tiene metas, presupuesto e institución responsable identificados.",
+            "importancia": "La energía es fundamental para el desarrollo económico y social de un país. Sin acceso a electricidad, se limita la refrigeración, el estudio nocturno y la producción agroindustrial, lo que perpetúa la brecha de oportunidades entre Lima y las regiones.",
+            "diagnostico_externo": "Según el MINEM (2024), existe una brecha de electrificación rural del 16.7%, lo que implica que casi 1 de cada 6 hogares rurales no tiene acceso a electricidad. Además, OSINERGMIN reporta que el precio del gas en regiones es el doble que en Lima, lo que agrava la desigualdad territorial.",
+            "propuesta_plan": "El plan propone duplicar el presupuesto del MINEM de S/489 millones a S/1,100 millones anuales para acelerar la electrificación rural. También sugiere usar la Ley 32315 como instrumento normativo para la expansión energética y completar el gasoducto del Sur para llevar gas barato a las regiones.",
+            "medidas_concretas": "Las medidas específicas incluyen: duplicar el presupuesto del MINEM, utilizar la Ley 32315 para la expansión energética, completar el gasoducto del Sur y avanzar hacia energías renovables. Estas acciones están orientadas a mejorar el acceso y la calidad de la energía en el país.",
+            "implementacion_necesaria": "Para implementar estas propuestas, se requiere que la electrificación rural sea técnicamente factible, con instituciones identificadas como el MINEM y FONAFE, y un presupuesto específico. Sin embargo, el gasoducto del Sur presenta un historial de fracasos que exige un mecanismo de gestión y control que no está descrito en el plan.",
+            "impacto_potencial": "La electrificación rural podría tener un impacto directo y positivo en la calidad de vida de las personas, activando la economía local y reduciendo la brecha territorial. Si se completa el gasoducto del Sur, se podría proporcionar gas a regiones que actualmente enfrentan precios elevados.",
+            "vacios": "El plan carece de un mecanismo diferenciado para gestionar el gasoducto del Sur, considerando su historial de fracasos. Además, no presenta un plan de contingencia para posibles problemas futuros ni detalla la estrategia de transición hacia energías renovables.",
+            "evaluacion_tecnica": "La evaluación técnica muestra que el presupuesto del MINEM y la Ley 32315 están presentes, pero el gasoducto del Sur tiene un historial de fracasos que representa un riesgo medio. La electrificación rural es factible, lo que contribuye a una evaluación general positiva.",
+            "conclusion": "La política energética es la mejor implementada del bloque de infraestructura, con un puntaje de 5.8/10. Aunque tiene un presupuesto y una norma identificados, la debilidad radica en la gestión del gasoducto del Sur, que requiere atención especial."
+          },
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "tecnologia_y_estado_digital",
+      "name": "TECNOLOGÍA Y ESTADO DIGITAL",
+      "average_score": 4.8,
+      "color": null,
+      "summary": "",
+      "strengths": [],
+      "weaknesses": [],
+      "interpretation": "",
+      "variables": [
+        {
+          "id": "digitalizacion_del_estado",
+          "name": "Digitalización del Estado ⛔",
+          "block_id": "tecnologia_y_estado_digital",
+          "final_score": 5,
+          "rating_label": "débil",
+          "summary": "La propuesta busca llevar internet al 85% de los hogares peruanos, con un 80% en zonas rurales, a través de PRONATEL. También plantea la nacionalización de Telefónica del Perú para crear TelPerú y la implementación de un Plan 5G, además de modernizar los servicios digitales del Estado.",
+          "strengths": [
+            "Las metas de conectividad son alcanzables",
+            "PRONATEL puede lograr la conectividad a menor costo",
+            "Las metas están cuantificadas y son verificables"
+          ],
+          "weaknesses": [
+            "La nacionalización de Telefónica introduce riesgos jurídicos",
+            "No hay presupuesto para la compensación de la nacionalización",
+            "Falta un plan de gestión para TelPerú"
+          ],
+          "gaps": [
+            "No se presenta un cronograma de expansión de la conectividad por regiones",
+            "No se justifica la necesidad de nacionalizar Telefónica"
+          ],
+          "conclusion": "El plan presenta metas correctas y alcanzables, pero la nacionalización de Telefónica es innecesaria y genera riesgos que podrían afectar su implementación. La propuesta podría ser más efectiva si se enfoca en fortalecer PRONATEL sin la nacionalización.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 0,
+            "especificidad": 1
+          },
+          "criteria_sum": 6,
+          "formula_result": 5,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 0,
+            "especificidad": 1,
+            "sum": 6,
+            "final": 5
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "UIT 2024: puesto 71/193 en Gobierno Digital. OSIPTEL: 58.4% de hogares con internet.",
+            "propuesta": "Las metas de conectividad son correctas. La nacionalización es innecesaria e introduce riesgo jurídico grave.",
+            "medidas": "Metas verificables (58.4%→85%) + PRONATEL. La nacionalización contamina el conjunto.",
+            "implementacion": "PRONATEL y Viceministerio TIC nombrados.",
+            "viabilidad": "La nacionalización activa el TBI Perú-España. TelPerú replicaría el fracaso de PETROPERU.",
+            "especificidad": "Metas cuantificadas (58.4%→85%). La nacionalización las contamina."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas para ampliar la conectividad a internet, modernizar los servicios digitales del Estado y reducir la brecha tecnológica. Se centra en la viabilidad de las metas y la eficiencia de los instrumentos propuestos para alcanzarlas.",
+            "importancia": "La conectividad a internet es fundamental en la actualidad, ya que permite el acceso a recursos educativos, oportunidades laborales y servicios estatales. Reducir la brecha digital es esencial para el desarrollo integral del país y el funcionamiento de otras políticas públicas.",
+            "diagnostico_externo": "Según la Unión Internacional de Telecomunicaciones (UIT, 2024), Perú ocupa el puesto 71 de 193 en Gobierno Digital. Además, OSIPTEL (2024) indica que solo el 58.4% de los hogares tiene acceso a internet, con marcadas diferencias entre Lima y las regiones.",
+            "propuesta_plan": "El plan propone llevar internet al 85% de los hogares, con un 80% en zonas rurales, a través de PRONATEL. También sugiere la nacionalización de Telefónica del Perú para crear una empresa estatal llamada 'TelPerú' y la implementación de un Plan 5G.",
+            "medidas_concretas": "Las medidas específicas incluyen llevar internet al 85% de los hogares, nacionalizar Telefónica y crear TelPerú, implementar un Plan 5G y modernizar los servicios digitales del Estado.",
+            "implementacion_necesaria": "Para implementar las propuestas, se requiere un enfoque técnico que evite la nacionalización de Telefónica, ya que esta acción podría generar demandas internacionales costosas. PRONATEL puede alcanzar las metas de conectividad sin necesidad de nacionalizar.",
+            "impacto_potencial": "Si se ejecuta correctamente a través de PRONATEL, el acceso a internet podría transformar la educación, la salud y los servicios estatales para millones de peruanos. Sin embargo, la nacionalización podría limitar estos beneficios debido a los riesgos asociados.",
+            "vacios": "El plan carece de justificación para la nacionalización de Telefónica, no incluye un presupuesto para la compensación que esta acción generaría, ni un plan de gestión para TelPerú que evite problemas similares a los de PETROPERU.",
+            "evaluacion_tecnica": "La evaluación técnica muestra que las metas de conectividad son alcanzables mediante PRONATEL, pero la propuesta de nacionalización introduce riesgos jurídicos y de gestión. Las metas son verificables, pero la nacionalización contamina la propuesta en su conjunto.",
+            "conclusion": "La propuesta presenta metas de conectividad correctas y alcanzables, pero la nacionalización de Telefónica es innecesaria y genera riesgos significativos. La evaluación final es de 5.0/10, lo que indica una propuesta débil en su conjunto."
+          },
+          "sources": []
+        },
+        {
+          "id": "innovacion_tecnologica",
+          "name": "Innovación tecnológica",
+          "block_id": "tecnologia_y_estado_digital",
+          "final_score": 3.3,
+          "rating_label": "insuficiente",
+          "summary": "El plan propone utilizar los CITEs como centros de innovación y articulación productiva, además de implementar un Plan 5G como plataforma tecnológica. Sin embargo, carece de un marco claro que incluya al CONCYTEC como rector de la política de innovación y no establece metas ni presupuesto específico para la inversión en I+D.",
+          "strengths": [
+            "Los CITEs son instituciones existentes con experiencia",
+            "El Plan 5G tiene un enfoque tecnológico adecuado",
+            "La propuesta busca articular la investigación con los sectores productivos"
+          ],
+          "weaknesses": [
+            "Falta de un presupuesto específico para los CITEs",
+            "Ausencia del CONCYTEC como rector de la política de innovación",
+            "No se establece una meta de inversión en I+D como porcentaje del PBI"
+          ],
+          "gaps": [
+            "Sin cronograma de articulación entre ciencia y sectores productivos",
+            "Falta de una política concreta de innovación"
+          ],
+          "conclusion": "La evaluación técnica final indica que el plan es muy débil, ya que carece de elementos fundamentales para ser considerado una política efectiva de innovación. Sin la asignación de presupuesto y la inclusión del CONCYTEC, el impacto esperado es mínimo.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 0,
+            "implementacion": 0,
+            "viabilidad": 1,
+            "especificidad": 0
+          },
+          "criteria_sum": 4,
+          "formula_result": 3.3,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 1,
+            "medidas": 0,
+            "implementacion": 0,
+            "viabilidad": 1,
+            "especificidad": 0,
+            "sum": 4,
+            "final": 3.3
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "CONCYTEC 2024: 0.15% del PBI en I+D. GII: puesto 70/132.",
+            "propuesta": "CITEs y Plan 5G con orientación correcta.",
+            "medidas": "Sin meta de I+D. CITEs sin presupuesto ni secuencia de ejecución.",
+            "implementacion": "CONCYTEC ausente del plan.",
+            "viabilidad": "Los CITEs son institución existente con experiencia.",
+            "especificidad": "Sin meta de % del PBI en I+D."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas para aumentar la inversión en investigación, desarrollo e innovación, así como la conexión entre la ciencia y la economía productiva. Se considera si el plan incluye metas, una institución rectora y un presupuesto específico.",
+            "importancia": "La innovación es crucial para transformar recursos naturales en productos de valor agregado, generar empleos de calidad y competir en la economía global. Sin inversión en innovación, el país corre el riesgo de seguir siendo dependiente de la exportación de materias primas.",
+            "diagnostico_externo": "El Perú se encuentra en una situación crítica en términos de inversión en investigación y desarrollo, con solo el 0.15% del PBI destinado a I+D, el nivel más bajo de América Latina. Además, ocupa el puesto 70 de 132 en el Índice Global de Innovación, lo que refleja una clara necesidad de mejorar en esta área.",
+            "propuesta_plan": "El plan menciona la creación de CITEs como centros que articulan la investigación con los sectores productivos y propone un Plan 5G como plataforma tecnológica. Sin embargo, no se menciona al CONCYTEC como la entidad rectora de la política de innovación.",
+            "medidas_concretas": "Se identifican como medidas concretas la utilización de CITEs para la innovación y la articulación productiva, así como la implementación de un Plan 5G. Estas iniciativas son pasos en la dirección correcta, pero carecen de un marco más sólido.",
+            "implementacion_necesaria": "Para implementar estas propuestas, es fundamental contar con el CONCYTEC como entidad rectora, establecer una meta de inversión en I+D como porcentaje del PBI y asignar un presupuesto específico. Sin estos elementos, las propuestas carecen de viabilidad.",
+            "impacto_potencial": "Si se asignara un presupuesto adecuado y se nombrara al CONCYTEC con un mandato claro, los CITEs podrían convertirse en un instrumento efectivo de transferencia tecnológica. Sin embargo, en su estado actual, el impacto de las propuestas es mínimo.",
+            "vacios": "El plan presenta varias carencias, como la ausencia del CONCYTEC como rector de la política de innovación, la falta de una meta de inversión en I+D y la falta de un presupuesto específico para los CITEs. Además, no se incluye un cronograma para la articulación entre ciencia y sectores productivos.",
+            "evaluacion_tecnica": "La evaluación técnica muestra que el plan tiene una puntuación muy baja, con un total de 4 de 12 puntos. Esto se debe a la falta de metas y presupuesto, así como a la ausencia del CONCYTEC en el plan.",
+            "conclusion": "En conclusión, el plan tiene una calificación final de 3.3/10, lo que indica que es muy débil. Aunque apunta en la dirección correcta con los CITEs, la falta de elementos clave como el CONCYTEC, metas y presupuesto limita su efectividad."
+          },
+          "sources": []
+        },
+        {
+          "id": "regulacion_de_inteligencia_artificial",
+          "name": "Regulación de inteligencia artificial",
+          "block_id": "tecnologia_y_estado_digital",
+          "final_score": 4.2,
+          "rating_label": "débil",
+          "summary": "El plan aborda la inteligencia artificial de manera tangencial, mencionando la preparación para tecnologías emergentes en el contexto del Plan 5G. Sin embargo, no presenta propuestas concretas para regular su uso ni establece una institución supervisora o principios éticos.",
+          "strengths": [
+            "Reconocimiento de la necesidad de regulación de IA",
+            "Mención del Plan 5G como marco tecnológico",
+            "Posibilidad técnica de regular la IA"
+          ],
+          "weaknesses": [
+            "Falta de legislación específica sobre IA",
+            "Ausencia de una institución supervisora",
+            "No se establecen principios éticos para el uso gubernamental de IA"
+          ],
+          "gaps": [
+            "No se menciona el impacto de la automatización en el empleo",
+            "Falta de propuestas concretas de regulación"
+          ],
+          "conclusion": "La evaluación técnica final indica que el plan es muy débil en cuanto a la regulación de inteligencia artificial. Sin un marco normativo claro, el Estado peruano no podrá utilizar la IA de manera responsable.",
+          "criteria": {
+            "diagnostico": 1,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 0
+          },
+          "criteria_sum": 5,
+          "formula_result": 4.2,
+          "score_table": {
+            "diagnostico": 1,
+            "propuesta": 1,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 0,
+            "sum": 5,
+            "final": 4.2
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "OCDE 2024: sin legislación específica de IA. ITU: etapa naciente de gobernanza digital.",
+            "propuesta": "Preparación para tecnologías emergentes mencionada tangencialmente en el Plan 5G.",
+            "medidas": "El Plan 5G como marco tangencial.",
+            "implementacion": "Consejo de Supervisión de Telecomunicaciones con rol tangencial.",
+            "viabilidad": "Técnicamente posible regular la IA.",
+            "especificidad": "Sin medida específica de regulación de IA."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa si el plan tiene propuestas para regular el uso de la inteligencia artificial (IA) en el país, incluyendo marcos normativos, una institución supervisora y principios éticos para su uso gubernamental. Se busca determinar si el plan reconoce este desafío y presenta propuestas concretas al respecto.",
+            "importancia": "La regulación de la inteligencia artificial es crucial para garantizar un uso responsable de esta tecnología en el país. Sin un marco regulatorio, el Estado no podrá proteger a sus ciudadanos de posibles abusos y discriminaciones derivados del uso de la IA.",
+            "diagnostico_externo": "Según la OCDE (2024), Perú no cuenta con legislación específica sobre inteligencia artificial, y la UIT (2024) indica que el país se encuentra en una etapa 'naciente' de gobernanza digital. Esto sugiere que los marcos institucionales necesarios para regular tecnologías emergentes están en desarrollo.",
+            "propuesta_plan": "El plan menciona la inteligencia artificial de manera tangencial en el contexto del Plan 5G, sugiriendo una preparación para tecnologías emergentes. Sin embargo, no presenta una propuesta específica de regulación de IA ni identifica una institución de supervisión.",
+            "medidas_concretas": "La única medida concreta identificada es el Plan 5G, que actúa como un marco tecnológico general, pero no aborda de manera específica la regulación de la inteligencia artificial.",
+            "implementacion_necesaria": "Para implementar una política de IA efectiva, se requeriría una ley o reglamento específico, una institución supervisora con un mandato claro y principios éticos explícitos para el uso gubernamental de la IA. Ninguno de estos elementos se encuentra en el plan actual.",
+            "impacto_potencial": "Sin un marco regulatorio adecuado, el Estado peruano carecerá de referencias claras para el uso de la IA en sus procesos, lo que podría dejar a los ciudadanos vulnerables ante usos discriminatorios por parte de terceros.",
+            "vacios": "El plan carece de propuestas específicas de regulación de IA, no identifica una institución de supervisión con mandato y no establece principios éticos para su uso. Además, no menciona los riesgos laborales asociados a la automatización.",
+            "evaluacion_tecnica": "La evaluación técnica muestra que, aunque se reconoce la ausencia de legislación, el plan no ofrece medidas concretas. La evaluación final es de 4.2/10, lo que indica una propuesta muy débil en términos de regulación de IA.",
+            "conclusion": "La regulación de inteligencia artificial en el plan es prácticamente inexistente. La mención tangencial en el Plan 5G no es suficiente para establecer una política real, dejando al Estado peruano sin preparación para un uso responsable de la IA."
+          },
+          "sources": []
+        },
+        {
+          "id": "ciberseguridad",
+          "name": "Ciberseguridad",
+          "block_id": "tecnologia_y_estado_digital",
+          "final_score": 6.7,
+          "rating_label": "moderado",
+          "summary": "La propuesta del Plan Nacional de Ciberseguridad busca proteger la infraestructura digital del Estado y de los ciudadanos ante ciberataques, estableciendo un consejo multipartita para su supervisión. Se plantea declarar las telecomunicaciones como infraestructura crítica y actualizar la legislación vigente.",
+          "strengths": [
+            "Propuesta de un Plan Nacional de Ciberseguridad bien articulada",
+            "Declaración de telecomunicaciones como infraestructura crítica",
+            "Consejo Nacional de Supervisión con composición multipartita"
+          ],
+          "weaknesses": [
+            "Falta de presupuesto específico para la implementación del plan",
+            "Ley 29733 de 2011 desactualizada",
+            "Ausencia de cronograma de implementación"
+          ],
+          "gaps": [
+            "Necesidad de actualización de la Ley 29733",
+            "Falta de un presupuesto claro para el Plan Nacional"
+          ],
+          "conclusion": "El Plan Nacional de Ciberseguridad es técnicamente sólido, pero su efectividad se ve comprometida por la falta de recursos y actualizaciones legales. Se requiere atención a las debilidades identificadas para mejorar su viabilidad.",
+          "criteria": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1
+          },
+          "criteria_sum": 8,
+          "formula_result": 6.7,
+          "score_table": {
+            "diagnostico": 2,
+            "propuesta": 2,
+            "medidas": 1,
+            "implementacion": 1,
+            "viabilidad": 1,
+            "especificidad": 1,
+            "sum": 8,
+            "final": 6.7
+          },
+          "corrected_methodology": false,
+          "correction_note": null,
+          "criteria_notes": {
+            "diagnostico": "UIT 2024: puesto 93/193 en ciberseguridad. PCM 2024: solo el 15% de entidades con plan de continuidad.",
+            "propuesta": "Plan Nacional de Ciberseguridad + infraestructura crítica + Consejo con composición multipartita definida.",
+            "medidas": "Plan + Consejo escritos. Sin presupuesto ni actualización de la Ley 29733.",
+            "implementacion": "Consejo Nacional de Supervisión con composición definida (Estado, trabajadores, usuarios, GRs).",
+            "viabilidad": "Técnicamente factible.",
+            "especificidad": "Plan Nacional de Ciberseguridad (instrumento) + Consejo con composición (institución)."
+          },
+          "analysis_sections": {
+            "definicion": "Esta variable evalúa las propuestas para proteger la infraestructura digital del Estado y de los ciudadanos frente a ciberataques. Se centra en la existencia de un plan nacional con una institución, composición y mandato claramente definidos.",
+            "importancia": "La ciberseguridad es crucial para el desarrollo del país, ya que un ciberataque exitoso puede paralizar servicios esenciales como el sistema eléctrico, agua potable y servicios financieros. La alta vulnerabilidad del Estado peruano, con el 85% de las entidades sin un plan de continuidad operativa, resalta la necesidad urgente de abordar esta problemática.",
+            "diagnostico_externo": "Según la UIT (2024), Perú ocupa el puesto 93 de 193 en el Índice Global de Ciberseguridad. Además, la PCM (2024) indica que el 85% de las entidades estatales carecen de un plan de continuidad operativa ante ciberataques, lo que evidencia una grave deficiencia en la protección de datos y sistemas.",
+            "propuesta_plan": "El plan propone la creación de un Plan Nacional de Ciberseguridad, la declaración de las telecomunicaciones como infraestructura crítica del Estado, y la formación de un Consejo Nacional de Supervisión de Telecomunicaciones con una composición multipartita que incluya al Estado, trabajadores, usuarios y gobiernos regionales.",
+            "medidas_concretas": "Las medidas específicas incluyen la implementación de un Plan Nacional de Ciberseguridad, la declaración de las telecomunicaciones como infraestructura crítica y la creación de un Consejo Nacional de Supervisión con una composición claramente definida.",
+            "implementacion_necesaria": "Para implementar estas propuestas, se requiere un presupuesto específico para el Plan Nacional de Ciberseguridad. Además, es urgente actualizar la Ley 29733 de 2011 para que cumpla con los estándares actuales de protección de datos, algo que el plan no menciona explícitamente.",
+            "impacto_potencial": "Un Plan Nacional de Ciberseguridad bien financiado podría reducir significativamente la vulnerabilidad del Estado. La declaración de telecomunicaciones como infraestructura crítica permitiría activar protocolos de respuesta más rápidos, y el Consejo multipartita garantizaría una supervisión independiente y efectiva.",
+            "vacios": "El plan carece de un presupuesto específico para el Plan Nacional de Ciberseguridad y no menciona la actualización de la Ley 29733 de 2011, que está desactualizada. También falta un cronograma de implementación que detalle cómo se llevarán a cabo estas propuestas.",
+            "evaluacion_tecnica": "La evaluación técnica indica que, aunque el Plan y el Consejo están escritos, la falta de presupuesto y la no actualización de la Ley 29733 limitan su efectividad. Sin embargo, el Consejo Nacional de Supervisión tiene una composición definida, lo que es un aspecto positivo.",
+            "conclusion": "La ciberseguridad es la variable más sólida del bloque tecnológico, con propuestas técnicamente correctas y bien articuladas. Sin embargo, la ausencia de presupuesto y la falta de actualización legal son deficiencias significativas que deben ser abordadas para garantizar la efectividad del plan."
+          },
+          "sources": []
+        }
+      ]
+    }
+  ],
+  "_converted_from_docx": true,
+  "_converted_at": "2026-03-19T20:57:39.515Z"
+}

@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comparación · Planes de Gobierno</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="public/styles/globals.css">
+  <style>
+    .page-wrap { padding: 0 0 80px; }
+    /* ── Header ── */
+    .comp-header {
+      padding: 40px 0 32px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 0;
+    }
+    .comp-header-eyebrow {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 4px 11px; background: var(--primary-soft); color: var(--primary);
+      border-radius: 99px; font-size: 11.5px; font-weight: 700;
+      letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 14px;
+    }
+    .comp-header h1 {
+      font-family: 'Sora', sans-serif; font-size: clamp(1.6rem,3.5vw,2.4rem);
+      font-weight: 900; letter-spacing: -0.03em; margin: 0 0 6px;
+    }
+    .comp-header-sub { font-size: 1rem; color: var(--text-2); margin: 0 0 24px; }
+    .comp-header-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn-download {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--primary); color: #fff; padding: 9px 18px;
+      border-radius: 8px; font-size: 13.5px; font-weight: 700;
+      border: none; cursor: pointer;
+      transition: background 0.15s;
+    }
+    .btn-download:hover { background: var(--primary-dark); }
+    .btn-change {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--surface); color: var(--text-2);
+      padding: 9px 18px; border-radius: 8px; font-size: 13.5px;
+      font-weight: 600; border: 1.5px solid var(--border);
+      cursor: pointer; text-decoration: none;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .btn-change:hover { border-color: var(--text-2); color: var(--text); }
+
+    /* ── Section layout ── */
+    .comp-section {
+      padding: 40px 0 0;
+    }
+    .section-title {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.25rem; font-weight: 800;
+      margin: 0 0 20px; display: flex; align-items: center; gap: 10px;
+    }
+    .section-title span {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 30px; height: 30px; border-radius: 8px;
+      background: var(--primary); color: #fff;
+      font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 800;
+      flex-shrink: 0;
+    }
+    .divider { border: none; border-top: 1px solid var(--border); margin: 40px 0 0; }
+
+    /* ── Resumen cards ── */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .summary-card {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .summary-card-stripe { height: 5px; }
+    .summary-card-body { padding: 20px 22px 22px; }
+    .summary-card-name {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.05rem; font-weight: 800; margin: 0 0 3px;
+    }
+    .summary-card-party { font-size: 12px; color: var(--muted); margin: 0 0 16px; }
+    .summary-score-big {
+      font-family: 'Sora', sans-serif;
+      font-size: 2.8rem; font-weight: 900; line-height: 1; margin-bottom: 4px;
+    }
+    .summary-meta { font-size: 12.5px; color: var(--muted); margin-bottom: 14px; }
+    .summary-best-worst { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .summary-bw-item { font-size: 12px; }
+    .summary-bw-label { color: var(--muted); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px; }
+    .summary-bw-val { font-weight: 700; color: var(--text); }
+
+    /* ── Winners bar ── */
+    .winners-bar {
+      display: flex; flex-wrap: wrap; gap: 10px;
+    }
+    .winner-chip {
+      display: flex; align-items: center; gap: 8px;
+      background: var(--surface); border: 1.5px solid var(--border);
+      border-radius: 10px; padding: 8px 14px;
+    }
+    .winner-chip-dot {
+      width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+    }
+    .winner-chip-category {
+      font-size: 11.5px; color: var(--muted); font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .winner-chip-name { font-size: 13px; font-weight: 700; }
+    .winner-chip-score { font-size: 12px; color: var(--muted); }
+
+    /* ── Block table ── */
+    .block-table-wrap { overflow-x: auto; }
+    .block-table {
+      width: 100%; border-collapse: collapse; font-size: 14px;
+    }
+    .block-table th {
+      padding: 11px 16px; text-align: left;
+      font-size: 12px; font-weight: 700; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.05em;
+      border-bottom: 2px solid var(--border);
+    }
+    .block-table th.cand-col { text-align: center; }
+    .block-table td { padding: 10px 16px; border-bottom: 1px solid var(--border-soft); }
+    .block-table tr:last-child td { border-bottom: none; }
+    .block-table td.block-name { font-weight: 700; }
+    .block-table td.score-cell { text-align: center; }
+    .score-cell-inner {
+      display: inline-flex; flex-direction: column; align-items: center; gap: 2px;
+    }
+    .score-pill {
+      padding: 4px 12px; border-radius: 99px;
+      font-weight: 800; font-size: 14px; font-family: 'Sora', sans-serif;
+    }
+    .score-pill.lvl-strong   { background: #dcfce7; color: #15803d; }
+    .score-pill.lvl-solid    { background: #dbeafe; color: #1d4ed8; }
+    .score-pill.lvl-medium   { background: #fef3c7; color: #92400e; }
+    .score-pill.lvl-weak     { background: #ffedd5; color: #c2410c; }
+    .score-pill.lvl-very-weak{ background: #fee2e2; color: #b91c1c; }
+    .score-pill.lvl-none     { background: var(--border); color: var(--muted); }
+    .score-pill-label { font-size: 10.5px; color: var(--muted); }
+
+    /* ── Heatmap ── */
+    .heatmap-filter {
+      display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 18px;
+    }
+    .hf-btn {
+      padding: 5px 13px; border-radius: 99px; font-size: 12.5px; font-weight: 600;
+      border: 1.5px solid var(--border); background: var(--surface); color: var(--text-2);
+      cursor: pointer; transition: border-color 0.15s, color 0.15s, background 0.15s;
+    }
+    .hf-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .heatmap-wrap { overflow-x: auto; }
+    .heatmap-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .heatmap-table th {
+      padding: 9px 12px; font-size: 11.5px; font-weight: 700; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.04em;
+      border-bottom: 2px solid var(--border); text-align: center;
+    }
+    .heatmap-table th:first-child { text-align: left; min-width: 160px; }
+    .heatmap-table td { padding: 7px 12px; border-bottom: 1px solid var(--border-soft); text-align: center; }
+    .heatmap-table td:first-child { text-align: left; font-size: 12.5px; }
+    .heatmap-table tr:last-child td { border-bottom: none; }
+    .hm-block-header td {
+      background: var(--bg); font-weight: 700; font-size: 11.5px;
+      color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em;
+      padding: 8px 12px 5px;
+    }
+    .hm-cell {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-width: 46px; height: 32px; border-radius: 7px;
+      font-weight: 800; font-size: 13px; font-family: 'Sora', sans-serif;
+    }
+    .hm-none   { background: #f1f1ef; color: #aaa; }
+    .hm-lvl0   { background: #fee2e2; color: #b91c1c; }
+    .hm-lvl1   { background: #ffedd5; color: #c2410c; }
+    .hm-lvl2   { background: #fef3c7; color: #92400e; }
+    .hm-lvl3   { background: #dbeafe; color: #1d4ed8; }
+    .hm-lvl4   { background: #dcfce7; color: #15803d; }
+
+    /* ── Block accordion ── */
+    .block-accordion { display: flex; flex-direction: column; gap: 10px; }
+    .acc-item {
+      background: var(--surface); border: 1.5px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+    }
+    .acc-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 18px; cursor: pointer; transition: background 0.12s;
+    }
+    .acc-header:hover { background: var(--bg); }
+    .acc-header-left { display: flex; align-items: center; gap: 12px; }
+    .acc-header-name { font-weight: 700; font-size: 15px; }
+    .acc-scores-row { display: flex; gap: 8px; }
+    .acc-score-chip {
+      display: flex; align-items: center; gap: 5px;
+      font-size: 12px; padding: 2px 8px; border-radius: 99px;
+      border: 1.5px solid; font-weight: 700;
+    }
+    .acc-chevron { transition: transform 0.2s; color: var(--muted); }
+    .acc-item.open .acc-chevron { transform: rotate(180deg); }
+    .acc-body { display: none; padding: 0 18px 18px; }
+    .acc-item.open .acc-body { display: block; }
+    .acc-var-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
+    .acc-var-table th {
+      padding: 8px 12px; font-size: 11px; font-weight: 700;
+      color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border); text-align: left;
+    }
+    .acc-var-table td { padding: 9px 12px; border-bottom: 1px solid var(--border-soft); vertical-align: top; }
+    .acc-var-table tr:last-child td { border-bottom: none; }
+    .acc-var-name { font-weight: 700; margin-bottom: 3px; }
+    .acc-var-level { font-size: 11px; color: var(--muted); }
+    .acc-var-summary { font-size: 12px; color: var(--text-2); line-height: 1.5; }
+
+    /* ── Strengths / Weaknesses ── */
+    .sw-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 680px) { .sw-grid { grid-template-columns: 1fr; } }
+    .sw-column { background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius-lg); padding: 22px; }
+    .sw-col-title {
+      font-size: 12px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.07em; margin-bottom: 16px; display: flex; align-items: center; gap: 7px;
+    }
+    .sw-dot { width: 8px; height: 8px; border-radius: 50%; }
+    .sw-cand-block { margin-bottom: 16px; }
+    .sw-cand-block:last-child { margin-bottom: 0; }
+    .sw-cand-name { font-size: 12.5px; font-weight: 700; margin-bottom: 7px; display: flex; align-items: center; gap: 6px; }
+    .sw-cand-name::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; }
+    .sw-list li {
+      font-size: 12.5px; color: var(--text-2); line-height: 1.5;
+      padding: 3px 0 3px 14px; position: relative;
+    }
+    .sw-list li::before {
+      content: '—'; position: absolute; left: 0; color: var(--muted-light);
+    }
+
+    /* ── Conclusion ── */
+    .conclusion-box {
+      background: var(--surface); border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg); padding: 28px 32px;
+    }
+    .conclusion-text {
+      font-size: 15px; line-height: 1.75; color: var(--text-2);
+    }
+    .conclusion-text strong { color: var(--text); }
+
+    /* ── Loading ── */
+    .full-loading {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      min-height: 60vh; gap: 16px; color: var(--muted);
+    }
+    .spinner {
+      width: 36px; height: 36px; border: 3px solid var(--border);
+      border-top-color: var(--primary); border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    @media (max-width: 640px) {
+      .summary-grid { grid-template-columns: 1fr; }
+      .winners-bar { gap: 7px; }
+      .winner-chip { padding: 6px 10px; }
+    }
+  </style>
+</head>
+<body>
+<nav class="topbar">
+  <div class="topbar-inner container">
+    <a href="index.html" class="brand">
+      <div class="brand-mark">PG</div>
+      <div class="brand-text">
+        <span class="brand-title">Planes de Gobierno</span>
+        <span class="brand-subtitle">Evaluación Técnica · Perú 2026</span>
+      </div>
+    </a>
+    <div class="topnav">
+      <a href="analizar.html">Analizar</a>
+      <a href="comparar.html" class="active">Comparar</a>
+      <a href="heatmap.html">Heatmap</a>
+      <a href="metodologia.html">Metodología</a>
+      <a href="/convertir.html">Convertir DOCX</a>
+      <a href="validacion.html">Validación</a>
+    </div>
+  </div>
+</nav>
+
+<div id="loadingView" class="full-loading">
+  <div class="spinner"></div>
+  <span>Cargando comparación…</span>
+</div>
+
+<div id="mainContent" style="display:none">
+<div class="container page-wrap">
+
+  <!-- HEADER -->
+  <div class="comp-header">
+    <div class="comp-header-eyebrow">▸ Comparación técnica</div>
+    <h1 id="compTitle">Comparación de candidatos</h1>
+    <p class="comp-header-sub" id="compSubtitle"></p>
+    <div class="comp-header-actions">
+      <button class="btn-download" id="btnDownload">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Descargar comparación
+      </button>
+      <a href="comparar.html" class="btn-change">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        Cambiar candidatos
+      </a>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 1: Resumen rápido -->
+  <div class="comp-section">
+    <div class="section-title"><span>1</span> Resumen rápido</div>
+    <div class="summary-grid" id="summaryGrid"></div>
+  </div>
+  <hr class="divider">
+
+  <!-- SECCIÓN 2: Ganadores por categoría -->
+  <div class="comp-section">
+    <div class="section-title"><span>2</span> Ganadores por categoría</div>
+    <div class="winners-bar" id="winnersBar"></div>
+  </div>
+  <hr class="divider">
+
+  <!-- SECCIÓN 3: Tabla por bloques -->
+  <div class="comp-section">
+    <div class="section-title"><span>3</span> Tabla comparativa por bloques</div>
+    <div class="block-table-wrap">
+      <table class="block-table" id="blockTable"></table>
+    </div>
+  </div>
+  <hr class="divider">
+
+  <!-- SECCIÓN 4: Heatmap -->
+  <div class="comp-section">
+    <div class="section-title"><span>4</span> Heatmap de variables</div>
+    <div class="heatmap-filter" id="heatmapFilter"></div>
+    <div class="heatmap-wrap">
+      <table class="heatmap-table" id="heatmapTable"></table>
+    </div>
+  </div>
+  <hr class="divider">
+
+  <!-- SECCIÓN 5: Detalle por bloque -->
+  <div class="comp-section">
+    <div class="section-title"><span>5</span> Comparación profunda por bloque</div>
+    <div class="block-accordion" id="blockAccordion"></div>
+  </div>
+  <hr class="divider">
+
+  <!-- SECCIÓN 6: Fortalezas y debilidades -->
+  <div class="comp-section">
+    <div class="section-title"><span>6</span> Fortalezas y debilidades comparadas</div>
+    <div class="sw-grid" id="swGrid"></div>
+  </div>
+  <hr class="divider">
+
+  <!-- SECCIÓN 7: Conclusión -->
+  <div class="comp-section">
+    <div class="section-title"><span>7</span> Conclusión comparativa</div>
+    <div class="conclusion-box">
+      <p class="conclusion-text" id="conclusionText"></p>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<script src="public/js/data.js"></script>
+<script>
+const PALETTE = ['#b5121b','#1d4ed8','#16a34a','#d97706','#7c3aed','#0891b2','#be185d'];
+
+function getIds() {
+  const p = new URLSearchParams(location.search);
+  const ids = p.get('ids') || '';
+  return ids.split(',').map(s => s.trim()).filter(Boolean);
+}
+
+function assignColors(candidates) {
+  return candidates.map((c, i) => ({
+    ...c,
+    _color: c.color || PALETTE[i % PALETTE.length]
+  }));
+}
+
+function scoreLevel(s) {
+  if (s === null || s === undefined) return 'none';
+  if (s >= 8) return 'strong';
+  if (s >= 6) return 'solid';
+  if (s >= 4) return 'medium';
+  if (s >= 2) return 'weak';
+  return 'very-weak';
+}
+
+function scoreLevelLabel(s) {
+  if (s === null || s === undefined) return 'Sin datos';
+  if (s >= 8) return 'Muy sólido';
+  if (s >= 6) return 'Sólido';
+  if (s >= 4) return 'Intermedio';
+  if (s >= 2) return 'Débil';
+  return 'Muy débil';
+}
+
+function hmClass(s) {
+  if (s === null || s === undefined) return 'hm-none';
+  if (s >= 8) return 'hm-lvl4';
+  if (s >= 6) return 'hm-lvl3';
+  if (s >= 4) return 'hm-lvl2';
+  if (s >= 2) return 'hm-lvl1';
+  return 'hm-lvl0';
+}
+
+function fmt(s) { return s != null ? s.toFixed(1) : '—'; }
+
+// ── Render helpers ─────────────────────────────────────────────────────────
+
+function renderSummary(candidates) {
+  const sorted = [...candidates].sort((a, b) => (b.total_score || 0) - (a.total_score || 0));
+  document.getElementById('summaryGrid').innerHTML = sorted.map((c, i) => {
+    const allVars = c.blocks.flatMap(b => b.variables.map(v => ({ ...v, blockName: b.name })));
+    const best = [...c.blocks].sort((a, b) => (b.average_score || 0) - (a.average_score || 0))[0];
+    const worst = [...c.blocks].sort((a, b) => (a.average_score || 0) - (b.average_score || 0))[0];
+    const scCol = c._color;
+    return `
+    <div class="summary-card">
+      <div class="summary-card-stripe" style="background:${c._color}"></div>
+      <div class="summary-card-body">
+        <h3 class="summary-card-name">${c.name}</h3>
+        <p class="summary-card-party">${c.party || '—'}</p>
+        <div class="summary-score-big" style="color:${c._color}">${fmt(c.total_score)}</div>
+        <div class="summary-meta">/ 10 &nbsp;·&nbsp; ${scoreLevelLabel(c.total_score)} &nbsp;·&nbsp; #${i+1} en esta comparación</div>
+        <div class="summary-best-worst">
+          <div class="summary-bw-item">
+            <div class="summary-bw-label">✦ Mejor bloque</div>
+            <div class="summary-bw-val">${best?.name || '—'} (${fmt(best?.average_score)})</div>
+          </div>
+          <div class="summary-bw-item">
+            <div class="summary-bw-label">▾ Bloque más débil</div>
+            <div class="summary-bw-val">${worst?.name || '—'} (${fmt(worst?.average_score)})</div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderWinners(candidates) {
+  const allBlockIds = [...new Set(candidates.flatMap(c => c.blocks.map(b => b.id)))];
+  const categories = [
+    { label: 'Puntaje general', get: (c) => c.total_score },
+    ...allBlockIds.map(bid => ({
+      label: candidates.flatMap(c => c.blocks).find(b => b.id === bid)?.name || bid,
+      get: (c) => c.blocks.find(b => b.id === bid)?.average_score ?? null
+    }))
+  ];
+
+  const chips = categories.map(cat => {
+    let best = null, bestScore = -1;
+    candidates.forEach(c => {
+      const s = cat.get(c);
+      if (s !== null && s !== undefined && s > bestScore) { best = c; bestScore = s; }
+    });
+    if (!best) return '';
+    return `
+    <div class="winner-chip">
+      <div class="winner-chip-dot" style="background:${best._color}"></div>
+      <div>
+        <div class="winner-chip-category">${cat.label}</div>
+        <div class="winner-chip-name">${best.name.split(' ')[0]}</div>
+      </div>
+      <div class="winner-chip-score">${fmt(bestScore)}</div>
+    </div>`;
+  });
+  document.getElementById('winnersBar').innerHTML = chips.join('');
+}
+
+function renderBlockTable(candidates) {
+  const allBlockIds = [...new Set(candidates.flatMap(c => c.blocks.map(b => b.id)))];
+  const blockNames = {};
+  candidates.flatMap(c => c.blocks).forEach(b => { blockNames[b.id] = b.name; });
+
+  let html = `<thead><tr>
+    <th>Bloque</th>
+    ${candidates.map(c => `<th class="cand-col" style="color:${c._color}">${c.name}</th>`).join('')}
+    <th>Líder</th>
+  </tr></thead><tbody>`;
+
+  allBlockIds.forEach(bid => {
+    const scores = candidates.map(c => c.blocks.find(b => b.id === bid)?.average_score ?? null);
+    const max = Math.max(...scores.filter(s => s !== null));
+    const leader = candidates[scores.indexOf(max)];
+
+    html += `<tr>
+      <td class="block-name">${blockNames[bid] || bid}</td>
+      ${scores.map((s, i) => {
+        const lvl = scoreLevel(s);
+        const isWinner = s === max && s !== null;
+        return `<td class="score-cell">
+          <div class="score-cell-inner">
+            <span class="score-pill lvl-${lvl}" style="${isWinner ? `outline:2px solid ${candidates[i]._color};outline-offset:2px` : ''}">${fmt(s)}</span>
+          </div>
+        </td>`;
+      }).join('')}
+      <td style="font-size:12.5px;font-weight:700;color:${leader?._color || 'var(--muted)'}">
+        ${leader ? leader.name.split(' ')[0] : '—'}
+      </td>
+    </tr>`;
+  });
+
+  html += '</tbody>';
+  document.getElementById('blockTable').innerHTML = html;
+}
+
+let allHeatmapRows = [];
+let activeBlockFilter = 'all';
+
+function renderHeatmap(candidates, filter) {
+  const allBlockIds = [...new Set(candidates.flatMap(c => c.blocks.map(b => b.id)))];
+  const blockNames = {};
+  candidates.flatMap(c => c.blocks).forEach(b => { blockNames[b.id] = b.name; });
+
+  const varMap = {};
+  candidates.forEach(c => {
+    c.blocks.forEach(b => {
+      b.variables.forEach(v => {
+        if (!varMap[v.id]) varMap[v.id] = { id: v.id, name: v.name, blockId: b.id, blockName: b.name, scores: {} };
+        varMap[v.id].scores[c.id] = v.final_score;
+      });
+    });
+  });
+  allHeatmapRows = Object.values(varMap);
+
+  // Build filter buttons
+  const filterEl = document.getElementById('heatmapFilter');
+  filterEl.innerHTML = `<button class="hf-btn ${activeBlockFilter === 'all' ? 'active' : ''}" data-bid="all">Todos</button>` +
+    allBlockIds.map(bid => `<button class="hf-btn ${activeBlockFilter === bid ? 'active' : ''}" data-bid="${bid}">${blockNames[bid] || bid}</button>`).join('');
+  filterEl.querySelectorAll('.hf-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeBlockFilter = btn.dataset.bid;
+      filterEl.querySelectorAll('.hf-btn').forEach(b => b.classList.toggle('active', b.dataset.bid === activeBlockFilter));
+      buildHeatmapTable(candidates, activeBlockFilter);
+    });
+  });
+
+  buildHeatmapTable(candidates, filter || 'all');
+}
+
+function buildHeatmapTable(candidates, filter) {
+  const rows = filter === 'all' ? allHeatmapRows : allHeatmapRows.filter(r => r.blockId === filter);
+  const byBlock = {};
+  rows.forEach(r => {
+    if (!byBlock[r.blockId]) byBlock[r.blockId] = { name: r.blockName, vars: [] };
+    byBlock[r.blockId].vars.push(r);
+  });
+
+  let html = `<thead><tr>
+    <th>Variable</th>
+    ${candidates.map(c => `<th style="color:${c._color}">${c.name.split(' ')[0]}</th>`).join('')}
+  </tr></thead><tbody>`;
+
+  Object.values(byBlock).forEach(blk => {
+    html += `<tr class="hm-block-header"><td colspan="${candidates.length + 1}">${blk.name}</td></tr>`;
+    blk.vars.forEach(row => {
+      html += `<tr>
+        <td>${row.name}</td>
+        ${candidates.map(c => {
+          const s = row.scores[c.id];
+          return `<td><span class="hm-cell ${hmClass(s)}">${s != null ? s.toFixed(1) : '—'}</span></td>`;
+        }).join('')}
+      </tr>`;
+    });
+  });
+
+  html += '</tbody>';
+  document.getElementById('heatmapTable').innerHTML = html;
+}
+
+function renderAccordion(candidates) {
+  const allBlockIds = [...new Set(candidates.flatMap(c => c.blocks.map(b => b.id)))];
+  const blockNames = {};
+  candidates.flatMap(c => c.blocks).forEach(b => { blockNames[b.id] = b.name; });
+
+  const html = allBlockIds.map((bid, idx) => {
+    const scores = candidates.map(c => c.blocks.find(b => b.id === bid)?.average_score ?? null);
+    const scoreChips = candidates.map((c, i) => {
+      const s = scores[i];
+      return `<span class="acc-score-chip" style="color:${c._color};border-color:${c._color}20;background:${c._color}10">
+        ${c.name.split(' ')[0]}: ${fmt(s)}
+      </span>`;
+    }).join('');
+
+    // Variables
+    const varMap = {};
+    candidates.forEach(c => {
+      const blk = c.blocks.find(b => b.id === bid);
+      (blk?.variables || []).forEach(v => {
+        if (!varMap[v.id]) varMap[v.id] = { name: v.name, data: {} };
+        varMap[v.id].data[c.id] = v;
+      });
+    });
+
+    const varRows = Object.values(varMap).map(vr => {
+      return `<tr>
+        <td><div class="acc-var-name">${vr.name}</div></td>
+        ${candidates.map(c => {
+          const v = vr.data[c.id];
+          const s = v?.final_score;
+          const sum = v?.summary ? v.summary.slice(0, 90) + (v.summary.length > 90 ? '…' : '') : '—';
+          return `<td>
+            <span class="hm-cell ${hmClass(s)}" style="margin-bottom:4px">${s != null ? s.toFixed(1) : '—'}</span>
+            <div class="acc-var-summary">${sum}</div>
+          </td>`;
+        }).join('')}
+      </tr>`;
+    }).join('');
+
+    return `
+    <div class="acc-item" id="acc-${bid}">
+      <div class="acc-header" onclick="toggleAcc('${bid}')">
+        <div class="acc-header-left">
+          <span class="acc-header-name">${blockNames[bid] || bid}</span>
+          <div class="acc-scores-row">${scoreChips}</div>
+        </div>
+        <svg class="acc-chevron" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="acc-body">
+        <table class="acc-var-table">
+          <thead><tr>
+            <th style="min-width:140px">Variable</th>
+            ${candidates.map(c => `<th style="color:${c._color}">${c.name}</th>`).join('')}
+          </tr></thead>
+          <tbody>${varRows}</tbody>
+        </table>
+      </div>
+    </div>`;
+  }).join('');
+
+  document.getElementById('blockAccordion').innerHTML = html;
+  // Open first accordion
+  if (allBlockIds.length > 0) {
+    document.getElementById('acc-' + allBlockIds[0])?.classList.add('open');
+  }
+}
+
+function toggleAcc(bid) {
+  const el = document.getElementById('acc-' + bid);
+  el?.classList.toggle('open');
+}
+
+function renderSW(candidates) {
+  const strCol = document.createElement('div');
+  strCol.className = 'sw-column';
+  strCol.innerHTML = `<div class="sw-col-title"><div class="sw-dot" style="background:#16a34a"></div>Fortalezas por candidato</div>` +
+    candidates.map(c => {
+      const items = [
+        ...(c.strengths || []),
+        ...(c.blocks || []).flatMap(b => b.strengths || [])
+      ].filter((s, i, arr) => s && arr.indexOf(s) === i).slice(0, 5);
+      return `<div class="sw-cand-block">
+        <div class="sw-cand-name" style="color:${c._color}">
+          <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:${c._color}"></span>
+          ${c.name}
+        </div>
+        <ul class="sw-list">${items.length ? items.map(s => `<li>${s}</li>`).join('') : '<li>Sin fortalezas registradas</li>'}</ul>
+      </div>`;
+    }).join('');
+
+  const weakCol = document.createElement('div');
+  weakCol.className = 'sw-column';
+  weakCol.innerHTML = `<div class="sw-col-title"><div class="sw-dot" style="background:#dc2626"></div>Debilidades por candidato</div>` +
+    candidates.map(c => {
+      const items = [
+        ...(c.weaknesses || []),
+        ...(c.blocks || []).flatMap(b => b.weaknesses || [])
+      ].filter((s, i, arr) => s && arr.indexOf(s) === i).slice(0, 5);
+      return `<div class="sw-cand-block">
+        <div class="sw-cand-name" style="color:${c._color}">
+          <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:${c._color}"></span>
+          ${c.name}
+        </div>
+        <ul class="sw-list">${items.length ? items.map(s => `<li>${s}</li>`).join('') : '<li>Sin debilidades registradas</li>'}</ul>
+      </div>`;
+    }).join('');
+
+  const grid = document.getElementById('swGrid');
+  grid.innerHTML = '';
+  grid.appendChild(strCol);
+  grid.appendChild(weakCol);
+}
+
+function renderConclusion(candidates) {
+  const sorted = [...candidates].sort((a, b) => (b.total_score || 0) - (a.total_score || 0));
+  const leader = sorted[0];
+  const last = sorted[sorted.length - 1];
+  const names = candidates.map(c => `<strong>${c.name}</strong>`).join(', ');
+
+  // Most balanced (lowest std dev across blocks)
+  const balanced = candidates.reduce((best, c) => {
+    const scores = c.blocks.map(b => b.average_score || 0).filter(s => s > 0);
+    if (!scores.length) return best;
+    const avg = scores.reduce((a, b) => a + b, 0) / scores.length;
+    const std = Math.sqrt(scores.reduce((a, s) => a + (s - avg) ** 2, 0) / scores.length);
+    return (!best || std < best.std) ? { c, std } : best;
+  }, null);
+
+  // Best single block winner
+  const blockWins = {};
+  const allBlockIds = [...new Set(candidates.flatMap(c => c.blocks.map(b => b.id)))];
+  allBlockIds.forEach(bid => {
+    let best = null, bestS = -1;
+    candidates.forEach(c => {
+      const s = c.blocks.find(b => b.id === bid)?.average_score ?? null;
+      if (s !== null && s > bestS) { best = c; bestS = s; }
+    });
+    if (best) blockWins[best.id] = (blockWins[best.id] || 0) + 1;
+  });
+  const mostWins = candidates.reduce((best, c) => ((blockWins[c.id] || 0) > (blockWins[best?.id] || 0)) ? c : best, candidates[0]);
+
+  const text = `
+    La comparación técnica entre ${names} muestra diferencias significativas en su abordaje programático.
+    <strong>${leader.name}</strong> lidera con un puntaje general de <strong>${fmt(leader.total_score)}/10</strong>,
+    lo que refleja mayor consistencia técnica y profundidad propositiva en su plan de gobierno.
+    ${balanced ? `<strong>${balanced.c.name}</strong> presenta el mejor equilibrio entre bloques, con menor dispersión en sus puntajes sectoriales, lo que indica un programa de gobierno más homogéneo.` : ''}
+    ${mostWins && mostWins.id !== leader.id ? `<strong>${mostWins.name}</strong> lidera en el mayor número de bloques individuales (${blockWins[mostWins.id] || 0}), aunque su puntaje global no sea el más alto.` : ''}
+    <strong>${last.name}</strong> muestra el menor puntaje promedio (${fmt(last.total_score)}/10),
+    con vacíos estructurales más marcados que limitan la viabilidad de su propuesta.
+    En términos metodológicos, ningún candidato alcanza aún el umbral de sólido (8/10) en el puntaje global,
+    lo que sugiere que los planes de gobierno evaluados presentan propuestas con nivel de detalle y especificidad técnica insuficiente para garantizar implementación efectiva.
+  `.trim();
+
+  document.getElementById('conclusionText').innerHTML = text;
+}
+
+// ── DOCX download ────────────────────────────────────────────────────────────
+
+async function downloadDocx(candidates) {
+  const btn = document.getElementById('btnDownload');
+  const orig = btn.innerHTML;
+  btn.innerHTML = '<span style="opacity:0.7">Generando…</span>';
+  btn.disabled = true;
+
+  try {
+    const ids = candidates.map(c => c.id);
+    const res = await fetch('/api/comparison-docx', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ids })
+    });
+    if (!res.ok) throw new Error('Error del servidor: ' + res.status);
+    const blob = await res.blob();
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `comparacion_${ids.join('_vs_')}.docx`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  } catch (e) {
+    alert('Error al generar el Word: ' + e.message);
+  } finally {
+    btn.innerHTML = orig;
+    btn.disabled = false;
+  }
+}
+
+// ── Init ─────────────────────────────────────────────────────────────────────
+
+async function init() {
+  const ids = getIds();
+  if (ids.length < 2) {
+    document.getElementById('loadingView').innerHTML = `
+      <div style="text-align:center;padding:60px 20px">
+        <p style="color:var(--muted);margin-bottom:16px">Selecciona al menos 2 candidatos para comparar.</p>
+        <a href="comparar.html" class="btn-change">← Ir a selección</a>
+      </div>`;
+    return;
+  }
+
+  const all = await DataLayer.getCandidates();
+  const raw = ids.map(id => all.find(c => c.id === id)).filter(Boolean);
+  if (raw.length < 2) {
+    document.getElementById('loadingView').innerHTML = `<div style="text-align:center;padding:60px 20px;color:var(--muted)">No se encontraron los candidatos solicitados. <a href="comparar.html">Volver</a></div>`;
+    return;
+  }
+
+  const candidates = assignColors(raw);
+
+  // Header
+  const names = candidates.map(c => c.name.split(' ')[0]).join(' vs ');
+  document.getElementById('compTitle').textContent = `Comparación técnica`;
+  document.getElementById('compSubtitle').textContent = candidates.map(c => c.name).join(' · ');
+  document.title = `${names} · Comparación · Planes de Gobierno`;
+
+  // Render all sections
+  renderSummary(candidates);
+  renderWinners(candidates);
+  renderBlockTable(candidates);
+  renderHeatmap(candidates, 'all');
+  renderAccordion(candidates);
+  renderSW(candidates);
+  renderConclusion(candidates);
+
+  // Download button
+  document.getElementById('btnDownload').addEventListener('click', () => downloadDocx(candidates));
+
+  // Show
+  document.getElementById('loadingView').style.display = 'none';
+  document.getElementById('mainContent').style.display = '';
+}
+
+init();
+</script>
+</body>
+</html>
