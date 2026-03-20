@@ -229,6 +229,7 @@
       <a href="metodologia.html">Metodología</a>
       <a href="/convertir.html">Convertir DOCX</a>
       <a href="validacion.html">Validación</a>
+      <a href="https://forms.gle/fNuVHGdVTvSBqqNM7" target="_blank" rel="noopener noreferrer">Sugerir candidato</a>
     </div>
   </div>
 </nav>
@@ -424,15 +425,23 @@ let gVarData = {}; // varId → { name, blockId, blockName, scores: { candId: va
 
 function normalizeVarName(raw) {
   return (raw || '')
-    // Remove leading "Variable N:" or "Var. N." prefixes
     .replace(/^variable\s*\d+\s*[:\-\.]\s*/i, '')
-    // Remove trailing score like "— 8.3/10", "(8.3/10)", ": 8.30"
     .replace(/\s*[\u2013\u2014\-]+\s*\d+[\.,]\d+\s*\/\s*10\s*$/i, '')
     .replace(/\s*\(\s*\d+[\.,]\d+\s*\/\s*10\s*\)\s*$/i, '')
     .replace(/\s*:\s*\d+[\.,]\d+\s*$/i, '')
-    // Normalize diacritics for comparison only
+    .replace(/✓/g, '')
     .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
     .toLowerCase()
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function cleanDisplayName(raw) {
+  return (raw || '')
+    .replace(/\s*[\u2013\u2014\-]+\s*\d+[\.,]\d+\s*\/\s*10\s*$/i, '')
+    .replace(/\s*\(\s*\d+[\.,]\d+\s*\/\s*10\s*\)\s*$/i, '')
+    .replace(/\s*:\s*\d+[\.,]\d+\s*$/i, '')
+    .replace(/✓/g, '')
     .replace(/\s+/g, ' ')
     .trim();
 }
@@ -456,7 +465,7 @@ function buildVarIndex(candidates) {
         if (!seen.has(normName)) {
           seen.set(normName, {
             id: v.id,
-            name: v.name,   // keep original display name of first instance
+            name: cleanDisplayName(v.name),
             blockId: cid,
             blockName: canonicalBlockInfo(cid)?.label || b.name,
             scores: {},

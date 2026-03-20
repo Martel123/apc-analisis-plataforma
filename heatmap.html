@@ -28,6 +28,7 @@
         <a href="metodologia.html">Metodología</a>
         <a href="/convertir.html">Convertir DOCX</a>
         <a href="validacion.html">Validación</a>
+        <a href="https://forms.gle/fNuVHGdVTvSBqqNM7" target="_blank" rel="noopener noreferrer">Sugerir candidato</a>
       </div>
     </div>
   </nav>
@@ -183,9 +184,12 @@ async function openDetail(candidateId, varId) {
   const c = await DataLayer.getCandidateById(candidateId);
   if (!c) return;
 
+  const row = fullMatrix.rows.find(r => r.id === varId);
+  const rawId = row?.rawIds?.[candidateId] || varId;
+
   let foundVar = null, foundBlock = '';
   for (const b of c.blocks) {
-    const v = b.variables.find(v => v.id === varId);
+    const v = b.variables.find(v => v.id === rawId);
     if (v) { foundVar = v; foundBlock = b.name; break; }
   }
 

@@ -195,14 +195,23 @@ const DataLayer = (() => {
     return Object.values(varMap);
   }
 
+  function normalizeVarKey(id) {
+    return String(id || '')
+      .toLowerCase()
+      .replace(/_\d+_\d+_10$/, '')
+      .replace(/_+$/, '');
+  }
+
   async function getHeatmapMatrix() {
     const candidates = await getCandidates();
     const rowMap = {};
     candidates.forEach(c => {
       c.blocks.forEach(b => {
         b.variables.forEach(v => {
-          if (!rowMap[v.id]) rowMap[v.id] = { id: v.id, name: v.name, block_id: b.id, block: b.name, scores: {} };
-          rowMap[v.id].scores[c.id] = v.final_score;
+          const nk = normalizeVarKey(v.id);
+          if (!rowMap[nk]) rowMap[nk] = { id: nk, name: v.name, block_id: b.id, block: b.name, scores: {}, rawIds: {} };
+          rowMap[nk].scores[c.id] = v.final_score;
+          rowMap[nk].rawIds[c.id] = v.id;
         });
       });
     });
@@ -240,6 +249,7 @@ const DataLayer = (() => {
     getRadarData,
     getHeatmapData,
     getAllVariables,
-    getVariableScores
+    getVariableScores,
+    normalizeVarKey
   };
 })();

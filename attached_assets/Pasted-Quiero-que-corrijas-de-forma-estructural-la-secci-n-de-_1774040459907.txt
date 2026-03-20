@@ -1,0 +1,144 @@
+Quiero que corrijas de forma estructural la sección de comparación / heatmap de variables de mi plataforma.
+
+PROBLEMA REAL
+Actualmente, en la tabla de comparación, algunas variables aparecen repetidas.
+Ejemplo:
+- "Política tributaria"
+- "Política tributaria ✓ — 7.5/10"
+
+El sistema las está tratando como si fueran variables distintas, cuando en realidad representan la misma variable.
+
+IMPORTANTE
+NO quiero un parche manual para este caso puntual.
+NO quiero una solución específica solo para Ronald y Jorge.
+QUIERO una solución global que funcione para cualquier combinación de candidatos, ahora y en el futuro.
+
+OBJETIVO
+Debes modificar la lógica del frontend para que la tabla de comparación:
+1. construya una sola fila por variable real,
+2. evite duplicados aunque el texto visible venga distinto,
+3. compare correctamente cualquier cantidad de candidatos,
+4. muestre "—" cuando un candidato no tenga puntaje para esa variable.
+
+REGLA TÉCNICA PRINCIPAL
+La comparación NO debe depender del texto visible.
+Debe usar una clave normalizada y estable por variable.
+
+SOLUCIÓN QUE QUIERO
+
+1. Crear una función de normalización de nombres de variables.
+
+Debe convertir textos como:
+- "Política tributaria"
+- "Política tributaria ✓"
+- "Política tributaria ✓ — 7.5/10"
+
+en una misma clave, por ejemplo:
+"politica_tributaria"
+
+Implementar:
+
+function normalizeVariableKey(text) {
+  return String(text || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/✓/g, "")
+    .replace(/—.*$/g, "")
+    .replace(/[-–—].*$/g, "")
+    .replace(/[^\w\s]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(/\s/g, "_");
+}
+
+2. Consolidar variables entre candidatos
+
+- recorrer todos los candidatos seleccionados
+- recoger todas las variables
+- agruparlas por la clave normalizada
+- construir una sola fila por variable
+
+3. Para cada variable:
+
+- usar un nombre limpio (sin ✓ ni puntajes embebidos)
+- mostrar ese label una sola vez
+- llenar cada columna con el score del candidato correspondiente
+- si no hay score → mostrar "—"
+
+4. Si un candidato tiene duplicados internos:
+
+- priorizar la variable que tenga score numérico
+- si hay varias, usar la más completa
+- nunca duplicar filas
+
+5. NO mezclar variables base con variables evaluadas sin control.
+Si existen múltiples listas en el JSON, debes unificarlas antes de renderizar.
+
+6. Mantener el diseño visual actual intacto:
+- colores
+- badges
+- layout
+- tabs
+
+Solo cambiar lógica de datos.
+
+7. Debe funcionar para:
+- 2 candidatos
+- 3 candidatos
+- 5 candidatos
+- cualquier combinación futura
+
+--------------------------------------------------
+NUEVA FUNCIONALIDAD (MENÚ)
+--------------------------------------------------
+
+Además, quiero que agregues una nueva opción en el menú principal de la plataforma.
+
+REQUISITOS:
+
+1. Agregar un link visible en el menú (navbar).
+
+Texto sugerido (elige el más corto y limpio):
+"Dinos a quién analizar"
+(si ves uno mejor, más corto y claro, puedes ajustarlo ligeramente, pero manteniendo el sentido)
+
+2. Comportamiento:
+
+Cuando el usuario haga clic, debe abrir el siguiente link:
+
+https://forms.gle/fNuVHGdVTvSBqqNM7
+
+3. IMPORTANTE:
+
+- El link debe abrirse en una nueva pestaña (target="_blank")
+- No debe romper el diseño del navbar
+- Debe mantener el mismo estilo visual del resto de links
+- Debe ser responsive (mobile también)
+
+4. Ubicación:
+
+- Integrarlo en el menú existente
+- No crear un menú nuevo
+- Mantener coherencia con el diseño actual
+
+--------------------------------------------------
+ENTREGABLE
+--------------------------------------------------
+
+Haz los cambios directamente en el código.
+
+Luego explícame de forma breve:
+
+1. Qué archivo(s) modificaste
+2. Qué función agregaste o cambiaste
+3. Cómo estás evitando duplicados ahora
+4. Dónde agregaste el nuevo link en el menú
+
+--------------------------------------------------
+REGLA FINAL
+--------------------------------------------------
+
+No hagas fixes visuales innecesarios.
+No rompas otras partes de la app.
+Prioriza una solución limpia, escalable y mantenible.
