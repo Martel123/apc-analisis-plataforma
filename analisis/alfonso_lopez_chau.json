@@ -384,10 +384,10 @@
       "interpretation": "",
       "variables": [
         {
-          "id": "seguridad_ciudadana_9_2_10",
-          "name": "Seguridad ciudadana — 9.2/10",
-          "block_id": "seguridad_y_orden_publico_promedio_9_2_10",
-          "final_score": 9.2,
+          "id": "seguridad_ciudadana_8_3_10",
+          "name": "Seguridad ciudadana — 8.3/10",
+          "block_id": "seguridad_y_orden_publico_promedio_8_3_10",
+          "final_score": 8.3,
           "rating_label": "excelente",
           "summary": "La propuesta busca reducir la criminalidad y mejorar la coordinación entre instituciones de seguridad mediante una nueva Ley del Sistema Nacional de Seguridad Ciudadana, un sistema informático interoperable y el fortalecimiento de los Observatorios de las instituciones involucradas. Se establece una meta de victimización del 17.2%.",
           "strengths": [
@@ -411,7 +411,7 @@
             "propuesta": 2,
             "medidas": 2,
             "viabilidad": 1,
-            "especificidad": 2
+            "especificidad": 1
           },
           "criteria_sum": 11,
           "formula_result": 9.2,
@@ -421,9 +421,9 @@
             "medidas": 2,
             "implementacion": 2,
             "viabilidad": 1,
-            "especificidad": 2,
+            "especificidad": 1,
             "sum": 11,
-            "final": 9.2
+            "final": 8.3
           },
           "corrected_methodology": false,
           "correction_note": null,
@@ -433,7 +433,7 @@
             "medidas": "M=2 por tres medidas concretas.",
             "implementacion": "Im=2 por cuatro instituciones nombradas (PNP, MP, PJ, INPE).",
             "viabilidad": "V=1 por vacíos importantes en la propuesta.",
-            "especificidad": "E=2 por nueva ley, sistema interoperable y meta cuantificada."
+            "especificidad": "E=1 por nueva ley, sistema interoperable y meta cuantificada. Falta mayor detalle de presupuesto"
           },
           "analysis_sections": {
             "definicion": "Esta variable evalúa las propuestas para reducir la criminalidad, el miedo ciudadano y mejorar la coordinación entre las instituciones encargadas de la seguridad en el Perú.",
@@ -480,7 +480,7 @@
             "especificidad": 2
           },
           "criteria_sum": 11,
-          "formula_result": 9.2,
+          "formula_result": 8.3,
           "score_table": {
             "diagnostico": 2,
             "propuesta": 2,

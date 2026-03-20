@@ -1,0 +1,152 @@
+Vas a modificar la página "Metodología" de mi plataforma.
+
+OBJETIVO:
+Agregar una nueva sección llamada:
+
+"Fuentes y fundamentos técnicos"
+
+Debe integrarse visualmente con el diseño actual (NO romper estilos, NO cambiar estructura existente).
+
+==================================================
+UBICACIÓN
+==================================================
+
+Inserta esta sección DESPUÉS del bloque donde explico la metodología de evaluación (criterios, puntajes, etc).
+
+==================================================
+ESTRUCTURA VISUAL
+==================================================
+
+- Mantener mismo ancho de contenedor
+- Usar mismos estilos de títulos (h2 o h3 según corresponda)
+- Texto alineado a la izquierda
+- Espaciado consistente con el resto de la página
+- Links clickeables
+- Diseño limpio, tipo dashboard profesional (NO blog)
+
+==================================================
+CONTENIDO (INSERTAR EXACTAMENTE)
+==================================================
+
+Título:
+Fuentes y fundamentos técnicos
+
+Texto introductorio:
+Este análisis se construye sobre información proveniente de fuentes oficiales del Estado peruano, organismos internacionales y literatura técnica ampliamente utilizada en evaluación de políticas públicas.
+
+El objetivo es asegurar que cada diagnóstico y cada evaluación tenga respaldo verificable, y no dependa únicamente de lo que declaran los propios planes de gobierno.
+
+Secciones:
+
+1. Estadísticas oficiales del Perú
+
+- Ministerio de Economía y Finanzas (MEF)  
+https://www.gob.pe/mef  
+
+- Banco Central de Reserva del Perú (BCRP)  
+https://www.bcrp.gob.pe  
+
+- Instituto Nacional de Estadística e Informática (INEI)  
+https://www.inei.gob.pe  
+
+- Encuesta Nacional de Hogares (ENAHO)  
+https://www.inei.gob.pe/estadisticas/encuestas/enaho/  
+
+- Superintendencia Nacional de Aduanas y de Administración Tributaria (SUNAT)  
+https://www.sunat.gob.pe  
+
+- Contraloría General de la República  
+https://www.gob.pe/contraloria  
+
+
+2. Organismos internacionales
+
+- CEPAL  
+https://www.cepal.org  
+
+- OCDE  
+https://www.oecd.org  
+
+- Banco Mundial  
+https://www.worldbank.org  
+
+- OIT  
+https://www.ilo.org  
+
+- OMS  
+https://www.who.int  
+
+- FMI  
+https://www.imf.org  
+
+- World Justice Project  
+https://worldjusticeproject.org  
+
+- ITU  
+https://www.itu.int  
+
+
+3. Instituciones y sistemas técnicos
+
+- ProInversión  
+https://www.investinperu.pe  
+
+- Invierte.pe  
+https://www.mef.gob.pe/es/invierte-pe  
+
+- INDECOPI  
+https://www.indecopi.gob.pe  
+
+- SUNARP  
+https://www.sunarp.gob.pe  
+
+- SBS  
+https://www.sbs.gob.pe  
+
+
+4. Referencias técnicas y rankings
+
+- World Economic Forum  
+https://www.weforum.org  
+
+- Fraser Institute  
+https://www.fraserinstitute.org  
+
+
+5. Marco legal
+
+- Constitución Política del Perú  
+https://www.congreso.gob.pe/Docs/files/constitucion/constitucion2019web.pdf  
+
+
+6. Experiencias comparadas
+
+- México (SAT)  
+https://www.gob.mx/sat  
+
+- Colombia (DIAN)  
+https://www.dian.gov.co  
+
+
+Texto final:
+
+Para el diagnóstico, no se toman como fuente los propios planes de gobierno.  
+Las cifras y referencias utilizadas provienen exclusivamente de fuentes externas verificables.
+
+Esto permite que la evaluación se base en evidencia objetiva y que cualquier lector pueda contrastar la información de manera independiente.
+
+==================================================
+REGLAS IMPORTANTES
+==================================================
+
+- NO resumir
+- NO cambiar redacción
+- NO omitir nada
+- NO agregar contenido adicional
+- NO modificar otras secciones
+
+==================================================
+OUTPUT ESPERADO
+==================================================
+
+Devuélveme el código completo actualizado del archivo donde hiciste el cambio.
