@@ -7,7 +7,7 @@
     "color": null,
     "plan_period": "2026-2031",
     "plan_pages": null,
-    "total_score": 3.9,
+    "total_score": 4.9,
     "ranking_position": null,
     "summary": "El plan de gobierno presenta un diagnóstico preciso sobre la situación económica del país, pero sus propuestas son consideradas de alto riesgo y técnicamente inejecutables debido a una brecha fiscal estructural significativa. La viabilidad de las medidas propuestas se ve comprometida por la inconsistencia fiscal y la falta de mecanismos de ejecución claros.",
     "strengths": [],
@@ -152,7 +152,7 @@
           "corrected_methodology": false,
           "correction_note": null,
           "criteria_notes": {
-            "diagnostico": "MEF 2024: déficit 3.5% PBI. BCRP: deuda 33.9% PBI. Contraloría: 2,300 obras podría afectar significativamentedas por S/22,000M.",
+            "diagnostico": "MEF 2024: déficit 3.5% PBI. BCRP: deuda 33.9% PBI. Contraloría: 2,300 obras paralizadas por S/22,000M.",
             "propuesta": "La orientación hacia inversión productiva y gestión eficiente apunta en la dirección correcta, pero el diseño está incompleto.",
             "medidas": "S/20,000M sin fuente es una intención, no una medida. El shock de inversión no tiene tabla de financiamiento.",
             "implementacion": "Nombrar a COFIDE y al Banco de la Nación no reemplaza una arquitectura presupuestal real.",
@@ -162,7 +162,7 @@
           "analysis_sections": {
             "definicion": "Esta variable evalúa las propuestas sobre cómo el Estado gasta el dinero, analizando en qué invierte, cuánto gasta, la viabilidad de ese gasto y su sostenibilidad a largo plazo. Se centra en la capacidad del plan para mejorar el gasto sin comprometer la estabilidad fiscal del país.",
             "importancia": "El gasto público es fundamental para transformar la vida de las personas, ya que una política de gasto bien diseñada puede reducir la pobreza, construir infraestructura y dinamizar la economía. Un mal manejo del gasto, sin embargo, puede llevar a crisis fiscales que afectan desproporcionadamente a los sectores más vulnerables.",
-            "diagnostico_externo": "El diagnóstico actual muestra un déficit fiscal del 3.5% del PBI y una deuda pública del 33.9% del PBI. Además, existen 2,300 obras podría afectar significativamentedas valoradas en S/22,000 millones y los gobiernos regionales y locales solo ejecutan el 55% de su presupuesto de inversión.",
+            "diagnostico_externo": "El diagnóstico actual muestra un déficit fiscal del 3.5% del PBI y una deuda pública del 33.9% del PBI. Además, existen 2,300 obras paralizadas valoradas en S/22,000 millones y los gobiernos regionales y locales solo ejecutan el 55% de su presupuesto de inversión.",
             "propuesta_plan": "El plan propone un programa de 'Financiamiento Popular' con una garantía pública de S/20,000 millones para apoyar a pymes y otros sectores. También incluye un 'shock' de inversión pública en infraestructura y la creación de parques industriales regionales.",
             "medidas_concretas": "Entre las medidas específicas se encuentran la garantía pública de S/20,000 millones, un shock de inversión pública sin tabla de financiamiento, y un presupuesto participativo vinculante sin norma legal que lo respalde. También se busca ampliar el crédito del Banco de la Nación a pymes y cooperativas.",
             "implementacion_necesaria": "Para implementar estas propuestas, se requiere una reforma del sistema presupuestal y una norma que haga vinculante el presupuesto participativo. Además, es esencial contar con una tabla de financiamiento que explique la procedencia de los S/20,000 millones de garantía.",
@@ -1676,7 +1676,7 @@
           "corrected_methodology": false,
           "correction_note": null,
           "criteria_notes": {
-            "diagnostico": "BM/MTC 2024: costo logístico 24% del PBI. Contraloría: 2,300 obras podría afectar significativamentedas por S/22,000M.",
+            "diagnostico": "BM/MTC 2024: costo logístico 24% del PBI. Contraloría: 2,300 obras paralizadas por S/22,000M.",
             "propuesta": "Plan Nacional de Infraestructura con métricas de caminos rurales verificables.",
             "medidas": "Métricas de km verificables + tren costero. El tren es un proyecto de 15-20 años, no del quinquenio.",
             "implementacion": "El MTC está implícito pero sin mandato explícito. Sin institución central ejecutora.",
@@ -1686,7 +1686,7 @@
           "analysis_sections": {
             "definicion": "Esta variable evalúa las propuestas para mejorar la infraestructura del país, incluyendo carreteras, caminos rurales, puertos, canales de riego, saneamiento y conectividad productiva. Se centra en la viabilidad de las metas, la identificación de instituciones ejecutoras y el financiamiento disponible.",
             "importancia": "La infraestructura es crucial para reducir los altos costos logísticos en el Perú, que representan un 24% del PBI. Sin una adecuada infraestructura, la economía rural no puede crecer, lo que profundiza la desigualdad territorial.",
-            "diagnostico_externo": "Según el Banco Mundial y el MTC, el costo logístico en el Perú es elevado y hay 2,300 obras podría afectar significativamentedas que suman S/22,000 millones. Además, solo el 2.3% de las vías vecinales está pavimentado, lo que refleja una grave deficiencia en la infraestructura.",
+            "diagnostico_externo": "Según el Banco Mundial y el MTC, el costo logístico en el Perú es elevado y hay 2,300 obras paralizadas que suman S/22,000 millones. Además, solo el 2.3% de las vías vecinales está pavimentado, lo que refleja una grave deficiencia en la infraestructura.",
             "propuesta_plan": "El plan propone un Plan Nacional de Infraestructura Sostenible para la Competitividad, con metas cuantificadas que incluyen más de 8,000 km de vías vecinales y 20,000 km de caminos intermedios. También se contempla infraestructura de saneamiento, riego tecnificado y un megaproyecto del tren costero.",
             "medidas_concretas": "Se identifican medidas concretas como el Plan Nacional de Infraestructura con metas verificables de km de caminos rurales, así como la electrificación rural y la mejora de canales de irrigación. El tren costero se presenta como un megaproyecto a largo plazo.",
             "implementacion_necesaria": "Para implementar el plan, es necesario que el MTC tenga un mandato explícito y un presupuesto asignado. Además, se requiere una institución central ejecutora que coordine y supervise las obras propuestas.",
