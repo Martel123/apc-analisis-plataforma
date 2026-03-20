@@ -60,7 +60,7 @@
           ],
           "gaps": [
             "Falta de estimación del costo fiscal de la marcha blanca",
-            "No hay estrategia de comunicación para la transición"
+            "No se detalla estrategia de comunicación para la transición"
           ],
           "conclusion": "La propuesta tributaria es innovadora y coherente, pero su efectividad se ve comprometida por la falta de un marco normativo claro y un mandato operativo para su implementación.",
           "criteria": {
@@ -168,7 +168,7 @@
             "implementacion_necesaria": "Para implementar estas propuestas, se requiere un decreto supremo que establezca el CdG, una norma que reforme Invierte.pe y un sistema de seguimiento presupuestal integrado. Sin embargo, el plan no detalla cómo financiará sus compromisos acumulados.",
             "impacto_potencial": "Un manejo fiscal responsable podría proteger el grado de inversión del país y reducir el costo del financiamiento soberano. Si la reforma de Invierte.pe es exitosa, podría desbloquear S/22,000 millones en obras paralizadas, mejorando así la inversión pública.",
             "vacios": "Los vacíos críticos incluyen la falta de una tabla de financiamiento integrada, la ausencia de fuentes fiscales identificadas para los compromisos de gasto acumulados y la falta de una norma presupuestaria específica para el Centro de Gobierno.",
-            "evaluacion_tecnica": "La declaración de responsabilidad fiscal es positiva, pero carece de respaldo en una tabla de financiamiento. Aunque el CMI y la reforma de Invierte.pe son pasos correctos, no constituyen una solución integral a la acumulación de compromisos sin financiamiento.",
+            "evaluacion_tecnica": "La declaración de responsabilidad fiscal es positiva, pero presenta limitaciones en respaldo en una tabla de financiamiento. Aunque el CMI y la reforma de Invierte.pe son pasos correctos, no constituyen una solución integral a la acumulación de compromisos sin financiamiento.",
             "conclusion": "La variable de gasto público obtiene una calificación de 5.8/10, lo que indica que es el punto más débil del bloque económico. La falta de una tabla de financiamiento integrada y la acumulación de compromisos sin fuentes identificadas limitan la credibilidad del plan en su conjunto."
           },
           "sources": []
@@ -191,7 +191,7 @@
             "Ausencia de estrategia para resolver conflictos sociales"
           ],
           "gaps": [
-            "No hay un mecanismo específico de facilitación de permisos para proyectos en cartera",
+            "No se detalla un mecanismo específico de facilitación de permisos para proyectos en cartera",
             "La meta de US$80,000 millones supera el histórico de adjudicación"
           ],
           "conclusion": "La propuesta tiene una alta densidad propositiva, pero la ambición de la meta genera dudas sobre su viabilidad. La falta de estrategia para resolver conflictos sociales limita su implementación efectiva.",
@@ -367,7 +367,7 @@
             "impacto_potencial": "Si se logra viabilizar la mitad de la cartera paralizada, se podría generar un crecimiento adicional del PBI de 2-3 puntos porcentuales. La formalización de la minería artesanal también podría reducir el financiamiento de actividades criminales y detener la deforestación.",
             "vacios": "Los principales vacíos incluyen la falta de una norma para el Régimen MAPE, barreras técnicas del blockchain en zonas sin conectividad, la ausencia de metas cuantificadas para la formalización de mineros y la falta de una estrategia de diálogo social para abordar los conflictos.",
             "evaluacion_tecnica": "El plan minero es jurídicamente seguro, ya que no propone expropiaciones ni modifica contratos existentes. Sin embargo, el uso de blockchain enfrenta desafíos técnicos en áreas con poca conectividad, lo que limita su viabilidad.",
-            "conclusion": "La variable obtiene un puntaje de 7.5/10, siendo la más sólida del bloque. Su enfoque es jurídicamente seguro y conceptualmente correcto, aunque carece de una norma de implementación y enfrenta riesgos técnicos en su ejecución."
+            "conclusion": "La variable obtiene un puntaje de 7.5/10, siendo la más sólida del bloque. Su enfoque es jurídicamente seguro y conceptualmente correcto, aunque presenta limitaciones en una norma de implementación y enfrenta riesgos técnicos en su ejecución."
           },
           "sources": []
         }
@@ -438,7 +438,7 @@
           "analysis_sections": {
             "definicion": "Esta variable evalúa las propuestas para reducir la inseguridad cotidiana, abarcando aspectos como la estrategia policial, la coordinación interinstitucional, la prevención del delito y la aplicación de tecnología en la seguridad.",
             "importancia": "La inseguridad ciudadana es considerada el principal problema por la ciudadanía peruana, afectando directamente la inversión privada, la actividad económica y la calidad de vida de la población.",
-            "diagnostico_externo": "Según el INEI 2024, el 25.6% de la población urbana fue víctima de un delito en el último año. Además, el MININTER reporta un aumento del 679% en extorsiones entre 2020 y 2024, y la PNP registró 1,423 homicidios en 2023, un incremento del 18% respecto al año anterior.",
+            "diagnostico_externo": "Según el INEI 2024, el 25.6% de la población urbana fue víctima de un delito en el último año. Además, el MININTER reporta un aumento del un crecimiento acelerado en extorsiones entre 2020 y 2024, y la PNP registró 1,423 homicidios en 2023, un incremento del 18% respecto al año anterior.",
             "propuesta_plan": "El plan de gobierno propone crear un nuevo Ministerio de Defensa y Seguridad Interna, fortalecer la DINI, rediseñar el SINASEC, implementar una plataforma nacional de inteligencia criminal con IA, establecer corredores urbanos seguros y fomentar la Policía de Proximidad.",
             "medidas_concretas": "Las medidas específicas incluyen la creación del nuevo ministerio, el fortalecimiento de la DINI, el rediseño del SINASEC con metas vinculantes, la implementación de una plataforma de inteligencia criminal con IA, la creación de corredores urbanos seguros y la Policía de Proximidad con patrullaje sectorizado.",
             "implementacion_necesaria": "Para implementar estas propuestas, se requiere una reforma de la Ley Orgánica del Ejecutivo para crear el nuevo ministerio, un decreto para rediseñar el SINASEC, inversión en tecnología para la plataforma de IA y convenios con municipalidades para la Policía de Proximidad.",
@@ -470,7 +470,7 @@
             "Sin mecanismo externo de supervisión de la depuración",
             "Sin metas cuantificadas de reducción de corrupción interna"
           ],
-          "conclusion": "La variable presenta un diagnóstico correcto, pero el plan es escueto y carece de detalles cruciales para su implementación efectiva. Se requiere un mayor desarrollo para abordar adecuadamente los problemas de la PNP.",
+          "conclusion": "La variable presenta un diagnóstico correcto, pero el plan es escueto y presenta limitaciones en detalles cruciales para su implementación efectiva. Se requiere un mayor desarrollo para abordar adecuadamente los problemas de la PNP.",
           "criteria": {
             "diagnostico": 1,
             "propuesta": 2,
@@ -496,7 +496,7 @@
           "criteria_notes": {
             "diagnostico": "Se eliminan las provisionalidades, pero no se cuantifican los problemas existentes.",
             "propuesta": "La reingeniería se enfoca en aspectos clave como criminalística y un nuevo ministerio.",
-            "medidas": "La propuesta carece de detalles sobre efectivos, presupuesto y cronograma.",
+            "medidas": "La propuesta presenta limitaciones en detalles sobre efectivos, presupuesto y cronograma.",
             "implementacion": "No se incluye un organismo externo para supervisar la reforma.",
             "viabilidad": "Conceptualmente viable, pero sin un desarrollo ejecutivo claro.",
             "especificidad": "La reingeniería y el currículo son mencionados, pero faltan metas concretas."
@@ -510,8 +510,8 @@
             "implementacion_necesaria": "Para implementar estas propuestas, se requiere una norma de reorganización de la PNP, un rediseño curricular con la participación de expertos, un incremento presupuestal con mecanismos de rendición de cuentas, y coordinación con el Ministerio Público para restablecer el rol investigador.",
             "impacto_potencial": "Una PNP reformada podría aumentar significativamente las tasas de esclarecimiento de delitos y mejorar la confianza ciudadana a través de una mayor presencia en el territorio. Un mejor presupuesto y gestión profesionalizada también contribuirían a reducir la corrupción estructural.",
             "vacios": "Los principales vacíos del plan incluyen la falta de un número específico de efectivos a reclutar, un presupuesto detallado para la reforma curricular, un cronograma de implementación, y la ausencia de un mecanismo externo de supervisión del proceso de depuración.",
-            "evaluacion_tecnica": "La evaluación técnica indica que, aunque el diagnóstico sobre la pérdida del rol investigador de la PNP es correcto, el plan es escueto y carece de detalles cruciales como el número de efectivos, presupuesto y cronograma, lo que limita su viabilidad como política pública.",
-            "conclusion": "La variable de reforma policial obtiene una calificación de 5.8/10, siendo la más subdesarrollada del bloque. Aunque la orientación es adecuada, el contenido es insuficiente y carece de elementos clave para su implementación efectiva, lo que es preocupante dado el papel central de la PNP en la seguridad del país."
+            "evaluacion_tecnica": "La evaluación técnica indica que, aunque el diagnóstico sobre la pérdida del rol investigador de la PNP es correcto, el plan es escueto y presenta limitaciones en detalles cruciales como el número de efectivos, presupuesto y cronograma, lo que limita su viabilidad como política pública.",
+            "conclusion": "La variable de reforma policial obtiene una calificación de 5.8/10, siendo la más subdesarrollada del bloque. Aunque la orientación es adecuada, el contenido es insuficiente y presenta limitaciones en elementos clave para su implementación efectiva, lo que es preocupante dado el papel central de la PNP en la seguridad del país."
           },
           "sources": []
         },
@@ -534,9 +534,9 @@
           ],
           "gaps": [
             "No se establece un número de cárceles a construir",
-            "No hay estimación del costo total del programa"
+            "No se detalla estimación del costo total del programa"
           ],
-          "conclusion": "La propuesta es sólida en términos de medidas y mecanismos, pero carece de detalles cruciales para su implementación efectiva. La falta de un enfoque en la resocialización limita su potencial para reducir la reincidencia delictiva.",
+          "conclusion": "La propuesta es sólida en términos de medidas y mecanismos, pero presenta limitaciones en detalles cruciales para su implementación efectiva. La falta de un enfoque en la resocialización limita su potencial para reducir la reincidencia delictiva.",
           "criteria": {
             "diagnostico": 1,
             "propuesta": 2,
@@ -587,7 +587,7 @@
           "block_id": "seguridad_puntaje_promedio_6_2",
           "final_score": 4.2,
           "rating_label": "débil",
-          "summary": "La variable evalúa las propuestas del candidato para combatir el crimen organizado, destacando la necesidad de inteligencia, cooperación internacional y un fortalecimiento institucional. Sin embargo, el plan carece de contenido específico y medidas concretas para abordar las economías criminales.",
+          "summary": "La variable evalúa las propuestas del candidato para combatir el crimen organizado, destacando la necesidad de inteligencia, cooperación internacional y un fortalecimiento institucional. Sin embargo, el plan presenta limitaciones en contenido específico y medidas concretas para abordar las economías criminales.",
           "strengths": [
             "Orientación estratégica correcta hacia la inteligencia avanzada",
             "Propuesta de cooperación internacional",
@@ -599,7 +599,7 @@
             "Ausencia de articulación entre la Policía y la UIF"
           ],
           "gaps": [
-            "No hay metas operacionales definidas",
+            "No se detalla metas operacionales definidas",
             "No se presentan normas específicas para la persecución del crimen organizado"
           ],
           "conclusion": "La variable es la más débil del bloque de seguridad, con un desarrollo escaso y sin medidas concretas. La falta de contenido operacional impide considerarla una política pública efectiva.",
@@ -627,7 +627,7 @@
           "correction_note": null,
           "criteria_notes": {
             "diagnostico": "El diagnóstico es insuficiente, ya que no se aborda el crimen organizado como fenómeno propio ni se presentan datos relevantes.",
-            "propuesta": "La propuesta es correcta en términos de dirección, pero carece de contenido detallado.",
+            "propuesta": "La propuesta es correcta en términos de dirección, pero presenta limitaciones en contenido detallado.",
             "medidas": "Las medidas son genéricas y no abordan las economías criminales específicas.",
             "implementacion": "La implementación es débil, con solo la DINI mencionada y sin articulación clara entre instituciones.",
             "viabilidad": "La viabilidad es cuestionable debido a la falta de desarrollo y contenido en la propuesta.",
@@ -680,7 +680,7 @@
             "No se menciona un cronograma ni presupuesto para las reformas",
             "La fianza procesal puede violar el artículo 139 de la Constitución"
           ],
-          "conclusion": "La propuesta es débil y carece de contenido de implementación, lo que la convierte en un listado de buenas intenciones. Para un país con un bajo índice de Estado de Derecho, se requería un desarrollo mucho más robusto.",
+          "conclusion": "La propuesta es débil y presenta limitaciones en contenido de implementación, lo que la convierte en un listado de buenas intenciones. Para un país con un bajo índice de Estado de Derecho, se requería un desarrollo mucho más robusto.",
           "criteria": {
             "diagnostico": 1,
             "propuesta": 2,
@@ -720,7 +720,7 @@
             "implementacion_necesaria": "Para implementar estas propuestas, se requiere identificar instituciones responsables, establecer un cronograma y presupuesto, y realizar un análisis constitucional sobre la fianza procesal para evitar conflictos con el acceso a la justicia.",
             "impacto_potencial": "Si se implementan correctamente, estas reformas podrían mejorar la independencia del sistema judicial, reducir la provisionalidad y elevar la calidad del servicio judicial a largo plazo, aunque el impacto concreto es incierto debido a la falta de desarrollo en la propuesta.",
             "vacios": "El plan presenta vacíos significativos, como la falta de propuestas para reformar la Junta Nacional de Justicia, estrategias para reducir la carga procesal, y no aborda la reforma del Ministerio Público ni identifica instituciones ejecutoras.",
-            "evaluacion_tecnica": "Desde una perspectiva técnica, el plan tiene orientaciones correctas, pero carece de desarrollo en áreas clave, lo que limita su viabilidad y efectividad en la práctica, además de presentar riesgos constitucionales no analizados.",
+            "evaluacion_tecnica": "Desde una perspectiva técnica, el plan tiene orientaciones correctas, pero presenta limitaciones en desarrollo en áreas clave, lo que limita su viabilidad y efectividad en la práctica, además de presentar riesgos constitucionales no analizados.",
             "conclusion": "La variable obtiene un puntaje de 4.2/10, siendo la más débil del bloque de justicia. Aunque la orientación es correcta, la falta de contenido de implementación y el riesgo constitucional de la fianza procesal hacen que la propuesta sea insuficiente para abordar los problemas del sistema judicial peruano."
           },
           "sources": []
@@ -739,14 +739,14 @@
           ],
           "weaknesses": [
             "Falta de norma habilitante para VigIA",
-            "No hay cronograma de implementación definido",
+            "No se detalla cronograma de implementación definido",
             "La Ley General de Contrataciones aún no está promulgada"
           ],
           "gaps": [
             "No se cuantifica el problema de corrupción con datos propios",
             "Falta de un protocolo explícito de coordinación entre instituciones"
           ],
-          "conclusion": "La variable es la más sólida del bloque de justicia y una de las más destacadas del plan. Las medidas son concretas y tienen respaldo en experiencias internacionales, aunque requieren normas que aún no existen.",
+          "conclusion": "La variable es la más sólida del bloque de justicia y una de las más destacadas del plan. Las medidas son concretas y tienen respaldo en experiencias internacionales, aunque requieren normas que aún no se desarrolla con claridadn.",
           "criteria": {
             "diagnostico": 1,
             "propuesta": 2,
@@ -774,7 +774,7 @@
             "propuesta": "VigIA + análisis Big Data + modificación Ley 31358 + reperfilamiento 60/25/15% + prescripción ampliada conforman una propuesta articulada y técnicamente sólida.",
             "medidas": "VigIA (instrumento con precedente verificado en Colombia), Ley 31358 (norma específica), distribución 60/25/15% (métrica concreta), OpenTender y Percephtor, prescripción ampliada.",
             "implementacion": "PCM, Contraloría, Ministerio Público, Poder Judicial, UIF y Procuraduría están mencionados. Pero VigIA no tiene norma habilitante ni cronograma de implementación.",
-            "viabilidad": "VigIA tiene precedente exitoso en Colombia. Pero no hay costo ni cronograma de implementación en el plan.",
+            "viabilidad": "VigIA tiene precedente exitoso en Colombia. Pero no se detalla costo ni cronograma de implementación en el plan.",
             "especificidad": "VigIA (instrumento específico con nombre y precedente), Ley 31358 (norma identificada), porcentajes 60/25/15% (métrica cuantificada)."
           },
           "analysis_sections": {
@@ -783,10 +783,10 @@
             "diagnostico_externo": "El Perú ocupa el puesto 99 de 180 en el Índice de Percepción de la Corrupción 2024, con un perjuicio económico por corrupción de S/24,268 millones en 2023 y más de 22,000 casos activos en el Ministerio Público, evidenciando un problema sistémico.",
             "propuesta_plan": "El plan de gobierno presenta una propuesta anticorrupción que incluye la implementación de VigIA, un sistema de inteligencia artificial, el uso de plataformas de análisis de datos, la modificación de la Ley 31358 y un cambio en el enfoque de la Contraloría General.",
             "medidas_concretas": "Las medidas específicas incluyen la implementación de VigIA, el uso de OpenTender y Percephtor, la modificación de la Ley 31358 para sanciones vinculantes, el cambio en la auditoría de la Contraloría y la ampliación de plazos de prescripción en delitos complejos.",
-            "implementacion_necesaria": "Para implementar estas propuestas se requiere una norma habilitante para VigIA, la modificación de la Ley 31358, un decreto de reorganización de la Contraloría y convenios de cooperación con Colombia, aunque no hay un cronograma definido.",
+            "implementacion_necesaria": "Para implementar estas propuestas se requiere una norma habilitante para VigIA, la modificación de la Ley 31358, un decreto de reorganización de la Contraloría y convenios de cooperación con Colombia, aunque no se detalla un cronograma definido.",
             "impacto_potencial": "La implementación de VigIA podría identificar patrones irregulares en contratos públicos a gran escala, mientras que el cambio en la Contraloría podría permitir una gestión más eficiente y menos temerosa, reactivando obras paralizadas.",
             "vacios": "Los vacíos incluyen la falta de una norma habilitante para VigIA, la inexistencia de la Ley General de Contrataciones Públicas, la ausencia de un cronograma de implementación y la necesidad de un protocolo de coordinación entre las instituciones involucradas.",
-            "evaluacion_tecnica": "La propuesta es sólida y bien diseñada, con instrumentos verificados en otros contextos, pero carece de la normativa necesaria para su ejecución y de un cronograma claro, lo que limita su viabilidad.",
+            "evaluacion_tecnica": "La propuesta es sólida y bien diseñada, con instrumentos verificados en otros contextos, pero presenta limitaciones en la normativa necesaria para su ejecución y de un cronograma claro, lo que limita su viabilidad.",
             "conclusion": "La variable obtiene una calificación de 7.5/10, destacándose como la más sólida del bloque de justicia, con medidas concretas y respaldadas internacionalmente, aunque presenta brechas en la normativa y la implementación."
           },
           "sources": []
@@ -809,7 +809,7 @@
             "Falta de presupuesto identificado para el Centro de Gobierno"
           ],
           "gaps": [
-            "No hay estrategia para enfrentar la resistencia política y burocrática",
+            "No se detalla estrategia para enfrentar la resistencia política y burocrática",
             "Proceso de selección con headhunters no tiene protocolo definido"
           ],
           "conclusion": "La propuesta es ambiciosa y estructural, pero enfrenta desafíos políticos significativos que podrían dificultar su implementación. La falta de una estrategia clara para superar la resistencia burocrática es un riesgo importante.",
@@ -863,7 +863,7 @@
           "block_id": "justicia_y_estado_de_derecho_puntaje_promedio_6_0",
           "final_score": 5,
           "rating_label": "débil",
-          "summary": "La propuesta del plan de gobierno busca fortalecer la descentralización mediante la creación de Agencias Regionales de Desarrollo, el fortalecimiento de mancomunidades regionales, la elaboración de Planes Regionales de Competitividad y la creación de mesas ejecutivas para priorizar inversiones. Sin embargo, carece de una reforma estructural de competencias y de un fortalecimiento real de las capacidades institucionales de los gobiernos regionales.",
+          "summary": "La propuesta del plan de gobierno busca fortalecer la descentralización mediante la creación de Agencias Regionales de Desarrollo, el fortalecimiento de mancomunidades regionales, la elaboración de Planes Regionales de Competitividad y la creación de mesas ejecutivas para priorizar inversiones. Sin embargo, presenta limitaciones en una reforma estructural de competencias y de un fortalecimiento real de las capacidades institucionales de los gobiernos regionales.",
           "strengths": [
             "Propuesta de creación de Agencias Regionales de Desarrollo",
             "Fortalecimiento de mancomunidades para proyectos suprarregionales",
@@ -875,7 +875,7 @@
             "La absorción del CEPLAN podría debilitar la planificación territorial"
           ],
           "gaps": [
-            "No hay cuantificación del diagnóstico sobre ejecución presupuestal",
+            "No se detalla cuantificación del diagnóstico sobre ejecución presupuestal",
             "Falta de métricas para evaluar el fortalecimiento de la descentralización"
           ],
           "conclusion": "La variable de descentralización es la más débil del bloque de justicia, con instrumentos correctos pero insuficientes para una política real. La falta de una propuesta estructural y la debilidad en la planificación territorial son inconsistencias significativas del plan.",
@@ -905,7 +905,7 @@
             "diagnostico": "El plan no cuantifica el problema de ejecución regional ni conflictos sociales.",
             "propuesta": "Los instrumentos propuestos no constituyen una política de descentralización estructural.",
             "medidas": "Las medidas son útiles pero no abordan la reforma de competencias necesaria.",
-            "implementacion": "La implementación carece de un fortalecimiento de capacidades institucionales de los GOREs.",
+            "implementacion": "La implementación presenta limitaciones en un fortalecimiento de capacidades institucionales de los GOREs.",
             "viabilidad": "Los instrumentos son factibles pero insuficientes para resolver la descentralización trunca.",
             "especificidad": "No se presentan métricas claras para evaluar el fortalecimiento de la descentralización."
           },
@@ -918,7 +918,7 @@
             "implementacion_necesaria": "Para implementar estas propuestas se requiere una norma que establezca las ARD con un presupuesto definido, coordinación con los gobiernos regionales para los Planes Regionales y un protocolo de funcionamiento para las mesas ejecutivas.",
             "impacto_potencial": "Si se implementan correctamente, las ARD y las mesas ejecutivas podrían mejorar la coordinación entre la inversión pública y privada, desbloqueando proyectos paralizados y aumentando la ejecución presupuestal en las regiones.",
             "vacios": "El plan presenta vacíos significativos, como la falta de una propuesta de reforma de competencias entre niveles de gobierno, el no fortalecimiento de capacidades institucionales de los GOREs y la ausencia de una redistribución de recursos hacia las regiones más rezagadas.",
-            "evaluacion_tecnica": "Aunque el plan incluye instrumentos de articulación territorial, carece de una política de descentralización estructural, lo que limita su efectividad. La falta de propuestas concretas para la reforma de competencias y el debilitamiento del CEPLAN son preocupantes.",
+            "evaluacion_tecnica": "Aunque el plan incluye instrumentos de articulación territorial, presenta limitaciones en una política de descentralización estructural, lo que limita su efectividad. La falta de propuestas concretas para la reforma de competencias y el debilitamiento del CEPLAN son preocupantes.",
             "conclusion": "La variable de descentralización obtiene una calificación de 5.0/10, siendo la más débil del bloque de justicia. Los instrumentos propuestos son correctos pero insuficientes para lograr una política de descentralización efectiva, lo que representa una inconsistencia notable en un partido con fuerte presencia en regiones pobres."
           },
           "sources": []
@@ -941,7 +941,7 @@
           "block_id": "educacion_puntaje_promedio_6_2",
           "final_score": 5,
           "rating_label": "débil",
-          "summary": "El plan de gobierno propone reformar la educación escolar en Perú a través de un currículo nacional básico y un currículo institucional autónomo, así como una carrera docente basada en resultados de aprendizaje. Se busca mejorar la calidad educativa y adaptarla a contextos locales, pero carece de medidas específicas para su implementación.",
+          "summary": "El plan de gobierno propone reformar la educación escolar en Perú a través de un currículo nacional básico y un currículo institucional autónomo, así como una carrera docente basada en resultados de aprendizaje. Se busca mejorar la calidad educativa y adaptarla a contextos locales, pero presenta limitaciones en medidas específicas para su implementación.",
           "strengths": [
             "Propuestas técnicamente correctas como CNB+CIA y carrera docente por resultados",
             "Enfoque en la adaptación curricular a contextos locales",
@@ -953,10 +953,10 @@
             "Ausencia de un cronograma para la certificación docente"
           ],
           "gaps": [
-            "No hay meta de mejora de aprendizajes al 2031",
+            "No se detalla meta de mejora de aprendizajes al 2031",
             "No se presenta un presupuesto para la reforma del MINEDU"
           ],
-          "conclusion": "El plan presenta propuestas sólidas pero carece de detalles cruciales para su ejecución y evaluación. Sin metas claras y medidas desarrolladas, se convierte en una declaración de intenciones más que en una política educativa efectiva.",
+          "conclusion": "El plan presenta propuestas sólidas pero presenta limitaciones en detalles cruciales para su ejecución y evaluación. Sin metas claras y medidas desarrolladas, se convierte en una declaración de intenciones más que en una política educativa efectiva.",
           "criteria": {
             "diagnostico": 1,
             "propuesta": 2,
@@ -1085,10 +1085,10 @@
             "Ausencia de presupuesto para expandir vacantes en educación pública"
           ],
           "gaps": [
-            "No hay número definido de Institutos de Excelencia a crear",
-            "No hay metas cuantificadas para la acreditación de universidades"
+            "No se detalla número definido de Institutos de Excelencia a crear",
+            "No se detalla metas cuantificadas para la acreditación de universidades"
           ],
-          "conclusion": "La propuesta tiene un enfoque correcto, pero carece de detalles cruciales para su implementación efectiva. Sin un mandato claro para la SUNEDU, la reforma de calidad podría tener un impacto limitado.",
+          "conclusion": "La propuesta tiene un enfoque correcto, pero presenta limitaciones en detalles cruciales para su implementación efectiva. Sin un mandato claro para la SUNEDU, la reforma de calidad podría tener un impacto limitado.",
           "criteria": {
             "diagnostico": 1,
             "propuesta": 2,
@@ -1128,7 +1128,7 @@
             "implementacion_necesaria": "Para implementar las propuestas, se requiere una norma que establezca la Ruta Única de Aseguramiento, un decreto para la creación de Institutos de Excelencia y una norma del Marco Nacional de Cualificaciones. La falta de un mandato reforzado para la SUNEDU limita la implementación efectiva.",
             "impacto_potencial": "Si se implementa correctamente, la Ruta Única de Aseguramiento podría unificar los criterios de calidad, mejorando la oferta educativa. Los Institutos de Excelencia Regionales podrían aumentar el acceso a educación de calidad en regiones desatendidas, y el Marco Nacional de Cualificaciones facilitaría el reconocimiento de competencias en el mercado laboral.",
             "vacios": "Los vacíos más importantes incluyen la falta de un número definido de Institutos de Excelencia, la ausencia de un presupuesto para expandir vacantes en educación pública, y la falta de una estrategia específica para las universidades sin licencia. Además, no se establece una meta de universidades a acreditar para 2031.",
-            "evaluacion_tecnica": "La evaluación técnica indica que la Ruta Única de Aseguramiento es un instrumento relevante, pero la falta de un mandato ampliado para la SUNEDU y la ausencia de presupuesto limitan su efectividad. Los Institutos de Excelencia tienen precedentes exitosos, pero su implementación carece de claridad.",
+            "evaluacion_tecnica": "La evaluación técnica indica que la Ruta Única de Aseguramiento es un instrumento relevante, pero la falta de un mandato ampliado para la SUNEDU y la ausencia de presupuesto limitan su efectividad. Los Institutos de Excelencia tienen precedentes exitosos, pero su implementación presenta limitaciones en claridad.",
             "conclusion": "La variable obtiene una calificación de 5.8/10, lo que indica que, aunque la orientación y los instrumentos son válidos, la falta de datos cuantificados, presupuesto y un mandato claro para la SUNEDU son debilidades significativas. Sin una arquitectura de implementación robusta, la reforma de calidad en la educación superior podría tener un alcance limitado."
           },
           "sources": []
@@ -1151,7 +1151,7 @@
             "No se especifica el número de nuevos institutos técnicos a crear."
           ],
           "gaps": [
-            "No hay estrategia territorial para la implementación de las medidas.",
+            "No se detalla estrategia territorial para la implementación de las medidas.",
             "No se establecen metas de empleabilidad técnica al 2031."
           ],
           "conclusion": "El ratio 3:1 del PRONABEC es la medida más eficiente del bloque educativo, pero la falta de presupuesto limita su alcance real. Sin recursos adicionales, la política no podrá aumentar el número total de beneficiarios técnicos.",
@@ -1295,7 +1295,7 @@
             "No se presenta un presupuesto para la replicación de la Torre Trecca"
           ],
           "gaps": [
-            "No hay estrategia específica para las 16 regiones con hospitales inadecuados",
+            "No se detalla estrategia específica para las 16 regiones con hospitales inadecuados",
             "Ambigüedad sobre quién ejecutará las obras en regiones"
           ],
           "conclusion": "La propuesta es sólida en términos de diseño y viabilidad, pero presenta vacíos importantes en liderazgo y planificación territorial. El mantenimiento preventivo es una medida clave que ha sido ignorada en administraciones anteriores.",
@@ -1489,7 +1489,7 @@
           "block_id": "politica_social_puntaje_promedio_4_2",
           "final_score": 2.5,
           "rating_label": "insuficiente",
-          "summary": "La variable evalúa las propuestas del candidato para los programas sociales del Estado, destacando la necesidad de una reforma hacia un enfoque productivo e integral. Sin embargo, carece de contenido específico y no menciona programas clave como Juntos o Pensión 65.",
+          "summary": "La variable evalúa las propuestas del candidato para los programas sociales del Estado, destacando la necesidad de una reforma hacia un enfoque productivo e integral. Sin embargo, presenta limitaciones en contenido específico y no menciona programas clave como Juntos o Pensión 65.",
           "strengths": [
             "La idea de un enfoque productivo en los programas sociales es conceptualmente interesante.",
             "La reforma previsional con EAF podría expandir la cobertura previsional.",
@@ -1498,7 +1498,7 @@
           "weaknesses": [
             "No se presentan datos de cobertura ni impacto de los programas sociales existentes.",
             "Falta de propuestas concretas y específicas para los programas sociales.",
-            "No hay un cronograma de transición ni costo fiscal cuantificado."
+            "No se detalla un cronograma de transición ni costo fiscal cuantificado."
           ],
           "gaps": [
             "Ausencia de programas sociales específicos mencionados por nombre.",
@@ -1529,7 +1529,7 @@
           "correction_note": null,
           "criteria_notes": {
             "diagnostico": "El plan no presenta datos de cobertura, filtración ni impacto de los programas sociales existentes.",
-            "propuesta": "La idea de un enfoque productivo en los programas sociales tiene orientación correcta pero carece de contenido específico.",
+            "propuesta": "La idea de un enfoque productivo en los programas sociales tiene orientación correcta pero presenta limitaciones en contenido específico.",
             "medidas": "Sin programa social específico. Sin Pensión 65, Juntos, CONTIGO ni Qali Warma. Sin montos ni cambios de cobertura.",
             "implementacion": "Sin MIDIS ni ninguna institución con mandato explícito de reforma de los programas sociales.",
             "viabilidad": "La reforma previsional con EAF es posible. Sin costo fiscal cuantificado del capital semilla estatal.",
@@ -1542,8 +1542,8 @@
             "propuesta_plan": "El plan propone una reforma de los programas sociales hacia un enfoque productivo e integral, buscando reestructurar los programas para que promuevan la inserción laboral y el emprendimiento, además de reemplazar las AFP con Empresas Administradoras de Fondos (EAF).",
             "medidas_concretas": "Las medidas concretas son limitadas, destacando la declaración de un enfoque productivo y la reforma previsional con EAF y capital semilla estatal, sin mencionar programas específicos como Juntos o Pensión 65.",
             "implementacion_necesaria": "Para implementar las propuestas, se requiere un mandato explícito del MIDIS, normas para la creación de las EAF, un costo fiscal cuantificado del capital semilla estatal y un cronograma de transición hacia el nuevo modelo previsional.",
-            "impacto_potencial": "Si se implementa correctamente, la reforma previsional podría aumentar la cobertura previsional, pero sin un costo fiscal claro, es difícil estimar su impacto real. La idea de establecer metas de salida de la pobreza es válida, pero carece de contenido específico.",
-            "vacios": "El plan presenta vacíos significativos, como la ausencia de programas sociales específicos, falta de montos de transferencia, y no menciona a los programas más importantes del país. También carece de un mecanismo claro para la salida de la pobreza.",
+            "impacto_potencial": "Si se implementa correctamente, la reforma previsional podría aumentar la cobertura previsional, pero sin un costo fiscal claro, es difícil estimar su impacto real. La idea de establecer metas de salida de la pobreza es válida, pero presenta limitaciones en contenido específico.",
+            "vacios": "El plan presenta vacíos significativos, como la ausencia de programas sociales específicos, falta de montos de transferencia, y no menciona a los programas más importantes del país. También presenta limitaciones en un mecanismo claro para la salida de la pobreza.",
             "evaluacion_tecnica": "La propuesta de reforma previsional es conceptualmente interesante, pero sin un costo fiscal cuantificado y sin un cronograma de transición, se queda en una idea sin sustento. La falta de contenido programático en la política social es preocupante.",
             "conclusion": "La variable obtiene un puntaje de 2.5/10, lo que refleja una debilidad significativa en el contenido programático. La ausencia de los principales programas sociales en el plan es una omisión crítica que no puede ser compensada por declaraciones de principios."
           },
@@ -1645,7 +1645,7 @@
             "Falta de un cronograma de adjudicación para los proyectos propuestos"
           ],
           "gaps": [
-            "No hay mecanismo específico para resolver conflictos sociales que paralizan proyectos",
+            "No se detalla mecanismo específico para resolver conflictos sociales que paralizan proyectos",
             "La capacidad de ejecución del nuevo ministerio es incierta"
           ],
           "conclusion": "La variable de infraestructura es la más completa del plan, con un diagnóstico sólido y propuestas específicas. Sin embargo, la ambición de las metas y la falta de capacidad institucional del nuevo ministerio son limitaciones significativas.",
@@ -1674,7 +1674,7 @@
           "criteria_notes": {
             "diagnostico": "El plan cuantifica la brecha con un portafolio nacional de 72 proyectos y un diagnóstico propio cuantificado.",
             "propuesta": "Incluye medidas concretas como el Shock de Transitabilidad y la centralización de APPs.",
-            "medidas": "Identifica metas claras, aunque carece de un cronograma de adjudicación.",
+            "medidas": "Identifica metas claras, aunque presenta limitaciones en un cronograma de adjudicación.",
             "implementacion": "El MINFRA es un ministerio nuevo sin capacidad instalada, lo que complica la implementación.",
             "viabilidad": "La meta de S/143,000 millones en cinco años supera el histórico de inversión pública en el país.",
             "especificidad": "Presenta números específicos y montos claros para los proyectos y medidas propuestas."
@@ -1711,8 +1711,8 @@
             "Ausencia de cronograma específico para las líneas L1 a L4"
           ],
           "gaps": [
-            "No hay norma de cofinanciamiento a los GOREs para el Shock de Transitabilidad",
-            "El monorriel aeroportuario carece de estudio técnico"
+            "No se detalla norma de cofinanciamiento a los GOREs para el Shock de Transitabilidad",
+            "El monorriel aeroportuario presenta limitaciones en estudio técnico"
           ],
           "conclusion": "El Shock de Transitabilidad y Chinchero 2028 son las medidas más concretas y creíbles del bloque. La propuesta presenta una heterogeneidad que puede complicar su ejecución en el corto plazo.",
           "criteria": {
@@ -1772,15 +1772,15 @@
             "Los montos cuantificados para inversión en gas y transmisión eléctrica son claros."
           ],
           "weaknesses": [
-            "No hay cronograma de extinción de Perupetro.",
+            "No se detalla cronograma de extinción de Perupetro.",
             "Falta de presupuesto detallado y cronograma para la masificación del gas.",
             "No se proponen medidas concretas para la electrificación rural."
           ],
           "gaps": [
-            "No hay un instrumento específico para solucionar la brecha de electrificación rural del 16.7%.",
-            "El Lote Z-62 es especulativo y no hay garantías de reservas comercialmente viables."
+            "No se detalla un instrumento específico para solucionar la brecha de electrificación rural del 16.7%.",
+            "El Lote Z-62 es especulativo y no se detalla garantías de reservas comercialmente viables."
           ],
-          "conclusion": "La variable presenta propuestas viables y fiscalmente responsables, aunque carece de detalles en algunos aspectos críticos. La falta de un cronograma y medidas específicas para la electrificación rural son limitaciones importantes.",
+          "conclusion": "La variable presenta propuestas viables y fiscalmente responsables, aunque presenta limitaciones en detalles en algunos aspectos críticos. La falta de un cronograma y medidas específicas para la electrificación rural son limitaciones importantes.",
           "criteria": {
             "diagnostico": 1,
             "propuesta": 2,
@@ -1807,7 +1807,7 @@
             "diagnostico": "El plan menciona problemas sin cuantificar la brecha de electrificación ni el diferencial de precios del gas.",
             "propuesta": "La propuesta es articulada y abarca medidas clave para el sector energético.",
             "medidas": "Se identifican medidas concretas, pero faltan detalles sobre presupuesto y cronograma.",
-            "implementacion": "La implementación depende de actores clave, pero carece de un cronograma claro.",
+            "implementacion": "La implementación depende de actores clave, pero presenta limitaciones en un cronograma claro.",
             "viabilidad": "La extinción de Perupetro es viable administrativamente y las adendas tienen un modelo técnico exitoso.",
             "especificidad": "Se presentan montos claros para la masificación del gas y la transmisión eléctrica."
           },
@@ -1820,7 +1820,7 @@
             "implementacion_necesaria": "Para implementar las propuestas se requiere un decreto de extinción de Perupetro, la apertura de Petroperú a la inversión privada, la estructuración de adendas de masificación de gas y la adjudicación de la APP para gas en Cusco.",
             "impacto_potencial": "La implementación de estas medidas podría ahorrar al Estado S/4,000 millones al evitar inyecciones a Petroperú, mejorar la competitividad energética en regiones y desbloquear capacidad de distribución eléctrica, beneficiando a la población.",
             "vacios": "El plan presenta vacíos significativos, como la falta de un cronograma para la extinción de Perupetro, la ausencia de un presupuesto detallado para la masificación del gas y la falta de medidas concretas para abordar la brecha de electrificación rural.",
-            "evaluacion_tecnica": "Desde una perspectiva técnica, la extinción de Perupetro y el cese de inyección pública a Petroperú son decisiones fiscalmente responsables, mientras que las adendas para masificación del gas son factibles, aunque el Lote Z-62 carece de garantías de reservas.",
+            "evaluacion_tecnica": "Desde una perspectiva técnica, la extinción de Perupetro y el cese de inyección pública a Petroperú son decisiones fiscalmente responsables, mientras que las adendas para masificación del gas son factibles, aunque el Lote Z-62 presenta limitaciones en garantías de reservas.",
             "conclusion": "La variable 26 obtiene un puntaje de 7.5/10, destacándose como la más sólida del bloque de infraestructura. Las propuestas son viables administrativamente y fiscalmente responsables, aunque se requiere mayor claridad en la implementación y atención a la electrificación rural."
           },
           "sources": []
@@ -1851,8 +1851,8 @@
           ],
           "weaknesses": [
             "Falta de inversión definida para la digitalización",
-            "No hay presupuesto para el Plan de Última Milla",
-            "El Zar de Tecnología carece de ley habilitante"
+            "No se detalla presupuesto para el Plan de Última Milla",
+            "El Zar de Tecnología presenta limitaciones en ley habilitante"
           ],
           "gaps": [
             "No se especifica el costo de digitalizar 15,000 trámites",
@@ -1897,7 +1897,7 @@
             "medidas_concretas": "Las medidas específicas incluyen la creación del Zar de Tecnología, la meta de un Estado 100% digital, la implementación de una identidad digital biométrica, la instalación de puntos WiFi rurales, y la extinción de OSIPTEL y PRONATEL para crear un nuevo fondo de última milla.",
             "implementacion_necesaria": "Para implementar estas propuestas se requiere una ley habilitante para el Zar de Tecnología, la reforma de la Ley 26285 para extinguir OSIPTEL, y normas para la creación del nuevo fondo de última milla y el Plan de Última Milla.",
             "impacto_potencial": "Un Estado 100% digital al 2030 podría eliminar miles de trámites presenciales, reduciendo oportunidades de corrupción y mejorando la eficiencia. La conectividad a través de los puntos WiFi rurales facilitaría el acceso a servicios digitales en comunidades desconectadas.",
-            "vacios": "El plan carece de una inversión definida para la digitalización y no presenta un presupuesto para el Plan de Última Milla. Además, la falta de una ley habilitante para el Zar de Tecnología limita su efectividad y la ambiciosa meta de un Estado 100% digital en cuatro años parece poco realista.",
+            "vacios": "El plan presenta limitaciones en una inversión definida para la digitalización y no presenta un presupuesto para el Plan de Última Milla. Además, la falta de una ley habilitante para el Zar de Tecnología limita su efectividad y la ambiciosa meta de un Estado 100% digital en cuatro años parece poco realista.",
             "evaluacion_tecnica": "La propuesta del Zar de Tecnología es innovadora y se basa en modelos exitosos de otros países, pero la falta de un presupuesto claro y la necesidad de reformas legales son obstáculos significativos. La ambición del plan no se alinea con la actual incompatibilidad de sistemas en el Estado.",
             "conclusion": "La variable obtiene una calificación de 5.0/10, reflejando propuestas con buena orientación pero insuficientemente desarrolladas. La falta de inversión y la ausencia de un marco legal adecuado limitan el potencial de transformación del plan."
           },
@@ -1924,7 +1924,7 @@
             "Ausencia de estrategia de articulación universidad-empresa más allá de los clústeres",
             "No se asignan fondos adicionales para fortalecer la fusión"
           ],
-          "conclusion": "La propuesta tiene un enfoque correcto pero carece de contenido necesario para un cambio estructural en el sistema de I+D. Sin presupuesto adicional, la fusión solo reorganiza sin fortalecer.",
+          "conclusion": "La propuesta tiene un enfoque correcto pero presenta limitaciones en contenido necesario para un cambio estructural en el sistema de I+D. Sin presupuesto adicional, la fusión solo reorganiza sin fortalecer.",
           "criteria": {
             "diagnostico": 1,
             "propuesta": 1,
@@ -1963,8 +1963,8 @@
             "medidas_concretas": "Las medidas específicas incluyen la fusión de CONCYTEC con varios institutos de I+D, la adquisición de un buque de investigación para el IMARPE, la creación de clústeres de innovación, y el acceso de startups a contratos públicos como mecanismo de crecimiento.",
             "implementacion_necesaria": "Para implementar estas propuestas se requiere un decreto de fusión de CONCYTEC, el proceso de OXI para el buque del IMARPE, una norma para los clústeres de innovación, y un mecanismo de compras públicas para startups. Sin embargo, la falta de presupuesto adicional para I+D es una brecha crítica.",
             "impacto_potencial": "La fusión de institutos en CONCYTEC podría reducir la fragmentación y mejorar la eficiencia en el uso de recursos. El buque del IMARPE podría fortalecer la investigación oceánica, y los clústeres de innovación podrían fomentar ecosistemas productivos en diversas regiones del país.",
-            "vacios": "El plan carece de una meta de inversión en I+D como porcentaje del PBI, lo que es un indicador clave de compromiso. Además, no se asigna presupuesto adicional a CONCYTEC, y la fusión de múltiples instituciones con diferentes culturas organizacionales es un proceso complejo que podría tardar más de un quinquenio.",
-            "evaluacion_tecnica": "La propuesta de fusionar institutos de I+D en CONCYTEC es ambiciosa y lógica, pero carece de metas claras de inversión y financiamiento. La falta de un presupuesto adicional y la complejidad del proceso de fusión limitan su efectividad potencial.",
+            "vacios": "El plan presenta limitaciones en una meta de inversión en I+D como porcentaje del PBI, lo que es un indicador clave de compromiso. Además, no se asigna presupuesto adicional a CONCYTEC, y la fusión de múltiples instituciones con diferentes culturas organizacionales es un proceso complejo que podría tardar más de un quinquenio.",
+            "evaluacion_tecnica": "La propuesta de fusionar institutos de I+D en CONCYTEC es ambiciosa y lógica, pero presenta limitaciones en metas claras de inversión y financiamiento. La falta de un presupuesto adicional y la complejidad del proceso de fusión limitan su efectividad potencial.",
             "conclusion": "La variable obtiene una calificación de 5.0/10, lo que indica que, aunque las propuestas son correctas, carecen del contenido necesario para generar un cambio estructural en el sistema de I+D. La ausencia de una meta de inversión en I+D es el vacío más significativo en un área donde la inversión es crucial."
           },
           "sources": []
@@ -1984,13 +1984,13 @@
           "weaknesses": [
             "Marco Regulatorio de IA declarado pero vacío",
             "Falta de norma habilitante del CERT-Perú",
-            "No hay cronograma para el desarrollo del contenido del Marco Regulatorio de IA"
+            "No se detalla cronograma para el desarrollo del contenido del Marco Regulatorio de IA"
           ],
           "gaps": [
             "El Marco Regulatorio de IA no especifica qué regula ni cómo se implementa",
-            "No hay norma de creación de la Brigada Ciberpolicía"
+            "No se detalla norma de creación de la Brigada Ciberpolicía"
           ],
-          "conclusion": "La propuesta tiene viabilidad política y amplía capacidades existentes, pero el desarrollo del marco regulatorio es crucial para su efectividad. Sin contenido específico, el marco regulatorio carece de sustancia.",
+          "conclusion": "La propuesta tiene viabilidad política y amplía capacidades existentes, pero el desarrollo del marco regulatorio es crucial para su efectividad. Sin contenido específico, el marco regulatorio presenta limitaciones en sustancia.",
           "criteria": {
             "diagnostico": 1,
             "propuesta": 2,
@@ -2024,7 +2024,7 @@
           "analysis_sections": {
             "definicion": "Esta variable evalúa qué propone el candidato para establecer un marco regulatorio para la inteligencia artificial, abarcando aspectos como gobernanza, ética, protección de derechos de los ciudadanos, responsabilidad ante daños y el uso de IA en el sector público.",
             "importancia": "La regulación de la inteligencia artificial es crucial para garantizar que su uso en el Estado peruano sea transparente y responsable, protegiendo así los derechos de los ciudadanos y evitando daños potenciales derivados de decisiones algorítmicas.",
-            "diagnostico_externo": "Actualmente, Perú carece de legislación específica sobre inteligencia artificial, y se encuentra en una etapa 'naciente' en términos de gobernanza de IA, según la UIT. La OCDE y el BID han señalado la necesidad urgente de marcos regulatorios en América Latina.",
+            "diagnostico_externo": "Actualmente, Perú presenta limitaciones en legislación específica sobre inteligencia artificial, y se encuentra en una etapa 'naciente' en términos de gobernanza de IA, según la UIT. La OCDE y el BID han señalado la necesidad urgente de marcos regulatorios en América Latina.",
             "propuesta_plan": "El plan de gobierno propone seis medidas clave, incluyendo un Marco Regulatorio Moderno para IA, la creación del CERT-Perú, una Brigada Nacional de Ciberpolicía, una identidad digital biométrica unificada, el uso de IA y Big Data para la detección de patrones criminales, y la protección de infraestructura crítica nacional.",
             "medidas_concretas": "Las medidas específicas incluyen la creación de un Marco Regulatorio Moderno para IA, el establecimiento del CERT-Perú, la formación de una Brigada Nacional de Ciberpolicía, la implementación de una identidad digital biométrica, el uso de IA para detectar patrones criminales y la protección de infraestructura crítica.",
             "implementacion_necesaria": "Para implementar estas propuestas, se requiere una norma habilitante para el CERT-Perú, una norma de creación para la Brigada Ciberpolicía, y el desarrollo del contenido del Marco Regulatorio de IA, que actualmente está declarado pero vacío.",
@@ -2083,7 +2083,7 @@
             "diagnostico": "El plan no presenta datos propios de ciberseguridad del país, lo que afecta la justificación del diagnóstico.",
             "propuesta": "La propuesta incluye medidas concretas y articuladas que abordan la ciberseguridad de manera integral.",
             "medidas": "Se identifican medidas concretas y nuevas instituciones que fortalecen la propuesta.",
-            "implementacion": "La implementación depende de actores clave, pero carece de presupuesto para los data centers.",
+            "implementacion": "La implementación depende de actores clave, pero presenta limitaciones en presupuesto para los data centers.",
             "viabilidad": "La propuesta es viable, pero enfrenta desafíos por la falta de presupuesto y normas habilitantes.",
             "especificidad": "Las medidas y las instituciones están claramente definidas y nombradas en el plan."
           },

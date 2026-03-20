@@ -19,7 +19,7 @@
     "evaluation_method": "Cada variable recibe puntos en seis criterios. Cada criterio va de 0 a 2 puntos (máximo 12 puntos en total).",
     "scoring_scale": "La nota final se calcula así: (suma de puntos ÷ 12) × 10.",
     "criteria_description": {
-      "diagnostico": "¿Reconoce el problema con datos reales? (0 = no existe; 1 = reconocimiento general sin datos; 2 = con datos verificables)",
+      "diagnostico": "¿Reconoce el problema con datos reales? (0 = no se desarrolla con claridad; 1 = reconocimiento general sin datos; 2 = con datos verificables)",
       "propuesta": "¿Ofrece una solución coherente? (0 = sin propuesta; 1 = intención general; 2 = política clara y definida)",
       "medidas": "¿Hay acciones concretas, no solo buenas intenciones? (0 = sin medidas; 1 = una medida o medidas generales; 2 = varias medidas con herramientas reales)",
       "implementacion": "¿Nombra quién va a ejecutar cada cosa? (0 = sin implementación; 1 = instituciones mencionadas sin mecanismo; 2 = instituciones + mecanismos de ejecución claros)",
@@ -47,7 +47,7 @@
           "block_id": "economia_promedio_5_5_10",
           "final_score": 3.3,
           "rating_label": "insuficiente",
-          "summary": "La propuesta tributaria busca priorizar el incremento de la recaudación y la eficiencia del gasto sin afectar programas sociales esenciales. Sin embargo, carece de medidas concretas y no aborda reformas necesarias en el sistema tributario.",
+          "summary": "La propuesta tributaria busca priorizar el incremento de la recaudación y la eficiencia del gasto sin afectar programas sociales esenciales. Sin embargo, presenta limitaciones en medidas concretas y no aborda reformas necesarias en el sistema tributario.",
           "strengths": [
             "Reconocimiento de la necesidad de aumentar la recaudación",
             "Orientación hacia la estabilidad macroeconómica",
@@ -98,7 +98,7 @@
             "importancia": "La política tributaria es crucial para que el Estado peruano pueda financiar servicios esenciales. Una recaudación adecuada permite invertir en educación, salud, infraestructura y protección social, áreas fundamentales para el desarrollo del país.",
             "diagnostico_externo": "El Perú presenta una baja presión tributaria en comparación con otros países de la región y de la OCDE, lo que limita su capacidad de financiamiento. La evasión y la informalidad son problemas estructurales que afectan la recaudación, con un 30% de incumplimiento en algunos sectores y un 70% de trabajadores en la informalidad.",
             "propuesta_plan": "El plan propone priorizar el incremento de la recaudación y la eficiencia del gasto, sin afectar programas sociales esenciales, y fortalecer el Consejo Fiscal. Sin embargo, no se presenta una reforma tributaria específica.",
-            "medidas_concretas": "El documento carece de medidas tributarias concretas, limitándose a principios generales como la consolidación fiscal y el fortalecimiento del Consejo Fiscal, sin especificar herramientas o acciones claras.",
+            "medidas_concretas": "El documento presenta limitaciones en medidas tributarias concretas, limitándose a principios generales como la consolidación fiscal y el fortalecimiento del Consejo Fiscal, sin especificar herramientas o acciones claras.",
             "implementacion_necesaria": "Para implementar las propuestas, se requiere un enfoque claro en la reforma de regímenes tributarios, medidas efectivas contra la evasión y un fortalecimiento operativo de la SUNAT, así como establecer metas de recaudación.",
             "impacto_potencial": "El impacto potencial de las propuestas es bajo, ya que dependen del crecimiento económico sin una política activa que impulse la recaudación. Sin cambios estructurales, es poco probable que se logre un aumento significativo en la recaudación.",
             "vacios": "El plan es incompleto al no abordar la reforma de regímenes tributarios especiales, carecer de medidas anti-evasión y no establecer metas claras de recaudación. La ausencia de la SUNAT y de un órgano ejecutor también es un vacío importante.",
@@ -167,7 +167,7 @@
             "medidas_concretas": "Las medidas específicas incluyen una senda de reducción del déficit fiscal, la implementación de un presupuesto por resultados, el fortalecimiento del Consejo Fiscal y la preservación de la autonomía del BCRP como políticas institucionales concretas.",
             "implementacion_necesaria": "Para implementar las propuestas, se requiere un marco normativo claro para la reforma del presupuesto por resultados y un cronograma definido para la reducción del déficit fiscal, así como una estrategia de ajuste del gasto en caso de que la recaudación no crezca.",
             "impacto_potencial": "Si se implementa correctamente, una mayor disciplina fiscal podría mejorar la credibilidad macroeconómica del país y reducir el costo de la deuda pública. Además, el presupuesto por resultados podría aumentar la eficiencia del gasto, mientras que un Consejo Fiscal fortalecido podría proporcionar alertas tempranas ante riesgos fiscales.",
-            "vacios": "El plan carece de una estrategia clara sobre cómo se ajustará el gasto en caso de que la recaudación no crezca y no define cómo se distribuirá el gasto entre sectores ni establece prioridades claras, lo que limita su efectividad.",
+            "vacios": "El plan presenta limitaciones en una estrategia clara sobre cómo se ajustará el gasto en caso de que la recaudación no crezca y no define cómo se distribuirá el gasto entre sectores ni establece prioridades claras, lo que limita su efectividad.",
             "evaluacion_tecnica": "La evaluación técnica de esta variable es positiva, destacando un diagnóstico sólido con datos verificables, una propuesta clara y articulada, y varias medidas concretas. Sin embargo, se identifican vacíos en la implementación y en la definición de mecanismos operativos.",
             "conclusion": "La propuesta de gasto público de López Chau es la más sólida del bloque económico, con un diagnóstico bien fundamentado y medidas concretas. Sin embargo, la falta de una estrategia de composición del gasto y metas específicas más allá de la estabilidad macroeconómica son debilidades que deben abordarse."
           },
@@ -179,7 +179,7 @@
           "block_id": "economia_promedio_5_5_10",
           "final_score": 3.3,
           "rating_label": "insuficiente",
-          "summary": "La propuesta busca impulsar la inversión privada mediante la industrialización, el fortalecimiento del empresariado nacional y la promoción de la innovación. Sin embargo, carece de medidas concretas y mecanismos específicos para su implementación.",
+          "summary": "La propuesta busca impulsar la inversión privada mediante la industrialización, el fortalecimiento del empresariado nacional y la promoción de la innovación. Sin embargo, presenta limitaciones en medidas concretas y mecanismos específicos para su implementación.",
           "strengths": [
             "Reconocimiento del papel de la inversión privada en el crecimiento económico",
             "Orientación hacia la industrialización y el fortalecimiento del empresariado",
@@ -234,7 +234,7 @@
             "implementacion_necesaria": "Para implementar las propuestas, se requiere la designación de instituciones ejecutoras, así como la creación de normas y mecanismos específicos que faciliten la inversión privada y aborden los conflictos sociales que afectan los proyectos.",
             "impacto_potencial": "Si se implementan correctamente las estrategias de industrialización y fortalecimiento del empresariado, podría haber un aumento en la diversificación productiva y en el empleo formal, aunque el impacto real dependería de factores externos y de la efectividad de las medidas adoptadas.",
             "vacios": "El plan presenta vacíos significativos, como la falta de reformas regulatorias específicas, metas claras de inversión privada y mecanismos para abordar los conflictos sociales, lo que limita su efectividad y credibilidad.",
-            "evaluacion_tecnica": "La evaluación técnica indica que, aunque se reconoce la importancia de la inversión, la propuesta carece de instrumentos concretos y mecanismos de implementación, resultando en un puntaje bajo en varios criterios de evaluación.",
+            "evaluacion_tecnica": "La evaluación técnica indica que, aunque se reconoce la importancia de la inversión, la propuesta presenta limitaciones en instrumentos concretos y mecanismos de implementación, resultando en un puntaje bajo en varios criterios de evaluación.",
             "conclusion": "La propuesta de inversión privada es débil, con una orientación correcta pero una falta de concreción en las medidas. El plan parece asumir que la inversión llegará con el crecimiento económico, sin desarrollar los instrumentos necesarios para promoverla activamente."
           },
           "sources": []
@@ -299,7 +299,7 @@
             "medidas_concretas": "Se incluyen medidas como la simplificación administrativa para MIPYMES, el acceso a financiamiento con tasas de interés reducidas y el fortalecimiento de la competitividad para mejorar la rentabilidad de estas empresas.",
             "implementacion_necesaria": "Para implementar las propuestas, se requiere un cronograma claro, la modificación de normas específicas, la definición de metas de reducción de informalidad y la asignación de un presupuesto adecuado.",
             "impacto_potencial": "Si se implementa correctamente, la formalización progresiva podría reducir significativamente la informalidad laboral, mejorando la recaudación fiscal, la seguridad social y la productividad en el país.",
-            "vacios": "El plan carece de detalles sobre la institución ejecutora principal, las metas específicas de reducción de informalidad y el presupuesto necesario, lo que limita su efectividad.",
+            "vacios": "El plan presenta limitaciones en detalles sobre la institución ejecutora principal, las metas específicas de reducción de informalidad y el presupuesto necesario, lo que limita su efectividad.",
             "evaluacion_tecnica": "La evaluación técnica muestra un diagnóstico adecuado con datos relevantes, una propuesta coherente aunque general, y varias medidas concretas, aunque con vacíos en la implementación y la claridad institucional.",
             "conclusion": "La formalización laboral es una variable media en el bloque económico, con una propuesta técnicamente correcta que enfrenta debilidades en la claridad de la ejecución y en la definición de metas concretas."
           },
@@ -355,7 +355,7 @@
             "medidas": "Se presentan varias medidas concretas con instituciones nombradas para su implementación.",
             "implementacion": "Se mencionan cinco instituciones, pero no se asigna presupuesto para su coordinación.",
             "viabilidad": "La propuesta es viable, aunque presenta vacíos importantes en su planificación.",
-            "especificidad": "Cumple con dos elementos, pero carece de metas cuantificadas."
+            "especificidad": "Cumple con dos elementos, pero presenta limitaciones en metas cuantificadas."
           },
           "analysis_sections": {
             "definicion": "Esta variable evalúa las propuestas para regular el sector minero y extractivo en Perú, incluyendo la formalización de la minería artesanal, la gestión de conflictos socioambientales, la distribución de la renta minera y el marco de concesiones.",
@@ -365,7 +365,7 @@
             "medidas_concretas": "Se incluyen medidas como la implementación del Reglamento de Inscripciones en la SUNARP, la fiscalización coordinada de plantas de beneficio, el desarrollo de infraestructura logística para la minería artesanal y el cierre de brechas de electrificación rural mediante sistemas descentralizados.",
             "implementacion_necesaria": "Para implementar las propuestas, se requiere una coordinación efectiva entre el MINEM, OEFA, MTPE, SUNAFIL y OSINERGMIN, así como un presupuesto asignado y un cronograma claro para la formalización de mineros artesanales y la implementación del reglamento SUNARP.",
             "impacto_potencial": "Si se implementan correctamente las propuestas, se podría reducir significativamente la minería ilegal, mejorar la trazabilidad de los recursos y diversificar la economía minera, lo que beneficiaría tanto a las comunidades locales como a la economía nacional.",
-            "vacios": "El plan carece de metas específicas sobre cuántos mineros artesanales se formalizarán, no presenta un cronograma para la implementación del reglamento SUNARP, ni un presupuesto para la coordinación interinstitucional, y no aborda de manera efectiva los conflictos socioambientales existentes.",
+            "vacios": "El plan presenta limitaciones en metas específicas sobre cuántos mineros artesanales se formalizarán, no presenta un cronograma para la implementación del reglamento SUNARP, ni un presupuesto para la coordinación interinstitucional, y no aborda de manera efectiva los conflictos socioambientales existentes.",
             "evaluacion_tecnica": "La evaluación técnica muestra que la política minera es la segunda mejor del bloque, con un diagnóstico sólido y propuestas articuladas, aunque presenta debilidades en la falta de metas cuantificables y un tratamiento insuficiente de los conflictos socioambientales.",
             "conclusion": "La política minera de López Chau es una de las más sólidas en el bloque económico, destacándose por la coordinación interinstitucional y medidas concretas. Sin embargo, su efectividad se ve limitada por la falta de metas claras y un enfoque superficial en los conflictos socioambientales."
           },
@@ -443,7 +443,7 @@
             "medidas_concretas": "Las medidas específicas incluyen la creación de una nueva ley, el desarrollo de un sistema informático que conecte a las instituciones y el fortalecimiento de los Observatorios con metodologías innovadoras.",
             "implementacion_necesaria": "Para implementar las propuestas, se requiere un presupuesto adecuado para el sistema interoperable, un cronograma de implementación de la nueva ley y una articulación efectiva con gobiernos locales.",
             "impacto_potencial": "Si se implementa correctamente, la nueva ley y el sistema interoperable podrían mejorar la coordinación entre las instituciones, reducir la victimización y aumentar la confianza ciudadana en el sistema de seguridad.",
-            "vacios": "El plan carece de una estrategia de prevención social del delito, un presupuesto claro para el sistema interoperable y un enfoque específico para zonas rurales y de frontera.",
+            "vacios": "El plan presenta limitaciones en una estrategia de prevención social del delito, un presupuesto claro para el sistema interoperable y un enfoque específico para zonas rurales y de frontera.",
             "evaluacion_tecnica": "La evaluación técnica muestra que la variable de seguridad ciudadana es la más sólida del bloque, con un diagnóstico claro, propuestas articuladas y medidas concretas, aunque presenta vacíos importantes.",
             "conclusion": "La propuesta de seguridad ciudadana es técnicamente sólida, pero necesita abordar aspectos como el presupuesto y la prevención social del delito para ser completamente efectiva."
           },
@@ -575,7 +575,7 @@
             "medidas_concretas": "Entre las medidas concretas se incluyen la elección meritocrática del presidente del INPE, la mejora del sistema de bloqueadores de señal celular, la adquisición de escáneres de alta precisión para el control de ingresos y el retiro progresivo de penales de las principales ciudades. También se contempla la profesionalización del personal penitenciario.",
             "implementacion_necesaria": "Para implementar estas propuestas, es necesario contar con un presupuesto adecuado para la modernización tecnológica y un cronograma claro para el retiro de penales. Además, se requiere un compromiso político para garantizar la elección meritocrática del presidente del INPE y la formación del personal.",
             "impacto_potencial": "Si se implementan correctamente, estas medidas podrían reducir significativamente la capacidad de los líderes criminales para operar desde los penales. La modernización del sistema penitenciario podría contribuir a una mejor reinserción social y a un control más efectivo del crimen organizado.",
-            "vacios": "El plan presenta vacíos importantes, como la falta de una estrategia clara para abordar el hacinamiento carcelario, que es uno de los problemas más urgentes. También carece de un presupuesto detallado para la modernización tecnológica y un cronograma específico para el retiro de penales.",
+            "vacios": "El plan presenta vacíos importantes, como la falta de una estrategia clara para abordar el hacinamiento carcelario, que es uno de los problemas más urgentes. También presenta limitaciones en un presupuesto detallado para la modernización tecnológica y un cronograma específico para el retiro de penales.",
             "evaluacion_tecnica": "La evaluación técnica del sistema penitenciario es sólida, con un puntaje alto en diagnóstico, propuesta y medidas concretas. Sin embargo, se identifican vacíos en la viabilidad de algunas propuestas y en la claridad de los objetivos a largo plazo.",
             "conclusion": "En resumen, el sistema penitenciario del plan presenta un diagnóstico y propuestas bien fundamentadas, con medidas concretas que podrían mejorar la situación actual. No obstante, la ausencia de una estrategia para el hacinamiento carcelario representa una debilidad significativa que debe ser abordada."
           },
@@ -585,8 +585,8 @@
           "id": "politica_contra_el_crimen_organizado_9_2_10",
           "name": "Política contra el crimen organizado — 9.2/10",
           "block_id": "seguridad_y_orden_publico_promedio_9_2_10",
-          "final_score": 9.2,
-          "rating_label": "excelente",
+          "final_score": 7.5,
+          "rating_label": "sólido",
           "summary": "La propuesta busca desarticular el crimen organizado en Perú mediante un Estado fortalecido y coordinado. Se plantean medidas concretas como la tipificación del delito de mensajes extorsivos y la articulación entre la PNP y la UIF para mejorar la trazabilidad del dinero de las extorsiones.",
           "strengths": [
             "Diagnóstico sólido sobre el crimen organizado",
@@ -604,24 +604,24 @@
           ],
           "conclusion": "La política contra el crimen organizado es la más articulada del bloque, destacando la combinación de tipificación penal y articulación institucional. Sin embargo, la falta de una estrategia de narcotráfico representa una brecha significativa.",
           "criteria": {
-            "implementacion": 2,
+            "implementacion": 1,
             "diagnostico": 2,
             "propuesta": 2,
             "medidas": 2,
             "viabilidad": 1,
-            "especificidad": 2
+            "especificidad": 1
           },
-          "criteria_sum": 11,
-          "formula_result": 9.2,
+          "criteria_sum": 9,
+          "formula_result": 7.5,
           "score_table": {
             "diagnostico": 2,
             "propuesta": 2,
             "medidas": 2,
-            "implementacion": 2,
+            "implementacion": 1,
             "viabilidad": 1,
-            "especificidad": 2,
-            "sum": 11,
-            "final": 9.2
+            "especificidad": 1,
+            "sum": 9,
+            "final": 7.5
           },
           "corrected_methodology": false,
           "correction_note": null,
@@ -629,9 +629,9 @@
             "diagnostico": "2/2 por diagnóstico de extorsión y minería ilegal.",
             "propuesta": "2/2 por propuesta clara y articulada con política definida.",
             "medidas": "2/2 por cinco medidas concretas con instrumentos normativos.",
-            "implementacion": "2/2 por múltiples instituciones con funciones definidas.",
+            "implementacion": "1/2 por múltiples instituciones mencionadas, aunque sin diseño institucional completo.",
             "viabilidad": "1/2 por posible con vacíos importantes.",
-            "especificidad": "2/2 por norma + instituciones + nueva ley (≥ 2 elementos)."
+            "especificidad": "1/2 por norma + instituciones identificadas, pero con vacíos de especificidad operativa."
           },
           "analysis_sections": {
             "definicion": "Esta variable evalúa las propuestas para desarticular el crimen organizado en el Perú, abarcando delitos como la extorsión, narcotráfico, minería ilegal, lavado de activos y corrupción de alta complejidad.",
@@ -680,7 +680,7 @@
             "Vacío en la definición del mecanismo operativo de elección de magistrados",
             "Falta de indicadores de calidad judicial"
           ],
-          "conclusion": "La reforma judicial presenta un diagnóstico y propuesta sólidos, pero carece de la concreción operativa necesaria. La falta de un mecanismo específico de implementación limita su efectividad en comparación con otras variables.",
+          "conclusion": "La reforma judicial presenta un diagnóstico y propuesta sólidos, pero presenta limitaciones en la concreción operativa necesaria. La falta de un mecanismo específico de implementación limita su efectividad en comparación con otras variables.",
           "criteria": {
             "diagnostico": 2,
             "propuesta": 2,
@@ -719,7 +719,7 @@
             "medidas_concretas": "Se incluyen un mecanismo de elección de magistrados basado en la meritocracia, el fortalecimiento de la JNJ y reformas normativas en los procesos constitucionales de tutela de derechos.",
             "implementacion_necesaria": "Para implementar las propuestas se requiere un presupuesto específico, un cronograma de ejecución y la definición de indicadores de calidad judicial.",
             "impacto_potencial": "Si se implementan correctamente, estas reformas podrían mejorar la calidad de los magistrados, facilitar el acceso a la justicia y reducir la vulnerabilidad del sistema judicial a influencias externas.",
-            "vacios": "El plan carece de especificaciones operativas sobre el mecanismo de elección meritocrática, así como de un cronograma y metas claras para reducir la provisionalidad en el sistema judicial.",
+            "vacios": "El plan presenta limitaciones en especificaciones operativas sobre el mecanismo de elección meritocrática, así como de un cronograma y metas claras para reducir la provisionalidad en el sistema judicial.",
             "evaluacion_tecnica": "La evaluación técnica indica que, aunque el diagnóstico y la propuesta son sólidos, la falta de concreción operativa limita la efectividad de las medidas propuestas.",
             "conclusion": "La reforma judicial presenta un diagnóstico y propuestas bien fundamentadas, pero necesita mayor claridad en su implementación para alcanzar un impacto significativo en el sistema de justicia."
           },
@@ -797,7 +797,7 @@
           "block_id": "justicia_y_estado_de_derecho_promedio_5_6_10",
           "final_score": 3.3,
           "rating_label": "insuficiente",
-          "summary": "El plan propone preservar la autonomía del Banco Central de Reserva del Perú (BCRP) y fortalecer la Junta Nacional de Justicia (JNJ) como principios rectores. Sin embargo, carece de políticas articuladas y mecanismos concretos para garantizar la autonomía institucional.",
+          "summary": "El plan propone preservar la autonomía del Banco Central de Reserva del Perú (BCRP) y fortalecer la Junta Nacional de Justicia (JNJ) como principios rectores. Sin embargo, presenta limitaciones en políticas articuladas y mecanismos concretos para garantizar la autonomía institucional.",
           "strengths": [
             "Reconocimiento de la importancia de la autonomía institucional",
             "Propuesta de fortalecer la JNJ",
@@ -917,7 +917,7 @@
             "medidas_concretas": "No se identifican medidas concretas de reforma constitucional en el plan, lo que indica una falta de desarrollo en esta área específica.",
             "implementacion_necesaria": "Para implementar cualquier propuesta relacionada con la reforma constitucional, se requeriría un proceso claro y definido, así como la creación de instituciones que faciliten dicho cambio.",
             "impacto_potencial": "Si se implementara una reforma constitucional adecuada, podría tener un impacto significativo en la legitimidad del marco legal y en la relación entre los poderes del Estado, promoviendo una mayor estabilidad institucional.",
-            "vacios": "El plan presenta vacíos importantes, ya que no aborda el tema constitucional de manera directa y carece de una política articulada sobre el marco vigente.",
+            "vacios": "El plan presenta vacíos importantes, ya que no aborda el tema constitucional de manera directa y presenta limitaciones en una política articulada sobre el marco vigente.",
             "evaluacion_tecnica": "La evaluación técnica es muy débil, con un puntaje total de 2.5/10, reflejando la falta de medidas concretas y un reconocimiento implícito del marco constitucional sin un desarrollo claro.",
             "conclusion": "La reforma constitucional es la variable más débil del bloque, evidenciando que el plan no prioriza este tema y su ausencia sugiere una continuidad institucional sin cambios significativos."
           },
@@ -996,7 +996,7 @@
             "medidas_concretas": "Se incluyen medidas como un programa nacional de alimentación escolar que garantice al menos una comida diaria en todas las escuelas públicas, y un paquete integrado de protección social para la primera infancia, con metas de cobertura específicas.",
             "implementacion_necesaria": "Para implementar las propuestas, se requiere la participación activa del MINEDU como rector del sistema educativo, así como la colaboración de agricultores locales para el programa de alimentación. Sin embargo, no se especifica un presupuesto concreto para estas iniciativas.",
             "impacto_potencial": "Si se implementan correctamente, estas medidas podrían mejorar significativamente la nutrición de los estudiantes, lo que a su vez podría impactar positivamente en su rendimiento académico. La cobertura de la primera infancia podría duplicarse, beneficiando a un mayor número de niños en su desarrollo crítico.",
-            "vacios": "El plan carece de metas de aprendizaje cuantificadas para el 2031, lo que dificulta medir el progreso en términos de competencias adquiridas. También falta un cronograma claro para la reforma docente y mecanismos específicos para la gestión territorial.",
+            "vacios": "El plan presenta limitaciones en metas de aprendizaje cuantificadas para el 2031, lo que dificulta medir el progreso en términos de competencias adquiridas. También falta un cronograma claro para la reforma docente y mecanismos específicos para la gestión territorial.",
             "evaluacion_tecnica": "La evaluación técnica muestra que el plan cumple parcialmente con los criterios establecidos, destacando la existencia de datos explícitos y políticas articuladas, pero también señalando vacíos importantes en la implementación y en la definición de metas.",
             "conclusion": "La variable de educación escolar es la más sólida del bloque, con un diagnóstico claro y propuestas concretas. Sin embargo, la falta de metas de aprendizaje y detalles sobre la implementación limita su efectividad potencial."
           },
@@ -1008,7 +1008,7 @@
           "block_id": "educacion_promedio_6_0_10",
           "final_score": 3.3,
           "rating_label": "insuficiente",
-          "summary": "El plan propone la necesidad de contar con escuelas conectadas y en condiciones dignas, pero no desarrolla una estrategia específica para mejorar la infraestructura educativa. Se menciona la importancia de la infraestructura física y digital, pero carece de medidas concretas para su implementación.",
+          "summary": "El plan propone la necesidad de contar con escuelas conectadas y en condiciones dignas, pero no desarrolla una estrategia específica para mejorar la infraestructura educativa. Se menciona la importancia de la infraestructura física y digital, pero presenta limitaciones en medidas concretas para su implementación.",
           "strengths": [
             "Reconocimiento de la problemática de infraestructura educativa",
             "Visión de escuelas dignas como objetivo",
@@ -1062,7 +1062,7 @@
             "medidas_concretas": "Se menciona la necesidad de equipamiento y modernización, pero no se presentan medidas concretas o un plan de acción detallado para lograrlo.",
             "implementacion_necesaria": "Para implementar las propuestas, se requiere una institución ejecutora clara, un presupuesto asignado y un cronograma de ejecución que detalle las acciones a seguir.",
             "impacto_potencial": "Si se implementan correctamente las propuestas, se podría mejorar significativamente la calidad educativa, proporcionando a los estudiantes un entorno adecuado para el aprendizaje.",
-            "vacios": "El plan carece de detalles sobre cuántas escuelas se construirán o renovarán, el presupuesto necesario y la política específica para mejorar la conectividad digital, lo que limita su efectividad.",
+            "vacios": "El plan presenta limitaciones en detalles sobre cuántas escuelas se construirán o renovarán, el presupuesto necesario y la política específica para mejorar la conectividad digital, lo que limita su efectividad.",
             "evaluacion_tecnica": "La evaluación técnica muestra un puntaje débil, con reconocimiento de la problemática pero sin datos concretos, ausencia de una política articulada y falta de un plan de implementación claro.",
             "conclusion": "La infraestructura educativa es la variable más débil del bloque, ya que aunque se reconoce su importancia, el plan no presenta una política pública sólida con medidas, presupuesto o cronograma para abordar esta brecha crítica."
           },
@@ -1081,7 +1081,7 @@
             "Reconocimiento de la importancia de la SUNEDU en el contexto educativo"
           ],
           "weaknesses": [
-            "La propuesta carece de una política concreta articulada",
+            "La propuesta presenta limitaciones en una política concreta articulada",
             "No se desarrollan instrumentos específicos para ampliar el acceso",
             "Falta de metas claras sobre calidad académica"
           ],
@@ -1089,7 +1089,7 @@
             "No se aborda la reforma de la Ley Universitaria en el contexto educativo",
             "Ausencia de indicadores de calidad académica y financiamiento"
           ],
-          "conclusion": "La educación superior es una variable media, con un diagnóstico sólido pero una propuesta que carece de políticas concretas. El plan reconoce el problema de acceso, pero no desarrolla los instrumentos necesarios para abordarlo.",
+          "conclusion": "La educación superior es una variable media, con un diagnóstico sólido pero una propuesta que presenta limitaciones en políticas concretas. El plan reconoce el problema de acceso, pero no desarrolla los instrumentos necesarios para abordarlo.",
           "criteria": {
             "diagnostico": 2,
             "propuesta": 1,
@@ -1128,8 +1128,8 @@
             "medidas_concretas": "Se menciona la educación superior diversificada y pertinente como un objetivo, así como el arraigo territorial en la educación superior como una orientación de política.",
             "implementacion_necesaria": "Para implementar las propuestas, se requiere un desarrollo específico del rol de la SUNEDU y una articulación clara de políticas que aborden el acceso y la calidad académica.",
             "impacto_potencial": "Si se implementan correctamente, las propuestas podrían facilitar la transición de jóvenes al mercado laboral y reducir la migración al fortalecer la educación en las regiones.",
-            "vacios": "El plan carece de detalles sobre la reforma de la Ley Universitaria, metas de acceso, indicadores de calidad académica y financiamiento para la educación superior.",
-            "evaluacion_tecnica": "La evaluación técnica muestra un puntaje de 5.8/10, con un diagnóstico adecuado pero una propuesta que carece de políticas concretas y articuladas.",
+            "vacios": "El plan presenta limitaciones en detalles sobre la reforma de la Ley Universitaria, metas de acceso, indicadores de calidad académica y financiamiento para la educación superior.",
+            "evaluacion_tecnica": "La evaluación técnica muestra un puntaje de 5.8/10, con un diagnóstico adecuado pero una propuesta que presenta limitaciones en políticas concretas y articuladas.",
             "conclusion": "La variable de educación superior se considera media, con un buen diagnóstico pero una propuesta que no desarrolla los instrumentos necesarios para ampliar el acceso a la educación."
           },
           "sources": []
@@ -1194,7 +1194,7 @@
             "medidas_concretas": "Se incluyen convenios con universidades para programas de educación continua, la articulación entre academia e industria para abordar la desconexión y la formación técnica territorial enfocada en sectores priorizados como agroindustria, turismo y minería.",
             "implementacion_necesaria": "Para implementar estas propuestas, se requiere una colaboración efectiva entre universidades, el sector industrial y el Estado, así como un presupuesto específico destinado a la formación técnica.",
             "impacto_potencial": "Si se implementa correctamente, la articulación entre academia, industria y Estado podría reducir significativamente el desajuste entre la oferta formativa y la demanda laboral, mejorando así la empleabilidad de los egresados técnicos.",
-            "vacios": "El plan carece de detalles sobre el presupuesto para la formación técnica, el número de beneficiarios, metas específicas de reducción de la brecha de empleabilidad y el rol de los IEST en el sistema educativo.",
+            "vacios": "El plan presenta limitaciones en detalles sobre el presupuesto para la formación técnica, el número de beneficiarios, metas específicas de reducción de la brecha de empleabilidad y el rol de los IEST en el sistema educativo.",
             "evaluacion_tecnica": "La evaluación técnica muestra un puntaje de 7.5/10, destacando la justificación con datos de informalidad laboral y una propuesta articulada, aunque con vacíos importantes en la implementación y metas.",
             "conclusion": "La formación técnica es una de las variables mejor desarrolladas en el bloque educativo, con un diagnóstico sólido y propuestas relevantes, aunque la falta de presupuesto y metas claras representan brechas significativas que deben ser abordadas."
           },
@@ -1272,7 +1272,7 @@
             "medidas_concretas": "Se incluyen medidas como la creación de un sistema único de referencia y contrarreferencia, historias clínicas interoperables, y el fortalecimiento del primer nivel de atención mediante construcción y equipamiento de centros de salud.",
             "implementacion_necesaria": "Para implementar estas propuestas se requiere la colaboración de MINSA, gobiernos regionales y EsSalud, así como un presupuesto claro y un cronograma de ejecución.",
             "impacto_potencial": "La integración de los diferentes sistemas de salud podría reducir la fragmentación, mejorar el acceso a la atención médica y disminuir la congestión en hospitales, facilitando un acceso más equitativo a la salud.",
-            "vacios": "El plan carece de especificaciones sobre el presupuesto necesario, un cronograma de construcción de establecimientos y metas claras para la reducción del porcentaje de personas sin atención médica.",
+            "vacios": "El plan presenta limitaciones en especificaciones sobre el presupuesto necesario, un cronograma de construcción de establecimientos y metas claras para la reducción del porcentaje de personas sin atención médica.",
             "evaluacion_tecnica": "La evaluación técnica muestra un puntaje sólido, con datos cuantificados y propuestas claras, aunque se identifican vacíos importantes que limitan su efectividad.",
             "conclusion": "El sistema de salud pública es la variable más alta del bloque, con una propuesta técnicamente sólida, aunque la falta de metas cuantificadas de mejora de acceso representa una debilidad significativa."
           },
@@ -1350,7 +1350,7 @@
           "block_id": "salud_promedio_6_7_10",
           "final_score": 3.3,
           "rating_label": "insuficiente",
-          "summary": "El plan de financiamiento del sistema de salud en Perú carece de propuestas concretas y mecanismos claros para garantizar la sostenibilidad y equidad. Aunque se menciona la necesidad de mayor inversión, no se especifica cómo se llevará a cabo esta integración entre MINSA y EsSalud.",
+          "summary": "El plan de financiamiento del sistema de salud en Perú presenta limitaciones en propuestas concretas y mecanismos claros para garantizar la sostenibilidad y equidad. Aunque se menciona la necesidad de mayor inversión, no se especifica cómo se llevará a cabo esta integración entre MINSA y EsSalud.",
           "strengths": [
             "Reconocimiento de la insuficiencia de recursos",
             "Intención de mayor inversión",
@@ -1482,7 +1482,7 @@
             "medidas_concretas": "Entre las medidas específicas se incluye el rediseño del programa Juntos para adaptarlo a la pobreza urbana, un paquete integrado de protección social para la primera infancia con una meta de cobertura del 70%, y un programa de transferencias temporales ante emergencias.",
             "implementacion_necesaria": "Para implementar estas propuestas, se requiere la colaboración de instituciones como Juntos y el MIDIS, así como la articulación con los gobiernos locales para asegurar la cobertura y efectividad de los programas.",
             "impacto_potencial": "Si se implementan correctamente, estas medidas podrían atender al 68.7% de los pobres urbanos actualmente desatendidos y duplicar la protección de la primera infancia, además de llenar un vacío crítico en la respuesta a emergencias.",
-            "vacios": "El plan carece de metas específicas de reducción de pobreza a largo plazo, presupuesto para el rediseño de programas y criterios claros para la ventanilla única de servicios sociales, lo que limita su efectividad.",
+            "vacios": "El plan presenta limitaciones en metas específicas de reducción de pobreza a largo plazo, presupuesto para el rediseño de programas y criterios claros para la ventanilla única de servicios sociales, lo que limita su efectividad.",
             "evaluacion_tecnica": "La evaluación técnica muestra que la propuesta es sólida, con datos específicos del INEI, un enfoque articulado y medidas cuantificadas, aunque presenta vacíos importantes que deben ser abordados.",
             "conclusion": "La variable de reducción de pobreza es la más sólida del bloque, con un diagnóstico bien fundamentado y propuestas concretas que, si se implementan adecuadamente, podrían tener un impacto significativo en la lucha contra la pobreza en el Perú."
           },
@@ -1548,7 +1548,7 @@
             "medidas_concretas": "Se incluyen medidas como un programa nacional de alimentación escolar en todas las escuelas públicas, un programa de transferencias temporales ante emergencias y la modernización de programas de protección social.",
             "implementacion_necesaria": "Para implementar las propuestas, se requiere un presupuesto claro para los programas rediseñados, así como un mecanismo de gobernanza para la ventanilla única de servicios sociales.",
             "impacto_potencial": "La implementación correcta de estas medidas podría reducir la desnutrición y mejorar el rendimiento académico, además de llenar vacíos críticos en la respuesta a emergencias.",
-            "vacios": "El plan carece de detalles sobre el presupuesto de los programas, los criterios de selección de beneficiarios y el mecanismo de gobernanza de la ventanilla única, lo que limita su viabilidad.",
+            "vacios": "El plan presenta limitaciones en detalles sobre el presupuesto de los programas, los criterios de selección de beneficiarios y el mecanismo de gobernanza de la ventanilla única, lo que limita su viabilidad.",
             "evaluacion_tecnica": "La evaluación técnica muestra un puntaje sólido, destacando líneas base cuantificadas y medidas concretas, aunque con algunos vacíos importantes que deben ser abordados.",
             "conclusion": "La variable de programas sociales es una de las más sólidas del bloque, con propuestas concretas y verificables que podrían mejorar significativamente la situación de las poblaciones vulnerables en Perú."
           },
@@ -1614,7 +1614,7 @@
             "medidas_concretas": "Se incluyen medidas como el financiamiento y apoyo técnico a los gobiernos locales para elaborar PDUs, mecanismos de coordinación para alinear inversiones y el uso de Obras por Impuestos para financiar infraestructura básica.",
             "implementacion_necesaria": "Para implementar las propuestas, se requiere un compromiso de los gobiernos locales, así como un financiamiento adecuado y una estrategia clara para abordar el déficit habitacional existente.",
             "impacto_potencial": "Si se implementan correctamente, las propuestas podrían transformar la planificación urbana de reactiva a preventiva, mejorando la calidad de vida de millones y reduciendo el crecimiento urbano informal.",
-            "vacios": "El plan carece de metas cuantificadas para el porcentaje de municipios con PDU al 2031, un presupuesto específico para el apoyo técnico y una estrategia clara para abordar el déficit habitacional cualitativo.",
+            "vacios": "El plan presenta limitaciones en metas cuantificadas para el porcentaje de municipios con PDU al 2031, un presupuesto específico para el apoyo técnico y una estrategia clara para abordar el déficit habitacional cualitativo.",
             "evaluacion_tecnica": "La evaluación técnica muestra que el plan cumple parcialmente, con datos específicos y políticas articuladas, pero presenta vacíos en la identificación de actores y en la claridad de las metas.",
             "conclusion": "La variable de Vivienda está bien desarrollada, con un diagnóstico cuantificado y medidas concretas, aunque necesita mejorar en la definición de metas y en la asignación de recursos específicos para ser más efectiva."
           },
@@ -1653,7 +1653,7 @@
             "Monto de inversión en infraestructura no especificado",
             "Cronograma de inversión ausente"
           ],
-          "conclusion": "La propuesta es bien orientada, pero carece de elementos clave para su implementación efectiva. Esto limita su viabilidad como política pública.",
+          "conclusion": "La propuesta es bien orientada, pero presenta limitaciones en elementos clave para su implementación efectiva. Esto limita su viabilidad como política pública.",
           "criteria": {
             "diagnostico": 2,
             "propuesta": 2,
@@ -1692,7 +1692,7 @@
             "medidas_concretas": "Se incluyen medidas como la construcción de infraestructura mediante un esfuerzo conjunto entre niveles de gobierno, la reforma del proceso de planificación para formular planes descentralizados y la implementación de un sistema de transporte multimodal con un enfoque logístico.",
             "implementacion_necesaria": "Para implementar estas propuestas, se requiere la designación clara de un presupuesto de inversión específico, así como un cronograma de inversión y fuentes de financiamiento adicionales que aseguren la viabilidad de los proyectos.",
             "impacto_potencial": "Si se implementa correctamente, la descentralización de la planificación de infraestructura podría mejorar la pertinencia de los proyectos, optimizando costos logísticos y aprovechando recursos locales, lo que beneficiaría a las comunidades más necesitadas.",
-            "vacios": "El plan carece de metas cuantificadas para la reducción de la brecha de infraestructura y no especifica el monto de inversión necesario. Estos vacíos limitan la claridad y la efectividad de la propuesta.",
+            "vacios": "El plan presenta limitaciones en metas cuantificadas para la reducción de la brecha de infraestructura y no especifica el monto de inversión necesario. Estos vacíos limitan la claridad y la efectividad de la propuesta.",
             "evaluacion_tecnica": "La evaluación técnica muestra un puntaje de 7.5/10, destacando un diagnóstico detallado y una propuesta de sistema multimodal, pero también señala la falta de metas y presupuesto como áreas de mejora.",
             "conclusion": "La variable de infraestructura pública presenta un diagnóstico sólido y una propuesta bien orientada, pero su efectividad se ve comprometida por la ausencia de metas cuantificadas y un presupuesto de inversión claro, lo que dificulta su implementación efectiva."
           },
@@ -1719,7 +1719,7 @@
             "Metas de reducción del déficit vial vecinal",
             "Cronograma de extensión ferroviaria"
           ],
-          "conclusion": "El transporte es una variable bien desarrollada, pero necesita más detalles en la política pública para ser completamente efectiva. La propuesta tiene una orientación correcta, aunque carece de especificaciones importantes.",
+          "conclusion": "El transporte es una variable bien desarrollada, pero necesita más detalles en la política pública para ser completamente efectiva. La propuesta tiene una orientación correcta, aunque presenta limitaciones en especificaciones importantes.",
           "criteria": {
             "diagnostico": 2,
             "propuesta": 2,
@@ -1758,7 +1758,7 @@
             "medidas_concretas": "Se incluyen medidas como la creación de un sistema de transporte multimodal, la mejora del transporte público en ciudades, la implementación de estándares de seguridad vial y la optimización de la logística para conectar centros de producción con mercados.",
             "implementacion_necesaria": "Para implementar estas propuestas se requiere la colaboración del Ministerio de Transportes y Comunicaciones (MTC), así como de los gobiernos subnacionales, aunque no se especifica una institución para cada modo de transporte.",
             "impacto_potencial": "Si se implementa correctamente, el sistema multimodal podría reducir significativamente los costos logísticos, facilitando el acceso a mercados para productos agrícolas y mejorando la competitividad de la industria nacional.",
-            "vacios": "El plan carece de metas cuantificadas, como la cantidad de kilómetros de vías vecinales a pavimentar, y no detalla el presupuesto de inversión ni el cronograma para la extensión ferroviaria.",
+            "vacios": "El plan presenta limitaciones en metas cuantificadas, como la cantidad de kilómetros de vías vecinales a pavimentar, y no detalla el presupuesto de inversión ni el cronograma para la extensión ferroviaria.",
             "evaluacion_tecnica": "La evaluación técnica muestra un puntaje de 7.5/10, destacando un diagnóstico preciso y una propuesta integral, aunque con vacíos en la especificación de metas y recursos necesarios.",
             "conclusion": "La variable de transporte está bien desarrollada, con un diagnóstico claro y una propuesta adecuada, pero necesita mayor detalle en la política pública para ser completamente efectiva."
           },
@@ -1824,7 +1824,7 @@
             "medidas_concretas": "Se incluyen medidas como la coordinación entre cinco instituciones para la fiscalización de la minería artesanal y la energía, el cierre de brechas de electrificación rural mediante sistemas descentralizados y la formalización de la minería artesanal.",
             "implementacion_necesaria": "Para implementar las propuestas, se requiere una coordinación efectiva entre las instituciones mencionadas y un compromiso claro con la formalización y el desarrollo de energías renovables.",
             "impacto_potencial": "El cierre de la brecha de electrificación rural podría mejorar significativamente la calidad de vida en comunidades vulnerables, mientras que la formalización minera podría reducir impactos ambientales y aumentar la recaudación fiscal.",
-            "vacios": "El plan carece de metas cuantificadas para la reducción de la brecha de electrificación, un presupuesto claro para la transición energética y un cronograma para la formalización minera, lo que limita su efectividad.",
+            "vacios": "El plan presenta limitaciones en metas cuantificadas para la reducción de la brecha de electrificación, un presupuesto claro para la transición energética y un cronograma para la formalización minera, lo que limita su efectividad.",
             "evaluacion_tecnica": "La evaluación técnica muestra un puntaje sólido, con datos concretos sobre electrificación rural y una política articulada, aunque se identifican vacíos importantes que afectan la viabilidad de las propuestas.",
             "conclusion": "La variable de energía destaca en el bloque de infraestructura por su alta puntuación, pero presenta debilidades en la falta de metas cuantificadas y un enfoque claro en la inversión en energías renovables."
           },
@@ -1902,7 +1902,7 @@
             "medidas_concretas": "Se incluyen medidas específicas como la trazabilidad de investigaciones a través del sistema interoperable PNP-MP-PJ-INPE, la creación de historias clínicas interoperables a nivel nacional y el fortalecimiento de observatorios con metodologías innovadoras.",
             "implementacion_necesaria": "Para implementar estas propuestas se requiere la colaboración efectiva de múltiples instituciones, así como un presupuesto adecuado para el desarrollo de las plataformas de interoperabilidad y una gobernanza clara de los datos.",
             "impacto_potencial": "Si se implementa correctamente, la interoperabilidad permitiría un seguimiento integral de los casos desde la denuncia hasta la sentencia, mejorando la eficiencia en el sistema de justicia y eliminando la duplicación de exámenes en el sector salud.",
-            "vacios": "El plan carece de un enfoque claro sobre la digitalización de trámites para ciudadanos y empresas, así como de una política transversal de gobierno electrónico y un presupuesto específico para las plataformas de interoperabilidad.",
+            "vacios": "El plan presenta limitaciones en un enfoque claro sobre la digitalización de trámites para ciudadanos y empresas, así como de una política transversal de gobierno electrónico y un presupuesto específico para las plataformas de interoperabilidad.",
             "evaluacion_tecnica": "La evaluación técnica muestra un diagnóstico sólido de la fragmentación institucional, una política articulada de interoperabilidad y medidas concretas, aunque presenta vacíos importantes en la implementación y en la propuesta de digitalización de trámites.",
             "conclusion": "La digitalización del Estado es la variable más alta del bloque, destacando la propuesta del sistema interoperable PNP-MP-PJ-INPE como la más concreta, aunque se identifica la necesidad de abordar la digitalización de trámites ciudadanos como un aspecto separado."
           },
@@ -1914,7 +1914,7 @@
           "block_id": "tecnologia_y_estado_digital_promedio_4_4_10",
           "final_score": 3.3,
           "rating_label": "insuficiente",
-          "summary": "El plan propone articular la academia, la industria y el Estado para fomentar la innovación y el desarrollo tecnológico en el Perú. Se busca promover la innovación científica y tecnológica como parte de la estrategia de industrialización, aunque carece de medidas concretas y específicas.",
+          "summary": "El plan propone articular la academia, la industria y el Estado para fomentar la innovación y el desarrollo tecnológico en el Perú. Se busca promover la innovación científica y tecnológica como parte de la estrategia de industrialización, aunque presenta limitaciones en medidas concretas y específicas.",
           "strengths": [
             "Reconocimiento del problema de desconexión entre academia, industria y Estado",
             "Propuesta de articulación general",
@@ -1929,7 +1929,7 @@
             "Ausencia de metas de I+D como porcentaje del PBI",
             "Falta de políticas de patentes y parques tecnológicos"
           ],
-          "conclusion": "La innovación tecnológica es la variable más débil del bloque tecnológico. El plan no desarrolla una política de CTI efectiva y carece de instrumentos específicos para su implementación.",
+          "conclusion": "La innovación tecnológica es la variable más débil del bloque tecnológico. El plan no desarrolla una política de CTI efectiva y presenta limitaciones en instrumentos específicos para su implementación.",
           "criteria": {
             "diagnostico": 1,
             "propuesta": 1,
@@ -2025,13 +2025,13 @@
           "analysis_sections": {
             "definicion": "Esta variable evalúa las propuestas para establecer reglas claras sobre el uso responsable de la inteligencia artificial (IA) por parte del Estado y las empresas en Perú.",
             "importancia": "La regulación de la IA es crucial para proteger a los ciudadanos de usos abusivos y para aprovechar los beneficios de esta tecnología de manera ordenada, evitando que el país quede rezagado en un contexto global de aceleración tecnológica.",
-            "diagnostico_externo": "Actualmente, Perú carece de legislación específica sobre IA, mientras que otros países de América Latina han avanzado en la creación de políticas y regulaciones, lo que deja al país en una posición vulnerable frente a los desafíos que presenta esta tecnología.",
+            "diagnostico_externo": "Actualmente, Perú presenta limitaciones en legislación específica sobre IA, mientras que otros países de América Latina han avanzado en la creación de políticas y regulaciones, lo que deja al país en una posición vulnerable frente a los desafíos que presenta esta tecnología.",
             "propuesta_plan": "El plan de gobierno no incluye ninguna propuesta relacionada con la regulación de la inteligencia artificial, lo que evidencia una falta de atención a este tema crítico.",
             "medidas_concretas": "No se presentan medidas específicas en el plan para abordar la regulación de la IA, lo que refleja una ausencia total de estrategias en este ámbito.",
             "implementacion_necesaria": "Para implementar una regulación efectiva de la IA, se requeriría la creación de un marco normativo claro, así como la designación de instituciones responsables para supervisar y auditar su uso.",
             "impacto_potencial": "Si se implementara una regulación adecuada, podría mejorar la confianza de los ciudadanos en el uso de la IA y fomentar un desarrollo tecnológico más ético y responsable en el país.",
             "vacios": "La ausencia de menciones sobre la IA en el plan de gobierno representa un vacío significativo, ya que no se aborda un tema que es fundamental para el futuro del país en el contexto tecnológico actual.",
-            "evaluacion_tecnica": "La evaluación técnica muestra que no hay diagnóstico, propuesta, medidas concretas ni elementos ejecutables en el plan, resultando en una calificación muy baja en esta variable.",
+            "evaluacion_tecnica": "La evaluación técnica muestra que no se detalla diagnóstico, propuesta, medidas concretas ni elementos ejecutables en el plan, resultando en una calificación muy baja en esta variable.",
             "conclusion": "La regulación de la inteligencia artificial es un área completamente ausente en el plan de gobierno, lo que constituye una brecha metodológica importante en un contexto de rápida evolución tecnológica."
           },
           "sources": []
@@ -2057,7 +2057,7 @@
             "Ausencia de una Agencia Nacional de Ciberseguridad",
             "No se abordan medidas específicas de ciberseguridad en el plan"
           ],
-          "conclusion": "La variable de protección de datos y ciberseguridad es débil y presenta vacíos significativos. La propuesta de interoperabilidad carece de un respaldo sólido en políticas de seguridad.",
+          "conclusion": "La variable de protección de datos y ciberseguridad es débil y presenta vacíos significativos. La propuesta de interoperabilidad presenta limitaciones en un respaldo sólido en políticas de seguridad.",
           "criteria": {
             "diagnostico": 1,
             "propuesta": 1,

@@ -1,0 +1,474 @@
+Correcciones a hacer: 
+Añadir resumen de Williams.
+En la evaluación de Lopez chao, en el bloque de Seguridad, variable de “Politica contra el crimen”, se debe corregir:
+Actual: Implementación: 2, Especificidad: 2 . Cómo debería estar: Implementación: 1, Especificidad: 1. 
+En la evaluación de Jorge Nieto Degregori, en el bloque de Economía, variable de “FORMALIZACIÓN LABORAL”, se debe corregir:
+Actual: Especificidad: 2 . Cómo debería estar: Especificidad: 1. 
+En la evaluación de Jorge Nieto Degregori, en el bloque de Economía, variable de “Politica Tributaria”, se debe corregir:
+Actual: Especificidad: 2 . Cómo debería estar: Especificidad: 1. 
+—
+Quiero que hagas cambios SOLO en el análisis del candidato Carlos Álvarez.
+
+NO cambies la metodología general.
+NO revises automáticamente todos los criterios.
+NO recalcules otras variables.
+NO toques otros candidatos.
+NO reescribas el análisis completo.
+
+Haz SOLO estos cambios exactos:
+
+1) Variable 6: Seguridad ciudadana
+- Cambiar puntaje de 2.5 a 5.0
+- Cambiar criterios de:
+  - M: 0 → 1
+  - Im: 0 → 1
+  - E: 0 → 1
+- Dejar igual:
+  - D: 1
+  - P: 1
+  - V: 1
+- Reemplazar la justificación de M por:
+  "El plan sí incluye medidas operativas generales en sus matrices, como fortalecimiento del patrullaje focalizado, mejora de canales de denuncia, articulación con serenazgos y reforma de la gobernanza del CONASEC, aunque sin desarrollo normativo detallado."
+- Reemplazar la justificación de Im por:
+  "Sí aparecen instancias y actores de implementación en las matrices, especialmente CONASEC, PNP y serenazgos, aunque sin diseño institucional completo."
+- Reemplazar la justificación de E por:
+  "La propuesta incluye metas cuantificadas y elementos de seguimiento, especialmente sobre victimización, percepción de inseguridad y cumplimiento de acuerdos del CONASEC."
+- Reemplazar la conclusión por:
+  "La seguridad sigue siendo un bloque débil en desarrollo operativo, pero no puede calificarse como vacío. El plan sí contiene metas, líneas de acción y responsables parciales en sus matrices, aunque todavía con bajo detalle institucional."
+
+2) Variable 7: Reforma policial
+- Cambiar puntaje de 0.8 a 4.2
+- Cambiar criterios de:
+  - P: 0 → 1
+  - M: 0 → 1
+  - E: 0 → 1
+  - V: 0 → 1
+- Dejar igual:
+  - D: 1
+  - Im: 0
+- Reemplazar la justificación de P por:
+  "Sí existe una propuesta de reforma policial en las matrices del plan, centrada en rediseño organizacional, carrera policial, especialización y gestión del personal, aunque no está desarrollada como capítulo autónomo."
+- Reemplazar la justificación de M por:
+  "El plan sí plantea componentes concretos de reforma policial, incluyendo rediseño organizacional, fortalecimiento de carrera, evaluación periódica y especialización funcional."
+- Reemplazar la justificación de E por:
+  "La propuesta incorpora metas e indicadores sobre implementación de la reforma, asignación por especialización y evaluación del personal."
+- Reemplazar la justificación de V por:
+  "Aunque el diseño es incompleto, la propuesta sí es técnicamente evaluable y no corresponde calificarla como inexistente."
+- Reemplazar la conclusión por:
+  "La reforma policial no está plenamente desarrollada, pero tampoco está ausente. El plan sí incorpora una línea de reforma institucional con metas e indicadores, aunque sin el detalle normativo e institucional que tendría una reforma madura."
+
+3) Variable 8: Sistema penitenciario
+- Cambiar puntaje de 3.3 a 5.0
+- Cambiar criterios de:
+  - M: 1 → 2
+  - E: 0 → 1
+- Dejar igual:
+  - D: 1
+  - P: 1
+  - Im: 0
+  - V: 1
+- Reemplazar la justificación de M por:
+  "El plan sí contiene varias medidas concretas: bloqueo efectivo de telecomunicaciones, detección de dispositivos, aislamiento de líderes criminales y rediseño institucional del sistema penitenciario."
+- Reemplazar la justificación de E por:
+  "La propuesta incluye metas cuantificadas y elementos operativos, como inhabilitación del 100% de señales en penales y reducción de incidentes delictivos originados desde establecimientos penitenciarios."
+- Reemplazar la conclusión por:
+  "El sistema penitenciario sigue teniendo vacíos de implementación porque parte del desarrollo se remite a un documento complementario, pero la variable estaba subcalificada: sí hay medidas operativas y metas concretas en las matrices del plan."
+
+4) Variable 9: Política contra el crimen organizado
+- Cambiar puntaje de 4.2 a 5.0
+- Cambiar criterios de:
+  - M: 1 → 2
+- Dejar igual:
+  - D: 1
+  - P: 1
+  - Im: 0
+  - V: 1
+  - E: 1
+- Reemplazar la justificación de M por:
+  "El plan sí incluye medidas más concretas de las reconocidas en la versión actual: investigación de flujos financieros ilícitos, fortalecimiento de coordinación PNP-MP, adquisición de tecnología para persecución penal y metas contra economías ilegales."
+- Reemplazar la conclusión por:
+  "La variable sigue siendo débil porque faltan responsables y una arquitectura de implementación más completa, pero no corresponde tratarla como casi vacía: sí existen medidas e indicadores más claros en las matrices del plan."
+
+5) Variable 10: Reforma del sistema judicial
+- Cambiar puntaje de 1.7 a 3.3
+- Cambiar criterios de:
+  - M: 0 → 1
+  - E: 0 → 1
+- Dejar igual:
+  - D: 0
+  - P: 1
+  - Im: 0
+  - V: 1
+- Reemplazar la justificación de M por:
+  "Aunque la narrativa principal es débil, las matrices del plan sí incluyen acciones como digitalización, uso de inteligencia artificial, creación o permanencia de órganos jurisdiccionales y ampliación de cobertura de defensa y atención."
+- Reemplazar la justificación de E por:
+  "La propuesta incorpora metas cuantificadas sobre reducción de tiempos, aumento de resolución de procesos y ampliación de cobertura de atención."
+- Reemplazar la conclusión por:
+  "La reforma judicial sigue siendo insuficiente en implementación, pero no debe calificarse como casi vacía. En las matrices sí hay acciones y metas que justifican una corrección moderada del puntaje."
+
+6) Variable 14: Educación escolar
+- Cambiar puntaje de 0.8 a 3.3
+- Cambiar criterios de:
+  - D: 0 → 1
+  - M: 0 → 1
+  - E: 0 → 1
+- Dejar igual:
+  - P: 1
+  - Im: 0
+  - V: 0
+- Reemplazar la justificación de D por:
+  "El plan sí reconoce el problema educativo en sus matrices, identificando riesgos de aprendizaje, brechas en lectura y matemática, deserción e insuficiente conectividad e infraestructura."
+- Reemplazar la justificación de M por:
+  "Sí aparecen medidas generales en las matrices, como recuperación de aprendizajes, escuelas seguras y conectadas, soporte al estudiante y mejor gestión docente en territorios priorizados."
+- Reemplazar la justificación de E por:
+  "La propuesta incluye metas cuantificadas sobre aprendizaje, deserción e intervención de locales educativos priorizados."
+- Reemplazar la conclusión por:
+  "La educación escolar no está desarrollada como una política sectorial robusta, pero sí tiene contenido técnico en las matrices del plan. El puntaje anterior la trataba como casi inexistente y era excesivamente severo."
+
+7) Variable 15: Infraestructura educativa
+- Cambiar puntaje de 0.0 a 3.3
+- Cambiar criterios de:
+  - D: 0 → 1
+  - P: 0 → 1
+  - M: 0 → 1
+  - E: 0 → 1
+- Dejar igual:
+  - Im: 0
+  - V: 0
+- Reemplazar la sección 3-8 por este texto:
+  "El plan no desarrolla una política autónoma de infraestructura educativa, pero sí incorpora en sus matrices una referencia clara al problema de infraestructura y conectividad insuficientes, así como una propuesta de intervención de locales educativos priorizados y escuelas conectadas. No hay institución ejecutora ni diseño operativo completo, por lo que sigue siendo una variable débil, pero no ausente."
+- Reemplazar la conclusión por:
+  "La infraestructura educativa no está ausente del plan. Está tratada de forma parcial y subordinada dentro de las matrices sociales, por lo que corresponde una calificación baja, pero no cero."
+
+8) Recalcular promedios:
+- Bloque 2: cambiar de 2.7 a 4.8
+- Bloque 3: cambiar de 2.9 a 3.3
+- Bloque 4: cambiar de 2.3 a 3.7
+- Resultado final general: cambiar de 3.7 a 4.2
+
+9) Reemplazar textos de resumen de bloque:
+- Bloque 2:
+  "El bloque de seguridad obtiene 4.8/10. Sigue siendo un bloque débil en implementación, pero ya no puede describirse como vacío. El plan sí contiene metas, medidas y líneas de acción en sus matrices, especialmente en seguridad cotidiana, reforma policial, sistema penitenciario y crimen organizado, aunque con desarrollo institucional todavía incompleto."
+- Bloque 3:
+  "El bloque de justicia y Estado de derecho obtiene 3.3/10. La sección sigue siendo débil, pero menos de lo que reflejaba la versión anterior. La narrativa principal es pobre, aunque las matrices sí incorporan metas y algunas acciones concretas, especialmente en reforma judicial."
+- Bloque 4:
+  "El bloque de educación obtiene 3.7/10. Sigue siendo una de las áreas más débiles del plan, pero no puede presentarse como vacía. Existen metas, indicadores e intervenciones en las matrices, especialmente en aprendizaje, deserción e infraestructura priorizada, aunque sin una arquitectura sectorial sólida."
+
+10) Mantener todo lo demás EXACTAMENTE igual.
+
+
+
+5. Quiero que hagas ajustes SOLO en el análisis del candidato Ronald Atencio.
+
+NO cambies la estructura.
+NO cambies la metodología.
+NO cambies el orden.
+NO cambies datos ni fuentes.
+NO revises otras variables.
+NO recalibres todo el sistema.
+
+Haz únicamente los siguientes cambios puntuales:
+
+==================================================
+1) AJUSTE DE TONO (GLOBAL)
+==================================================
+
+Reemplazar expresiones excesivamente categóricas por formulaciones técnicas más neutrales.
+
+REGLAS:
+
+- “riesgo catastrófico” → “riesgo macroeconómico significativo”
+- “inimplementable” → “presenta serias limitaciones de implementación”
+- “destructivo” → “genera riesgos significativos”
+- “no es política pública” → “no constituye una política pública plenamente desarrollada”
+- “esto genera” → “esto podría generar”
+- “paraliza” → “podría afectar significativamente”
+
+Aplicar estos cambios SOLO donde aparezcan expresiones absolutas.
+
+==================================================
+2) VARIABLE 3 — INVERSIÓN PRIVADA
+==================================================
+
+Cambiar puntaje:
+
+- Antes: 2.5
+- Después: 3.5
+
+Cambiar criterio:
+
+- M: 0 → 1
+
+Mantener:
+
+- D: 2
+- P: 1
+- Im: 0
+- V: 0
+- E: 0
+
+--------------------------------------------------
+
+Reemplazar la justificación de M por:
+
+"Existen instrumentos planteados como renegociación de contratos, revisión del régimen de concesiones y participación comunitaria en proyectos extractivos. Sin embargo, estos carecen de un diseño operativo compatible con el marco constitucional y los compromisos internacionales vigentes."
+
+--------------------------------------------------
+
+Reemplazar la sección de impacto (punto 7) por:
+
+"La propuesta implica un riesgo macroeconómico significativo si se ejecuta sin un esquema de transición. Experiencias comparables en la región muestran que procesos de reforma de este tipo pueden generar caídas en la inversión durante periodos de incertidumbre institucional, afectando el flujo de divisas y el crecimiento económico."
+
+--------------------------------------------------
+
+Reemplazar la conclusión por:
+
+"El diagnóstico sobre el rol de la inversión privada es correcto (D=2) y la propuesta tiene coherencia interna en términos ideológicos. Sin embargo, la ausencia de mecanismos de transición, compensación y seguridad jurídica limita su viabilidad. El riesgo no es inmediato ni automático, pero sí relevante si las medidas se implementan sin ajustes."
+
+--------------------------------------------------
+
+Recalcular variable:
+
+(2 + 1 + 1 + 0 + 0 + 0) / 12 × 10 = 3.3
+
+Redondear resultado final a: 3.5
+
+--------------------------------------------------
+
+Actualizar calificación final:
+
+"Calificación final: 3.5/10 — Débil"
+
+==================================================
+3) AJUSTE DE BLOQUE 1 — ECONOMÍA
+==================================================
+
+Recalcular promedio del bloque:
+
+Variables:
+- 1: 5.0
+- 2: 2.5
+- 3: 3.5
+- 4: 5.0
+- 5: 2.5
+
+Nuevo promedio:
+
+(5.0 + 2.5 + 3.5 + 5.0 + 2.5) / 5 = 3.7
+
+--------------------------------------------------
+
+Reemplazar resumen del bloque por:
+
+"El bloque económico mantiene un diagnóstico sólido en todas las variables, pero presenta tensiones importantes en su diseño. La principal debilidad sigue siendo la inconsistencia fiscal y los riesgos asociados a la implementación de reformas estructurales sin mecanismos de transición. Algunas propuestas son técnicamente viables de forma aislada, pero el conjunto presenta limitaciones significativas."
+
+==================================================
+4) AJUSTE DE RESULTADO FINAL
+==================================================
+
+Resultado anterior: 3.7
+
+Nuevo resultado estimado: 3.9
+
+(ajuste leve por corrección de Variable 3)
+
+--------------------------------------------------
+
+Reemplazar conclusión general por:
+
+"El plan presenta un diagnóstico sólido y una narrativa política coherente, pero enfrenta limitaciones importantes en su diseño técnico y en la viabilidad de varias de sus propuestas. Los principales riesgos se concentran en el frente fiscal y en la implementación de reformas estructurales sin mecanismos de transición. En conjunto, se trata de un plan con orientación clara, pero con debilidades relevantes en su ejecución."
+
+==================================================
+5) REGLA FINAL
+==================================================
+
+NO modificar nada más.
+NO tocar otras variables.
+NO alterar otros puntajes.
+NO simplificar el análisis.
+NO resumir contenido.
+
+Solo aplicar estos cambios.
+
+
+
+
+
+
+==================================================
+11) AJUSTE GLOBAL DE CONSISTENCIA
+==================================================
+
+Dado que se han realizado correcciones puntuales en variables específicas, es obligatorio recalcular automáticamente todos los niveles agregados del análisis para mantener consistencia metodológica.
+
+Aplicar las siguientes reglas:
+
+1. Recalcular el puntaje de cada variable modificada utilizando la fórmula:
+   (D + P + M + Im + V + E) / 12 × 10
+
+2. Recalcular el promedio de cada bloque afectado:
+   Promedio simple de las variables que lo componen.
+
+3. Recalcular el puntaje final del candidato:
+   Promedio de los bloques (según la estructura actual del sistema).
+
+4. Actualizar todos los textos donde aparezcan:
+   - puntajes de variables
+   - promedios de bloque
+   - resultado final
+
+5. Asegurar coherencia total entre:
+   - puntajes numéricos
+   - descripciones cualitativas (débil, media, media-alta, etc.)
+   - conclusiones de bloque
+   - conclusión general
+
+==================================================
+12) AJUSTE DE NARRATIVA FINAL
+==================================================
+
+Reemplazar la conclusión general por una versión coherente con los nuevos puntajes:
+
+"Tras la revisión de consistencia, el análisis refleja un ajuste metodológico que corrige subvaloraciones en variables donde sí existían contenidos parciales en el plan, especialmente en matrices operativas. 
+
+El resultado final mantiene al candidato en un rango de desempeño bajo a medio, pero con una evaluación más precisa de sus propuestas reales. Las principales debilidades siguen estando en la falta de desarrollo institucional y capacidad de implementación, mientras que las fortalezas se concentran en la existencia de líneas de acción y metas en determinadas áreas. 
+
+En conjunto, el plan no es vacío, pero sí presenta limitaciones importantes para su ejecución efectiva."
+
+==================================================
+REGLA FINAL GLOBAL
+==================================================
+
+Estos ajustes NO modifican la metodología, 
+NO cambian criterios de evaluación, 
+y NO alteran la lógica del sistema.
+
+Solo corrigen inconsistencias detectadas en la calificación inicial.
+Quiero que realices un CONTROL DE CALIDAD GLOBAL sobre TODOS los análisis de candidatos actualmente cargados en la plataforma.
+
+IMPORTANTE:
+- Aplica a TODOS los candidatos (no solo uno).
+- Revisa TODAS las variables y TODAS las secciones.
+- No agregues nuevos contenidos.
+- No elimines contenido relevante.
+- Solo corrige la forma en que están presentados los datos.
+
+==================================================
+OBJETIVO
+==================================================
+
+Detectar y corregir elementos que puedan afectar la credibilidad técnica del análisis:
+
+- cifras riesgosas o inestables
+- porcentajes demasiado específicos
+- uso incorrecto de estándares internacionales
+- afirmaciones absolutas difíciles de sostener
+- datos no verificables o débiles
+
+==================================================
+REGLAS GENERALES
+==================================================
+
+1. NO cambiar estructura.
+2. NO cambiar puntajes.
+3. NO modificar criterios de evaluación.
+4. NO alterar conclusiones de fondo.
+5. SOLO mejorar redacción técnica y presentación de datos.
+6. Mantener estilo formal y analítico.
+
+==================================================
+REGLAS ESPECÍFICAS POR TEMA
+==================================================
+
+🔴 1. SEGURIDAD CIUDADANA / CRIMEN ORGANIZADO
+
+Si encuentras:
+
+- porcentajes exactos de crecimiento (ej: 438%, 679%, 74%)
+- cifras de evolución del delito sin fuente sólida
+
+ENTONCES reemplazar por:
+
+- “incremento sostenido en los últimos años”
+- “crecimiento acelerado de la criminalidad”
+- “tendencia al alza”
+- “aumento significativo de estos delitos”
+
+---
+
+🔴 2. CORRUPCIÓN
+
+Si encuentras:
+
+- porcentajes extremos (ej: 94% corrupción)
+
+Reemplazar por:
+
+- “altos niveles de corrupción”
+- “problema estructural de corrupción”
+- “bajos niveles de sanción”
+
+---
+
+🔴 3. SALUD
+
+Si encuentras:
+
+- “mínimo recomendado por la OMS = X”
+- cifras rígidas sin contexto
+
+Reemplazar por:
+
+- “por debajo de los niveles recomendados internacionalmente”
+- “por debajo de los estándares observados en sistemas de salud más desarrollados”
+
+---
+
+🔴 4. GASTO PÚBLICO Y ECONOMÍA
+
+Si encuentras:
+
+- cifras únicas muy específicas (ej: 3.5% exacto)
+
+Reemplazar por:
+
+- “alrededor de X%”
+- “en el rango de X% a X%”
+
+(Solo si el dato es variable en el tiempo)
+
+---
+
+🔴 5. FRASES ABSOLUTAS (EN TODO EL SISTEMA)
+
+Reemplazar:
+
+- “no existe” → “no se desarrolla con claridad”
+- “no hay” → “no se detalla”
+- “carece de” → “presenta limitaciones en”
+- “es inviable” → “presenta limitaciones de viabilidad”
+- “genera crisis” → “podría generar riesgos”
+
+---
+
+==================================================
+FORMATO DE RESPUESTA
+==================================================
+
+No expliques los cambios.
+
+Aplica directamente las correcciones en los textos de cada candidato.
+
+No mostrar comparaciones.
+No listar cambios.
+No justificar.
+
+==================================================
+REGLA FINAL
+==================================================
+
+El objetivo NO es hacer el análisis más positivo.
+
+El objetivo es hacerlo MÁS SÓLIDO, MÁS DEFENDIBLE y MENOS ATACABLE.
+
+Mantener el contenido, mejorar la credibilidad.
