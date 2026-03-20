@@ -40,3 +40,8 @@ outputType = "webview"
 task = "shell.exec"
 args = "bash start.sh"
 waitForPort = 3000
+
+[deployment]
+deploymentTarget = "autoscale"
+publicDir = "public"
+run = ["node", "server.js"]
