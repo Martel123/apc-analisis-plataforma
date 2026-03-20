@@ -1,0 +1,180 @@
+/* ── Guided Tour ──────────────────────────────────────────────────────────── */
+
+/* Spotlight: transparent box with massive box-shadow that dims surroundings */
+.gt-spotlight {
+  position: fixed;
+  z-index: 9001;
+  border-radius: 10px;
+  pointer-events: none;
+  box-shadow:
+    0 0 0 9999px rgba(10, 10, 10, 0.52),
+    0 0 0 3px rgba(181, 18, 27, 0.45),
+    0 0 0 5px rgba(255, 255, 255, 0.12);
+  transition: top 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+              left 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+              width 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+              height 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Tour card */
+.gt-card {
+  position: fixed;
+  z-index: 9002;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.16), 0 2px 8px rgba(0, 0, 0, 0.06);
+  padding: 24px 24px 20px;
+  width: 340px;
+  max-width: calc(100vw - 32px);
+  pointer-events: all;
+  animation: gt-fade-in 0.22s ease;
+}
+
+@keyframes gt-fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.gt-card-step {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #b5121b;
+  margin-bottom: 10px;
+}
+
+.gt-card-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 8px;
+  line-height: 1.25;
+}
+
+.gt-card-body {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #555;
+  margin: 0 0 20px;
+}
+
+.gt-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.gt-card-progress {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.gt-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  transition: background 0.15s;
+}
+.gt-dot.active { background: #b5121b; }
+
+.gt-actions {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.gt-btn {
+  border: none;
+  border-radius: 7px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 14px;
+  transition: background 0.12s, opacity 0.12s;
+  line-height: 1;
+}
+
+.gt-btn-next {
+  background: #b5121b;
+  color: #fff;
+}
+.gt-btn-next:hover { background: #96000d; }
+
+.gt-btn-prev {
+  background: #f2f2f1;
+  color: #444;
+}
+.gt-btn-prev:hover { background: #e5e5e4; }
+
+.gt-btn-skip {
+  background: none;
+  color: #999;
+  padding: 8px 10px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.gt-btn-skip:hover { color: #555; }
+
+.gt-btn-finish {
+  background: #1a1a1a;
+  color: #fff;
+}
+.gt-btn-finish:hover { background: #333; }
+
+/* Permanent trigger button — bottom-right corner */
+.gt-trigger {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 8999;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: #fff;
+  border: 1px solid #e5e5e3;
+  border-radius: 99px;
+  padding: 9px 16px 9px 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  transition: box-shadow 0.15s, transform 0.15s;
+  text-decoration: none;
+}
+.gt-trigger:hover {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.14);
+  transform: translateY(-1px);
+}
+.gt-trigger-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #b5121b;
+  color: #fff;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+/* Hide trigger while tour is active */
+.gt-tour-active .gt-trigger { display: none !important; }
+
+/* Mobile adjustments */
+@media (max-width: 520px) {
+  .gt-card { padding: 20px 18px 16px; width: calc(100vw - 24px); }
+  .gt-card-title { font-size: 15px; }
+  .gt-card-body { font-size: 13px; }
+  .gt-trigger { bottom: 16px; right: 16px; padding: 8px 14px 8px 10px; }
+}

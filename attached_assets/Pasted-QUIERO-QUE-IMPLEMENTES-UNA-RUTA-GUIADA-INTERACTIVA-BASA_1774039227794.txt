@@ -1,0 +1,242 @@
+QUIERO QUE IMPLEMENTES UNA RUTA GUIADA INTERACTIVA BASADA EN EL RECORRIDO REAL DE MI PLATAFORMA.
+
+OBJETIVO:
+Guiar al usuario, paso a paso, en el flujo principal de uso de la web, enseñándole exactamente qué hacer desde que entra a la página hasta que abre y entiende el análisis de un candidato.
+
+IMPORTANTE:
+No quiero una explicación suelta.
+No quiero texto largo fuera de contexto.
+Quiero una guía visual real dentro de la plataforma que señale dónde mirar y, cuando corresponda, dónde hacer clic.
+
+==================================================
+FLUJO REAL QUE DEBE GUIAR
+==================================================
+
+La ruta principal que quiero enseñar es esta:
+
+1. El usuario entra al inicio.
+2. Ve la portada principal con el título “Candidatos presidenciales”.
+3. La guía le explica brevemente qué hace la plataforma.
+4. La guía resalta el botón “Analizar un candidato”.
+5. El usuario hace clic allí o la guía lo lleva a esa sección.
+6. Se abre la vista “Selecciona un candidato”.
+7. La guía explica que ahí están las tarjetas de cada candidato.
+8. La guía resalta el botón “Ver análisis” de una tarjeta.
+9. El usuario hace clic allí o la guía lo lleva a la ficha individual.
+10. En la ficha individual, la guía explica:
+   - nombre del candidato,
+   - puntaje general,
+   - resumen ejecutivo,
+   - métricas resumidas,
+   - gráfico o desempeño por bloques.
+11. La guía cierra explicando que desde ahí el usuario ya puede bajar y revisar el análisis completo.
+
+==================================================
+TIPO DE EXPERIENCIA QUE QUIERO
+==================================================
+
+Quiero un onboarding o product tour visual, elegante y profesional, estilo SaaS premium.
+
+Debe incluir:
+
+- overlay oscuro o suavemente atenuado,
+- resalte visual del elemento actual,
+- tarjeta flotante con título y explicación,
+- botones “Anterior”, “Siguiente” y “Saltar”,
+- opción “No mostrar de nuevo”,
+- guardado en localStorage,
+- botón permanente para volver a abrir la guía, por ejemplo:
+  “Cómo usar la plataforma”
+  o
+  “Ver ruta guiada”.
+
+Debe funcionar bien en desktop y mobile.
+
+==================================================
+PASOS EXACTOS DE LA GUÍA
+==================================================
+
+PASO 1 — Bienvenida
+Elemento:
+contenedor principal de la portada
+Título:
+“Bienvenido”
+Texto:
+“Esta plataforma te permite explorar análisis técnicos de planes de gobierno de forma clara, visual y estructurada.”
+
+PASO 2 — Qué puedes hacer aquí
+Elemento:
+zona central del hero principal
+Título:
+“¿Qué puedes hacer aquí?”
+Texto:
+“Aquí puedes revisar candidatos, abrir análisis individuales y entender cómo están organizadas sus propuestas.”
+
+PASO 3 — Botón principal de entrada
+Elemento:
+botón “Analizar un candidato”
+Título:
+“Empieza aquí”
+Texto:
+“Este es el punto de entrada principal para comenzar a explorar la plataforma. Haz clic aquí para ver el listado de candidatos.”
+Acción esperada:
+si es viable, esperar clic del usuario;
+si no, permitir avanzar automáticamente.
+
+PASO 4 — Vista de listado
+Elemento:
+contenedor de la sección “Selecciona un candidato”
+Título:
+“Listado de candidatos”
+Texto:
+“Aquí encontrarás las tarjetas de los candidatos disponibles. Cada tarjeta resume su evaluación general y te da acceso al análisis completo.”
+
+PASO 5 — Cómo leer una tarjeta
+Elemento:
+primera tarjeta visible de candidato
+Título:
+“Lectura rápida”
+Texto:
+“Cada tarjeta muestra una vista resumida del candidato, incluyendo un puntaje general y un acceso directo a su análisis detallado.”
+
+PASO 6 — Botón “Ver análisis”
+Elemento:
+botón “Ver análisis” de una tarjeta
+Título:
+“Abrir análisis completo”
+Texto:
+“Presiona aquí para entrar a la ficha individual del candidato y revisar su evaluación con mayor detalle.”
+Acción esperada:
+si es viable, esperar clic real del usuario.
+
+PASO 7 — Encabezado de la ficha individual
+Elemento:
+bloque superior de la página del candidato
+Título:
+“Ficha individual”
+Texto:
+“Ahora estás dentro del análisis individual del candidato. Aquí verás su información principal y su puntaje general.”
+
+PASO 8 — Puntaje general
+Elemento:
+bloque del score grande o tarjeta del puntaje
+Título:
+“Puntaje general”
+Texto:
+“Este número resume técnicamente el nivel de desarrollo de las propuestas evaluadas. No es una opinión política, sino una lectura estructurada del plan.”
+
+PASO 9 — Resumen ejecutivo
+Elemento:
+bloque de texto descriptivo principal
+Título:
+“Resumen inicial”
+Texto:
+“En esta sección encontrarás una síntesis técnica del candidato y del enfoque general de su propuesta.”
+
+PASO 10 — Métricas resumidas
+Elemento:
+bloques pequeños de métricas o indicadores
+Título:
+“Indicadores clave”
+Texto:
+“Aquí puedes ver métricas resumidas que ayudan a interpretar rápidamente la evaluación antes de entrar al detalle completo.”
+
+PASO 11 — Desempeño por bloques
+Elemento:
+gráfico o sección “Desempeño por bloques”
+Título:
+“Lectura por bloques”
+Texto:
+“Esta parte muestra cómo rinde el candidato en los distintos bloques temáticos del análisis. Es útil para detectar fortalezas y debilidades de forma visual.”
+
+PASO 12 — Continuar explorando
+Elemento:
+zona inferior visible del análisis o contenedor general
+Título:
+“Ahora sigue explorando”
+Texto:
+“Desde aquí ya puedes seguir bajando para revisar el análisis completo, bloque por bloque, y entender con mayor profundidad la evaluación.”
+
+PASO 13 — Cierre
+Elemento:
+vista general de la ficha
+Título:
+“Ruta completada”
+Texto:
+“Listo. Ya sabes cómo entrar, abrir un candidato y comenzar a leer su análisis. Puedes volver a ver esta guía cuando quieras desde el botón de ayuda.”
+
+==================================================
+REGLAS DE IMPLEMENTACIÓN
+==================================================
+
+1. No inventes secciones que no existan.
+2. Usa únicamente la estructura real del proyecto.
+3. Si faltan IDs o selectores, agrégalos de forma limpia y consistente.
+4. Si la navegación entre vistas requiere activar tabs, rutas o render dinámico, hazlo correctamente.
+5. Si el usuario debe hacer clic para continuar, soporta ese comportamiento cuando sea posible.
+6. Si no es posible esperar clic real, permite avanzar con “Siguiente”.
+7. Si el elemento está fuera de pantalla, haz scroll suave automático.
+8. La tarjeta del tour no debe tapar el elemento más importante.
+9. El sistema no debe romper el diseño actual ni la navegación existente.
+10. La experiencia debe sentirse integrada naturalmente a la plataforma.
+
+==================================================
+ESTILO VISUAL
+==================================================
+
+Quiero una estética:
+- limpia,
+- moderna,
+- profesional,
+- seria,
+- minimalista,
+- consistente con la plataforma actual.
+
+No quiero:
+- estilos infantiles,
+- colores chillones,
+- modales toscos,
+- cajas feas,
+- efectos exagerados.
+
+Sí quiero:
+- bordes suaves,
+- sombras discretas,
+- buena jerarquía visual,
+- transiciones sutiles,
+- apariencia premium.
+
+==================================================
+IMPLEMENTACIÓN TÉCNICA
+==================================================
+
+Puedes usar una librería ligera como Driver.js o una solución equivalente.
+Si consideras mejor hacerlo manualmente con HTML + CSS + JS, también está bien, pero debe quedar mantenible y lista para producción.
+
+Si hace falta, crea archivos separados como:
+- guided-tour.js
+- guided-tour.css
+
+También puedes agregar:
+- IDs,
+- data-tour,
+- clases auxiliares,
+a botones, tarjetas, encabezados y bloques relevantes.
+
+==================================================
+ENTREGA ESPERADA
+==================================================
+
+Haz producción directa.
+
+Necesito que:
+1. implementes la ruta guiada completa,
+2. la conectes al flujo real de la plataforma,
+3. me digas exactamente qué archivos modificaste,
+4. indiques si agregaste dependencias,
+5. y expliques exactamente cómo probarla.
+
+No me des teoría.
+No me des opciones innecesarias.
+No me hables en abstracto.
+Trabaja sobre el proyecto real y deja la guía lista para usarse.

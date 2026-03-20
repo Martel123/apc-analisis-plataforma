@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="public/styles/globals.css">
+  <link rel="stylesheet" href="public/styles/guided-tour.css">
 </head>
 <body>
 <nav class="topbar">
@@ -31,7 +32,7 @@
 </nav>
 
 <div class="page-wrap container">
-  <div class="page-intro">
+  <div class="page-intro" id="tour-page-intro">
     <h1>Selecciona un candidato</h1>
     <p>Cada análisis incluye resumen ejecutivo, bloques temáticos, variables con criterios técnicos, correcciones metodológicas y fuentes.</p>
   </div>
@@ -60,7 +61,10 @@
 </div>
 
 <script src="public/js/data.js"></script>
+<script src="public/js/guided-tour.js"></script>
 <script>
+GuidedTour.init('analizar');
+
 async function init() {
   const candidates = await DataLayer.getCandidates();
   const grid = document.getElementById('candidateGrid');
@@ -76,7 +80,7 @@ async function init() {
 
   const sorted = [...candidates].sort((a, b) => (b.total_score || 0) - (a.total_score || 0));
 
-  grid.innerHTML = sorted.map(c => {
+  grid.innerHTML = sorted.map((c, i) => {
     const { label, cls } = DataLayer.scoreLabel(c.total_score);
     const summary = c.summary
       ? c.summary.substring(0, 120) + (c.summary.length > 120 ? '…' : '')
@@ -107,6 +111,9 @@ async function init() {
         </div>
       </a>`;
   }).join('');
+
+  // Notify tour that dynamic content is ready
+  if (window.GuidedTour) GuidedTour.onContentReady();
 }
 init();
 

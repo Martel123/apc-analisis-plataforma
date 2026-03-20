@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="public/styles/globals.css">
+  <link rel="stylesheet" href="public/styles/guided-tour.css">
   <style>
     .home-page {
       min-height: 100vh;
@@ -138,16 +139,16 @@
     </div>
   </nav>
 
-  <div class="home-hero">
+  <div class="home-hero" id="tour-home-hero">
     <div class="container">
-      <div class="home-content">
+      <div class="home-content" id="tour-home-content">
         <div class="home-eyebrow">▸ Perú 2026</div>
         <h1 class="home-title">Candidatos presidenciales</h1>
         <p class="home-subtitle">
           Explora análisis técnicos individuales o compara candidatos de forma clara y estructurada.
         </p>
         <div class="home-actions">
-          <a href="analizar.html" class="btn-primary">Analizar un candidato</a>
+          <a href="analizar.html" class="btn-primary" id="tour-btn-analizar">Analizar un candidato</a>
           <a href="comparar.html" class="btn-secondary">Comparar candidatos</a>
         </div>
         <div class="home-meta">
@@ -198,7 +199,10 @@
 </div>
 
 <script src="public/js/data.js"></script>
+<script src="public/js/guided-tour.js"></script>
 <script>
+  GuidedTour.init('index');
+
   async function init() {
     const candidates = await DataLayer.getCandidates();
     document.getElementById('statCandidates').textContent = candidates.length;

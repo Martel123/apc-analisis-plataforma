@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="public/styles/globals.css">
+  <link rel="stylesheet" href="public/styles/guided-tour.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 <body>
@@ -36,7 +37,9 @@
 
 <script src="public/js/data.js"></script>
 <script src="public/js/engine.js"></script>
+<script src="public/js/guided-tour.js"></script>
 <script>
+GuidedTour.init('candidato');
 const params = new URLSearchParams(location.search);
 const candidateId = params.get('id');
 
@@ -72,7 +75,7 @@ function render(c) {
   </div>`;
 
   // Header
-  const header = `<div class="cand-header mt-20">
+  const header = `<div class="cand-header mt-20" id="tour-cand-header">
     <div class="cand-color-strip" style="background:${c.color || 'var(--primary)'}"></div>
     <div>
       <h1 class="cand-name">${c.name}</h1>
@@ -83,9 +86,9 @@ function render(c) {
         ${kpis.totalVars ? `<span class="cand-meta-chip">◉ ${kpis.totalVars} variables evaluadas</span>` : ''}
         ${kpis.correctedVars > 0 ? `<span class="cand-meta-chip" style="background:#fffbeb;border-color:#fde68a;color:#92400e">✱ ${kpis.correctedVars} correcciones metodológicas</span>` : ''}
       </div>
-      ${c.summary ? `<p class="cand-summary">${c.summary}</p>` : ''}
+      ${c.summary ? `<p class="cand-summary" id="tour-summary">${c.summary}</p>` : ''}
     </div>
-    <div class="cand-score-side">
+    <div class="cand-score-side" id="tour-score">
       <div class="cand-score-num ${cls}">${c.total_score !== null ? c.total_score.toFixed(1) : '—'}</div>
       <div class="cand-score-label">/ 10</div>
       <div style="margin-top:8px"><span class="level-tag ${cls}">${label}</span></div>
@@ -93,7 +96,7 @@ function render(c) {
   </div>`;
 
   // KPI row
-  const kpiRow = `<div class="kpi-row mt-16">
+  const kpiRow = `<div class="kpi-row mt-16" id="tour-kpi-row">
     <div class="kpi-item">
       <div class="kpi-label">Mejor bloque</div>
       <div class="kpi-value" style="font-size:1rem">${kpis.bestBlock?.name || '—'}</div>
@@ -157,7 +160,7 @@ function render(c) {
 
   // Block chart
   const blockChartHTML = c.blocks.length > 0 ? `
-    <div class="card mt-24">
+    <div class="card mt-24" id="tour-blocks-chart">
       <div class="section-title">Desempeño por bloques</div>
       <div style="height:${Math.max(220, c.blocks.length * 38)}px;position:relative">
         <canvas id="blocksChart"></canvas>
@@ -168,7 +171,7 @@ function render(c) {
   const blockCards = c.blocks.length > 0 ? `
     <div class="mt-24">
       <div class="section-label">Bloques temáticos — navega en detalle</div>
-      <div class="blocks-nav-grid">
+      <div class="blocks-nav-grid" id="tour-blocks-nav">
         ${c.blocks.map(block => {
           const { label: blabel, cls: bcls } = DataLayer.scoreLabel(block.average_score);
           return `
@@ -212,6 +215,9 @@ function render(c) {
   document.getElementById('content').innerHTML =
     breadcrumb + header + kpiRow + correctionsHTML + quickReads +
     blockChartHTML + blockCards + finalHTML + `<div style="height:48px"></div>`;
+
+  // Notify tour that content is ready
+  if (window.GuidedTour) GuidedTour.onContentReady();
 
   // Render chart
   if (c.blocks.length > 0) {
