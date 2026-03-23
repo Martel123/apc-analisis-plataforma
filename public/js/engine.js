@@ -19,15 +19,6 @@ const Engine = (() => {
 
     const corrected = allVars.filter(v => v.corrected_methodology).length;
 
-    const scores = scoredVars.map(v => v.final_score);
-    let consistency = null;
-    if (scores.length > 1) {
-      const mean = scores.reduce((a, b) => a + b, 0) / scores.length;
-      const variance = scores.reduce((s, v) => s + Math.pow(v - mean, 2), 0) / scores.length;
-      const stddev = Math.sqrt(variance);
-      consistency = Math.round((1 - stddev / 10) * 100);
-    }
-
     return {
       bestBlock,
       worstBlock,
@@ -35,8 +26,7 @@ const Engine = (() => {
       worstVar,
       avgScore,
       totalVars: allVars.length,
-      correctedVars: corrected,
-      consistency
+      correctedVars: corrected
     };
   }
 
