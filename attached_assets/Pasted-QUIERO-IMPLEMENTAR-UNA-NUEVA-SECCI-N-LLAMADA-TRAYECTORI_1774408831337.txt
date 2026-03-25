@@ -1,0 +1,485 @@
+QUIERO IMPLEMENTAR UNA NUEVA SECCIÓN LLAMADA “TRAYECTORIA” EN MI PLATAFORMA WEB EXISTENTE.
+
+IMPORTANTE:
+QUIERO UNA IMPLEMENTACIÓN REAL, COMPLETA, LIMPIA Y TOTALMENTE INTEGRADA AL SISTEMA ACTUAL.
+NO QUIERO UNA SOLUCIÓN PARCIAL.
+NO QUIERO UNA PÁGINA AISLADA.
+NO QUIERO QUE PAREZCA UN PARCHE.
+NO QUIERO QUE SE ROMPA NADA DE LO YA FUNCIONAL.
+
+==================================================
+OBJETIVO GENERAL
+==================================================
+
+Crear una nueva página `trayectoria.html` dentro de mi plataforma, manteniendo exactamente la misma identidad visual, estructura general, navbar, footer, tipografía, colores, espaciados y estilo de componentes del resto del sitio, especialmente de `analizar.html` e `index.html`.
+
+Esta página debe servir para visualizar la trayectoria completa de los candidatos a partir de archivos JSON internos del proyecto.
+
+IMPORTANTE:
+LA CARGA DE ARCHIVOS JSON NO DEBE EXISTIR EN LA WEB PÚBLICA.
+NO QUIERO UN BOTÓN PARA SUBIR JSON EN LA INTERFAZ.
+NO QUIERO CARGA LOCAL EN EL NAVEGADOR.
+
+La carga de candidatos será únicamente INTERNA dentro de Replit:
+- yo subiré manualmente los archivos `.json` al proyecto
+- el sistema los leerá desde una carpeta interna
+- la web pública solo mostrará los candidatos ya registrados en el sistema
+
+==================================================
+REGLAS CRÍTICAS
+==================================================
+
+- NO romper ninguna página existente
+- NO cambiar la identidad visual global del proyecto
+- NO inventar una interfaz nueva
+- REUTILIZAR componentes, clases, cards, badges, estructura y patrones visuales ya existentes
+- Mantener la misma experiencia visual de `analizar.html`
+- Todo debe ser responsive
+- NO duplicar CSS innecesariamente
+- NO hardcodear candidatos dentro del HTML
+- Toda la información debe renderizarse dinámicamente desde archivos JSON internos del proyecto
+- NO agregar uploader de archivos en la web pública
+- NO agregar herramientas de carga visibles para el usuario final
+
+==================================================
+1. AGREGAR LINK EN NAVBAR DE TODAS LAS PÁGINAS
+==================================================
+
+Agregar en la navbar de TODAS estas páginas:
+
+- `index.html`
+- `analizar.html`
+- `comparar.html`
+- `heatmap.html`
+- `metodologia.html`
+- `convertir.html`
+- `validacion.html`
+
+Nuevo link:
+- Texto: `Trayectoria`
+- URL: `trayectoria.html`
+
+Además:
+- En `trayectoria.html`, el link “Trayectoria” debe verse ACTIVO usando el mismo estilo de link activo que usa el resto del sitio.
+
+==================================================
+2. ESTRUCTURA DE ARCHIVOS NUEVOS
+==================================================
+
+Crear la nueva sección usando la arquitectura real del proyecto.
+
+Archivos esperados:
+- `trayectoria.html`
+- si hace falta lógica separada: `public/js/trayectoria.js` o integrarlo donde corresponda según la arquitectura actual
+- si hace falta CSS específico, que sea mínimo y reutilice al máximo lo ya existente
+
+Crear también la estructura de datos interna:
+
+- `/public/trayectoria/manifest.json`
+- `/public/trayectoria/` → carpeta donde estarán los archivos JSON individuales de cada candidato
+
+IMPORTANTE:
+Como la web no debe listar archivos de carpeta automáticamente desde frontend, usar `manifest.json` como índice oficial de candidatos disponibles.
+
+==================================================
+3. LÓGICA DE CARGA DE DATOS
+==================================================
+
+El sistema debe funcionar así:
+
+### A. Manifest general
+Crear:
+`/public/trayectoria/manifest.json`
+
+Debe tener una estructura similar a esta:
+
+{
+  "candidatos": [
+    {
+      "id": "williams_zapata",
+      "nombre": "José Daniel Williams Zapata",
+      "archivo": "/public/trayectoria/williams_zapata.json"
+    },
+    {
+      "id": "carlos_alvarez",
+      "nombre": "Carlos Gonzalo Álvarez Loayza",
+      "archivo": "/public/trayectoria/carlos_alvarez.json"
+    }
+  ]
+}
+
+IMPORTANTE:
+- la lista de candidatos del dropdown debe cargarse desde este manifest
+- al elegir un candidato, debe cargarse el JSON indicado en `archivo`
+- no hardcodear opciones manualmente en HTML
+
+### B. Archivos JSON por candidato
+Cada candidato debe tener su propio archivo JSON dentro de:
+`/public/trayectoria/`
+
+Ejemplo:
+- `/public/trayectoria/williams_zapata.json`
+- `/public/trayectoria/carlos_alvarez.json`
+- `/public/trayectoria/ronald_atencio.json`
+
+La información del perfil debe salir únicamente de esos JSON.
+
+==================================================
+4. FLUJO INTERNO DE TRABAJO EN REPLIT
+==================================================
+
+El sistema debe quedar preparado para este flujo de trabajo:
+
+1. Yo subo manualmente un nuevo archivo JSON dentro de `/public/trayectoria/`
+2. Yo agrego su referencia dentro de `manifest.json`
+3. Automáticamente ese candidato aparece en el selector de `trayectoria.html`
+4. La web pública solo muestra lo que ya exista dentro del proyecto y esté declarado en el manifest
+
+IMPORTANTE:
+- no crear interfaz pública para subir archivos
+- no crear herramienta de previsualización desde navegador
+- toda incorporación de nuevos candidatos será interna, editando archivos dentro de Replit
+
+==================================================
+5. ESTRUCTURA DEL JSON DEL CANDIDATO
+==================================================
+
+El sistema debe soportar esta estructura base por candidato:
+
+{
+  "id": "",
+  "nombre": "",
+  "partido": "",
+  "fecha_nacimiento": "",
+  "edad": 0,
+  "profesion": "",
+  "formacion_academica": [],
+  "resumen": "",
+  "historial_judicial": [],
+  "historial_politico": [],
+  "historial_profesional": [],
+  "controversias": [],
+  "partido_info": {},
+  "linea_de_tiempo": [],
+  "datos_importantes": []
+}
+
+Con subestructuras así:
+
+### historial_judicial[]
+{
+  "titulo": "",
+  "tipo": "",
+  "estado": "",
+  "estado_label": "",
+  "descripcion": "",
+  "fuentes": []
+}
+
+### historial_politico[]
+{
+  "cargo": "",
+  "partido": "",
+  "periodo": "",
+  "descripcion": ""
+}
+
+### historial_profesional[]
+{
+  "cargo": "",
+  "institucion": "",
+  "periodo": "",
+  "descripcion": ""
+}
+
+### controversias[]
+{
+  "titulo": "",
+  "descripcion": ""
+}
+
+### partido_info
+{
+  "nombre": "",
+  "simbolo": "",
+  "ideologia": "",
+  "fundacion": "",
+  "historia": "",
+  "desempeno_electoral": ""
+}
+
+### linea_de_tiempo[]
+{
+  "año": 0,
+  "hito": ""
+}
+
+### datos_importantes[]
+- array de strings
+
+IMPORTANTE:
+- el sistema debe ser tolerante si falta algún campo menor
+- si una sección no tiene datos, ocultarla elegantemente o mostrar un mensaje limpio según corresponda
+- nunca debe romperse la página por campos vacíos o incompletos
+
+==================================================
+6. COMPORTAMIENTO DE LA PÁGINA trayectoria.html
+==================================================
+
+Al entrar a `trayectoria.html`:
+
+- mostrar el selector de candidato
+- no seleccionar ningún candidato por defecto
+- mostrar un estado inicial limpio
+- puede haber un mensaje sutil como:
+  `Selecciona un candidato para ver su trayectoria`
+
+Al seleccionar un candidato:
+- cargar el JSON correspondiente
+- renderizar el perfil completo dinámicamente
+- aplicar una transición o animación suave consistente con `analizar.html`
+
+==================================================
+7. ORDEN EXACTO DE RENDERIZADO DEL PERFIL
+==================================================
+
+Cuando se muestre un candidato, renderizar en este orden EXACTO:
+
+--------------------------------------------------
+A) HEADER DEL CANDIDATO
+--------------------------------------------------
+
+Mostrar:
+- nombre completo
+- partido
+- edad
+- profesión
+- resumen
+- formación académica
+
+La formación académica debe mostrarse como lista clara y limpia.
+
+--------------------------------------------------
+B) HISTORIAL JUDICIAL
+--------------------------------------------------
+
+Esta sección debe mostrarse PRIMERO entre los bloques de historial.
+
+Debe tener un fondo apenas diferenciado, muy sutil, serio y profesional, no alarmista.
+
+Para cada caso mostrar:
+- título del caso
+- tipo (badge neutro)
+- estado con badge de color
+- descripción completa
+- fuentes en texto pequeño
+
+Mapa de colores de estado:
+- `archivado` → verde
+- `absuelto` → verde
+- `activo` → amarillo o naranja
+- `condena` → rojo
+
+Usar `estado_label` si existe.
+Si no existe, usar `estado`.
+
+Si no hay registros judiciales:
+mostrar exactamente:
+`Sin registros judiciales documentados`
+
+--------------------------------------------------
+C) HISTORIAL POLÍTICO
+--------------------------------------------------
+
+Mostrar los items en orden cronológico inverso:
+- más reciente primero
+
+Cada item debe mostrar:
+- cargo
+- partido
+- periodo
+- descripción
+
+--------------------------------------------------
+D) HISTORIAL PROFESIONAL
+--------------------------------------------------
+
+Mostrar los items en orden cronológico inverso:
+- más reciente primero
+
+Cada item debe mostrar:
+- cargo
+- institución
+- periodo
+- descripción
+
+--------------------------------------------------
+E) CONTROVERSIAS / CONTEXTO SOCIAL
+--------------------------------------------------
+
+Cada item debe mostrar:
+- título en negrita
+- descripción objetiva
+
+--------------------------------------------------
+F) PARTIDO POLÍTICO
+--------------------------------------------------
+
+Mostrar:
+- nombre
+- símbolo
+- ideología
+- fundación
+- historia
+- desempeño electoral
+
+--------------------------------------------------
+G) DATOS IMPORTANTES
+--------------------------------------------------
+
+Mostrar como lista de puntos destacados.
+
+--------------------------------------------------
+H) LÍNEA DE TIEMPO
+--------------------------------------------------
+
+Renderizar los hitos del candidato ordenados cronológicamente.
+
+Puede ser vertical u horizontal, pero debe:
+- verse limpia
+- ser clara
+- verse bien en desktop y mobile
+- mantener coherencia total con el resto del sitio
+
+==================================================
+8. ORDENAMIENTO Y TOLERANCIA DE DATOS
+==================================================
+
+Implementar funciones seguras para:
+
+- ordenar `historial_politico` por periodo si es posible
+- ordenar `historial_profesional` por periodo si es posible
+- ordenar `linea_de_tiempo` por `año`
+
+Si no se puede parsear perfectamente un periodo:
+- no romper nada
+- mantener el orden original del JSON como fallback
+
+Esto es importante porque algunos periodos pueden venir como texto complejo.
+
+==================================================
+9. MANEJO DE ERRORES
+==================================================
+
+Necesito manejo elegante de errores.
+
+### Si falla la carga del manifest:
+Mostrar:
+`No se pudo cargar la lista de candidatos`
+
+### Si falla la carga de un JSON:
+Mostrar:
+`No se pudo cargar la información del candidato`
+
+### Si falta alguna sección:
+No romper la página.
+Ocultar la sección o mostrar mensaje limpio según corresponda.
+
+NO mostrar errores técnicos crudos en pantalla.
+NO mostrar stack traces.
+NO romper el layout.
+
+==================================================
+10. DISEÑO Y CONSISTENCIA VISUAL
+==================================================
+
+Esto es MUY IMPORTANTE:
+
+La página debe sentirse como una parte natural del proyecto actual.
+
+Por tanto:
+- reutilizar la misma navbar
+- reutilizar el mismo footer
+- reutilizar las mismas fuentes
+- reutilizar cards, badges, contenedores y patrones visuales del sitio
+- mantener la misma jerarquía tipográfica
+- mantener espaciados coherentes
+- mantener el mismo tono visual serio y técnico
+
+NO quiero:
+- una landing distinta
+- estilos inventados
+- una sección que parezca ajena al proyecto
+- colores nuevos innecesarios
+- componentes fuera de estilo
+
+==================================================
+11. ANIMACIONES Y EXPERIENCIA DE USUARIO
+==================================================
+
+Quiero transiciones suaves al cargar el perfil del candidato, similares al estilo de `analizar.html`.
+
+La animación debe ser:
+- sobria
+- rápida
+- limpia
+- no exagerada
+
+También:
+- buen comportamiento en móvil
+- dropdown funcional y claro
+- lectura cómoda
+- secciones bien separadas
+- scroll natural
+
+==================================================
+12. PREPARACIÓN PARA CRECIMIENTO
+==================================================
+
+Quiero que el sistema quede preparado para crecer.
+
+Eso significa:
+- poder añadir nuevos candidatos solo subiendo un nuevo JSON a `/public/trayectoria/`
+- luego agregando su referencia en `manifest.json`
+- y que automáticamente aparezca en el selector
+- sin rehacer el código
+
+==================================================
+13. NO HARDCODEAR DATOS REALES
+==================================================
+
+No quiero candidatos quemados dentro de `trayectoria.html`.
+
+Quiero que todo dependa de:
+- `manifest.json`
+- archivos JSON individuales por candidato dentro de `/public/trayectoria/`
+
+==================================================
+14. ENTREGABLE FINAL
+==================================================
+
+Haz todos los cambios directamente en el proyecto y deja funcionando:
+
+1. Nuevo link “Trayectoria” en la navbar de todas las páginas indicadas
+2. Nueva página `trayectoria.html`
+3. Sistema de carga mediante:
+   - `/public/trayectoria/manifest.json`
+   - archivos JSON individuales por candidato
+4. Render completo de trayectoria con el orden exacto solicitado
+5. Manejo elegante de errores
+6. Diseño totalmente consistente con el resto del sitio
+7. Implementación responsive
+8. Sin romper nada de lo existente
+
+==================================================
+15. IMPORTANTE SOBRE IMPLEMENTACIÓN
+==================================================
+
+Antes de escribir código:
+- revisa cómo está construida actualmente `analizar.html`
+- reutiliza su lógica visual y estructura general
+- adáptate a la arquitectura real del proyecto
+- no generes una solución genérica
+- intégralo como parte real del sistema actual
+
+QUIERO UNA IMPLEMENTACIÓN REAL, COHERENTE, ESCALABLE Y COMPLETA.

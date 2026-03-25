@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trayectoria · Planes de Gobierno</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="public/styles/globals.css">
+  <style>
+    /* ── Selector card ─────────────────────────────────── */
+    .tray-selector-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 22px 26px;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      box-shadow: var(--shadow-sm);
+    }
+    .tray-selector-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-2);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .tray-select {
+      flex: 1;
+      min-width: 220px;
+      padding: 10px 38px 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: 14.5px;
+      color: var(--text);
+      background-color: var(--bg);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23777' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      appearance: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .tray-select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(181,18,27,0.08);
+    }
+
+    /* ── Profile fade-in ───────────────────────────────── */
+    #trayProfile {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.28s ease, transform 0.28s ease;
+    }
+    #trayProfile.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── Empty / error states ──────────────────────────── */
+    .tray-state {
+      text-align: center;
+      padding: 72px 20px;
+      color: var(--muted);
+    }
+    .tray-state-icon {
+      font-size: 2.2rem;
+      opacity: 0.28;
+      margin-bottom: 14px;
+    }
+    .tray-state p { margin: 0; font-size: 15px; line-height: 1.6; }
+    .tray-state code {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1px 6px;
+      font-size: 13px;
+    }
+
+    /* ── Candidate header ──────────────────────────────── */
+    .tray-header {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px 30px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+    .tray-header-name {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(1.45rem, 3vw, 2.1rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin: 0 0 5px;
+    }
+    .tray-header-party {
+      font-size: 14px;
+      color: var(--muted);
+      margin: 0 0 18px;
+    }
+    .tray-meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .tray-meta-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 12px;
+      border-radius: 99px;
+      font-size: 12.5px;
+      font-weight: 500;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text-2);
+    }
+    .tray-summary {
+      font-size: 14.5px;
+      color: var(--text-2);
+      line-height: 1.72;
+      margin: 0 0 20px;
+    }
+    .tray-edu-label {
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--muted);
+      margin: 0 0 10px;
+    }
+    .tray-edu-list {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .tray-edu-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      font-size: 13.5px;
+      color: var(--text-2);
+      line-height: 1.5;
+    }
+    .tray-edu-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--primary);
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+
+    /* ── Section wrapper ───────────────────────────────── */
+    .tray-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 22px 26px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+    .tray-section-title {
+      font-family: 'Sora', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-soft);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    /* ── Judicial section (slightly tinted) ────────────── */
+    .tray-judicial-section {
+      background: #fafaf9;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 22px 26px;
+      margin-bottom: 16px;
+    }
+    .tray-judicial-empty {
+      font-size: 13.5px;
+      color: var(--muted);
+      font-style: italic;
+    }
+    .tray-judicial-item {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .tray-judicial-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .tray-judicial-item:first-child { padding-top: 0; }
+    .tray-judicial-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 9px;
+      flex-wrap: wrap;
+    }
+    .tray-judicial-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      flex: 1;
+      line-height: 1.4;
+    }
+    .tray-badge-row { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; flex-shrink: 0; }
+    .tray-badge {
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 99px;
+      white-space: nowrap;
+    }
+    .tray-badge-neutral { background: var(--bg); border: 1px solid var(--border); color: var(--text-2); }
+    .tray-badge-green  { background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; }
+    .tray-badge-yellow { background: #fef9c3; color: #854d0e; border: 1px solid #fde68a; }
+    .tray-badge-orange { background: #fff7ed; color: #c2410c; border: 1px solid #fed7aa; }
+    .tray-badge-red    { background: #fee2e2; color: #b91c1c; border: 1px solid #fecaca; }
+    .tray-judicial-desc {
+      font-size: 13.5px;
+      color: var(--text-2);
+      line-height: 1.65;
+      margin-bottom: 8px;
+    }
+    .tray-sources {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── History (political / professional) ────────────── */
+    .tray-history-item {
+      display: grid;
+      grid-template-columns: 108px 1fr;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .tray-history-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .tray-history-item:first-child { padding-top: 0; }
+    .tray-history-period {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--primary);
+      line-height: 1.45;
+      padding-top: 2px;
+    }
+    .tray-history-role {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+    .tray-history-org {
+      font-size: 12.5px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .tray-history-desc {
+      font-size: 13.5px;
+      color: var(--text-2);
+      line-height: 1.62;
+    }
+
+    /* ── Controversias ─────────────────────────────────── */
+    .tray-contro-item {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .tray-contro-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .tray-contro-item:first-child { padding-top: 0; }
+    .tray-contro-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .tray-contro-desc {
+      font-size: 13.5px;
+      color: var(--text-2);
+      line-height: 1.65;
+    }
+
+    /* ── Partido ───────────────────────────────────────── */
+    .tray-partido-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .tray-partido-field {}
+    .tray-partido-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+    .tray-partido-value {
+      font-size: 13.5px;
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    /* ── Datos importantes ─────────────────────────────── */
+    .tray-datos-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border-soft);
+      font-size: 13.5px;
+      color: var(--text-2);
+      line-height: 1.6;
+    }
+    .tray-datos-item:last-child { border-bottom: none; }
+    .tray-datos-item:first-child { padding-top: 0; }
+    .tray-datos-bullet {
+      color: var(--primary);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── Timeline ──────────────────────────────────────── */
+    .tray-timeline {
+      position: relative;
+      padding-left: 22px;
+    }
+    .tray-timeline::before {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: var(--border);
+      border-radius: 2px;
+    }
+    .tray-tl-item {
+      position: relative;
+      padding: 0 0 22px 18px;
+    }
+    .tray-tl-item:last-child { padding-bottom: 0; }
+    .tray-tl-item::before {
+      content: '';
+      position: absolute;
+      left: -5px;
+      top: 5px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: white;
+      border: 2px solid var(--primary);
+    }
+    .tray-tl-year {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 3px;
+    }
+    .tray-tl-hito {
+      font-size: 13.5px;
+      color: var(--text-2);
+      line-height: 1.6;
+    }
+
+    /* ── Responsive ────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .tray-header { padding: 20px; }
+      .tray-section, .tray-judicial-section { padding: 18px 18px; }
+      .tray-history-item { grid-template-columns: 1fr; gap: 3px; }
+      .tray-history-period { color: var(--primary); }
+      .tray-partido-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 420px) {
+      .tray-partido-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="topbar-inner container">
+    <a href="index.html" class="brand">
+      <img class="brand-mark" src="public/logo-apc.png" alt="APC">
+      <div class="brand-text">
+        <span class="brand-title">Planes de Gobierno</span>
+        <span class="brand-subtitle">Evaluación Técnica · Perú 2026</span>
+      </div>
+    </a>
+    <div class="topnav">
+      <a href="analizar.html">Analizar</a>
+      <a href="comparar.html">Comparar</a>
+      <a href="trayectoria.html" class="active">Trayectoria</a>
+      <a href="heatmap.html">Heatmap</a>
+      <a href="metodologia.html">Metodología</a>
+      <a href="/convertir.html">Convertir DOCX</a>
+      <a href="validacion.html">Validación</a>
+      <a href="https://forms.gle/fNuVHGdVTvSBqqNM7" target="_blank" rel="noopener noreferrer">Sugerir candidato</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-wrap container" style="max-width:860px">
+
+  <div class="page-intro">
+    <div class="home-eyebrow">▸ Perfil biográfico y político</div>
+    <h1>Trayectoria de candidatos</h1>
+    <p>Historial político, judicial, profesional, controversias y línea de tiempo de cada candidato presidencial.</p>
+  </div>
+
+  <!-- Selector -->
+  <div class="tray-selector-card">
+    <span class="tray-selector-label">Candidato</span>
+    <select id="traySelect" class="tray-select">
+      <option value="">— Selecciona un candidato —</option>
+    </select>
+  </div>
+
+  <!-- States -->
+  <div id="trayInitial" class="tray-state">
+    <div class="tray-state-icon">◌</div>
+    <p>Selecciona un candidato para ver su trayectoria completa</p>
+  </div>
+
+  <div id="trayError" class="tray-state" style="display:none">
+    <div class="tray-state-icon">⚠</div>
+    <p id="trayErrorMsg">No se pudo cargar la información del candidato</p>
+  </div>
+
+  <!-- Profile (rendered dynamically) -->
+  <div id="trayProfile" style="display:none"></div>
+
+</div>
+
+<script>
+const MANIFEST = 'public/trayectoria/manifest.json';
+
+// ── Utilities ─────────────────────────────────────────────────────────────────
+
+function safeStr(val, fallback) {
+  const v = val == null ? '' : String(val).trim();
+  return v || (fallback != null ? fallback : '');
+}
+
+function parseStartYear(period) {
+  if (!period) return null;
+  const m = String(period).match(/\d{4}/);
+  return m ? parseInt(m[0], 10) : null;
+}
+
+function sortByPeriodDesc(arr, key) {
+  if (!Array.isArray(arr) || !arr.length) return [];
+  return [...arr].sort((a, b) => {
+    const ya = parseStartYear(a[key]);
+    const yb = parseStartYear(b[key]);
+    if (ya && yb) return yb - ya;
+    return 0;
+  });
+}
+
+function judicialBadgeClass(estado) {
+  const s = safeStr(estado).toLowerCase();
+  if (s === 'archivado' || s === 'absuelto') return 'tray-badge-green';
+  if (s === 'activo')  return 'tray-badge-orange';
+  if (s === 'condena') return 'tray-badge-red';
+  return 'tray-badge-yellow';
+}
+
+function escHtml(str) {
+  return safeStr(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+// ── Render helpers ────────────────────────────────────────────────────────────
+
+function renderSection(title, svgIcon, bodyHtml) {
+  return `
+<div class="tray-section">
+  <div class="tray-section-title">${svgIcon ? svgIcon + ' ' : ''}${title}</div>
+  ${bodyHtml}
+</div>`;
+}
+
+// ── Full profile render ───────────────────────────────────────────────────────
+
+function renderProfile(d) {
+  const parts = [];
+
+  // ── A) Header ──────────────────────────────────────────────────────────────
+  const metaChips = [];
+  if (d.edad)            metaChips.push(`<span class="tray-meta-chip">◉ ${escHtml(String(d.edad))} años</span>`);
+  if (d.profesion)       metaChips.push(`<span class="tray-meta-chip">◈ ${escHtml(d.profesion)}</span>`);
+  if (d.fecha_nacimiento) metaChips.push(`<span class="tray-meta-chip">Nacido: ${escHtml(d.fecha_nacimiento)}</span>`);
+
+  const edItems = Array.isArray(d.formacion_academica) ? d.formacion_academica : [];
+  const eduHtml = edItems.length ? `
+    <div class="tray-edu-label">Formación académica</div>
+    <div class="tray-edu-list">
+      ${edItems.map(e => `<div class="tray-edu-item"><div class="tray-edu-dot"></div><span>${escHtml(e)}</span></div>`).join('')}
+    </div>` : '';
+
+  parts.push(`
+<div class="tray-header">
+  <h1 class="tray-header-name">${escHtml(d.nombre || 'Candidato')}</h1>
+  <p class="tray-header-party">${escHtml(d.partido || '')}</p>
+  ${metaChips.length ? `<div class="tray-meta-row">${metaChips.join('')}</div>` : ''}
+  ${d.resumen ? `<p class="tray-summary">${escHtml(d.resumen)}</p>` : ''}
+  ${eduHtml}
+</div>`);
+
+  // ── B) Historial Judicial ──────────────────────────────────────────────────
+  const judicial = Array.isArray(d.historial_judicial) ? d.historial_judicial : [];
+  const judicialBody = judicial.length === 0
+    ? `<p class="tray-judicial-empty">Sin registros judiciales documentados</p>`
+    : judicial.map(j => {
+        const label = safeStr(j.estado_label || j.estado);
+        const fuentes = Array.isArray(j.fuentes) && j.fuentes.length
+          ? `<div class="tray-sources">Fuentes: ${j.fuentes.map(f => escHtml(f)).join(' · ')}</div>` : '';
+        return `
+<div class="tray-judicial-item">
+  <div class="tray-judicial-head">
+    <span class="tray-judicial-name">${escHtml(j.titulo || 'Caso sin nombre')}</span>
+    <div class="tray-badge-row">
+      ${j.tipo  ? `<span class="tray-badge tray-badge-neutral">${escHtml(j.tipo)}</span>`  : ''}
+      ${label   ? `<span class="tray-badge ${judicialBadgeClass(j.estado)}">${escHtml(label)}</span>` : ''}
+    </div>
+  </div>
+  ${j.descripcion ? `<div class="tray-judicial-desc">${escHtml(j.descripcion)}</div>` : ''}
+  ${fuentes}
+</div>`;
+      }).join('');
+
+  const judSvg = `<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`;
+  parts.push(`
+<div class="tray-judicial-section">
+  <div class="tray-section-title">${judSvg} Historial judicial</div>
+  ${judicialBody}
+</div>`);
+
+  // ── C) Historial Político ──────────────────────────────────────────────────
+  const politico = sortByPeriodDesc(d.historial_politico, 'periodo');
+  if (politico.length) {
+    const svgPol = `<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>`;
+    parts.push(renderSection('Historial político', svgPol, `
+${politico.map(h => `
+<div class="tray-history-item">
+  <div class="tray-history-period">${escHtml(h.periodo || '—')}</div>
+  <div>
+    <div class="tray-history-role">${escHtml(h.cargo || '—')}</div>
+    ${h.partido     ? `<div class="tray-history-org">${escHtml(h.partido)}</div>` : ''}
+    ${h.descripcion ? `<div class="tray-history-desc">${escHtml(h.descripcion)}</div>` : ''}
+  </div>
+</div>`).join('')}`));
+  }
+
+  // ── D) Historial Profesional ───────────────────────────────────────────────
+  const profesional = sortByPeriodDesc(d.historial_profesional, 'periodo');
+  if (profesional.length) {
+    const svgProf = `<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>`;
+    parts.push(renderSection('Historial profesional', svgProf, `
+${profesional.map(h => `
+<div class="tray-history-item">
+  <div class="tray-history-period">${escHtml(h.periodo || '—')}</div>
+  <div>
+    <div class="tray-history-role">${escHtml(h.cargo || '—')}</div>
+    ${h.institucion ? `<div class="tray-history-org">${escHtml(h.institucion)}</div>` : ''}
+    ${h.descripcion ? `<div class="tray-history-desc">${escHtml(h.descripcion)}</div>` : ''}
+  </div>
+</div>`).join('')}`));
+  }
+
+  // ── E) Controversias ──────────────────────────────────────────────────────
+  const contro = Array.isArray(d.controversias) ? d.controversias : [];
+  if (contro.length) {
+    const svgCon = `<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>`;
+    parts.push(renderSection('Controversias y contexto social', svgCon, `
+${contro.map(c => `
+<div class="tray-contro-item">
+  <div class="tray-contro-title">${escHtml(c.titulo || '')}</div>
+  ${c.descripcion ? `<div class="tray-contro-desc">${escHtml(c.descripcion)}</div>` : ''}
+</div>`).join('')}`));
+  }
+
+  // ── F) Partido Político ────────────────────────────────────────────────────
+  const partido = d.partido_info && typeof d.partido_info === 'object' ? d.partido_info : {};
+  const partFields = [
+    ['nombre',              'Nombre'],
+    ['simbolo',             'Símbolo / lema'],
+    ['ideologia',           'Ideología'],
+    ['fundacion',           'Fundación'],
+    ['historia',            'Historia'],
+    ['desempeno_electoral', 'Desempeño electoral'],
+  ];
+  const partHtml = partFields
+    .filter(([k]) => partido[k])
+    .map(([k, lbl]) => `
+<div class="tray-partido-field">
+  <div class="tray-partido-label">${lbl}</div>
+  <div class="tray-partido-value">${escHtml(partido[k])}</div>
+</div>`).join('');
+  if (partHtml) {
+    const svgPart = `<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>`;
+    parts.push(renderSection('Partido político', svgPart, `<div class="tray-partido-grid">${partHtml}</div>`));
+  }
+
+  // ── G) Datos Importantes ───────────────────────────────────────────────────
+  const datos = Array.isArray(d.datos_importantes) ? d.datos_importantes : [];
+  if (datos.length) {
+    const svgDat = `<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>`;
+    parts.push(renderSection('Datos importantes', svgDat, `
+${datos.map(item => `
+<div class="tray-datos-item">
+  <span class="tray-datos-bullet">▸</span>
+  <span>${escHtml(item)}</span>
+</div>`).join('')}`));
+  }
+
+  // ── H) Línea de Tiempo ────────────────────────────────────────────────────
+  const timeline = [...(Array.isArray(d.linea_de_tiempo) ? d.linea_de_tiempo : [])]
+    .sort((a, b) => (a.año || 0) - (b.año || 0));
+  if (timeline.length) {
+    const svgTl = `<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`;
+    parts.push(renderSection('Línea de tiempo', svgTl, `
+<div class="tray-timeline">
+  ${timeline.map(t => `
+  <div class="tray-tl-item">
+    <div class="tray-tl-year">${escHtml(String(t.año || ''))}</div>
+    <div class="tray-tl-hito">${escHtml(t.hito || '')}</div>
+  </div>`).join('')}
+</div>`));
+  }
+
+  return parts.join('\n');
+}
+
+// ── Load candidate profile ────────────────────────────────────────────────────
+
+async function loadProfile(url) {
+  const profile = document.getElementById('trayProfile');
+  const initial = document.getElementById('trayInitial');
+  const errBox  = document.getElementById('trayError');
+
+  initial.style.display = 'none';
+  errBox.style.display  = 'none';
+  profile.style.display = 'none';
+  profile.classList.remove('visible');
+
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    profile.innerHTML = renderProfile(data);
+    profile.style.display = '';
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => profile.classList.add('visible'));
+    });
+    window.scrollTo({ top: profile.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+  } catch (err) {
+    console.error('[trayectoria] Error al cargar perfil:', err);
+    document.getElementById('trayErrorMsg').textContent = 'No se pudo cargar la información del candidato. Verifica que el archivo JSON esté disponible.';
+    errBox.style.display = '';
+  }
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+
+async function init() {
+  const sel = document.getElementById('traySelect');
+
+  let manifest;
+  try {
+    const res = await fetch(MANIFEST);
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    manifest = await res.json();
+  } catch (err) {
+    console.error('[trayectoria] Error al cargar manifest:', err);
+    document.getElementById('trayInitial').innerHTML = `
+      <div class="tray-state-icon">⚠</div>
+      <p>No se pudo cargar la lista de candidatos</p>`;
+    return;
+  }
+
+  const candidatos = Array.isArray(manifest.candidatos) ? manifest.candidatos : [];
+
+  if (candidatos.length === 0) {
+    document.getElementById('trayInitial').innerHTML = `
+      <div class="tray-state-icon">◌</div>
+      <p>No hay candidatos registrados aún.<br>
+      Agrega archivos JSON en <code>public/trayectoria/</code> y regístralos en <code>manifest.json</code>.</p>`;
+    return;
+  }
+
+  candidatos.forEach(c => {
+    const opt = document.createElement('option');
+    opt.value = c.archivo;
+    opt.textContent = c.nombre;
+    sel.appendChild(opt);
+  });
+
+  // Support ?id= URL param to preselect a candidate
+  const params = new URLSearchParams(location.search);
+  const preId = params.get('id');
+  if (preId) {
+    const match = candidatos.find(c => c.id === preId);
+    if (match) {
+      sel.value = match.archivo;
+      loadProfile(match.archivo);
+    }
+  }
+
+  sel.addEventListener('change', () => {
+    if (!sel.value) {
+      document.getElementById('trayProfile').style.display = 'none';
+      document.getElementById('trayProfile').classList.remove('visible');
+      document.getElementById('trayInitial').style.display = '';
+      return;
+    }
+    loadProfile(sel.value);
+  });
+}
+
+init();
+</script>
+</body>
+</html>

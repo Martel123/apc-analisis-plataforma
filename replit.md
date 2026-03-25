@@ -22,6 +22,7 @@ Agregar un nuevo `.json` a `/analisis` auto-registra el candidato en toda la pla
 ├── comparar.html         → Comparación multi-candidato (radar, barras, tabla, brechas)
 ├── heatmap.html          → Heatmap global de variables × candidatos
 ├── validacion.html       → Validador de estructura JSON
+├── trayectoria.html      → Perfiles biográficos y políticos (carga desde /public/trayectoria/)
 │
 ├── /analisis/            ← FUENTE ÚNICA DE VERDAD
 │   └── demo-candidato.json  → Plantilla oficial con schema v2.0 completo
@@ -32,6 +33,9 @@ Agregar un nuevo `.json` a `/analisis` auto-registra el candidato en toda la pla
     │   ├── engine.js     → Engine: getKpis(), getRadarData(), getBlockComparisonData(), etc.
     │   ├── charts.js     → Charts: radar(), bar(), heatmap()
     │   └── ui.js         → UI helpers: scoreBadge(), criteriaBars(), emptyState(), etc.
+    ├── /trayectoria/
+    │   ├── manifest.json → Índice de candidatos para trayectoria.html
+    │   └── *.json        → Perfil biográfico/político por candidato
     └── /styles/
         ├── globals.css   → Sistema de diseño editorial completo
         └── home.css      → Estilos compat para páginas legacy (comparar, heatmap, validacion)
