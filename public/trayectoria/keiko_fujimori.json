@@ -1,0 +1,167 @@
+{
+  "id": "keiko-fujimori-apc-juridica",
+  "nombre": "Keiko Sofía Fujimori Higuchi",
+  "partido": "Fuerza Popular",
+  "fecha_nacimiento": "",
+  "edad": 50,
+  "profesion": "Administradora de empresas",
+  "formacion_academica": [
+    "Colegio Sagrados Corazones Recoleta",
+    "Boston University (Administración de Empresas)",
+    "Columbia University (estudios de posgrado)"
+  ],
+  "resumen": "Administradora de empresas con trayectoria en la política peruana. Se desempeñó como Primera Dama del Perú entre 1994 y 2000. Posteriormente fue congresista (2006–2011) y fundadora del partido Fuerza Popular. Ha participado en tres procesos electorales presidenciales consecutivos (2011, 2016 y 2021), alcanzando la segunda vuelta en todos ellos. Su actividad política se enmarca dentro del fujimorismo, corriente asociada al gobierno de Alberto Fujimori.",
+  "historial_judicial": [
+    {
+      "titulo": "Presunto lavado de activos (caso Odebrecht)",
+      "tipo": "Penal",
+      "estado": "Acusación fiscal (proceso en curso)",
+      "estado_label": "Acusación fiscal (proceso en curso)",
+      "descripcion": "El Ministerio Público investiga a Keiko Fujimori por presunto lavado de activos en el marco del financiamiento de sus campañas presidenciales de 2011 y 2016. Según la tesis fiscal, el partido Fuerza Popular habría recibido aportes económicos no declarados provenientes de la empresa Odebrecht y de otros aportantes privados. Estos fondos habrían sido introducidos al sistema financiero mediante la utilización de \"aportantes simulados\", es decir, personas que figuraban como donantes sin haber realizado aportes reales. La Fiscalía sostiene que esta estructura habría tenido como finalidad ocultar el origen de los fondos. En este contexto, el Ministerio Público presentó acusación formal solicitando una pena privativa de libertad, así como sanciones adicionales relacionadas con el financiamiento político.",
+      "fuentes": [
+        "Ministerio Público — https://www.fiscalia.gob.pe",
+        "Poder Judicial — https://www.pj.gob.pe",
+        "BBC Mundo — https://www.bbc.com/mundo",
+        "La República — https://larepublica.pe"
+      ]
+    },
+    {
+      "titulo": "Prisión preventiva en el marco del caso Odebrecht",
+      "tipo": "Penal",
+      "estado": "Medida correctiva aplicada y posteriormente revocada",
+      "estado_label": "Medida correctiva aplicada y posteriormente revocada",
+      "descripcion": "Durante la investigación por lavado de activos, el Poder Judicial dictó prisión preventiva contra Keiko Fujimori en dos ocasiones (2018 y 2020), al considerar que existía riesgo de obstaculización de la investigación. La medida implicó su reclusión mientras se desarrollaban las diligencias fiscales. Posteriormente, el Tribunal Constitucional resolvió un habeas corpus a su favor, ordenando su liberación al considerar que se vulneraron derechos fundamentales en la aplicación de la medida.",
+      "fuentes": [
+        "Poder Judicial — https://www.pj.gob.pe",
+        "Tribunal Constitucional — https://tc.gob.pe",
+        "BBC Mundo — https://www.bbc.com/mundo"
+      ]
+    },
+    {
+      "titulo": "Presunta obstrucción a la justicia",
+      "tipo": "Penal",
+      "estado": "Investigación",
+      "estado_label": "Investigación",
+      "descripcion": "La Fiscalía ha investigado la posible existencia de actos orientados a interferir en el desarrollo del proceso judicial, incluyendo presuntas coordinaciones con personas del entorno político para influir en testimonios. Estas investigaciones se encuentran vinculadas al caso principal de financiamiento de campañas y forman parte de una línea de investigación orientada a determinar si existió interferencia en la obtención de pruebas o declaraciones.",
+      "fuentes": [
+        "Ministerio Público — https://www.fiscalia.gob.pe",
+        "El Comercio — https://elcomercio.pe"
+      ]
+    }
+  ],
+  "historial_politico": [
+    {
+      "cargo": "Candidata presidencial",
+      "partido": "Fuerza 2011",
+      "periodo": "2011",
+      "descripcion": "Segunda vuelta electoral perdida ante Ollanta Humala (51.45% frente a 48.55%)."
+    },
+    {
+      "cargo": "Candidata presidencial",
+      "partido": "Fuerza Popular",
+      "periodo": "2016",
+      "descripcion": "Segunda vuelta electoral perdida ante Pedro Pablo Kuczynski (50.12% frente a 49.88%)."
+    },
+    {
+      "cargo": "Candidata presidencial",
+      "partido": "Fuerza Popular",
+      "periodo": "2021",
+      "descripcion": "Segunda vuelta electoral perdida ante Pedro Castillo (50.126% frente a 49.874%)."
+    }
+  ],
+  "historial_profesional": [
+    {
+      "cargo": "Primera Dama del Perú",
+      "institucion": "Presidencia de la República",
+      "periodo": "1994 - 2000",
+      "descripcion": "Asumió funciones protocolares durante el gobierno de Alberto Fujimori, en un contexto de crisis institucional y política."
+    },
+    {
+      "cargo": "Congresista de la República",
+      "institucion": "Congreso del Perú",
+      "periodo": "2006 - 2011",
+      "descripcion": "Representante por Lima; su participación legislativa consolidó su presencia en la política nacional tras el fin del gobierno de su padre."
+    },
+    {
+      "cargo": "Lideresa política",
+      "institucion": "Fuerza Popular",
+      "periodo": "2010 - actualidad",
+      "descripcion": "Fundadora y principal figura del partido político."
+    }
+  ],
+  "controversias": [
+    {
+      "titulo": "Mayoría absoluta en el Congreso (2016–2019)",
+      "descripcion": "Fuerza Popular obtuvo 73 de 130 escaños en el Congreso en las elecciones de 2016. Esta mayoría permitió al partido ejercer control significativo sobre la agenda legislativa y las comisiones parlamentarias. Durante este periodo se registraron cuestionamientos sobre el uso de dicha mayoría, particularmente en relación con la censura de ministros y la relación con el Poder Ejecutivo."
+    },
+    {
+      "titulo": "Denuncias de fraude electoral (2021)",
+      "descripcion": "Tras la segunda vuelta electoral, Fuerza Popular presentó múltiples solicitudes de nulidad de actas. Estas solicitudes se basaron en presuntas irregularidades en mesas de votación. Los organismos electorales (ONPE y JNE) evaluaron los recursos conforme al marco legal y validaron los resultados oficiales."
+    },
+    {
+      "titulo": "Conflictos institucionales (2016–2019)",
+      "descripcion": "Periodo de confrontación entre el Congreso y el Poder Ejecutivo. Se registraron censuras ministeriales, interpelaciones y tensiones políticas que formaron parte de un escenario de inestabilidad institucional."
+    },
+    {
+      "titulo": "Cuestionamientos por financiamiento político",
+      "descripcion": "Investigaciones sobre el origen de fondos de campañas. Las investigaciones fiscales generaron debate público sobre la transparencia del financiamiento político en el país."
+    },
+    {
+      "titulo": "Relación con el fujimorismo histórico",
+      "descripcion": "Vinculación política con el expresidente Alberto Fujimori. La figura política de Keiko Fujimori se desarrolla dentro del marco del fujimorismo, lo que ha generado debates sobre continuidad política, memoria histórica y evaluación del periodo 1990–2000."
+    }
+  ],
+  "partido_info": {
+    "nombre": "Fuerza Popular",
+    "simbolo": "",
+    "ideologia": "Derecha, conservadurismo",
+    "fundacion": "2010",
+    "historia": "Fundado en 2010 como \"Fuerza 2011\", el partido surge como continuidad política del fujimorismo. Ha mantenido participación constante en procesos electorales presidenciales y parlamentarios.",
+    "desempeno_electoral": "Fuerza Popular ha sido uno de los partidos con mayor presencia en el sistema político peruano durante la última década. Su desempeño ha estado marcado por: ejercicio de mayoría parlamentaria (2016–2019), participación en conflictos entre poderes del Estado, investigaciones fiscales sobre financiamiento político, y cuestionamientos sobre prácticas internas del partido. Estas dinámicas han influido en su rol dentro del sistema político y en la percepción pública del partido."
+  },
+  "linea_de_tiempo": [
+    {
+      "año": 1994,
+      "hito": "Primera Dama del Perú"
+    },
+    {
+      "año": 2006,
+      "hito": "Elegida congresista"
+    },
+    {
+      "año": 2010,
+      "hito": "Fundación de Fuerza 2011"
+    },
+    {
+      "año": 2011,
+      "hito": "Primera candidatura presidencial"
+    },
+    {
+      "año": 2016,
+      "hito": "Segunda candidatura y mayoría congresal"
+    },
+    {
+      "año": 2018,
+      "hito": "Primera prisión preventiva"
+    },
+    {
+      "año": 2020,
+      "hito": "Segunda prisión preventiva"
+    },
+    {
+      "año": 2021,
+      "hito": "Tercera candidatura presidencial"
+    }
+  ],
+  "datos_importantes": [
+    "El Ministerio Público ha formulado acusación solicitando pena privativa de libertad en su contra en el marco del caso Odebrecht",
+    "El Tribunal Constitucional ordenó su liberación tras declarar fundado un habeas corpus relacionado con la prisión preventiva",
+    "Su partido obtuvo la mayor representación parlamentaria en el Congreso 2016–2019 (73 escaños)",
+    "Ha alcanzado la segunda vuelta electoral en tres procesos presidenciales consecutivos (2011, 2016 y 2021)",
+    "Fue Primera Dama del Perú entre 1994 y 2000 durante el gobierno de Alberto Fujimori",
+    "Fundadora y lideresa del partido Fuerza Popular",
+    "Estuvo en prisión preventiva en dos ocasiones (2018 y 2020) durante la investigación por lavado de activos",
+    "Figura política con presencia sostenida en procesos electorales y liderazgo dentro del fujimorismo",
+    "Su trayectoria combina participación institucional, liderazgo partidario y vinculación con investigaciones fiscales relevantes en el ámbito del financiamiento político"
+  ]
+}

@@ -1,3 +1,24 @@
 {
-  "candidatos": []
+  "candidatos": [
+    {
+      "id": "ronald_atencio",
+      "nombre": "Ronald Darwin Atencio Sotomayor",
+      "archivo": "/trayectoria/ronald_atencio.json"
+    },
+    {
+      "id": "carlos_alvarez",
+      "nombre": "Carlos Álvarez",
+      "archivo": "/trayectoria/carlos_alvarez.json"
+    },
+    {
+      "id": "keiko_fujimori",
+      "nombre": "Keiko Fujimori",
+      "archivo": "/trayectoria/keiko_fujimori.json"
+    },
+    {
+      "id": "williams_zapata",
+      "nombre": "Williams Zapata",
+      "archivo": "/trayectoria/williams_zapata.json"
+    }
+  ]
 }

@@ -1,0 +1,67 @@
+Quiero que modifiques la sección actual llamada “Trayectoria” dentro de mi proyecto.
+
+IMPORTANTE:
+- NO quiero una demo aparte
+- NO quiero un archivo de ejemplo separado
+- NO quiero un componente desconectado
+- NO quiero pseudocódigo
+- Quiero que edites directamente el código real de mi proyecto donde hoy se muestra la sección Trayectoria
+
+OBJETIVO:
+La sección “Trayectoria” actualmente se siente demasiado formal, pesada y con textos muy largos. Quiero mantener EXACTAMENTE la misma información y la misma cantidad de contenido, pero cambiar la forma de presentación para que sea más amigable para el lector.
+
+CAMBIO PRINCIPAL:
+Quiero que la sección funcione con lectura progresiva:
+
+- que al inicio se vean principalmente los títulos de cada apartado
+- que el usuario pueda hacer click en cada título
+- que al hacer click se despliegue el contenido completo de ese apartado
+- que el contenido siga estando completo, sin resumirse ni recortarse
+
+ESTRUCTURA DESEADA:
+- cada apartado de trayectoria debe verse como una tarjeta o bloque desplegable
+- cada bloque debe mostrar:
+  - título visible
+  - indicador visual de expandir/contraer
+- al hacer click:
+  - se abre suavemente
+  - muestra todo el texto completo de esa sección
+- por defecto, los bloques deben estar cerrados o parcialmente cerrados para que no se vea todo el texto de golpe
+
+REGLAS IMPORTANTES:
+- NO cambies la información
+- NO elimines contenido
+- NO reduzcas párrafos
+- NO cambies el orden
+- NO alteres la lógica del JSON
+- NO cambies nombres de campos
+- SOLO cambia la interfaz y la experiencia de lectura
+
+REQUISITOS TÉCNICOS:
+- Trabaja sobre los archivos reales del proyecto
+- Identifica dónde se renderiza actualmente “Trayectoria”
+- Modifica esa implementación existente
+- Mantén compatibilidad con la lógica actual de carga de datos
+- Usa el estilo actual de la web como base
+- Haz que el resultado sea responsive
+- Que funcione bien en móvil y escritorio
+- Usa HTML, CSS y JS según la estructura actual del proyecto
+- No rompas otras secciones
+
+DISEÑO:
+- más limpio
+- más amigable para lectura
+- más visual
+- serio y profesional
+- no infantil
+- no e-commerce
+- con mejor espaciado
+- con mejor jerarquía visual
+
+IMPORTANTE SOBRE LA ENTREGA:
+No quiero que me expliques teoría.
+Quiero que hagas los cambios directamente en el proyecto.
+Al final, indícame:
+1. qué archivos editaste
+2. qué cambiaste en cada archivo
+3. qué comando debo correr o qué commit debo hacer para publicarlo

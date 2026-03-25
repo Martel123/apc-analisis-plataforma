@@ -1,0 +1,177 @@
+{
+  "id": "carlos-alvarez-apc-juridica",
+  "nombre": "Carlos Gonzalo Álvarez Loayza",
+  "partido": "País Para Todos",
+  "fecha_nacimiento": "7 de enero de 1964",
+  "edad": 62,
+  "profesion": "Animador, comediante y conductor de televisión",
+  "formacion_academica": [
+    "Educación primaria y secundaria en Lima",
+    "Sin estudios universitarios concluidos ni formación de posgrado (según declaración jurada ante el JNE)"
+  ],
+  "resumen": "Carlos Gonzalo Álvarez Loayza es un comediante y conductor de televisión con más de cuatro décadas de trayectoria artística en medios peruanos. Sin experiencia previa en cargos públicos ni formación universitaria concluida, postula a la Presidencia de la República para las Elecciones Generales 2026 por el partido País Para Todos. Su candidatura es la primera a un cargo de elección popular. Su afiliación formal a País Para Todos se produjo en 2025, coincidiendo con su inscripción como candidato presidencial. Previamente militó en Vamos Perú, partido al que renunció en 2021. En la encuesta de Datum de marzo de 2026 se ubica en cuarto lugar de intención de voto con aproximadamente 5% de respaldo.",
+  "historial_judicial": [
+    {
+      "titulo": "Condena por delito contra la administración pública (peculado) - Expediente N.° 031-2002",
+      "tipo": "Penal",
+      "estado": "Sentencia inicial emitida (2002), modificada en instancia (3 años suspendidos). Posteriormente absuelto por la Corte Suprema mediante R.N. N.° 3263-2006 (5 de diciembre de 2007)",
+      "estado_label": "Absuelto por la Corte Suprema",
+      "descripcion": "La Tercera Sala Penal Especial de la Corte Superior de Justicia de Lima condenó en 2002 a Carlos Álvarez Loayza como cómplice del delito contra la administración pública en el marco del Expediente N.° 031-2002-SPE-CSJL, proceso vinculado a la red de Vladimiro Montesinos Torres. La sentencia inicial fue de cuatro años de pena privativa de libertad, modificada por los vocales superiores a tres años de prisión suspendida. Posteriormente, la Sala Penal de la Corte Suprema emitió la absolución mediante R.N. N.° 3263-2006, resolviendo absolver al encausado de la acusación fiscal por delito de peculado en agravio del Estado y la sociedad. A inicios de 2026, el programa periodístico 'Beto a Saber' reveló la existencia de esta sentencia. El Jurado Electoral Especial (JEE) de Lima Centro 1 emitió un informe de fiscalización señalando que el candidato habría omitido consignar esta información en su Declaración Jurada de Hoja de Vida ante el JNE. La Corte Superior de Lima informó la existencia del Expediente Judicial N.° 60013-2002-0-1801-JR-PE-04. El candidato sostuvo que la ley electoral exige declarar solo sentencias firmes, vigentes y no anuladas, condición que no aplica en su caso dado que fue absuelto en última instancia.",
+      "fuentes": [
+        "Diario Correo - Carlos Álvarez afirma que fallo supremo anuló proceso judicial (13/01/2026): https://diariocorreo.pe/politica/carlos-alvarez-afirma-que-fallo-supremo-anulo-proceso-judicial-en-su-contra-noticia/",
+        "RPP Noticias - Informe del JEE (18/01/2026): https://rpp.pe/politica/elecciones/informe-del-jee-identifico-que-carlos-alvarez-habria-omitido-informacion-en-su-hoja-de-vida",
+        "El Comercio - Entrevista al candidato (11/2025): https://elcomercio.pe/politica/carlos-alvarez-no-tuve-ninguna-relacion-con-vladimiro-montesinos"
+      ]
+    },
+    {
+      "titulo": "Presunta omisión de información en declaración jurada ante el JNE",
+      "tipo": "Electoral / Administrativo",
+      "estado": "Evaluado por el JEE Lima Centro 1. No derivó en exclusión de candidatura",
+      "estado_label": "Evaluado, sin exclusión",
+      "descripcion": "El Área de Fiscalización de Hoja de Vida del JEE concluyó que existía una posible omisión de información en la declaración jurada del candidato, al no consignar la sentencia del Expediente N.° 031-2002. El candidato argumentó que la ley electoral solo exige declarar sentencias firmes, vigentes y no anuladas, y que la sentencia de 2002 fue posteriormente revertida por la absolución de la Corte Suprema en 2007. El JEE evaluó el caso y no derivó en exclusión de candidatura.",
+      "fuentes": [
+        "RPP Noticias - Informe del JEE (18/01/2026): https://rpp.pe/politica/elecciones/informe-del-jee-identifico-que-carlos-alvarez-habria-omitido-informacion-en-su-hoja-de-vida",
+        "JNE / Voto Informado - Hoja de vida declarada: https://votoinformado.jne.gob.pe"
+      ]
+    }
+  ],
+  "historial_politico": [
+    {
+      "cargo": "Afiliado y militante",
+      "partido": "Vamos Perú",
+      "periodo": "Antes de 2021",
+      "descripcion": "Primer registro político formal. Renunció al partido en 2021."
+    },
+    {
+      "cargo": "Candidato presidencial",
+      "partido": "País Para Todos",
+      "periodo": "2025 - actualidad",
+      "descripcion": "Se afilió formalmente a País Para Todos en julio de 2024, coincidiendo con su inscripción como candidato presidencial. Es la primera postulación a cargo público. Participa en el Debate Presidencial del JNE del 23 de marzo de 2026."
+    }
+  ],
+  "historial_profesional": [
+    {
+      "cargo": "Animador y comediante - Canal estatal TNP (hoy TV Perú)",
+      "institucion": "Televisión Nacional del Perú (Canal 7)",
+      "periodo": "1999 - 2000",
+      "descripcion": "Condujo el programa de humor 'Los Álvarez' en el canal estatal. Este periodo es relevante por las posteriores investigaciones judiciales vinculadas al régimen de Alberto Fujimori."
+    },
+    {
+      "cargo": "Conductor y comediante en múltiples canales privados",
+      "institucion": "ATV, Latina Televisión, América Televisión, Panamericana TV, Willax Televisión",
+      "periodo": "1983 - 2025",
+      "descripcion": "Trayectoria de más de cuatro décadas en televisión peruana. Debutó en 1983 en Panamericana TV con 'Trampolín a la Fama'. Condujo espacios como 'Las mil y una de Carlos Álvarez' (1989-1997), 'Caiga quien caiga' (1998), 'El especial del humor' (2004), 'El cártel del humor' (2012), 'Habla bien' (2015), 'Al diablo con la noticia' (2017), 'Oe... ¿es en serio?' (2019) y 'La vacuna del humor' (2020-2023). En 2025 anunció su retiro artístico."
+    },
+    {
+      "cargo": "Animador y comediante - Andina de Radiodifusión / Willax Televisión",
+      "institucion": "Andina de Radiodifusión y Willax TV",
+      "periodo": "2018 - 2019",
+      "descripcion": "Participación como animador y comediante, consignada en hoja de vida presentada ante el JNE."
+    }
+  ],
+  "controversias": [
+    {
+      "titulo": "Cuestionamiento por presunta omisión de vehículo en declaración de bienes (enero 2026)",
+      "descripcion": "Medios de comunicación señalaron que Carlos Álvarez no habría declarado un vehículo Mazda CX-90 del año 2025 de su empresa en su declaración jurada ante el JNE. El candidato respondió públicamente que el vehículo fue declarado como activo de su empresa en los estados financieros presentados ante el JNE. Argumentó que la norma electoral establece que los bienes de empresas personales con participación mayoritaria se declaran a través de balances contables, no como bienes individuales. La declaración empresarial fue verificable en los documentos oficiales presentados."
+    },
+    {
+      "titulo": "Escándalo de franja electoral - Canal Nativa TV (febrero 2026)",
+      "descripcion": "El partido País Para Todos destinó S/ 642,000 de los fondos públicos asignados para la franja electoral al canal Nativa TV. El candidato Álvarez hizo público su desconocimiento del hecho a través de redes sociales y amenazó con retirarse de la candidatura si no se identificaban y sancionaban a los responsables. El presidente del partido, Vladimir Meza, admitió 'negligencia' y 'falta de estrategia' en la gestión de estos fondos, pero negó corrupción. El partido decidió posteriormente desistir del uso de la franja electoral. La Fiscalía Anticorrupción inició diligencias vinculadas a este caso. Carlos Álvarez continuó con su candidatura tras las explicaciones internas del partido."
+    }
+  ],
+  "partido_info": {
+    "nombre": "País Para Todos",
+    "simbolo": "Dibujo de una carretera sobre fondo amarillo",
+    "ideologia": "Sin posición ideológica definida en el espectro izquierda-derecha. El candidato presidencial se ha descrito como 'pragmático'",
+    "fundacion": "Abril de 2023",
+    "historia": "Partido de reciente creación, fundado en abril de 2023. La solicitud de inscripción fue presentada el 5 de diciembre de 2023 ante la Dirección Nacional de Registro de Organizaciones Políticas. Obtuvo inscripción oficial el 2 de agosto de 2024. Para las Elecciones 2026, incorporó al comediante Carlos Álvarez como candidato presidencial invitado, tras su afiliación en julio de 2024.",
+    "desempeno_electoral": "Partido de reciente creación sin historial electoral previo. Su fundador y presidente, Vladimir Meza, es exalcalde de Huaraz y se encuentra bajo investigación por presunta corrupción durante su mandato como alcalde. Escándalo por el manejo de la franja electoral en febrero de 2026: asignación de S/ 642,000 al canal Nativa TV, que generó cuestionamientos internos y externos y derivó en diligencias fiscales. El partido finalmente desistió del uso de su franja electoral, siendo -según su propio comunicado- la única agrupación en tomar esa decisión en el proceso electoral 2026."
+  },
+  "linea_de_tiempo": [
+    {
+      "año": 1964,
+      "hito": "Nacimiento en Lima, Perú (7 de enero)"
+    },
+    {
+      "año": 1983,
+      "hito": "Debut televisivo en 'Trampolín a la Fama', Panamericana TV"
+    },
+    {
+      "año": 1989,
+      "hito": "Estreno de su primer espacio propio: 'Las mil y una de Carlos Álvarez' (vigente hasta 1997)"
+    },
+    {
+      "año": 1998,
+      "hito": "Conducción de 'Caiga quien caiga' y 'Todo o nada' en ATV"
+    },
+    {
+      "año": 1999,
+      "hito": "Programa 'Los Álvarez' en Televisión Nacional del Perú (TNP/Canal 7), durante el régimen de Alberto Fujimori"
+    },
+    {
+      "año": 2002,
+      "hito": "Condena por la Tercera Sala Penal Especial de la Corte Superior de Lima (Expediente N.° 031-2002). Sentencia inicialmente de 4 años, modificada a 3 años de prisión suspendida, por delito contra la administración pública"
+    },
+    {
+      "año": 2004,
+      "hito": "Participación en 'Los Inimitables' y 'El especial del humor' junto a Jorge Benavides en Latina Televisión"
+    },
+    {
+      "año": 2007,
+      "hito": "Absolución por la Sala Penal de la Corte Suprema (R.N. N.° 3263-2006), con fecha 5 de diciembre"
+    },
+    {
+      "año": 2015,
+      "hito": "Lanzamiento de 'Habla bien' en América Televisión"
+    },
+    {
+      "año": 2020,
+      "hito": "Programa 'La vacuna del humor' en Willax TV (hasta 2023)"
+    },
+    {
+      "año": 2021,
+      "hito": "Renuncia al partido Vamos Perú"
+    },
+    {
+      "año": 2023,
+      "hito": "Fundación del partido País Para Todos (abril)"
+    },
+    {
+      "año": 2024,
+      "hito": "Inscripción de País Para Todos ante el JNE (agosto). Afiliación de Carlos Álvarez al partido (julio)"
+    },
+    {
+      "año": 2025,
+      "hito": "Anuncio de retiro artístico. Inscripción formal como candidato presidencial por País Para Todos"
+    },
+    {
+      "año": 2026,
+      "hito": "El programa 'Beto a Saber' revela la sentencia del Expediente N.° 031-2002 (enero)"
+    },
+    {
+      "año": 2026,
+      "hito": "El JEE de Lima Centro 1 emite informe de fiscalización por presunta omisión en la hoja de vida ante el JNE (enero)"
+    },
+    {
+      "año": 2026,
+      "hito": "Escándalo por franja electoral (Canal Nativa TV, S/ 642,000). Álvarez amenaza con retirarse de la candidatura. El partido desiste de la franja electoral. La Fiscalía Anticorrupción inicia diligencias (febrero)"
+    },
+    {
+      "año": 2026,
+      "hito": "Participación en la primera jornada del Debate Presidencial del JNE (23 de marzo)"
+    }
+  ],
+  "datos_importantes": [
+    "No registra estudios universitarios concluidos ni formación de posgrado, según su declaración jurada de hoja de vida ante el JNE",
+    "Ingresos declarados para el año fiscal 2024: S/ 207,543.00 (S/ 30,000 por remuneración en sector privado; S/ 39,239 por cuarta categoría; S/ 138,304 por otros conceptos como alquileres, intereses y regalías)",
+    "Bienes inmuebles declarados: dúplex en Breña (autovalúo S/ 55,000) y otros inmuebles",
+    "La Corte Suprema lo absolvió mediante R.N. N.° 3263-2006 el 5 de diciembre de 2007, luego de la condena de 2002",
+    "País Para Todos desistió de su franja electoral como única agrupación en el proceso 2026",
+    "Participó en el Debate Presidencial del JNE del 23 de marzo de 2026 con propuestas de pena de muerte para sicarios en flagrancia (previa denuncia del Pacto de San José), declaración en emergencia de la función pública, construcción de megapenales y ley de recompensa para denuncias de corrupción",
+    "Su candidatura es la primera a un cargo de elección popular",
+    "Previamente militó en Vamos Perú, partido al que renunció en 2021",
+    "En la encuesta de Datum de marzo de 2026 se ubica en cuarto lugar de intención de voto con aproximadamente 5% de respaldo",
+    "Comediante y conductor de televisión con más de cuatro décadas de trayectoria en medios peruanos",
+    "Sin experiencia previa en cargos públicos ni formación universitaria concluida"
+  ]
+}

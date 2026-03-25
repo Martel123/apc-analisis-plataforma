@@ -14,7 +14,7 @@
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
-      padding: 22px 26px;
+      padding: 20px 24px;
       margin-bottom: 28px;
       display: flex;
       align-items: center;
@@ -70,11 +70,7 @@
       padding: 72px 20px;
       color: var(--muted);
     }
-    .tray-state-icon {
-      font-size: 2.2rem;
-      opacity: 0.28;
-      margin-bottom: 14px;
-    }
+    .tray-state-icon { font-size: 2.2rem; opacity: 0.28; margin-bottom: 14px; }
     .tray-state p { margin: 0; font-size: 15px; line-height: 1.6; }
     .tray-state code {
       background: var(--bg);
@@ -84,18 +80,18 @@
       font-size: 13px;
     }
 
-    /* ── Candidate header ──────────────────────────────── */
+    /* ── Candidate header (always visible) ─────────────── */
     .tray-header {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
-      padding: 28px 30px;
-      margin-bottom: 20px;
+      padding: 26px 28px;
+      margin-bottom: 12px;
       box-shadow: var(--shadow-sm);
     }
     .tray-header-name {
       font-family: 'Sora', sans-serif;
-      font-size: clamp(1.45rem, 3vw, 2.1rem);
+      font-size: clamp(1.45rem, 3vw, 2rem);
       font-weight: 900;
       letter-spacing: -0.03em;
       line-height: 1.15;
@@ -104,13 +100,13 @@
     .tray-header-party {
       font-size: 14px;
       color: var(--muted);
-      margin: 0 0 18px;
+      margin: 0 0 16px;
     }
     .tray-meta-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 20px;
+      gap: 7px;
+      margin-bottom: 18px;
     }
     .tray-meta-chip {
       display: inline-flex;
@@ -128,21 +124,17 @@
       font-size: 14.5px;
       color: var(--text-2);
       line-height: 1.72;
-      margin: 0 0 20px;
+      margin: 0 0 18px;
     }
     .tray-edu-label {
-      font-size: 11.5px;
+      font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.07em;
       color: var(--muted);
       margin: 0 0 10px;
     }
-    .tray-edu-list {
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-    }
+    .tray-edu-list { display: flex; flex-direction: column; gap: 7px; }
     .tray-edu-item {
       display: flex;
       align-items: flex-start;
@@ -160,49 +152,112 @@
       margin-top: 6px;
     }
 
-    /* ── Section wrapper ───────────────────────────────── */
-    .tray-section {
+    /* ── Accordion block ───────────────────────────────── */
+    .tray-acc {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
-      padding: 22px 26px;
-      margin-bottom: 16px;
-      box-shadow: var(--shadow-sm);
+      margin-bottom: 8px;
+      overflow: hidden;
+      transition: box-shadow 0.18s;
     }
-    .tray-section-title {
-      font-family: 'Sora', sans-serif;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin: 0 0 16px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--border-soft);
+    .tray-acc:hover { box-shadow: var(--shadow-sm); }
+    .tray-acc.open  { box-shadow: var(--shadow-sm); }
+
+    /* Judicial block tinted */
+    .tray-acc.judicial { background: #fafaf9; }
+
+    /* ── Accordion header (the clickable button) ─────── */
+    .tray-acc-hd {
+      width: 100%;
       display: flex;
       align-items: center;
-      gap: 7px;
+      gap: 12px;
+      padding: 16px 22px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      transition: background 0.14s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .tray-acc-hd:hover { background: rgba(0,0,0,0.02); }
+    .tray-acc.open .tray-acc-hd { background: rgba(0,0,0,0.015); }
+
+    .tray-acc-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text-2);
+      flex-shrink: 0;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+    }
+    .tray-acc.open .tray-acc-icon {
+      background: var(--primary-soft);
+      border-color: rgba(181,18,27,0.15);
+      color: var(--primary);
     }
 
-    /* ── Judicial section (slightly tinted) ────────────── */
-    .tray-judicial-section {
-      background: #fafaf9;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 22px 26px;
-      margin-bottom: 16px;
+    .tray-acc-titles { flex: 1; min-width: 0; }
+    .tray-acc-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+      margin: 0;
     }
+    .tray-acc.open .tray-acc-title { color: var(--primary); }
+
+    .tray-acc-hint {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .tray-acc-chevron {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      transition: transform 0.22s ease, color 0.15s;
+    }
+    .tray-acc.open .tray-acc-chevron {
+      transform: rotate(180deg);
+      color: var(--primary);
+    }
+
+    /* ── Accordion body (collapsible) ─────────────────── */
+    .tray-acc-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .tray-acc-body-inner {
+      padding: 4px 22px 22px;
+      border-top: 1px solid var(--border-soft);
+    }
+
+    /* ── Judicial items ────────────────────────────────── */
     .tray-judicial-empty {
       font-size: 13.5px;
       color: var(--muted);
       font-style: italic;
+      padding: 6px 0;
     }
     .tray-judicial-item {
       padding: 16px 0;
       border-bottom: 1px solid var(--border-soft);
     }
     .tray-judicial-item:last-child { border-bottom: none; padding-bottom: 0; }
-    .tray-judicial-item:first-child { padding-top: 0; }
+    .tray-judicial-item:first-child { padding-top: 8px; }
     .tray-judicial-head {
       display: flex;
       align-items: flex-start;
@@ -237,13 +292,9 @@
       line-height: 1.65;
       margin-bottom: 8px;
     }
-    .tray-sources {
-      font-size: 12px;
-      color: var(--muted);
-      line-height: 1.5;
-    }
+    .tray-sources { font-size: 12px; color: var(--muted); line-height: 1.5; }
 
-    /* ── History (political / professional) ────────────── */
+    /* ── History items (political / professional) ──────── */
     .tray-history-item {
       display: grid;
       grid-template-columns: 108px 1fr;
@@ -252,7 +303,7 @@
       border-bottom: 1px solid var(--border-soft);
     }
     .tray-history-item:last-child { border-bottom: none; padding-bottom: 0; }
-    .tray-history-item:first-child { padding-top: 0; }
+    .tray-history-item:first-child { padding-top: 8px; }
     .tray-history-period {
       font-size: 12px;
       font-weight: 600;
@@ -260,22 +311,9 @@
       line-height: 1.45;
       padding-top: 2px;
     }
-    .tray-history-role {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 2px;
-    }
-    .tray-history-org {
-      font-size: 12.5px;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-    .tray-history-desc {
-      font-size: 13.5px;
-      color: var(--text-2);
-      line-height: 1.62;
-    }
+    .tray-history-role { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+    .tray-history-org  { font-size: 12.5px; color: var(--muted); margin-bottom: 6px; }
+    .tray-history-desc { font-size: 13.5px; color: var(--text-2); line-height: 1.62; }
 
     /* ── Controversias ─────────────────────────────────── */
     .tray-contro-item {
@@ -283,26 +321,17 @@
       border-bottom: 1px solid var(--border-soft);
     }
     .tray-contro-item:last-child { border-bottom: none; padding-bottom: 0; }
-    .tray-contro-item:first-child { padding-top: 0; }
-    .tray-contro-title {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 6px;
-    }
-    .tray-contro-desc {
-      font-size: 13.5px;
-      color: var(--text-2);
-      line-height: 1.65;
-    }
+    .tray-contro-item:first-child { padding-top: 8px; }
+    .tray-contro-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+    .tray-contro-desc  { font-size: 13.5px; color: var(--text-2); line-height: 1.65; }
 
     /* ── Partido ───────────────────────────────────────── */
     .tray-partido-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       gap: 16px;
+      padding-top: 8px;
     }
-    .tray-partido-field {}
     .tray-partido-label {
       font-size: 11px;
       font-weight: 700;
@@ -311,11 +340,7 @@
       color: var(--muted);
       margin-bottom: 4px;
     }
-    .tray-partido-value {
-      font-size: 13.5px;
-      color: var(--text);
-      line-height: 1.55;
-    }
+    .tray-partido-value { font-size: 13.5px; color: var(--text); line-height: 1.55; }
 
     /* ── Datos importantes ─────────────────────────────── */
     .tray-datos-item {
@@ -329,33 +354,22 @@
       line-height: 1.6;
     }
     .tray-datos-item:last-child { border-bottom: none; }
-    .tray-datos-item:first-child { padding-top: 0; }
-    .tray-datos-bullet {
-      color: var(--primary);
-      font-weight: 700;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
+    .tray-datos-item:first-child { padding-top: 8px; }
+    .tray-datos-bullet { color: var(--primary); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
 
     /* ── Timeline ──────────────────────────────────────── */
-    .tray-timeline {
-      position: relative;
-      padding-left: 22px;
-    }
+    .tray-timeline { position: relative; padding-left: 22px; padding-top: 8px; }
     .tray-timeline::before {
       content: '';
       position: absolute;
       left: 4px;
-      top: 8px;
+      top: 16px;
       bottom: 8px;
       width: 2px;
       background: var(--border);
       border-radius: 2px;
     }
-    .tray-tl-item {
-      position: relative;
-      padding: 0 0 22px 18px;
-    }
+    .tray-tl-item { position: relative; padding: 0 0 20px 18px; }
     .tray-tl-item:last-child { padding-bottom: 0; }
     .tray-tl-item::before {
       content: '';
@@ -368,24 +382,15 @@
       background: white;
       border: 2px solid var(--primary);
     }
-    .tray-tl-year {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 3px;
-    }
-    .tray-tl-hito {
-      font-size: 13.5px;
-      color: var(--text-2);
-      line-height: 1.6;
-    }
+    .tray-tl-year  { font-size: 12px; font-weight: 700; color: var(--primary); margin-bottom: 3px; }
+    .tray-tl-hito  { font-size: 13.5px; color: var(--text-2); line-height: 1.6; }
 
     /* ── Responsive ────────────────────────────────────── */
     @media (max-width: 640px) {
       .tray-header { padding: 20px; }
-      .tray-section, .tray-judicial-section { padding: 18px 18px; }
+      .tray-acc-hd { padding: 14px 18px; }
+      .tray-acc-body-inner { padding: 4px 18px 18px; }
       .tray-history-item { grid-template-columns: 1fr; gap: 3px; }
-      .tray-history-period { color: var(--primary); }
       .tray-partido-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 420px) {
@@ -491,25 +496,81 @@ function escHtml(str) {
     .replace(/"/g, '&quot;');
 }
 
-// ── Render helpers ────────────────────────────────────────────────────────────
+// ── Accordion block builder ───────────────────────────────────────────────────
 
-function renderSection(title, svgIcon, bodyHtml) {
+const CHEVRON = `<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>`;
+
+function buildAccordion({ iconSvg, title, hint, bodyHtml, extraClass }) {
   return `
-<div class="tray-section">
-  <div class="tray-section-title">${svgIcon ? svgIcon + ' ' : ''}${title}</div>
-  ${bodyHtml}
+<div class="tray-acc${extraClass ? ' ' + extraClass : ''}">
+  <button class="tray-acc-hd" type="button" aria-expanded="false">
+    <span class="tray-acc-icon">${iconSvg}</span>
+    <span class="tray-acc-titles">
+      <span class="tray-acc-title">${title}</span>
+      ${hint ? `<div class="tray-acc-hint">${hint}</div>` : ''}
+    </span>
+    <span class="tray-acc-chevron">${CHEVRON}</span>
+  </button>
+  <div class="tray-acc-body" role="region">
+    <div class="tray-acc-body-inner">${bodyHtml}</div>
+  </div>
 </div>`;
 }
+
+// ── Init accordions after DOM insert ─────────────────────────────────────────
+
+function initAccordions(container) {
+  container.querySelectorAll('.tray-acc').forEach(acc => {
+    const btn  = acc.querySelector('.tray-acc-hd');
+    const body = acc.querySelector('.tray-acc-body');
+
+    btn.addEventListener('click', () => {
+      const isOpen = acc.classList.contains('open');
+
+      if (isOpen) {
+        // collapse
+        body.style.maxHeight = body.scrollHeight + 'px';
+        requestAnimationFrame(() => {
+          body.style.maxHeight = '0';
+          acc.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+        });
+      } else {
+        // expand
+        acc.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        body.style.maxHeight = body.scrollHeight + 'px';
+        // after transition, let it breathe freely (handles dynamic content)
+        body.addEventListener('transitionend', function onEnd() {
+          if (acc.classList.contains('open')) body.style.maxHeight = 'none';
+          body.removeEventListener('transitionend', onEnd);
+        });
+      }
+    });
+  });
+}
+
+// ── SVG icons ─────────────────────────────────────────────────────────────────
+
+const ICONS = {
+  judicial:    `<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+  politico:    `<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>`,
+  profesional: `<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>`,
+  controversia:`<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>`,
+  partido:     `<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>`,
+  datos:       `<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>`,
+  timeline:    `<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`,
+};
 
 // ── Full profile render ───────────────────────────────────────────────────────
 
 function renderProfile(d) {
   const parts = [];
 
-  // ── A) Header ──────────────────────────────────────────────────────────────
+  // ── A) Header (always visible — name, party, meta, summary, education) ─────
   const metaChips = [];
-  if (d.edad)            metaChips.push(`<span class="tray-meta-chip">◉ ${escHtml(String(d.edad))} años</span>`);
-  if (d.profesion)       metaChips.push(`<span class="tray-meta-chip">◈ ${escHtml(d.profesion)}</span>`);
+  if (d.edad)             metaChips.push(`<span class="tray-meta-chip">◉ ${escHtml(String(d.edad))} años</span>`);
+  if (d.profesion)        metaChips.push(`<span class="tray-meta-chip">◈ ${escHtml(d.profesion)}</span>`);
   if (d.fecha_nacimiento) metaChips.push(`<span class="tray-meta-chip">Nacido: ${escHtml(d.fecha_nacimiento)}</span>`);
 
   const edItems = Array.isArray(d.formacion_academica) ? d.formacion_academica : [];
@@ -530,7 +591,7 @@ function renderProfile(d) {
 
   // ── B) Historial Judicial ──────────────────────────────────────────────────
   const judicial = Array.isArray(d.historial_judicial) ? d.historial_judicial : [];
-  const judicialBody = judicial.length === 0
+  const judBody = judicial.length === 0
     ? `<p class="tray-judicial-empty">Sin registros judiciales documentados</p>`
     : judicial.map(j => {
         const label = safeStr(j.estado_label || j.estado);
@@ -541,7 +602,7 @@ function renderProfile(d) {
   <div class="tray-judicial-head">
     <span class="tray-judicial-name">${escHtml(j.titulo || 'Caso sin nombre')}</span>
     <div class="tray-badge-row">
-      ${j.tipo  ? `<span class="tray-badge tray-badge-neutral">${escHtml(j.tipo)}</span>`  : ''}
+      ${j.tipo  ? `<span class="tray-badge tray-badge-neutral">${escHtml(j.tipo)}</span>` : ''}
       ${label   ? `<span class="tray-badge ${judicialBadgeClass(j.estado)}">${escHtml(label)}</span>` : ''}
     </div>
   </div>
@@ -550,19 +611,22 @@ function renderProfile(d) {
 </div>`;
       }).join('');
 
-  const judSvg = `<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`;
-  parts.push(`
-<div class="tray-judicial-section">
-  <div class="tray-section-title">${judSvg} Historial judicial</div>
-  ${judicialBody}
-</div>`);
+  const judHint = judicial.length === 0
+    ? 'Sin registros documentados'
+    : judicial.length === 1 ? '1 caso registrado' : `${judicial.length} casos registrados`;
+
+  parts.push(buildAccordion({
+    iconSvg: ICONS.judicial,
+    title:   'Historial judicial',
+    hint:    judHint,
+    bodyHtml: judBody,
+    extraClass: 'judicial',
+  }));
 
   // ── C) Historial Político ──────────────────────────────────────────────────
   const politico = sortByPeriodDesc(d.historial_politico, 'periodo');
   if (politico.length) {
-    const svgPol = `<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>`;
-    parts.push(renderSection('Historial político', svgPol, `
-${politico.map(h => `
+    const polBody = politico.map(h => `
 <div class="tray-history-item">
   <div class="tray-history-period">${escHtml(h.periodo || '—')}</div>
   <div>
@@ -570,15 +634,20 @@ ${politico.map(h => `
     ${h.partido     ? `<div class="tray-history-org">${escHtml(h.partido)}</div>` : ''}
     ${h.descripcion ? `<div class="tray-history-desc">${escHtml(h.descripcion)}</div>` : ''}
   </div>
-</div>`).join('')}`));
+</div>`).join('');
+
+    parts.push(buildAccordion({
+      iconSvg:  ICONS.politico,
+      title:    'Historial político',
+      hint:     `${politico.length} ${politico.length === 1 ? 'cargo' : 'cargos'} · más reciente primero`,
+      bodyHtml: polBody,
+    }));
   }
 
   // ── D) Historial Profesional ───────────────────────────────────────────────
   const profesional = sortByPeriodDesc(d.historial_profesional, 'periodo');
   if (profesional.length) {
-    const svgProf = `<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>`;
-    parts.push(renderSection('Historial profesional', svgProf, `
-${profesional.map(h => `
+    const profBody = profesional.map(h => `
 <div class="tray-history-item">
   <div class="tray-history-period">${escHtml(h.periodo || '—')}</div>
   <div>
@@ -586,19 +655,31 @@ ${profesional.map(h => `
     ${h.institucion ? `<div class="tray-history-org">${escHtml(h.institucion)}</div>` : ''}
     ${h.descripcion ? `<div class="tray-history-desc">${escHtml(h.descripcion)}</div>` : ''}
   </div>
-</div>`).join('')}`));
+</div>`).join('');
+
+    parts.push(buildAccordion({
+      iconSvg:  ICONS.profesional,
+      title:    'Historial profesional',
+      hint:     `${profesional.length} ${profesional.length === 1 ? 'posición' : 'posiciones'} · más reciente primero`,
+      bodyHtml: profBody,
+    }));
   }
 
   // ── E) Controversias ──────────────────────────────────────────────────────
   const contro = Array.isArray(d.controversias) ? d.controversias : [];
   if (contro.length) {
-    const svgCon = `<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>`;
-    parts.push(renderSection('Controversias y contexto social', svgCon, `
-${contro.map(c => `
+    const conBody = contro.map(c => `
 <div class="tray-contro-item">
   <div class="tray-contro-title">${escHtml(c.titulo || '')}</div>
   ${c.descripcion ? `<div class="tray-contro-desc">${escHtml(c.descripcion)}</div>` : ''}
-</div>`).join('')}`));
+</div>`).join('');
+
+    parts.push(buildAccordion({
+      iconSvg:  ICONS.controversia,
+      title:    'Controversias y contexto social',
+      hint:     `${contro.length} ${contro.length === 1 ? 'registro' : 'registros'}`,
+      bodyHtml: conBody,
+    }));
   }
 
   // ── F) Partido Político ────────────────────────────────────────────────────
@@ -611,43 +692,59 @@ ${contro.map(c => `
     ['historia',            'Historia'],
     ['desempeno_electoral', 'Desempeño electoral'],
   ];
-  const partHtml = partFields
-    .filter(([k]) => partido[k])
-    .map(([k, lbl]) => `
-<div class="tray-partido-field">
+  const partItems = partFields.filter(([k]) => partido[k]);
+  if (partItems.length) {
+    const partBody = `<div class="tray-partido-grid">${partItems.map(([k, lbl]) => `
+<div>
   <div class="tray-partido-label">${lbl}</div>
   <div class="tray-partido-value">${escHtml(partido[k])}</div>
-</div>`).join('');
-  if (partHtml) {
-    const svgPart = `<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>`;
-    parts.push(renderSection('Partido político', svgPart, `<div class="tray-partido-grid">${partHtml}</div>`));
+</div>`).join('')}</div>`;
+
+    parts.push(buildAccordion({
+      iconSvg:  ICONS.partido,
+      title:    'Partido político',
+      hint:     escHtml(safeStr(partido.nombre)),
+      bodyHtml: partBody,
+    }));
   }
 
   // ── G) Datos Importantes ───────────────────────────────────────────────────
   const datos = Array.isArray(d.datos_importantes) ? d.datos_importantes : [];
   if (datos.length) {
-    const svgDat = `<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>`;
-    parts.push(renderSection('Datos importantes', svgDat, `
-${datos.map(item => `
+    const datBody = datos.map(item => `
 <div class="tray-datos-item">
   <span class="tray-datos-bullet">▸</span>
   <span>${escHtml(item)}</span>
-</div>`).join('')}`));
+</div>`).join('');
+
+    parts.push(buildAccordion({
+      iconSvg:  ICONS.datos,
+      title:    'Datos importantes',
+      hint:     `${datos.length} ${datos.length === 1 ? 'punto' : 'puntos'}`,
+      bodyHtml: datBody,
+    }));
   }
 
   // ── H) Línea de Tiempo ────────────────────────────────────────────────────
   const timeline = [...(Array.isArray(d.linea_de_tiempo) ? d.linea_de_tiempo : [])]
     .sort((a, b) => (a.año || 0) - (b.año || 0));
   if (timeline.length) {
-    const svgTl = `<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`;
-    parts.push(renderSection('Línea de tiempo', svgTl, `
-<div class="tray-timeline">
-  ${timeline.map(t => `
-  <div class="tray-tl-item">
-    <div class="tray-tl-year">${escHtml(String(t.año || ''))}</div>
-    <div class="tray-tl-hito">${escHtml(t.hito || '')}</div>
-  </div>`).join('')}
-</div>`));
+    const tlBody = `<div class="tray-timeline">${timeline.map(t => `
+<div class="tray-tl-item">
+  <div class="tray-tl-year">${escHtml(String(t.año || ''))}</div>
+  <div class="tray-tl-hito">${escHtml(t.hito || '')}</div>
+</div>`).join('')}</div>`;
+
+    const tlSpan = timeline.length > 1
+      ? `${timeline[0].año} – ${timeline[timeline.length - 1].año}`
+      : String(timeline[0].año || '');
+
+    parts.push(buildAccordion({
+      iconSvg:  ICONS.timeline,
+      title:    'Línea de tiempo',
+      hint:     `${timeline.length} hitos · ${tlSpan}`,
+      bodyHtml: tlBody,
+    }));
   }
 
   return parts.join('\n');
@@ -670,6 +767,7 @@ async function loadProfile(url) {
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const data = await res.json();
     profile.innerHTML = renderProfile(data);
+    initAccordions(profile);
     profile.style.display = '';
     requestAnimationFrame(() => {
       requestAnimationFrame(() => profile.classList.add('visible'));
@@ -677,7 +775,8 @@ async function loadProfile(url) {
     window.scrollTo({ top: profile.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
   } catch (err) {
     console.error('[trayectoria] Error al cargar perfil:', err);
-    document.getElementById('trayErrorMsg').textContent = 'No se pudo cargar la información del candidato. Verifica que el archivo JSON esté disponible.';
+    document.getElementById('trayErrorMsg').textContent =
+      'No se pudo cargar la información del candidato. Verifica que el archivo JSON esté disponible.';
     errBox.style.display = '';
   }
 }

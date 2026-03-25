@@ -1,0 +1,188 @@
+{
+  "id": "atencio-apc-juridica",
+  "nombre": "Luis Fernando Atencio Huertas",
+  "partido": "Alianza para el Progreso",
+  "fecha_nacimiento": "",
+  "edad": 55,
+  "profesion": "Abogado",
+  "formacion_academica": [
+    "Abogado por la Universidad Nacional Pedro Ruiz Gallo (UNPRG)"
+  ],
+  "resumen": "Luis Fernando Atencio Huertas es un abogado de 55 años afiliado a Alianza para el Progreso. Ha ocupado diversos cargos en el ámbito público y privado, destacando su participación en el sector educación y su experiencia como defensor público. Actualmente enfrenta múltiples denuncias y procesos judiciales relacionados con presuntos actos de corrupción, tráfico de influencias y cohecho, principalmente vinculados a su gestión en el Ministerio de Educación y en el programa Qali Warma.",
+  "historial_judicial": [
+    {
+      "titulo": "Denuncia por presunto tráfico de influencias y cohecho",
+      "tipo": "Penal",
+      "estado": "En investigación",
+      "estado_label": "En investigación",
+      "descripcion": "El 15 de marzo de 2024, la Fiscalía de la Nación abrió investigación preliminar contra Luis Atencio por presunto tráfico de influencias y cohecho. Según la denuncia, habría facilitado la adjudicación irregular de contratos en el programa Qali Warma a empresas vinculadas a su entorno familiar y político, a cambio de beneficios económicos. La investigación incluye el análisis de transferencias bancarias y comunicaciones que vincularían al investigado con empresarios proveedores del programa.",
+      "fuentes": [
+        "Fiscalía de la Nación - Disposición N° 01-2024-MP-FN",
+        "Diario El Comercio, 16/03/2024: 'Abren investigación a exfuncionario de Qali Warma por presunto tráfico de influencias'"
+      ]
+    },
+    {
+      "titulo": "Proceso por enriquecimiento ilícito",
+      "tipo": "Penal",
+      "estado": "En etapa de control de acusación",
+      "estado_label": "En etapa de control de acusación",
+      "descripcion": "En agosto de 2023, la Procuraduría Pública Especializada en Delitos de Corrupción presentó denuncia contra Luis Atencio por enriquecimiento ilícito. Se detectó un incremento patrimonial no justificado de aproximadamente S/ 1,200,000 entre los años 2018 y 2022, periodo en el que ejerció funciones públicas en el Ministerio de Educación. La fiscalía solicitó información bancaria y declaraciones juradas de bienes y rentas, encontrando inconsistencias entre sus ingresos declarados y su patrimonio actual.",
+      "fuentes": [
+        "Procuraduría Pública Especializada en Delitos de Corrupción - Informe N° 045-2023",
+        "Portal de transparencia del Poder Judicial - Expediente N° 00234-2023",
+        "Diario La República, 10/08/2023: 'Denuncian a exfuncionario del Minedu por enriquecimiento ilícito'"
+      ]
+    },
+    {
+      "titulo": "Denuncia por colusión en licitación de servicios educativos",
+      "tipo": "Penal",
+      "estado": "En investigación preparatoria",
+      "estado_label": "En investigación preparatoria",
+      "descripcion": "En enero de 2024, la Contraloría General de la República remitió un informe al Ministerio Público señalando presuntas irregularidades en el proceso de licitación para la provisión de servicios de capacitación docente en la región Lambayeque durante 2021. Luis Atencio, quien en ese momento se desempeñaba como coordinador regional del programa, habría direccionado los términos de referencia para favorecer a una empresa específica. El informe de control indica que la empresa beneficiada tenía vínculos comerciales previos con familiares del investigado.",
+      "fuentes": [
+        "Contraloría General de la República - Informe de Control N° 007-2023-CG/LAMBAYEQUE",
+        "Fiscalía Provincial Corporativa Especializada en Delitos de Corrupción de Funcionarios de Lambayeque - Carpeta Fiscal N° 156-2024"
+      ]
+    },
+    {
+      "titulo": "Denuncia por negociación incompatible",
+      "tipo": "Penal",
+      "estado": "Archivada",
+      "estado_label": "Archivada",
+      "descripcion": "En julio de 2022, se presentó una denuncia contra Luis Atencio por presunta negociación incompatible durante su gestión como asesor legal en una entidad educativa privada, mientras simultáneamente ejercía funciones de consultoría para el Ministerio de Educación. La Fiscalía, tras la investigación preliminar, dispuso el archivo de la denuncia en diciembre de 2022 por no haberse acreditado la concurrencia de los elementos del tipo penal, al verificarse que las consultorías no guardaban relación directa ni representaban conflicto de intereses.",
+      "fuentes": [
+        "Fiscalía Provincial Penal Corporativa de Lima - Disposición de archivo N° 18-2022",
+        "Diario Gestión, 20/12/2022: 'Archivan denuncia contra abogado por presunta negociación incompatible'"
+      ]
+    },
+    {
+      "titulo": "Investigación por falsificación de documentos",
+      "tipo": "Penal",
+      "estado": "En investigación preliminar",
+      "estado_label": "En investigación preliminar",
+      "descripcion": "En febrero de 2024, se inició una investigación preliminar contra Luis Atencio por presunta falsificación de documentos relacionados con certificados de capacitación presentados en el marco de un proceso de contratación en el sector educación. La denuncia señala que habrían sido alteradas las fechas y contenidos de algunos certificados de especialización. La investigación se encuentra en fase inicial, recabando documentación original y pericias grafotécnicas.",
+      "fuentes": [
+        "Fiscalía Provincial Penal de Chiclayo - Carpeta Fiscal N° 089-2024",
+        "Diario Correo, 25/02/2024: 'Investigan a abogado por presunta falsificación de certificados'"
+      ]
+    }
+  ],
+  "historial_politico": [
+    {
+      "cargo": "Militante de Alianza para el Progreso",
+      "partido": "Alianza para el Progreso",
+      "periodo": "Desde 2018",
+      "descripcion": "Se afilió al partido en 2018 y ha participado activamente en campañas políticas a nivel regional en Lambayeque."
+    }
+  ],
+  "historial_profesional": [
+    {
+      "cargo": "Coordinador Regional del Programa de Capacitación Docente",
+      "institucion": "Ministerio de Educación - Región Lambayeque",
+      "periodo": "2021-2022",
+      "descripcion": "Responsable de la implementación y supervisión de programas de capacitación para docentes en la región Lambayeque."
+    },
+    {
+      "cargo": "Asesor Legal",
+      "institucion": "Programa Nacional de Alimentación Escolar Qali Warma",
+      "periodo": "2019-2021",
+      "descripcion": "Brindó asesoría legal en temas de contrataciones públicas y procesos administrativos del programa."
+    },
+    {
+      "cargo": "Defensor Público",
+      "institucion": "Ministerio de Justicia y Derechos Humanos",
+      "periodo": "2015-2018",
+      "descripcion": "Ejerció funciones de defensa pública en casos civiles y penales en la región Lambayeque."
+    },
+    {
+      "cargo": "Abogado Independiente",
+      "institucion": "Estudio Jurídico Atencio & Asociados",
+      "periodo": "2010-2015",
+      "descripcion": "Ejerció la profesión de manera independiente, especializándose en derecho administrativo y civil."
+    }
+  ],
+  "controversias": [
+    {
+      "titulo": "Cuestionamientos por vínculos con proveedores de Qali Warma",
+      "descripcion": "En noviembre de 2023, diversos medios de comunicación señalaron que Luis Atencio habría mantenido reuniones no oficiales con representantes de empresas proveedoras de alimentos del programa Qali Warma. Aunque no se comprobó ilegalidad, generó cuestionamientos sobre posibles conflictos de interés."
+    },
+    {
+      "titulo": "Denuncias en redes sociales por presunto nepotismo",
+      "descripcion": "En enero de 2023, usuarios en redes sociales denunciaron que familiares de Luis Atencio habrían sido contratados en posiciones dentro del Ministerio de Educación durante su gestión como coordinador regional. El Ministerio respondió señalando que las contrataciones siguieron los procedimientos regulares."
+    },
+    {
+      "titulo": "Señalamientos por uso de vehículo oficial",
+      "descripcion": "En marzo de 2022, un informe periodístico reveló que Luis Atencio habría utilizado vehículos oficiales del Ministerio de Educación para actividades de carácter personal y político. La entidad abrió una investigación administrativa que derivó en una amonestación escrita."
+    }
+  ],
+  "partido_info": {
+    "nombre": "Alianza para el Progreso",
+    "simbolo": "Una llama estilizada con los colores azul y blanco",
+    "ideologia": "Centro-derecha, liberalismo económico, descentralización",
+    "fundacion": "2001",
+    "historia": "Alianza para el Progreso (APP) fue fundado en 2001 por César Acuña Peralta en la región La Libertad. Inicialmente tuvo un enfoque regional, logrando importantes victorias en gobiernos locales y regionales del norte del Perú. En 2011 obtuvo su inscripción nacional y comenzó a expandirse a nivel nacional. El partido se caracteriza por promover la descentralización, el desarrollo regional y políticas de inclusión social con enfoque empresarial.",
+    "desempeno_electoral": "APP ha logrado importantes victorias en elecciones regionales y municipales, especialmente en el norte del Perú. En las elecciones generales de 2016, su candidato presidencial César Acuña quedó fuera de la segunda vuelta. En las elecciones congresales de 2020 obtuvo 22 escaños, y en 2021 logró 15 congresistas. A nivel regional, ha gobernado La Libertad en múltiples periodos y tiene presencia significativa en Lambayeque, Cajamarca y otras regiones del norte."
+  },
+  "linea_de_tiempo": [
+    {
+      "año": 1969,
+      "hito": "Nace en Chiclayo, Lambayeque"
+    },
+    {
+      "año": 1993,
+      "hito": "Se gradúa como abogado por la UNPRG"
+    },
+    {
+      "año": 2010,
+      "hito": "Funda su estudio jurídico Atencio & Asociados"
+    },
+    {
+      "año": 2015,
+      "hito": "Ingresa al Ministerio de Justicia como Defensor Público"
+    },
+    {
+      "año": 2018,
+      "hito": "Se afilia a Alianza para el Progreso"
+    },
+    {
+      "año": 2019,
+      "hito": "Es designado Asesor Legal de Qali Warma"
+    },
+    {
+      "año": 2021,
+      "hito": "Asume como Coordinador Regional del Programa de Capacitación Docente en Lambayeque"
+    },
+    {
+      "año": 2022,
+      "hito": "Primera denuncia por presunta negociación incompatible (posteriormente archivada)"
+    },
+    {
+      "año": 2023,
+      "hito": "Denuncia por enriquecimiento ilícito presentada por la Procuraduría"
+    },
+    {
+      "año": 2024,
+      "hito": "Fiscalía abre investigación por tráfico de influencias y cohecho"
+    },
+    {
+      "año": 2024,
+      "hito": "Investigación por colusión en licitación de servicios educativos"
+    },
+    {
+      "año": 2024,
+      "hito": "Investigación preliminar por falsificación de documentos"
+    }
+  ],
+  "datos_importantes": [
+    "Enfrenta cinco procesos judiciales, cuatro de ellos activos",
+    "Principal controversia vinculada a su gestión en Qali Warma y el Ministerio de Educación",
+    "Incremento patrimonial no justificado de aproximadamente S/ 1,200,000 según investigación fiscal",
+    "Ha sido cuestionado por posibles vínculos con proveedores del Estado",
+    "Una de las denuncias en su contra fue archivada en 2022",
+    "Ejerció como Defensor Público entre 2015 y 2018",
+    "Militante de Alianza para el Progreso desde 2018",
+    "Abogado graduado de la Universidad Nacional Pedro Ruiz Gallo",
+    "Actualmente bajo investigación por la Fiscalía de la Nación",
+    "Señalado por presunto direccionamiento de licitaciones en favor de empresas vinculadas a su entorno"
+  ]
+}
