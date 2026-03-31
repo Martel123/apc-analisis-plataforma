@@ -1,0 +1,182 @@
+{
+  "id": "rafael-lopez-aliaga",
+  "nombre": "Rafael Bernardo López Aliaga Cazorla",
+  "partido": "Renovación Popular",
+  "fecha_nacimiento": "",
+  "edad": 65,
+  "profesion": "Ingeniero industrial, empresario, político",
+  "formacion_academica": [
+    "Colegio de la Inmaculada (educación secundaria)",
+    "Universidad del Pacífico (Ingeniería Industrial)",
+    "Estudios de posgrado en dirección empresarial"
+  ],
+  "resumen": "Rafael López Aliaga es un empresario y político peruano con una trayectoria destacada en el sector privado, especialmente en inversiones en diversas áreas económicas. Posteriormente, ha ocupado cargos públicos como regidor de Lima y alcalde metropolitano. Es fundador y principal dirigente de Renovación Popular, consolidando su presencia política a través del liderazgo y la participación electoral. Su perfil combina experiencia empresarial, dirección política y participación activa en el debate público nacional.",
+  "historial_judicial": [
+    {
+      "titulo": "Investigación por presunto lavado de activos",
+      "tipo": "Penal",
+      "estado": "Investigación en curso",
+      "estado_label": "Investigación en curso",
+      "descripcion": "El Ministerio Público investiga a Rafael López Aliaga por presunto lavado de activos en operaciones financieras vinculadas a entidades municipales. La investigación busca determinar el origen y la legalidad de ciertos movimientos económicos y si existen indicios de operaciones para ocultar o legitimar recursos de procedencia ilícita. Las investigaciones, bajo competencia del sistema de justicia penal, incluyen recopilación de información financiera, revisión de documentación contable y análisis de operaciones económicas. El proceso sigue en etapa de investigación y no hay resolución judicial definitiva.",
+      "fuentes": [
+        "Ministerio Público - https://www.fiscalia.gob.pe"
+      ]
+    },
+    {
+      "titulo": "Infracción al principio de neutralidad electoral",
+      "tipo": "Administrativo electoral",
+      "estado": "Determinado por autoridad electoral",
+      "estado_label": "Determinado por autoridad electoral",
+      "descripcion": "El Jurado Nacional de Elecciones determinó que Rafael López Aliaga incurrió en una infracción al principio de neutralidad electoral durante su gestión municipal. La normativa exige que los funcionarios públicos mantengan neutralidad en procesos electorales y eviten el uso de recursos institucionales con fines políticos. En este caso, se evaluaron comunicaciones institucionales y su posible vinculación con promoción política. Como resultado, el órgano electoral estableció la existencia de una infracción conforme al marco legal vigente.",
+      "fuentes": [
+        "JNE - https://www.jne.gob.pe"
+      ]
+    }
+  ],
+  "historial_politico": [
+    {
+      "cargo": "Regidor de la Municipalidad Metropolitana de Lima",
+      "partido": "",
+      "periodo": "2007 - 2010",
+      "descripcion": "Ejerció el cargo de regidor metropolitano durante el periodo indicado."
+    },
+    {
+      "cargo": "Dirigente político",
+      "partido": "Solidaridad Nacional",
+      "periodo": "2019 - 2020",
+      "descripcion": "Ejerció funciones de dirección política dentro del partido Solidaridad Nacional durante su proceso de reorganización."
+    },
+    {
+      "cargo": "Fundador y líder de Renovación Popular",
+      "partido": "Renovación Popular",
+      "periodo": "2020 - actualidad",
+      "descripcion": "Asumió la dirección del partido desde su fundación, liderando su organización, inscripción y desarrollo político."
+    },
+    {
+      "cargo": "Candidato presidencial",
+      "partido": "Renovación Popular",
+      "periodo": "2021",
+      "descripcion": "Participó como candidato en las elecciones presidenciales de 2021."
+    },
+    {
+      "cargo": "Alcalde Metropolitano de Lima",
+      "partido": "Renovación Popular",
+      "periodo": "2023 - 2025 (no culminado)",
+      "descripcion": "Ejerció el cargo de alcalde metropolitano de Lima y renunció antes de finalizar el periodo para participar en un proceso electoral nacional."
+    },
+    {
+      "cargo": "Candidato presidencial",
+      "partido": "Renovación Popular",
+      "periodo": "2026",
+      "descripcion": "Participa en el proceso electoral nacional de 2026 como candidato presidencial."
+    }
+  ],
+  "historial_profesional": [
+    {
+      "cargo": "Empresario",
+      "institucion": "Grupo empresarial (turismo, hotelería, transporte y finanzas)",
+      "periodo": "1990s - actualidad",
+      "descripcion": "Ha desarrollado actividades empresariales en sectores como infraestructura turística, hotelería y transporte ferroviario. Su gestión de empresas con operaciones nacionales e internacionales ha fortalecido su posicionamiento como empresario en el país."
+    },
+    {
+      "cargo": "Director / inversionista",
+      "institucion": "Empresas vinculadas al transporte ferroviario",
+      "periodo": "2000s - actualidad",
+      "descripcion": "Ha participado en proyectos de servicios ferroviarios y turísticos, enfocados en el transporte de pasajeros y el desarrollo de infraestructura. Estas actividades refuerzan su presencia en el sector de servicios y logística."
+    }
+  ],
+  "controversias": [
+    {
+      "titulo": "Posturas ideológicas en temas sociales",
+      "descripcion": "Rafael López Aliaga ha expresado reiteradamente posiciones contrarias al aborto, al matrimonio entre personas del mismo sexo y a la eutanasia. También ha propuesto la aplicación de la pena de muerte en ciertos casos. Estas posturas forman parte de su posicionamiento político y han sido difundidas en campañas y declaraciones públicas."
+    },
+    {
+      "titulo": "Declaraciones públicas en medios y campañas",
+      "descripcion": "Durante su participación en campañas electorales y entrevistas, ha realizado declaraciones sobre diversos temas políticos y sociales que han sido difundidas en medios de comunicación. Algunas de estas han generado reacciones en distintos sectores, en función de su contenido y del contexto en el que fueron emitidas."
+    },
+    {
+      "titulo": "Información sobre obligaciones tributarias",
+      "descripcion": "Se ha difundido información sobre obligaciones tributarias relacionadas con empresas asociadas a su actividad empresarial. Este tipo de información integra el debate público sobre el cumplimiento de obligaciones fiscales por parte de actores políticos y empresariales."
+    },
+    {
+      "titulo": "Mención en investigaciones internacionales (Panama Papers)",
+      "descripcion": "El nombre de Rafael López Aliaga ha sido mencionado en investigaciones periodísticas internacionales relacionadas con el uso de estructuras offshore. Estas investigaciones han generado cobertura mediática y debate público sobre transparencia financiera."
+    },
+    {
+      "titulo": "Composición de listas partidarias",
+      "descripcion": "Se han reportado casos en los que candidatos presentados por su partido en procesos electorales cuentan con antecedentes judiciales o investigaciones en curso. Este tipo de situaciones ha sido difundido en el contexto de cobertura electoral y análisis político."
+    },
+    {
+      "titulo": "Propiedad empresarial vinculada al transporte ferroviario a Machu Picchu",
+      "descripcion": "Rafael López Aliaga es accionista y propietario de empresas vinculadas al servicio ferroviario turístico entre Cusco y Machu Picchu, uno de los principales destinos turísticos del país. Este servicio es clave para el acceso a la zona y tiene relevancia económica y estratégica. Su participación en este sector ha recibido atención pública debido a la estructura del mercado ferroviario, con pocos operadores en la ruta. Esto ha generado debate sobre la competencia, las condiciones del servicio y la participación privada en actividades vinculadas al patrimonio turístico nacional. Este aspecto ha sido destacado en el análisis de su perfil empresarial, dada la importancia del turismo en la economía peruana."
+    }
+  ],
+  "partido_info": {
+    "nombre": "Renovación Popular",
+    "simbolo": "",
+    "ideologia": "Conservadurismo social, desarrollo económico desde el sector privado",
+    "fundacion": "2020",
+    "historia": "Renovación Popular es un partido político fundado en 2020 tras la transformación de Solidaridad Nacional. El proceso incluyó cambio de nombre, estructura y orientación política, manteniendo parte de la base anterior pero redefiniendo su identidad en el sistema político peruano. Desde su creación, el partido ha estado vinculado al liderazgo de Rafael López Aliaga, quien ha tenido un papel central en su organización y posicionamiento electoral. Renovación Popular ha participado en elecciones nacionales y municipales, logrando representación en el Congreso y la alcaldía metropolitana de Lima. El partido se caracteriza por posiciones conservadoras en temas sociales y propuestas de desarrollo económico desde el sector privado.",
+    "desempeno_electoral": "Su crecimiento se ha dado en un contexto de fragmentación política, donde nuevas organizaciones se han posicionado a partir de liderazgos individuales. En el ámbito organizativo, Renovación Popular tiene una estructura donde el liderazgo influye significativamente en la toma de decisiones. Su presencia en el Congreso y gobiernos locales ha consolidado su presencia institucional. El desarrollo del partido ha generado debates públicos sobre sus procesos internos, la selección de candidatos y su posicionamiento ideológico en el espectro político peruano."
+  },
+  "linea_de_tiempo": [
+    {
+      "año": 2007,
+      "hito": "Regidor de Lima"
+    },
+    {
+      "año": 2010,
+      "hito": "Finaliza gestión como regidor"
+    },
+    {
+      "año": 2019,
+      "hito": "Participación en dirección de Solidaridad Nacional"
+    },
+    {
+      "año": 2020,
+      "hito": "Transformación del partido a Renovación Popular"
+    },
+    {
+      "año": 2020,
+      "hito": "Asume liderazgo del nuevo partido"
+    },
+    {
+      "año": 2021,
+      "hito": "Candidato presidencial. Participación en elecciones generales"
+    },
+    {
+      "año": 2022,
+      "hito": "Candidato a la alcaldía de Lima. Elección como alcalde metropolitano"
+    },
+    {
+      "año": 2023,
+      "hito": "Inicio de gestión como alcalde de Lima"
+    },
+    {
+      "año": 2024,
+      "hito": "Continuidad de gestión municipal"
+    },
+    {
+      "año": 2025,
+      "hito": "Renuncia al cargo de alcalde"
+    },
+    {
+      "año": 2026,
+      "hito": "Participación en proceso electoral nacional"
+    }
+  ],
+  "datos_importantes": [
+    "Fundador y líder del partido Renovación Popular",
+    "Alcalde de Lima en el periodo 2023-2025 (no culminado)",
+    "Participación en elecciones presidenciales de 2021",
+    "Trayectoria política que incluye cargos municipales y liderazgo partidario",
+    "El Ministerio Público investiga a Rafael López Aliaga por presunto lavado de activos en operaciones financieras vinculadas a entidades municipales",
+    "El JNE determinó que incurrió en una infracción al principio de neutralidad electoral durante su gestión municipal",
+    "Es accionista y propietario de empresas vinculadas al servicio ferroviario turístico entre Cusco y Machu Picchu",
+    "Ha expresado posiciones contrarias al aborto, al matrimonio entre personas del mismo sexo y a la eutanasia, y ha propuesto la aplicación de la pena de muerte en ciertos casos",
+    "Su nombre ha sido mencionado en investigaciones periodísticas internacionales relacionadas con el uso de estructuras offshore (Panama Papers)",
+    "Renunció al cargo de alcalde metropolitano de Lima antes de finalizar el periodo para participar en un proceso electoral nacional",
+    "Empresario con actividades en sectores como infraestructura turística, hotelería y transporte ferroviario",
+    "65 años de edad"
+  ]
+}

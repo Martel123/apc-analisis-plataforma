@@ -1,0 +1,181 @@
+{
+  "id": "cesar-acuna-apc-juridica",
+  "nombre": "César Acuña Peralta",
+  "partido": "Alianza para el Progreso",
+  "fecha_nacimiento": "",
+  "edad": 71,
+  "profesion": "Ingeniero químico, empresario, político",
+  "formacion_academica": [
+    "Universidad Nacional de Trujillo (Ingeniería Química)",
+    "Universidad de Lima (Maestría en Administración)",
+    "Universidad Complutense de Madrid (Doctorado)"
+  ],
+  "resumen": "Empresario y político cuya trayectoria integra el desarrollo de instituciones educativas privadas con el ejercicio de cargos públicos en los ámbitos nacional y regional. Fundador de Alianza para el Progreso y de universidades privadas como la Universidad César Vallejo y la Universidad Señor de Sipán, ha consolidado una base política asociada a su presencia en el sector educativo y en gobiernos subnacionales.",
+  "historial_judicial": [
+    {
+      "titulo": "Investigación por presuntas irregularidades en gestión pública",
+      "tipo": "Administrativo",
+      "estado": "Investigaciones en distintas etapas",
+      "estado_label": "Investigaciones en distintas etapas",
+      "descripcion": "Durante su gestión como alcalde de Trujillo (2007-2014), se registraron diversas investigaciones vinculadas a la administración municipal, particularmente en aspectos como contratación pública, ejecución de obras y manejo de recursos del Estado. Estas investigaciones fueron impulsadas y evaluadas por entidades de control como la Contraloría General de la República y el Ministerio Público, en el marco de sus funciones de fiscalización. En este contexto, se analizaron procesos de adjudicación de obras, posibles sobrecostos, irregularidades administrativas y cumplimiento de procedimientos en la gestión municipal. Este tipo de investigaciones no implica necesariamente responsabilidad penal directa, pero sí forma parte del control institucional sobre el uso de recursos públicos. La relevancia de este caso reside en que permite evaluar el desempeño del candidato como autoridad local, especialmente en términos de transparencia, eficiencia administrativa y cumplimiento normativo en la gestión pública.",
+      "fuentes": [
+        "Contraloría - https://www.contraloria.gob.pe",
+        "Ministerio Público - https://www.fiscalia.gob.pe"
+      ]
+    },
+    {
+      "titulo": "Infracción a la normativa electoral (2016)",
+      "tipo": "Administrativo electoral",
+      "estado": "Resuelto",
+      "estado_label": "Resuelto",
+      "descripcion": "Durante la campaña presidencial de 2016, el Jurado Nacional de Elecciones determinó que César Acuña incurrió en una infracción a la normativa electoral al realizar entrega de dinero a ciudadanos durante actividades públicas. Esta conducta se encuentra expresamente prohibida por la legislación electoral peruana, ya que puede afectar la igualdad de condiciones entre candidatos y generar influencia indebida en el electorado. Como consecuencia de esta infracción, el JNE resolvió su exclusión del proceso electoral. Este hecho constituye uno de los precedentes más relevantes en la aplicación de sanciones electorales en el Perú reciente, al evidenciar una intervención directa del órgano electoral para garantizar el cumplimiento de las reglas del proceso democrático. Además de la sanción, el caso impactó el debate público sobre las prácticas de campaña y el uso de incentivos económicos en contextos electorales.",
+      "fuentes": ["JNE - https://www.jne.gob.pe"]
+    }
+  ],
+  "historial_politico": [
+    {
+      "cargo": "Congresista de la República",
+      "partido": "",
+      "periodo": "2000 - 2001",
+      "descripcion": "Ejerció el cargo de congresista de la República durante el periodo indicado."
+    },
+    {
+      "cargo": "Alcalde Provincial de Trujillo",
+      "partido": "Alianza para el Progreso",
+      "periodo": "2007 - 2014",
+      "descripcion": "Ejerció el cargo de alcalde provincial de Trujillo durante dos periodos consecutivos."
+    },
+    {
+      "cargo": "Gobernador Regional de La Libertad",
+      "partido": "Alianza para el Progreso",
+      "periodo": "2015 - 2016 (no culminado)",
+      "descripcion": "Ejerció el cargo de gobernador regional de La Libertad y renunció antes de culminar el periodo para participar en las elecciones presidenciales de 2016."
+    },
+    {
+      "cargo": "Candidato presidencial",
+      "partido": "Alianza para el Progreso",
+      "periodo": "2016, 2021",
+      "descripcion": "Participó como candidato en elecciones presidenciales; en 2016 fue excluido del proceso electoral por decisión del Jurado Nacional de Elecciones."
+    },
+    {
+      "cargo": "Gobernador Regional de La Libertad",
+      "partido": "Alianza para el Progreso",
+      "periodo": "2023 - actualidad",
+      "descripcion": "Ejerce el cargo de gobernador regional de La Libertad tras ser elegido en el proceso electoral correspondiente."
+    }
+  ],
+  "historial_profesional": [
+    {
+      "cargo": "Fundador",
+      "institucion": "Universidad César Vallejo (UCV)",
+      "periodo": "1991 - actualidad",
+      "descripcion": "Responsable de la creación y expansión de una de las principales redes educativas privadas del país, con sedes en diversas regiones."
+    },
+    {
+      "cargo": "Fundador / vinculación empresarial",
+      "institucion": "Universidad Señor de Sipán",
+      "periodo": "1999 - actualidad (vinculación en grupo empresarial educativo)",
+      "descripcion": "Participó en la expansión de instituciones educativas privadas en el norte del país."
+    },
+    {
+      "cargo": "Empresario del sector educativo",
+      "institucion": "Grupo educativo (universidades, institutos y colegios)",
+      "periodo": "1990s - actualidad",
+      "descripcion": "Desarrolló una red de instituciones educativas privadas que ha impactado el acceso a la educación superior."
+    }
+  ],
+  "controversias": [
+    {
+      "titulo": "Plagio académico",
+      "descripcion": "Se identificaron similitudes entre sus trabajos académicos, como la tesis de maestría y doctorado, y otros textos previamente publicados. Este caso generó una de las controversias más relevantes en su trayectoria pública. Las observaciones sobre coincidencias en sus tesis fueron difundidas por investigaciones periodísticas y posteriormente analizadas en el ámbito académico. La importancia del caso radica en que Acuña es tanto político como empresario del sector educativo, lo que sitúa el tema en una dimensión más amplia: la coherencia entre su rol como promotor de educación superior y el cumplimiento de estándares académicos. Este episodio impactó directamente su imagen pública y generó cuestionamientos sobre su integridad académica y credibilidad profesional, especialmente durante periodos electorales."
+    },
+    {
+      "titulo": "Entrega de dinero en campañas",
+      "descripcion": "Registro de entrega de dinero a ciudadanos durante actividades públicas. Este hecho fue documentado en el contexto de actividades de campaña, donde se evidenció la entrega directa de dinero a ciudadanos. Si bien posteriormente derivó en una sanción electoral, también fue ampliamente discutido en el ámbito público como una posible práctica de clientelismo político. El clientelismo implica el intercambio de beneficios materiales por apoyo político, lo cual es considerado problemático en sistemas democráticos porque puede distorsionar la voluntad del electorado, especialmente en sectores vulnerables. Este episodio tuvo consecuencias tanto legales como políticas, al afectar la percepción pública sobre sus prácticas de campaña."
+    },
+    {
+      "titulo": "Uso de cargos públicos como plataforma política",
+      "descripcion": "La decisión de renunciar al cargo de gobernador regional para postular a la presidencia generó cuestionamientos en el ámbito político. Este tipo de situaciones plantea debates sobre la continuidad en la gestión pública y el uso estratégico de cargos como plataforma para aspiraciones electorales. Desde una perspectiva institucional, este hecho no constituye una infracción, pero sí es relevante para analizar la forma en que se articulan las carreras políticas en el país y la relación entre gestión pública y proyección electoral."
+    },
+    {
+      "titulo": "Conflictos entre actividad empresarial y política",
+      "descripcion": "La combinación de los roles de empresario educativo y actor político ha generado debate sobre posibles conflictos de interés. La expansión de las instituciones educativas vinculadas al candidato ha sido interpretada como un factor que contribuye a la construcción de capital social y político, especialmente en regiones donde estas instituciones tienen presencia. Estos cuestionamientos se inscriben en un debate más amplio sobre la relación entre intereses privados y función pública, especialmente cuando un actor político ejerce control sobre sectores estratégicos como la educación."
+    },
+    {
+      "titulo": "Cuestionamientos por calidad educativa",
+      "descripcion": "El crecimiento de universidades privadas en el Perú ha generado discusiones sobre la calidad de la educación superior. En este contexto, las instituciones vinculadas a Acuña participaron en el proceso de evaluación y licenciamiento realizado por SUNEDU. Este proceso implicó la verificación de condiciones básicas de calidad, lo que generó un debate sobre el rol del Estado en la regulación del sistema educativo y los estándares que deben cumplir las universidades privadas."
+    },
+    {
+      "titulo": "Caso de inmueble institucional",
+      "descripcion": "En la etapa inicial de su actividad empresarial, se registraron cuestionamientos relacionados con el uso y la entrega de un inmueble donde funcionaban sus primeras instituciones educativas. Este episodio se vinculó a conflictos contractuales y al cumplimiento de obligaciones en el ámbito privado. Aunque no constituye un caso judicial relevante a nivel nacional, este hecho forma parte de los antecedentes de la trayectoria empresarial del candidato y ha sido mencionado en reconstrucciones biográficas sobre sus inicios."
+    }
+  ],
+  "partido_info": {
+    "nombre": "Alianza para el Progreso",
+    "simbolo": "",
+    "ideologia": "",
+    "fundacion": "2001",
+    "historia": "Alianza para el Progreso (APP) es un partido político fundado en 2001 por César Acuña, cuyo desarrollo ha estado estrechamente vinculado a su liderazgo personal. A diferencia de los partidos tradicionales del Perú, APP no surge de una corriente ideológica consolidada a nivel nacional, sino como una organización que se expande progresivamente desde el ámbito regional hacia el escenario político nacional. En sus primeras etapas, el partido logró consolidarse principalmente en el norte del país, especialmente en la región La Libertad, donde Acuña desarrolló su carrera política. Este crecimiento territorial se apoyó en la obtención de cargos municipales y regionales, lo que permitió al partido construir una estructura política basada en redes locales y en la presencia institucional en gobiernos subnacionales.",
+    "desempeno_electoral": "Con el tiempo, APP ha ampliado su participación en elecciones nacionales, logrando representación en el Congreso y posicionándose como una fuerza política relevante en contextos de fragmentación partidaria. Su rol en el Parlamento ha estado vinculado a la formación de alianzas y a la participación en dinámicas de gobernabilidad. Sin embargo, el partido también ha sido objeto de cuestionamientos. Entre los principales se encuentran las críticas a su estructura interna, caracterizada por una fuerte centralización en la figura de su fundador, así como observaciones sobre los procesos de selección de candidatos y el financiamiento partidario. Asimismo, se ha señalado que su crecimiento responde en gran medida a una lógica pragmática y territorial más que a una definición ideológica clara. En términos generales, APP puede ser entendido como un partido de base regional con proyección nacional, cuya evolución refleja las dinámicas del sistema político peruano contemporáneo, caracterizado por la fragmentación, el personalismo y la importancia de liderazgos individuales."
+  },
+  "linea_de_tiempo": [
+    {
+      "año": 1991,
+      "hito": "Fundación de la Universidad César Vallejo"
+    },
+    {
+      "año": 1999,
+      "hito": "Desarrollo de red educativa (incluye Universidad Señor de Sipán)"
+    },
+    {
+      "año": 2000,
+      "hito": "Congresista"
+    },
+    {
+      "año": 2001,
+      "hito": "Fundación de Alianza para el Progreso"
+    },
+    {
+      "año": 2007,
+      "hito": "Alcalde de Trujillo"
+    },
+    {
+      "año": 2010,
+      "hito": "Reelección como alcalde"
+    },
+    {
+      "año": 2014,
+      "hito": "Fin de gestión municipal"
+    },
+    {
+      "año": 2015,
+      "hito": "Gobernador regional"
+    },
+    {
+      "año": 2016,
+      "hito": "Renuncia y candidatura presidencial (exclusión por infracción electoral)"
+    },
+    {
+      "año": 2021,
+      "hito": "Nueva candidatura presidencial"
+    },
+    {
+      "año": 2023,
+      "hito": "Gobernador regional nuevamente"
+    }
+  ],
+  "datos_importantes": [
+    "Fundador de múltiples instituciones educativas privadas (incluyendo UCV y Universidad Señor de Sipán)",
+    "Único candidato presidencial excluido por el JNE en 2016 por infracción electoral",
+    "Ha ejercido cargos en los tres niveles del Estado (nacional, regional y local)",
+    "Fundador de Alianza para el Progreso en 2001",
+    "Fue alcalde provincial de Trujillo durante dos periodos consecutivos (2007-2014)",
+    "Gobernador Regional de La Libertad desde 2023",
+    "Renunció al cargo de gobernador regional en 2016 para participar en las elecciones presidenciales",
+    "Se identificaron similitudes entre sus trabajos académicos (tesis de maestría y doctorado) y otros textos previamente publicados",
+    "Durante su gestión como alcalde de Trujillo se registraron investigaciones vinculadas a la administración municipal",
+    "71 años de edad",
+    "Ingeniero químico con maestría y doctorado",
+    "Su partido APP se ha consolidado principalmente en el norte del Perú, especialmente en La Libertad"
+  ]
+}

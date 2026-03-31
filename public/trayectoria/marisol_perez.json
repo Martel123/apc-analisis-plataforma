@@ -1,0 +1,141 @@
+{
+  "id": "marisol-perez-tello-apc-juridica",
+  "nombre": "María Soledad Pérez Tello de Rodríguez",
+  "partido": "Primero la Gente",
+  "fecha_nacimiento": "No especificada en el documento",
+  "edad": 56,
+  "profesion": "Abogada, notaria, docente universitaria, política",
+  "formacion_academica": [
+    "Universidad de San Martín de Porres (USMP) — Abogada (1995)",
+    "Universidad de San Martín de Porres (USMP) — Doctorado en Derecho",
+    "Pontificia Universidad Católica del Perú (PUCP) — Maestría en Derecho Constitucional",
+    "Estudios en Derechos Humanos — Universidad Complutense de Madrid",
+    "Estudios en Medio Ambiente — Universidad Politécnica de Madrid"
+  ],
+  "resumen": "Marisol Pérez Tello es una abogada con experiencia en derecho, en la función notarial, en docencia universitaria y en gestión pública. Ha sido congresista y ministra de Justicia y Derechos Humanos. Su especialización abarca el derecho constitucional, los derechos humanos y el funcionamiento institucional del sistema de justicia. En 2026, se postula como candidata presidencial por el partido Primero la Gente.",
+  "historial_judicial": [
+    {
+      "titulo": "Omisión de información en declaración jurada de hoja de vida",
+      "tipo": "Administrativo / Electoral",
+      "estado": "Observación por Jurado Electoral Especial. No derivó en exclusión de candidatura",
+      "estado_label": "Observado por JEE",
+      "descripcion": "En el proceso electoral 2026, el Jurado Electoral Especial observó la omisión de información en la Declaración Jurada de Hoja de Vida de la candidata, relacionada con una sentencia laboral por una deuda a favor de AFP Profuturo por S/ 746.23 más intereses. Estas omisiones son relevantes porque la declaración jurada es obligatoria para garantizar la transparencia ante el electorado. El caso se detectó mediante la verificación entre registros del Poder Judicial y el sistema electoral.",
+      "fuentes": [
+        "La República: https://larepublica.pe",
+        "Jurado Nacional de Elecciones: https://www.jne.gob.pe"
+      ]
+    }
+  ],
+  "historial_politico": [
+    {
+      "cargo": "Congresista de la República",
+      "partido": "Partido Popular Cristiano (PPC) — Alianza por el Gran Cambio",
+      "periodo": "2011 — 2016",
+      "descripcion": "Fue elegida congresista por Lima mediante el partido Alianza por el Gran Cambio. Integró comisiones como Constitución y Reglamento, y Justicia y Derechos Humanos. Su labor legislativa se centró en reformas institucionales, en el funcionamiento del Estado y en los derechos fundamentales, participando en la elaboración, fiscalización y debate de políticas públicas."
+    },
+    {
+      "cargo": "Ministra de Justicia y Derechos Humanos",
+      "partido": "Independiente",
+      "periodo": "2016 — 2017",
+      "descripcion": "Formó parte del gabinete ministerial al inicio del gobierno de Pedro Pablo Kuczynski, liderando el sector justicia en un contexto de alta tensión entre el Ejecutivo y el Congreso. Fue responsable de implementar políticas públicas en el sistema judicial."
+    },
+    {
+      "cargo": "Candidata presidencial",
+      "partido": "Primero la Gente",
+      "periodo": "2026",
+      "descripcion": "Se postula como candidata presidencial en 2026 por Primero la Gente, tras dejar el Partido Popular Cristiano. Su candidatura surge en un contexto de reorganización partidaria en el sistema político peruano."
+    }
+  ],
+  "historial_profesional": [
+    {
+      "cargo": "Docente universitaria",
+      "institucion": "Universidad de San Martín de Porres (USMP)",
+      "periodo": "1996 — 2020",
+      "descripcion": "Durante más de veinte años ejerció la docencia en la Facultad de Derecho de la Universidad de San Martín de Porres, con enfoque en derechos humanos y fundamentos del derecho. Esta labor se desarrolló en paralelo a su práctica profesional, lo que le permitió combinar la experiencia jurídica con la docencia universitaria."
+    },
+    {
+      "cargo": "Notaria pública",
+      "institucion": "Notaría Pérez Tello",
+      "periodo": "1999 — 2025",
+      "descripcion": "La función notarial ha sido el eje principal de su carrera profesional. En este cargo, se encargó de certificar actos jurídicos, elaborar instrumentos públicos, verificar la identidad y capacidad de las partes, y validar formalmente contratos y declaraciones."
+    },
+    {
+      "cargo": "Ministra de Justicia y Derechos Humanos",
+      "institucion": "Ministerio de Justicia y Derechos Humanos",
+      "periodo": "28/07/2016 — 17/09/2017",
+      "descripcion": "Como ministra de Justicia y Derechos Humanos, lideró la gestión administrativa del sistema de justicia, supervisando el sistema penitenciario, la defensa pública, la política nacional de derechos humanos y la regulación de los servicios jurídicos. Su gestión se desarrolló en un contexto de incertidumbre y de deficiencias en la infraestructura penitenciaria. Fue responsable de formular e implementar políticas públicas para mejorar el funcionamiento del sistema judicial y el acceso a la justicia."
+    }
+  ],
+  "controversias": [
+    {
+      "titulo": "Cuestionamientos por padrón de afiliados del partido Primero la Gente",
+      "descripcion": "Se han presentado cuestionamientos sobre el padrón de afiliados de Primero la Gente, ya que algunos ciudadanos aparecen inscritos sin su consentimiento. Esto sugiere posibles registros con firmas no validadas o el uso indebido de datos personales. La validez del padrón es esencial para la inscripción de partidos ante el Jurado Nacional de Elecciones. Investigaciones periodísticas identificaron casos de personas, incluso en el extranjero, que desconocían su afiliación. La candidata atribuyó las irregularidades a fallas en el registro y anunció acciones legales para determinar responsabilidades."
+    }
+  ],
+  "partido_info": {
+    "nombre": "Primero la Gente",
+    "simbolo": "No especificado en el documento",
+    "ideologia": "Centro. Énfasis en institucionalidad democrática, reforma del Estado e implementación de políticas públicas orientadas a la mejora de servicios públicos",
+    "fundacion": "Recientemente inscrito (proceso electoral 2026)",
+    "historia": "Primero la Gente es una organización política recientemente inscrita en el sistema electoral peruano, tras cumplir los requisitos de la Ley de Organizaciones Políticas. Estos incluyen la presentación de un padrón de afiliados, de comités partidarios a nivel nacional y de documentación interna que respalde su estructura organizativa. Su estructura se encuentra en proceso de consolidación.",
+    "desempeno_electoral": "Partido de reciente inscripción sin historial electoral previo. Durante el proceso electoral 2026 ganó relevancia por incorporar figuras con experiencia en otros partidos, como Marisol Pérez Tello. Enfrenta cuestionamientos sobre la validez de su padrón de afiliados debido a registros realizados sin consentimiento, lo que ha generado debate público sobre la legitimidad de su inscripción."
+  },
+  "linea_de_tiempo": [
+    {
+      "año": 1995,
+      "hito": "Obtiene título de abogada en la Universidad de San Martín de Porres (USMP)"
+    },
+    {
+      "año": 1996,
+      "hito": "Inicio de docencia universitaria en la USMP (Facultad de Derecho)"
+    },
+    {
+      "año": 1999,
+      "hito": "Inicio del ejercicio notarial en la Notaría Pérez Tello"
+    },
+    {
+      "año": 2011,
+      "hito": "Elegida congresista de la República por Lima, mediante Alianza por el Gran Cambio (PPC)"
+    },
+    {
+      "año": 2016,
+      "hito": "Nombrada Ministra de Justicia y Derechos Humanos en el gobierno de Pedro Pablo Kuczynski (28 de julio)"
+    },
+    {
+      "año": 2017,
+      "hito": "Concluye su gestión como Ministra de Justicia y Derechos Humanos (17 de septiembre)"
+    },
+    {
+      "año": 2020,
+      "hito": "Fin de la docencia universitaria en la USMP"
+    },
+    {
+      "año": 2022,
+      "hito": "Salida del Partido Popular Cristiano (PPC)"
+    },
+    {
+      "año": 2024,
+      "hito": "Ingreso al partido Primero la Gente"
+    },
+    {
+      "año": 2025,
+      "hito": "Fin del ejercicio notarial en la Notaría Pérez Tello"
+    },
+    {
+      "año": 2026,
+      "hito": "Inscripción como candidata presidencial por Primero la Gente. Observación del JEE por presunta omisión en declaración jurada (sentencia laboral AFP Profuturo, S/ 746.23)"
+    }
+  ],
+  "datos_importantes": [
+    "Nombre completo: María Soledad Pérez Tello de Rodríguez",
+    "Abogada titulada por la Universidad de San Martín de Porres (1995) con Doctorado en Derecho y Maestría en Derecho Constitucional (PUCP)",
+    "Notaria pública por más de dos décadas (1999–2025)",
+    "Docente universitaria en la USMP por más de veinte años (1996–2020)",
+    "Congresista de la República por Lima (2011–2016), integrante de las comisiones de Constitución y Reglamento, y Justicia y Derechos Humanos",
+    "Ministra de Justicia y Derechos Humanos en el gobierno de Pedro Pablo Kuczynski (28/07/2016 – 17/09/2017)",
+    "Militó en el Partido Popular Cristiano (PPC). Salió del partido en 2022",
+    "Candidata presidencial 2026 por Primero la Gente",
+    "El JEE observó presunta omisión en su declaración jurada de hoja de vida: sentencia laboral por deuda a AFP Profuturo de S/ 746.23 más intereses. No derivó en exclusión de candidatura",
+    "Su partido Primero la Gente enfrenta cuestionamientos por registros de afiliados sin consentimiento"
+  ]
+}

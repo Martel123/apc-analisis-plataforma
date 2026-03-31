@@ -24,6 +24,31 @@
       "id": "jorge_nieto",
       "nombre": "Jorge Nieto",
       "archivo": "/trayectoria/jorge_nieto.json"
+    },
+    {
+      "id": "alfonso_lopez_chao",
+      "nombre": "Alfonso Lopez Chao",
+      "archivo": "/trayectoria/lopez_chao.json"
+    },
+    {
+      "id": "rafael_lopez_aliaga",
+      "nombre": "Rafael López Aliaga",
+      "archivo": "/trayectoria/lopez_aliaga.json"
+    },
+    {
+      "id": "cesar_acuña",
+      "nombre": "Cesar Acuña",
+      "archivo": "/trayectoria/cesar_acuña.json"
+    },
+    {
+      "id": "marisol_perez",
+      "nombre": "Marisol Pérez Tello",
+      "archivo": "/trayectoria/marisol_perez.json"
+    },
+    {
+      "id": "roberto_sanchez",
+      "nombre": "Roberto Sánchez",
+      "archivo": "/trayectoria/roberto_sanchez.json"
     }
   ]
 }

@@ -1,0 +1,173 @@
+{
+  "id": "alfonso-lopez-chau",
+  "nombre": "Pablo Alfonso López Chau Nava",
+  "partido": "Ahora Nación",
+  "fecha_nacimiento": "",
+  "edad": 75,
+  "profesion": "Economista, docente universitario, político",
+  "formacion_academica": [
+    "Educación secundaria en Lima",
+    "Universidad Nacional del Callao - Economía (pregrado)",
+    "Universidad Nacional Autónoma de México (UNAM) - Maestría y Doctorado en Economía"
+  ],
+  "resumen": "Alfonso López Chau es un economista peruano con una amplia trayectoria en el ámbito académico, particularmente en la Universidad Nacional de Ingeniería (UNI), donde ha ejercido funciones de docencia, investigación y gestión institucional por más de cuatro décadas. Su perfil técnico se fundamenta en su formación en economía y en su participación en espacios de análisis de políticas públicas. Además de su labor académica, cuenta con experiencia en el sector público, destacando su participación en el directorio del Banco Central de Reserva del Perú, lo que refuerza su perfil en temas macroeconómicos. Su vinculación con la política ha sido sostenida a lo largo de su carrera, aunque su mayor visibilidad se alcanza con su candidatura presidencial.",
+  "historial_judicial": [
+    {
+      "titulo": "Denuncia por presunto lavado de activos",
+      "tipo": "Penal",
+      "estado": "Investigación preliminar (sin registro de sentencia)",
+      "estado_label": "Investigación preliminar",
+      "descripcion": "En 2012 se presentó una denuncia por presunto lavado de activos vinculada a su desempeño en el Banco Central de Reserva del Perú. La Fiscalía inició diligencias preliminares para evaluar el origen de bienes y movimientos financieros. No existe información pública que confirme una acusación formal o sentencia derivada de este caso.",
+      "fuentes": [
+        "Ministerio Público del Perú - https://www.gob.pe/mpfn",
+        "La Razón - https://larazon.pe/alfonso-lopez-chau-fue-denunciado-por-lavado-de-activos/"
+      ]
+    },
+    {
+      "titulo": "Investigación por presuntos delitos de peculado doloso y negociación incompatible",
+      "tipo": "Penal",
+      "estado": "Investigación en curso",
+      "estado_label": "Investigación en curso",
+      "descripcion": "El Ministerio Público investiga presuntos delitos de peculado doloso y negociación incompatible relacionados con el uso de recursos de la Universidad Nacional de Ingeniería durante su gestión como rector. Las diligencias incluyen la revisión de contrataciones y el uso de fondos institucionales. El caso ha sido calificado como complejo y permanece en etapa de investigación.",
+      "fuentes": [
+        "Ministerio Público del Perú - https://www.gob.pe/mpfn",
+        "El Comercio - https://elcomercio.pe/politica/alfonso-lopez-chau-citado-por-fiscalia-anticorrupcion-de-que-se-trata-la-investigacion-en-su-contra-tlcnota-noticia/"
+      ]
+    },
+    {
+      "titulo": "Investigación por presunto favorecimiento en contratación de trabajadora en la UNI",
+      "tipo": "Penal",
+      "estado": "Investigación / requerimiento fiscal (sin sentencia)",
+      "estado_label": "Investigación / requerimiento fiscal",
+      "descripcion": "Se le investiga por presunto favorecimiento en la contratación de una trabajadora en la UNI. La Fiscalía evalúa la posible comisión de delitos como negociación incompatible o colusión. Se ha informado sobre un requerimiento fiscal que contempla posible pena privativa de libertad e inhabilitación, sin que exista sentencia definitiva.",
+      "fuentes": [
+        "Ministerio Público del Perú - https://www.gob.pe/mpfn",
+        "Infobae - https://www.infobae.com/peru/2025/07/17/alfonso-lopez-chau-en-la-mira-de-la-fiscalia-es-investigado-por-presuntamente-beneficiar-a-trabajadora-en-la-uni/"
+      ]
+    }
+  ],
+  "historial_politico": [
+    {
+      "cargo": "Candidato al Congreso",
+      "partido": "",
+      "periodo": "1995",
+      "descripcion": "Postuló al Congreso de la República en las elecciones de 1995."
+    },
+    {
+      "cargo": "Rector",
+      "partido": "(Sin afiliación formal en ese periodo)",
+      "periodo": "2016 - 2025",
+      "descripcion": "Ejerció como rector de la Universidad Nacional de Ingeniería (UNI). Durante su gestión se le atribuye la administración de recursos institucionales y la conducción académica y administrativa de la universidad. Posteriormente, su administración fue objeto de investigaciones fiscales relacionadas con el uso de recursos públicos y contrataciones dentro de la institución."
+    },
+    {
+      "cargo": "Candidato presidencial",
+      "partido": "Ahora Nación",
+      "periodo": "2026",
+      "descripcion": "Es candidato a la presidencia de la República en el proceso electoral de 2026 como representante del partido Ahora Nación. Su postulación se desarrolla en paralelo a investigaciones fiscales relacionadas con su gestión como rector de la UNI."
+    }
+  ],
+  "historial_profesional": [
+    {
+      "cargo": "Docente universitario",
+      "institucion": "Universidad Nacional de Ingeniería (UNI)",
+      "periodo": "1980 - actualidad",
+      "descripcion": "La mayor parte de su carrera profesional se ha desarrollado en la Universidad Nacional de Ingeniería, donde se ha desempeñado como docente en áreas relacionadas con la economía. Su labor se ha orientado a la formación académica de ingenieros con enfoque económico, la investigación y la participación en debates especializados. Su permanencia prolongada evidencia una trayectoria consolidada en el ámbito educativo."
+    },
+    {
+      "cargo": "Rector",
+      "institucion": "Universidad Nacional de Ingeniería",
+      "periodo": "2021 - 2025",
+      "descripcion": "Durante su gestión como rector, lideró la conducción administrativa y académica de la universidad en un contexto complejo tras la pandemia. Su administración incluyó el retorno a la presencialidad, la reorganización institucional y la participación de la universidad en el debate público nacional."
+    },
+    {
+      "cargo": "Director",
+      "institucion": "Banco Central de Reserva del Perú (BCRP)",
+      "periodo": "2006 - 2012",
+      "descripcion": "Integró el directorio del BCRP, órgano fundamental en la formulación de la política monetaria nacional. En este cargo participó en decisiones sobre estabilidad monetaria, inflación y política macroeconómica, lo que constituye uno de los aspectos más relevantes de su experiencia técnica en el sector público."
+    },
+    {
+      "cargo": "Analista económico",
+      "institucion": "Ámbito académico y medios",
+      "periodo": "2000 - actualidad",
+      "descripcion": "Ha participado activamente en el análisis de la economía nacional, interviniendo en debates sobre políticas públicas, desarrollo económico, el rol del Estado y la educación. Su presencia en medios y espacios académicos ha consolidado su posicionamiento como referente técnico."
+    }
+  ],
+  "controversias": [
+    {
+      "titulo": "Cuestionamientos sobre el uso de recursos de la UNI en actividades vinculadas a su proyección política",
+      "descripcion": "Se han planteado cuestionamientos sobre el uso de recursos de la UNI en actividades vinculadas a su proyección política. Congresistas y actores políticos solicitaron investigaciones al considerar que recursos públicos pudieron haber sido utilizados en actividades coincidentes con su candidatura presidencial. Estas afirmaciones surgen en el marco de investigaciones fiscales en curso sobre su gestión."
+    },
+    {
+      "titulo": "Señalamientos sobre presunto favorecimiento a personas vinculadas a su entorno en contrataciones dentro de la UNI",
+      "descripcion": "Se han realizado señalamientos sobre presunto favorecimiento a personas vinculadas a su entorno en contrataciones dentro de la UNI. Estas observaciones surgen en el contexto de investigaciones fiscales por negociación incompatible. Los cuestionamientos se centran en procesos de contratación durante su gestión como rector."
+    }
+  ],
+  "partido_info": {
+    "nombre": "Ahora Nación",
+    "simbolo": "",
+    "ideologia": "Centroizquierda",
+    "fundacion": "",
+    "historia": "Ahora Nación es una organización política de reciente creación en el sistema político peruano, surgida en un contexto de alta fragmentación y desconfianza hacia los partidos tradicionales. El partido promueve mayor participación del Estado en la economía, fortalecimiento de la educación pública y desarrollo de políticas sociales. Estas propuestas ubican al partido en una orientación cercana a la centroizquierda. Su estructura organizativa aún se encuentra en proceso de consolidación, con presencia en expansión a nivel nacional. La inclusión de perfiles técnicos y académicos constituye uno de sus rasgos distintivos, aunque también cuenta con diputados bajo investigación fiscal.",
+    "desempeno_electoral": "Partido de reciente creación sin historial electoral previo significativo."
+  },
+  "linea_de_tiempo": [
+    {
+      "año": 1970,
+      "hito": "Estudios universitarios en economía (hasta 1979)"
+    },
+    {
+      "año": 1970,
+      "hito": "Participación política inicial (décadas 70-90)"
+    },
+    {
+      "año": 1980,
+      "hito": "Inicio como docente en la Universidad Nacional de Ingeniería"
+    },
+    {
+      "año": 1995,
+      "hito": "Candidatura al Congreso"
+    },
+    {
+      "año": 2000,
+      "hito": "Actividad académica y análisis económico (hasta 2020)"
+    },
+    {
+      "año": 2006,
+      "hito": "Director del Banco Central de Reserva del Perú (hasta 2012)"
+    },
+    {
+      "año": 2012,
+      "hito": "Denuncia por presunto lavado de activos vinculada a su desempeño en el BCRP"
+    },
+    {
+      "año": 2021,
+      "hito": "Elección como rector de la Universidad Nacional de Ingeniería"
+    },
+    {
+      "año": 2021,
+      "hito": "Gestión como rector de la UNI (hasta 2025)"
+    },
+    {
+      "año": 2024,
+      "hito": "Liderazgo en Ahora Nación"
+    },
+    {
+      "año": 2026,
+      "hito": "Candidatura presidencial por Ahora Nación"
+    }
+  ],
+  "datos_importantes": [
+    "Ex rector de la Universidad Nacional de Ingeniería (2021-2025)",
+    "Exdirector del Banco Central de Reserva del Perú (2006-2012)",
+    "Más de cuatro décadas de trayectoria como docente en la UNI",
+    "Candidato al Congreso en 1995",
+    "Fundador y candidato presidencial de Ahora Nación en 2026",
+    "No se registran sentencias firmes en ninguno de los casos de investigación según la información pública disponible",
+    "El Ministerio Público investiga presuntos delitos de peculado doloso y negociación incompatible relacionados con el uso de recursos de la UNI durante su gestión como rector",
+    "Se le investiga por presunto favorecimiento en la contratación de una trabajadora en la UNI, con requerimiento fiscal que contempla posible pena privativa de libertad e inhabilitación",
+    "En 2012 se presentó una denuncia por presunto lavado de activos vinculada a su desempeño en el BCRP, sin acusación formal o sentencia",
+    "Economista con Maestría y Doctorado por la UNAM",
+    "Su candidatura se desarrolla en paralelo a investigaciones fiscales relacionadas con su gestión como rector de la UNI",
+    "75 años de edad"
+  ]
+}

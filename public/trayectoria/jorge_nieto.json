@@ -12,7 +12,20 @@
     "Estudios de Doctorado en Ciencias Sociales - Centro de Estudios Sociológicos, El Colegio de México, 1988-1991"
   ],
   "resumen": "Jorge Nieto Montesinos es sociólogo, exministro de Estado y fundador del Partido del Buen Gobierno. Ocupó las carteras de Cultura (julio-diciembre 2016) y Defensa (diciembre 2016 - enero 2018) durante el gobierno de Pedro Pablo Kuczynski, renunciando a esta última en rechazo al indulto presidencial otorgado al expresidente Alberto Fujimori. Antes del servicio público, desarrolló una trayectoria internacional en la UNESCO como director de la Unidad Mundial de Gobernabilidad y como consultor en temas de gobernabilidad democrática en América Latina. Es sobrino del exasesor y agente de inteligencia Vladimiro Montesinos Torres. En las Elecciones Generales 2026 postula a la presidencia por el Partido del Buen Gobierno. Según la encuesta de Datum de marzo de 2026, se ubica en quinto lugar de intención de voto con aproximadamente 4.6% de respaldo.",
-  "historial_judicial": [],
+  "historial_judicial": [
+    {
+      "titulo": "Investigación preparatoria por presunto lavado de activos (Caso 'Las Chalinas Verdes')",
+      "tipo": "Penal",
+      "estado": "Investigación preparatoria formalizada (en curso)",
+      "estado_label": "Investigación preparatoria formalizada",
+      "descripcion": "El Equipo Especial del caso Lava Jato del Ministerio Público formalizó investigación preparatoria en julio de 2023 contra Jorge Nieto Montesinos por el presunto delito de lavado de activos, en el marco del caso denominado 'Las Chalinas Verdes'. La investigación se centra en las asesorías políticas que habría brindado a la exalcaldesa Susana Villarán durante su gestión en la Municipalidad de Lima. Según la tesis fiscal, Nieto habría recibido entre US$ 120,000 y US$ 129,000 de la constructora OAS en 2013, vinculados a la campaña contra la revocatoria de Villarán. La investigación preliminar fue abierta inicialmente en julio de 2020 por el fiscal Carlos Puma, y posteriormente formalizada en 2023 por el fiscal Walter Villanueva. Según testimonios recogidos, Nieto habría mantenido un despacho cercano a la alcaldía para coordinar con regidores y partidos del Acuerdo por Lima. El levantamiento del secreto bancario detectó abonos provenientes del extranjero que oscilan entre los US$ 44,000 y los US$ 399,955, sumando más de un millón de dólares en total. El candidato ha negado haber recibido pagos y sostiene que tanto Susana Villarán como Valfredo de Assis (representante de OAS) han negado haberle entregado dinero. Mantiene su presunción de inocencia mientras el proceso continúa.",
+      "fuentes": [
+        "El Comercio (15/07/2020): https://elcomercio.pe/politica/susana-villaran-fiscal-carlos-puma-abre-investigacion-preliminar-a-marisa-glave-ana-elena-townsend-jorge-nieto-jaime-salinas-entre-otros-no-a-la-revocatoria-noticia/",
+        "El Comercio (25/07/2023): https://elcomercio.pe/politica/justicia/caso-odebrecht-y-oas-fiscalia-formaliza-investigacion-contra-susana-villaran-marisa-glave-y-jorge-nieto-montesinos-ministerio-publico-jaime-salinas-municipalidad-de-lima-mml-ultimas-noticia/",
+        "América TV (25/07/2023): https://www.americatv.com.pe/noticias/actualidad/caso-susana-villaran-fiscalia-formalizo-investigacion-preparatoria-marisa-glave-y-jorge-nieto-lavado-activos-n478476"
+      ]
+    }
+  ],
   "historial_politico": [
     {
       "cargo": "Militante y dirigente",
@@ -117,6 +130,10 @@
       "hito": "Representante de UNESCO en México (hasta 2001)"
     },
     {
+      "año": 2013,
+      "hito": "Presunta asesoría a Susana Villarán durante campaña contra la revocatoria (según investigación fiscal)"
+    },
+    {
       "año": 2016,
       "hito": "Juramento como ministro de Cultura en el gobierno de Pedro Pablo Kuczynski (28 de julio)"
     },
@@ -142,6 +159,10 @@
     },
     {
       "año": 2020,
+      "hito": "El fiscal Carlos Puma abre investigación preliminar contra Nieto por presuntos delitos de cohecho activo genérico, lavado de activos y asociación ilícita (15 de julio)"
+    },
+    {
+      "año": 2020,
       "hito": "Confirma que el partido no logrará inscripción a tiempo para las elecciones de 2021 (septiembre)"
     },
     {
@@ -151,6 +172,10 @@
     {
       "año": 2023,
       "hito": "Fundación formal del Partido del Buen Gobierno (28 de agosto)"
+    },
+    {
+      "año": 2023,
+      "hito": "El fiscal Walter Villanueva formaliza investigación preparatoria contra Nieto por presunto lavado de activos (julio)"
     },
     {
       "año": 2024,
@@ -167,8 +192,10 @@
   ],
   "datos_importantes": [
     "Sobrino de Vladimiro Montesinos Torres, exjefe del SIN condenado por crímenes de lesa humanidad y corrupción durante el gobierno de Fujimori. No existe evidencia de vinculación política o funcional entre ambos",
+    "Enfrenta investigación preparatoria formalizada por el Ministerio Público por presunto lavado de activos vinculado al caso 'Las Chalinas Verdes' y la campaña contra la revocatoria de Susana Villarán en 2013",
+    "Según la tesis fiscal, habría recibido entre US$ 120,000 y US$ 129,000 de la constructora OAS. El candidato niega los cargos y mantiene su presunción de inocencia",
+    "El levantamiento del secreto bancario detectó abonos provenientes del extranjero que suman más de un millón de dólares en total",
     "Declaró ante el JNE dos inmuebles ubicados en México, con valores de S/ 363,000 y S/ 99,000. Ingresos anuales declarados para 2024: S/ 180,000",
-    "No registra sentencias judiciales ni antecedentes penales en su declaración jurada de hoja de vida ante el JNE",
     "Entre sus propuestas de gobierno se incluye: derogar la Ley 32108 (denominada 'ley pro crimen'), digitalizar los procesos de licitación del Estado, crear una base de datos única entre entidades públicas y reformar el sistema de gobernabilidad",
     "El Partido del Buen Gobierno tiene 12 candidatos congresales con antecedentes judiciales (6 excluidos por el JNE, 6 que los declararon voluntariamente)",
     "Según la encuesta Datum publicada el 22 de marzo de 2026, Nieto ocupa el quinto lugar de intención de voto con 4.6%, cifra que representa casi el doble de su respaldo registrado una semana antes",

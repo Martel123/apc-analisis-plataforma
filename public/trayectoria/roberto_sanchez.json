@@ -1,0 +1,142 @@
+{
+  "id": "roberto-sanchez-apc-juridica",
+  "nombre": "Roberto Helbert Sánchez Palomino",
+  "partido": "Juntos por el Perú",
+  "fecha_nacimiento": "No especificada en el documento",
+  "edad": 57,
+  "profesion": "Psicólogo, político",
+  "formacion_academica": [
+    "Universidad Nacional Mayor de San Marcos (UNMSM) — Psicología (título profesional)",
+    "Pontificia Universidad Católica del Perú (PUCP) — Estudios de posgrado en gestión pública"
+  ],
+  "resumen": "Roberto Sánchez es un político peruano con experiencia tanto en el Poder Legislativo como en el Ejecutivo. Actualmente se desempeña como congresista (2021–2026) y, anteriormente, fue ministro de Comercio Exterior y Turismo (2021–2022) durante el gobierno de Pedro Castillo. Desde 2017, lidera el partido Juntos por el Perú. Su perfil político se sitúa a la izquierda y está vinculado a propuestas de reforma estructural del Estado, entre ellas, el cambio constitucional mediante una Asamblea Constituyente.",
+  "historial_judicial": [
+    {
+      "titulo": "Infracción al principio de neutralidad electoral",
+      "tipo": "Administrativo / Electoral",
+      "estado": "Infracción determinada por el Jurado Electoral Especial",
+      "estado_label": "Infracción determinada por JEE",
+      "descripcion": "El Jurado Electoral Especial concluyó que Roberto Sánchez incurrió en una infracción al principio de neutralidad electoral, tras comprobarse la participación de trabajadores de su despacho congresal en actividades proselitistas. Esta conducta contraviene la normativa electoral, que prohíbe el uso de recursos estatales con fines políticos y afecta la igualdad de condiciones en la competencia electoral.",
+      "fuentes": [
+        "RPP: https://rpp.pe",
+        "Infobae: https://www.infobae.com"
+      ]
+    }
+  ],
+  "historial_politico": [
+    {
+      "cargo": "Presidente del partido Juntos por el Perú",
+      "partido": "Juntos por el Perú",
+      "periodo": "2017 — actualidad",
+      "descripcion": "Ejerce la conducción política del partido, definiendo estrategias electorales, representando institucionalmente a la organización y articulando alianzas. Su liderazgo ha sido determinante para la permanencia del partido en el sistema político nacional."
+    },
+    {
+      "cargo": "Congresista de la República",
+      "partido": "Juntos por el Perú",
+      "periodo": "2021 — 2026",
+      "descripcion": "Desarrolló funciones legislativas, de representación y de fiscalización en un Congreso marcado por una alta fragmentación política. Su labor se ha relacionado con debates sobre reformas del Estado, la supervisión del Ejecutivo y la legislación en materia social, manteniendo una alineación con posiciones de izquierda en el Parlamento. Su elección ocurrió en un contexto de fortalecimiento de las fuerzas políticas de izquierda."
+    },
+    {
+      "cargo": "Candidato presidencial",
+      "partido": "Juntos por el Perú",
+      "periodo": "2026",
+      "descripcion": "Se postula a la presidencia como líder de su organización política, consolidando su posición como la principal figura del partido en el escenario electoral."
+    }
+  ],
+  "historial_profesional": [
+    {
+      "cargo": "Gerente de Desarrollo Social",
+      "institucion": "Municipalidad Provincial de Huaral",
+      "periodo": "2019 — 2020",
+      "descripcion": "Desarrolló funciones enfocadas en la implementación de programas sociales, la coordinación interinstitucional y la gestión de políticas públicas locales dirigidas a poblaciones vulnerables, consolidando así su experiencia en gestión pública a nivel subnacional."
+    },
+    {
+      "cargo": "Ministro de Comercio Exterior y Turismo",
+      "institucion": "Ministerio de Comercio Exterior y Turismo (MINCETUR)",
+      "periodo": "2021 — 2022",
+      "descripcion": "En su calidad de titular del MINCETUR, fue responsable de la cartera política nacional de comercio exterior y turismo, que abarcaba la promoción de las exportaciones y la reactivación del sector turístico tras la pandemia. Su gestión se llevó a cabo en un contexto político inestable, marcado por frecuentes cambios en el gabinete ministerial durante el gobierno de Pedro Castillo."
+    },
+    {
+      "cargo": "Congresista de la República",
+      "institucion": "Congreso de la República del Perú",
+      "periodo": "2021 — 2026",
+      "descripcion": "Desarrolló funciones legislativas, de representación y de fiscalización en un Congreso marcado por una alta fragmentación política. Su labor se relacionó con debates sobre reformas del Estado, la supervisión del Ejecutivo y la legislación en materia social."
+    }
+  ],
+  "controversias": [
+    {
+      "titulo": "Propuesta de convocatoria a una Asamblea Constituyente",
+      "descripcion": "Roberto Sánchez ha promovido de manera constante la necesidad de reemplazar la Constitución de 1993 a través de una Asamblea Constituyente. Esta propuesta implica una transformación significativa del orden jurídico y político nacional, que incluye modificaciones en el régimen económico, en el papel del Estado en sectores estratégicos y en la estructura institucional. La iniciativa constituye uno de los principales ejes del discurso político de la izquierda peruana y ha generado debate debido a sus posibles efectos en la estabilidad jurídica, la inversión privada y la gobernabilidad democrática."
+    },
+    {
+      "titulo": "Vinculación política con el gobierno de Pedro Castillo",
+      "descripcion": "Su participación como ministro lo vincula directamente a una administración caracterizada por crisis políticas recurrentes, alta rotación de funcionarios y múltiples investigaciones fiscales por presuntos actos de corrupción. Aunque no existe sentencia en su contra, su rol en el gabinete lo sitúa en ese contexto político, lo que influye en la percepción pública de su trayectoria y en la evaluación de su capacidad de gestión."
+    },
+    {
+      "titulo": "Cuestionamientos internos en Juntos por el Perú",
+      "descripcion": "Integrantes y exmiembros del partido han presentado denuncias públicas que cuestionan la conducción interna bajo el liderazgo de Roberto Sánchez. Estas críticas se centran en decisiones organizativas, la gestión de procesos internos y la selección de candidaturas. Aunque no constituyen procesos judiciales formales, evidencian tensiones internas y problemas de cohesión que afectan la estructura política del partido."
+    }
+  ],
+  "partido_info": {
+    "nombre": "Juntos por el Perú",
+    "simbolo": "No especificado en el documento",
+    "ideologia": "Izquierda. Impulsa reformas estructurales del Estado, una mayor intervención estatal en la economía y el cambio del marco constitucional vigente mediante una Asamblea Constituyente",
+    "fundacion": "No especificada en el documento",
+    "historia": "Juntos por el Perú ha consolidado su presencia en el sistema político peruano mediante la articulación de movimientos sociales, organizaciones sindicales y sectores progresistas. Ha participado en procesos electorales recientes y ha contado con presencia en el gobierno de Pedro Castillo mediante la incorporación de miembros políticos al Ejecutivo.",
+    "desempeno_electoral": "El partido ha promovido como eje central la convocatoria a una Asamblea Constituyente para reemplazar la Constitución de 1993. Ha enfrentado cuestionamientos internos relacionados con su organización, liderazgo y procesos de toma de decisiones, lo que evidencia tensiones en su estructura partidaria."
+  },
+  "linea_de_tiempo": [
+    {
+      "año": 1990,
+      "hito": "Inicio de estudios en Psicología en la Universidad Nacional Mayor de San Marcos (UNMSM)"
+    },
+    {
+      "año": 2000,
+      "hito": "Ejercicio profesional como psicólogo"
+    },
+    {
+      "año": 2017,
+      "hito": "Asume la presidencia del partido Juntos por el Perú"
+    },
+    {
+      "año": 2019,
+      "hito": "Inicia funciones como Gerente de Desarrollo Social en la Municipalidad Provincial de Huaral"
+    },
+    {
+      "año": 2020,
+      "hito": "Concluye gestión en la Municipalidad Provincial de Huaral"
+    },
+    {
+      "año": 2021,
+      "hito": "Electo congresista de la República por Juntos por el Perú"
+    },
+    {
+      "año": 2021,
+      "hito": "Nombrado Ministro de Comercio Exterior y Turismo en el gobierno de Pedro Castillo"
+    },
+    {
+      "año": 2022,
+      "hito": "Concluye gestión como Ministro de Comercio Exterior y Turismo"
+    },
+    {
+      "año": 2025,
+      "hito": "El Jurado Electoral Especial determina infracción al principio de neutralidad electoral por uso de trabajadores del despacho congresal en actividades proselitistas"
+    },
+    {
+      "año": 2026,
+      "hito": "Inscripción como candidato presidencial por Juntos por el Perú"
+    }
+  ],
+  "datos_importantes": [
+    "Nombre completo: Roberto Helbert Sánchez Palomino",
+    "Psicólogo titulado por la Universidad Nacional Mayor de San Marcos (UNMSM), con estudios de posgrado en gestión pública en la PUCP",
+    "Presidente del partido Juntos por el Perú desde 2017",
+    "Gerente de Desarrollo Social de la Municipalidad Provincial de Huaral (2019–2020)",
+    "Ministro de Comercio Exterior y Turismo en el gobierno de Pedro Castillo (2021–2022)",
+    "Congresista de la República (2021–2026) por Juntos por el Perú",
+    "El Jurado Electoral Especial determinó infracción al principio de neutralidad electoral por participación de trabajadores de su despacho congresal en actividades proselitistas (2025)",
+    "Promotor de la convocatoria a una Asamblea Constituyente como eje central de su propuesta política",
+    "Su gestión ministerial se desarrolló en el contexto del gobierno de Pedro Castillo, caracterizado por crisis políticas recurrentes e investigaciones fiscales",
+    "Candidato presidencial 2026 por Juntos por el Perú"
+  ]
+}
