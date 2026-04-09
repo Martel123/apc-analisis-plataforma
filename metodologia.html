@@ -8,6 +8,39 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="public/styles/globals.css">
+  <style>
+    .resp-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .resp-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 11px 0;
+      border-bottom: 1px solid var(--border-soft);
+      gap: 16px;
+    }
+    .resp-item:last-child { border-bottom: none; }
+    .resp-name {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .resp-link {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--primary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      white-space: nowrap;
+      transition: opacity 0.15s;
+    }
+    .resp-link:hover { opacity: 0.75; text-decoration: underline; }
+  </style>
 </head>
 <body>
 <nav class="topbar">
@@ -39,6 +72,25 @@
   <div class="page-intro">
     <h1>Metodología de evaluación</h1>
     <p>Cómo se construye el análisis técnico de los planes de gobierno.</p>
+  </div>
+
+  <!-- RESPONSABLES -->
+  <div class="method-section">
+    <h2 class="method-section-title">Responsables del proyecto</h2>
+    <div class="resp-list">
+      <div class="resp-item">
+        <span class="resp-name">Marcelo Martel</span>
+        <a class="resp-link" href="https://www.linkedin.com/in/marcelo-martel-940243240/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      </div>
+      <div class="resp-item">
+        <span class="resp-name">Pascal Aarts</span>
+        <a class="resp-link" href="https://www.linkedin.com/in/pascal-aarts-5abb4b3ba/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      </div>
+      <div class="resp-item">
+        <span class="resp-name">Santiago Coveñas</span>
+        <a class="resp-link" href="mailto:scovenas18@gmail.com">scovenas18@gmail.com ↗</a>
+      </div>
+    </div>
   </div>
 
   <!-- 1. QUÉ HACE -->
